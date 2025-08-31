@@ -1,0 +1,480 @@
+2025-08-23 08:30:43,398 - INFO - Configuration loaded from config.json
+2025-08-23 08:30:43,399 - INFO - Test Equity Data Pipeline initialized
+2025-08-23 08:30:43,399 - INFO - Starting Test Equity Data Pipeline
+2025-08-23 08:30:43,399 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-23 08:30:43,399 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-23 08:30:43,399 - INFO - Output directory: test_output
+2025-08-23 08:30:43,399 - INFO - Processing ticker 1/3: AAPL
+2025-08-23 08:30:43,399 - INFO - Processing ticker: AAPL
+2025-08-23 08:30:43,399 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-23 08:30:43,776 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-23 08:30:43,787 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-23 08:30:43,808 - INFO - Saved test_output/AAPL/2024-01.parquet (21 records)
+2025-08-23 08:30:43,808 - INFO - Completed AAPL: 1/1 months successful
+2025-08-23 08:30:43,808 - INFO - ✓ Successfully processed AAPL
+2025-08-23 08:30:43,808 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-23 08:30:56,313 - INFO - Processing ticker 2/3: MSFT
+2025-08-23 08:30:56,313 - INFO - Processing ticker: MSFT
+2025-08-23 08:30:56,314 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-23 08:30:56,615 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-23 08:30:56,620 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-23 08:30:56,624 - INFO - Saved test_output/MSFT/2024-01.parquet (21 records)
+2025-08-23 08:30:56,624 - INFO - Completed MSFT: 1/1 months successful
+2025-08-23 08:30:56,624 - INFO - ✓ Successfully processed MSFT
+2025-08-23 08:30:56,624 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-23 08:31:09,129 - INFO - Processing ticker 3/3: GOOGL
+2025-08-23 08:31:09,130 - INFO - Processing ticker: GOOGL
+2025-08-23 08:31:09,130 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-23 08:31:09,527 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-23 08:31:09,533 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-23 08:31:09,537 - INFO - Saved test_output/GOOGL/2024-01.parquet (21 records)
+2025-08-23 08:31:09,537 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-23 08:31:09,538 - INFO - ✓ Successfully processed GOOGL
+2025-08-23 08:31:09,538 - INFO - ==================================================
+2025-08-23 08:31:09,538 - INFO - TEST PIPELINE SUMMARY
+2025-08-23 08:31:09,538 - INFO - ==================================================
+2025-08-23 08:31:09,538 - INFO - Total tickers: 3
+2025-08-23 08:31:09,538 - INFO - Successful: 3
+2025-08-23 08:31:09,538 - INFO - Failed: 0
+2025-08-23 08:31:09,538 - INFO - 
+Output structure:
+2025-08-23 08:31:09,538 - INFO - test_output/
+2025-08-23 08:31:09,539 - INFO -   AAPL/
+2025-08-23 08:31:09,539 - INFO -     2024-01.parquet
+2025-08-23 08:31:09,539 - INFO -   GOOGL/
+2025-08-23 08:31:09,539 - INFO -     2024-01.parquet
+2025-08-23 08:31:09,539 - INFO -   MSFT/
+2025-08-23 08:31:09,539 - INFO -     2024-01.parquet
+2025-08-23 08:31:09,539 - INFO - Test pipeline completed
+2025-08-23 08:34:53,138 - INFO - Configuration loaded from config.json
+2025-08-23 08:34:53,138 - INFO - Test Equity Data Pipeline initialized
+2025-08-23 08:34:53,138 - INFO - Starting Test Equity Data Pipeline
+2025-08-23 08:34:53,138 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-23 08:34:53,138 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-23 08:34:53,138 - INFO - Output directory: test_output
+2025-08-23 08:34:53,138 - INFO - Processing ticker 1/3: AAPL
+2025-08-23 08:34:53,138 - INFO - Processing ticker: AAPL
+2025-08-23 08:34:53,139 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-23 08:34:53,553 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-23 08:34:53,565 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-23 08:34:53,586 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-23 08:34:53,586 - INFO - Completed AAPL: 1/1 months successful
+2025-08-23 08:34:53,586 - INFO - ✓ Successfully processed AAPL
+2025-08-23 08:34:53,586 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-23 08:35:06,091 - INFO - Processing ticker 2/3: MSFT
+2025-08-23 08:35:06,092 - INFO - Processing ticker: MSFT
+2025-08-23 08:35:06,092 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-23 08:35:06,393 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-23 08:35:06,395 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-23 08:35:06,397 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-23 08:35:06,397 - INFO - Completed MSFT: 1/1 months successful
+2025-08-23 08:35:06,397 - INFO - ✓ Successfully processed MSFT
+2025-08-23 08:35:06,397 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-23 08:35:18,902 - INFO - Processing ticker 3/3: GOOGL
+2025-08-23 08:35:18,904 - INFO - Processing ticker: GOOGL
+2025-08-23 08:35:18,904 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-23 08:35:19,292 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-23 08:35:19,297 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-23 08:35:19,302 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-23 08:35:19,302 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-23 08:35:19,302 - INFO - ✓ Successfully processed GOOGL
+2025-08-23 08:35:19,302 - INFO - ==================================================
+2025-08-23 08:35:19,303 - INFO - TEST PIPELINE SUMMARY
+2025-08-23 08:35:19,303 - INFO - ==================================================
+2025-08-23 08:35:19,303 - INFO - Total tickers: 3
+2025-08-23 08:35:19,303 - INFO - Successful: 3
+2025-08-23 08:35:19,303 - INFO - Failed: 0
+2025-08-23 08:35:19,303 - INFO - 
+Output structure:
+2025-08-23 08:35:19,303 - INFO - test_output/
+2025-08-23 08:35:19,304 - INFO -   AAPL/
+2025-08-23 08:35:19,304 - INFO -     AAPL_2024_01.parquet
+2025-08-23 08:35:19,304 - INFO -   GOOGL/
+2025-08-23 08:35:19,304 - INFO -     GOOGL_2024_01.parquet
+2025-08-23 08:35:19,304 - INFO -   MSFT/
+2025-08-23 08:35:19,304 - INFO -     MSFT_2024_01.parquet
+2025-08-23 08:35:19,304 - INFO - Test pipeline completed
+2025-08-26 05:27:13,312 - INFO - Configuration loaded from config.json
+2025-08-26 05:27:13,312 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 05:27:13,312 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 05:27:13,312 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 05:27:13,313 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 05:27:13,313 - INFO - Output directory: test_output
+2025-08-26 05:27:13,313 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 05:27:13,313 - INFO - Processing ticker: AAPL
+2025-08-26 05:27:13,313 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 05:27:13,702 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 05:27:13,713 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 05:27:13,732 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 05:27:13,732 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 05:27:13,732 - INFO - ✓ Successfully processed AAPL
+2025-08-26 05:27:13,732 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:27:26,238 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 05:27:26,238 - INFO - Processing ticker: MSFT
+2025-08-26 05:27:26,238 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 05:27:26,540 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 05:27:26,546 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 05:27:26,550 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 05:27:26,551 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 05:27:26,551 - INFO - ✓ Successfully processed MSFT
+2025-08-26 05:27:26,551 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:27:39,056 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 05:27:39,056 - INFO - Processing ticker: GOOGL
+2025-08-26 05:27:39,057 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 05:27:39,358 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 05:27:39,364 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 05:27:39,368 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 05:27:39,369 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 05:27:39,369 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 05:27:39,369 - INFO - ==================================================
+2025-08-26 05:27:39,369 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 05:27:39,369 - INFO - ==================================================
+2025-08-26 05:27:39,369 - INFO - Total tickers: 3
+2025-08-26 05:27:39,369 - INFO - Successful: 3
+2025-08-26 05:27:39,369 - INFO - Failed: 0
+2025-08-26 05:27:39,369 - INFO - 
+Output structure:
+2025-08-26 05:27:39,369 - INFO - test_output/
+2025-08-26 05:27:39,370 - INFO -   AAPL/
+2025-08-26 05:27:39,370 - INFO -     AAPL_2024_01.parquet
+2025-08-26 05:27:39,370 - INFO -   GOOGL/
+2025-08-26 05:27:39,370 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 05:27:39,371 - INFO -   MSFT/
+2025-08-26 05:27:39,371 - INFO -     MSFT_2024_01.parquet
+2025-08-26 05:27:39,371 - INFO - Test pipeline completed
+2025-08-26 05:42:43,098 - INFO - Configuration loaded from config.json
+2025-08-26 05:42:43,098 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 05:42:43,098 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 05:42:43,098 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 05:42:43,099 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 05:42:43,099 - INFO - Output directory: test_output
+2025-08-26 05:42:43,099 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 05:42:43,099 - INFO - Processing ticker: AAPL
+2025-08-26 05:42:43,099 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 05:42:43,487 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 05:42:43,496 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 05:42:43,519 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 05:42:43,519 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 05:42:43,519 - INFO - ✓ Successfully processed AAPL
+2025-08-26 05:42:43,519 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:42:56,024 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 05:42:56,026 - INFO - Processing ticker: MSFT
+2025-08-26 05:42:56,026 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 05:42:56,337 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 05:42:56,342 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 05:42:56,346 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 05:42:56,346 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 05:42:56,346 - INFO - ✓ Successfully processed MSFT
+2025-08-26 05:42:56,346 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:43:08,852 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 05:43:08,853 - INFO - Processing ticker: GOOGL
+2025-08-26 05:43:08,854 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 05:43:09,158 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 05:43:09,163 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 05:43:09,167 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 05:43:09,167 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 05:43:09,167 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 05:43:09,167 - INFO - ==================================================
+2025-08-26 05:43:09,167 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 05:43:09,167 - INFO - ==================================================
+2025-08-26 05:43:09,168 - INFO - Total tickers: 3
+2025-08-26 05:43:09,168 - INFO - Successful: 3
+2025-08-26 05:43:09,168 - INFO - Failed: 0
+2025-08-26 05:43:09,168 - INFO - 
+Output structure:
+2025-08-26 05:43:09,168 - INFO - test_output/
+2025-08-26 05:43:09,168 - INFO -   AAPL/
+2025-08-26 05:43:09,168 - INFO -     AAPL_2024_01.parquet
+2025-08-26 05:43:09,169 - INFO -   GOOGL/
+2025-08-26 05:43:09,169 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 05:43:09,169 - INFO -   MSFT/
+2025-08-26 05:43:09,169 - INFO -     MSFT_2024_01.parquet
+2025-08-26 05:43:09,169 - INFO - Test pipeline completed
+2025-08-26 05:49:10,352 - INFO - Configuration loaded from config.json
+2025-08-26 05:49:10,352 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 05:49:10,352 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 05:49:10,352 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 05:49:10,353 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 05:49:10,353 - INFO - Output directory: test_output
+2025-08-26 05:49:10,353 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 05:49:10,353 - INFO - Processing ticker: AAPL
+2025-08-26 05:49:10,353 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 05:49:10,743 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 05:49:10,755 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 05:49:10,771 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 05:49:10,771 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 05:49:10,771 - INFO - ✓ Successfully processed AAPL
+2025-08-26 05:49:10,771 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:49:23,279 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 05:49:23,280 - INFO - Processing ticker: MSFT
+2025-08-26 05:49:23,280 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 05:49:23,596 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 05:49:23,602 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 05:49:23,606 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 05:49:23,606 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 05:49:23,607 - INFO - ✓ Successfully processed MSFT
+2025-08-26 05:49:23,607 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:49:36,112 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 05:49:36,113 - INFO - Processing ticker: GOOGL
+2025-08-26 05:49:36,113 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 05:49:36,521 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 05:49:36,529 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 05:49:36,538 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 05:49:36,538 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 05:49:36,538 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 05:49:36,538 - INFO - ==================================================
+2025-08-26 05:49:36,538 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 05:49:36,538 - INFO - ==================================================
+2025-08-26 05:49:36,538 - INFO - Total tickers: 3
+2025-08-26 05:49:36,538 - INFO - Successful: 3
+2025-08-26 05:49:36,538 - INFO - Failed: 0
+2025-08-26 05:49:36,538 - INFO - 
+Output structure:
+2025-08-26 05:49:36,539 - INFO - test_output/
+2025-08-26 05:49:36,540 - INFO -   AAPL/
+2025-08-26 05:49:36,540 - INFO -     AAPL_2024_01.parquet
+2025-08-26 05:49:36,540 - INFO -   GOOGL/
+2025-08-26 05:49:36,540 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 05:49:36,541 - INFO -   MSFT/
+2025-08-26 05:49:36,541 - INFO -     MSFT_2024_01.parquet
+2025-08-26 05:49:36,541 - INFO - Test pipeline completed
+2025-08-26 05:51:07,473 - INFO - Configuration loaded from config.json
+2025-08-26 05:51:07,473 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 05:51:07,473 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 05:51:07,473 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 05:51:07,473 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 05:51:07,473 - INFO - Output directory: test_output
+2025-08-26 05:51:07,473 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 05:51:07,473 - INFO - Processing ticker: AAPL
+2025-08-26 05:51:07,473 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 05:51:07,834 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 05:51:07,840 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 05:51:07,854 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 05:51:07,854 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 05:51:07,854 - INFO - ✓ Successfully processed AAPL
+2025-08-26 05:51:07,854 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:51:20,359 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 05:51:20,360 - INFO - Processing ticker: MSFT
+2025-08-26 05:51:20,360 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 05:51:20,660 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 05:51:20,667 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 05:51:20,671 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 05:51:20,671 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 05:51:20,671 - INFO - ✓ Successfully processed MSFT
+2025-08-26 05:51:20,671 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 05:51:33,173 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 05:51:33,174 - INFO - Processing ticker: GOOGL
+2025-08-26 05:51:33,174 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 05:51:33,470 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 05:51:33,473 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 05:51:33,475 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 05:51:33,475 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 05:51:33,475 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 05:51:33,475 - INFO - ==================================================
+2025-08-26 05:51:33,475 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 05:51:33,475 - INFO - ==================================================
+2025-08-26 05:51:33,475 - INFO - Total tickers: 3
+2025-08-26 05:51:33,475 - INFO - Successful: 3
+2025-08-26 05:51:33,475 - INFO - Failed: 0
+2025-08-26 05:51:33,475 - INFO - 
+Output structure:
+2025-08-26 05:51:33,476 - INFO - test_output/
+2025-08-26 05:51:33,476 - INFO -   AAPL/
+2025-08-26 05:51:33,476 - INFO -     AAPL_2024_01.parquet
+2025-08-26 05:51:33,476 - INFO -   GOOGL/
+2025-08-26 05:51:33,476 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 05:51:33,477 - INFO -   MSFT/
+2025-08-26 05:51:33,477 - INFO -     MSFT_2024_01.parquet
+2025-08-26 05:51:33,477 - INFO - Test pipeline completed
+2025-08-26 06:12:29,269 - INFO - Configuration loaded from config.json
+2025-08-26 06:12:29,269 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 06:12:29,269 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 06:12:29,269 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 06:12:29,269 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 06:12:29,269 - INFO - Output directory: test_output
+2025-08-26 06:12:29,270 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 06:12:29,270 - INFO - Processing ticker: AAPL
+2025-08-26 06:12:29,270 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 06:12:29,647 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 06:12:29,662 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 06:12:29,686 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 06:12:29,687 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 06:12:29,687 - INFO - ✓ Successfully processed AAPL
+2025-08-26 06:12:29,687 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 06:12:42,193 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 06:12:42,194 - INFO - Processing ticker: MSFT
+2025-08-26 06:12:42,194 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 06:12:42,487 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 06:12:42,491 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 06:12:42,494 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 06:12:42,495 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 06:12:42,495 - INFO - ✓ Successfully processed MSFT
+2025-08-26 06:12:42,495 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 06:12:55,000 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 06:12:55,002 - INFO - Processing ticker: GOOGL
+2025-08-26 06:12:55,002 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 06:12:55,310 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 06:12:55,314 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 06:12:55,317 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 06:12:55,317 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 06:12:55,318 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 06:12:55,318 - INFO - ==================================================
+2025-08-26 06:12:55,318 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 06:12:55,318 - INFO - ==================================================
+2025-08-26 06:12:55,318 - INFO - Total tickers: 3
+2025-08-26 06:12:55,318 - INFO - Successful: 3
+2025-08-26 06:12:55,318 - INFO - Failed: 0
+2025-08-26 06:12:55,318 - INFO - 
+Output structure:
+2025-08-26 06:12:55,318 - INFO - test_output/
+2025-08-26 06:12:55,318 - INFO -   AAPL/
+2025-08-26 06:12:55,319 - INFO -     AAPL_2024_01.parquet
+2025-08-26 06:12:55,319 - INFO -   GOOGL/
+2025-08-26 06:12:55,319 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 06:12:55,319 - INFO -   MSFT/
+2025-08-26 06:12:55,319 - INFO -     MSFT_2024_01.parquet
+2025-08-26 06:12:55,319 - INFO - Test pipeline completed
+2025-08-26 06:26:16,469 - INFO - Configuration loaded from config.json
+2025-08-26 06:26:16,469 - INFO - Test Equity Data Pipeline initialized
+2025-08-26 06:26:16,469 - INFO - Starting Test Equity Data Pipeline
+2025-08-26 06:26:16,469 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-26 06:26:16,469 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-26 06:26:16,469 - INFO - Output directory: test_output
+2025-08-26 06:26:16,469 - INFO - Processing ticker 1/3: AAPL
+2025-08-26 06:26:16,469 - INFO - Processing ticker: AAPL
+2025-08-26 06:26:16,469 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-26 06:26:16,875 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-26 06:26:16,894 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-26 06:26:16,914 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-26 06:26:16,914 - INFO - Completed AAPL: 1/1 months successful
+2025-08-26 06:26:16,915 - INFO - ✓ Successfully processed AAPL
+2025-08-26 06:26:16,915 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 06:26:29,420 - INFO - Processing ticker 2/3: MSFT
+2025-08-26 06:26:29,421 - INFO - Processing ticker: MSFT
+2025-08-26 06:26:29,421 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-26 06:26:29,719 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-26 06:26:29,724 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-26 06:26:29,727 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-26 06:26:29,728 - INFO - Completed MSFT: 1/1 months successful
+2025-08-26 06:26:29,728 - INFO - ✓ Successfully processed MSFT
+2025-08-26 06:26:29,728 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-26 06:26:42,233 - INFO - Processing ticker 3/3: GOOGL
+2025-08-26 06:26:42,235 - INFO - Processing ticker: GOOGL
+2025-08-26 06:26:42,235 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-26 06:26:42,533 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-26 06:26:42,537 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-26 06:26:42,541 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-26 06:26:42,541 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-26 06:26:42,541 - INFO - ✓ Successfully processed GOOGL
+2025-08-26 06:26:42,541 - INFO - ==================================================
+2025-08-26 06:26:42,541 - INFO - TEST PIPELINE SUMMARY
+2025-08-26 06:26:42,541 - INFO - ==================================================
+2025-08-26 06:26:42,541 - INFO - Total tickers: 3
+2025-08-26 06:26:42,541 - INFO - Successful: 3
+2025-08-26 06:26:42,541 - INFO - Failed: 0
+2025-08-26 06:26:42,541 - INFO - 
+Output structure:
+2025-08-26 06:26:42,542 - INFO - test_output/
+2025-08-26 06:26:42,542 - INFO -   AAPL/
+2025-08-26 06:26:42,542 - INFO -     AAPL_2024_01.parquet
+2025-08-26 06:26:42,542 - INFO -   GOOGL/
+2025-08-26 06:26:42,542 - INFO -     GOOGL_2024_01.parquet
+2025-08-26 06:26:42,543 - INFO -   MSFT/
+2025-08-26 06:26:42,543 - INFO -     MSFT_2024_01.parquet
+2025-08-26 06:26:42,543 - INFO - Test pipeline completed
+2025-08-30 16:16:15,036 - INFO - Configuration loaded from config.json
+2025-08-30 16:16:15,037 - INFO - Test Equity Data Pipeline initialized
+2025-08-30 16:16:15,037 - INFO - Starting Test Equity Data Pipeline
+2025-08-30 16:16:15,037 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-30 16:16:15,037 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-30 16:16:15,037 - INFO - Output directory: test_output
+2025-08-30 16:16:15,037 - INFO - Processing ticker 1/3: AAPL
+2025-08-30 16:16:15,037 - INFO - Processing ticker: AAPL
+2025-08-30 16:16:15,037 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-30 16:16:15,439 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-30 16:16:15,454 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-30 16:16:15,479 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-30 16:16:15,479 - INFO - Completed AAPL: 1/1 months successful
+2025-08-30 16:16:15,479 - INFO - ✓ Successfully processed AAPL
+2025-08-30 16:16:15,479 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-30 16:16:27,984 - INFO - Processing ticker 2/3: MSFT
+2025-08-30 16:16:27,985 - INFO - Processing ticker: MSFT
+2025-08-30 16:16:27,985 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-30 16:16:28,276 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-30 16:16:28,282 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-30 16:16:28,286 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-30 16:16:28,287 - INFO - Completed MSFT: 1/1 months successful
+2025-08-30 16:16:28,287 - INFO - ✓ Successfully processed MSFT
+2025-08-30 16:16:28,287 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-30 16:16:40,791 - INFO - Processing ticker 3/3: GOOGL
+2025-08-30 16:16:40,791 - INFO - Processing ticker: GOOGL
+2025-08-30 16:16:40,791 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-30 16:16:41,172 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-30 16:16:41,177 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-30 16:16:41,180 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-30 16:16:41,180 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-30 16:16:41,180 - INFO - ✓ Successfully processed GOOGL
+2025-08-30 16:16:41,180 - INFO - ==================================================
+2025-08-30 16:16:41,180 - INFO - TEST PIPELINE SUMMARY
+2025-08-30 16:16:41,180 - INFO - ==================================================
+2025-08-30 16:16:41,180 - INFO - Total tickers: 3
+2025-08-30 16:16:41,180 - INFO - Successful: 3
+2025-08-30 16:16:41,180 - INFO - Failed: 0
+2025-08-30 16:16:41,180 - INFO - 
+Output structure:
+2025-08-30 16:16:41,181 - INFO - test_output/
+2025-08-30 16:16:41,181 - INFO -   AAPL/
+2025-08-30 16:16:41,181 - INFO -     AAPL_2024_01.parquet
+2025-08-30 16:16:41,181 - INFO -   GOOGL/
+2025-08-30 16:16:41,181 - INFO -     GOOGL_2024_01.parquet
+2025-08-30 16:16:41,181 - INFO -   MSFT/
+2025-08-30 16:16:41,181 - INFO -     MSFT_2024_01.parquet
+2025-08-30 16:16:41,182 - INFO - Test pipeline completed
+2025-08-30 16:21:56,847 - INFO - Configuration loaded from config.json
+2025-08-30 16:21:56,848 - INFO - Test Equity Data Pipeline initialized
+2025-08-30 16:21:56,848 - INFO - Starting Test Equity Data Pipeline
+2025-08-30 16:21:56,848 - INFO - Date range: 2024-01-01 to 2024-01-31
+2025-08-30 16:21:56,848 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-30 16:21:56,848 - INFO - Output directory: test_output
+2025-08-30 16:21:56,848 - INFO - Processing ticker 1/3: AAPL
+2025-08-30 16:21:56,848 - INFO - Processing ticker: AAPL
+2025-08-30 16:21:56,848 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-30 16:21:57,225 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-30 16:21:57,236 - INFO - Processed 21 records for AAPL in 2024-01
+2025-08-30 16:21:57,258 - INFO - Saved test_output/AAPL/AAPL_2024_01.parquet (21 records)
+2025-08-30 16:21:57,258 - INFO - Completed AAPL: 1/1 months successful
+2025-08-30 16:21:57,258 - INFO - ✓ Successfully processed AAPL
+2025-08-30 16:21:57,258 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-30 16:22:09,763 - INFO - Processing ticker 2/3: MSFT
+2025-08-30 16:22:09,764 - INFO - Processing ticker: MSFT
+2025-08-30 16:22:09,764 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-30 16:22:10,124 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-30 16:22:10,128 - INFO - Processed 21 records for MSFT in 2024-01
+2025-08-30 16:22:10,132 - INFO - Saved test_output/MSFT/MSFT_2024_01.parquet (21 records)
+2025-08-30 16:22:10,132 - INFO - Completed MSFT: 1/1 months successful
+2025-08-30 16:22:10,132 - INFO - ✓ Successfully processed MSFT
+2025-08-30 16:22:10,132 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-30 16:22:22,637 - INFO - Processing ticker 3/3: GOOGL
+2025-08-30 16:22:22,639 - INFO - Processing ticker: GOOGL
+2025-08-30 16:22:22,639 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-30 16:22:22,931 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-30 16:22:22,948 - INFO - Processed 21 records for GOOGL in 2024-01
+2025-08-30 16:22:22,953 - INFO - Saved test_output/GOOGL/GOOGL_2024_01.parquet (21 records)
+2025-08-30 16:22:22,953 - INFO - Completed GOOGL: 1/1 months successful
+2025-08-30 16:22:22,953 - INFO - ✓ Successfully processed GOOGL
+2025-08-30 16:22:22,954 - INFO - ==================================================
+2025-08-30 16:22:22,954 - INFO - TEST PIPELINE SUMMARY
+2025-08-30 16:22:22,954 - INFO - ==================================================
+2025-08-30 16:22:22,954 - INFO - Total tickers: 3
+2025-08-30 16:22:22,954 - INFO - Successful: 3
+2025-08-30 16:22:22,954 - INFO - Failed: 0
+2025-08-30 16:22:22,954 - INFO - 
+Output structure:
+2025-08-30 16:22:22,955 - INFO - test_output/
+2025-08-30 16:22:22,956 - INFO -   AAPL/
+2025-08-30 16:22:22,956 - INFO -     AAPL_2024_01.parquet
+2025-08-30 16:22:22,956 - INFO -   GOOGL/
+2025-08-30 16:22:22,956 - INFO -     GOOGL_2024_01.parquet
+2025-08-30 16:22:22,956 - INFO -   MSFT/
+2025-08-30 16:22:22,957 - INFO -     MSFT_2024_01.parquet
+2025-08-30 16:22:22,957 - INFO - Test pipeline completed

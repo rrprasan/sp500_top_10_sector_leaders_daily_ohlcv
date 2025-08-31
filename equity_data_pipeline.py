@@ -1,0 +1,492 @@
+#!/usr/bin/env python3
+"""
+SP500 Top 10 Sector Leaders Daily OHLCV Data Pipeline
+
+This application automates the extraction of historical equity data for a list of tickers
+from Snowflake, processes it into columnar format, and stores it in AWS S3 for use in
+a Snowflake data pipeline.
+
+Author: Automated Data Pipeline
+Date: 2024
+"""
+
+import json
+import logging
+import time
+from datetime import datetime, timedelta
+from typing import List, Dict, Any, Optional
+import os
+import sys
+
+import snowflake.connector
+import requests
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
+import boto3
+from botocore.exceptions import ClientError, NoCredentialsError
+
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('equity_data_pipeline.log'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+
+class EquityDataPipeline:
+    """
+    Main class for the equity data pipeline that handles:
+    1. Ticker retrieval from Snowflake
+    2. Data extraction from Polygon.io
+    3. Data processing and storage in S3
+    """
+    
+    def __init__(self, config_path: str = 'config.json'):
+        """
+        Initialize the pipeline with configuration.
+        
+        Args:
+            config_path (str): Path to the configuration file containing API keys
+        """
+        self.config = self._load_config(config_path)
+        self.s3_client = None
+        self.snowflake_conn = None
+        
+        # Constants
+        self.S3_BUCKET = 'sp500-top-10-sector-leaders-ohlcv-s3bkt'
+        self.RATE_LIMIT_DELAY = 12.5  # seconds between API calls (5 calls per minute)
+        self.START_DATE = '2024-01-01'
+        self.END_DATE = '2025-07-31'
+        
+        logger.info("EquityDataPipeline initialized successfully")
+    
+    def _load_config(self, config_path: str) -> Dict[str, Any]:
+        """
+        Load configuration from JSON file.
+        
+        Args:
+            config_path (str): Path to configuration file
+            
+        Returns:
+            Dict[str, Any]: Configuration dictionary
+            
+        Raises:
+            FileNotFoundError: If config file doesn't exist
+            json.JSONDecodeError: If config file is invalid JSON
+        """
+        try:
+            with open(config_path, 'r') as f:
+                config = json.load(f)
+            logger.info(f"Configuration loaded from {config_path}")
+            return config
+        except FileNotFoundError:
+            logger.error(f"Configuration file {config_path} not found")
+            raise
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON in configuration file: {e}")
+            raise
+    
+    def _connect_to_snowflake(self) -> snowflake.connector.SnowflakeConnection:
+        """
+        Establish connection to Snowflake using the DEMO_PRAJAGOPAL connection.
+        
+        Returns:
+            snowflake.connector.SnowflakeConnection: Active Snowflake connection
+            
+        Raises:
+            snowflake.connector.Error: If connection fails
+        """
+        try:
+            # Use the pre-configured connection from connections.toml
+            conn = snowflake.connector.connect(
+                connection_name='DEMO_PRAJAGOPAL'
+            )
+            logger.info("Successfully connected to Snowflake")
+            return conn
+        except Exception as e:
+            logger.error(f"Failed to connect to Snowflake: {e}")
+            raise
+    
+    def _get_tickers_from_snowflake(self) -> List[str]:
+        """
+        Retrieve ticker symbols from Snowflake database.
+        
+        Returns:
+            List[str]: List of ticker symbols
+            
+        Raises:
+            Exception: If query execution fails
+        """
+        try:
+            self.snowflake_conn = self._connect_to_snowflake()
+            cursor = self.snowflake_conn.cursor()
+            
+            query = "SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES"
+            logger.info(f"Executing query: {query}")
+            
+            cursor.execute(query)
+            results = cursor.fetchall()
+            
+            # Extract ticker symbols from results
+            tickers = [row[0] for row in results]
+            logger.info(f"Retrieved {len(tickers)} tickers from Snowflake")
+            
+            cursor.close()
+            return tickers
+            
+        except Exception as e:
+            logger.error(f"Failed to retrieve tickers from Snowflake: {e}")
+            raise
+        finally:
+            if self.snowflake_conn:
+                self.snowflake_conn.close()
+                logger.info("Snowflake connection closed")
+    
+    def _initialize_s3_client(self) -> boto3.client:
+        """
+        Initialize AWS S3 client.
+        
+        Returns:
+            boto3.client: S3 client instance
+            
+        Raises:
+            NoCredentialsError: If AWS credentials are not configured
+        """
+        try:
+            s3_client = boto3.client('s3')
+            # Test the connection by listing buckets
+            s3_client.head_bucket(Bucket=self.S3_BUCKET)
+            logger.info("S3 client initialized successfully")
+            return s3_client
+        except NoCredentialsError:
+            logger.error("AWS credentials not found. Please configure AWS credentials.")
+            raise
+        except ClientError as e:
+            logger.error(f"Failed to access S3 bucket {self.S3_BUCKET}: {e}")
+            raise
+    
+    def _get_polygon_data(self, ticker: str, start_date: str, end_date: str) -> Optional[Dict[str, Any]]:
+        """
+        Fetch OHLCV data from Polygon.io API for a specific ticker and date range.
+        
+        Args:
+            ticker (str): Stock ticker symbol
+            start_date (str): Start date in YYYY-MM-DD format
+            end_date (str): End date in YYYY-MM-DD format
+            
+        Returns:
+            Optional[Dict[str, Any]]: API response data or None if failed
+        """
+        url = f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}"
+        params = {
+            'apikey': self.config['polygon_api_key'],
+            'adjusted': 'true',
+            'sort': 'asc'
+        }
+        
+        try:
+            logger.info(f"Fetching data for {ticker} from {start_date} to {end_date}")
+            response = requests.get(url, params=params, timeout=30)
+            response.raise_for_status()
+            
+            data = response.json()
+            
+            if data.get('status') == 'OK' and data.get('results'):
+                logger.info(f"Successfully retrieved {len(data['results'])} records for {ticker}")
+                return data
+            else:
+                logger.warning(f"No data available for {ticker} in the specified date range")
+                return None
+                
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Failed to fetch data for {ticker}: {e}")
+            return None
+        except Exception as e:
+            logger.error(f"Unexpected error fetching data for {ticker}: {e}")
+            return None
+    
+    def _process_monthly_data(self, ticker: str, data: Dict[str, Any]) -> Dict[str, pd.DataFrame]:
+        """
+        Process API data and organize it by month.
+        
+        Args:
+            ticker (str): Stock ticker symbol
+            data (Dict[str, Any]): Raw API response data
+            
+        Returns:
+            Dict[str, pd.DataFrame]: Dictionary with month keys and DataFrame values
+        """
+        if not data.get('results'):
+            return {}
+        
+        # Convert API results to DataFrame
+        records = []
+        for result in data['results']:
+            # Convert Unix timestamp (milliseconds) to datetime
+            date = datetime.fromtimestamp(result['t'] / 1000)
+            
+            record = {
+                'TICKER': ticker,
+                'OHLC_DATE': date.strftime('%Y-%m-%d'),
+                'OPEN_PRICE': result['o'],
+                'HIGH_PRICE': result['h'],
+                'LOW_PRICE': result['l'],
+                'CLOSE_PRICE': result['c'],
+                'TRADING_VOLUME': result['v'],
+                'OHLC_TIMESTAMP': result['t']  # Keep milliseconds for TIMESTAMP_MILLIS
+            }
+            records.append(record)
+        
+        df = pd.DataFrame(records)
+        df['OHLC_DATE'] = pd.to_datetime(df['OHLC_DATE'])
+        # Convert OHLC_TIMESTAMP to datetime for TIMESTAMP_MILLIS format
+        df['OHLC_TIMESTAMP'] = pd.to_datetime(df['OHLC_TIMESTAMP'], unit='ms')
+        
+        # Group by year-month
+        monthly_data = {}
+        for (year, month), group in df.groupby([df['OHLC_DATE'].dt.year, df['OHLC_DATE'].dt.month]):
+            month_key = f"{year:04d}-{month:02d}"
+            monthly_data[month_key] = group.copy()
+            logger.info(f"Processed {len(group)} records for {ticker} in {month_key}")
+        
+        return monthly_data
+    
+    def _save_to_parquet_and_upload(self, ticker: str, month: str, df: pd.DataFrame) -> bool:
+        """
+        Save DataFrame to Parquet format and upload to S3.
+        
+        Args:
+            ticker (str): Stock ticker symbol
+            month (str): Month in YYYY-MM format
+            df (pd.DataFrame): Data to save
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        try:
+            # Create temporary local file with consistent naming
+            month_formatted = month.replace('-', '_')  # Convert 2024-01 to 2024_01
+            local_filename = f"{ticker}_{month_formatted}.parquet"
+            
+            # Create schema with TIMESTAMP_MILLIS for OHLC_TIMESTAMP
+            schema = pa.schema([
+                pa.field('TICKER', pa.string()),
+                pa.field('OHLC_DATE', pa.timestamp('us')),
+                pa.field('OPEN_PRICE', pa.float64()),
+                pa.field('HIGH_PRICE', pa.float64()),
+                pa.field('LOW_PRICE', pa.float64()),
+                pa.field('CLOSE_PRICE', pa.float64()),
+                pa.field('TRADING_VOLUME', pa.float64()),
+                pa.field('OHLC_TIMESTAMP', pa.timestamp('us'))  # TIMESTAMP_MICROS for Snowflake TIMESTAMP_NTZ
+            ])
+            
+            # Convert to Parquet format using pyarrow with explicit schema
+            table = pa.Table.from_pandas(df, schema=schema, preserve_index=False)
+            pq.write_table(table, local_filename, compression='snappy')
+            
+            logger.info(f"Created Parquet file: {local_filename}")
+            
+            # Upload to S3 with ticker in filename
+            s3_key = f"{ticker}/{ticker}_{month_formatted}.parquet"
+            
+            if not self.s3_client:
+                self.s3_client = self._initialize_s3_client()
+            
+            self.s3_client.upload_file(
+                local_filename,
+                self.S3_BUCKET,
+                s3_key
+            )
+            
+            logger.info(f"Successfully uploaded {s3_key} to S3 bucket {self.S3_BUCKET}")
+            
+            # Clean up local file
+            os.remove(local_filename)
+            logger.info(f"Cleaned up local file: {local_filename}")
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to save and upload data for {ticker} {month}: {e}")
+            # Clean up local file if it exists
+            if os.path.exists(local_filename):
+                try:
+                    os.remove(local_filename)
+                except:
+                    pass
+            return False
+    
+    def _generate_date_ranges(self) -> List[tuple]:
+        """
+        Generate monthly date ranges from START_DATE to END_DATE.
+        
+        Returns:
+            List[tuple]: List of (start_date, end_date) tuples for each month
+        """
+        date_ranges = []
+        current_date = datetime.strptime(self.START_DATE, '%Y-%m-%d')
+        end_date = datetime.strptime(self.END_DATE, '%Y-%m-%d')
+        
+        while current_date <= end_date:
+            # Calculate the last day of the current month
+            if current_date.month == 12:
+                next_month = current_date.replace(year=current_date.year + 1, month=1, day=1)
+            else:
+                next_month = current_date.replace(month=current_date.month + 1, day=1)
+            
+            month_end = next_month - timedelta(days=1)
+            
+            # Don't go beyond the specified end date
+            if month_end > end_date:
+                month_end = end_date
+            
+            date_ranges.append((
+                current_date.strftime('%Y-%m-%d'),
+                month_end.strftime('%Y-%m-%d')
+            ))
+            
+            current_date = next_month
+            
+            # Break if we've reached the end date
+            if current_date > end_date:
+                break
+        
+        logger.info(f"Generated {len(date_ranges)} monthly date ranges")
+        return date_ranges
+    
+    def process_ticker(self, ticker: str) -> bool:
+        """
+        Process a single ticker: fetch data, organize by month, and upload to S3.
+        
+        Args:
+            ticker (str): Stock ticker symbol to process
+            
+        Returns:
+            bool: True if all months processed successfully, False otherwise
+        """
+        logger.info(f"Starting processing for ticker: {ticker}")
+        success_count = 0
+        total_months = 0
+        
+        try:
+            date_ranges = self._generate_date_ranges()
+            
+            for start_date, end_date in date_ranges:
+                # Implement rate limiting - wait before each API call
+                logger.info(f"Rate limiting: waiting {self.RATE_LIMIT_DELAY} seconds...")
+                time.sleep(self.RATE_LIMIT_DELAY)
+                
+                # Fetch data from Polygon.io
+                data = self._get_polygon_data(ticker, start_date, end_date)
+                
+                if data:
+                    # Process and organize data by month
+                    monthly_data = self._process_monthly_data(ticker, data)
+                    
+                    # Save each month's data to S3
+                    for month, df in monthly_data.items():
+                        total_months += 1
+                        if self._save_to_parquet_and_upload(ticker, month, df):
+                            success_count += 1
+                        else:
+                            logger.error(f"Failed to process {ticker} for month {month}")
+                else:
+                    logger.warning(f"No data retrieved for {ticker} from {start_date} to {end_date}")
+            
+            logger.info(f"Completed processing {ticker}: {success_count}/{total_months} months successful")
+            return success_count == total_months and total_months > 0
+            
+        except Exception as e:
+            logger.error(f"Error processing ticker {ticker}: {e}")
+            return False
+    
+    def run(self) -> None:
+        """
+        Main execution method that orchestrates the entire pipeline.
+        """
+        logger.info("Starting Equity Data Pipeline")
+        
+        try:
+            # Step 1: Get tickers from Snowflake
+            logger.info("Step 1: Retrieving tickers from Snowflake")
+            tickers = self._get_tickers_from_snowflake()
+            
+            if not tickers:
+                logger.error("No tickers retrieved from Snowflake. Exiting.")
+                return
+            
+            # Step 2: Initialize S3 client
+            logger.info("Step 2: Initializing S3 client")
+            self.s3_client = self._initialize_s3_client()
+            
+            # Step 3: Process each ticker
+            logger.info(f"Step 3: Processing {len(tickers)} tickers")
+            successful_tickers = 0
+            failed_tickers = []
+            
+            for i, ticker in enumerate(tickers, 1):
+                logger.info(f"Processing ticker {i}/{len(tickers)}: {ticker}")
+                
+                try:
+                    if self.process_ticker(ticker):
+                        successful_tickers += 1
+                        logger.info(f"Successfully processed {ticker}")
+                    else:
+                        failed_tickers.append(ticker)
+                        logger.error(f"Failed to process {ticker}")
+                        
+                except Exception as e:
+                    failed_tickers.append(ticker)
+                    logger.error(f"Exception processing {ticker}: {e}")
+            
+            # Step 4: Summary
+            logger.info("="*50)
+            logger.info("PIPELINE EXECUTION SUMMARY")
+            logger.info("="*50)
+            logger.info(f"Total tickers processed: {len(tickers)}")
+            logger.info(f"Successful: {successful_tickers}")
+            logger.info(f"Failed: {len(failed_tickers)}")
+            
+            if failed_tickers:
+                logger.warning(f"Failed tickers: {', '.join(failed_tickers)}")
+            
+            logger.info("Equity Data Pipeline completed")
+            
+        except Exception as e:
+            logger.error(f"Pipeline execution failed: {e}")
+            raise
+
+
+def main():
+    """
+    Main entry point for the application.
+    """
+    try:
+        # Check if config file exists
+        config_file = 'config.json'
+        if not os.path.exists(config_file):
+            logger.error(f"Configuration file '{config_file}' not found. Please create it with your Polygon.io API key.")
+            logger.error("Example config.json content:")
+            logger.error('{"polygon_api_key": "your_api_key_here"}')
+            sys.exit(1)
+        
+        # Initialize and run the pipeline
+        pipeline = EquityDataPipeline(config_file)
+        pipeline.run()
+        
+    except KeyboardInterrupt:
+        logger.info("Pipeline interrupted by user")
+        sys.exit(1)
+    except Exception as e:
+        logger.error(f"Pipeline failed with error: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

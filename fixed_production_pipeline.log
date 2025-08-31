@@ -1,0 +1,286 @@
+2025-08-31 05:19:16,170 - INFO - Configuration loaded from config.json
+2025-08-31 05:19:16,172 - INFO - FIXED Production OHLCV Pipeline initialized
+2025-08-31 05:19:16,172 - INFO - Starting FIXED Production OHLCV Pipeline
+2025-08-31 05:19:16,172 - INFO - Date range: 2024-01-01 to 2024-12-31
+2025-08-31 05:19:16,172 - INFO - Tickers: ['AAPL', 'MSFT', 'GOOGL']
+2025-08-31 05:19:16,172 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 05:19:16,172 - INFO - AWS Credentials: /Users/prajagopal/.aws
+2025-08-31 05:19:16,172 - INFO - Initializing S3 client...
+2025-08-31 05:19:16,178 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-08-31 05:19:16,564 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 05:19:16,564 - INFO - Processing ticker 1/3: AAPL
+2025-08-31 05:19:16,564 - INFO - Starting processing for ticker: AAPL
+2025-08-31 05:19:16,564 - INFO - Generated 12 monthly date ranges
+2025-08-31 05:19:16,564 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:19:29,069 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-31 05:19:29,479 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 05:19:29,493 - INFO - Processed 21 records for AAPL in 2024-01 (filtered from 21 total)
+2025-08-31 05:19:29,505 - INFO - Created Parquet file: AAPL_2024_01.parquet with 21 records
+2025-08-31 05:19:29,910 - INFO - Successfully uploaded AAPL_2024_01.parquet to S3 bucket root
+2025-08-31 05:19:29,911 - INFO - Cleaned up local file: AAPL_2024_01.parquet
+2025-08-31 05:19:29,911 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:19:42,415 - INFO - Fetching data for AAPL from 2024-02-01 to 2024-02-29
+2025-08-31 05:19:42,734 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 05:19:42,743 - INFO - Processed 19 records for AAPL in 2024-02 (filtered from 20 total)
+2025-08-31 05:19:42,747 - INFO - Created Parquet file: AAPL_2024_02.parquet with 19 records
+2025-08-31 05:19:42,968 - INFO - Successfully uploaded AAPL_2024_02.parquet to S3 bucket root
+2025-08-31 05:19:42,968 - INFO - Cleaned up local file: AAPL_2024_02.parquet
+2025-08-31 05:19:42,969 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:19:55,470 - INFO - Fetching data for AAPL from 2024-03-01 to 2024-03-31
+2025-08-31 05:19:55,861 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 05:19:55,864 - INFO - Processed 19 records for AAPL in 2024-03 (filtered from 20 total)
+2025-08-31 05:19:55,866 - INFO - Created Parquet file: AAPL_2024_03.parquet with 19 records
+2025-08-31 05:19:56,239 - INFO - Successfully uploaded AAPL_2024_03.parquet to S3 bucket root
+2025-08-31 05:19:56,239 - INFO - Cleaned up local file: AAPL_2024_03.parquet
+2025-08-31 05:19:56,239 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:20:08,744 - INFO - Fetching data for AAPL from 2024-04-01 to 2024-04-30
+2025-08-31 05:20:09,073 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 05:20:09,082 - INFO - Processed 21 records for AAPL in 2024-04 (filtered from 22 total)
+2025-08-31 05:20:09,086 - INFO - Created Parquet file: AAPL_2024_04.parquet with 21 records
+2025-08-31 05:20:09,374 - INFO - Successfully uploaded AAPL_2024_04.parquet to S3 bucket root
+2025-08-31 05:20:09,375 - INFO - Cleaned up local file: AAPL_2024_04.parquet
+2025-08-31 05:20:09,376 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:20:21,878 - INFO - Fetching data for AAPL from 2024-05-01 to 2024-05-31
+2025-08-31 05:20:22,196 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 05:20:22,204 - INFO - Processed 21 records for AAPL in 2024-05 (filtered from 22 total)
+2025-08-31 05:20:22,209 - INFO - Created Parquet file: AAPL_2024_05.parquet with 21 records
+2025-08-31 05:20:22,578 - INFO - Successfully uploaded AAPL_2024_05.parquet to S3 bucket root
+2025-08-31 05:20:22,579 - INFO - Cleaned up local file: AAPL_2024_05.parquet
+2025-08-31 05:20:22,580 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:20:35,080 - INFO - Fetching data for AAPL from 2024-06-01 to 2024-06-30
+2025-08-31 05:20:35,405 - INFO - Successfully retrieved 19 records for AAPL
+2025-08-31 05:20:35,412 - INFO - Processed 19 records for AAPL in 2024-06 (filtered from 19 total)
+2025-08-31 05:20:35,416 - INFO - Created Parquet file: AAPL_2024_06.parquet with 19 records
+2025-08-31 05:20:35,674 - INFO - Successfully uploaded AAPL_2024_06.parquet to S3 bucket root
+2025-08-31 05:20:35,675 - INFO - Cleaned up local file: AAPL_2024_06.parquet
+2025-08-31 05:20:35,675 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:20:48,179 - INFO - Fetching data for AAPL from 2024-07-01 to 2024-07-31
+2025-08-31 05:20:48,501 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 05:20:48,510 - INFO - Processed 21 records for AAPL in 2024-07 (filtered from 22 total)
+2025-08-31 05:20:48,514 - INFO - Created Parquet file: AAPL_2024_07.parquet with 21 records
+2025-08-31 05:20:48,951 - INFO - Successfully uploaded AAPL_2024_07.parquet to S3 bucket root
+2025-08-31 05:20:48,952 - INFO - Cleaned up local file: AAPL_2024_07.parquet
+2025-08-31 05:20:48,952 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:21:01,453 - INFO - Fetching data for AAPL from 2024-08-01 to 2024-08-31
+2025-08-31 05:21:01,853 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 05:21:01,861 - INFO - Processed 21 records for AAPL in 2024-08 (filtered from 22 total)
+2025-08-31 05:21:01,865 - INFO - Created Parquet file: AAPL_2024_08.parquet with 21 records
+2025-08-31 05:21:02,097 - INFO - Successfully uploaded AAPL_2024_08.parquet to S3 bucket root
+2025-08-31 05:21:02,098 - INFO - Cleaned up local file: AAPL_2024_08.parquet
+2025-08-31 05:21:02,098 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:21:14,603 - INFO - Fetching data for AAPL from 2024-09-01 to 2024-09-30
+2025-08-31 05:21:14,925 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 05:21:14,933 - INFO - Processed 20 records for AAPL in 2024-09 (filtered from 20 total)
+2025-08-31 05:21:14,937 - INFO - Created Parquet file: AAPL_2024_09.parquet with 20 records
+2025-08-31 05:21:15,281 - INFO - Successfully uploaded AAPL_2024_09.parquet to S3 bucket root
+2025-08-31 05:21:15,282 - INFO - Cleaned up local file: AAPL_2024_09.parquet
+2025-08-31 05:21:15,282 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:21:27,783 - INFO - Fetching data for AAPL from 2024-10-01 to 2024-10-31
+2025-08-31 05:21:28,109 - INFO - Successfully retrieved 23 records for AAPL
+2025-08-31 05:21:28,117 - INFO - Processed 22 records for AAPL in 2024-10 (filtered from 23 total)
+2025-08-31 05:21:28,122 - INFO - Created Parquet file: AAPL_2024_10.parquet with 22 records
+2025-08-31 05:21:28,492 - INFO - Successfully uploaded AAPL_2024_10.parquet to S3 bucket root
+2025-08-31 05:21:28,494 - INFO - Cleaned up local file: AAPL_2024_10.parquet
+2025-08-31 05:21:28,494 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:21:40,999 - INFO - Fetching data for AAPL from 2024-11-01 to 2024-11-30
+2025-08-31 05:21:41,323 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 05:21:41,332 - INFO - Processed 19 records for AAPL in 2024-11 (filtered from 20 total)
+2025-08-31 05:21:41,336 - INFO - Created Parquet file: AAPL_2024_11.parquet with 19 records
+2025-08-31 05:21:41,661 - INFO - Successfully uploaded AAPL_2024_11.parquet to S3 bucket root
+2025-08-31 05:21:41,662 - INFO - Cleaned up local file: AAPL_2024_11.parquet
+2025-08-31 05:21:41,662 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:21:54,167 - INFO - Fetching data for AAPL from 2024-12-01 to 2024-12-31
+2025-08-31 05:21:54,493 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 05:21:54,502 - INFO - Processed 21 records for AAPL in 2024-12 (filtered from 21 total)
+2025-08-31 05:21:54,507 - INFO - Created Parquet file: AAPL_2024_12.parquet with 21 records
+2025-08-31 05:21:54,740 - INFO - Successfully uploaded AAPL_2024_12.parquet to S3 bucket root
+2025-08-31 05:21:54,741 - INFO - Cleaned up local file: AAPL_2024_12.parquet
+2025-08-31 05:21:54,741 - INFO - Completed processing AAPL: 12/12 months successful
+2025-08-31 05:21:54,742 - INFO - ✓ Successfully processed AAPL
+2025-08-31 05:21:54,742 - INFO - Processing ticker 2/3: MSFT
+2025-08-31 05:21:54,742 - INFO - Starting processing for ticker: MSFT
+2025-08-31 05:21:54,742 - INFO - Generated 12 monthly date ranges
+2025-08-31 05:21:54,742 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:22:07,245 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-31 05:22:07,560 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 05:22:07,568 - INFO - Processed 21 records for MSFT in 2024-01 (filtered from 21 total)
+2025-08-31 05:22:07,573 - INFO - Created Parquet file: MSFT_2024_01.parquet with 21 records
+2025-08-31 05:22:08,024 - INFO - Successfully uploaded MSFT_2024_01.parquet to S3 bucket root
+2025-08-31 05:22:08,025 - INFO - Cleaned up local file: MSFT_2024_01.parquet
+2025-08-31 05:22:08,025 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:22:20,529 - INFO - Fetching data for MSFT from 2024-02-01 to 2024-02-29
+2025-08-31 05:22:20,848 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 05:22:20,855 - INFO - Processed 19 records for MSFT in 2024-02 (filtered from 20 total)
+2025-08-31 05:22:20,859 - INFO - Created Parquet file: MSFT_2024_02.parquet with 19 records
+2025-08-31 05:22:21,099 - INFO - Successfully uploaded MSFT_2024_02.parquet to S3 bucket root
+2025-08-31 05:22:21,099 - INFO - Cleaned up local file: MSFT_2024_02.parquet
+2025-08-31 05:22:21,099 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:22:33,604 - INFO - Fetching data for MSFT from 2024-03-01 to 2024-03-31
+2025-08-31 05:22:33,930 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 05:22:33,938 - INFO - Processed 19 records for MSFT in 2024-03 (filtered from 20 total)
+2025-08-31 05:22:33,943 - INFO - Created Parquet file: MSFT_2024_03.parquet with 19 records
+2025-08-31 05:22:34,367 - INFO - Successfully uploaded MSFT_2024_03.parquet to S3 bucket root
+2025-08-31 05:22:34,367 - INFO - Cleaned up local file: MSFT_2024_03.parquet
+2025-08-31 05:22:34,368 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:22:46,870 - INFO - Fetching data for MSFT from 2024-04-01 to 2024-04-30
+2025-08-31 05:22:47,200 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 05:22:47,208 - INFO - Processed 21 records for MSFT in 2024-04 (filtered from 22 total)
+2025-08-31 05:22:47,212 - INFO - Created Parquet file: MSFT_2024_04.parquet with 21 records
+2025-08-31 05:22:47,613 - INFO - Successfully uploaded MSFT_2024_04.parquet to S3 bucket root
+2025-08-31 05:22:47,614 - INFO - Cleaned up local file: MSFT_2024_04.parquet
+2025-08-31 05:22:47,614 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:23:00,119 - INFO - Fetching data for MSFT from 2024-05-01 to 2024-05-31
+2025-08-31 05:23:00,527 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 05:23:00,535 - INFO - Processed 21 records for MSFT in 2024-05 (filtered from 22 total)
+2025-08-31 05:23:00,540 - INFO - Created Parquet file: MSFT_2024_05.parquet with 21 records
+2025-08-31 05:23:00,901 - INFO - Successfully uploaded MSFT_2024_05.parquet to S3 bucket root
+2025-08-31 05:23:00,902 - INFO - Cleaned up local file: MSFT_2024_05.parquet
+2025-08-31 05:23:00,902 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:23:13,404 - INFO - Fetching data for MSFT from 2024-06-01 to 2024-06-30
+2025-08-31 05:23:13,725 - INFO - Successfully retrieved 19 records for MSFT
+2025-08-31 05:23:13,733 - INFO - Processed 19 records for MSFT in 2024-06 (filtered from 19 total)
+2025-08-31 05:23:13,736 - INFO - Created Parquet file: MSFT_2024_06.parquet with 19 records
+2025-08-31 05:23:14,042 - INFO - Successfully uploaded MSFT_2024_06.parquet to S3 bucket root
+2025-08-31 05:23:14,043 - INFO - Cleaned up local file: MSFT_2024_06.parquet
+2025-08-31 05:23:14,044 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:23:26,549 - INFO - Fetching data for MSFT from 2024-07-01 to 2024-07-31
+2025-08-31 05:23:26,872 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 05:23:26,880 - INFO - Processed 21 records for MSFT in 2024-07 (filtered from 22 total)
+2025-08-31 05:23:26,885 - INFO - Created Parquet file: MSFT_2024_07.parquet with 21 records
+2025-08-31 05:23:27,239 - INFO - Successfully uploaded MSFT_2024_07.parquet to S3 bucket root
+2025-08-31 05:23:27,240 - INFO - Cleaned up local file: MSFT_2024_07.parquet
+2025-08-31 05:23:27,240 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:23:39,743 - INFO - Fetching data for MSFT from 2024-08-01 to 2024-08-31
+2025-08-31 05:23:40,068 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 05:23:40,077 - INFO - Processed 21 records for MSFT in 2024-08 (filtered from 22 total)
+2025-08-31 05:23:40,080 - INFO - Created Parquet file: MSFT_2024_08.parquet with 21 records
+2025-08-31 05:23:40,483 - INFO - Successfully uploaded MSFT_2024_08.parquet to S3 bucket root
+2025-08-31 05:23:40,484 - INFO - Cleaned up local file: MSFT_2024_08.parquet
+2025-08-31 05:23:40,484 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:23:52,986 - INFO - Fetching data for MSFT from 2024-09-01 to 2024-09-30
+2025-08-31 05:23:53,303 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 05:23:53,312 - INFO - Processed 20 records for MSFT in 2024-09 (filtered from 20 total)
+2025-08-31 05:23:53,319 - INFO - Created Parquet file: MSFT_2024_09.parquet with 20 records
+2025-08-31 05:23:53,573 - INFO - Successfully uploaded MSFT_2024_09.parquet to S3 bucket root
+2025-08-31 05:23:53,574 - INFO - Cleaned up local file: MSFT_2024_09.parquet
+2025-08-31 05:23:53,575 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:24:06,078 - INFO - Fetching data for MSFT from 2024-10-01 to 2024-10-31
+2025-08-31 05:24:06,485 - INFO - Successfully retrieved 23 records for MSFT
+2025-08-31 05:24:06,494 - INFO - Processed 22 records for MSFT in 2024-10 (filtered from 23 total)
+2025-08-31 05:24:06,499 - INFO - Created Parquet file: MSFT_2024_10.parquet with 22 records
+2025-08-31 05:24:06,958 - INFO - Successfully uploaded MSFT_2024_10.parquet to S3 bucket root
+2025-08-31 05:24:06,959 - INFO - Cleaned up local file: MSFT_2024_10.parquet
+2025-08-31 05:24:06,959 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:24:19,463 - INFO - Fetching data for MSFT from 2024-11-01 to 2024-11-30
+2025-08-31 05:24:19,785 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 05:24:19,792 - INFO - Processed 19 records for MSFT in 2024-11 (filtered from 20 total)
+2025-08-31 05:24:19,797 - INFO - Created Parquet file: MSFT_2024_11.parquet with 19 records
+2025-08-31 05:24:20,032 - INFO - Successfully uploaded MSFT_2024_11.parquet to S3 bucket root
+2025-08-31 05:24:20,032 - INFO - Cleaned up local file: MSFT_2024_11.parquet
+2025-08-31 05:24:20,033 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:24:32,538 - INFO - Fetching data for MSFT from 2024-12-01 to 2024-12-31
+2025-08-31 05:24:32,864 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 05:24:32,872 - INFO - Processed 21 records for MSFT in 2024-12 (filtered from 21 total)
+2025-08-31 05:24:32,876 - INFO - Created Parquet file: MSFT_2024_12.parquet with 21 records
+2025-08-31 05:24:33,206 - INFO - Successfully uploaded MSFT_2024_12.parquet to S3 bucket root
+2025-08-31 05:24:33,207 - INFO - Cleaned up local file: MSFT_2024_12.parquet
+2025-08-31 05:24:33,207 - INFO - Completed processing MSFT: 12/12 months successful
+2025-08-31 05:24:33,207 - INFO - ✓ Successfully processed MSFT
+2025-08-31 05:24:33,207 - INFO - Processing ticker 3/3: GOOGL
+2025-08-31 05:24:33,207 - INFO - Starting processing for ticker: GOOGL
+2025-08-31 05:24:33,208 - INFO - Generated 12 monthly date ranges
+2025-08-31 05:24:33,208 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:24:45,710 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-31 05:24:46,032 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 05:24:46,039 - INFO - Processed 21 records for GOOGL in 2024-01 (filtered from 21 total)
+2025-08-31 05:24:46,043 - INFO - Created Parquet file: GOOGL_2024_01.parquet with 21 records
+2025-08-31 05:24:46,384 - INFO - Successfully uploaded GOOGL_2024_01.parquet to S3 bucket root
+2025-08-31 05:24:46,384 - INFO - Cleaned up local file: GOOGL_2024_01.parquet
+2025-08-31 05:24:46,384 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:24:58,886 - INFO - Fetching data for GOOGL from 2024-02-01 to 2024-02-29
+2025-08-31 05:24:59,304 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 05:24:59,314 - INFO - Processed 19 records for GOOGL in 2024-02 (filtered from 20 total)
+2025-08-31 05:24:59,318 - INFO - Created Parquet file: GOOGL_2024_02.parquet with 19 records
+2025-08-31 05:24:59,621 - INFO - Successfully uploaded GOOGL_2024_02.parquet to S3 bucket root
+2025-08-31 05:24:59,622 - INFO - Cleaned up local file: GOOGL_2024_02.parquet
+2025-08-31 05:24:59,622 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:25:12,127 - INFO - Fetching data for GOOGL from 2024-03-01 to 2024-03-31
+2025-08-31 05:25:12,452 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 05:25:12,459 - INFO - Processed 19 records for GOOGL in 2024-03 (filtered from 20 total)
+2025-08-31 05:25:12,463 - INFO - Created Parquet file: GOOGL_2024_03.parquet with 19 records
+2025-08-31 05:25:12,700 - INFO - Successfully uploaded GOOGL_2024_03.parquet to S3 bucket root
+2025-08-31 05:25:12,700 - INFO - Cleaned up local file: GOOGL_2024_03.parquet
+2025-08-31 05:25:12,700 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:25:25,205 - INFO - Fetching data for GOOGL from 2024-04-01 to 2024-04-30
+2025-08-31 05:25:25,538 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 05:25:25,541 - INFO - Processed 21 records for GOOGL in 2024-04 (filtered from 22 total)
+2025-08-31 05:25:25,542 - INFO - Created Parquet file: GOOGL_2024_04.parquet with 21 records
+2025-08-31 05:25:25,890 - INFO - Successfully uploaded GOOGL_2024_04.parquet to S3 bucket root
+2025-08-31 05:25:25,891 - INFO - Cleaned up local file: GOOGL_2024_04.parquet
+2025-08-31 05:25:25,891 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:25:38,396 - INFO - Fetching data for GOOGL from 2024-05-01 to 2024-05-31
+2025-08-31 05:25:38,732 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 05:25:38,736 - INFO - Processed 21 records for GOOGL in 2024-05 (filtered from 22 total)
+2025-08-31 05:25:38,738 - INFO - Created Parquet file: GOOGL_2024_05.parquet with 21 records
+2025-08-31 05:25:39,169 - INFO - Successfully uploaded GOOGL_2024_05.parquet to S3 bucket root
+2025-08-31 05:25:39,170 - INFO - Cleaned up local file: GOOGL_2024_05.parquet
+2025-08-31 05:25:39,170 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:25:51,676 - INFO - Fetching data for GOOGL from 2024-06-01 to 2024-06-30
+2025-08-31 05:25:52,078 - INFO - Successfully retrieved 19 records for GOOGL
+2025-08-31 05:25:52,087 - INFO - Processed 19 records for GOOGL in 2024-06 (filtered from 19 total)
+2025-08-31 05:25:52,092 - INFO - Created Parquet file: GOOGL_2024_06.parquet with 19 records
+2025-08-31 05:25:52,406 - INFO - Successfully uploaded GOOGL_2024_06.parquet to S3 bucket root
+2025-08-31 05:25:52,407 - INFO - Cleaned up local file: GOOGL_2024_06.parquet
+2025-08-31 05:25:52,408 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:26:04,911 - INFO - Fetching data for GOOGL from 2024-07-01 to 2024-07-31
+2025-08-31 05:26:05,239 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 05:26:05,247 - INFO - Processed 21 records for GOOGL in 2024-07 (filtered from 22 total)
+2025-08-31 05:26:05,252 - INFO - Created Parquet file: GOOGL_2024_07.parquet with 21 records
+2025-08-31 05:26:05,693 - INFO - Successfully uploaded GOOGL_2024_07.parquet to S3 bucket root
+2025-08-31 05:26:05,694 - INFO - Cleaned up local file: GOOGL_2024_07.parquet
+2025-08-31 05:26:05,694 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:26:18,199 - INFO - Fetching data for GOOGL from 2024-08-01 to 2024-08-31
+2025-08-31 05:26:18,530 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 05:26:18,537 - INFO - Processed 21 records for GOOGL in 2024-08 (filtered from 22 total)
+2025-08-31 05:26:18,541 - INFO - Created Parquet file: GOOGL_2024_08.parquet with 21 records
+2025-08-31 05:26:18,879 - INFO - Successfully uploaded GOOGL_2024_08.parquet to S3 bucket root
+2025-08-31 05:26:18,880 - INFO - Cleaned up local file: GOOGL_2024_08.parquet
+2025-08-31 05:26:18,881 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:26:31,385 - INFO - Fetching data for GOOGL from 2024-09-01 to 2024-09-30
+2025-08-31 05:26:31,769 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 05:26:31,775 - INFO - Processed 20 records for GOOGL in 2024-09 (filtered from 20 total)
+2025-08-31 05:26:31,778 - INFO - Created Parquet file: GOOGL_2024_09.parquet with 20 records
+2025-08-31 05:26:32,200 - INFO - Successfully uploaded GOOGL_2024_09.parquet to S3 bucket root
+2025-08-31 05:26:32,210 - INFO - Cleaned up local file: GOOGL_2024_09.parquet
+2025-08-31 05:26:32,211 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:26:44,716 - INFO - Fetching data for GOOGL from 2024-10-01 to 2024-10-31
+2025-08-31 05:26:45,045 - INFO - Successfully retrieved 23 records for GOOGL
+2025-08-31 05:26:45,053 - INFO - Processed 22 records for GOOGL in 2024-10 (filtered from 23 total)
+2025-08-31 05:26:45,059 - INFO - Created Parquet file: GOOGL_2024_10.parquet with 22 records
+2025-08-31 05:26:45,420 - INFO - Successfully uploaded GOOGL_2024_10.parquet to S3 bucket root
+2025-08-31 05:26:45,421 - INFO - Cleaned up local file: GOOGL_2024_10.parquet
+2025-08-31 05:26:45,422 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:26:57,927 - INFO - Fetching data for GOOGL from 2024-11-01 to 2024-11-30
+2025-08-31 05:26:58,237 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 05:26:58,244 - INFO - Processed 19 records for GOOGL in 2024-11 (filtered from 20 total)
+2025-08-31 05:26:58,248 - INFO - Created Parquet file: GOOGL_2024_11.parquet with 19 records
+2025-08-31 05:26:58,674 - INFO - Successfully uploaded GOOGL_2024_11.parquet to S3 bucket root
+2025-08-31 05:26:58,674 - INFO - Cleaned up local file: GOOGL_2024_11.parquet
+2025-08-31 05:26:58,674 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 05:27:11,179 - INFO - Fetching data for GOOGL from 2024-12-01 to 2024-12-31
+2025-08-31 05:27:11,504 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 05:27:11,512 - INFO - Processed 21 records for GOOGL in 2024-12 (filtered from 21 total)
+2025-08-31 05:27:11,516 - INFO - Created Parquet file: GOOGL_2024_12.parquet with 21 records
+2025-08-31 05:27:11,754 - INFO - Successfully uploaded GOOGL_2024_12.parquet to S3 bucket root
+2025-08-31 05:27:11,755 - INFO - Cleaned up local file: GOOGL_2024_12.parquet
+2025-08-31 05:27:11,756 - INFO - Completed processing GOOGL: 12/12 months successful
+2025-08-31 05:27:11,756 - INFO - ✓ Successfully processed GOOGL
+2025-08-31 05:27:11,756 - INFO - ============================================================
+2025-08-31 05:27:11,756 - INFO - FIXED PRODUCTION PIPELINE SUMMARY
+2025-08-31 05:27:11,756 - INFO - ============================================================
+2025-08-31 05:27:11,756 - INFO - Total tickers processed: 3
+2025-08-31 05:27:11,756 - INFO - Successful: 3
+2025-08-31 05:27:11,756 - INFO - Failed: 0
+2025-08-31 05:27:11,756 - INFO - 🎉 All tickers processed successfully with FIXED pipeline!
+2025-08-31 05:27:11,757 - INFO - Ready for Snowflake COPY command execution.
+2025-08-31 05:27:11,757 - INFO - FIXED production pipeline completed
