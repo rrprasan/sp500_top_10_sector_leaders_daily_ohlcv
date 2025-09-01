@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 Snowflake LOAD_MODE Performance Test
-Tests COPY INTO command performance comparing FULL_INGEST vs ADD_FILES_COPY
-Both tests use USE_VECTORIZED_SCANNER = TRUE for optimal performance.
+Tests COPY INTO command performance comparing three scenarios:
+1. LOAD_MODE = FULL_INGEST with USE_VECTORIZED_SCANNER = TRUE
+2. LOAD_MODE = ADD_FILES_COPY with USE_VECTORIZED_SCANNER = TRUE  
+3. LOAD_MODE = FULL_INGEST with USE_VECTORIZED_SCANNER = FALSE
 """
 
 import snowflake.connector
@@ -26,8 +28,10 @@ logger = logging.getLogger(__name__)
 
 class LoadModePerformanceTest:
     """
-    Class to test Snowflake COPY INTO performance comparing LOAD_MODE options.
-    Tests FULL_INGEST vs ADD_FILES_COPY with USE_VECTORIZED_SCANNER = TRUE.
+    Class to test Snowflake COPY INTO performance comparing three scenarios:
+    1. LOAD_MODE = FULL_INGEST with USE_VECTORIZED_SCANNER = TRUE
+    2. LOAD_MODE = ADD_FILES_COPY with USE_VECTORIZED_SCANNER = TRUE
+    3. LOAD_MODE = FULL_INGEST with USE_VECTORIZED_SCANNER = FALSE
     """
     
     def __init__(self):
@@ -35,13 +39,27 @@ class LoadModePerformanceTest:
         self.conn = None
         self.cursor = None
         
-        # COPY INTO command for LOAD_MODE = FULL_INGEST
-        self.copy_command_full_ingest = """
+        # COPY INTO command for LOAD_MODE = FULL_INGEST with VECTORIZED_SCANNER = TRUE
+        self.copy_command_full_ingest_vectorized = """
         COPY INTO sp500_top10_sector_ohlcv_itbl
           FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
           FILE_FORMAT = (
              FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
              USE_VECTORIZED_SCANNER = TRUE
+          )
+          LOAD_MODE = FULL_INGEST
+          PURGE = FALSE
+          MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+          FORCE = FALSE;
+        """
+        
+        # COPY INTO command for LOAD_MODE = FULL_INGEST with VECTORIZED_SCANNER = FALSE
+        self.copy_command_full_ingest_non_vectorized = """
+        COPY INTO sp500_top10_sector_ohlcv_itbl
+          FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+          FILE_FORMAT = (
+             FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+             USE_VECTORIZED_SCANNER = FALSE
           )
           LOAD_MODE = FULL_INGEST
           PURGE = FALSE
@@ -245,14 +263,16 @@ class LoadModePerformanceTest:
         logger.info("=" * 80)
         logger.info("SNOWFLAKE LOAD_MODE PERFORMANCE TEST")
         logger.info("=" * 80)
-        logger.info("Comparing LOAD_MODE performance with USE_VECTORIZED_SCANNER = TRUE:")
-        logger.info("  FULL_INGEST: Traditional full table processing")
-        logger.info("  ADD_FILES_COPY: Optimized incremental file processing")
+        logger.info("Comparing three LOAD_MODE and VECTORIZED_SCANNER combinations:")
+        logger.info("  1. FULL_INGEST + VECTORIZED_SCANNER = TRUE")
+        logger.info("  2. ADD_FILES_COPY + VECTORIZED_SCANNER = TRUE") 
+        logger.info("  3. FULL_INGEST + VECTORIZED_SCANNER = FALSE")
         
         test_results = {
             'test_start_time': datetime.now(),
-            'full_ingest_result': None,
+            'full_ingest_vectorized_result': None,
             'add_files_copy_result': None,
+            'full_ingest_non_vectorized_result': None,
             'comparison': None
         }
         
@@ -270,39 +290,56 @@ class LoadModePerformanceTest:
                 logger.error("No files found in stage. Please run the data pipeline first.")
                 return test_results
             
-            # Step 3: Test with LOAD_MODE = FULL_INGEST
-            logger.info("Step 3: Testing with LOAD_MODE = FULL_INGEST...")
+            # Step 3: Test with LOAD_MODE = FULL_INGEST + VECTORIZED_SCANNER = TRUE
+            logger.info("Step 3: Testing FULL_INGEST + VECTORIZED_SCANNER = TRUE...")
             
             # Truncate table for clean test
             if not self._truncate_table():
                 logger.error("Failed to truncate table")
                 return test_results
             
-            # Execute COPY with FULL_INGEST
-            full_ingest_result = self._execute_copy_command('FULL_INGEST', self.copy_command_full_ingest)
-            test_results['full_ingest_result'] = full_ingest_result
+            # Execute COPY with FULL_INGEST + VECTORIZED
+            full_ingest_vectorized_result = self._execute_copy_command('FULL_INGEST (VECTORIZED=TRUE)', self.copy_command_full_ingest_vectorized)
+            test_results['full_ingest_vectorized_result'] = full_ingest_vectorized_result
             
-            # Step 4: Test with LOAD_MODE = ADD_FILES_COPY
-            logger.info("Step 4: Testing with LOAD_MODE = ADD_FILES_COPY...")
+            # Step 4: Test with LOAD_MODE = ADD_FILES_COPY + VECTORIZED_SCANNER = TRUE
+            logger.info("Step 4: Testing ADD_FILES_COPY + VECTORIZED_SCANNER = TRUE...")
             
             # Truncate table for clean test
             if not self._truncate_table():
                 logger.error("Failed to truncate table for second test")
                 return test_results
             
-            # Execute COPY with ADD_FILES_COPY
-            add_files_copy_result = self._execute_copy_command('ADD_FILES_COPY', self.copy_command_add_files_copy)
+            # Execute COPY with ADD_FILES_COPY + VECTORIZED
+            add_files_copy_result = self._execute_copy_command('ADD_FILES_COPY (VECTORIZED=TRUE)', self.copy_command_add_files_copy)
             test_results['add_files_copy_result'] = add_files_copy_result
             
-            # Step 5: Compare results
-            logger.info("Step 5: Comparing results...")
-            if full_ingest_result['success'] and add_files_copy_result['success']:
-                comparison = self._compare_results(full_ingest_result, add_files_copy_result)
+            # Step 5: Test with LOAD_MODE = FULL_INGEST + VECTORIZED_SCANNER = FALSE
+            logger.info("Step 5: Testing FULL_INGEST + VECTORIZED_SCANNER = FALSE...")
+            
+            # Truncate table for clean test
+            if not self._truncate_table():
+                logger.error("Failed to truncate table for third test")
+                return test_results
+            
+            # Execute COPY with FULL_INGEST + NON-VECTORIZED
+            full_ingest_non_vectorized_result = self._execute_copy_command('FULL_INGEST (VECTORIZED=FALSE)', self.copy_command_full_ingest_non_vectorized)
+            test_results['full_ingest_non_vectorized_result'] = full_ingest_non_vectorized_result
+            
+            # Step 6: Compare results
+            logger.info("Step 6: Comparing all three results...")
+            if (full_ingest_vectorized_result['success'] and add_files_copy_result['success'] and 
+                full_ingest_non_vectorized_result['success']):
+                comparison = self._compare_three_results(
+                    full_ingest_vectorized_result, 
+                    add_files_copy_result, 
+                    full_ingest_non_vectorized_result
+                )
                 test_results['comparison'] = comparison
             
             test_results['test_end_time'] = datetime.now()
             
-            # Step 6: Generate summary report
+            # Step 7: Generate summary report
             self._generate_summary_report(test_results)
             
             return test_results
@@ -315,45 +352,71 @@ class LoadModePerformanceTest:
         finally:
             self._disconnect_from_snowflake()
     
-    def _compare_results(self, full_ingest_result: Dict[str, Any], add_files_copy_result: Dict[str, Any]) -> Dict[str, Any]:
-        """Compare the performance results between LOAD_MODE options."""
-        full_ingest_time = full_ingest_result['execution_time_seconds']
-        add_files_copy_time = add_files_copy_result['execution_time_seconds']
+    def _compare_three_results(self, full_ingest_vectorized: Dict[str, Any], 
+                              add_files_copy: Dict[str, Any], 
+                              full_ingest_non_vectorized: Dict[str, Any]) -> Dict[str, Any]:
+        """Compare the performance results between all three test scenarios."""
         
-        if full_ingest_time > 0 and add_files_copy_time > 0:
-            time_difference = full_ingest_time - add_files_copy_time
-            percent_improvement = ((full_ingest_time - add_files_copy_time) / full_ingest_time) * 100
-            
-            # Throughput comparison
-            full_ingest_throughput = full_ingest_result.get('throughput_rows_per_second', 0)
-            add_files_copy_throughput = add_files_copy_result.get('throughput_rows_per_second', 0)
-            throughput_improvement = ((add_files_copy_throughput - full_ingest_throughput) / full_ingest_throughput) * 100 if full_ingest_throughput > 0 else 0
-            
-            comparison = {
-                'full_ingest_time': full_ingest_time,
-                'add_files_copy_time': add_files_copy_time,
-                'time_difference_seconds': time_difference,
-                'percent_improvement': percent_improvement,
-                'faster_mode': 'ADD_FILES_COPY' if add_files_copy_time < full_ingest_time else 'FULL_INGEST',
-                'full_ingest_throughput': full_ingest_throughput,
-                'add_files_copy_throughput': add_files_copy_throughput,
-                'throughput_improvement_percent': throughput_improvement,
-                'full_ingest_rows': full_ingest_result.get('rows_loaded', 0),
-                'add_files_copy_rows': add_files_copy_result.get('rows_loaded', 0)
+        # Extract execution times
+        time_full_vectorized = full_ingest_vectorized['execution_time_seconds']
+        time_add_files = add_files_copy['execution_time_seconds']
+        time_full_non_vectorized = full_ingest_non_vectorized['execution_time_seconds']
+        
+        # Extract throughputs
+        throughput_full_vectorized = full_ingest_vectorized.get('throughput_rows_per_second', 0)
+        throughput_add_files = add_files_copy.get('throughput_rows_per_second', 0)
+        throughput_full_non_vectorized = full_ingest_non_vectorized.get('throughput_rows_per_second', 0)
+        
+        # Find the fastest scenario
+        times = {
+            'FULL_INGEST (VECTORIZED=TRUE)': time_full_vectorized,
+            'ADD_FILES_COPY (VECTORIZED=TRUE)': time_add_files,
+            'FULL_INGEST (VECTORIZED=FALSE)': time_full_non_vectorized
+        }
+        
+        fastest_scenario = min(times.keys(), key=lambda k: times[k])
+        fastest_time = times[fastest_scenario]
+        
+        # Calculate improvements relative to fastest
+        comparison = {
+            'fastest_scenario': fastest_scenario,
+            'fastest_time': fastest_time,
+            'results': {
+                'full_ingest_vectorized': {
+                    'time': time_full_vectorized,
+                    'throughput': throughput_full_vectorized,
+                    'rows': full_ingest_vectorized.get('rows_loaded', 0),
+                    'improvement_vs_fastest': ((fastest_time - time_full_vectorized) / fastest_time) * 100 if fastest_time > 0 else 0
+                },
+                'add_files_copy': {
+                    'time': time_add_files,
+                    'throughput': throughput_add_files,
+                    'rows': add_files_copy.get('rows_loaded', 0),
+                    'improvement_vs_fastest': ((fastest_time - time_add_files) / fastest_time) * 100 if fastest_time > 0 else 0
+                },
+                'full_ingest_non_vectorized': {
+                    'time': time_full_non_vectorized,
+                    'throughput': throughput_full_non_vectorized,
+                    'rows': full_ingest_non_vectorized.get('rows_loaded', 0),
+                    'improvement_vs_fastest': ((fastest_time - time_full_non_vectorized) / fastest_time) * 100 if fastest_time > 0 else 0
+                }
             }
-            
-            logger.info(f"Performance comparison:")
-            logger.info(f"  FULL_INGEST:    {full_ingest_time:.2f} seconds ({full_ingest_throughput:,.0f} rows/sec)")
-            logger.info(f"  ADD_FILES_COPY: {add_files_copy_time:.2f} seconds ({add_files_copy_throughput:,.0f} rows/sec)")
-            logger.info(f"  Time difference: {time_difference:.2f} seconds")
-            logger.info(f"  Performance improvement: {percent_improvement:.1f}%")
-            logger.info(f"  Throughput improvement: {throughput_improvement:.1f}%")
-            logger.info(f"  Faster mode: LOAD_MODE = {comparison['faster_mode']}")
-            
-            return comparison
-        else:
-            logger.error("Cannot compare results due to execution failures")
-            return {'error': 'Cannot compare due to execution failures'}
+        }
+        
+        # Calculate vectorized scanner impact
+        vectorized_impact = ((time_full_non_vectorized - time_full_vectorized) / time_full_non_vectorized) * 100 if time_full_non_vectorized > 0 else 0
+        comparison['vectorized_scanner_improvement'] = vectorized_impact
+        
+        # Log detailed comparison
+        logger.info("Performance comparison of all three scenarios:")
+        logger.info(f"  1. FULL_INGEST (VECTORIZED=TRUE):    {time_full_vectorized:.2f}s ({throughput_full_vectorized:,.0f} rows/sec)")
+        logger.info(f"  2. ADD_FILES_COPY (VECTORIZED=TRUE): {time_add_files:.2f}s ({throughput_add_files:,.0f} rows/sec)")
+        logger.info(f"  3. FULL_INGEST (VECTORIZED=FALSE):   {time_full_non_vectorized:.2f}s ({throughput_full_non_vectorized:,.0f} rows/sec)")
+        logger.info(f"")
+        logger.info(f"🏆 Fastest scenario: {fastest_scenario} ({fastest_time:.2f}s)")
+        logger.info(f"📊 VECTORIZED_SCANNER improvement: {vectorized_impact:.1f}% faster")
+        
+        return comparison
     
     def _generate_summary_report(self, test_results: Dict[str, Any]):
         """Generate a comprehensive summary report."""
@@ -366,57 +429,74 @@ class LoadModePerformanceTest:
         logger.info(f"Test completed at: {test_results['test_end_time']}")
         
         # Results summary
-        full_ingest_result = test_results.get('full_ingest_result')
+        full_ingest_vectorized_result = test_results.get('full_ingest_vectorized_result')
         add_files_copy_result = test_results.get('add_files_copy_result')
+        full_ingest_non_vectorized_result = test_results.get('full_ingest_non_vectorized_result')
         comparison = test_results.get('comparison')
         
-        if full_ingest_result and add_files_copy_result:
+        if full_ingest_vectorized_result and add_files_copy_result and full_ingest_non_vectorized_result:
             logger.info("")
             logger.info("PERFORMANCE RESULTS:")
-            logger.info(f"  LOAD_MODE = FULL_INGEST:    {full_ingest_result.get('execution_time_formatted', 'FAILED')}")
-            logger.info(f"  LOAD_MODE = ADD_FILES_COPY: {add_files_copy_result.get('execution_time_formatted', 'FAILED')}")
+            logger.info(f"  1. FULL_INGEST (VECTORIZED=TRUE):    {full_ingest_vectorized_result.get('execution_time_formatted', 'FAILED')}")
+            logger.info(f"  2. ADD_FILES_COPY (VECTORIZED=TRUE): {add_files_copy_result.get('execution_time_formatted', 'FAILED')}")
+            logger.info(f"  3. FULL_INGEST (VECTORIZED=FALSE):   {full_ingest_non_vectorized_result.get('execution_time_formatted', 'FAILED')}")
             
-            if full_ingest_result.get('throughput_formatted'):
-                logger.info(f"  FULL_INGEST throughput:     {full_ingest_result['throughput_formatted']}")
+            logger.info("")
+            logger.info("THROUGHPUT RESULTS:")
+            if full_ingest_vectorized_result.get('throughput_formatted'):
+                logger.info(f"  1. FULL_INGEST (VECTORIZED=TRUE):    {full_ingest_vectorized_result['throughput_formatted']}")
             if add_files_copy_result.get('throughput_formatted'):
-                logger.info(f"  ADD_FILES_COPY throughput:  {add_files_copy_result['throughput_formatted']}")
+                logger.info(f"  2. ADD_FILES_COPY (VECTORIZED=TRUE): {add_files_copy_result['throughput_formatted']}")
+            if full_ingest_non_vectorized_result.get('throughput_formatted'):
+                logger.info(f"  3. FULL_INGEST (VECTORIZED=FALSE):   {full_ingest_non_vectorized_result['throughput_formatted']}")
             
-            if comparison and 'percent_improvement' in comparison:
-                improvement = comparison['percent_improvement']
-                throughput_improvement = comparison.get('throughput_improvement_percent', 0)
-                faster = comparison['faster_mode']
+            if comparison and 'fastest_scenario' in comparison:
+                fastest = comparison['fastest_scenario']
+                vectorized_improvement = comparison.get('vectorized_scanner_improvement', 0)
                 
                 logger.info("")
-                if improvement > 0:
-                    logger.info(f"  🚀 ADD_FILES_COPY is {improvement:.1f}% faster!")
-                    logger.info(f"  📈 Throughput improvement: {throughput_improvement:.1f}%")
-                elif improvement < 0:
-                    logger.info(f"  📊 FULL_INGEST is {abs(improvement):.1f}% faster!")
-                    logger.info(f"  📈 Throughput difference: {abs(throughput_improvement):.1f}%")
-                else:
-                    logger.info(f"  ⚖️  Both modes performed equally")
+                logger.info(f"🏆 FASTEST SCENARIO: {fastest}")
+                logger.info(f"📊 VECTORIZED_SCANNER improvement: {vectorized_improvement:.1f}% faster than non-vectorized")
                 
-                logger.info(f"  🏆 Winner: LOAD_MODE = {faster}")
+                # Show relative performance
+                results = comparison.get('results', {})
+                logger.info("")
+                logger.info("RELATIVE PERFORMANCE (vs fastest):")
+                for key, data in results.items():
+                    improvement = data.get('improvement_vs_fastest', 0)
+                    if improvement >= 0:
+                        logger.info(f"  {key.replace('_', ' ').title()}: {improvement:.1f}% slower")
+                    else:
+                        logger.info(f"  {key.replace('_', ' ').title()}: {abs(improvement):.1f}% faster")
         
         logger.info("")
         logger.info("KEY INSIGHTS:")
-        logger.info("  • Both modes use USE_VECTORIZED_SCANNER = TRUE")
+        logger.info("  • VECTORIZED_SCANNER = TRUE provides significant performance boost")
         logger.info("  • FULL_INGEST: Traditional batch processing approach")
         logger.info("  • ADD_FILES_COPY: Optimized for incremental/file-based loading")
-        logger.info("  • Performance difference indicates optimization effectiveness")
+        logger.info("  • VECTORIZED_SCANNER = FALSE: Legacy processing mode (slower)")
+        logger.info("  • Performance differences reveal optimization effectiveness")
         
         logger.info("")
-        logger.info("RECOMMENDATION:")
-        if comparison and 'faster_mode' in comparison:
-            winner = comparison['faster_mode']
-            improvement = comparison.get('percent_improvement', 0)
-            logger.info(f"  Use LOAD_MODE = {winner} for optimal performance")
-            if abs(improvement) > 5:  # Significant difference
-                logger.info(f"  Provides {abs(improvement):.1f}% performance improvement")
-            else:
-                logger.info("  Performance difference is minimal - choose based on use case")
+        logger.info("RECOMMENDATIONS:")
+        if comparison and 'fastest_scenario' in comparison:
+            winner = comparison['fastest_scenario']
+            vectorized_improvement = comparison.get('vectorized_scanner_improvement', 0)
+            logger.info(f"  🥇 PRIMARY: Use {winner} for optimal performance")
+            logger.info(f"  📈 ALWAYS use USE_VECTORIZED_SCANNER = TRUE ({vectorized_improvement:.1f}% improvement)")
+            
+            if vectorized_improvement > 20:
+                logger.info(f"  ⚠️  CRITICAL: VECTORIZED_SCANNER provides {vectorized_improvement:.1f}% performance boost!")
+            
+            # Specific recommendations based on use case
+            logger.info("")
+            logger.info("USE CASE RECOMMENDATIONS:")
+            logger.info("  • For batch loads: FULL_INGEST + VECTORIZED_SCANNER = TRUE")
+            logger.info("  • For incremental loads: ADD_FILES_COPY + VECTORIZED_SCANNER = TRUE")
+            logger.info("  • NEVER use VECTORIZED_SCANNER = FALSE in production")
         else:
-            logger.info("  Both modes are viable - choose based on specific requirements")
+            logger.info("  All scenarios are viable - choose based on specific requirements")
+            logger.info("  Always prefer VECTORIZED_SCANNER = TRUE for better performance")
         
         logger.info("")
         logger.info("Test completed successfully! 🎉")
@@ -428,8 +508,9 @@ def main():
         test = LoadModePerformanceTest()
         results = test.run_performance_test()
         
-        if results.get('comparison') or (results.get('full_ingest_result') and results.get('add_files_copy_result')):
-            logger.info("Load mode performance test completed successfully")
+        if (results.get('comparison') or (results.get('full_ingest_vectorized_result') and 
+            results.get('add_files_copy_result') and results.get('full_ingest_non_vectorized_result'))):
+            logger.info("Three-scenario load mode performance test completed successfully")
             sys.exit(0)
         else:
             logger.error("Load mode performance test failed or incomplete")

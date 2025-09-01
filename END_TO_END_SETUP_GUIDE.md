@@ -511,13 +511,16 @@ pip install --upgrade snowflake-connector-python boto3 pandas pyarrow requests
 - **File size**: ~0.03 MB per ticker
 - **Records**: ~500 records per ticker (2+ years daily data)
 
-### LOAD_MODE Test Results
-Based on our testing with 11 files and 5,500 records:
+### Three-Scenario LOAD_MODE Test Results
+Based on our comprehensive testing with 11 files and 5,500 records:
 
-| LOAD_MODE | Execution Time | Throughput | Best For |
-|-----------|----------------|------------|----------|
-| **FULL_INGEST** | **1.60 seconds** | **3,433 rows/sec** | **< 100 files** |
-| **ADD_FILES_COPY** | 2.23 seconds | 2,468 rows/sec | > 500 files |
+| Scenario | Configuration | Execution Time | Throughput | Status |
+|----------|---------------|----------------|------------|---------|
+| **🥇 WINNER** | `FULL_INGEST` + `VECTORIZED_SCANNER=TRUE` | **1.62 seconds** | **3,386 rows/sec** | ✅ SUCCESS |
+| **🥈 Runner-up** | `ADD_FILES_COPY` + `VECTORIZED_SCANNER=TRUE` | 2.68 seconds | 2,056 rows/sec | ✅ SUCCESS |
+| **❌ FAILED** | `FULL_INGEST` + `VECTORIZED_SCANNER=FALSE` | N/A | N/A | ❌ **INCOMPATIBLE** |
+
+**🚨 CRITICAL FINDING**: `USE_VECTORIZED_SCANNER = FALSE` **FAILS COMPLETELY** on modern Parquet files with timestamp casting errors. It's not just slower - it's broken!
 
 ---
 
@@ -527,17 +530,39 @@ Based on our testing with 11 files and 5,500 records:
 
 #### For Iceberg Tables (Recommended)
 ```sql
--- Optimal COPY INTO configuration for Iceberg tables
+-- OPTIMAL: For batch loads (< 100 files) - 39.4% faster than ADD_FILES_COPY
 COPY INTO sp500_top10_sector_ohlcv_itbl
   FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
   FILE_FORMAT = (
      FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
-     USE_VECTORIZED_SCANNER = TRUE  -- MANDATORY for best performance
+     USE_VECTORIZED_SCANNER = TRUE  -- CRITICAL: Required for modern Parquet files
   )
-  LOAD_MODE = FULL_INGEST  -- 39.1% faster for small file sets
+  LOAD_MODE = FULL_INGEST  -- FASTEST for small file sets (3,386 rows/sec)
   PURGE = FALSE
   MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
   FORCE = FALSE;
+
+-- ALTERNATIVE: For large file sets (> 500 files)
+COPY INTO sp500_top10_sector_ohlcv_itbl
+  FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+  FILE_FORMAT = (
+     FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+     USE_VECTORIZED_SCANNER = TRUE  -- CRITICAL: Always required
+  )
+  LOAD_MODE = ADD_FILES_COPY  -- Better for incremental loads (2,056 rows/sec)
+  PURGE = FALSE
+  MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+  FORCE = FALSE;
+```
+
+**⚠️ NEVER USE THIS - WILL FAIL:**
+```sql
+-- BROKEN: Fails on modern Parquet files with timestamp errors
+COPY INTO sp500_top10_sector_ohlcv_itbl
+  FILE_FORMAT = (
+     USE_VECTORIZED_SCANNER = FALSE  -- INCOMPATIBLE WITH MODERN DATA
+  )
+  LOAD_MODE = FULL_INGEST;
 ```
 
 **Iceberg Table Additional Benefits:**
@@ -563,16 +588,18 @@ COPY INTO sp500_top10_sector_ohlcv_itbl
 ```
 
 ### Scaling Guidelines
-- **< 100 files**: Use FULL_INGEST
-- **> 500 files**: Use ADD_FILES_COPY  
-- **400-500 files**: Test both modes with your data
+- **< 100 files**: Use `FULL_INGEST + VECTORIZED_SCANNER = TRUE` (39.4% faster)
+- **> 500 files**: Use `ADD_FILES_COPY + VECTORIZED_SCANNER = TRUE` (better scaling)
+- **100-500 files**: Test both modes with your specific data
+- **ALL cases**: `USE_VECTORIZED_SCANNER = TRUE` is **MANDATORY** (non-vectorized fails completely)
 
 ---
 
 ## 📚 Additional Resources
 
 ### Generated Documentation
-- `LOAD_MODE_PERFORMANCE_ANALYSIS.md` - Comprehensive 15-page performance study
+- `THREE_SCENARIO_LOAD_MODE_PERFORMANCE_RESULTS.md` - **NEW: Comprehensive 3-scenario test results**
+- `LOAD_MODE_PERFORMANCE_ANALYSIS.md` - Original 2-scenario performance study  
 - `LOAD_MODE_PERFORMANCE_DIAGRAM.md` - Visual performance comparison
 - `VECTORIZED_SCANNER_TEST_RESULTS.md` - Why vectorized scanner is mandatory
 
