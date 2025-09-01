@@ -47,14 +47,11 @@ class EquityDataPipeline:
     3. Data processing and storage in S3
     """
     
-    def __init__(self, config_path: str = 'config.json'):
+    def __init__(self):
         """
         Initialize the pipeline with configuration.
-        
-        Args:
-            config_path (str): Path to the configuration file containing API keys
         """
-        self.config = self._load_config(config_path)
+        self.polygon_api_key = self._get_polygon_api_key()
         self.s3_client = None
         self.snowflake_conn = None
         
@@ -66,31 +63,23 @@ class EquityDataPipeline:
         
         logger.info("EquityDataPipeline initialized successfully")
     
-    def _load_config(self, config_path: str) -> Dict[str, Any]:
+    def _get_polygon_api_key(self) -> str:
         """
-        Load configuration from JSON file.
+        Get Polygon.io API key from environment variable.
         
-        Args:
-            config_path (str): Path to configuration file
-            
         Returns:
-            Dict[str, Any]: Configuration dictionary
+            str: Polygon.io API key
             
         Raises:
-            FileNotFoundError: If config file doesn't exist
-            json.JSONDecodeError: If config file is invalid JSON
+            ValueError: If POLYGON_API_KEY environment variable is not set
         """
-        try:
-            with open(config_path, 'r') as f:
-                config = json.load(f)
-            logger.info(f"Configuration loaded from {config_path}")
-            return config
-        except FileNotFoundError:
-            logger.error(f"Configuration file {config_path} not found")
-            raise
-        except json.JSONDecodeError as e:
-            logger.error(f"Invalid JSON in configuration file: {e}")
-            raise
+        api_key = os.getenv('POLYGON_API_KEY')
+        if not api_key:
+            logger.error("POLYGON_API_KEY environment variable not set")
+            logger.error("Please set it with: export POLYGON_API_KEY=your_api_key_here")
+            raise ValueError("POLYGON_API_KEY environment variable is required")
+        logger.info("Polygon.io API key loaded from environment variable")
+        return api_key
     
     def _connect_to_snowflake(self) -> snowflake.connector.SnowflakeConnection:
         """
@@ -185,7 +174,7 @@ class EquityDataPipeline:
         """
         url = f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}"
         params = {
-            'apikey': self.config['polygon_api_key'],
+            'apikey': self.polygon_api_key,
             'adjusted': 'true',
             'sort': 'asc'
         }
@@ -473,7 +462,7 @@ def main():
         if not os.path.exists(config_file):
             logger.error(f"Configuration file '{config_file}' not found. Please create it with your Polygon.io API key.")
             logger.error("Example config.json content:")
-            logger.error('{"polygon_api_key": "your_api_key_here"}')
+            logger.error('Please set POLYGON_API_KEY environment variable')
             sys.exit(1)
         
         # Initialize and run the pipeline

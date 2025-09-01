@@ -55,17 +55,18 @@ pip install snowflake-connector-python requests pandas pyarrow boto3
 
 1. **Create Account**: Sign up at [polygon.io](https://polygon.io/)
 2. **Get API Key**: Navigate to Dashboard → API Keys
-3. **Configure API Key**:
+3. **Set Environment Variable**:
    ```bash
-   cp config.json.template config.json
-   # Edit config.json with your API key
-   ```
+   # Set the environment variable (replace with your actual API key)
+   export POLYGON_API_KEY=your_polygon_io_api_key_here
    
-   **config.json content:**
-   ```json
-   {
-       "polygon_api_key": "your_polygon_io_api_key_here"
-   }
+   # To make it permanent, add to your shell profile
+   echo 'export POLYGON_API_KEY=your_polygon_io_api_key_here' >> ~/.bashrc
+   # or for zsh users:
+   echo 'export POLYGON_API_KEY=your_polygon_io_api_key_here' >> ~/.zshrc
+   
+   # Reload your shell or run:
+   source ~/.bashrc  # or ~/.zshrc
    ```
 
 ### Step 4: AWS S3 Setup
@@ -470,12 +471,14 @@ aws s3 ls s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/
 # Test API key
 python -c "
 import requests
-import json
-with open('config.json') as f:
-    config = json.load(f)
-url = f'https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2024-01-01/2024-01-02?apikey={config[\"polygon_api_key\"]}'
-response = requests.get(url)
-print('✅ Polygon.io API working' if response.status_code == 200 else f'❌ API Error: {response.status_code}')
+import os
+api_key = os.getenv('POLYGON_API_KEY')
+if not api_key:
+    print('❌ POLYGON_API_KEY environment variable not set')
+else:
+    url = f'https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2024-01-01/2024-01-02?apikey={api_key}'
+    response = requests.get(url)
+    print('✅ Polygon.io API working' if response.status_code == 200 else f'❌ API Error: {response.status_code}')
 "
 ```
 

@@ -1,2 +1,3 @@
-config.json
-config.json.template
+# Configuration files no longer used - now using environment variables
+# config.json
+# config.json.template

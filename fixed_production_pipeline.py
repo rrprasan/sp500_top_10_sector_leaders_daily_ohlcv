@@ -37,9 +37,9 @@ class FixedProductionOHLCVPipeline:
     FIXED Production pipeline for OHLCV data download and S3 upload.
     """
     
-    def __init__(self, config_path: str = 'config.json'):
+    def __init__(self):
         """Initialize the production pipeline."""
-        self.config = self._load_config(config_path)
+        self.polygon_api_key = self._get_polygon_api_key()
         self.s3_client = None
         
         # Production constants
@@ -54,16 +54,15 @@ class FixedProductionOHLCVPipeline:
         
         logger.info("FIXED Production OHLCV Pipeline initialized")
     
-    def _load_config(self, config_path: str) -> Dict[str, Any]:
-        """Load configuration from JSON file."""
-        try:
-            with open(config_path, 'r') as f:
-                config = json.load(f)
-            logger.info(f"Configuration loaded from {config_path}")
-            return config
-        except Exception as e:
-            logger.error(f"Failed to load config: {e}")
-            raise
+    def _get_polygon_api_key(self) -> str:
+        """Get Polygon.io API key from environment variable."""
+        api_key = os.getenv('POLYGON_API_KEY')
+        if not api_key:
+            logger.error("POLYGON_API_KEY environment variable not set")
+            logger.error("Please set it with: export POLYGON_API_KEY=your_api_key_here")
+            raise ValueError("POLYGON_API_KEY environment variable is required")
+        logger.info("Polygon.io API key loaded from environment variable")
+        return api_key
     
     def _initialize_s3_client(self) -> boto3.client:
         """Initialize AWS S3 client with specified credentials."""
@@ -87,7 +86,7 @@ class FixedProductionOHLCVPipeline:
         """Fetch OHLCV data from Polygon.io API."""
         url = f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}"
         params = {
-            'apikey': self.config['polygon_api_key'],
+            'apikey': self.polygon_api_key,
             'adjusted': 'true',
             'sort': 'asc'
         }

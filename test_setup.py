@@ -48,37 +48,21 @@ def test_imports():
     return True
 
 def test_config():
-    """Test if configuration file exists and is valid."""
-    print("Testing configuration...")
+    """Test if environment variable is set."""
+    print("Testing environment variables...")
     
-    config_file = 'config.json'
-    if not os.path.exists(config_file):
-        print(f"  ✗ Configuration file '{config_file}' not found")
-        print("  Create config.json with your Polygon.io API key:")
-        print('  {"polygon_api_key": "your_api_key_here"}')
+    api_key = os.getenv('POLYGON_API_KEY')
+    if not api_key:
+        print("  ✗ POLYGON_API_KEY environment variable not set")
+        print("  Please set it with: export POLYGON_API_KEY=your_api_key_here")
         return False
     
-    try:
-        with open(config_file, 'r') as f:
-            config = json.load(f)
-        
-        if 'polygon_api_key' not in config:
-            print("  ✗ 'polygon_api_key' not found in config.json")
-            return False
-        
-        if not config['polygon_api_key'] or config['polygon_api_key'] == 'your_polygon_io_api_key_here':
-            print("  ✗ Please set a valid Polygon.io API key in config.json")
-            return False
-        
-        print("  ✓ Configuration file is valid")
-        return True
-        
-    except json.JSONDecodeError as e:
-        print(f"  ✗ Invalid JSON in config.json: {e}")
+    if api_key == 'your_api_key_here' or api_key == 'your_polygon_io_api_key_here':
+        print("  ✗ Please set a valid Polygon.io API key in POLYGON_API_KEY environment variable")
         return False
-    except Exception as e:
-        print(f"  ✗ Error reading config.json: {e}")
-        return False
+    
+    print("  ✓ POLYGON_API_KEY environment variable is set")
+    return True
 
 def test_snowflake_connection():
     """Test Snowflake connection."""
@@ -151,10 +135,10 @@ def test_polygon_api():
     try:
         import requests
         
-        with open('config.json', 'r') as f:
-            config = json.load(f)
-        
-        api_key = config['polygon_api_key']
+        api_key = os.getenv('POLYGON_API_KEY')
+        if not api_key:
+            print("  ✗ POLYGON_API_KEY environment variable not set")
+            return False
         
         # Test API with a simple request
         url = "https://api.polygon.io/v3/reference/tickers"
@@ -189,7 +173,7 @@ def main():
     
     tests = [
         ("Package Imports", test_imports),
-        ("Configuration", test_config),
+        ("Environment Variables", test_config),
         ("Snowflake Connection", test_snowflake_connection),
         ("AWS S3 Access", test_s3_access),
         ("Polygon.io API", test_polygon_api)

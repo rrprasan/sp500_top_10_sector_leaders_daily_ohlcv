@@ -40,9 +40,9 @@ class VectorizedScannerTestPipeline:
     Stores files in flat structure (no directories) in S3 bucket.
     """
     
-    def __init__(self, config_path: str = 'config.json'):
+    def __init__(self):
         """Initialize the pipeline."""
-        self.config = self._load_config(config_path)
+        self.polygon_api_key = self._get_polygon_api_key()
         self.s3_client = None
         self.snowflake_conn = None
         
@@ -59,16 +59,15 @@ class VectorizedScannerTestPipeline:
         logger.info(f"Date range: {self.START_DATE} to {self.END_DATE}")
         logger.info(f"Target S3 bucket: {self.S3_BUCKET}")
     
-    def _load_config(self, config_path: str) -> Dict[str, Any]:
-        """Load configuration from JSON file."""
-        try:
-            with open(config_path, 'r') as f:
-                config = json.load(f)
-            logger.info(f"Configuration loaded from {config_path}")
-            return config
-        except Exception as e:
-            logger.error(f"Failed to load config: {e}")
-            raise
+    def _get_polygon_api_key(self) -> str:
+        """Get Polygon.io API key from environment variable."""
+        api_key = os.getenv('POLYGON_API_KEY')
+        if not api_key:
+            logger.error("POLYGON_API_KEY environment variable not set")
+            logger.error("Please set it with: export POLYGON_API_KEY=your_api_key_here")
+            raise ValueError("POLYGON_API_KEY environment variable is required")
+        logger.info("Polygon.io API key loaded from environment variable")
+        return api_key
     
     def _connect_to_snowflake(self) -> snowflake.connector.SnowflakeConnection:
         """Establish connection to Snowflake using the DEMO_PRAJAGOPAL connection."""
@@ -131,7 +130,7 @@ class VectorizedScannerTestPipeline:
         """Fetch OHLCV data from Polygon.io API."""
         url = f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}"
         params = {
-            'apikey': self.config['polygon_api_key'],
+            'apikey': self.polygon_api_key,
             'adjusted': 'true',
             'sort': 'asc'
         }

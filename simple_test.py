@@ -5,22 +5,23 @@ Simple test script to validate basic functionality.
 
 import json
 import sys
+import os
 
 def test_config():
-    """Test configuration file."""
-    print("Testing configuration...")
+    """Test environment variable configuration."""
+    print("Testing environment variables...")
     try:
-        with open('config.json', 'r') as f:
-            config = json.load(f)
+        api_key = os.getenv('POLYGON_API_KEY')
         
-        if 'polygon_api_key' in config and config['polygon_api_key']:
-            print("  ✓ Configuration is valid")
+        if api_key:
+            print("  ✓ POLYGON_API_KEY environment variable is set")
             return True
         else:
-            print("  ✗ Invalid configuration")
+            print("  ✗ POLYGON_API_KEY environment variable not set")
+            print("  Please set it with: export POLYGON_API_KEY=your_api_key_here")
             return False
     except Exception as e:
-        print(f"  ✗ Configuration error: {e}")
+        print(f"  ✗ Environment variable error: {e}")
         return False
 
 def test_polygon_api():
@@ -29,13 +30,15 @@ def test_polygon_api():
     try:
         import requests
         
-        with open('config.json', 'r') as f:
-            config = json.load(f)
+        api_key = os.getenv('POLYGON_API_KEY')
+        if not api_key:
+            print("  ✗ POLYGON_API_KEY environment variable not set")
+            return False
         
         # Test with a simple ticker
         url = "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2024-01-01/2024-01-05"
         params = {
-            'apikey': config['polygon_api_key'],
+            'apikey': api_key,
             'adjusted': 'true'
         }
         
@@ -60,7 +63,7 @@ def main():
     print("=" * 40)
     
     tests = [
-        ("Configuration", test_config),
+        ("Environment Variables", test_config),
         ("Polygon.io API", test_polygon_api)
     ]
     
