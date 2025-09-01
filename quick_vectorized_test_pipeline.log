@@ -1,0 +1,1255 @@
+2025-08-31 16:18:49,221 - INFO - Configuration loaded from config.json
+2025-08-31 16:18:49,222 - INFO - Quick Vectorized Scanner Test Pipeline initialized
+2025-08-31 16:18:49,222 - INFO - Date range: 2023-08-01 to 2025-08-29
+2025-08-31 16:18:49,222 - INFO - Test tickers: ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'BRK.B', 'JNJ', 'V', 'WMT']
+2025-08-31 16:18:49,222 - INFO - Target S3 bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:18:49,222 - INFO - ================================================================================
+2025-08-31 16:18:49,222 - INFO - QUICK VECTORIZED SCANNER TEST PIPELINE (1-HOUR VERSION)
+2025-08-31 16:18:49,222 - INFO - ================================================================================
+2025-08-31 16:18:49,222 - INFO - Date range: 2023-08-01 to 2025-08-29
+2025-08-31 16:18:49,222 - INFO - Test tickers: 11 tickers
+2025-08-31 16:18:49,222 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:18:49,222 - INFO - File structure: Flat (no directories)
+2025-08-31 16:18:49,222 - INFO - AWS Credentials: /Users/prajagopal/.aws
+2025-08-31 16:18:49,222 - INFO - Step 1: Initializing S3 client...
+2025-08-31 16:18:49,231 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-08-31 16:18:49,637 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:18:49,637 - INFO - Step 2: Processing 11 test tickers...
+2025-08-31 16:18:49,638 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:18:49,638 - INFO - Estimated processing time: ~1.0 hours (275 API calls)
+2025-08-31 16:18:49,638 - INFO - Processing ticker 1/11: AAPL
+2025-08-31 16:18:49,638 - INFO - Starting processing for ticker: AAPL
+2025-08-31 16:18:49,638 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:18:49,638 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:19:02,140 - INFO - Fetching data for AAPL from 2023-08-01 to 2023-08-31
+2025-08-31 16:19:02,537 - ERROR - Failed to fetch data for AAPL: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:19:02,538 - WARNING - No data retrieved for AAPL from 2023-08-01 to 2023-08-31
+2025-08-31 16:19:02,538 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:19:15,045 - INFO - Fetching data for AAPL from 2023-09-01 to 2023-09-30
+2025-08-31 16:19:15,373 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:19:15,390 - INFO - Processed 20 records for AAPL
+2025-08-31 16:19:15,390 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:19:27,898 - INFO - Fetching data for AAPL from 2023-10-01 to 2023-10-31
+2025-08-31 16:19:28,223 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:19:28,240 - INFO - Processed 22 records for AAPL
+2025-08-31 16:19:28,241 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:19:40,747 - INFO - Fetching data for AAPL from 2023-11-01 to 2023-11-30
+2025-08-31 16:19:41,120 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:19:41,143 - INFO - Processed 21 records for AAPL
+2025-08-31 16:19:41,143 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:19:53,651 - INFO - Fetching data for AAPL from 2023-12-01 to 2023-12-31
+2025-08-31 16:19:53,989 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:19:54,016 - INFO - Processed 20 records for AAPL
+2025-08-31 16:19:54,016 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:20:06,519 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-31 16:20:06,933 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:20:06,947 - INFO - Processed 21 records for AAPL
+2025-08-31 16:20:06,948 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:20:19,454 - INFO - Fetching data for AAPL from 2024-02-01 to 2024-02-29
+2025-08-31 16:20:19,774 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:20:19,784 - INFO - Processed 20 records for AAPL
+2025-08-31 16:20:19,784 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:20:32,286 - INFO - Fetching data for AAPL from 2024-03-01 to 2024-03-31
+2025-08-31 16:20:32,610 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:20:32,629 - INFO - Processed 20 records for AAPL
+2025-08-31 16:20:32,630 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:20:45,136 - INFO - Fetching data for AAPL from 2024-04-01 to 2024-04-30
+2025-08-31 16:20:45,455 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:20:45,465 - INFO - Processed 22 records for AAPL
+2025-08-31 16:20:45,466 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:20:57,968 - INFO - Fetching data for AAPL from 2024-05-01 to 2024-05-31
+2025-08-31 16:20:58,378 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:20:58,404 - INFO - Processed 22 records for AAPL
+2025-08-31 16:20:58,404 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:21:10,911 - INFO - Fetching data for AAPL from 2024-06-01 to 2024-06-30
+2025-08-31 16:21:11,256 - INFO - Successfully retrieved 19 records for AAPL
+2025-08-31 16:21:11,268 - INFO - Processed 19 records for AAPL
+2025-08-31 16:21:11,268 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:21:23,775 - INFO - Fetching data for AAPL from 2024-07-01 to 2024-07-31
+2025-08-31 16:21:24,097 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:21:24,114 - INFO - Processed 22 records for AAPL
+2025-08-31 16:21:24,114 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:21:36,675 - INFO - Fetching data for AAPL from 2024-08-01 to 2024-08-31
+2025-08-31 16:21:37,158 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:21:37,167 - INFO - Processed 22 records for AAPL
+2025-08-31 16:21:37,167 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:21:49,674 - INFO - Fetching data for AAPL from 2024-09-01 to 2024-09-30
+2025-08-31 16:21:50,029 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:21:50,043 - INFO - Processed 20 records for AAPL
+2025-08-31 16:21:50,044 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:22:02,550 - INFO - Fetching data for AAPL from 2024-10-01 to 2024-10-31
+2025-08-31 16:22:03,229 - INFO - Successfully retrieved 23 records for AAPL
+2025-08-31 16:22:03,240 - INFO - Processed 23 records for AAPL
+2025-08-31 16:22:03,240 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:22:15,745 - INFO - Fetching data for AAPL from 2024-11-01 to 2024-11-30
+2025-08-31 16:22:16,098 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:22:16,113 - INFO - Processed 20 records for AAPL
+2025-08-31 16:22:16,114 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:22:28,617 - INFO - Fetching data for AAPL from 2024-12-01 to 2024-12-31
+2025-08-31 16:22:28,941 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:22:28,973 - INFO - Processed 21 records for AAPL
+2025-08-31 16:22:28,973 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:22:41,482 - INFO - Fetching data for AAPL from 2025-01-01 to 2025-01-31
+2025-08-31 16:22:41,801 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:22:41,815 - INFO - Processed 20 records for AAPL
+2025-08-31 16:22:41,815 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:22:54,322 - INFO - Fetching data for AAPL from 2025-02-01 to 2025-02-28
+2025-08-31 16:22:54,640 - INFO - Successfully retrieved 19 records for AAPL
+2025-08-31 16:22:54,662 - INFO - Processed 19 records for AAPL
+2025-08-31 16:22:54,663 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:23:07,171 - INFO - Fetching data for AAPL from 2025-03-01 to 2025-03-31
+2025-08-31 16:23:07,584 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:23:07,599 - INFO - Processed 21 records for AAPL
+2025-08-31 16:23:07,599 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:23:20,106 - INFO - Fetching data for AAPL from 2025-04-01 to 2025-04-30
+2025-08-31 16:23:20,428 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:23:20,438 - INFO - Processed 21 records for AAPL
+2025-08-31 16:23:20,438 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:23:32,944 - INFO - Fetching data for AAPL from 2025-05-01 to 2025-05-31
+2025-08-31 16:23:33,273 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:23:33,284 - INFO - Processed 21 records for AAPL
+2025-08-31 16:23:33,285 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:23:45,791 - INFO - Fetching data for AAPL from 2025-06-01 to 2025-06-30
+2025-08-31 16:23:46,138 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:23:46,153 - INFO - Processed 20 records for AAPL
+2025-08-31 16:23:46,153 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:23:58,660 - INFO - Fetching data for AAPL from 2025-07-01 to 2025-07-31
+2025-08-31 16:23:59,061 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:23:59,078 - INFO - Processed 22 records for AAPL
+2025-08-31 16:23:59,079 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:24:11,603 - INFO - Fetching data for AAPL from 2025-08-01 to 2025-08-29
+2025-08-31 16:24:11,943 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:24:11,953 - INFO - Processed 21 records for AAPL
+2025-08-31 16:24:11,975 - INFO - Combined 500 total records for AAPL
+2025-08-31 16:24:12,027 - INFO - Created Parquet file: AAPL_2023_2025.parquet (500 records)
+2025-08-31 16:24:12,503 - INFO - Successfully uploaded AAPL_2023_2025.parquet to S3 bucket root
+2025-08-31 16:24:12,504 - INFO - Cleaned up local file: AAPL_2023_2025.parquet
+2025-08-31 16:24:12,504 - INFO - ✓ Successfully processed AAPL (500 records)
+2025-08-31 16:24:12,505 - INFO - ✓ Successfully processed AAPL
+2025-08-31 16:24:12,506 - INFO - Progress: 1/11 (9.1%)
+2025-08-31 16:24:12,506 - INFO - Elapsed: 0:05:22.868025, Estimated remaining: 0:53:48.680250
+2025-08-31 16:24:12,507 - INFO - Processing ticker 2/11: MSFT
+2025-08-31 16:24:12,507 - INFO - Starting processing for ticker: MSFT
+2025-08-31 16:24:12,508 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:24:12,508 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:24:25,021 - INFO - Fetching data for MSFT from 2023-08-01 to 2023-08-31
+2025-08-31 16:24:25,364 - ERROR - Failed to fetch data for MSFT: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/MSFT/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:24:25,365 - WARNING - No data retrieved for MSFT from 2023-08-01 to 2023-08-31
+2025-08-31 16:24:25,365 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:24:37,885 - INFO - Fetching data for MSFT from 2023-09-01 to 2023-09-30
+2025-08-31 16:24:38,275 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:24:38,415 - INFO - Processed 20 records for MSFT
+2025-08-31 16:24:38,415 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:24:50,924 - INFO - Fetching data for MSFT from 2023-10-01 to 2023-10-31
+2025-08-31 16:24:51,327 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:24:51,391 - INFO - Processed 22 records for MSFT
+2025-08-31 16:24:51,393 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:25:03,896 - INFO - Fetching data for MSFT from 2023-11-01 to 2023-11-30
+2025-08-31 16:25:04,271 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:25:04,336 - INFO - Processed 21 records for MSFT
+2025-08-31 16:25:04,336 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:25:16,844 - INFO - Fetching data for MSFT from 2023-12-01 to 2023-12-31
+2025-08-31 16:25:17,317 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:25:17,401 - INFO - Processed 20 records for MSFT
+2025-08-31 16:25:17,402 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:25:29,908 - INFO - Fetching data for MSFT from 2024-01-01 to 2024-01-31
+2025-08-31 16:25:30,296 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:25:30,383 - INFO - Processed 21 records for MSFT
+2025-08-31 16:25:30,384 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:25:42,902 - INFO - Fetching data for MSFT from 2024-02-01 to 2024-02-29
+2025-08-31 16:25:43,378 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:25:43,660 - INFO - Processed 20 records for MSFT
+2025-08-31 16:25:43,660 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:25:56,168 - INFO - Fetching data for MSFT from 2024-03-01 to 2024-03-31
+2025-08-31 16:25:56,561 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:25:56,601 - INFO - Processed 20 records for MSFT
+2025-08-31 16:25:56,601 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:26:09,112 - INFO - Fetching data for MSFT from 2024-04-01 to 2024-04-30
+2025-08-31 16:26:09,544 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:26:09,582 - INFO - Processed 22 records for MSFT
+2025-08-31 16:26:09,582 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:26:22,103 - INFO - Fetching data for MSFT from 2024-05-01 to 2024-05-31
+2025-08-31 16:26:22,620 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:26:22,734 - INFO - Processed 22 records for MSFT
+2025-08-31 16:26:22,734 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:26:35,243 - INFO - Fetching data for MSFT from 2024-06-01 to 2024-06-30
+2025-08-31 16:26:35,583 - INFO - Successfully retrieved 19 records for MSFT
+2025-08-31 16:26:35,641 - INFO - Processed 19 records for MSFT
+2025-08-31 16:26:35,641 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:26:48,145 - INFO - Fetching data for MSFT from 2024-07-01 to 2024-07-31
+2025-08-31 16:26:48,483 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:26:48,511 - INFO - Processed 22 records for MSFT
+2025-08-31 16:26:48,512 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:27:01,020 - INFO - Fetching data for MSFT from 2024-08-01 to 2024-08-31
+2025-08-31 16:27:01,488 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:27:01,497 - INFO - Processed 22 records for MSFT
+2025-08-31 16:27:01,497 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:27:14,023 - INFO - Fetching data for MSFT from 2024-09-01 to 2024-09-30
+2025-08-31 16:27:14,419 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:27:14,448 - INFO - Processed 20 records for MSFT
+2025-08-31 16:27:14,448 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:27:26,954 - INFO - Fetching data for MSFT from 2024-10-01 to 2024-10-31
+2025-08-31 16:27:27,605 - INFO - Successfully retrieved 23 records for MSFT
+2025-08-31 16:27:27,616 - INFO - Processed 23 records for MSFT
+2025-08-31 16:27:27,636 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:27:40,142 - INFO - Fetching data for MSFT from 2024-11-01 to 2024-11-30
+2025-08-31 16:27:40,571 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:27:40,693 - INFO - Processed 20 records for MSFT
+2025-08-31 16:27:40,696 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:27:53,200 - INFO - Fetching data for MSFT from 2024-12-01 to 2024-12-31
+2025-08-31 16:27:53,523 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:27:53,535 - INFO - Processed 21 records for MSFT
+2025-08-31 16:27:53,536 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:28:06,061 - INFO - Fetching data for MSFT from 2025-01-01 to 2025-01-31
+2025-08-31 16:28:06,506 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:28:06,514 - INFO - Processed 20 records for MSFT
+2025-08-31 16:28:06,514 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:28:19,062 - INFO - Fetching data for MSFT from 2025-02-01 to 2025-02-28
+2025-08-31 16:28:19,459 - INFO - Successfully retrieved 19 records for MSFT
+2025-08-31 16:28:19,480 - INFO - Processed 19 records for MSFT
+2025-08-31 16:28:19,480 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:28:31,983 - INFO - Fetching data for MSFT from 2025-03-01 to 2025-03-31
+2025-08-31 16:28:32,420 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:28:32,498 - INFO - Processed 21 records for MSFT
+2025-08-31 16:28:32,499 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:28:45,015 - INFO - Fetching data for MSFT from 2025-04-01 to 2025-04-30
+2025-08-31 16:28:45,462 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:28:45,527 - INFO - Processed 21 records for MSFT
+2025-08-31 16:28:45,528 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:28:58,031 - INFO - Fetching data for MSFT from 2025-05-01 to 2025-05-31
+2025-08-31 16:28:58,450 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:28:58,461 - INFO - Processed 21 records for MSFT
+2025-08-31 16:28:58,462 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:29:10,964 - INFO - Fetching data for MSFT from 2025-06-01 to 2025-06-30
+2025-08-31 16:29:11,501 - INFO - Successfully retrieved 20 records for MSFT
+2025-08-31 16:29:11,514 - INFO - Processed 20 records for MSFT
+2025-08-31 16:29:11,514 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:29:24,028 - INFO - Fetching data for MSFT from 2025-07-01 to 2025-07-31
+2025-08-31 16:29:24,430 - INFO - Successfully retrieved 22 records for MSFT
+2025-08-31 16:29:24,560 - INFO - Processed 22 records for MSFT
+2025-08-31 16:29:24,560 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:29:37,091 - INFO - Fetching data for MSFT from 2025-08-01 to 2025-08-29
+2025-08-31 16:29:37,628 - INFO - Successfully retrieved 21 records for MSFT
+2025-08-31 16:29:37,712 - INFO - Processed 21 records for MSFT
+2025-08-31 16:29:37,908 - INFO - Combined 500 total records for MSFT
+2025-08-31 16:29:38,206 - INFO - Created Parquet file: MSFT_2023_2025.parquet (500 records)
+2025-08-31 16:29:38,878 - INFO - Successfully uploaded MSFT_2023_2025.parquet to S3 bucket root
+2025-08-31 16:29:38,879 - INFO - Cleaned up local file: MSFT_2023_2025.parquet
+2025-08-31 16:29:38,879 - INFO - ✓ Successfully processed MSFT (500 records)
+2025-08-31 16:29:38,891 - INFO - ✓ Successfully processed MSFT
+2025-08-31 16:29:38,891 - INFO - Progress: 2/11 (18.2%)
+2025-08-31 16:29:38,891 - INFO - Elapsed: 0:10:49.253456, Estimated remaining: 0:48:41.640552
+2025-08-31 16:29:38,893 - INFO - Processing ticker 3/11: GOOGL
+2025-08-31 16:29:38,893 - INFO - Starting processing for ticker: GOOGL
+2025-08-31 16:29:38,901 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:29:38,901 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:29:51,424 - INFO - Fetching data for GOOGL from 2023-08-01 to 2023-08-31
+2025-08-31 16:29:51,849 - ERROR - Failed to fetch data for GOOGL: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/GOOGL/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:29:51,853 - WARNING - No data retrieved for GOOGL from 2023-08-01 to 2023-08-31
+2025-08-31 16:29:51,853 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:30:04,370 - INFO - Fetching data for GOOGL from 2023-09-01 to 2023-09-30
+2025-08-31 16:30:04,804 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:30:04,912 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:30:04,917 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:30:17,421 - INFO - Fetching data for GOOGL from 2023-10-01 to 2023-10-31
+2025-08-31 16:30:17,821 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:30:18,015 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:30:18,015 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:30:30,526 - INFO - Fetching data for GOOGL from 2023-11-01 to 2023-11-30
+2025-08-31 16:30:30,958 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:30:30,999 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:30:30,999 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:30:43,508 - INFO - Fetching data for GOOGL from 2023-12-01 to 2023-12-31
+2025-08-31 16:30:43,867 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:30:43,973 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:30:43,974 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:30:56,497 - INFO - Fetching data for GOOGL from 2024-01-01 to 2024-01-31
+2025-08-31 16:30:56,933 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:30:56,984 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:30:56,984 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:31:09,487 - INFO - Fetching data for GOOGL from 2024-02-01 to 2024-02-29
+2025-08-31 16:31:09,818 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:31:09,832 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:31:09,832 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:31:22,350 - INFO - Fetching data for GOOGL from 2024-03-01 to 2024-03-31
+2025-08-31 16:31:22,796 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:31:22,831 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:31:22,832 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:31:35,346 - INFO - Fetching data for GOOGL from 2024-04-01 to 2024-04-30
+2025-08-31 16:31:35,723 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:31:35,732 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:31:35,733 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:31:48,240 - INFO - Fetching data for GOOGL from 2024-05-01 to 2024-05-31
+2025-08-31 16:31:48,589 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:31:48,636 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:31:48,636 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:32:01,144 - INFO - Fetching data for GOOGL from 2024-06-01 to 2024-06-30
+2025-08-31 16:32:01,563 - INFO - Successfully retrieved 19 records for GOOGL
+2025-08-31 16:32:01,576 - INFO - Processed 19 records for GOOGL
+2025-08-31 16:32:01,576 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:32:14,083 - INFO - Fetching data for GOOGL from 2024-07-01 to 2024-07-31
+2025-08-31 16:32:14,403 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:32:14,418 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:32:14,418 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:32:26,920 - INFO - Fetching data for GOOGL from 2024-08-01 to 2024-08-31
+2025-08-31 16:32:27,243 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:32:27,261 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:32:27,261 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:32:39,766 - INFO - Fetching data for GOOGL from 2024-09-01 to 2024-09-30
+2025-08-31 16:32:40,074 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:32:40,092 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:32:40,092 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:32:52,597 - INFO - Fetching data for GOOGL from 2024-10-01 to 2024-10-31
+2025-08-31 16:32:52,926 - INFO - Successfully retrieved 23 records for GOOGL
+2025-08-31 16:32:52,934 - INFO - Processed 23 records for GOOGL
+2025-08-31 16:32:52,934 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:33:05,439 - INFO - Fetching data for GOOGL from 2024-11-01 to 2024-11-30
+2025-08-31 16:33:05,847 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:33:05,851 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:33:05,852 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:33:18,355 - INFO - Fetching data for GOOGL from 2024-12-01 to 2024-12-31
+2025-08-31 16:33:18,700 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:33:18,715 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:33:18,716 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:33:31,196 - INFO - Fetching data for GOOGL from 2025-01-01 to 2025-01-31
+2025-08-31 16:33:31,507 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:33:31,514 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:33:31,515 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:33:44,008 - INFO - Fetching data for GOOGL from 2025-02-01 to 2025-02-28
+2025-08-31 16:33:44,333 - INFO - Successfully retrieved 19 records for GOOGL
+2025-08-31 16:33:44,348 - INFO - Processed 19 records for GOOGL
+2025-08-31 16:33:44,348 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:33:56,847 - INFO - Fetching data for GOOGL from 2025-03-01 to 2025-03-31
+2025-08-31 16:33:57,174 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:33:57,181 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:33:57,181 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:34:09,688 - INFO - Fetching data for GOOGL from 2025-04-01 to 2025-04-30
+2025-08-31 16:34:10,095 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:34:10,105 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:34:10,106 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:34:22,606 - INFO - Fetching data for GOOGL from 2025-05-01 to 2025-05-31
+2025-08-31 16:34:22,928 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:34:22,943 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:34:22,943 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:34:35,448 - INFO - Fetching data for GOOGL from 2025-06-01 to 2025-06-30
+2025-08-31 16:34:35,771 - INFO - Successfully retrieved 20 records for GOOGL
+2025-08-31 16:34:35,780 - INFO - Processed 20 records for GOOGL
+2025-08-31 16:34:35,781 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:34:48,285 - INFO - Fetching data for GOOGL from 2025-07-01 to 2025-07-31
+2025-08-31 16:34:48,607 - INFO - Successfully retrieved 22 records for GOOGL
+2025-08-31 16:34:48,613 - INFO - Processed 22 records for GOOGL
+2025-08-31 16:34:48,613 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:35:01,119 - INFO - Fetching data for GOOGL from 2025-08-01 to 2025-08-29
+2025-08-31 16:35:01,541 - INFO - Successfully retrieved 21 records for GOOGL
+2025-08-31 16:35:01,547 - INFO - Processed 21 records for GOOGL
+2025-08-31 16:35:01,564 - INFO - Combined 500 total records for GOOGL
+2025-08-31 16:35:01,602 - INFO - Created Parquet file: GOOGL_2023_2025.parquet (500 records)
+2025-08-31 16:35:02,083 - INFO - Successfully uploaded GOOGL_2023_2025.parquet to S3 bucket root
+2025-08-31 16:35:02,084 - INFO - Cleaned up local file: GOOGL_2023_2025.parquet
+2025-08-31 16:35:02,084 - INFO - ✓ Successfully processed GOOGL (500 records)
+2025-08-31 16:35:02,085 - INFO - ✓ Successfully processed GOOGL
+2025-08-31 16:35:02,086 - INFO - Progress: 3/11 (27.3%)
+2025-08-31 16:35:02,086 - INFO - Elapsed: 0:16:12.447795, Estimated remaining: 0:43:13.194120
+2025-08-31 16:35:02,086 - INFO - Processing ticker 4/11: AMZN
+2025-08-31 16:35:02,086 - INFO - Starting processing for ticker: AMZN
+2025-08-31 16:35:02,086 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:35:02,087 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:35:14,589 - INFO - Fetching data for AMZN from 2023-08-01 to 2023-08-31
+2025-08-31 16:35:14,890 - ERROR - Failed to fetch data for AMZN: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/AMZN/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:35:14,894 - WARNING - No data retrieved for AMZN from 2023-08-01 to 2023-08-31
+2025-08-31 16:35:14,895 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:35:27,401 - INFO - Fetching data for AMZN from 2023-09-01 to 2023-09-30
+2025-08-31 16:35:27,724 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:35:27,738 - INFO - Processed 20 records for AMZN
+2025-08-31 16:35:27,739 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:35:40,240 - INFO - Fetching data for AMZN from 2023-10-01 to 2023-10-31
+2025-08-31 16:35:40,549 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:35:40,562 - INFO - Processed 22 records for AMZN
+2025-08-31 16:35:40,562 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:35:53,068 - INFO - Fetching data for AMZN from 2023-11-01 to 2023-11-30
+2025-08-31 16:35:53,405 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:35:53,420 - INFO - Processed 21 records for AMZN
+2025-08-31 16:35:53,420 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:36:05,927 - INFO - Fetching data for AMZN from 2023-12-01 to 2023-12-31
+2025-08-31 16:36:06,394 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:36:06,408 - INFO - Processed 20 records for AMZN
+2025-08-31 16:36:06,409 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:36:18,911 - INFO - Fetching data for AMZN from 2024-01-01 to 2024-01-31
+2025-08-31 16:36:19,243 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:36:19,248 - INFO - Processed 21 records for AMZN
+2025-08-31 16:36:19,248 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:36:31,753 - INFO - Fetching data for AMZN from 2024-02-01 to 2024-02-29
+2025-08-31 16:36:32,074 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:36:32,078 - INFO - Processed 20 records for AMZN
+2025-08-31 16:36:32,079 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:36:44,585 - INFO - Fetching data for AMZN from 2024-03-01 to 2024-03-31
+2025-08-31 16:36:44,910 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:36:44,922 - INFO - Processed 20 records for AMZN
+2025-08-31 16:36:44,922 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:36:57,434 - INFO - Fetching data for AMZN from 2024-04-01 to 2024-04-30
+2025-08-31 16:36:57,775 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:36:57,793 - INFO - Processed 22 records for AMZN
+2025-08-31 16:36:57,794 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:37:10,304 - INFO - Fetching data for AMZN from 2024-05-01 to 2024-05-31
+2025-08-31 16:37:10,703 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:37:10,712 - INFO - Processed 22 records for AMZN
+2025-08-31 16:37:10,713 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:37:23,218 - INFO - Fetching data for AMZN from 2024-06-01 to 2024-06-30
+2025-08-31 16:37:23,533 - INFO - Successfully retrieved 19 records for AMZN
+2025-08-31 16:37:23,540 - INFO - Processed 19 records for AMZN
+2025-08-31 16:37:23,540 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:37:36,047 - INFO - Fetching data for AMZN from 2024-07-01 to 2024-07-31
+2025-08-31 16:37:36,381 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:37:36,612 - INFO - Processed 22 records for AMZN
+2025-08-31 16:37:36,612 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:37:49,126 - INFO - Fetching data for AMZN from 2024-08-01 to 2024-08-31
+2025-08-31 16:37:49,441 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:37:49,451 - INFO - Processed 22 records for AMZN
+2025-08-31 16:37:49,452 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:38:01,958 - INFO - Fetching data for AMZN from 2024-09-01 to 2024-09-30
+2025-08-31 16:38:02,280 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:38:02,288 - INFO - Processed 20 records for AMZN
+2025-08-31 16:38:02,289 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:38:14,791 - INFO - Fetching data for AMZN from 2024-10-01 to 2024-10-31
+2025-08-31 16:38:15,224 - INFO - Successfully retrieved 23 records for AMZN
+2025-08-31 16:38:15,235 - INFO - Processed 23 records for AMZN
+2025-08-31 16:38:15,235 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:38:27,748 - INFO - Fetching data for AMZN from 2024-11-01 to 2024-11-30
+2025-08-31 16:38:28,090 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:38:28,098 - INFO - Processed 20 records for AMZN
+2025-08-31 16:38:28,099 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:38:40,603 - INFO - Fetching data for AMZN from 2024-12-01 to 2024-12-31
+2025-08-31 16:38:40,942 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:38:40,955 - INFO - Processed 21 records for AMZN
+2025-08-31 16:38:40,955 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:38:53,465 - INFO - Fetching data for AMZN from 2025-01-01 to 2025-01-31
+2025-08-31 16:38:53,800 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:38:53,815 - INFO - Processed 20 records for AMZN
+2025-08-31 16:38:53,815 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:39:06,324 - INFO - Fetching data for AMZN from 2025-02-01 to 2025-02-28
+2025-08-31 16:39:06,636 - INFO - Successfully retrieved 19 records for AMZN
+2025-08-31 16:39:06,641 - INFO - Processed 19 records for AMZN
+2025-08-31 16:39:06,641 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:39:19,147 - INFO - Fetching data for AMZN from 2025-03-01 to 2025-03-31
+2025-08-31 16:39:19,455 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:39:19,461 - INFO - Processed 21 records for AMZN
+2025-08-31 16:39:19,461 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:39:31,970 - INFO - Fetching data for AMZN from 2025-04-01 to 2025-04-30
+2025-08-31 16:39:32,287 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:39:32,293 - INFO - Processed 21 records for AMZN
+2025-08-31 16:39:32,293 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:39:44,797 - INFO - Fetching data for AMZN from 2025-05-01 to 2025-05-31
+2025-08-31 16:39:45,128 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:39:45,141 - INFO - Processed 21 records for AMZN
+2025-08-31 16:39:45,142 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:39:57,653 - INFO - Fetching data for AMZN from 2025-06-01 to 2025-06-30
+2025-08-31 16:39:57,975 - INFO - Successfully retrieved 20 records for AMZN
+2025-08-31 16:39:57,985 - INFO - Processed 20 records for AMZN
+2025-08-31 16:39:57,986 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:40:10,497 - INFO - Fetching data for AMZN from 2025-07-01 to 2025-07-31
+2025-08-31 16:40:10,826 - INFO - Successfully retrieved 22 records for AMZN
+2025-08-31 16:40:10,830 - INFO - Processed 22 records for AMZN
+2025-08-31 16:40:10,830 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:40:23,342 - INFO - Fetching data for AMZN from 2025-08-01 to 2025-08-29
+2025-08-31 16:40:23,660 - INFO - Successfully retrieved 21 records for AMZN
+2025-08-31 16:40:23,680 - INFO - Processed 21 records for AMZN
+2025-08-31 16:40:23,693 - INFO - Combined 500 total records for AMZN
+2025-08-31 16:40:23,699 - INFO - Created Parquet file: AMZN_2023_2025.parquet (500 records)
+2025-08-31 16:40:24,151 - INFO - Successfully uploaded AMZN_2023_2025.parquet to S3 bucket root
+2025-08-31 16:40:24,152 - INFO - Cleaned up local file: AMZN_2023_2025.parquet
+2025-08-31 16:40:24,152 - INFO - ✓ Successfully processed AMZN (500 records)
+2025-08-31 16:40:24,153 - INFO - ✓ Successfully processed AMZN
+2025-08-31 16:40:24,153 - INFO - Progress: 4/11 (36.4%)
+2025-08-31 16:40:24,153 - INFO - Elapsed: 0:21:34.515430, Estimated remaining: 0:37:45.402002
+2025-08-31 16:40:24,153 - INFO - Processing ticker 5/11: TSLA
+2025-08-31 16:40:24,154 - INFO - Starting processing for ticker: TSLA
+2025-08-31 16:40:24,154 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:40:24,155 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:40:36,658 - INFO - Fetching data for TSLA from 2023-08-01 to 2023-08-31
+2025-08-31 16:40:36,980 - ERROR - Failed to fetch data for TSLA: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/TSLA/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:40:36,983 - WARNING - No data retrieved for TSLA from 2023-08-01 to 2023-08-31
+2025-08-31 16:40:36,983 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:40:49,491 - INFO - Fetching data for TSLA from 2023-09-01 to 2023-09-30
+2025-08-31 16:40:49,818 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:40:49,836 - INFO - Processed 20 records for TSLA
+2025-08-31 16:40:49,840 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:41:02,350 - INFO - Fetching data for TSLA from 2023-10-01 to 2023-10-31
+2025-08-31 16:41:02,747 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:41:02,755 - INFO - Processed 22 records for TSLA
+2025-08-31 16:41:02,756 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:41:15,266 - INFO - Fetching data for TSLA from 2023-11-01 to 2023-11-30
+2025-08-31 16:41:15,587 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:41:15,595 - INFO - Processed 21 records for TSLA
+2025-08-31 16:41:15,595 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:41:28,099 - INFO - Fetching data for TSLA from 2023-12-01 to 2023-12-31
+2025-08-31 16:41:28,428 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:41:28,443 - INFO - Processed 20 records for TSLA
+2025-08-31 16:41:28,444 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:41:40,955 - INFO - Fetching data for TSLA from 2024-01-01 to 2024-01-31
+2025-08-31 16:41:41,284 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:41:41,300 - INFO - Processed 21 records for TSLA
+2025-08-31 16:41:41,300 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:41:53,812 - INFO - Fetching data for TSLA from 2024-02-01 to 2024-02-29
+2025-08-31 16:41:54,128 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:41:54,142 - INFO - Processed 20 records for TSLA
+2025-08-31 16:41:54,142 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:42:06,653 - INFO - Fetching data for TSLA from 2024-03-01 to 2024-03-31
+2025-08-31 16:42:07,002 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:42:07,014 - INFO - Processed 20 records for TSLA
+2025-08-31 16:42:07,014 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:42:19,519 - INFO - Fetching data for TSLA from 2024-04-01 to 2024-04-30
+2025-08-31 16:42:19,926 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:42:19,932 - INFO - Processed 22 records for TSLA
+2025-08-31 16:42:19,932 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:42:32,443 - INFO - Fetching data for TSLA from 2024-05-01 to 2024-05-31
+2025-08-31 16:42:32,777 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:42:32,791 - INFO - Processed 22 records for TSLA
+2025-08-31 16:42:32,792 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:42:45,305 - INFO - Fetching data for TSLA from 2024-06-01 to 2024-06-30
+2025-08-31 16:42:45,634 - INFO - Successfully retrieved 19 records for TSLA
+2025-08-31 16:42:45,653 - INFO - Processed 19 records for TSLA
+2025-08-31 16:42:45,653 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:42:58,165 - INFO - Fetching data for TSLA from 2024-07-01 to 2024-07-31
+2025-08-31 16:42:58,496 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:42:58,505 - INFO - Processed 22 records for TSLA
+2025-08-31 16:42:58,506 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:43:11,017 - INFO - Fetching data for TSLA from 2024-08-01 to 2024-08-31
+2025-08-31 16:43:11,435 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:43:11,446 - INFO - Processed 22 records for TSLA
+2025-08-31 16:43:11,447 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:43:23,955 - INFO - Fetching data for TSLA from 2024-09-01 to 2024-09-30
+2025-08-31 16:43:24,272 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:43:24,292 - INFO - Processed 20 records for TSLA
+2025-08-31 16:43:24,292 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:43:36,804 - INFO - Fetching data for TSLA from 2024-10-01 to 2024-10-31
+2025-08-31 16:43:37,129 - INFO - Successfully retrieved 23 records for TSLA
+2025-08-31 16:43:37,139 - INFO - Processed 23 records for TSLA
+2025-08-31 16:43:37,140 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:43:49,651 - INFO - Fetching data for TSLA from 2024-11-01 to 2024-11-30
+2025-08-31 16:43:49,980 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:43:49,989 - INFO - Processed 20 records for TSLA
+2025-08-31 16:43:49,990 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:44:02,496 - INFO - Fetching data for TSLA from 2024-12-01 to 2024-12-31
+2025-08-31 16:44:02,897 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:44:02,910 - INFO - Processed 21 records for TSLA
+2025-08-31 16:44:02,911 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:44:15,422 - INFO - Fetching data for TSLA from 2025-01-01 to 2025-01-31
+2025-08-31 16:44:15,748 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:44:15,763 - INFO - Processed 20 records for TSLA
+2025-08-31 16:44:15,764 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:44:28,267 - INFO - Fetching data for TSLA from 2025-02-01 to 2025-02-28
+2025-08-31 16:44:28,604 - INFO - Successfully retrieved 19 records for TSLA
+2025-08-31 16:44:28,624 - INFO - Processed 19 records for TSLA
+2025-08-31 16:44:28,626 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:44:41,137 - INFO - Fetching data for TSLA from 2025-03-01 to 2025-03-31
+2025-08-31 16:44:41,481 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:44:41,490 - INFO - Processed 21 records for TSLA
+2025-08-31 16:44:41,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:44:53,998 - INFO - Fetching data for TSLA from 2025-04-01 to 2025-04-30
+2025-08-31 16:44:54,320 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:44:54,346 - INFO - Processed 21 records for TSLA
+2025-08-31 16:44:54,347 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:45:06,848 - INFO - Fetching data for TSLA from 2025-05-01 to 2025-05-31
+2025-08-31 16:45:07,476 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:45:07,490 - INFO - Processed 21 records for TSLA
+2025-08-31 16:45:07,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:45:20,002 - INFO - Fetching data for TSLA from 2025-06-01 to 2025-06-30
+2025-08-31 16:45:20,422 - INFO - Successfully retrieved 20 records for TSLA
+2025-08-31 16:45:20,442 - INFO - Processed 20 records for TSLA
+2025-08-31 16:45:20,442 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:45:32,953 - INFO - Fetching data for TSLA from 2025-07-01 to 2025-07-31
+2025-08-31 16:45:33,295 - INFO - Successfully retrieved 22 records for TSLA
+2025-08-31 16:45:33,300 - INFO - Processed 22 records for TSLA
+2025-08-31 16:45:33,300 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:45:45,803 - INFO - Fetching data for TSLA from 2025-08-01 to 2025-08-29
+2025-08-31 16:45:46,133 - INFO - Successfully retrieved 21 records for TSLA
+2025-08-31 16:45:46,142 - INFO - Processed 21 records for TSLA
+2025-08-31 16:45:46,148 - INFO - Combined 500 total records for TSLA
+2025-08-31 16:45:46,152 - INFO - Created Parquet file: TSLA_2023_2025.parquet (500 records)
+2025-08-31 16:45:46,634 - INFO - Successfully uploaded TSLA_2023_2025.parquet to S3 bucket root
+2025-08-31 16:45:46,635 - INFO - Cleaned up local file: TSLA_2023_2025.parquet
+2025-08-31 16:45:46,635 - INFO - ✓ Successfully processed TSLA (500 records)
+2025-08-31 16:45:46,636 - INFO - ✓ Successfully processed TSLA
+2025-08-31 16:45:46,636 - INFO - Progress: 5/11 (45.5%)
+2025-08-31 16:45:46,637 - INFO - Elapsed: 0:26:56.998639, Estimated remaining: 0:32:20.398367
+2025-08-31 16:45:46,637 - INFO - Processing ticker 6/11: NVDA
+2025-08-31 16:45:46,637 - INFO - Starting processing for ticker: NVDA
+2025-08-31 16:45:46,637 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:45:46,638 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:45:59,146 - INFO - Fetching data for NVDA from 2023-08-01 to 2023-08-31
+2025-08-31 16:45:59,449 - ERROR - Failed to fetch data for NVDA: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/NVDA/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:45:59,453 - WARNING - No data retrieved for NVDA from 2023-08-01 to 2023-08-31
+2025-08-31 16:45:59,454 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:46:11,964 - INFO - Fetching data for NVDA from 2023-09-01 to 2023-09-30
+2025-08-31 16:46:12,375 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:46:12,399 - INFO - Processed 20 records for NVDA
+2025-08-31 16:46:12,399 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:46:24,902 - INFO - Fetching data for NVDA from 2023-10-01 to 2023-10-31
+2025-08-31 16:46:25,237 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:46:25,253 - INFO - Processed 22 records for NVDA
+2025-08-31 16:46:25,254 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:46:37,765 - INFO - Fetching data for NVDA from 2023-11-01 to 2023-11-30
+2025-08-31 16:46:38,089 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:46:38,104 - INFO - Processed 21 records for NVDA
+2025-08-31 16:46:38,105 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:46:50,617 - INFO - Fetching data for NVDA from 2023-12-01 to 2023-12-31
+2025-08-31 16:46:50,937 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:46:50,946 - INFO - Processed 20 records for NVDA
+2025-08-31 16:46:50,946 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:47:03,455 - INFO - Fetching data for NVDA from 2024-01-01 to 2024-01-31
+2025-08-31 16:47:03,877 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:47:03,896 - INFO - Processed 21 records for NVDA
+2025-08-31 16:47:03,896 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:47:16,406 - INFO - Fetching data for NVDA from 2024-02-01 to 2024-02-29
+2025-08-31 16:47:16,729 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:47:16,741 - INFO - Processed 20 records for NVDA
+2025-08-31 16:47:16,741 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:47:29,254 - INFO - Fetching data for NVDA from 2024-03-01 to 2024-03-31
+2025-08-31 16:47:29,589 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:47:29,598 - INFO - Processed 20 records for NVDA
+2025-08-31 16:47:29,598 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:47:42,104 - INFO - Fetching data for NVDA from 2024-04-01 to 2024-04-30
+2025-08-31 16:47:42,438 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:47:42,452 - INFO - Processed 22 records for NVDA
+2025-08-31 16:47:42,452 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:47:54,962 - INFO - Fetching data for NVDA from 2024-05-01 to 2024-05-31
+2025-08-31 16:47:55,282 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:47:55,288 - INFO - Processed 22 records for NVDA
+2025-08-31 16:47:55,288 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:48:07,790 - INFO - Fetching data for NVDA from 2024-06-01 to 2024-06-30
+2025-08-31 16:48:08,203 - INFO - Successfully retrieved 19 records for NVDA
+2025-08-31 16:48:08,219 - INFO - Processed 19 records for NVDA
+2025-08-31 16:48:08,220 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:48:20,732 - INFO - Fetching data for NVDA from 2024-07-01 to 2024-07-31
+2025-08-31 16:48:21,071 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:48:21,106 - INFO - Processed 22 records for NVDA
+2025-08-31 16:48:21,106 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:48:33,619 - INFO - Fetching data for NVDA from 2024-08-01 to 2024-08-31
+2025-08-31 16:48:33,960 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:48:33,970 - INFO - Processed 22 records for NVDA
+2025-08-31 16:48:33,971 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:48:46,475 - INFO - Fetching data for NVDA from 2024-09-01 to 2024-09-30
+2025-08-31 16:48:46,799 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:48:46,809 - INFO - Processed 20 records for NVDA
+2025-08-31 16:48:46,810 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:48:59,320 - INFO - Fetching data for NVDA from 2024-10-01 to 2024-10-31
+2025-08-31 16:48:59,647 - INFO - Successfully retrieved 23 records for NVDA
+2025-08-31 16:48:59,657 - INFO - Processed 23 records for NVDA
+2025-08-31 16:48:59,657 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:49:12,168 - INFO - Fetching data for NVDA from 2024-11-01 to 2024-11-30
+2025-08-31 16:49:12,496 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:49:12,513 - INFO - Processed 20 records for NVDA
+2025-08-31 16:49:12,513 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:49:25,024 - INFO - Fetching data for NVDA from 2024-12-01 to 2024-12-31
+2025-08-31 16:49:25,454 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:49:25,463 - INFO - Processed 21 records for NVDA
+2025-08-31 16:49:25,464 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:49:37,972 - INFO - Fetching data for NVDA from 2025-01-01 to 2025-01-31
+2025-08-31 16:49:38,290 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:49:38,299 - INFO - Processed 20 records for NVDA
+2025-08-31 16:49:38,300 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:49:50,832 - INFO - Fetching data for NVDA from 2025-02-01 to 2025-02-28
+2025-08-31 16:49:51,153 - INFO - Successfully retrieved 19 records for NVDA
+2025-08-31 16:49:51,171 - INFO - Processed 19 records for NVDA
+2025-08-31 16:49:51,172 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:50:03,683 - INFO - Fetching data for NVDA from 2025-03-01 to 2025-03-31
+2025-08-31 16:50:04,082 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:50:04,096 - INFO - Processed 21 records for NVDA
+2025-08-31 16:50:04,096 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:50:16,601 - INFO - Fetching data for NVDA from 2025-04-01 to 2025-04-30
+2025-08-31 16:50:16,924 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:50:16,954 - INFO - Processed 21 records for NVDA
+2025-08-31 16:50:16,954 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:50:29,457 - INFO - Fetching data for NVDA from 2025-05-01 to 2025-05-31
+2025-08-31 16:50:29,791 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:50:29,808 - INFO - Processed 21 records for NVDA
+2025-08-31 16:50:29,808 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:50:42,320 - INFO - Fetching data for NVDA from 2025-06-01 to 2025-06-30
+2025-08-31 16:50:42,649 - INFO - Successfully retrieved 20 records for NVDA
+2025-08-31 16:50:42,670 - INFO - Processed 20 records for NVDA
+2025-08-31 16:50:42,671 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:50:55,173 - INFO - Fetching data for NVDA from 2025-07-01 to 2025-07-31
+2025-08-31 16:50:55,482 - INFO - Successfully retrieved 22 records for NVDA
+2025-08-31 16:50:55,490 - INFO - Processed 22 records for NVDA
+2025-08-31 16:50:55,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:51:08,001 - INFO - Fetching data for NVDA from 2025-08-01 to 2025-08-29
+2025-08-31 16:51:08,406 - INFO - Successfully retrieved 21 records for NVDA
+2025-08-31 16:51:08,417 - INFO - Processed 21 records for NVDA
+2025-08-31 16:51:08,426 - INFO - Combined 500 total records for NVDA
+2025-08-31 16:51:08,432 - INFO - Created Parquet file: NVDA_2023_2025.parquet (500 records)
+2025-08-31 16:51:08,825 - INFO - Successfully uploaded NVDA_2023_2025.parquet to S3 bucket root
+2025-08-31 16:51:08,826 - INFO - Cleaned up local file: NVDA_2023_2025.parquet
+2025-08-31 16:51:08,826 - INFO - ✓ Successfully processed NVDA (500 records)
+2025-08-31 16:51:08,826 - INFO - ✓ Successfully processed NVDA
+2025-08-31 16:51:08,827 - INFO - Progress: 6/11 (54.5%)
+2025-08-31 16:51:08,827 - INFO - Elapsed: 0:32:19.188868, Estimated remaining: 0:26:55.990723
+2025-08-31 16:51:08,827 - INFO - Processing ticker 7/11: META
+2025-08-31 16:51:08,827 - INFO - Starting processing for ticker: META
+2025-08-31 16:51:08,827 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:51:08,827 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:51:21,335 - INFO - Fetching data for META from 2023-08-01 to 2023-08-31
+2025-08-31 16:51:21,648 - ERROR - Failed to fetch data for META: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/META/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:51:21,650 - WARNING - No data retrieved for META from 2023-08-01 to 2023-08-31
+2025-08-31 16:51:21,651 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:51:34,162 - INFO - Fetching data for META from 2023-09-01 to 2023-09-30
+2025-08-31 16:51:34,481 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:51:34,490 - INFO - Processed 20 records for META
+2025-08-31 16:51:34,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:51:46,997 - INFO - Fetching data for META from 2023-10-01 to 2023-10-31
+2025-08-31 16:51:47,321 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:51:47,332 - INFO - Processed 22 records for META
+2025-08-31 16:51:47,333 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:51:59,844 - INFO - Fetching data for META from 2023-11-01 to 2023-11-30
+2025-08-31 16:52:00,162 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:52:00,174 - INFO - Processed 21 records for META
+2025-08-31 16:52:00,174 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:52:12,686 - INFO - Fetching data for META from 2023-12-01 to 2023-12-31
+2025-08-31 16:52:13,017 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:52:13,039 - INFO - Processed 20 records for META
+2025-08-31 16:52:13,039 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:52:25,557 - INFO - Fetching data for META from 2024-01-01 to 2024-01-31
+2025-08-31 16:52:25,964 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:52:25,980 - INFO - Processed 21 records for META
+2025-08-31 16:52:25,980 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:52:38,486 - INFO - Fetching data for META from 2024-02-01 to 2024-02-29
+2025-08-31 16:52:38,812 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:52:38,825 - INFO - Processed 20 records for META
+2025-08-31 16:52:38,825 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:52:51,333 - INFO - Fetching data for META from 2024-03-01 to 2024-03-31
+2025-08-31 16:52:51,655 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:52:51,664 - INFO - Processed 20 records for META
+2025-08-31 16:52:51,664 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:53:04,175 - INFO - Fetching data for META from 2024-04-01 to 2024-04-30
+2025-08-31 16:53:04,508 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:53:04,534 - INFO - Processed 22 records for META
+2025-08-31 16:53:04,534 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:53:17,038 - INFO - Fetching data for META from 2024-05-01 to 2024-05-31
+2025-08-31 16:53:17,434 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:53:17,444 - INFO - Processed 22 records for META
+2025-08-31 16:53:17,444 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:53:29,945 - INFO - Fetching data for META from 2024-06-01 to 2024-06-30
+2025-08-31 16:53:30,268 - INFO - Successfully retrieved 19 records for META
+2025-08-31 16:53:30,281 - INFO - Processed 19 records for META
+2025-08-31 16:53:30,281 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:53:42,792 - INFO - Fetching data for META from 2024-07-01 to 2024-07-31
+2025-08-31 16:53:43,121 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:53:43,131 - INFO - Processed 22 records for META
+2025-08-31 16:53:43,131 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:53:55,642 - INFO - Fetching data for META from 2024-08-01 to 2024-08-31
+2025-08-31 16:53:56,042 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:53:56,054 - INFO - Processed 22 records for META
+2025-08-31 16:53:56,054 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:54:08,567 - INFO - Fetching data for META from 2024-09-01 to 2024-09-30
+2025-08-31 16:54:08,904 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:54:08,931 - INFO - Processed 20 records for META
+2025-08-31 16:54:08,933 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:54:21,438 - INFO - Fetching data for META from 2024-10-01 to 2024-10-31
+2025-08-31 16:54:21,845 - INFO - Successfully retrieved 23 records for META
+2025-08-31 16:54:21,877 - INFO - Processed 23 records for META
+2025-08-31 16:54:21,878 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:54:34,388 - INFO - Fetching data for META from 2024-11-01 to 2024-11-30
+2025-08-31 16:54:34,708 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:54:34,726 - INFO - Processed 20 records for META
+2025-08-31 16:54:34,726 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:54:47,229 - INFO - Fetching data for META from 2024-12-01 to 2024-12-31
+2025-08-31 16:54:47,551 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:54:47,569 - INFO - Processed 21 records for META
+2025-08-31 16:54:47,569 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:55:00,072 - INFO - Fetching data for META from 2025-01-01 to 2025-01-31
+2025-08-31 16:55:00,472 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:55:00,484 - INFO - Processed 20 records for META
+2025-08-31 16:55:00,484 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:55:12,988 - INFO - Fetching data for META from 2025-02-01 to 2025-02-28
+2025-08-31 16:55:13,303 - INFO - Successfully retrieved 19 records for META
+2025-08-31 16:55:13,307 - INFO - Processed 19 records for META
+2025-08-31 16:55:13,307 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:55:25,810 - INFO - Fetching data for META from 2025-03-01 to 2025-03-31
+2025-08-31 16:55:26,119 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:55:26,128 - INFO - Processed 21 records for META
+2025-08-31 16:55:26,128 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:55:38,635 - INFO - Fetching data for META from 2025-04-01 to 2025-04-30
+2025-08-31 16:55:38,968 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:55:38,981 - INFO - Processed 21 records for META
+2025-08-31 16:55:38,981 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:55:51,486 - INFO - Fetching data for META from 2025-05-01 to 2025-05-31
+2025-08-31 16:55:51,809 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:55:51,819 - INFO - Processed 21 records for META
+2025-08-31 16:55:51,819 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:56:04,324 - INFO - Fetching data for META from 2025-06-01 to 2025-06-30
+2025-08-31 16:56:04,722 - INFO - Successfully retrieved 20 records for META
+2025-08-31 16:56:04,738 - INFO - Processed 20 records for META
+2025-08-31 16:56:04,739 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:56:17,248 - INFO - Fetching data for META from 2025-07-01 to 2025-07-31
+2025-08-31 16:56:17,569 - INFO - Successfully retrieved 22 records for META
+2025-08-31 16:56:17,585 - INFO - Processed 22 records for META
+2025-08-31 16:56:17,585 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:56:30,092 - INFO - Fetching data for META from 2025-08-01 to 2025-08-29
+2025-08-31 16:56:30,415 - INFO - Successfully retrieved 21 records for META
+2025-08-31 16:56:30,438 - INFO - Processed 21 records for META
+2025-08-31 16:56:30,441 - INFO - Combined 500 total records for META
+2025-08-31 16:56:30,446 - INFO - Created Parquet file: META_2023_2025.parquet (500 records)
+2025-08-31 16:56:30,814 - INFO - Successfully uploaded META_2023_2025.parquet to S3 bucket root
+2025-08-31 16:56:30,814 - INFO - Cleaned up local file: META_2023_2025.parquet
+2025-08-31 16:56:30,815 - INFO - ✓ Successfully processed META (500 records)
+2025-08-31 16:56:30,816 - INFO - ✓ Successfully processed META
+2025-08-31 16:56:30,816 - INFO - Progress: 7/11 (63.6%)
+2025-08-31 16:56:30,816 - INFO - Elapsed: 0:37:41.178099, Estimated remaining: 0:21:32.101771
+2025-08-31 16:56:30,816 - INFO - Processing ticker 8/11: BRK.B
+2025-08-31 16:56:30,816 - INFO - Starting processing for ticker: BRK.B
+2025-08-31 16:56:30,817 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:56:30,817 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:56:43,324 - INFO - Fetching data for BRK.B from 2023-08-01 to 2023-08-31
+2025-08-31 16:56:43,645 - ERROR - Failed to fetch data for BRK.B: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/BRK.B/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:56:43,649 - WARNING - No data retrieved for BRK.B from 2023-08-01 to 2023-08-31
+2025-08-31 16:56:43,649 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:56:56,146 - INFO - Fetching data for BRK.B from 2023-09-01 to 2023-09-30
+2025-08-31 16:56:56,499 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:56:56,509 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:56:56,509 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:57:09,001 - INFO - Fetching data for BRK.B from 2023-10-01 to 2023-10-31
+2025-08-31 16:57:09,345 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 16:57:09,364 - INFO - Processed 22 records for BRK.B
+2025-08-31 16:57:09,365 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:57:21,867 - INFO - Fetching data for BRK.B from 2023-11-01 to 2023-11-30
+2025-08-31 16:57:22,205 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 16:57:22,219 - INFO - Processed 21 records for BRK.B
+2025-08-31 16:57:22,220 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:57:34,724 - INFO - Fetching data for BRK.B from 2023-12-01 to 2023-12-31
+2025-08-31 16:57:35,041 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:57:35,061 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:57:35,062 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:57:47,566 - INFO - Fetching data for BRK.B from 2024-01-01 to 2024-01-31
+2025-08-31 16:57:47,883 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 16:57:47,900 - INFO - Processed 21 records for BRK.B
+2025-08-31 16:57:47,900 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:58:00,402 - INFO - Fetching data for BRK.B from 2024-02-01 to 2024-02-29
+2025-08-31 16:58:00,807 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:58:00,833 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:58:00,834 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:58:13,336 - INFO - Fetching data for BRK.B from 2024-03-01 to 2024-03-31
+2025-08-31 16:58:13,661 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:58:13,680 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:58:13,680 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:58:26,187 - INFO - Fetching data for BRK.B from 2024-04-01 to 2024-04-30
+2025-08-31 16:58:26,533 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 16:58:26,547 - INFO - Processed 22 records for BRK.B
+2025-08-31 16:58:26,548 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:58:39,053 - INFO - Fetching data for BRK.B from 2024-05-01 to 2024-05-31
+2025-08-31 16:58:39,417 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 16:58:39,427 - INFO - Processed 22 records for BRK.B
+2025-08-31 16:58:39,428 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:58:51,932 - INFO - Fetching data for BRK.B from 2024-06-01 to 2024-06-30
+2025-08-31 16:58:52,281 - INFO - Successfully retrieved 19 records for BRK.B
+2025-08-31 16:58:52,301 - INFO - Processed 19 records for BRK.B
+2025-08-31 16:58:52,302 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:59:04,808 - INFO - Fetching data for BRK.B from 2024-07-01 to 2024-07-31
+2025-08-31 16:59:05,206 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 16:59:05,221 - INFO - Processed 22 records for BRK.B
+2025-08-31 16:59:05,221 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:59:17,724 - INFO - Fetching data for BRK.B from 2024-08-01 to 2024-08-31
+2025-08-31 16:59:18,061 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 16:59:18,073 - INFO - Processed 22 records for BRK.B
+2025-08-31 16:59:18,074 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:59:30,579 - INFO - Fetching data for BRK.B from 2024-09-01 to 2024-09-30
+2025-08-31 16:59:30,897 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:59:30,906 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:59:30,906 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:59:43,415 - INFO - Fetching data for BRK.B from 2024-10-01 to 2024-10-31
+2025-08-31 16:59:43,864 - INFO - Successfully retrieved 23 records for BRK.B
+2025-08-31 16:59:43,885 - INFO - Processed 23 records for BRK.B
+2025-08-31 16:59:43,886 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:59:56,392 - INFO - Fetching data for BRK.B from 2024-11-01 to 2024-11-30
+2025-08-31 16:59:56,709 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 16:59:56,732 - INFO - Processed 20 records for BRK.B
+2025-08-31 16:59:56,732 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:00:09,238 - INFO - Fetching data for BRK.B from 2024-12-01 to 2024-12-31
+2025-08-31 17:00:09,674 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 17:00:09,687 - INFO - Processed 21 records for BRK.B
+2025-08-31 17:00:09,688 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:00:22,193 - INFO - Fetching data for BRK.B from 2025-01-01 to 2025-01-31
+2025-08-31 17:00:22,502 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 17:00:22,507 - INFO - Processed 20 records for BRK.B
+2025-08-31 17:00:22,507 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:00:35,011 - INFO - Fetching data for BRK.B from 2025-02-01 to 2025-02-28
+2025-08-31 17:00:35,435 - INFO - Successfully retrieved 19 records for BRK.B
+2025-08-31 17:00:35,448 - INFO - Processed 19 records for BRK.B
+2025-08-31 17:00:35,448 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:00:47,954 - INFO - Fetching data for BRK.B from 2025-03-01 to 2025-03-31
+2025-08-31 17:00:48,311 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 17:00:48,322 - INFO - Processed 21 records for BRK.B
+2025-08-31 17:00:48,323 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:01:00,828 - INFO - Fetching data for BRK.B from 2025-04-01 to 2025-04-30
+2025-08-31 17:01:01,147 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 17:01:01,154 - INFO - Processed 21 records for BRK.B
+2025-08-31 17:01:01,155 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:01:13,656 - INFO - Fetching data for BRK.B from 2025-05-01 to 2025-05-31
+2025-08-31 17:01:13,983 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 17:01:14,001 - INFO - Processed 21 records for BRK.B
+2025-08-31 17:01:14,001 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:01:26,505 - INFO - Fetching data for BRK.B from 2025-06-01 to 2025-06-30
+2025-08-31 17:01:26,814 - INFO - Successfully retrieved 20 records for BRK.B
+2025-08-31 17:01:26,821 - INFO - Processed 20 records for BRK.B
+2025-08-31 17:01:26,822 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:01:39,328 - INFO - Fetching data for BRK.B from 2025-07-01 to 2025-07-31
+2025-08-31 17:01:39,654 - INFO - Successfully retrieved 22 records for BRK.B
+2025-08-31 17:01:39,669 - INFO - Processed 22 records for BRK.B
+2025-08-31 17:01:39,669 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:01:52,176 - INFO - Fetching data for BRK.B from 2025-08-01 to 2025-08-29
+2025-08-31 17:01:52,597 - INFO - Successfully retrieved 21 records for BRK.B
+2025-08-31 17:01:52,614 - INFO - Processed 21 records for BRK.B
+2025-08-31 17:01:52,849 - INFO - Combined 500 total records for BRK.B
+2025-08-31 17:01:52,851 - INFO - Created Parquet file: BRK.B_2023_2025.parquet (500 records)
+2025-08-31 17:01:53,309 - INFO - Successfully uploaded BRK.B_2023_2025.parquet to S3 bucket root
+2025-08-31 17:01:53,310 - INFO - Cleaned up local file: BRK.B_2023_2025.parquet
+2025-08-31 17:01:53,310 - INFO - ✓ Successfully processed BRK.B (500 records)
+2025-08-31 17:01:53,310 - INFO - ✓ Successfully processed BRK.B
+2025-08-31 17:01:53,310 - INFO - Progress: 8/11 (72.7%)
+2025-08-31 17:01:53,310 - INFO - Elapsed: 0:43:03.672441, Estimated remaining: 0:16:08.877165
+2025-08-31 17:01:53,310 - INFO - Processing ticker 9/11: JNJ
+2025-08-31 17:01:53,310 - INFO - Starting processing for ticker: JNJ
+2025-08-31 17:01:53,310 - INFO - Generated 25 monthly date ranges
+2025-08-31 17:01:53,310 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:02:05,817 - INFO - Fetching data for JNJ from 2023-08-01 to 2023-08-31
+2025-08-31 17:02:06,109 - ERROR - Failed to fetch data for JNJ: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/JNJ/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 17:02:06,111 - WARNING - No data retrieved for JNJ from 2023-08-01 to 2023-08-31
+2025-08-31 17:02:06,111 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:02:18,618 - INFO - Fetching data for JNJ from 2023-09-01 to 2023-09-30
+2025-08-31 17:02:18,978 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:02:18,995 - INFO - Processed 20 records for JNJ
+2025-08-31 17:02:18,995 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:02:31,501 - INFO - Fetching data for JNJ from 2023-10-01 to 2023-10-31
+2025-08-31 17:02:31,815 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:02:31,824 - INFO - Processed 22 records for JNJ
+2025-08-31 17:02:31,825 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:02:44,331 - INFO - Fetching data for JNJ from 2023-11-01 to 2023-11-30
+2025-08-31 17:02:44,665 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:02:44,685 - INFO - Processed 21 records for JNJ
+2025-08-31 17:02:44,686 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:02:57,191 - INFO - Fetching data for JNJ from 2023-12-01 to 2023-12-31
+2025-08-31 17:02:57,509 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:02:57,518 - INFO - Processed 20 records for JNJ
+2025-08-31 17:02:57,518 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:03:10,025 - INFO - Fetching data for JNJ from 2024-01-01 to 2024-01-31
+2025-08-31 17:03:10,464 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:03:10,480 - INFO - Processed 21 records for JNJ
+2025-08-31 17:03:10,481 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:03:22,987 - INFO - Fetching data for JNJ from 2024-02-01 to 2024-02-29
+2025-08-31 17:03:23,304 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:03:23,323 - INFO - Processed 20 records for JNJ
+2025-08-31 17:03:23,323 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:03:35,830 - INFO - Fetching data for JNJ from 2024-03-01 to 2024-03-31
+2025-08-31 17:03:36,188 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:03:36,199 - INFO - Processed 20 records for JNJ
+2025-08-31 17:03:36,200 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:03:48,707 - INFO - Fetching data for JNJ from 2024-04-01 to 2024-04-30
+2025-08-31 17:03:49,028 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:03:49,041 - INFO - Processed 22 records for JNJ
+2025-08-31 17:03:49,042 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:04:01,547 - INFO - Fetching data for JNJ from 2024-05-01 to 2024-05-31
+2025-08-31 17:04:01,978 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:04:01,994 - INFO - Processed 22 records for JNJ
+2025-08-31 17:04:01,995 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:04:14,500 - INFO - Fetching data for JNJ from 2024-06-01 to 2024-06-30
+2025-08-31 17:04:14,832 - INFO - Successfully retrieved 19 records for JNJ
+2025-08-31 17:04:14,840 - INFO - Processed 19 records for JNJ
+2025-08-31 17:04:14,840 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:04:27,345 - INFO - Fetching data for JNJ from 2024-07-01 to 2024-07-31
+2025-08-31 17:04:27,661 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:04:27,693 - INFO - Processed 22 records for JNJ
+2025-08-31 17:04:27,693 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:04:40,199 - INFO - Fetching data for JNJ from 2024-08-01 to 2024-08-31
+2025-08-31 17:04:40,534 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:04:40,546 - INFO - Processed 22 records for JNJ
+2025-08-31 17:04:40,546 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:04:53,052 - INFO - Fetching data for JNJ from 2024-09-01 to 2024-09-30
+2025-08-31 17:04:53,372 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:04:53,384 - INFO - Processed 20 records for JNJ
+2025-08-31 17:04:53,385 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:05:05,891 - INFO - Fetching data for JNJ from 2024-10-01 to 2024-10-31
+2025-08-31 17:05:06,318 - INFO - Successfully retrieved 23 records for JNJ
+2025-08-31 17:05:06,324 - INFO - Processed 23 records for JNJ
+2025-08-31 17:05:06,324 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:05:18,828 - INFO - Fetching data for JNJ from 2024-11-01 to 2024-11-30
+2025-08-31 17:05:19,171 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:05:19,179 - INFO - Processed 20 records for JNJ
+2025-08-31 17:05:19,179 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:05:31,686 - INFO - Fetching data for JNJ from 2024-12-01 to 2024-12-31
+2025-08-31 17:05:32,011 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:05:32,019 - INFO - Processed 21 records for JNJ
+2025-08-31 17:05:32,019 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:05:44,525 - INFO - Fetching data for JNJ from 2025-01-01 to 2025-01-31
+2025-08-31 17:05:44,856 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:05:44,867 - INFO - Processed 20 records for JNJ
+2025-08-31 17:05:44,868 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:05:57,373 - INFO - Fetching data for JNJ from 2025-02-01 to 2025-02-28
+2025-08-31 17:05:57,798 - INFO - Successfully retrieved 19 records for JNJ
+2025-08-31 17:05:57,819 - INFO - Processed 19 records for JNJ
+2025-08-31 17:05:57,820 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:06:10,326 - INFO - Fetching data for JNJ from 2025-03-01 to 2025-03-31
+2025-08-31 17:06:10,652 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:06:10,665 - INFO - Processed 21 records for JNJ
+2025-08-31 17:06:10,665 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:06:23,172 - INFO - Fetching data for JNJ from 2025-04-01 to 2025-04-30
+2025-08-31 17:06:23,500 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:06:23,511 - INFO - Processed 21 records for JNJ
+2025-08-31 17:06:23,512 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:06:36,017 - INFO - Fetching data for JNJ from 2025-05-01 to 2025-05-31
+2025-08-31 17:06:36,330 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:06:36,337 - INFO - Processed 21 records for JNJ
+2025-08-31 17:06:36,338 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:06:48,840 - INFO - Fetching data for JNJ from 2025-06-01 to 2025-06-30
+2025-08-31 17:06:49,164 - INFO - Successfully retrieved 20 records for JNJ
+2025-08-31 17:06:49,175 - INFO - Processed 20 records for JNJ
+2025-08-31 17:06:49,175 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:07:01,677 - INFO - Fetching data for JNJ from 2025-07-01 to 2025-07-31
+2025-08-31 17:07:02,091 - INFO - Successfully retrieved 22 records for JNJ
+2025-08-31 17:07:02,103 - INFO - Processed 22 records for JNJ
+2025-08-31 17:07:02,103 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:07:14,606 - INFO - Fetching data for JNJ from 2025-08-01 to 2025-08-29
+2025-08-31 17:07:14,917 - INFO - Successfully retrieved 21 records for JNJ
+2025-08-31 17:07:14,937 - INFO - Processed 21 records for JNJ
+2025-08-31 17:07:14,956 - INFO - Combined 500 total records for JNJ
+2025-08-31 17:07:15,006 - INFO - Created Parquet file: JNJ_2023_2025.parquet (500 records)
+2025-08-31 17:07:15,468 - INFO - Successfully uploaded JNJ_2023_2025.parquet to S3 bucket root
+2025-08-31 17:07:15,469 - INFO - Cleaned up local file: JNJ_2023_2025.parquet
+2025-08-31 17:07:15,469 - INFO - ✓ Successfully processed JNJ (500 records)
+2025-08-31 17:07:15,472 - INFO - ✓ Successfully processed JNJ
+2025-08-31 17:07:15,472 - INFO - Progress: 9/11 (81.8%)
+2025-08-31 17:07:15,472 - INFO - Elapsed: 0:48:25.834098, Estimated remaining: 0:10:45.740911
+2025-08-31 17:07:15,472 - INFO - Processing ticker 10/11: V
+2025-08-31 17:07:15,472 - INFO - Starting processing for ticker: V
+2025-08-31 17:07:15,473 - INFO - Generated 25 monthly date ranges
+2025-08-31 17:07:15,473 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:07:27,978 - INFO - Fetching data for V from 2023-08-01 to 2023-08-31
+2025-08-31 17:07:28,294 - ERROR - Failed to fetch data for V: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/V/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 17:07:28,298 - WARNING - No data retrieved for V from 2023-08-01 to 2023-08-31
+2025-08-31 17:07:28,298 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:07:40,804 - INFO - Fetching data for V from 2023-09-01 to 2023-09-30
+2025-08-31 17:07:41,124 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:07:41,142 - INFO - Processed 20 records for V
+2025-08-31 17:07:41,143 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:07:53,649 - INFO - Fetching data for V from 2023-10-01 to 2023-10-31
+2025-08-31 17:07:53,979 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:07:53,994 - INFO - Processed 22 records for V
+2025-08-31 17:07:53,996 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:08:06,501 - INFO - Fetching data for V from 2023-11-01 to 2023-11-30
+2025-08-31 17:08:06,922 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:08:06,930 - INFO - Processed 21 records for V
+2025-08-31 17:08:06,930 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:08:19,435 - INFO - Fetching data for V from 2023-12-01 to 2023-12-31
+2025-08-31 17:08:19,772 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:08:19,786 - INFO - Processed 20 records for V
+2025-08-31 17:08:19,797 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:08:32,302 - INFO - Fetching data for V from 2024-01-01 to 2024-01-31
+2025-08-31 17:08:32,613 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:08:32,621 - INFO - Processed 21 records for V
+2025-08-31 17:08:32,622 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:08:45,127 - INFO - Fetching data for V from 2024-02-01 to 2024-02-29
+2025-08-31 17:08:45,451 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:08:45,468 - INFO - Processed 20 records for V
+2025-08-31 17:08:45,468 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:08:57,974 - INFO - Fetching data for V from 2024-03-01 to 2024-03-31
+2025-08-31 17:08:58,403 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:08:58,410 - INFO - Processed 20 records for V
+2025-08-31 17:08:58,411 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:09:10,913 - INFO - Fetching data for V from 2024-04-01 to 2024-04-30
+2025-08-31 17:09:11,239 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:09:11,249 - INFO - Processed 22 records for V
+2025-08-31 17:09:11,249 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:09:23,755 - INFO - Fetching data for V from 2024-05-01 to 2024-05-31
+2025-08-31 17:09:24,086 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:09:24,099 - INFO - Processed 22 records for V
+2025-08-31 17:09:24,100 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:09:36,603 - INFO - Fetching data for V from 2024-06-01 to 2024-06-30
+2025-08-31 17:09:36,913 - INFO - Successfully retrieved 19 records for V
+2025-08-31 17:09:36,918 - INFO - Processed 19 records for V
+2025-08-31 17:09:36,918 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:09:49,425 - INFO - Fetching data for V from 2024-07-01 to 2024-07-31
+2025-08-31 17:09:49,762 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:09:49,780 - INFO - Processed 22 records for V
+2025-08-31 17:09:49,781 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:10:02,286 - INFO - Fetching data for V from 2024-08-01 to 2024-08-31
+2025-08-31 17:10:02,696 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:10:02,699 - INFO - Processed 22 records for V
+2025-08-31 17:10:02,699 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:10:15,204 - INFO - Fetching data for V from 2024-09-01 to 2024-09-30
+2025-08-31 17:10:15,529 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:10:15,537 - INFO - Processed 20 records for V
+2025-08-31 17:10:15,538 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:10:28,044 - INFO - Fetching data for V from 2024-10-01 to 2024-10-31
+2025-08-31 17:10:28,368 - INFO - Successfully retrieved 23 records for V
+2025-08-31 17:10:28,376 - INFO - Processed 23 records for V
+2025-08-31 17:10:28,377 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:10:40,882 - INFO - Fetching data for V from 2024-11-01 to 2024-11-30
+2025-08-31 17:10:41,207 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:10:41,218 - INFO - Processed 20 records for V
+2025-08-31 17:10:41,218 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:10:53,724 - INFO - Fetching data for V from 2024-12-01 to 2024-12-31
+2025-08-31 17:10:54,038 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:10:54,046 - INFO - Processed 21 records for V
+2025-08-31 17:10:54,047 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:11:06,549 - INFO - Fetching data for V from 2025-01-01 to 2025-01-31
+2025-08-31 17:11:06,988 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:11:07,005 - INFO - Processed 20 records for V
+2025-08-31 17:11:07,005 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:11:19,514 - INFO - Fetching data for V from 2025-02-01 to 2025-02-28
+2025-08-31 17:11:19,823 - INFO - Successfully retrieved 19 records for V
+2025-08-31 17:11:19,832 - INFO - Processed 19 records for V
+2025-08-31 17:11:19,833 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:11:32,338 - INFO - Fetching data for V from 2025-03-01 to 2025-03-31
+2025-08-31 17:11:32,648 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:11:32,656 - INFO - Processed 21 records for V
+2025-08-31 17:11:32,657 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:11:45,164 - INFO - Fetching data for V from 2025-04-01 to 2025-04-30
+2025-08-31 17:11:45,505 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:11:45,519 - INFO - Processed 21 records for V
+2025-08-31 17:11:45,519 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:11:58,025 - INFO - Fetching data for V from 2025-05-01 to 2025-05-31
+2025-08-31 17:11:58,428 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:11:58,436 - INFO - Processed 21 records for V
+2025-08-31 17:11:58,437 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:12:10,940 - INFO - Fetching data for V from 2025-06-01 to 2025-06-30
+2025-08-31 17:12:11,260 - INFO - Successfully retrieved 20 records for V
+2025-08-31 17:12:11,273 - INFO - Processed 20 records for V
+2025-08-31 17:12:11,273 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:12:23,776 - INFO - Fetching data for V from 2025-07-01 to 2025-07-31
+2025-08-31 17:12:24,102 - INFO - Successfully retrieved 22 records for V
+2025-08-31 17:12:24,110 - INFO - Processed 22 records for V
+2025-08-31 17:12:24,112 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:12:36,615 - INFO - Fetching data for V from 2025-08-01 to 2025-08-29
+2025-08-31 17:12:36,930 - INFO - Successfully retrieved 21 records for V
+2025-08-31 17:12:36,945 - INFO - Processed 21 records for V
+2025-08-31 17:12:36,964 - INFO - Combined 500 total records for V
+2025-08-31 17:12:36,970 - INFO - Created Parquet file: V_2023_2025.parquet (500 records)
+2025-08-31 17:12:37,456 - INFO - Successfully uploaded V_2023_2025.parquet to S3 bucket root
+2025-08-31 17:12:37,457 - INFO - Cleaned up local file: V_2023_2025.parquet
+2025-08-31 17:12:37,457 - INFO - ✓ Successfully processed V (500 records)
+2025-08-31 17:12:37,462 - INFO - ✓ Successfully processed V
+2025-08-31 17:12:37,463 - INFO - Progress: 10/11 (90.9%)
+2025-08-31 17:12:37,463 - INFO - Elapsed: 0:53:47.824877, Estimated remaining: 0:05:22.782488
+2025-08-31 17:12:37,463 - INFO - Processing ticker 11/11: WMT
+2025-08-31 17:12:37,463 - INFO - Starting processing for ticker: WMT
+2025-08-31 17:12:37,463 - INFO - Generated 25 monthly date ranges
+2025-08-31 17:12:37,463 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:12:49,969 - INFO - Fetching data for WMT from 2023-08-01 to 2023-08-31
+2025-08-31 17:12:50,280 - ERROR - Failed to fetch data for WMT: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/WMT/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 17:12:50,285 - WARNING - No data retrieved for WMT from 2023-08-01 to 2023-08-31
+2025-08-31 17:12:50,285 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:13:02,789 - INFO - Fetching data for WMT from 2023-09-01 to 2023-09-30
+2025-08-31 17:13:03,191 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:13:03,201 - INFO - Processed 20 records for WMT
+2025-08-31 17:13:03,201 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:13:15,703 - INFO - Fetching data for WMT from 2023-10-01 to 2023-10-31
+2025-08-31 17:13:16,036 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:13:16,041 - INFO - Processed 22 records for WMT
+2025-08-31 17:13:16,042 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:13:28,547 - INFO - Fetching data for WMT from 2023-11-01 to 2023-11-30
+2025-08-31 17:13:28,864 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:13:28,872 - INFO - Processed 21 records for WMT
+2025-08-31 17:13:28,873 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:13:41,377 - INFO - Fetching data for WMT from 2023-12-01 to 2023-12-31
+2025-08-31 17:13:41,705 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:13:41,753 - INFO - Processed 20 records for WMT
+2025-08-31 17:13:41,753 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:13:54,258 - INFO - Fetching data for WMT from 2024-01-01 to 2024-01-31
+2025-08-31 17:13:54,589 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:13:54,596 - INFO - Processed 21 records for WMT
+2025-08-31 17:13:54,596 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:14:07,102 - INFO - Fetching data for WMT from 2024-02-01 to 2024-02-29
+2025-08-31 17:14:07,511 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:14:07,521 - INFO - Processed 20 records for WMT
+2025-08-31 17:14:07,522 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:14:20,023 - INFO - Fetching data for WMT from 2024-03-01 to 2024-03-31
+2025-08-31 17:14:20,339 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:14:20,347 - INFO - Processed 20 records for WMT
+2025-08-31 17:14:20,347 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:14:32,853 - INFO - Fetching data for WMT from 2024-04-01 to 2024-04-30
+2025-08-31 17:14:33,185 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:14:33,193 - INFO - Processed 22 records for WMT
+2025-08-31 17:14:33,194 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:14:45,707 - INFO - Fetching data for WMT from 2024-05-01 to 2024-05-31
+2025-08-31 17:14:46,025 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:14:46,038 - INFO - Processed 22 records for WMT
+2025-08-31 17:14:46,039 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:14:58,544 - INFO - Fetching data for WMT from 2024-06-01 to 2024-06-30
+2025-08-31 17:14:58,960 - INFO - Successfully retrieved 19 records for WMT
+2025-08-31 17:14:58,968 - INFO - Processed 19 records for WMT
+2025-08-31 17:14:58,968 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:15:11,472 - INFO - Fetching data for WMT from 2024-07-01 to 2024-07-31
+2025-08-31 17:15:11,816 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:15:11,836 - INFO - Processed 22 records for WMT
+2025-08-31 17:15:11,837 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:15:24,342 - INFO - Fetching data for WMT from 2024-08-01 to 2024-08-31
+2025-08-31 17:15:24,662 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:15:24,671 - INFO - Processed 22 records for WMT
+2025-08-31 17:15:24,672 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:15:37,180 - INFO - Fetching data for WMT from 2024-09-01 to 2024-09-30
+2025-08-31 17:15:37,514 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:15:37,526 - INFO - Processed 20 records for WMT
+2025-08-31 17:15:37,526 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:15:50,036 - INFO - Fetching data for WMT from 2024-10-01 to 2024-10-31
+2025-08-31 17:15:50,467 - INFO - Successfully retrieved 23 records for WMT
+2025-08-31 17:15:50,476 - INFO - Processed 23 records for WMT
+2025-08-31 17:15:50,477 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:16:02,978 - INFO - Fetching data for WMT from 2024-11-01 to 2024-11-30
+2025-08-31 17:16:03,292 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:16:03,300 - INFO - Processed 20 records for WMT
+2025-08-31 17:16:03,301 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:16:15,806 - INFO - Fetching data for WMT from 2024-12-01 to 2024-12-31
+2025-08-31 17:16:16,124 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:16:16,134 - INFO - Processed 21 records for WMT
+2025-08-31 17:16:16,135 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:16:28,641 - INFO - Fetching data for WMT from 2025-01-01 to 2025-01-31
+2025-08-31 17:16:28,966 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:16:28,975 - INFO - Processed 20 records for WMT
+2025-08-31 17:16:28,975 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:16:41,478 - INFO - Fetching data for WMT from 2025-02-01 to 2025-02-28
+2025-08-31 17:16:41,800 - INFO - Successfully retrieved 19 records for WMT
+2025-08-31 17:16:41,819 - INFO - Processed 19 records for WMT
+2025-08-31 17:16:41,820 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:16:54,325 - INFO - Fetching data for WMT from 2025-03-01 to 2025-03-31
+2025-08-31 17:16:54,653 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:16:54,661 - INFO - Processed 21 records for WMT
+2025-08-31 17:16:54,661 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:17:07,167 - INFO - Fetching data for WMT from 2025-04-01 to 2025-04-30
+2025-08-31 17:17:07,585 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:17:07,597 - INFO - Processed 21 records for WMT
+2025-08-31 17:17:07,597 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:17:20,103 - INFO - Fetching data for WMT from 2025-05-01 to 2025-05-31
+2025-08-31 17:17:20,415 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:17:20,423 - INFO - Processed 21 records for WMT
+2025-08-31 17:17:20,423 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:17:32,927 - INFO - Fetching data for WMT from 2025-06-01 to 2025-06-30
+2025-08-31 17:17:33,261 - INFO - Successfully retrieved 20 records for WMT
+2025-08-31 17:17:33,280 - INFO - Processed 20 records for WMT
+2025-08-31 17:17:33,281 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:17:45,787 - INFO - Fetching data for WMT from 2025-07-01 to 2025-07-31
+2025-08-31 17:17:46,163 - INFO - Successfully retrieved 22 records for WMT
+2025-08-31 17:17:46,172 - INFO - Processed 22 records for WMT
+2025-08-31 17:17:46,172 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 17:17:58,677 - INFO - Fetching data for WMT from 2025-08-01 to 2025-08-29
+2025-08-31 17:17:59,193 - INFO - Successfully retrieved 21 records for WMT
+2025-08-31 17:17:59,199 - INFO - Processed 21 records for WMT
+2025-08-31 17:17:59,208 - INFO - Combined 500 total records for WMT
+2025-08-31 17:17:59,212 - INFO - Created Parquet file: WMT_2023_2025.parquet (500 records)
+2025-08-31 17:17:59,652 - INFO - Successfully uploaded WMT_2023_2025.parquet to S3 bucket root
+2025-08-31 17:17:59,652 - INFO - Cleaned up local file: WMT_2023_2025.parquet
+2025-08-31 17:17:59,653 - INFO - ✓ Successfully processed WMT (500 records)
+2025-08-31 17:17:59,653 - INFO - ✓ Successfully processed WMT
+2025-08-31 17:17:59,654 - INFO - Progress: 11/11 (100.0%)
+2025-08-31 17:17:59,654 - INFO - Elapsed: 0:59:10.015900, Estimated remaining: 0:00:00
+2025-08-31 17:17:59,654 - INFO - ================================================================================
+2025-08-31 17:17:59,654 - INFO - QUICK VECTORIZED SCANNER TEST PIPELINE SUMMARY
+2025-08-31 17:17:59,654 - INFO - ================================================================================
+2025-08-31 17:17:59,654 - INFO - Total execution time: 0:59:10.016146
+2025-08-31 17:17:59,654 - INFO - Total tickers processed: 11
+2025-08-31 17:17:59,654 - INFO - Successful: 11
+2025-08-31 17:17:59,654 - INFO - Failed: 0
+2025-08-31 17:17:59,654 - INFO - 🎉 Sufficient data collected for vectorized scanner testing!
+2025-08-31 17:17:59,655 - INFO - S3 bucket contains 11 Parquet files ready for Snowflake COPY command.
+2025-08-31 17:17:59,655 - INFO - 
+2025-08-31 17:17:59,655 - INFO - Next steps:
+2025-08-31 17:17:59,655 - INFO - 1. Run: python test_vectorized_scanner.py
+2025-08-31 17:17:59,655 - INFO - 2. Compare COPY INTO performance with USE_VECTORIZED_SCANNER = FALSE vs TRUE
+2025-08-31 17:17:59,655 - INFO - 3. Analyze performance metrics and recommendations
+2025-08-31 17:17:59,655 - INFO - Quick Vectorized Scanner Test Pipeline completed

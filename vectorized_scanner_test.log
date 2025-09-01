@@ -1,0 +1,106 @@
+2025-08-31 17:36:01,418 - INFO - Vectorized Scanner Test initialized
+2025-08-31 17:36:01,418 - INFO - ================================================================================
+2025-08-31 17:36:01,418 - INFO - SNOWFLAKE VECTORIZED SCANNER PERFORMANCE TEST
+2025-08-31 17:36:01,418 - INFO - ================================================================================
+2025-08-31 17:36:01,418 - INFO - Step 1: Connecting to Snowflake...
+2025-08-31 17:36:01,418 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-08-31 17:36:01,422 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-08-31 17:36:02,046 - INFO - Successfully connected to Snowflake
+2025-08-31 17:36:02,046 - INFO - Step 2: Checking stage files...
+2025-08-31 17:36:02,046 - INFO - query: [LIST @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG]
+2025-08-31 17:36:02,401 - INFO - query execution done
+2025-08-31 17:36:02,402 - INFO - Number of results in first chunk: 11
+2025-08-31 17:36:02,403 - INFO - Files in stage: 11
+2025-08-31 17:36:02,403 - INFO - Sample files in stage:
+2025-08-31 17:36:02,403 - INFO -   1. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AAPL_2023_2025.parquet
+2025-08-31 17:36:02,403 - INFO -   2. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AMZN_2023_2025.parquet
+2025-08-31 17:36:02,403 - INFO -   3. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/BRK.B_2023_2025.parquet
+2025-08-31 17:36:02,403 - INFO -   4. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/GOOGL_2023_2025.parquet
+2025-08-31 17:36:02,403 - INFO -   5. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/JNJ_2023_2025.parquet
+2025-08-31 17:36:02,403 - INFO -   ... and 6 more files
+2025-08-31 17:36:02,404 - INFO - Step 3: Testing with USE_VECTORIZED_SCANNER = FALSE...
+2025-08-31 17:36:02,404 - INFO - Truncating target table...
+2025-08-31 17:36:02,404 - INFO - query: [TRUNCATE TABLE sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:36:03,098 - INFO - query execution done
+2025-08-31 17:36:03,098 - INFO - Number of results in first chunk: 1
+2025-08-31 17:36:03,098 - INFO - Table truncated successfully
+2025-08-31 17:36:03,098 - INFO - query: [SELECT COUNT(*) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:36:03,287 - INFO - query execution done
+2025-08-31 17:36:03,287 - INFO - Number of results in first chunk: 1
+2025-08-31 17:36:03,288 - INFO - Current table row count: 0
+2025-08-31 17:36:03,288 - INFO - Executing COPY INTO with USE_VECTORIZED_SCANNER = FALSE
+2025-08-31 17:36:03,288 - INFO - COPY command:
+2025-08-31 17:36:03,288 - INFO -   COPY INTO sp500_top10_sector_ohlcv_itbl
+2025-08-31 17:36:03,288 - INFO -   FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+2025-08-31 17:36:03,288 - INFO -   FILE_FORMAT = (
+2025-08-31 17:36:03,288 - INFO -   FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+2025-08-31 17:36:03,288 - INFO -   USE_VECTORIZED_SCANNER = FALSE
+2025-08-31 17:36:03,289 - INFO -   )
+2025-08-31 17:36:03,289 - INFO -   LOAD_MODE = ADD_FILES_COPY
+2025-08-31 17:36:03,289 - INFO -   PURGE = FALSE
+2025-08-31 17:36:03,289 - INFO -   MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+2025-08-31 17:36:03,289 - INFO -   FORCE = FALSE;
+2025-08-31 17:36:03,289 - INFO - query: [COPY INTO sp500_top10_sector_ohlcv_itbl FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_...]
+2025-08-31 17:36:03,453 - INFO - query execution done
+2025-08-31 17:36:03,456 - ERROR - Failed to execute COPY command with FALSE: 003535 (0A000): 01bebfa4-0206-57b2-004d-038702a13242: The LOAD_MODE = ADD_FILES_COPY option is not supported for copy without USE_VECTORIZED_SCANNER = TRUE.
+2025-08-31 17:36:03,456 - INFO - Step 4: Testing with USE_VECTORIZED_SCANNER = TRUE...
+2025-08-31 17:36:03,456 - INFO - Truncating target table...
+2025-08-31 17:36:03,456 - INFO - query: [TRUNCATE TABLE sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:36:03,675 - INFO - query execution done
+2025-08-31 17:36:03,675 - INFO - Number of results in first chunk: 1
+2025-08-31 17:36:03,675 - INFO - Table truncated successfully
+2025-08-31 17:36:03,675 - INFO - query: [SELECT COUNT(*) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:36:03,912 - INFO - query execution done
+2025-08-31 17:36:03,913 - INFO - Number of results in first chunk: 1
+2025-08-31 17:36:03,913 - INFO - Current table row count: 0
+2025-08-31 17:36:03,913 - INFO - Executing COPY INTO with USE_VECTORIZED_SCANNER = TRUE
+2025-08-31 17:36:03,913 - INFO - COPY command:
+2025-08-31 17:36:03,913 - INFO -   COPY INTO sp500_top10_sector_ohlcv_itbl
+2025-08-31 17:36:03,913 - INFO -   FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+2025-08-31 17:36:03,913 - INFO -   FILE_FORMAT = (
+2025-08-31 17:36:03,913 - INFO -   FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+2025-08-31 17:36:03,913 - INFO -   USE_VECTORIZED_SCANNER = TRUE
+2025-08-31 17:36:03,913 - INFO -   )
+2025-08-31 17:36:03,913 - INFO -   LOAD_MODE = ADD_FILES_COPY
+2025-08-31 17:36:03,913 - INFO -   PURGE = FALSE
+2025-08-31 17:36:03,913 - INFO -   MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+2025-08-31 17:36:03,914 - INFO -   FORCE = FALSE;
+2025-08-31 17:36:03,914 - INFO - query: [COPY INTO sp500_top10_sector_ohlcv_itbl FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_...]
+2025-08-31 17:36:07,267 - INFO - query execution done
+2025-08-31 17:36:07,268 - INFO - Number of results in first chunk: 11
+2025-08-31 17:36:07,268 - INFO - COPY command completed in 3.35 seconds
+2025-08-31 17:36:07,273 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/WMT_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/MSFT_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/TSLA_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/JNJ_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/GOOGL_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/NVDA_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/BRK.B_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/V_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,274 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/META_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,275 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AMZN_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,275 - INFO - COPY result: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AAPL_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:36:07,275 - INFO - query: [SELECT COUNT(*) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:36:07,474 - INFO - query execution done
+2025-08-31 17:36:07,474 - INFO - Number of results in first chunk: 1
+2025-08-31 17:36:07,475 - INFO - Current table row count: 5,500
+2025-08-31 17:36:07,475 - INFO - Rows loaded with TRUE: 5,500
+2025-08-31 17:36:07,475 - INFO - Step 5: Comparing results...
+2025-08-31 17:36:07,475 - INFO - ================================================================================
+2025-08-31 17:36:07,475 - INFO - VECTORIZED SCANNER PERFORMANCE TEST SUMMARY
+2025-08-31 17:36:07,475 - INFO - ================================================================================
+2025-08-31 17:36:07,475 - INFO - Total test duration: 0:00:06.056488
+2025-08-31 17:36:07,475 - INFO - Test completed at: 2025-08-31 17:36:07.475402
+2025-08-31 17:36:07,475 - INFO - 
+2025-08-31 17:36:07,475 - INFO - PERFORMANCE RESULTS:
+2025-08-31 17:36:07,476 - INFO -   USE_VECTORIZED_SCANNER = FALSE: FAILED
+2025-08-31 17:36:07,476 - INFO -   USE_VECTORIZED_SCANNER = TRUE:  3.35 seconds
+2025-08-31 17:36:07,476 - INFO - 
+2025-08-31 17:36:07,476 - INFO - RECOMMENDATION:
+2025-08-31 17:36:07,476 - INFO -   Unable to determine optimal setting due to test failures
+2025-08-31 17:36:07,476 - INFO - 
+2025-08-31 17:36:07,476 - INFO - Test completed successfully! 🎉
+2025-08-31 17:36:07,476 - INFO - closed
+2025-08-31 17:36:07,607 - INFO - No async queries seem to be running, deleting session
+2025-08-31 17:36:07,728 - INFO - Snowflake connection closed
+2025-08-31 17:36:07,728 - ERROR - Performance test failed or incomplete

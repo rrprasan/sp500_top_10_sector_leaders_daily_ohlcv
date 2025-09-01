@@ -1,0 +1,144 @@
+2025-08-31 17:48:50,460 - INFO - Load Mode Performance Test initialized
+2025-08-31 17:48:50,460 - INFO - ================================================================================
+2025-08-31 17:48:50,460 - INFO - SNOWFLAKE LOAD_MODE PERFORMANCE TEST
+2025-08-31 17:48:50,460 - INFO - ================================================================================
+2025-08-31 17:48:50,460 - INFO - Comparing LOAD_MODE performance with USE_VECTORIZED_SCANNER = TRUE:
+2025-08-31 17:48:50,460 - INFO -   FULL_INGEST: Traditional full table processing
+2025-08-31 17:48:50,460 - INFO -   ADD_FILES_COPY: Optimized incremental file processing
+2025-08-31 17:48:50,460 - INFO - Step 1: Connecting to Snowflake...
+2025-08-31 17:48:50,460 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-08-31 17:48:50,463 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-08-31 17:48:51,018 - INFO - Successfully connected to Snowflake
+2025-08-31 17:48:51,019 - INFO - Step 2: Checking stage files...
+2025-08-31 17:48:51,019 - INFO - query: [LIST @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG]
+2025-08-31 17:48:51,302 - INFO - query execution done
+2025-08-31 17:48:51,302 - INFO - Number of results in first chunk: 11
+2025-08-31 17:48:51,302 - INFO - Files in stage: 11
+2025-08-31 17:48:51,302 - INFO - Sample files in stage:
+2025-08-31 17:48:51,302 - INFO -   1. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AAPL_2023_2025.parquet
+2025-08-31 17:48:51,302 - INFO -   2. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AMZN_2023_2025.parquet
+2025-08-31 17:48:51,302 - INFO -   3. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/BRK.B_2023_2025.parquet
+2025-08-31 17:48:51,302 - INFO -   4. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/GOOGL_2023_2025.parquet
+2025-08-31 17:48:51,302 - INFO -   5. s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/JNJ_2023_2025.parquet
+2025-08-31 17:48:51,302 - INFO -   ... and 6 more files
+2025-08-31 17:48:51,302 - INFO - Step 3: Testing with LOAD_MODE = FULL_INGEST...
+2025-08-31 17:48:51,302 - INFO - Truncating target table...
+2025-08-31 17:48:51,302 - INFO - query: [TRUNCATE TABLE sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:51,723 - INFO - query execution done
+2025-08-31 17:48:51,723 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:51,723 - INFO - Table truncated successfully
+2025-08-31 17:48:51,723 - INFO - Executing COPY INTO with LOAD_MODE = FULL_INGEST
+2025-08-31 17:48:51,723 - INFO - COPY command:
+2025-08-31 17:48:51,723 - INFO -   COPY INTO sp500_top10_sector_ohlcv_itbl
+2025-08-31 17:48:51,723 - INFO -   FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+2025-08-31 17:48:51,723 - INFO -   FILE_FORMAT = (
+2025-08-31 17:48:51,723 - INFO -   FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+2025-08-31 17:48:51,723 - INFO -   USE_VECTORIZED_SCANNER = TRUE
+2025-08-31 17:48:51,723 - INFO -   )
+2025-08-31 17:48:51,723 - INFO -   LOAD_MODE = FULL_INGEST
+2025-08-31 17:48:51,723 - INFO -   PURGE = FALSE
+2025-08-31 17:48:51,723 - INFO -   MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+2025-08-31 17:48:51,723 - INFO -   FORCE = FALSE;
+2025-08-31 17:48:51,723 - INFO - query: [COPY INTO sp500_top10_sector_ohlcv_itbl FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_...]
+2025-08-31 17:48:53,324 - INFO - query execution done
+2025-08-31 17:48:53,325 - INFO - Number of results in first chunk: 11
+2025-08-31 17:48:53,326 - INFO - query: [SELECT COUNT(*) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:53,526 - INFO - query execution done
+2025-08-31 17:48:53,526 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:53,527 - INFO - query: [SELECT COUNT(DISTINCT TICKER) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:54,078 - INFO - query execution done
+2025-08-31 17:48:54,079 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:54,079 - INFO - query: [SELECT MIN(OHLC_DATE), MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:55,198 - INFO - query execution done
+2025-08-31 17:48:55,199 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:55,199 - INFO - query: [SELECT TICKER, COUNT(*) as row_count FROM sp500_top10_sector_ohlcv_itbl GROUP BY...]
+2025-08-31 17:48:55,414 - INFO - query execution done
+2025-08-31 17:48:55,414 - INFO - Number of results in first chunk: 5
+2025-08-31 17:48:55,415 - INFO - COPY command completed in 1.60 seconds
+2025-08-31 17:48:55,415 - INFO - Files processed: 11
+2025-08-31 17:48:55,415 - INFO - Total rows loaded: 5,500
+2025-08-31 17:48:55,415 - INFO - Throughput: 3,433 rows/second
+2025-08-31 17:48:55,415 - INFO - File 1: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AMZN_2023_2025.parquet', 'LOADED', 500, 500, 1, 0, None, None, None, None)
+2025-08-31 17:48:55,415 - INFO - File 2: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AAPL_2023_2025.parquet', 'LOADED', 500, 500, 1, 0, None, None, None, None)
+2025-08-31 17:48:55,415 - INFO - File 3: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/NVDA_2023_2025.parquet', 'LOADED', 500, 500, 1, 0, None, None, None, None)
+2025-08-31 17:48:55,415 - INFO - ... and 8 more files
+2025-08-31 17:48:55,415 - INFO - Step 4: Testing with LOAD_MODE = ADD_FILES_COPY...
+2025-08-31 17:48:55,415 - INFO - Truncating target table...
+2025-08-31 17:48:55,416 - INFO - query: [TRUNCATE TABLE sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:55,656 - INFO - query execution done
+2025-08-31 17:48:55,656 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:55,656 - INFO - Table truncated successfully
+2025-08-31 17:48:55,656 - INFO - Executing COPY INTO with LOAD_MODE = ADD_FILES_COPY
+2025-08-31 17:48:55,657 - INFO - COPY command:
+2025-08-31 17:48:55,657 - INFO -   COPY INTO sp500_top10_sector_ohlcv_itbl
+2025-08-31 17:48:55,657 - INFO -   FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_STG
+2025-08-31 17:48:55,657 - INFO -   FILE_FORMAT = (
+2025-08-31 17:48:55,657 - INFO -   FORMAT_NAME = 'SP500_TOP10_SECTOR_OHLCV_FILE_FORMAT'
+2025-08-31 17:48:55,657 - INFO -   USE_VECTORIZED_SCANNER = TRUE
+2025-08-31 17:48:55,657 - INFO -   )
+2025-08-31 17:48:55,657 - INFO -   LOAD_MODE = ADD_FILES_COPY
+2025-08-31 17:48:55,657 - INFO -   PURGE = FALSE
+2025-08-31 17:48:55,657 - INFO -   MATCH_BY_COLUMN_NAME = CASE_SENSITIVE
+2025-08-31 17:48:55,657 - INFO -   FORCE = FALSE;
+2025-08-31 17:48:55,657 - INFO - query: [COPY INTO sp500_top10_sector_ohlcv_itbl FROM @SP500_TOP_10_SECTOR_LEADERS_OHLCV_...]
+2025-08-31 17:48:57,885 - INFO - query execution done
+2025-08-31 17:48:57,885 - INFO - Number of results in first chunk: 11
+2025-08-31 17:48:57,886 - INFO - query: [SELECT COUNT(*) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:58,071 - INFO - query execution done
+2025-08-31 17:48:58,071 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:58,071 - INFO - query: [SELECT COUNT(DISTINCT TICKER) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:58,538 - INFO - query execution done
+2025-08-31 17:48:58,538 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:58,538 - INFO - query: [SELECT MIN(OHLC_DATE), MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl]
+2025-08-31 17:48:58,668 - INFO - query execution done
+2025-08-31 17:48:58,668 - INFO - Number of results in first chunk: 1
+2025-08-31 17:48:58,669 - INFO - query: [SELECT TICKER, COUNT(*) as row_count FROM sp500_top10_sector_ohlcv_itbl GROUP BY...]
+2025-08-31 17:48:58,875 - INFO - query execution done
+2025-08-31 17:48:58,875 - INFO - Number of results in first chunk: 5
+2025-08-31 17:48:58,875 - INFO - COPY command completed in 2.23 seconds
+2025-08-31 17:48:58,876 - INFO - Files processed: 11
+2025-08-31 17:48:58,876 - INFO - Total rows loaded: 5,500
+2025-08-31 17:48:58,876 - INFO - Throughput: 2,468 rows/second
+2025-08-31 17:48:58,876 - INFO - File 1: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/GOOGL_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:48:58,876 - INFO - File 2: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/AMZN_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:48:58,876 - INFO - File 3: ('s3://sp500-top-10-sector-leaders-ohlcv-s3bkt/MSFT_2023_2025.parquet', 'LOADED', 500, 500, 0, 0, None, None, None, None)
+2025-08-31 17:48:58,876 - INFO - ... and 8 more files
+2025-08-31 17:48:58,876 - INFO - Step 5: Comparing results...
+2025-08-31 17:48:58,876 - INFO - Performance comparison:
+2025-08-31 17:48:58,876 - INFO -   FULL_INGEST:    1.60 seconds (3,433 rows/sec)
+2025-08-31 17:48:58,876 - INFO -   ADD_FILES_COPY: 2.23 seconds (2,468 rows/sec)
+2025-08-31 17:48:58,876 - INFO -   Time difference: -0.63 seconds
+2025-08-31 17:48:58,877 - INFO -   Performance improvement: -39.1%
+2025-08-31 17:48:58,877 - INFO -   Throughput improvement: -28.1%
+2025-08-31 17:48:58,877 - INFO -   Faster mode: LOAD_MODE = FULL_INGEST
+2025-08-31 17:48:58,877 - INFO - ================================================================================
+2025-08-31 17:48:58,877 - INFO - LOAD_MODE PERFORMANCE TEST SUMMARY
+2025-08-31 17:48:58,877 - INFO - ================================================================================
+2025-08-31 17:48:58,877 - INFO - Total test duration: 0:00:08.416659
+2025-08-31 17:48:58,878 - INFO - Test completed at: 2025-08-31 17:48:58.877168
+2025-08-31 17:48:58,878 - INFO - 
+2025-08-31 17:48:58,878 - INFO - PERFORMANCE RESULTS:
+2025-08-31 17:48:58,878 - INFO -   LOAD_MODE = FULL_INGEST:    1.60 seconds
+2025-08-31 17:48:58,878 - INFO -   LOAD_MODE = ADD_FILES_COPY: 2.23 seconds
+2025-08-31 17:48:58,878 - INFO -   FULL_INGEST throughput:     3,433 rows/sec
+2025-08-31 17:48:58,878 - INFO -   ADD_FILES_COPY throughput:  2,468 rows/sec
+2025-08-31 17:48:58,879 - INFO - 
+2025-08-31 17:48:58,879 - INFO -   📊 FULL_INGEST is 39.1% faster!
+2025-08-31 17:48:58,879 - INFO -   📈 Throughput difference: 28.1%
+2025-08-31 17:48:58,879 - INFO -   🏆 Winner: LOAD_MODE = FULL_INGEST
+2025-08-31 17:48:58,879 - INFO - 
+2025-08-31 17:48:58,879 - INFO - KEY INSIGHTS:
+2025-08-31 17:48:58,879 - INFO -   • Both modes use USE_VECTORIZED_SCANNER = TRUE
+2025-08-31 17:48:58,879 - INFO -   • FULL_INGEST: Traditional batch processing approach
+2025-08-31 17:48:58,879 - INFO -   • ADD_FILES_COPY: Optimized for incremental/file-based loading
+2025-08-31 17:48:58,879 - INFO -   • Performance difference indicates optimization effectiveness
+2025-08-31 17:48:58,879 - INFO - 
+2025-08-31 17:48:58,879 - INFO - RECOMMENDATION:
+2025-08-31 17:48:58,879 - INFO -   Use LOAD_MODE = FULL_INGEST for optimal performance
+2025-08-31 17:48:58,879 - INFO -   Provides 39.1% performance improvement
+2025-08-31 17:48:58,880 - INFO - 
+2025-08-31 17:48:58,880 - INFO - Test completed successfully! 🎉
+2025-08-31 17:48:58,880 - INFO - closed
+2025-08-31 17:48:58,982 - INFO - No async queries seem to be running, deleting session
+2025-08-31 17:48:59,113 - INFO - Snowflake connection closed
+2025-08-31 17:48:59,114 - INFO - Load mode performance test completed successfully

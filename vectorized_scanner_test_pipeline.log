@@ -1,0 +1,125 @@
+2025-08-31 16:12:17,290 - INFO - Configuration loaded from config.json
+2025-08-31 16:12:17,291 - INFO - Vectorized Scanner Test Pipeline initialized
+2025-08-31 16:12:17,291 - INFO - Date range: 2023-08-01 to 2025-08-29
+2025-08-31 16:12:17,291 - INFO - Target S3 bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:12:17,291 - INFO - ================================================================================
+2025-08-31 16:12:17,291 - INFO - VECTORIZED SCANNER TEST PIPELINE
+2025-08-31 16:12:17,291 - INFO - ================================================================================
+2025-08-31 16:12:17,291 - INFO - Date range: 2023-08-01 to 2025-08-29
+2025-08-31 16:12:17,291 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:12:17,291 - INFO - File structure: Flat (no directories)
+2025-08-31 16:12:17,291 - INFO - AWS Credentials: /Users/prajagopal/.aws
+2025-08-31 16:12:17,291 - INFO - Step 1: Retrieving all tickers from Snowflake...
+2025-08-31 16:12:17,297 - INFO - Snowflake Connector for Python Version: 3.17.2, Python Version: 3.12.3, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-08-31 16:12:17,297 - INFO - Connecting to GLOBAL Snowflake domain
+2025-08-31 16:12:17,382 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-08-31 16:12:18,484 - INFO - Successfully connected to Snowflake
+2025-08-31 16:12:18,484 - INFO - Executing query: SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TICKER_SYMBOL
+2025-08-31 16:12:19,021 - INFO - Retrieved 110 tickers from Snowflake
+2025-08-31 16:12:19,217 - INFO - Snowflake connection closed
+2025-08-31 16:12:19,217 - INFO - Retrieved 110 tickers for processing
+2025-08-31 16:12:19,217 - INFO - Step 2: Initializing S3 client...
+2025-08-31 16:12:19,641 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-08-31 16:12:19,642 - INFO - Step 3: Processing 110 tickers...
+2025-08-31 16:12:19,643 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:12:19,643 - INFO - Estimated processing time: ~9.5 hours (2750 API calls)
+2025-08-31 16:12:19,643 - INFO - Processing ticker 1/110: AAPL
+2025-08-31 16:12:19,643 - INFO - Starting processing for ticker: AAPL
+2025-08-31 16:12:19,643 - INFO - Generated 25 monthly date ranges
+2025-08-31 16:12:19,643 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:12:32,149 - INFO - Fetching data for AAPL from 2023-08-01 to 2023-08-31
+2025-08-31 16:12:32,541 - ERROR - Failed to fetch data for AAPL: 403 Client Error: Forbidden for url: https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-08-01/2023-08-31?apikey=AZ9FXO0AQNYPaHU0Nal46dgJ0fqdivtk&adjusted=true&sort=asc
+2025-08-31 16:12:32,542 - WARNING - No data retrieved for AAPL from 2023-08-01 to 2023-08-31
+2025-08-31 16:12:32,542 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:12:45,047 - INFO - Fetching data for AAPL from 2023-09-01 to 2023-09-30
+2025-08-31 16:12:45,370 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:12:45,392 - INFO - Processed 20 records for AAPL
+2025-08-31 16:12:45,393 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:12:57,899 - INFO - Fetching data for AAPL from 2023-10-01 to 2023-10-31
+2025-08-31 16:12:58,333 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:12:58,347 - INFO - Processed 22 records for AAPL
+2025-08-31 16:12:58,347 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:13:10,866 - INFO - Fetching data for AAPL from 2023-11-01 to 2023-11-30
+2025-08-31 16:13:11,205 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:13:11,218 - INFO - Processed 21 records for AAPL
+2025-08-31 16:13:11,219 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:13:23,725 - INFO - Fetching data for AAPL from 2023-12-01 to 2023-12-31
+2025-08-31 16:13:24,062 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:13:24,075 - INFO - Processed 20 records for AAPL
+2025-08-31 16:13:24,075 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:13:36,674 - INFO - Fetching data for AAPL from 2024-01-01 to 2024-01-31
+2025-08-31 16:13:37,070 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:13:37,083 - INFO - Processed 21 records for AAPL
+2025-08-31 16:13:37,083 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:13:49,589 - INFO - Fetching data for AAPL from 2024-02-01 to 2024-02-29
+2025-08-31 16:13:49,920 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:13:49,930 - INFO - Processed 20 records for AAPL
+2025-08-31 16:13:49,931 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:14:02,435 - INFO - Fetching data for AAPL from 2024-03-01 to 2024-03-31
+2025-08-31 16:14:02,773 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:14:02,785 - INFO - Processed 20 records for AAPL
+2025-08-31 16:14:02,786 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:14:15,292 - INFO - Fetching data for AAPL from 2024-04-01 to 2024-04-30
+2025-08-31 16:14:15,627 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:14:15,637 - INFO - Processed 22 records for AAPL
+2025-08-31 16:14:15,637 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:14:28,144 - INFO - Fetching data for AAPL from 2024-05-01 to 2024-05-31
+2025-08-31 16:14:28,481 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:14:28,493 - INFO - Processed 22 records for AAPL
+2025-08-31 16:14:28,493 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:14:40,995 - INFO - Fetching data for AAPL from 2024-06-01 to 2024-06-30
+2025-08-31 16:14:41,363 - INFO - Successfully retrieved 19 records for AAPL
+2025-08-31 16:14:41,380 - INFO - Processed 19 records for AAPL
+2025-08-31 16:14:41,380 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:14:53,886 - INFO - Fetching data for AAPL from 2024-07-01 to 2024-07-31
+2025-08-31 16:14:54,206 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:14:54,229 - INFO - Processed 22 records for AAPL
+2025-08-31 16:14:54,229 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:15:06,735 - INFO - Fetching data for AAPL from 2024-08-01 to 2024-08-31
+2025-08-31 16:15:07,162 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:15:07,178 - INFO - Processed 22 records for AAPL
+2025-08-31 16:15:07,178 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:15:19,684 - INFO - Fetching data for AAPL from 2024-09-01 to 2024-09-30
+2025-08-31 16:15:20,025 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:15:20,056 - INFO - Processed 20 records for AAPL
+2025-08-31 16:15:20,057 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:15:32,560 - INFO - Fetching data for AAPL from 2024-10-01 to 2024-10-31
+2025-08-31 16:15:32,894 - INFO - Successfully retrieved 23 records for AAPL
+2025-08-31 16:15:32,910 - INFO - Processed 23 records for AAPL
+2025-08-31 16:15:32,911 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:15:45,418 - INFO - Fetching data for AAPL from 2024-11-01 to 2024-11-30
+2025-08-31 16:15:45,765 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:15:45,782 - INFO - Processed 20 records for AAPL
+2025-08-31 16:15:45,782 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:15:58,287 - INFO - Fetching data for AAPL from 2024-12-01 to 2024-12-31
+2025-08-31 16:15:58,712 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:15:58,734 - INFO - Processed 21 records for AAPL
+2025-08-31 16:15:58,734 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:16:11,237 - INFO - Fetching data for AAPL from 2025-01-01 to 2025-01-31
+2025-08-31 16:16:11,596 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:16:11,605 - INFO - Processed 20 records for AAPL
+2025-08-31 16:16:11,605 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:16:24,115 - INFO - Fetching data for AAPL from 2025-02-01 to 2025-02-28
+2025-08-31 16:16:24,463 - INFO - Successfully retrieved 19 records for AAPL
+2025-08-31 16:16:24,479 - INFO - Processed 19 records for AAPL
+2025-08-31 16:16:24,479 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:16:36,982 - INFO - Fetching data for AAPL from 2025-03-01 to 2025-03-31
+2025-08-31 16:16:37,309 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:16:37,321 - INFO - Processed 21 records for AAPL
+2025-08-31 16:16:37,322 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:16:49,832 - INFO - Fetching data for AAPL from 2025-04-01 to 2025-04-30
+2025-08-31 16:16:50,155 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:16:50,189 - INFO - Processed 21 records for AAPL
+2025-08-31 16:16:50,189 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:17:02,693 - INFO - Fetching data for AAPL from 2025-05-01 to 2025-05-31
+2025-08-31 16:17:03,077 - INFO - Successfully retrieved 21 records for AAPL
+2025-08-31 16:17:03,082 - INFO - Processed 21 records for AAPL
+2025-08-31 16:17:03,082 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:17:15,613 - INFO - Fetching data for AAPL from 2025-06-01 to 2025-06-30
+2025-08-31 16:17:15,950 - INFO - Successfully retrieved 20 records for AAPL
+2025-08-31 16:17:15,962 - INFO - Processed 20 records for AAPL
+2025-08-31 16:17:15,963 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-08-31 16:17:28,466 - INFO - Fetching data for AAPL from 2025-07-01 to 2025-07-31
+2025-08-31 16:17:28,806 - INFO - Successfully retrieved 22 records for AAPL
+2025-08-31 16:17:28,819 - INFO - Processed 22 records for AAPL
+2025-08-31 16:17:28,819 - INFO - Rate limiting: waiting 12.5 seconds...
