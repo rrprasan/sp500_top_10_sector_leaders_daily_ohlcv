@@ -14,7 +14,7 @@ This application automates the extraction of historical equity data for a list o
 ## Prerequisites
 
 1. **Snowflake Connection**: Pre-configured `DEMO_PRAJAGOPAL` connection in `~/.snowflake/connections.toml`
-2. **Polygon.io API Key**: Free or paid API key from Polygon.io
+2. **Polygon.io API Key**: Free or paid API key from Polygon.io (set as `POLYGON_API_KEY` environment variable)
 3. **AWS Credentials**: Configured AWS credentials with S3 access
 4. **Python 3.8+**: Required for all dependencies
 
@@ -28,18 +28,40 @@ pip install -r requirements.txt
 
 ### 2. Configure API Key
 
-Create a `config.json` file in the project directory:
+Set the Polygon.io API key as an environment variable:
 
-```json
-{
-    "polygon_api_key": "your_polygon_io_api_key_here"
-}
+```bash
+# Set the environment variable (replace with your actual API key)
+export POLYGON_API_KEY=your_polygon_io_api_key_here
+
+# To make it permanent, add to your shell profile
+echo 'export POLYGON_API_KEY=your_polygon_io_api_key_here' >> ~/.bashrc
+# or for zsh users:
+echo 'export POLYGON_API_KEY=your_polygon_io_api_key_here' >> ~/.zshrc
+
+# Reload your shell or run:
+source ~/.bashrc  # or ~/.zshrc
 ```
 
-You can use the provided template:
+**Security Note**: Using environment variables is more secure than storing API keys in files, as it prevents accidental commits of sensitive data to version control.
+
+**Verify Setup**:
 ```bash
-cp config.json.template config.json
-# Edit config.json with your actual API key
+# Test that your API key is properly set
+echo $POLYGON_API_KEY
+
+# Quick API test (optional)
+python -c "
+import os
+import requests
+api_key = os.getenv('POLYGON_API_KEY')
+if not api_key:
+    print('❌ POLYGON_API_KEY not set')
+else:
+    url = f'https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2024-01-01/2024-01-02?apikey={api_key}'
+    response = requests.get(url)
+    print('✅ API key working' if response.status_code == 200 else f'❌ API Error: {response.status_code}')
+"
 ```
 
 ### 3. AWS Configuration
@@ -133,7 +155,7 @@ Failed tickers are logged and reported in the final summary.
    - Ensure credentials are valid
 
 2. **Polygon.io API Errors**
-   - Verify API key in `config.json`
+   - Verify API key is set: `echo $POLYGON_API_KEY`
    - Check API quota limits
    - Ensure ticker symbols are valid
 
