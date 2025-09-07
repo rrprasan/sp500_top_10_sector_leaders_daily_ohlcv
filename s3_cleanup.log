@@ -32,3 +32,37 @@
 2025-08-31 16:11:52,574 - INFO - 🎉 S3 bucket cleanup completed successfully!
 2025-08-31 16:11:52,574 - INFO - The bucket is now ready for new data uploads.
 2025-08-31 16:11:52,574 - INFO - S3 bucket cleanup completed successfully
+2025-09-06 21:04:06,961 - INFO - S3 Bucket Cleaner initialized
+2025-09-06 21:04:06,961 - INFO - ============================================================
+2025-09-06 21:04:06,961 - INFO - S3 BUCKET CLEANUP PROCESS
+2025-09-06 21:04:06,961 - INFO - ============================================================
+2025-09-06 21:04:06,961 - INFO - Target bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:06,961 - INFO - Step 1: Initializing S3 client...
+2025-09-06 21:04:06,973 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-09-06 21:04:08,513 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:08,514 - INFO - Step 2: Listing current objects...
+2025-09-06 21:04:08,945 - INFO - Found 11 objects in bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:08,945 - INFO - Step 3: About to delete 11 objects...
+2025-09-06 21:04:08,945 - INFO - Sample objects to be deleted:
+2025-09-06 21:04:08,945 - INFO -   1. AAPL_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   2. AMZN_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   3. BRK.B_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   4. GOOGL_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   5. JNJ_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   6. META_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   7. MSFT_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   8. NVDA_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   9. TSLA_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   10. V_2023_2025.parquet
+2025-09-06 21:04:08,946 - INFO -   ... and 1 more objects
+2025-09-06 21:04:08,947 - INFO - Step 4: Deleting all objects...
+2025-09-06 21:04:08,999 - INFO - Found 11 objects in bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:09,000 - INFO - Starting deletion of 11 objects...
+2025-09-06 21:04:09,390 - INFO - Deleted batch of 11 objects
+2025-09-06 21:04:09,390 - INFO - Successfully deleted 11 objects from bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:09,391 - INFO - Step 5: Verifying cleanup...
+2025-09-06 21:04:09,576 - INFO - Found 0 objects in bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:04:09,577 - INFO - ✅ Bucket is now empty
+2025-09-06 21:04:09,577 - INFO - 🎉 S3 bucket cleanup completed successfully!
+2025-09-06 21:04:09,577 - INFO - The bucket is now ready for new data uploads.
+2025-09-06 21:04:09,577 - INFO - S3 bucket cleanup completed successfully

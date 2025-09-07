@@ -1,0 +1,2138 @@
+2025-09-06 21:06:34,713 - INFO - Polygon.io API key loaded from environment variable
+2025-09-06 21:06:34,713 - INFO - Comprehensive OHLCV Pipeline initialized
+2025-09-06 21:06:34,713 - INFO - Date range: 2023-09-07 to 2025-09-06
+2025-09-06 21:06:34,713 - INFO - ================================================================================
+2025-09-06 21:06:34,713 - INFO - COMPREHENSIVE OHLCV PIPELINE FOR ALL SP500 SECTOR LEADERS
+2025-09-06 21:06:34,713 - INFO - ================================================================================
+2025-09-06 21:06:34,713 - INFO - Date range: 2023-09-07 to 2025-09-06
+2025-09-06 21:06:34,713 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:06:34,713 - INFO - Snowflake Table: DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES
+2025-09-06 21:06:34,713 - INFO - Step 1: Retrieving all ticker symbols from Snowflake...
+2025-09-06 21:06:34,719 - INFO - Snowflake Connector for Python Version: 3.17.2, Python Version: 3.12.3, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-06 21:06:34,719 - INFO - Connecting to GLOBAL Snowflake domain
+2025-09-06 21:06:34,773 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-09-06 21:06:35,890 - INFO - Snowflake connection initialized successfully
+2025-09-06 21:06:36,088 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-06 21:06:36,088 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-06 21:06:36,089 - INFO - Found 111 tickers to process
+2025-09-06 21:06:36,089 - INFO - Step 2: Initializing S3 client...
+2025-09-06 21:06:36,691 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-06 21:06:36,691 - INFO - Step 3: Processing all tickers...
+2025-09-06 21:06:36,691 - INFO - Processing ticker 1/111: AAPL
+2025-09-06 21:06:36,692 - INFO - Starting processing for ticker: AAPL
+2025-09-06 21:06:36,692 - INFO - Fetching data for AAPL from 2023-09-07 to 2025-09-06
+2025-09-06 21:06:37,226 - INFO - Successfully retrieved 500 records for AAPL
+2025-09-06 21:06:37,234 - INFO - Processed 79 records for AAPL in 2023
+2025-09-06 21:06:37,234 - INFO - Processed 252 records for AAPL in 2024
+2025-09-06 21:06:37,234 - INFO - Processed 169 records for AAPL in 2025
+2025-09-06 21:06:37,240 - INFO - Created Parquet file: AAPL_2023.parquet
+2025-09-06 21:06:37,353 - INFO - Successfully uploaded AAPL_2023.parquet to S3 bucket root
+2025-09-06 21:06:37,354 - INFO - Cleaned up local file: AAPL_2023.parquet
+2025-09-06 21:06:37,357 - INFO - Created Parquet file: AAPL_2024.parquet
+2025-09-06 21:06:37,529 - INFO - Successfully uploaded AAPL_2024.parquet to S3 bucket root
+2025-09-06 21:06:37,530 - INFO - Cleaned up local file: AAPL_2024.parquet
+2025-09-06 21:06:37,531 - INFO - Created Parquet file: AAPL_2025.parquet
+2025-09-06 21:06:37,744 - INFO - Successfully uploaded AAPL_2025.parquet to S3 bucket root
+2025-09-06 21:06:37,744 - INFO - Cleaned up local file: AAPL_2025.parquet
+2025-09-06 21:06:37,745 - INFO - Completed processing AAPL: 3/3 files successful
+2025-09-06 21:06:37,745 - INFO - ✓ Successfully processed AAPL
+2025-09-06 21:06:37,745 - INFO - Processing ticker 2/111: ABBV
+2025-09-06 21:06:37,745 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:06:50,251 - INFO - Starting processing for ticker: ABBV
+2025-09-06 21:06:50,252 - INFO - Fetching data for ABBV from 2023-09-07 to 2025-09-06
+2025-09-06 21:06:50,664 - INFO - Successfully retrieved 500 records for ABBV
+2025-09-06 21:06:50,676 - INFO - Processed 79 records for ABBV in 2023
+2025-09-06 21:06:50,676 - INFO - Processed 252 records for ABBV in 2024
+2025-09-06 21:06:50,676 - INFO - Processed 169 records for ABBV in 2025
+2025-09-06 21:06:50,679 - INFO - Created Parquet file: ABBV_2023.parquet
+2025-09-06 21:06:51,141 - INFO - Successfully uploaded ABBV_2023.parquet to S3 bucket root
+2025-09-06 21:06:51,142 - INFO - Cleaned up local file: ABBV_2023.parquet
+2025-09-06 21:06:51,146 - INFO - Created Parquet file: ABBV_2024.parquet
+2025-09-06 21:06:51,355 - INFO - Successfully uploaded ABBV_2024.parquet to S3 bucket root
+2025-09-06 21:06:51,355 - INFO - Cleaned up local file: ABBV_2024.parquet
+2025-09-06 21:06:51,357 - INFO - Created Parquet file: ABBV_2025.parquet
+2025-09-06 21:06:51,475 - INFO - Successfully uploaded ABBV_2025.parquet to S3 bucket root
+2025-09-06 21:06:51,475 - INFO - Cleaned up local file: ABBV_2025.parquet
+2025-09-06 21:06:51,475 - INFO - Completed processing ABBV: 3/3 files successful
+2025-09-06 21:06:51,475 - INFO - ✓ Successfully processed ABBV
+2025-09-06 21:06:51,475 - INFO - Processing ticker 3/111: ABT
+2025-09-06 21:06:51,476 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:07:03,981 - INFO - Starting processing for ticker: ABT
+2025-09-06 21:07:03,983 - INFO - Fetching data for ABT from 2023-09-07 to 2025-09-06
+2025-09-06 21:07:04,502 - INFO - Successfully retrieved 500 records for ABT
+2025-09-06 21:07:04,526 - INFO - Processed 79 records for ABT in 2023
+2025-09-06 21:07:04,527 - INFO - Processed 252 records for ABT in 2024
+2025-09-06 21:07:04,527 - INFO - Processed 169 records for ABT in 2025
+2025-09-06 21:07:04,534 - INFO - Created Parquet file: ABT_2023.parquet
+2025-09-06 21:07:04,970 - INFO - Successfully uploaded ABT_2023.parquet to S3 bucket root
+2025-09-06 21:07:04,971 - INFO - Cleaned up local file: ABT_2023.parquet
+2025-09-06 21:07:04,975 - INFO - Created Parquet file: ABT_2024.parquet
+2025-09-06 21:07:05,078 - INFO - Successfully uploaded ABT_2024.parquet to S3 bucket root
+2025-09-06 21:07:05,078 - INFO - Cleaned up local file: ABT_2024.parquet
+2025-09-06 21:07:05,080 - INFO - Created Parquet file: ABT_2025.parquet
+2025-09-06 21:07:05,245 - INFO - Successfully uploaded ABT_2025.parquet to S3 bucket root
+2025-09-06 21:07:05,245 - INFO - Cleaned up local file: ABT_2025.parquet
+2025-09-06 21:07:05,245 - INFO - Completed processing ABT: 3/3 files successful
+2025-09-06 21:07:05,245 - INFO - ✓ Successfully processed ABT
+2025-09-06 21:07:05,245 - INFO - Processing ticker 4/111: ACN
+2025-09-06 21:07:05,245 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:07:17,747 - INFO - Starting processing for ticker: ACN
+2025-09-06 21:07:17,752 - INFO - Fetching data for ACN from 2023-09-07 to 2025-09-06
+2025-09-06 21:07:18,169 - INFO - Successfully retrieved 500 records for ACN
+2025-09-06 21:07:18,186 - INFO - Processed 79 records for ACN in 2023
+2025-09-06 21:07:18,187 - INFO - Processed 252 records for ACN in 2024
+2025-09-06 21:07:18,187 - INFO - Processed 169 records for ACN in 2025
+2025-09-06 21:07:18,191 - INFO - Created Parquet file: ACN_2023.parquet
+2025-09-06 21:07:18,534 - INFO - Successfully uploaded ACN_2023.parquet to S3 bucket root
+2025-09-06 21:07:18,536 - INFO - Cleaned up local file: ACN_2023.parquet
+2025-09-06 21:07:18,547 - INFO - Created Parquet file: ACN_2024.parquet
+2025-09-06 21:07:18,658 - INFO - Successfully uploaded ACN_2024.parquet to S3 bucket root
+2025-09-06 21:07:18,658 - INFO - Cleaned up local file: ACN_2024.parquet
+2025-09-06 21:07:18,663 - INFO - Created Parquet file: ACN_2025.parquet
+2025-09-06 21:07:18,777 - INFO - Successfully uploaded ACN_2025.parquet to S3 bucket root
+2025-09-06 21:07:18,778 - INFO - Cleaned up local file: ACN_2025.parquet
+2025-09-06 21:07:18,778 - INFO - Completed processing ACN: 3/3 files successful
+2025-09-06 21:07:18,779 - INFO - ✓ Successfully processed ACN
+2025-09-06 21:07:18,779 - INFO - Processing ticker 5/111: ADBE
+2025-09-06 21:07:18,779 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:07:31,284 - INFO - Starting processing for ticker: ADBE
+2025-09-06 21:07:31,285 - INFO - Fetching data for ADBE from 2023-09-07 to 2025-09-06
+2025-09-06 21:07:31,746 - INFO - Successfully retrieved 500 records for ADBE
+2025-09-06 21:07:31,765 - INFO - Processed 79 records for ADBE in 2023
+2025-09-06 21:07:31,766 - INFO - Processed 252 records for ADBE in 2024
+2025-09-06 21:07:31,766 - INFO - Processed 169 records for ADBE in 2025
+2025-09-06 21:07:31,770 - INFO - Created Parquet file: ADBE_2023.parquet
+2025-09-06 21:07:32,083 - INFO - Successfully uploaded ADBE_2023.parquet to S3 bucket root
+2025-09-06 21:07:32,083 - INFO - Cleaned up local file: ADBE_2023.parquet
+2025-09-06 21:07:32,086 - INFO - Created Parquet file: ADBE_2024.parquet
+2025-09-06 21:07:32,196 - INFO - Successfully uploaded ADBE_2024.parquet to S3 bucket root
+2025-09-06 21:07:32,197 - INFO - Cleaned up local file: ADBE_2024.parquet
+2025-09-06 21:07:32,200 - INFO - Created Parquet file: ADBE_2025.parquet
+2025-09-06 21:07:32,303 - INFO - Successfully uploaded ADBE_2025.parquet to S3 bucket root
+2025-09-06 21:07:32,304 - INFO - Cleaned up local file: ADBE_2025.parquet
+2025-09-06 21:07:32,304 - INFO - Completed processing ADBE: 3/3 files successful
+2025-09-06 21:07:32,304 - INFO - ✓ Successfully processed ADBE
+2025-09-06 21:07:32,304 - INFO - Processing ticker 6/111: ADP
+2025-09-06 21:07:32,304 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:07:44,809 - INFO - Starting processing for ticker: ADP
+2025-09-06 21:07:44,810 - INFO - Fetching data for ADP from 2023-09-07 to 2025-09-06
+2025-09-06 21:07:45,217 - INFO - Successfully retrieved 500 records for ADP
+2025-09-06 21:07:45,232 - INFO - Processed 79 records for ADP in 2023
+2025-09-06 21:07:45,232 - INFO - Processed 252 records for ADP in 2024
+2025-09-06 21:07:45,233 - INFO - Processed 169 records for ADP in 2025
+2025-09-06 21:07:45,236 - INFO - Created Parquet file: ADP_2023.parquet
+2025-09-06 21:07:45,459 - INFO - Successfully uploaded ADP_2023.parquet to S3 bucket root
+2025-09-06 21:07:45,459 - INFO - Cleaned up local file: ADP_2023.parquet
+2025-09-06 21:07:45,461 - INFO - Created Parquet file: ADP_2024.parquet
+2025-09-06 21:07:45,576 - INFO - Successfully uploaded ADP_2024.parquet to S3 bucket root
+2025-09-06 21:07:45,577 - INFO - Cleaned up local file: ADP_2024.parquet
+2025-09-06 21:07:45,580 - INFO - Created Parquet file: ADP_2025.parquet
+2025-09-06 21:07:45,687 - INFO - Successfully uploaded ADP_2025.parquet to S3 bucket root
+2025-09-06 21:07:45,687 - INFO - Cleaned up local file: ADP_2025.parquet
+2025-09-06 21:07:45,688 - INFO - Completed processing ADP: 3/3 files successful
+2025-09-06 21:07:45,688 - INFO - ✓ Successfully processed ADP
+2025-09-06 21:07:45,688 - INFO - Processing ticker 7/111: AEP
+2025-09-06 21:07:45,688 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:07:58,191 - INFO - Starting processing for ticker: AEP
+2025-09-06 21:07:58,193 - INFO - Fetching data for AEP from 2023-09-07 to 2025-09-06
+2025-09-06 21:07:58,665 - INFO - Successfully retrieved 500 records for AEP
+2025-09-06 21:07:58,674 - INFO - Processed 79 records for AEP in 2023
+2025-09-06 21:07:58,674 - INFO - Processed 252 records for AEP in 2024
+2025-09-06 21:07:58,674 - INFO - Processed 169 records for AEP in 2025
+2025-09-06 21:07:58,677 - INFO - Created Parquet file: AEP_2023.parquet
+2025-09-06 21:07:58,976 - INFO - Successfully uploaded AEP_2023.parquet to S3 bucket root
+2025-09-06 21:07:58,977 - INFO - Cleaned up local file: AEP_2023.parquet
+2025-09-06 21:07:58,978 - INFO - Created Parquet file: AEP_2024.parquet
+2025-09-06 21:07:59,084 - INFO - Successfully uploaded AEP_2024.parquet to S3 bucket root
+2025-09-06 21:07:59,084 - INFO - Cleaned up local file: AEP_2024.parquet
+2025-09-06 21:07:59,085 - INFO - Created Parquet file: AEP_2025.parquet
+2025-09-06 21:07:59,188 - INFO - Successfully uploaded AEP_2025.parquet to S3 bucket root
+2025-09-06 21:07:59,188 - INFO - Cleaned up local file: AEP_2025.parquet
+2025-09-06 21:07:59,188 - INFO - Completed processing AEP: 3/3 files successful
+2025-09-06 21:07:59,189 - INFO - ✓ Successfully processed AEP
+2025-09-06 21:07:59,189 - INFO - Processing ticker 8/111: AMD
+2025-09-06 21:07:59,189 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:08:11,691 - INFO - Starting processing for ticker: AMD
+2025-09-06 21:08:11,692 - INFO - Fetching data for AMD from 2023-09-07 to 2025-09-06
+2025-09-06 21:08:12,122 - INFO - Successfully retrieved 500 records for AMD
+2025-09-06 21:08:12,132 - INFO - Processed 79 records for AMD in 2023
+2025-09-06 21:08:12,132 - INFO - Processed 252 records for AMD in 2024
+2025-09-06 21:08:12,132 - INFO - Processed 169 records for AMD in 2025
+2025-09-06 21:08:12,139 - INFO - Created Parquet file: AMD_2023.parquet
+2025-09-06 21:08:12,378 - INFO - Successfully uploaded AMD_2023.parquet to S3 bucket root
+2025-09-06 21:08:12,378 - INFO - Cleaned up local file: AMD_2023.parquet
+2025-09-06 21:08:12,383 - INFO - Created Parquet file: AMD_2024.parquet
+2025-09-06 21:08:12,486 - INFO - Successfully uploaded AMD_2024.parquet to S3 bucket root
+2025-09-06 21:08:12,486 - INFO - Cleaned up local file: AMD_2024.parquet
+2025-09-06 21:08:12,488 - INFO - Created Parquet file: AMD_2025.parquet
+2025-09-06 21:08:12,596 - INFO - Successfully uploaded AMD_2025.parquet to S3 bucket root
+2025-09-06 21:08:12,597 - INFO - Cleaned up local file: AMD_2025.parquet
+2025-09-06 21:08:12,597 - INFO - Completed processing AMD: 3/3 files successful
+2025-09-06 21:08:12,597 - INFO - ✓ Successfully processed AMD
+2025-09-06 21:08:12,598 - INFO - Processing ticker 9/111: AMGN
+2025-09-06 21:08:12,598 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:08:25,099 - INFO - Starting processing for ticker: AMGN
+2025-09-06 21:08:25,101 - INFO - Fetching data for AMGN from 2023-09-07 to 2025-09-06
+2025-09-06 21:08:25,513 - INFO - Successfully retrieved 500 records for AMGN
+2025-09-06 21:08:25,524 - INFO - Processed 79 records for AMGN in 2023
+2025-09-06 21:08:25,524 - INFO - Processed 252 records for AMGN in 2024
+2025-09-06 21:08:25,525 - INFO - Processed 169 records for AMGN in 2025
+2025-09-06 21:08:25,529 - INFO - Created Parquet file: AMGN_2023.parquet
+2025-09-06 21:08:25,835 - INFO - Successfully uploaded AMGN_2023.parquet to S3 bucket root
+2025-09-06 21:08:25,835 - INFO - Cleaned up local file: AMGN_2023.parquet
+2025-09-06 21:08:25,839 - INFO - Created Parquet file: AMGN_2024.parquet
+2025-09-06 21:08:25,945 - INFO - Successfully uploaded AMGN_2024.parquet to S3 bucket root
+2025-09-06 21:08:25,946 - INFO - Cleaned up local file: AMGN_2024.parquet
+2025-09-06 21:08:25,950 - INFO - Created Parquet file: AMGN_2025.parquet
+2025-09-06 21:08:26,053 - INFO - Successfully uploaded AMGN_2025.parquet to S3 bucket root
+2025-09-06 21:08:26,054 - INFO - Cleaned up local file: AMGN_2025.parquet
+2025-09-06 21:08:26,054 - INFO - Completed processing AMGN: 3/3 files successful
+2025-09-06 21:08:26,055 - INFO - ✓ Successfully processed AMGN
+2025-09-06 21:08:26,055 - INFO - Processing ticker 10/111: AMT
+2025-09-06 21:08:26,055 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:08:38,560 - INFO - Starting processing for ticker: AMT
+2025-09-06 21:08:38,562 - INFO - Fetching data for AMT from 2023-09-07 to 2025-09-06
+2025-09-06 21:08:38,952 - INFO - Successfully retrieved 500 records for AMT
+2025-09-06 21:08:38,964 - INFO - Processed 79 records for AMT in 2023
+2025-09-06 21:08:38,964 - INFO - Processed 252 records for AMT in 2024
+2025-09-06 21:08:38,964 - INFO - Processed 169 records for AMT in 2025
+2025-09-06 21:08:38,967 - INFO - Created Parquet file: AMT_2023.parquet
+2025-09-06 21:08:39,324 - INFO - Successfully uploaded AMT_2023.parquet to S3 bucket root
+2025-09-06 21:08:39,325 - INFO - Cleaned up local file: AMT_2023.parquet
+2025-09-06 21:08:39,328 - INFO - Created Parquet file: AMT_2024.parquet
+2025-09-06 21:08:39,441 - INFO - Successfully uploaded AMT_2024.parquet to S3 bucket root
+2025-09-06 21:08:39,442 - INFO - Cleaned up local file: AMT_2024.parquet
+2025-09-06 21:08:39,446 - INFO - Created Parquet file: AMT_2025.parquet
+2025-09-06 21:08:39,559 - INFO - Successfully uploaded AMT_2025.parquet to S3 bucket root
+2025-09-06 21:08:39,561 - INFO - Cleaned up local file: AMT_2025.parquet
+2025-09-06 21:08:39,561 - INFO - Completed processing AMT: 3/3 files successful
+2025-09-06 21:08:39,562 - INFO - ✓ Successfully processed AMT
+2025-09-06 21:08:39,562 - INFO - Processing ticker 11/111: AMZN
+2025-09-06 21:08:39,562 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:08:52,063 - INFO - Starting processing for ticker: AMZN
+2025-09-06 21:08:52,064 - INFO - Fetching data for AMZN from 2023-09-07 to 2025-09-06
+2025-09-06 21:08:52,478 - INFO - Successfully retrieved 500 records for AMZN
+2025-09-06 21:08:52,502 - INFO - Processed 79 records for AMZN in 2023
+2025-09-06 21:08:52,502 - INFO - Processed 252 records for AMZN in 2024
+2025-09-06 21:08:52,502 - INFO - Processed 169 records for AMZN in 2025
+2025-09-06 21:08:52,506 - INFO - Created Parquet file: AMZN_2023.parquet
+2025-09-06 21:08:52,829 - INFO - Successfully uploaded AMZN_2023.parquet to S3 bucket root
+2025-09-06 21:08:52,830 - INFO - Cleaned up local file: AMZN_2023.parquet
+2025-09-06 21:08:52,835 - INFO - Created Parquet file: AMZN_2024.parquet
+2025-09-06 21:08:52,944 - INFO - Successfully uploaded AMZN_2024.parquet to S3 bucket root
+2025-09-06 21:08:52,945 - INFO - Cleaned up local file: AMZN_2024.parquet
+2025-09-06 21:08:52,949 - INFO - Created Parquet file: AMZN_2025.parquet
+2025-09-06 21:08:53,055 - INFO - Successfully uploaded AMZN_2025.parquet to S3 bucket root
+2025-09-06 21:08:53,056 - INFO - Cleaned up local file: AMZN_2025.parquet
+2025-09-06 21:08:53,056 - INFO - Completed processing AMZN: 3/3 files successful
+2025-09-06 21:08:53,057 - INFO - ✓ Successfully processed AMZN
+2025-09-06 21:08:53,057 - INFO - Processing ticker 12/111: APD
+2025-09-06 21:08:53,057 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:09:05,564 - INFO - Starting processing for ticker: APD
+2025-09-06 21:09:05,567 - INFO - Fetching data for APD from 2023-09-07 to 2025-09-06
+2025-09-06 21:09:06,018 - INFO - Successfully retrieved 500 records for APD
+2025-09-06 21:09:06,040 - INFO - Processed 79 records for APD in 2023
+2025-09-06 21:09:06,041 - INFO - Processed 252 records for APD in 2024
+2025-09-06 21:09:06,041 - INFO - Processed 169 records for APD in 2025
+2025-09-06 21:09:06,045 - INFO - Created Parquet file: APD_2023.parquet
+2025-09-06 21:09:06,501 - INFO - Successfully uploaded APD_2023.parquet to S3 bucket root
+2025-09-06 21:09:06,502 - INFO - Cleaned up local file: APD_2023.parquet
+2025-09-06 21:09:06,508 - INFO - Created Parquet file: APD_2024.parquet
+2025-09-06 21:09:06,620 - INFO - Successfully uploaded APD_2024.parquet to S3 bucket root
+2025-09-06 21:09:06,620 - INFO - Cleaned up local file: APD_2024.parquet
+2025-09-06 21:09:06,623 - INFO - Created Parquet file: APD_2025.parquet
+2025-09-06 21:09:06,736 - INFO - Successfully uploaded APD_2025.parquet to S3 bucket root
+2025-09-06 21:09:06,736 - INFO - Cleaned up local file: APD_2025.parquet
+2025-09-06 21:09:06,737 - INFO - Completed processing APD: 3/3 files successful
+2025-09-06 21:09:06,737 - INFO - ✓ Successfully processed APD
+2025-09-06 21:09:06,737 - INFO - Processing ticker 13/111: AVGO
+2025-09-06 21:09:06,737 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:09:19,243 - INFO - Starting processing for ticker: AVGO
+2025-09-06 21:09:19,244 - INFO - Fetching data for AVGO from 2023-09-07 to 2025-09-06
+2025-09-06 21:09:19,723 - INFO - Successfully retrieved 500 records for AVGO
+2025-09-06 21:09:19,737 - INFO - Processed 79 records for AVGO in 2023
+2025-09-06 21:09:19,737 - INFO - Processed 252 records for AVGO in 2024
+2025-09-06 21:09:19,738 - INFO - Processed 169 records for AVGO in 2025
+2025-09-06 21:09:19,741 - INFO - Created Parquet file: AVGO_2023.parquet
+2025-09-06 21:09:19,983 - INFO - Successfully uploaded AVGO_2023.parquet to S3 bucket root
+2025-09-06 21:09:19,984 - INFO - Cleaned up local file: AVGO_2023.parquet
+2025-09-06 21:09:19,990 - INFO - Created Parquet file: AVGO_2024.parquet
+2025-09-06 21:09:20,107 - INFO - Successfully uploaded AVGO_2024.parquet to S3 bucket root
+2025-09-06 21:09:20,108 - INFO - Cleaned up local file: AVGO_2024.parquet
+2025-09-06 21:09:20,114 - INFO - Created Parquet file: AVGO_2025.parquet
+2025-09-06 21:09:20,221 - INFO - Successfully uploaded AVGO_2025.parquet to S3 bucket root
+2025-09-06 21:09:20,222 - INFO - Cleaned up local file: AVGO_2025.parquet
+2025-09-06 21:09:20,222 - INFO - Completed processing AVGO: 3/3 files successful
+2025-09-06 21:09:20,223 - INFO - ✓ Successfully processed AVGO
+2025-09-06 21:09:20,223 - INFO - Processing ticker 14/111: AXP
+2025-09-06 21:09:20,223 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:09:32,724 - INFO - Starting processing for ticker: AXP
+2025-09-06 21:09:32,725 - INFO - Fetching data for AXP from 2023-09-07 to 2025-09-06
+2025-09-06 21:09:33,120 - INFO - Successfully retrieved 500 records for AXP
+2025-09-06 21:09:33,134 - INFO - Processed 79 records for AXP in 2023
+2025-09-06 21:09:33,135 - INFO - Processed 252 records for AXP in 2024
+2025-09-06 21:09:33,135 - INFO - Processed 169 records for AXP in 2025
+2025-09-06 21:09:33,139 - INFO - Created Parquet file: AXP_2023.parquet
+2025-09-06 21:09:33,557 - INFO - Successfully uploaded AXP_2023.parquet to S3 bucket root
+2025-09-06 21:09:33,558 - INFO - Cleaned up local file: AXP_2023.parquet
+2025-09-06 21:09:33,565 - INFO - Created Parquet file: AXP_2024.parquet
+2025-09-06 21:09:33,666 - INFO - Successfully uploaded AXP_2024.parquet to S3 bucket root
+2025-09-06 21:09:33,667 - INFO - Cleaned up local file: AXP_2024.parquet
+2025-09-06 21:09:33,670 - INFO - Created Parquet file: AXP_2025.parquet
+2025-09-06 21:09:33,798 - INFO - Successfully uploaded AXP_2025.parquet to S3 bucket root
+2025-09-06 21:09:33,798 - INFO - Cleaned up local file: AXP_2025.parquet
+2025-09-06 21:09:33,799 - INFO - Completed processing AXP: 3/3 files successful
+2025-09-06 21:09:33,799 - INFO - ✓ Successfully processed AXP
+2025-09-06 21:09:33,799 - INFO - Processing ticker 15/111: BA
+2025-09-06 21:09:33,799 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:09:46,305 - INFO - Starting processing for ticker: BA
+2025-09-06 21:09:46,306 - INFO - Fetching data for BA from 2023-09-07 to 2025-09-06
+2025-09-06 21:09:46,721 - INFO - Successfully retrieved 500 records for BA
+2025-09-06 21:09:46,741 - INFO - Processed 79 records for BA in 2023
+2025-09-06 21:09:46,741 - INFO - Processed 252 records for BA in 2024
+2025-09-06 21:09:46,741 - INFO - Processed 169 records for BA in 2025
+2025-09-06 21:09:46,745 - INFO - Created Parquet file: BA_2023.parquet
+2025-09-06 21:09:46,992 - INFO - Successfully uploaded BA_2023.parquet to S3 bucket root
+2025-09-06 21:09:46,993 - INFO - Cleaned up local file: BA_2023.parquet
+2025-09-06 21:09:46,998 - INFO - Created Parquet file: BA_2024.parquet
+2025-09-06 21:09:47,099 - INFO - Successfully uploaded BA_2024.parquet to S3 bucket root
+2025-09-06 21:09:47,100 - INFO - Cleaned up local file: BA_2024.parquet
+2025-09-06 21:09:47,103 - INFO - Created Parquet file: BA_2025.parquet
+2025-09-06 21:09:47,231 - INFO - Successfully uploaded BA_2025.parquet to S3 bucket root
+2025-09-06 21:09:47,232 - INFO - Cleaned up local file: BA_2025.parquet
+2025-09-06 21:09:47,232 - INFO - Completed processing BA: 3/3 files successful
+2025-09-06 21:09:47,233 - INFO - ✓ Successfully processed BA
+2025-09-06 21:09:47,233 - INFO - Processing ticker 16/111: BAC
+2025-09-06 21:09:47,233 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:09:59,737 - INFO - Starting processing for ticker: BAC
+2025-09-06 21:09:59,738 - INFO - Fetching data for BAC from 2023-09-07 to 2025-09-06
+2025-09-06 21:10:00,128 - INFO - Successfully retrieved 500 records for BAC
+2025-09-06 21:10:00,150 - INFO - Processed 79 records for BAC in 2023
+2025-09-06 21:10:00,151 - INFO - Processed 252 records for BAC in 2024
+2025-09-06 21:10:00,151 - INFO - Processed 169 records for BAC in 2025
+2025-09-06 21:10:00,155 - INFO - Created Parquet file: BAC_2023.parquet
+2025-09-06 21:10:00,484 - INFO - Successfully uploaded BAC_2023.parquet to S3 bucket root
+2025-09-06 21:10:00,485 - INFO - Cleaned up local file: BAC_2023.parquet
+2025-09-06 21:10:00,490 - INFO - Created Parquet file: BAC_2024.parquet
+2025-09-06 21:10:00,593 - INFO - Successfully uploaded BAC_2024.parquet to S3 bucket root
+2025-09-06 21:10:00,594 - INFO - Cleaned up local file: BAC_2024.parquet
+2025-09-06 21:10:00,600 - INFO - Created Parquet file: BAC_2025.parquet
+2025-09-06 21:10:00,703 - INFO - Successfully uploaded BAC_2025.parquet to S3 bucket root
+2025-09-06 21:10:00,704 - INFO - Cleaned up local file: BAC_2025.parquet
+2025-09-06 21:10:00,704 - INFO - Completed processing BAC: 3/3 files successful
+2025-09-06 21:10:00,704 - INFO - ✓ Successfully processed BAC
+2025-09-06 21:10:00,704 - INFO - Processing ticker 17/111: BKNG
+2025-09-06 21:10:00,704 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:10:13,207 - INFO - Starting processing for ticker: BKNG
+2025-09-06 21:10:13,207 - INFO - Fetching data for BKNG from 2023-09-07 to 2025-09-06
+2025-09-06 21:10:13,622 - INFO - Successfully retrieved 500 records for BKNG
+2025-09-06 21:10:13,637 - INFO - Processed 79 records for BKNG in 2023
+2025-09-06 21:10:13,637 - INFO - Processed 252 records for BKNG in 2024
+2025-09-06 21:10:13,638 - INFO - Processed 169 records for BKNG in 2025
+2025-09-06 21:10:13,642 - INFO - Created Parquet file: BKNG_2023.parquet
+2025-09-06 21:10:13,887 - INFO - Successfully uploaded BKNG_2023.parquet to S3 bucket root
+2025-09-06 21:10:13,888 - INFO - Cleaned up local file: BKNG_2023.parquet
+2025-09-06 21:10:13,894 - INFO - Created Parquet file: BKNG_2024.parquet
+2025-09-06 21:10:13,997 - INFO - Successfully uploaded BKNG_2024.parquet to S3 bucket root
+2025-09-06 21:10:13,998 - INFO - Cleaned up local file: BKNG_2024.parquet
+2025-09-06 21:10:14,005 - INFO - Created Parquet file: BKNG_2025.parquet
+2025-09-06 21:10:14,117 - INFO - Successfully uploaded BKNG_2025.parquet to S3 bucket root
+2025-09-06 21:10:14,118 - INFO - Cleaned up local file: BKNG_2025.parquet
+2025-09-06 21:10:14,118 - INFO - Completed processing BKNG: 3/3 files successful
+2025-09-06 21:10:14,119 - INFO - ✓ Successfully processed BKNG
+2025-09-06 21:10:14,119 - INFO - Processing ticker 18/111: BLK
+2025-09-06 21:10:14,119 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:10:26,625 - INFO - Starting processing for ticker: BLK
+2025-09-06 21:10:26,626 - INFO - Fetching data for BLK from 2023-09-07 to 2025-09-06
+2025-09-06 21:10:27,041 - INFO - Successfully retrieved 500 records for BLK
+2025-09-06 21:10:27,056 - INFO - Processed 79 records for BLK in 2023
+2025-09-06 21:10:27,056 - INFO - Processed 252 records for BLK in 2024
+2025-09-06 21:10:27,057 - INFO - Processed 169 records for BLK in 2025
+2025-09-06 21:10:27,060 - INFO - Created Parquet file: BLK_2023.parquet
+2025-09-06 21:10:27,504 - INFO - Successfully uploaded BLK_2023.parquet to S3 bucket root
+2025-09-06 21:10:27,505 - INFO - Cleaned up local file: BLK_2023.parquet
+2025-09-06 21:10:27,511 - INFO - Created Parquet file: BLK_2024.parquet
+2025-09-06 21:10:27,624 - INFO - Successfully uploaded BLK_2024.parquet to S3 bucket root
+2025-09-06 21:10:27,625 - INFO - Cleaned up local file: BLK_2024.parquet
+2025-09-06 21:10:27,629 - INFO - Created Parquet file: BLK_2025.parquet
+2025-09-06 21:10:27,732 - INFO - Successfully uploaded BLK_2025.parquet to S3 bucket root
+2025-09-06 21:10:27,732 - INFO - Cleaned up local file: BLK_2025.parquet
+2025-09-06 21:10:27,732 - INFO - Completed processing BLK: 3/3 files successful
+2025-09-06 21:10:27,733 - INFO - ✓ Successfully processed BLK
+2025-09-06 21:10:27,733 - INFO - Processing ticker 19/111: BRK.B
+2025-09-06 21:10:27,733 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:10:40,236 - INFO - Starting processing for ticker: BRK.B
+2025-09-06 21:10:40,236 - INFO - Fetching data for BRK.B from 2023-09-07 to 2025-09-06
+2025-09-06 21:10:40,656 - INFO - Successfully retrieved 500 records for BRK.B
+2025-09-06 21:10:40,671 - INFO - Processed 79 records for BRK.B in 2023
+2025-09-06 21:10:40,671 - INFO - Processed 252 records for BRK.B in 2024
+2025-09-06 21:10:40,672 - INFO - Processed 169 records for BRK.B in 2025
+2025-09-06 21:10:40,676 - INFO - Created Parquet file: BRK.B_2023.parquet
+2025-09-06 21:10:40,918 - INFO - Successfully uploaded BRK.B_2023.parquet to S3 bucket root
+2025-09-06 21:10:40,919 - INFO - Cleaned up local file: BRK.B_2023.parquet
+2025-09-06 21:10:40,924 - INFO - Created Parquet file: BRK.B_2024.parquet
+2025-09-06 21:10:41,029 - INFO - Successfully uploaded BRK.B_2024.parquet to S3 bucket root
+2025-09-06 21:10:41,030 - INFO - Cleaned up local file: BRK.B_2024.parquet
+2025-09-06 21:10:41,036 - INFO - Created Parquet file: BRK.B_2025.parquet
+2025-09-06 21:10:41,140 - INFO - Successfully uploaded BRK.B_2025.parquet to S3 bucket root
+2025-09-06 21:10:41,141 - INFO - Cleaned up local file: BRK.B_2025.parquet
+2025-09-06 21:10:41,141 - INFO - Completed processing BRK.B: 3/3 files successful
+2025-09-06 21:10:41,142 - INFO - ✓ Successfully processed BRK.B
+2025-09-06 21:10:41,142 - INFO - Processing ticker 20/111: CAT
+2025-09-06 21:10:41,142 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:10:53,643 - INFO - Starting processing for ticker: CAT
+2025-09-06 21:10:53,644 - INFO - Fetching data for CAT from 2023-09-07 to 2025-09-06
+2025-09-06 21:10:54,059 - INFO - Successfully retrieved 500 records for CAT
+2025-09-06 21:10:54,074 - INFO - Processed 79 records for CAT in 2023
+2025-09-06 21:10:54,075 - INFO - Processed 252 records for CAT in 2024
+2025-09-06 21:10:54,076 - INFO - Processed 169 records for CAT in 2025
+2025-09-06 21:10:54,079 - INFO - Created Parquet file: CAT_2023.parquet
+2025-09-06 21:10:54,442 - INFO - Successfully uploaded CAT_2023.parquet to S3 bucket root
+2025-09-06 21:10:54,443 - INFO - Cleaned up local file: CAT_2023.parquet
+2025-09-06 21:10:54,447 - INFO - Created Parquet file: CAT_2024.parquet
+2025-09-06 21:10:54,559 - INFO - Successfully uploaded CAT_2024.parquet to S3 bucket root
+2025-09-06 21:10:54,560 - INFO - Cleaned up local file: CAT_2024.parquet
+2025-09-06 21:10:54,565 - INFO - Created Parquet file: CAT_2025.parquet
+2025-09-06 21:10:54,673 - INFO - Successfully uploaded CAT_2025.parquet to S3 bucket root
+2025-09-06 21:10:54,674 - INFO - Cleaned up local file: CAT_2025.parquet
+2025-09-06 21:10:54,674 - INFO - Completed processing CAT: 3/3 files successful
+2025-09-06 21:10:54,675 - INFO - ✓ Successfully processed CAT
+2025-09-06 21:10:54,675 - INFO - Processing ticker 21/111: CBRE
+2025-09-06 21:10:54,676 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:11:07,182 - INFO - Starting processing for ticker: CBRE
+2025-09-06 21:11:07,184 - INFO - Fetching data for CBRE from 2023-09-07 to 2025-09-06
+2025-09-06 21:11:07,654 - INFO - Successfully retrieved 500 records for CBRE
+2025-09-06 21:11:07,670 - INFO - Processed 79 records for CBRE in 2023
+2025-09-06 21:11:07,670 - INFO - Processed 252 records for CBRE in 2024
+2025-09-06 21:11:07,671 - INFO - Processed 169 records for CBRE in 2025
+2025-09-06 21:11:07,675 - INFO - Created Parquet file: CBRE_2023.parquet
+2025-09-06 21:11:08,015 - INFO - Successfully uploaded CBRE_2023.parquet to S3 bucket root
+2025-09-06 21:11:08,016 - INFO - Cleaned up local file: CBRE_2023.parquet
+2025-09-06 21:11:08,028 - INFO - Created Parquet file: CBRE_2024.parquet
+2025-09-06 21:11:08,132 - INFO - Successfully uploaded CBRE_2024.parquet to S3 bucket root
+2025-09-06 21:11:08,133 - INFO - Cleaned up local file: CBRE_2024.parquet
+2025-09-06 21:11:08,137 - INFO - Created Parquet file: CBRE_2025.parquet
+2025-09-06 21:11:08,240 - INFO - Successfully uploaded CBRE_2025.parquet to S3 bucket root
+2025-09-06 21:11:08,241 - INFO - Cleaned up local file: CBRE_2025.parquet
+2025-09-06 21:11:08,241 - INFO - Completed processing CBRE: 3/3 files successful
+2025-09-06 21:11:08,241 - INFO - ✓ Successfully processed CBRE
+2025-09-06 21:11:08,241 - INFO - Processing ticker 22/111: CCI
+2025-09-06 21:11:08,241 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:11:20,746 - INFO - Starting processing for ticker: CCI
+2025-09-06 21:11:20,747 - INFO - Fetching data for CCI from 2023-09-07 to 2025-09-06
+2025-09-06 21:11:21,161 - INFO - Successfully retrieved 500 records for CCI
+2025-09-06 21:11:21,175 - INFO - Processed 79 records for CCI in 2023
+2025-09-06 21:11:21,176 - INFO - Processed 252 records for CCI in 2024
+2025-09-06 21:11:21,176 - INFO - Processed 169 records for CCI in 2025
+2025-09-06 21:11:21,180 - INFO - Created Parquet file: CCI_2023.parquet
+2025-09-06 21:11:21,614 - INFO - Successfully uploaded CCI_2023.parquet to S3 bucket root
+2025-09-06 21:11:21,615 - INFO - Cleaned up local file: CCI_2023.parquet
+2025-09-06 21:11:21,621 - INFO - Created Parquet file: CCI_2024.parquet
+2025-09-06 21:11:21,737 - INFO - Successfully uploaded CCI_2024.parquet to S3 bucket root
+2025-09-06 21:11:21,737 - INFO - Cleaned up local file: CCI_2024.parquet
+2025-09-06 21:11:21,740 - INFO - Created Parquet file: CCI_2025.parquet
+2025-09-06 21:11:21,856 - INFO - Successfully uploaded CCI_2025.parquet to S3 bucket root
+2025-09-06 21:11:21,857 - INFO - Cleaned up local file: CCI_2025.parquet
+2025-09-06 21:11:21,857 - INFO - Completed processing CCI: 3/3 files successful
+2025-09-06 21:11:21,857 - INFO - ✓ Successfully processed CCI
+2025-09-06 21:11:21,857 - INFO - Processing ticker 23/111: CEG
+2025-09-06 21:11:21,857 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:11:34,367 - INFO - Starting processing for ticker: CEG
+2025-09-06 21:11:34,369 - INFO - Fetching data for CEG from 2023-09-07 to 2025-09-06
+2025-09-06 21:11:34,794 - INFO - Successfully retrieved 500 records for CEG
+2025-09-06 21:11:34,827 - INFO - Processed 79 records for CEG in 2023
+2025-09-06 21:11:34,827 - INFO - Processed 252 records for CEG in 2024
+2025-09-06 21:11:34,827 - INFO - Processed 169 records for CEG in 2025
+2025-09-06 21:11:34,831 - INFO - Created Parquet file: CEG_2023.parquet
+2025-09-06 21:11:35,214 - INFO - Successfully uploaded CEG_2023.parquet to S3 bucket root
+2025-09-06 21:11:35,215 - INFO - Cleaned up local file: CEG_2023.parquet
+2025-09-06 21:11:35,224 - INFO - Created Parquet file: CEG_2024.parquet
+2025-09-06 21:11:35,337 - INFO - Successfully uploaded CEG_2024.parquet to S3 bucket root
+2025-09-06 21:11:35,337 - INFO - Cleaned up local file: CEG_2024.parquet
+2025-09-06 21:11:35,341 - INFO - Created Parquet file: CEG_2025.parquet
+2025-09-06 21:11:35,456 - INFO - Successfully uploaded CEG_2025.parquet to S3 bucket root
+2025-09-06 21:11:35,456 - INFO - Cleaned up local file: CEG_2025.parquet
+2025-09-06 21:11:35,456 - INFO - Completed processing CEG: 3/3 files successful
+2025-09-06 21:11:35,456 - INFO - ✓ Successfully processed CEG
+2025-09-06 21:11:35,456 - INFO - Processing ticker 24/111: CL
+2025-09-06 21:11:35,456 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:11:47,962 - INFO - Starting processing for ticker: CL
+2025-09-06 21:11:47,963 - INFO - Fetching data for CL from 2023-09-07 to 2025-09-06
+2025-09-06 21:11:48,338 - INFO - Successfully retrieved 500 records for CL
+2025-09-06 21:11:48,348 - INFO - Processed 79 records for CL in 2023
+2025-09-06 21:11:48,349 - INFO - Processed 252 records for CL in 2024
+2025-09-06 21:11:48,349 - INFO - Processed 169 records for CL in 2025
+2025-09-06 21:11:48,352 - INFO - Created Parquet file: CL_2023.parquet
+2025-09-06 21:11:48,776 - INFO - Successfully uploaded CL_2023.parquet to S3 bucket root
+2025-09-06 21:11:48,777 - INFO - Cleaned up local file: CL_2023.parquet
+2025-09-06 21:11:48,782 - INFO - Created Parquet file: CL_2024.parquet
+2025-09-06 21:11:48,895 - INFO - Successfully uploaded CL_2024.parquet to S3 bucket root
+2025-09-06 21:11:48,896 - INFO - Cleaned up local file: CL_2024.parquet
+2025-09-06 21:11:48,901 - INFO - Created Parquet file: CL_2025.parquet
+2025-09-06 21:11:49,007 - INFO - Successfully uploaded CL_2025.parquet to S3 bucket root
+2025-09-06 21:11:49,009 - INFO - Cleaned up local file: CL_2025.parquet
+2025-09-06 21:11:49,010 - INFO - Completed processing CL: 3/3 files successful
+2025-09-06 21:11:49,011 - INFO - ✓ Successfully processed CL
+2025-09-06 21:11:49,011 - INFO - Processing ticker 25/111: CMCSA
+2025-09-06 21:11:49,011 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:12:01,517 - INFO - Starting processing for ticker: CMCSA
+2025-09-06 21:12:01,518 - INFO - Fetching data for CMCSA from 2023-09-07 to 2025-09-06
+2025-09-06 21:12:01,987 - INFO - Successfully retrieved 500 records for CMCSA
+2025-09-06 21:12:02,008 - INFO - Processed 79 records for CMCSA in 2023
+2025-09-06 21:12:02,008 - INFO - Processed 252 records for CMCSA in 2024
+2025-09-06 21:12:02,009 - INFO - Processed 169 records for CMCSA in 2025
+2025-09-06 21:12:02,027 - INFO - Created Parquet file: CMCSA_2023.parquet
+2025-09-06 21:12:02,381 - INFO - Successfully uploaded CMCSA_2023.parquet to S3 bucket root
+2025-09-06 21:12:02,382 - INFO - Cleaned up local file: CMCSA_2023.parquet
+2025-09-06 21:12:02,396 - INFO - Created Parquet file: CMCSA_2024.parquet
+2025-09-06 21:12:02,495 - INFO - Successfully uploaded CMCSA_2024.parquet to S3 bucket root
+2025-09-06 21:12:02,496 - INFO - Cleaned up local file: CMCSA_2024.parquet
+2025-09-06 21:12:02,515 - INFO - Created Parquet file: CMCSA_2025.parquet
+2025-09-06 21:12:02,622 - INFO - Successfully uploaded CMCSA_2025.parquet to S3 bucket root
+2025-09-06 21:12:02,622 - INFO - Cleaned up local file: CMCSA_2025.parquet
+2025-09-06 21:12:02,622 - INFO - Completed processing CMCSA: 3/3 files successful
+2025-09-06 21:12:02,623 - INFO - ✓ Successfully processed CMCSA
+2025-09-06 21:12:02,623 - INFO - Processing ticker 26/111: COP
+2025-09-06 21:12:02,623 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:12:15,128 - INFO - Starting processing for ticker: COP
+2025-09-06 21:12:15,128 - INFO - Fetching data for COP from 2023-09-07 to 2025-09-06
+2025-09-06 21:12:15,539 - INFO - Successfully retrieved 500 records for COP
+2025-09-06 21:12:15,551 - INFO - Processed 79 records for COP in 2023
+2025-09-06 21:12:15,552 - INFO - Processed 252 records for COP in 2024
+2025-09-06 21:12:15,552 - INFO - Processed 169 records for COP in 2025
+2025-09-06 21:12:15,556 - INFO - Created Parquet file: COP_2023.parquet
+2025-09-06 21:12:15,966 - INFO - Successfully uploaded COP_2023.parquet to S3 bucket root
+2025-09-06 21:12:15,967 - INFO - Cleaned up local file: COP_2023.parquet
+2025-09-06 21:12:15,972 - INFO - Created Parquet file: COP_2024.parquet
+2025-09-06 21:12:16,081 - INFO - Successfully uploaded COP_2024.parquet to S3 bucket root
+2025-09-06 21:12:16,082 - INFO - Cleaned up local file: COP_2024.parquet
+2025-09-06 21:12:16,088 - INFO - Created Parquet file: COP_2025.parquet
+2025-09-06 21:12:16,187 - INFO - Successfully uploaded COP_2025.parquet to S3 bucket root
+2025-09-06 21:12:16,188 - INFO - Cleaned up local file: COP_2025.parquet
+2025-09-06 21:12:16,188 - INFO - Completed processing COP: 3/3 files successful
+2025-09-06 21:12:16,188 - INFO - ✓ Successfully processed COP
+2025-09-06 21:12:16,188 - INFO - Processing ticker 27/111: COST
+2025-09-06 21:12:16,188 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:12:28,694 - INFO - Starting processing for ticker: COST
+2025-09-06 21:12:28,698 - INFO - Fetching data for COST from 2023-09-07 to 2025-09-06
+2025-09-06 21:12:29,121 - INFO - Successfully retrieved 500 records for COST
+2025-09-06 21:12:29,146 - INFO - Processed 79 records for COST in 2023
+2025-09-06 21:12:29,147 - INFO - Processed 252 records for COST in 2024
+2025-09-06 21:12:29,147 - INFO - Processed 169 records for COST in 2025
+2025-09-06 21:12:29,151 - INFO - Created Parquet file: COST_2023.parquet
+2025-09-06 21:12:29,555 - INFO - Successfully uploaded COST_2023.parquet to S3 bucket root
+2025-09-06 21:12:29,556 - INFO - Cleaned up local file: COST_2023.parquet
+2025-09-06 21:12:29,560 - INFO - Created Parquet file: COST_2024.parquet
+2025-09-06 21:12:29,674 - INFO - Successfully uploaded COST_2024.parquet to S3 bucket root
+2025-09-06 21:12:29,675 - INFO - Cleaned up local file: COST_2024.parquet
+2025-09-06 21:12:29,680 - INFO - Created Parquet file: COST_2025.parquet
+2025-09-06 21:12:29,785 - INFO - Successfully uploaded COST_2025.parquet to S3 bucket root
+2025-09-06 21:12:29,785 - INFO - Cleaned up local file: COST_2025.parquet
+2025-09-06 21:12:29,785 - INFO - Completed processing COST: 3/3 files successful
+2025-09-06 21:12:29,786 - INFO - ✓ Successfully processed COST
+2025-09-06 21:12:29,786 - INFO - Processing ticker 28/111: CRH
+2025-09-06 21:12:29,786 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:12:42,286 - INFO - Starting processing for ticker: CRH
+2025-09-06 21:12:42,287 - INFO - Fetching data for CRH from 2023-09-07 to 2025-09-06
+2025-09-06 21:12:42,691 - INFO - Successfully retrieved 500 records for CRH
+2025-09-06 21:12:42,703 - INFO - Processed 79 records for CRH in 2023
+2025-09-06 21:12:42,704 - INFO - Processed 252 records for CRH in 2024
+2025-09-06 21:12:42,704 - INFO - Processed 169 records for CRH in 2025
+2025-09-06 21:12:42,707 - INFO - Created Parquet file: CRH_2023.parquet
+2025-09-06 21:12:43,102 - INFO - Successfully uploaded CRH_2023.parquet to S3 bucket root
+2025-09-06 21:12:43,103 - INFO - Cleaned up local file: CRH_2023.parquet
+2025-09-06 21:12:43,106 - INFO - Created Parquet file: CRH_2024.parquet
+2025-09-06 21:12:43,210 - INFO - Successfully uploaded CRH_2024.parquet to S3 bucket root
+2025-09-06 21:12:43,210 - INFO - Cleaned up local file: CRH_2024.parquet
+2025-09-06 21:12:43,214 - INFO - Created Parquet file: CRH_2025.parquet
+2025-09-06 21:12:43,321 - INFO - Successfully uploaded CRH_2025.parquet to S3 bucket root
+2025-09-06 21:12:43,321 - INFO - Cleaned up local file: CRH_2025.parquet
+2025-09-06 21:12:43,322 - INFO - Completed processing CRH: 3/3 files successful
+2025-09-06 21:12:43,322 - INFO - ✓ Successfully processed CRH
+2025-09-06 21:12:43,322 - INFO - Processing ticker 29/111: CRM
+2025-09-06 21:12:43,322 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:12:55,825 - INFO - Starting processing for ticker: CRM
+2025-09-06 21:12:55,825 - INFO - Fetching data for CRM from 2023-09-07 to 2025-09-06
+2025-09-06 21:12:56,233 - INFO - Successfully retrieved 500 records for CRM
+2025-09-06 21:12:56,252 - INFO - Processed 79 records for CRM in 2023
+2025-09-06 21:12:56,253 - INFO - Processed 252 records for CRM in 2024
+2025-09-06 21:12:56,253 - INFO - Processed 169 records for CRM in 2025
+2025-09-06 21:12:56,259 - INFO - Created Parquet file: CRM_2023.parquet
+2025-09-06 21:12:56,586 - INFO - Successfully uploaded CRM_2023.parquet to S3 bucket root
+2025-09-06 21:12:56,587 - INFO - Cleaned up local file: CRM_2023.parquet
+2025-09-06 21:12:56,591 - INFO - Created Parquet file: CRM_2024.parquet
+2025-09-06 21:12:56,734 - INFO - Successfully uploaded CRM_2024.parquet to S3 bucket root
+2025-09-06 21:12:56,735 - INFO - Cleaned up local file: CRM_2024.parquet
+2025-09-06 21:12:56,739 - INFO - Created Parquet file: CRM_2025.parquet
+2025-09-06 21:12:56,890 - INFO - Successfully uploaded CRM_2025.parquet to S3 bucket root
+2025-09-06 21:12:56,891 - INFO - Cleaned up local file: CRM_2025.parquet
+2025-09-06 21:12:56,891 - INFO - Completed processing CRM: 3/3 files successful
+2025-09-06 21:12:56,891 - INFO - ✓ Successfully processed CRM
+2025-09-06 21:12:56,891 - INFO - Processing ticker 30/111: CSCO
+2025-09-06 21:12:56,891 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:13:09,394 - INFO - Starting processing for ticker: CSCO
+2025-09-06 21:13:09,394 - INFO - Fetching data for CSCO from 2023-09-07 to 2025-09-06
+2025-09-06 21:13:09,905 - INFO - Successfully retrieved 500 records for CSCO
+2025-09-06 21:13:09,928 - INFO - Processed 79 records for CSCO in 2023
+2025-09-06 21:13:09,928 - INFO - Processed 252 records for CSCO in 2024
+2025-09-06 21:13:09,929 - INFO - Processed 169 records for CSCO in 2025
+2025-09-06 21:13:09,934 - INFO - Created Parquet file: CSCO_2023.parquet
+2025-09-06 21:13:10,271 - INFO - Successfully uploaded CSCO_2023.parquet to S3 bucket root
+2025-09-06 21:13:10,272 - INFO - Cleaned up local file: CSCO_2023.parquet
+2025-09-06 21:13:10,275 - INFO - Created Parquet file: CSCO_2024.parquet
+2025-09-06 21:13:10,378 - INFO - Successfully uploaded CSCO_2024.parquet to S3 bucket root
+2025-09-06 21:13:10,379 - INFO - Cleaned up local file: CSCO_2024.parquet
+2025-09-06 21:13:10,382 - INFO - Created Parquet file: CSCO_2025.parquet
+2025-09-06 21:13:10,488 - INFO - Successfully uploaded CSCO_2025.parquet to S3 bucket root
+2025-09-06 21:13:10,488 - INFO - Cleaned up local file: CSCO_2025.parquet
+2025-09-06 21:13:10,488 - INFO - Completed processing CSCO: 3/3 files successful
+2025-09-06 21:13:10,489 - INFO - ✓ Successfully processed CSCO
+2025-09-06 21:13:10,489 - INFO - Processing ticker 31/111: CTVA
+2025-09-06 21:13:10,489 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:13:22,993 - INFO - Starting processing for ticker: CTVA
+2025-09-06 21:13:22,996 - INFO - Fetching data for CTVA from 2023-09-07 to 2025-09-06
+2025-09-06 21:13:23,391 - INFO - Successfully retrieved 500 records for CTVA
+2025-09-06 21:13:23,409 - INFO - Processed 79 records for CTVA in 2023
+2025-09-06 21:13:23,409 - INFO - Processed 252 records for CTVA in 2024
+2025-09-06 21:13:23,409 - INFO - Processed 169 records for CTVA in 2025
+2025-09-06 21:13:23,413 - INFO - Created Parquet file: CTVA_2023.parquet
+2025-09-06 21:13:23,778 - INFO - Successfully uploaded CTVA_2023.parquet to S3 bucket root
+2025-09-06 21:13:23,779 - INFO - Cleaned up local file: CTVA_2023.parquet
+2025-09-06 21:13:23,785 - INFO - Created Parquet file: CTVA_2024.parquet
+2025-09-06 21:13:23,899 - INFO - Successfully uploaded CTVA_2024.parquet to S3 bucket root
+2025-09-06 21:13:23,900 - INFO - Cleaned up local file: CTVA_2024.parquet
+2025-09-06 21:13:23,906 - INFO - Created Parquet file: CTVA_2025.parquet
+2025-09-06 21:13:24,017 - INFO - Successfully uploaded CTVA_2025.parquet to S3 bucket root
+2025-09-06 21:13:24,017 - INFO - Cleaned up local file: CTVA_2025.parquet
+2025-09-06 21:13:24,018 - INFO - Completed processing CTVA: 3/3 files successful
+2025-09-06 21:13:24,018 - INFO - ✓ Successfully processed CTVA
+2025-09-06 21:13:24,018 - INFO - Processing ticker 32/111: CVX
+2025-09-06 21:13:24,018 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:13:36,524 - INFO - Starting processing for ticker: CVX
+2025-09-06 21:13:36,526 - INFO - Fetching data for CVX from 2023-09-07 to 2025-09-06
+2025-09-06 21:13:36,921 - INFO - Successfully retrieved 500 records for CVX
+2025-09-06 21:13:36,934 - INFO - Processed 79 records for CVX in 2023
+2025-09-06 21:13:36,934 - INFO - Processed 252 records for CVX in 2024
+2025-09-06 21:13:36,934 - INFO - Processed 169 records for CVX in 2025
+2025-09-06 21:13:36,937 - INFO - Created Parquet file: CVX_2023.parquet
+2025-09-06 21:13:37,301 - INFO - Successfully uploaded CVX_2023.parquet to S3 bucket root
+2025-09-06 21:13:37,303 - INFO - Cleaned up local file: CVX_2023.parquet
+2025-09-06 21:13:37,309 - INFO - Created Parquet file: CVX_2024.parquet
+2025-09-06 21:13:37,418 - INFO - Successfully uploaded CVX_2024.parquet to S3 bucket root
+2025-09-06 21:13:37,419 - INFO - Cleaned up local file: CVX_2024.parquet
+2025-09-06 21:13:37,424 - INFO - Created Parquet file: CVX_2025.parquet
+2025-09-06 21:13:37,527 - INFO - Successfully uploaded CVX_2025.parquet to S3 bucket root
+2025-09-06 21:13:37,528 - INFO - Cleaned up local file: CVX_2025.parquet
+2025-09-06 21:13:37,528 - INFO - Completed processing CVX: 3/3 files successful
+2025-09-06 21:13:37,529 - INFO - ✓ Successfully processed CVX
+2025-09-06 21:13:37,529 - INFO - Processing ticker 33/111: D
+2025-09-06 21:13:37,529 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:13:50,030 - INFO - Starting processing for ticker: D
+2025-09-06 21:13:50,031 - INFO - Fetching data for D from 2023-09-07 to 2025-09-06
+2025-09-06 21:13:50,431 - INFO - Successfully retrieved 500 records for D
+2025-09-06 21:13:50,440 - INFO - Processed 79 records for D in 2023
+2025-09-06 21:13:50,441 - INFO - Processed 252 records for D in 2024
+2025-09-06 21:13:50,441 - INFO - Processed 169 records for D in 2025
+2025-09-06 21:13:50,444 - INFO - Created Parquet file: D_2023.parquet
+2025-09-06 21:13:50,777 - INFO - Successfully uploaded D_2023.parquet to S3 bucket root
+2025-09-06 21:13:50,779 - INFO - Cleaned up local file: D_2023.parquet
+2025-09-06 21:13:50,784 - INFO - Created Parquet file: D_2024.parquet
+2025-09-06 21:13:50,881 - INFO - Successfully uploaded D_2024.parquet to S3 bucket root
+2025-09-06 21:13:50,882 - INFO - Cleaned up local file: D_2024.parquet
+2025-09-06 21:13:50,887 - INFO - Created Parquet file: D_2025.parquet
+2025-09-06 21:13:51,001 - INFO - Successfully uploaded D_2025.parquet to S3 bucket root
+2025-09-06 21:13:51,002 - INFO - Cleaned up local file: D_2025.parquet
+2025-09-06 21:13:51,002 - INFO - Completed processing D: 3/3 files successful
+2025-09-06 21:13:51,003 - INFO - ✓ Successfully processed D
+2025-09-06 21:13:51,003 - INFO - Processing ticker 34/111: DHR
+2025-09-06 21:13:51,003 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:14:03,510 - INFO - Starting processing for ticker: DHR
+2025-09-06 21:14:03,511 - INFO - Fetching data for DHR from 2023-09-07 to 2025-09-06
+2025-09-06 21:14:03,902 - INFO - Successfully retrieved 500 records for DHR
+2025-09-06 21:14:03,928 - INFO - Processed 79 records for DHR in 2023
+2025-09-06 21:14:03,928 - INFO - Processed 252 records for DHR in 2024
+2025-09-06 21:14:03,929 - INFO - Processed 169 records for DHR in 2025
+2025-09-06 21:14:03,932 - INFO - Created Parquet file: DHR_2023.parquet
+2025-09-06 21:14:04,374 - INFO - Successfully uploaded DHR_2023.parquet to S3 bucket root
+2025-09-06 21:14:04,375 - INFO - Cleaned up local file: DHR_2023.parquet
+2025-09-06 21:14:04,380 - INFO - Created Parquet file: DHR_2024.parquet
+2025-09-06 21:14:04,488 - INFO - Successfully uploaded DHR_2024.parquet to S3 bucket root
+2025-09-06 21:14:04,488 - INFO - Cleaned up local file: DHR_2024.parquet
+2025-09-06 21:14:04,494 - INFO - Created Parquet file: DHR_2025.parquet
+2025-09-06 21:14:04,612 - INFO - Successfully uploaded DHR_2025.parquet to S3 bucket root
+2025-09-06 21:14:04,613 - INFO - Cleaned up local file: DHR_2025.parquet
+2025-09-06 21:14:04,615 - INFO - Completed processing DHR: 3/3 files successful
+2025-09-06 21:14:04,616 - INFO - ✓ Successfully processed DHR
+2025-09-06 21:14:04,616 - INFO - Processing ticker 35/111: DIS
+2025-09-06 21:14:04,616 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:14:17,116 - INFO - Starting processing for ticker: DIS
+2025-09-06 21:14:17,118 - INFO - Fetching data for DIS from 2023-09-07 to 2025-09-06
+2025-09-06 21:14:17,578 - INFO - Successfully retrieved 500 records for DIS
+2025-09-06 21:14:17,591 - INFO - Processed 79 records for DIS in 2023
+2025-09-06 21:14:17,592 - INFO - Processed 252 records for DIS in 2024
+2025-09-06 21:14:17,592 - INFO - Processed 169 records for DIS in 2025
+2025-09-06 21:14:17,595 - INFO - Created Parquet file: DIS_2023.parquet
+2025-09-06 21:14:17,882 - INFO - Successfully uploaded DIS_2023.parquet to S3 bucket root
+2025-09-06 21:14:17,883 - INFO - Cleaned up local file: DIS_2023.parquet
+2025-09-06 21:14:17,890 - INFO - Created Parquet file: DIS_2024.parquet
+2025-09-06 21:14:17,992 - INFO - Successfully uploaded DIS_2024.parquet to S3 bucket root
+2025-09-06 21:14:17,993 - INFO - Cleaned up local file: DIS_2024.parquet
+2025-09-06 21:14:17,999 - INFO - Created Parquet file: DIS_2025.parquet
+2025-09-06 21:14:18,109 - INFO - Successfully uploaded DIS_2025.parquet to S3 bucket root
+2025-09-06 21:14:18,109 - INFO - Cleaned up local file: DIS_2025.parquet
+2025-09-06 21:14:18,110 - INFO - Completed processing DIS: 3/3 files successful
+2025-09-06 21:14:18,110 - INFO - ✓ Successfully processed DIS
+2025-09-06 21:14:18,110 - INFO - Processing ticker 36/111: DLR
+2025-09-06 21:14:18,110 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:14:30,612 - INFO - Starting processing for ticker: DLR
+2025-09-06 21:14:30,614 - INFO - Fetching data for DLR from 2023-09-07 to 2025-09-06
+2025-09-06 21:14:31,006 - INFO - Successfully retrieved 500 records for DLR
+2025-09-06 21:14:31,021 - INFO - Processed 79 records for DLR in 2023
+2025-09-06 21:14:31,021 - INFO - Processed 252 records for DLR in 2024
+2025-09-06 21:14:31,021 - INFO - Processed 169 records for DLR in 2025
+2025-09-06 21:14:31,025 - INFO - Created Parquet file: DLR_2023.parquet
+2025-09-06 21:14:31,385 - INFO - Successfully uploaded DLR_2023.parquet to S3 bucket root
+2025-09-06 21:14:31,386 - INFO - Cleaned up local file: DLR_2023.parquet
+2025-09-06 21:14:31,392 - INFO - Created Parquet file: DLR_2024.parquet
+2025-09-06 21:14:31,510 - INFO - Successfully uploaded DLR_2024.parquet to S3 bucket root
+2025-09-06 21:14:31,514 - INFO - Cleaned up local file: DLR_2024.parquet
+2025-09-06 21:14:31,518 - INFO - Created Parquet file: DLR_2025.parquet
+2025-09-06 21:14:31,645 - INFO - Successfully uploaded DLR_2025.parquet to S3 bucket root
+2025-09-06 21:14:31,645 - INFO - Cleaned up local file: DLR_2025.parquet
+2025-09-06 21:14:31,645 - INFO - Completed processing DLR: 3/3 files successful
+2025-09-06 21:14:31,645 - INFO - ✓ Successfully processed DLR
+2025-09-06 21:14:31,645 - INFO - Processing ticker 37/111: DUK
+2025-09-06 21:14:31,646 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:14:44,147 - INFO - Starting processing for ticker: DUK
+2025-09-06 21:14:44,148 - INFO - Fetching data for DUK from 2023-09-07 to 2025-09-06
+2025-09-06 21:14:44,578 - INFO - Successfully retrieved 500 records for DUK
+2025-09-06 21:14:44,595 - INFO - Processed 79 records for DUK in 2023
+2025-09-06 21:14:44,596 - INFO - Processed 252 records for DUK in 2024
+2025-09-06 21:14:44,596 - INFO - Processed 169 records for DUK in 2025
+2025-09-06 21:14:44,600 - INFO - Created Parquet file: DUK_2023.parquet
+2025-09-06 21:14:44,961 - INFO - Successfully uploaded DUK_2023.parquet to S3 bucket root
+2025-09-06 21:14:44,962 - INFO - Cleaned up local file: DUK_2023.parquet
+2025-09-06 21:14:44,968 - INFO - Created Parquet file: DUK_2024.parquet
+2025-09-06 21:14:45,075 - INFO - Successfully uploaded DUK_2024.parquet to S3 bucket root
+2025-09-06 21:14:45,076 - INFO - Cleaned up local file: DUK_2024.parquet
+2025-09-06 21:14:45,082 - INFO - Created Parquet file: DUK_2025.parquet
+2025-09-06 21:14:45,197 - INFO - Successfully uploaded DUK_2025.parquet to S3 bucket root
+2025-09-06 21:14:45,198 - INFO - Cleaned up local file: DUK_2025.parquet
+2025-09-06 21:14:45,198 - INFO - Completed processing DUK: 3/3 files successful
+2025-09-06 21:14:45,198 - INFO - ✓ Successfully processed DUK
+2025-09-06 21:14:45,198 - INFO - Processing ticker 38/111: ECL
+2025-09-06 21:14:45,199 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:14:57,700 - INFO - Starting processing for ticker: ECL
+2025-09-06 21:14:57,702 - INFO - Fetching data for ECL from 2023-09-07 to 2025-09-06
+2025-09-06 21:14:58,107 - INFO - Successfully retrieved 500 records for ECL
+2025-09-06 21:14:58,119 - INFO - Processed 79 records for ECL in 2023
+2025-09-06 21:14:58,120 - INFO - Processed 252 records for ECL in 2024
+2025-09-06 21:14:58,120 - INFO - Processed 169 records for ECL in 2025
+2025-09-06 21:14:58,123 - INFO - Created Parquet file: ECL_2023.parquet
+2025-09-06 21:14:58,558 - INFO - Successfully uploaded ECL_2023.parquet to S3 bucket root
+2025-09-06 21:14:58,559 - INFO - Cleaned up local file: ECL_2023.parquet
+2025-09-06 21:14:58,565 - INFO - Created Parquet file: ECL_2024.parquet
+2025-09-06 21:14:58,676 - INFO - Successfully uploaded ECL_2024.parquet to S3 bucket root
+2025-09-06 21:14:58,677 - INFO - Cleaned up local file: ECL_2024.parquet
+2025-09-06 21:14:58,682 - INFO - Created Parquet file: ECL_2025.parquet
+2025-09-06 21:14:58,824 - INFO - Successfully uploaded ECL_2025.parquet to S3 bucket root
+2025-09-06 21:14:58,824 - INFO - Cleaned up local file: ECL_2025.parquet
+2025-09-06 21:14:58,825 - INFO - Completed processing ECL: 3/3 files successful
+2025-09-06 21:14:58,825 - INFO - ✓ Successfully processed ECL
+2025-09-06 21:14:58,825 - INFO - Processing ticker 39/111: EOG
+2025-09-06 21:14:58,825 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:15:11,326 - INFO - Starting processing for ticker: EOG
+2025-09-06 21:15:11,328 - INFO - Fetching data for EOG from 2023-09-07 to 2025-09-06
+2025-09-06 21:15:11,706 - INFO - Successfully retrieved 500 records for EOG
+2025-09-06 21:15:11,717 - INFO - Processed 79 records for EOG in 2023
+2025-09-06 21:15:11,717 - INFO - Processed 252 records for EOG in 2024
+2025-09-06 21:15:11,717 - INFO - Processed 169 records for EOG in 2025
+2025-09-06 21:15:11,720 - INFO - Created Parquet file: EOG_2023.parquet
+2025-09-06 21:15:12,036 - INFO - Successfully uploaded EOG_2023.parquet to S3 bucket root
+2025-09-06 21:15:12,037 - INFO - Cleaned up local file: EOG_2023.parquet
+2025-09-06 21:15:12,044 - INFO - Created Parquet file: EOG_2024.parquet
+2025-09-06 21:15:12,148 - INFO - Successfully uploaded EOG_2024.parquet to S3 bucket root
+2025-09-06 21:15:12,149 - INFO - Cleaned up local file: EOG_2024.parquet
+2025-09-06 21:15:12,152 - INFO - Created Parquet file: EOG_2025.parquet
+2025-09-06 21:15:12,267 - INFO - Successfully uploaded EOG_2025.parquet to S3 bucket root
+2025-09-06 21:15:12,268 - INFO - Cleaned up local file: EOG_2025.parquet
+2025-09-06 21:15:12,272 - INFO - Completed processing EOG: 3/3 files successful
+2025-09-06 21:15:12,276 - INFO - ✓ Successfully processed EOG
+2025-09-06 21:15:12,277 - INFO - Processing ticker 40/111: EQIX
+2025-09-06 21:15:12,277 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:15:24,781 - INFO - Starting processing for ticker: EQIX
+2025-09-06 21:15:24,782 - INFO - Fetching data for EQIX from 2023-09-07 to 2025-09-06
+2025-09-06 21:15:25,263 - INFO - Successfully retrieved 500 records for EQIX
+2025-09-06 21:15:25,274 - INFO - Processed 79 records for EQIX in 2023
+2025-09-06 21:15:25,274 - INFO - Processed 252 records for EQIX in 2024
+2025-09-06 21:15:25,274 - INFO - Processed 169 records for EQIX in 2025
+2025-09-06 21:15:25,277 - INFO - Created Parquet file: EQIX_2023.parquet
+2025-09-06 21:15:25,685 - INFO - Successfully uploaded EQIX_2023.parquet to S3 bucket root
+2025-09-06 21:15:25,686 - INFO - Cleaned up local file: EQIX_2023.parquet
+2025-09-06 21:15:25,691 - INFO - Created Parquet file: EQIX_2024.parquet
+2025-09-06 21:15:25,799 - INFO - Successfully uploaded EQIX_2024.parquet to S3 bucket root
+2025-09-06 21:15:25,800 - INFO - Cleaned up local file: EQIX_2024.parquet
+2025-09-06 21:15:25,804 - INFO - Created Parquet file: EQIX_2025.parquet
+2025-09-06 21:15:25,905 - INFO - Successfully uploaded EQIX_2025.parquet to S3 bucket root
+2025-09-06 21:15:25,906 - INFO - Cleaned up local file: EQIX_2025.parquet
+2025-09-06 21:15:25,906 - INFO - Completed processing EQIX: 3/3 files successful
+2025-09-06 21:15:25,908 - INFO - ✓ Successfully processed EQIX
+2025-09-06 21:15:25,908 - INFO - Processing ticker 41/111: ETN
+2025-09-06 21:15:25,908 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:15:38,413 - INFO - Starting processing for ticker: ETN
+2025-09-06 21:15:38,415 - INFO - Fetching data for ETN from 2023-09-07 to 2025-09-06
+2025-09-06 21:15:38,831 - INFO - Successfully retrieved 500 records for ETN
+2025-09-06 21:15:38,853 - INFO - Processed 79 records for ETN in 2023
+2025-09-06 21:15:38,853 - INFO - Processed 252 records for ETN in 2024
+2025-09-06 21:15:38,854 - INFO - Processed 169 records for ETN in 2025
+2025-09-06 21:15:38,858 - INFO - Created Parquet file: ETN_2023.parquet
+2025-09-06 21:15:39,176 - INFO - Successfully uploaded ETN_2023.parquet to S3 bucket root
+2025-09-06 21:15:39,176 - INFO - Cleaned up local file: ETN_2023.parquet
+2025-09-06 21:15:39,179 - INFO - Created Parquet file: ETN_2024.parquet
+2025-09-06 21:15:39,291 - INFO - Successfully uploaded ETN_2024.parquet to S3 bucket root
+2025-09-06 21:15:39,292 - INFO - Cleaned up local file: ETN_2024.parquet
+2025-09-06 21:15:39,296 - INFO - Created Parquet file: ETN_2025.parquet
+2025-09-06 21:15:39,412 - INFO - Successfully uploaded ETN_2025.parquet to S3 bucket root
+2025-09-06 21:15:39,413 - INFO - Cleaned up local file: ETN_2025.parquet
+2025-09-06 21:15:39,414 - INFO - Completed processing ETN: 3/3 files successful
+2025-09-06 21:15:39,414 - INFO - ✓ Successfully processed ETN
+2025-09-06 21:15:39,414 - INFO - Processing ticker 42/111: FCX
+2025-09-06 21:15:39,415 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:15:51,918 - INFO - Starting processing for ticker: FCX
+2025-09-06 21:15:51,920 - INFO - Fetching data for FCX from 2023-09-07 to 2025-09-06
+2025-09-06 21:15:52,291 - INFO - Successfully retrieved 500 records for FCX
+2025-09-06 21:15:52,299 - INFO - Processed 79 records for FCX in 2023
+2025-09-06 21:15:52,299 - INFO - Processed 252 records for FCX in 2024
+2025-09-06 21:15:52,300 - INFO - Processed 169 records for FCX in 2025
+2025-09-06 21:15:52,302 - INFO - Created Parquet file: FCX_2023.parquet
+2025-09-06 21:15:52,643 - INFO - Successfully uploaded FCX_2023.parquet to S3 bucket root
+2025-09-06 21:15:52,643 - INFO - Cleaned up local file: FCX_2023.parquet
+2025-09-06 21:15:52,645 - INFO - Created Parquet file: FCX_2024.parquet
+2025-09-06 21:15:52,749 - INFO - Successfully uploaded FCX_2024.parquet to S3 bucket root
+2025-09-06 21:15:52,749 - INFO - Cleaned up local file: FCX_2024.parquet
+2025-09-06 21:15:52,753 - INFO - Created Parquet file: FCX_2025.parquet
+2025-09-06 21:15:52,849 - INFO - Successfully uploaded FCX_2025.parquet to S3 bucket root
+2025-09-06 21:15:52,851 - INFO - Cleaned up local file: FCX_2025.parquet
+2025-09-06 21:15:52,851 - INFO - Completed processing FCX: 3/3 files successful
+2025-09-06 21:15:52,852 - INFO - ✓ Successfully processed FCX
+2025-09-06 21:15:52,852 - INFO - Processing ticker 43/111: GE
+2025-09-06 21:15:52,852 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:16:05,355 - INFO - Starting processing for ticker: GE
+2025-09-06 21:16:05,356 - INFO - Fetching data for GE from 2023-09-07 to 2025-09-06
+2025-09-06 21:16:05,827 - INFO - Successfully retrieved 500 records for GE
+2025-09-06 21:16:05,846 - INFO - Processed 79 records for GE in 2023
+2025-09-06 21:16:05,846 - INFO - Processed 252 records for GE in 2024
+2025-09-06 21:16:05,846 - INFO - Processed 169 records for GE in 2025
+2025-09-06 21:16:05,850 - INFO - Created Parquet file: GE_2023.parquet
+2025-09-06 21:16:06,209 - INFO - Successfully uploaded GE_2023.parquet to S3 bucket root
+2025-09-06 21:16:06,209 - INFO - Cleaned up local file: GE_2023.parquet
+2025-09-06 21:16:06,212 - INFO - Created Parquet file: GE_2024.parquet
+2025-09-06 21:16:06,308 - INFO - Successfully uploaded GE_2024.parquet to S3 bucket root
+2025-09-06 21:16:06,309 - INFO - Cleaned up local file: GE_2024.parquet
+2025-09-06 21:16:06,314 - INFO - Created Parquet file: GE_2025.parquet
+2025-09-06 21:16:06,416 - INFO - Successfully uploaded GE_2025.parquet to S3 bucket root
+2025-09-06 21:16:06,416 - INFO - Cleaned up local file: GE_2025.parquet
+2025-09-06 21:16:06,416 - INFO - Completed processing GE: 3/3 files successful
+2025-09-06 21:16:06,417 - INFO - ✓ Successfully processed GE
+2025-09-06 21:16:06,417 - INFO - Processing ticker 44/111: GOOG
+2025-09-06 21:16:06,417 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:16:18,919 - INFO - Starting processing for ticker: GOOG
+2025-09-06 21:16:18,920 - INFO - Fetching data for GOOG from 2023-09-07 to 2025-09-06
+2025-09-06 21:16:19,320 - INFO - Successfully retrieved 500 records for GOOG
+2025-09-06 21:16:19,335 - INFO - Processed 79 records for GOOG in 2023
+2025-09-06 21:16:19,336 - INFO - Processed 252 records for GOOG in 2024
+2025-09-06 21:16:19,336 - INFO - Processed 169 records for GOOG in 2025
+2025-09-06 21:16:19,339 - INFO - Created Parquet file: GOOG_2023.parquet
+2025-09-06 21:16:19,667 - INFO - Successfully uploaded GOOG_2023.parquet to S3 bucket root
+2025-09-06 21:16:19,668 - INFO - Cleaned up local file: GOOG_2023.parquet
+2025-09-06 21:16:19,670 - INFO - Created Parquet file: GOOG_2024.parquet
+2025-09-06 21:16:19,785 - INFO - Successfully uploaded GOOG_2024.parquet to S3 bucket root
+2025-09-06 21:16:19,786 - INFO - Cleaned up local file: GOOG_2024.parquet
+2025-09-06 21:16:19,790 - INFO - Created Parquet file: GOOG_2025.parquet
+2025-09-06 21:16:19,900 - INFO - Successfully uploaded GOOG_2025.parquet to S3 bucket root
+2025-09-06 21:16:19,901 - INFO - Cleaned up local file: GOOG_2025.parquet
+2025-09-06 21:16:19,901 - INFO - Completed processing GOOG: 3/3 files successful
+2025-09-06 21:16:19,901 - INFO - ✓ Successfully processed GOOG
+2025-09-06 21:16:19,901 - INFO - Processing ticker 45/111: GOOGL
+2025-09-06 21:16:19,901 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:16:32,406 - INFO - Starting processing for ticker: GOOGL
+2025-09-06 21:16:32,408 - INFO - Fetching data for GOOGL from 2023-09-07 to 2025-09-06
+2025-09-06 21:16:32,823 - INFO - Successfully retrieved 500 records for GOOGL
+2025-09-06 21:16:32,840 - INFO - Processed 79 records for GOOGL in 2023
+2025-09-06 21:16:32,841 - INFO - Processed 252 records for GOOGL in 2024
+2025-09-06 21:16:32,841 - INFO - Processed 169 records for GOOGL in 2025
+2025-09-06 21:16:32,844 - INFO - Created Parquet file: GOOGL_2023.parquet
+2025-09-06 21:16:33,076 - INFO - Successfully uploaded GOOGL_2023.parquet to S3 bucket root
+2025-09-06 21:16:33,077 - INFO - Cleaned up local file: GOOGL_2023.parquet
+2025-09-06 21:16:33,082 - INFO - Created Parquet file: GOOGL_2024.parquet
+2025-09-06 21:16:33,189 - INFO - Successfully uploaded GOOGL_2024.parquet to S3 bucket root
+2025-09-06 21:16:33,191 - INFO - Cleaned up local file: GOOGL_2024.parquet
+2025-09-06 21:16:33,196 - INFO - Created Parquet file: GOOGL_2025.parquet
+2025-09-06 21:16:33,307 - INFO - Successfully uploaded GOOGL_2025.parquet to S3 bucket root
+2025-09-06 21:16:33,308 - INFO - Cleaned up local file: GOOGL_2025.parquet
+2025-09-06 21:16:33,308 - INFO - Completed processing GOOGL: 3/3 files successful
+2025-09-06 21:16:33,310 - INFO - ✓ Successfully processed GOOGL
+2025-09-06 21:16:33,310 - INFO - Processing ticker 46/111: GS
+2025-09-06 21:16:33,310 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:16:45,812 - INFO - Starting processing for ticker: GS
+2025-09-06 21:16:45,813 - INFO - Fetching data for GS from 2023-09-07 to 2025-09-06
+2025-09-06 21:16:46,221 - INFO - Successfully retrieved 500 records for GS
+2025-09-06 21:16:46,236 - INFO - Processed 79 records for GS in 2023
+2025-09-06 21:16:46,236 - INFO - Processed 252 records for GS in 2024
+2025-09-06 21:16:46,236 - INFO - Processed 169 records for GS in 2025
+2025-09-06 21:16:46,240 - INFO - Created Parquet file: GS_2023.parquet
+2025-09-06 21:16:46,582 - INFO - Successfully uploaded GS_2023.parquet to S3 bucket root
+2025-09-06 21:16:46,583 - INFO - Cleaned up local file: GS_2023.parquet
+2025-09-06 21:16:46,587 - INFO - Created Parquet file: GS_2024.parquet
+2025-09-06 21:16:46,696 - INFO - Successfully uploaded GS_2024.parquet to S3 bucket root
+2025-09-06 21:16:46,697 - INFO - Cleaned up local file: GS_2024.parquet
+2025-09-06 21:16:46,701 - INFO - Created Parquet file: GS_2025.parquet
+2025-09-06 21:16:46,803 - INFO - Successfully uploaded GS_2025.parquet to S3 bucket root
+2025-09-06 21:16:46,804 - INFO - Cleaned up local file: GS_2025.parquet
+2025-09-06 21:16:46,804 - INFO - Completed processing GS: 3/3 files successful
+2025-09-06 21:16:46,805 - INFO - ✓ Successfully processed GS
+2025-09-06 21:16:46,805 - INFO - Processing ticker 47/111: HD
+2025-09-06 21:16:46,805 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:16:59,311 - INFO - Starting processing for ticker: HD
+2025-09-06 21:16:59,314 - INFO - Fetching data for HD from 2023-09-07 to 2025-09-06
+2025-09-06 21:16:59,776 - INFO - Successfully retrieved 500 records for HD
+2025-09-06 21:16:59,795 - INFO - Processed 79 records for HD in 2023
+2025-09-06 21:16:59,796 - INFO - Processed 252 records for HD in 2024
+2025-09-06 21:16:59,796 - INFO - Processed 169 records for HD in 2025
+2025-09-06 21:16:59,801 - INFO - Created Parquet file: HD_2023.parquet
+2025-09-06 21:17:00,234 - INFO - Successfully uploaded HD_2023.parquet to S3 bucket root
+2025-09-06 21:17:00,235 - INFO - Cleaned up local file: HD_2023.parquet
+2025-09-06 21:17:00,240 - INFO - Created Parquet file: HD_2024.parquet
+2025-09-06 21:17:00,346 - INFO - Successfully uploaded HD_2024.parquet to S3 bucket root
+2025-09-06 21:17:00,349 - INFO - Cleaned up local file: HD_2024.parquet
+2025-09-06 21:17:00,352 - INFO - Created Parquet file: HD_2025.parquet
+2025-09-06 21:17:00,461 - INFO - Successfully uploaded HD_2025.parquet to S3 bucket root
+2025-09-06 21:17:00,461 - INFO - Cleaned up local file: HD_2025.parquet
+2025-09-06 21:17:00,462 - INFO - Completed processing HD: 3/3 files successful
+2025-09-06 21:17:00,462 - INFO - ✓ Successfully processed HD
+2025-09-06 21:17:00,462 - INFO - Processing ticker 48/111: HON
+2025-09-06 21:17:00,462 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:17:12,964 - INFO - Starting processing for ticker: HON
+2025-09-06 21:17:12,965 - INFO - Fetching data for HON from 2023-09-07 to 2025-09-06
+2025-09-06 21:17:13,433 - INFO - Successfully retrieved 500 records for HON
+2025-09-06 21:17:13,446 - INFO - Processed 79 records for HON in 2023
+2025-09-06 21:17:13,447 - INFO - Processed 252 records for HON in 2024
+2025-09-06 21:17:13,447 - INFO - Processed 169 records for HON in 2025
+2025-09-06 21:17:13,449 - INFO - Created Parquet file: HON_2023.parquet
+2025-09-06 21:17:13,755 - INFO - Successfully uploaded HON_2023.parquet to S3 bucket root
+2025-09-06 21:17:13,755 - INFO - Cleaned up local file: HON_2023.parquet
+2025-09-06 21:17:13,759 - INFO - Created Parquet file: HON_2024.parquet
+2025-09-06 21:17:13,862 - INFO - Successfully uploaded HON_2024.parquet to S3 bucket root
+2025-09-06 21:17:13,862 - INFO - Cleaned up local file: HON_2024.parquet
+2025-09-06 21:17:13,865 - INFO - Created Parquet file: HON_2025.parquet
+2025-09-06 21:17:13,969 - INFO - Successfully uploaded HON_2025.parquet to S3 bucket root
+2025-09-06 21:17:13,969 - INFO - Cleaned up local file: HON_2025.parquet
+2025-09-06 21:17:13,969 - INFO - Completed processing HON: 3/3 files successful
+2025-09-06 21:17:13,970 - INFO - ✓ Successfully processed HON
+2025-09-06 21:17:13,970 - INFO - Processing ticker 49/111: ISRG
+2025-09-06 21:17:13,970 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:17:26,480 - INFO - Starting processing for ticker: ISRG
+2025-09-06 21:17:26,482 - INFO - Fetching data for ISRG from 2023-09-07 to 2025-09-06
+2025-09-06 21:17:26,895 - INFO - Successfully retrieved 500 records for ISRG
+2025-09-06 21:17:26,916 - INFO - Processed 79 records for ISRG in 2023
+2025-09-06 21:17:26,916 - INFO - Processed 252 records for ISRG in 2024
+2025-09-06 21:17:26,917 - INFO - Processed 169 records for ISRG in 2025
+2025-09-06 21:17:26,920 - INFO - Created Parquet file: ISRG_2023.parquet
+2025-09-06 21:17:27,219 - INFO - Successfully uploaded ISRG_2023.parquet to S3 bucket root
+2025-09-06 21:17:27,220 - INFO - Cleaned up local file: ISRG_2023.parquet
+2025-09-06 21:17:27,224 - INFO - Created Parquet file: ISRG_2024.parquet
+2025-09-06 21:17:27,340 - INFO - Successfully uploaded ISRG_2024.parquet to S3 bucket root
+2025-09-06 21:17:27,341 - INFO - Cleaned up local file: ISRG_2024.parquet
+2025-09-06 21:17:27,345 - INFO - Created Parquet file: ISRG_2025.parquet
+2025-09-06 21:17:27,449 - INFO - Successfully uploaded ISRG_2025.parquet to S3 bucket root
+2025-09-06 21:17:27,449 - INFO - Cleaned up local file: ISRG_2025.parquet
+2025-09-06 21:17:27,449 - INFO - Completed processing ISRG: 3/3 files successful
+2025-09-06 21:17:27,450 - INFO - ✓ Successfully processed ISRG
+2025-09-06 21:17:27,450 - INFO - Processing ticker 50/111: JNJ
+2025-09-06 21:17:27,450 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:17:39,962 - INFO - Starting processing for ticker: JNJ
+2025-09-06 21:17:39,968 - INFO - Fetching data for JNJ from 2023-09-07 to 2025-09-06
+2025-09-06 21:17:40,346 - INFO - Successfully retrieved 500 records for JNJ
+2025-09-06 21:17:40,371 - INFO - Processed 79 records for JNJ in 2023
+2025-09-06 21:17:40,371 - INFO - Processed 252 records for JNJ in 2024
+2025-09-06 21:17:40,372 - INFO - Processed 169 records for JNJ in 2025
+2025-09-06 21:17:40,376 - INFO - Created Parquet file: JNJ_2023.parquet
+2025-09-06 21:17:40,726 - INFO - Successfully uploaded JNJ_2023.parquet to S3 bucket root
+2025-09-06 21:17:40,732 - INFO - Cleaned up local file: JNJ_2023.parquet
+2025-09-06 21:17:40,736 - INFO - Created Parquet file: JNJ_2024.parquet
+2025-09-06 21:17:40,842 - INFO - Successfully uploaded JNJ_2024.parquet to S3 bucket root
+2025-09-06 21:17:40,843 - INFO - Cleaned up local file: JNJ_2024.parquet
+2025-09-06 21:17:40,846 - INFO - Created Parquet file: JNJ_2025.parquet
+2025-09-06 21:17:40,952 - INFO - Successfully uploaded JNJ_2025.parquet to S3 bucket root
+2025-09-06 21:17:40,952 - INFO - Cleaned up local file: JNJ_2025.parquet
+2025-09-06 21:17:40,952 - INFO - Completed processing JNJ: 3/3 files successful
+2025-09-06 21:17:40,953 - INFO - ✓ Successfully processed JNJ
+2025-09-06 21:17:40,953 - INFO - Processing ticker 51/111: JPM
+2025-09-06 21:17:40,953 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:17:53,456 - INFO - Starting processing for ticker: JPM
+2025-09-06 21:17:53,458 - INFO - Fetching data for JPM from 2023-09-07 to 2025-09-06
+2025-09-06 21:17:53,878 - INFO - Successfully retrieved 500 records for JPM
+2025-09-06 21:17:53,907 - INFO - Processed 79 records for JPM in 2023
+2025-09-06 21:17:53,908 - INFO - Processed 252 records for JPM in 2024
+2025-09-06 21:17:53,908 - INFO - Processed 169 records for JPM in 2025
+2025-09-06 21:17:53,910 - INFO - Created Parquet file: JPM_2023.parquet
+2025-09-06 21:17:54,258 - INFO - Successfully uploaded JPM_2023.parquet to S3 bucket root
+2025-09-06 21:17:54,269 - INFO - Cleaned up local file: JPM_2023.parquet
+2025-09-06 21:17:54,272 - INFO - Created Parquet file: JPM_2024.parquet
+2025-09-06 21:17:54,383 - INFO - Successfully uploaded JPM_2024.parquet to S3 bucket root
+2025-09-06 21:17:54,383 - INFO - Cleaned up local file: JPM_2024.parquet
+2025-09-06 21:17:54,388 - INFO - Created Parquet file: JPM_2025.parquet
+2025-09-06 21:17:54,496 - INFO - Successfully uploaded JPM_2025.parquet to S3 bucket root
+2025-09-06 21:17:54,497 - INFO - Cleaned up local file: JPM_2025.parquet
+2025-09-06 21:17:54,497 - INFO - Completed processing JPM: 3/3 files successful
+2025-09-06 21:17:54,498 - INFO - ✓ Successfully processed JPM
+2025-09-06 21:17:54,498 - INFO - Processing ticker 52/111: KMI
+2025-09-06 21:17:54,498 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:18:07,000 - INFO - Starting processing for ticker: KMI
+2025-09-06 21:18:07,002 - INFO - Fetching data for KMI from 2023-09-07 to 2025-09-06
+2025-09-06 21:18:07,458 - INFO - Successfully retrieved 500 records for KMI
+2025-09-06 21:18:07,477 - INFO - Processed 79 records for KMI in 2023
+2025-09-06 21:18:07,478 - INFO - Processed 252 records for KMI in 2024
+2025-09-06 21:18:07,478 - INFO - Processed 169 records for KMI in 2025
+2025-09-06 21:18:07,482 - INFO - Created Parquet file: KMI_2023.parquet
+2025-09-06 21:18:07,784 - INFO - Successfully uploaded KMI_2023.parquet to S3 bucket root
+2025-09-06 21:18:07,785 - INFO - Cleaned up local file: KMI_2023.parquet
+2025-09-06 21:18:07,788 - INFO - Created Parquet file: KMI_2024.parquet
+2025-09-06 21:18:07,888 - INFO - Successfully uploaded KMI_2024.parquet to S3 bucket root
+2025-09-06 21:18:07,889 - INFO - Cleaned up local file: KMI_2024.parquet
+2025-09-06 21:18:07,894 - INFO - Created Parquet file: KMI_2025.parquet
+2025-09-06 21:18:07,998 - INFO - Successfully uploaded KMI_2025.parquet to S3 bucket root
+2025-09-06 21:18:08,000 - INFO - Cleaned up local file: KMI_2025.parquet
+2025-09-06 21:18:08,000 - INFO - Completed processing KMI: 3/3 files successful
+2025-09-06 21:18:08,001 - INFO - ✓ Successfully processed KMI
+2025-09-06 21:18:08,001 - INFO - Processing ticker 53/111: KO
+2025-09-06 21:18:08,002 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:18:20,507 - INFO - Starting processing for ticker: KO
+2025-09-06 21:18:20,508 - INFO - Fetching data for KO from 2023-09-07 to 2025-09-06
+2025-09-06 21:18:20,918 - INFO - Successfully retrieved 500 records for KO
+2025-09-06 21:18:20,932 - INFO - Processed 79 records for KO in 2023
+2025-09-06 21:18:20,933 - INFO - Processed 252 records for KO in 2024
+2025-09-06 21:18:20,933 - INFO - Processed 169 records for KO in 2025
+2025-09-06 21:18:20,937 - INFO - Created Parquet file: KO_2023.parquet
+2025-09-06 21:18:21,346 - INFO - Successfully uploaded KO_2023.parquet to S3 bucket root
+2025-09-06 21:18:21,348 - INFO - Cleaned up local file: KO_2023.parquet
+2025-09-06 21:18:21,355 - INFO - Created Parquet file: KO_2024.parquet
+2025-09-06 21:18:21,470 - INFO - Successfully uploaded KO_2024.parquet to S3 bucket root
+2025-09-06 21:18:21,471 - INFO - Cleaned up local file: KO_2024.parquet
+2025-09-06 21:18:21,476 - INFO - Created Parquet file: KO_2025.parquet
+2025-09-06 21:18:21,584 - INFO - Successfully uploaded KO_2025.parquet to S3 bucket root
+2025-09-06 21:18:21,585 - INFO - Cleaned up local file: KO_2025.parquet
+2025-09-06 21:18:21,585 - INFO - Completed processing KO: 3/3 files successful
+2025-09-06 21:18:21,586 - INFO - ✓ Successfully processed KO
+2025-09-06 21:18:21,586 - INFO - Processing ticker 54/111: LIN
+2025-09-06 21:18:21,586 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:18:34,093 - INFO - Starting processing for ticker: LIN
+2025-09-06 21:18:34,095 - INFO - Fetching data for LIN from 2023-09-07 to 2025-09-06
+2025-09-06 21:18:34,500 - INFO - Successfully retrieved 500 records for LIN
+2025-09-06 21:18:34,520 - INFO - Processed 79 records for LIN in 2023
+2025-09-06 21:18:34,521 - INFO - Processed 252 records for LIN in 2024
+2025-09-06 21:18:34,521 - INFO - Processed 169 records for LIN in 2025
+2025-09-06 21:18:34,525 - INFO - Created Parquet file: LIN_2023.parquet
+2025-09-06 21:18:34,856 - INFO - Successfully uploaded LIN_2023.parquet to S3 bucket root
+2025-09-06 21:18:34,857 - INFO - Cleaned up local file: LIN_2023.parquet
+2025-09-06 21:18:34,876 - INFO - Created Parquet file: LIN_2024.parquet
+2025-09-06 21:18:34,982 - INFO - Successfully uploaded LIN_2024.parquet to S3 bucket root
+2025-09-06 21:18:34,983 - INFO - Cleaned up local file: LIN_2024.parquet
+2025-09-06 21:18:34,987 - INFO - Created Parquet file: LIN_2025.parquet
+2025-09-06 21:18:35,089 - INFO - Successfully uploaded LIN_2025.parquet to S3 bucket root
+2025-09-06 21:18:35,089 - INFO - Cleaned up local file: LIN_2025.parquet
+2025-09-06 21:18:35,090 - INFO - Completed processing LIN: 3/3 files successful
+2025-09-06 21:18:35,090 - INFO - ✓ Successfully processed LIN
+2025-09-06 21:18:35,090 - INFO - Processing ticker 55/111: LLY
+2025-09-06 21:18:35,091 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:18:47,593 - INFO - Starting processing for ticker: LLY
+2025-09-06 21:18:47,594 - INFO - Fetching data for LLY from 2023-09-07 to 2025-09-06
+2025-09-06 21:18:48,077 - INFO - Successfully retrieved 500 records for LLY
+2025-09-06 21:18:48,090 - INFO - Processed 79 records for LLY in 2023
+2025-09-06 21:18:48,090 - INFO - Processed 252 records for LLY in 2024
+2025-09-06 21:18:48,090 - INFO - Processed 169 records for LLY in 2025
+2025-09-06 21:18:48,093 - INFO - Created Parquet file: LLY_2023.parquet
+2025-09-06 21:18:48,506 - INFO - Successfully uploaded LLY_2023.parquet to S3 bucket root
+2025-09-06 21:18:48,507 - INFO - Cleaned up local file: LLY_2023.parquet
+2025-09-06 21:18:48,511 - INFO - Created Parquet file: LLY_2024.parquet
+2025-09-06 21:18:48,611 - INFO - Successfully uploaded LLY_2024.parquet to S3 bucket root
+2025-09-06 21:18:48,611 - INFO - Cleaned up local file: LLY_2024.parquet
+2025-09-06 21:18:48,613 - INFO - Created Parquet file: LLY_2025.parquet
+2025-09-06 21:18:48,725 - INFO - Successfully uploaded LLY_2025.parquet to S3 bucket root
+2025-09-06 21:18:48,725 - INFO - Cleaned up local file: LLY_2025.parquet
+2025-09-06 21:18:48,725 - INFO - Completed processing LLY: 3/3 files successful
+2025-09-06 21:18:48,725 - INFO - ✓ Successfully processed LLY
+2025-09-06 21:18:48,725 - INFO - Processing ticker 56/111: LMT
+2025-09-06 21:18:48,725 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:19:01,230 - INFO - Starting processing for ticker: LMT
+2025-09-06 21:19:01,231 - INFO - Fetching data for LMT from 2023-09-07 to 2025-09-06
+2025-09-06 21:19:01,640 - INFO - Successfully retrieved 500 records for LMT
+2025-09-06 21:19:01,658 - INFO - Processed 79 records for LMT in 2023
+2025-09-06 21:19:01,658 - INFO - Processed 252 records for LMT in 2024
+2025-09-06 21:19:01,658 - INFO - Processed 169 records for LMT in 2025
+2025-09-06 21:19:01,661 - INFO - Created Parquet file: LMT_2023.parquet
+2025-09-06 21:19:01,893 - INFO - Successfully uploaded LMT_2023.parquet to S3 bucket root
+2025-09-06 21:19:01,894 - INFO - Cleaned up local file: LMT_2023.parquet
+2025-09-06 21:19:01,897 - INFO - Created Parquet file: LMT_2024.parquet
+2025-09-06 21:19:02,007 - INFO - Successfully uploaded LMT_2024.parquet to S3 bucket root
+2025-09-06 21:19:02,008 - INFO - Cleaned up local file: LMT_2024.parquet
+2025-09-06 21:19:02,012 - INFO - Created Parquet file: LMT_2025.parquet
+2025-09-06 21:19:02,148 - INFO - Successfully uploaded LMT_2025.parquet to S3 bucket root
+2025-09-06 21:19:02,148 - INFO - Cleaned up local file: LMT_2025.parquet
+2025-09-06 21:19:02,149 - INFO - Completed processing LMT: 3/3 files successful
+2025-09-06 21:19:02,150 - INFO - ✓ Successfully processed LMT
+2025-09-06 21:19:02,150 - INFO - Processing ticker 57/111: LOW
+2025-09-06 21:19:02,150 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:19:14,653 - INFO - Starting processing for ticker: LOW
+2025-09-06 21:19:14,655 - INFO - Fetching data for LOW from 2023-09-07 to 2025-09-06
+2025-09-06 21:19:15,041 - INFO - Successfully retrieved 500 records for LOW
+2025-09-06 21:19:15,059 - INFO - Processed 79 records for LOW in 2023
+2025-09-06 21:19:15,060 - INFO - Processed 252 records for LOW in 2024
+2025-09-06 21:19:15,060 - INFO - Processed 169 records for LOW in 2025
+2025-09-06 21:19:15,062 - INFO - Created Parquet file: LOW_2023.parquet
+2025-09-06 21:19:15,372 - INFO - Successfully uploaded LOW_2023.parquet to S3 bucket root
+2025-09-06 21:19:15,373 - INFO - Cleaned up local file: LOW_2023.parquet
+2025-09-06 21:19:15,378 - INFO - Created Parquet file: LOW_2024.parquet
+2025-09-06 21:19:15,486 - INFO - Successfully uploaded LOW_2024.parquet to S3 bucket root
+2025-09-06 21:19:15,487 - INFO - Cleaned up local file: LOW_2024.parquet
+2025-09-06 21:19:15,492 - INFO - Created Parquet file: LOW_2025.parquet
+2025-09-06 21:19:15,600 - INFO - Successfully uploaded LOW_2025.parquet to S3 bucket root
+2025-09-06 21:19:15,602 - INFO - Cleaned up local file: LOW_2025.parquet
+2025-09-06 21:19:15,602 - INFO - Completed processing LOW: 3/3 files successful
+2025-09-06 21:19:15,603 - INFO - ✓ Successfully processed LOW
+2025-09-06 21:19:15,603 - INFO - Processing ticker 58/111: MA
+2025-09-06 21:19:15,603 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:19:28,105 - INFO - Starting processing for ticker: MA
+2025-09-06 21:19:28,107 - INFO - Fetching data for MA from 2023-09-07 to 2025-09-06
+2025-09-06 21:19:28,549 - INFO - Successfully retrieved 500 records for MA
+2025-09-06 21:19:28,586 - INFO - Processed 79 records for MA in 2023
+2025-09-06 21:19:28,586 - INFO - Processed 252 records for MA in 2024
+2025-09-06 21:19:28,586 - INFO - Processed 169 records for MA in 2025
+2025-09-06 21:19:28,589 - INFO - Created Parquet file: MA_2023.parquet
+2025-09-06 21:19:28,883 - INFO - Successfully uploaded MA_2023.parquet to S3 bucket root
+2025-09-06 21:19:28,884 - INFO - Cleaned up local file: MA_2023.parquet
+2025-09-06 21:19:28,890 - INFO - Created Parquet file: MA_2024.parquet
+2025-09-06 21:19:29,017 - INFO - Successfully uploaded MA_2024.parquet to S3 bucket root
+2025-09-06 21:19:29,018 - INFO - Cleaned up local file: MA_2024.parquet
+2025-09-06 21:19:29,024 - INFO - Created Parquet file: MA_2025.parquet
+2025-09-06 21:19:29,127 - INFO - Successfully uploaded MA_2025.parquet to S3 bucket root
+2025-09-06 21:19:29,129 - INFO - Cleaned up local file: MA_2025.parquet
+2025-09-06 21:19:29,129 - INFO - Completed processing MA: 3/3 files successful
+2025-09-06 21:19:29,129 - INFO - ✓ Successfully processed MA
+2025-09-06 21:19:29,130 - INFO - Processing ticker 59/111: MCD
+2025-09-06 21:19:29,130 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:19:41,635 - INFO - Starting processing for ticker: MCD
+2025-09-06 21:19:41,637 - INFO - Fetching data for MCD from 2023-09-07 to 2025-09-06
+2025-09-06 21:19:42,060 - INFO - Successfully retrieved 500 records for MCD
+2025-09-06 21:19:42,072 - INFO - Processed 79 records for MCD in 2023
+2025-09-06 21:19:42,072 - INFO - Processed 252 records for MCD in 2024
+2025-09-06 21:19:42,073 - INFO - Processed 169 records for MCD in 2025
+2025-09-06 21:19:42,074 - INFO - Created Parquet file: MCD_2023.parquet
+2025-09-06 21:19:42,424 - INFO - Successfully uploaded MCD_2023.parquet to S3 bucket root
+2025-09-06 21:19:42,424 - INFO - Cleaned up local file: MCD_2023.parquet
+2025-09-06 21:19:42,428 - INFO - Created Parquet file: MCD_2024.parquet
+2025-09-06 21:19:42,578 - INFO - Successfully uploaded MCD_2024.parquet to S3 bucket root
+2025-09-06 21:19:42,579 - INFO - Cleaned up local file: MCD_2024.parquet
+2025-09-06 21:19:42,582 - INFO - Created Parquet file: MCD_2025.parquet
+2025-09-06 21:19:42,697 - INFO - Successfully uploaded MCD_2025.parquet to S3 bucket root
+2025-09-06 21:19:42,698 - INFO - Cleaned up local file: MCD_2025.parquet
+2025-09-06 21:19:42,698 - INFO - Completed processing MCD: 3/3 files successful
+2025-09-06 21:19:42,699 - INFO - ✓ Successfully processed MCD
+2025-09-06 21:19:42,699 - INFO - Processing ticker 60/111: MDLZ
+2025-09-06 21:19:42,699 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:19:55,229 - INFO - Starting processing for ticker: MDLZ
+2025-09-06 21:19:55,231 - INFO - Fetching data for MDLZ from 2023-09-07 to 2025-09-06
+2025-09-06 21:19:55,617 - INFO - Successfully retrieved 500 records for MDLZ
+2025-09-06 21:19:55,637 - INFO - Processed 79 records for MDLZ in 2023
+2025-09-06 21:19:55,637 - INFO - Processed 252 records for MDLZ in 2024
+2025-09-06 21:19:55,637 - INFO - Processed 169 records for MDLZ in 2025
+2025-09-06 21:19:55,642 - INFO - Created Parquet file: MDLZ_2023.parquet
+2025-09-06 21:19:55,976 - INFO - Successfully uploaded MDLZ_2023.parquet to S3 bucket root
+2025-09-06 21:19:55,978 - INFO - Cleaned up local file: MDLZ_2023.parquet
+2025-09-06 21:19:55,982 - INFO - Created Parquet file: MDLZ_2024.parquet
+2025-09-06 21:19:56,086 - INFO - Successfully uploaded MDLZ_2024.parquet to S3 bucket root
+2025-09-06 21:19:56,087 - INFO - Cleaned up local file: MDLZ_2024.parquet
+2025-09-06 21:19:56,091 - INFO - Created Parquet file: MDLZ_2025.parquet
+2025-09-06 21:19:56,211 - INFO - Successfully uploaded MDLZ_2025.parquet to S3 bucket root
+2025-09-06 21:19:56,211 - INFO - Cleaned up local file: MDLZ_2025.parquet
+2025-09-06 21:19:56,212 - INFO - Completed processing MDLZ: 3/3 files successful
+2025-09-06 21:19:56,212 - INFO - ✓ Successfully processed MDLZ
+2025-09-06 21:19:56,212 - INFO - Processing ticker 61/111: MELI
+2025-09-06 21:19:56,212 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:20:08,718 - INFO - Starting processing for ticker: MELI
+2025-09-06 21:20:08,719 - INFO - Fetching data for MELI from 2023-09-07 to 2025-09-06
+2025-09-06 21:20:09,193 - INFO - Successfully retrieved 500 records for MELI
+2025-09-06 21:20:09,217 - INFO - Processed 79 records for MELI in 2023
+2025-09-06 21:20:09,217 - INFO - Processed 252 records for MELI in 2024
+2025-09-06 21:20:09,217 - INFO - Processed 169 records for MELI in 2025
+2025-09-06 21:20:09,221 - INFO - Created Parquet file: MELI_2023.parquet
+2025-09-06 21:20:09,559 - INFO - Successfully uploaded MELI_2023.parquet to S3 bucket root
+2025-09-06 21:20:09,560 - INFO - Cleaned up local file: MELI_2023.parquet
+2025-09-06 21:20:09,563 - INFO - Created Parquet file: MELI_2024.parquet
+2025-09-06 21:20:09,665 - INFO - Successfully uploaded MELI_2024.parquet to S3 bucket root
+2025-09-06 21:20:09,666 - INFO - Cleaned up local file: MELI_2024.parquet
+2025-09-06 21:20:09,671 - INFO - Created Parquet file: MELI_2025.parquet
+2025-09-06 21:20:09,799 - INFO - Successfully uploaded MELI_2025.parquet to S3 bucket root
+2025-09-06 21:20:09,800 - INFO - Cleaned up local file: MELI_2025.parquet
+2025-09-06 21:20:09,800 - INFO - Completed processing MELI: 3/3 files successful
+2025-09-06 21:20:09,800 - INFO - ✓ Successfully processed MELI
+2025-09-06 21:20:09,800 - INFO - Processing ticker 62/111: META
+2025-09-06 21:20:09,800 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:20:22,307 - INFO - Starting processing for ticker: META
+2025-09-06 21:20:22,310 - INFO - Fetching data for META from 2023-09-07 to 2025-09-06
+2025-09-06 21:20:22,775 - INFO - Successfully retrieved 500 records for META
+2025-09-06 21:20:22,800 - INFO - Processed 79 records for META in 2023
+2025-09-06 21:20:22,800 - INFO - Processed 252 records for META in 2024
+2025-09-06 21:20:22,800 - INFO - Processed 169 records for META in 2025
+2025-09-06 21:20:22,804 - INFO - Created Parquet file: META_2023.parquet
+2025-09-06 21:20:23,230 - INFO - Successfully uploaded META_2023.parquet to S3 bucket root
+2025-09-06 21:20:23,231 - INFO - Cleaned up local file: META_2023.parquet
+2025-09-06 21:20:23,236 - INFO - Created Parquet file: META_2024.parquet
+2025-09-06 21:20:23,348 - INFO - Successfully uploaded META_2024.parquet to S3 bucket root
+2025-09-06 21:20:23,348 - INFO - Cleaned up local file: META_2024.parquet
+2025-09-06 21:20:23,351 - INFO - Created Parquet file: META_2025.parquet
+2025-09-06 21:20:23,462 - INFO - Successfully uploaded META_2025.parquet to S3 bucket root
+2025-09-06 21:20:23,462 - INFO - Cleaned up local file: META_2025.parquet
+2025-09-06 21:20:23,462 - INFO - Completed processing META: 3/3 files successful
+2025-09-06 21:20:23,462 - INFO - ✓ Successfully processed META
+2025-09-06 21:20:23,462 - INFO - Processing ticker 63/111: MLM
+2025-09-06 21:20:23,462 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:20:35,968 - INFO - Starting processing for ticker: MLM
+2025-09-06 21:20:35,968 - INFO - Fetching data for MLM from 2023-09-07 to 2025-09-06
+2025-09-06 21:20:36,380 - INFO - Successfully retrieved 500 records for MLM
+2025-09-06 21:20:36,394 - INFO - Processed 79 records for MLM in 2023
+2025-09-06 21:20:36,395 - INFO - Processed 252 records for MLM in 2024
+2025-09-06 21:20:36,395 - INFO - Processed 169 records for MLM in 2025
+2025-09-06 21:20:36,398 - INFO - Created Parquet file: MLM_2023.parquet
+2025-09-06 21:20:36,635 - INFO - Successfully uploaded MLM_2023.parquet to S3 bucket root
+2025-09-06 21:20:36,635 - INFO - Cleaned up local file: MLM_2023.parquet
+2025-09-06 21:20:36,640 - INFO - Created Parquet file: MLM_2024.parquet
+2025-09-06 21:20:36,738 - INFO - Successfully uploaded MLM_2024.parquet to S3 bucket root
+2025-09-06 21:20:36,739 - INFO - Cleaned up local file: MLM_2024.parquet
+2025-09-06 21:20:36,742 - INFO - Created Parquet file: MLM_2025.parquet
+2025-09-06 21:20:36,843 - INFO - Successfully uploaded MLM_2025.parquet to S3 bucket root
+2025-09-06 21:20:36,844 - INFO - Cleaned up local file: MLM_2025.parquet
+2025-09-06 21:20:36,844 - INFO - Completed processing MLM: 3/3 files successful
+2025-09-06 21:20:36,845 - INFO - ✓ Successfully processed MLM
+2025-09-06 21:20:36,845 - INFO - Processing ticker 64/111: MO
+2025-09-06 21:20:36,845 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:20:49,349 - INFO - Starting processing for ticker: MO
+2025-09-06 21:20:49,351 - INFO - Fetching data for MO from 2023-09-07 to 2025-09-06
+2025-09-06 21:20:49,713 - INFO - Successfully retrieved 500 records for MO
+2025-09-06 21:20:49,723 - INFO - Processed 79 records for MO in 2023
+2025-09-06 21:20:49,724 - INFO - Processed 252 records for MO in 2024
+2025-09-06 21:20:49,724 - INFO - Processed 169 records for MO in 2025
+2025-09-06 21:20:49,726 - INFO - Created Parquet file: MO_2023.parquet
+2025-09-06 21:20:50,137 - INFO - Successfully uploaded MO_2023.parquet to S3 bucket root
+2025-09-06 21:20:50,137 - INFO - Cleaned up local file: MO_2023.parquet
+2025-09-06 21:20:50,139 - INFO - Created Parquet file: MO_2024.parquet
+2025-09-06 21:20:50,246 - INFO - Successfully uploaded MO_2024.parquet to S3 bucket root
+2025-09-06 21:20:50,246 - INFO - Cleaned up local file: MO_2024.parquet
+2025-09-06 21:20:50,249 - INFO - Created Parquet file: MO_2025.parquet
+2025-09-06 21:20:50,363 - INFO - Successfully uploaded MO_2025.parquet to S3 bucket root
+2025-09-06 21:20:50,363 - INFO - Cleaned up local file: MO_2025.parquet
+2025-09-06 21:20:50,363 - INFO - Completed processing MO: 3/3 files successful
+2025-09-06 21:20:50,363 - INFO - ✓ Successfully processed MO
+2025-09-06 21:20:50,364 - INFO - Processing ticker 65/111: MPC
+2025-09-06 21:20:50,364 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:21:02,867 - INFO - Starting processing for ticker: MPC
+2025-09-06 21:21:02,870 - INFO - Fetching data for MPC from 2023-09-07 to 2025-09-06
+2025-09-06 21:21:03,309 - INFO - Successfully retrieved 500 records for MPC
+2025-09-06 21:21:03,322 - INFO - Processed 79 records for MPC in 2023
+2025-09-06 21:21:03,323 - INFO - Processed 252 records for MPC in 2024
+2025-09-06 21:21:03,323 - INFO - Processed 169 records for MPC in 2025
+2025-09-06 21:21:03,326 - INFO - Created Parquet file: MPC_2023.parquet
+2025-09-06 21:21:03,607 - INFO - Successfully uploaded MPC_2023.parquet to S3 bucket root
+2025-09-06 21:21:03,608 - INFO - Cleaned up local file: MPC_2023.parquet
+2025-09-06 21:21:03,614 - INFO - Created Parquet file: MPC_2024.parquet
+2025-09-06 21:21:03,728 - INFO - Successfully uploaded MPC_2024.parquet to S3 bucket root
+2025-09-06 21:21:03,729 - INFO - Cleaned up local file: MPC_2024.parquet
+2025-09-06 21:21:03,734 - INFO - Created Parquet file: MPC_2025.parquet
+2025-09-06 21:21:03,839 - INFO - Successfully uploaded MPC_2025.parquet to S3 bucket root
+2025-09-06 21:21:03,840 - INFO - Cleaned up local file: MPC_2025.parquet
+2025-09-06 21:21:03,840 - INFO - Completed processing MPC: 3/3 files successful
+2025-09-06 21:21:03,841 - INFO - ✓ Successfully processed MPC
+2025-09-06 21:21:03,841 - INFO - Processing ticker 66/111: MRK
+2025-09-06 21:21:03,841 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:21:16,343 - INFO - Starting processing for ticker: MRK
+2025-09-06 21:21:16,344 - INFO - Fetching data for MRK from 2023-09-07 to 2025-09-06
+2025-09-06 21:21:16,824 - INFO - Successfully retrieved 500 records for MRK
+2025-09-06 21:21:16,840 - INFO - Processed 79 records for MRK in 2023
+2025-09-06 21:21:16,840 - INFO - Processed 252 records for MRK in 2024
+2025-09-06 21:21:16,840 - INFO - Processed 169 records for MRK in 2025
+2025-09-06 21:21:16,844 - INFO - Created Parquet file: MRK_2023.parquet
+2025-09-06 21:21:17,156 - INFO - Successfully uploaded MRK_2023.parquet to S3 bucket root
+2025-09-06 21:21:17,157 - INFO - Cleaned up local file: MRK_2023.parquet
+2025-09-06 21:21:17,163 - INFO - Created Parquet file: MRK_2024.parquet
+2025-09-06 21:21:17,265 - INFO - Successfully uploaded MRK_2024.parquet to S3 bucket root
+2025-09-06 21:21:17,266 - INFO - Cleaned up local file: MRK_2024.parquet
+2025-09-06 21:21:17,272 - INFO - Created Parquet file: MRK_2025.parquet
+2025-09-06 21:21:17,377 - INFO - Successfully uploaded MRK_2025.parquet to S3 bucket root
+2025-09-06 21:21:17,378 - INFO - Cleaned up local file: MRK_2025.parquet
+2025-09-06 21:21:17,378 - INFO - Completed processing MRK: 3/3 files successful
+2025-09-06 21:21:17,379 - INFO - ✓ Successfully processed MRK
+2025-09-06 21:21:17,379 - INFO - Processing ticker 67/111: MSFT
+2025-09-06 21:21:17,380 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:21:29,885 - INFO - Starting processing for ticker: MSFT
+2025-09-06 21:21:29,887 - INFO - Fetching data for MSFT from 2023-09-07 to 2025-09-06
+2025-09-06 21:21:30,307 - INFO - Successfully retrieved 500 records for MSFT
+2025-09-06 21:21:30,321 - INFO - Processed 79 records for MSFT in 2023
+2025-09-06 21:21:30,321 - INFO - Processed 252 records for MSFT in 2024
+2025-09-06 21:21:30,321 - INFO - Processed 169 records for MSFT in 2025
+2025-09-06 21:21:30,324 - INFO - Created Parquet file: MSFT_2023.parquet
+2025-09-06 21:21:30,553 - INFO - Successfully uploaded MSFT_2023.parquet to S3 bucket root
+2025-09-06 21:21:30,554 - INFO - Cleaned up local file: MSFT_2023.parquet
+2025-09-06 21:21:30,560 - INFO - Created Parquet file: MSFT_2024.parquet
+2025-09-06 21:21:30,667 - INFO - Successfully uploaded MSFT_2024.parquet to S3 bucket root
+2025-09-06 21:21:30,669 - INFO - Cleaned up local file: MSFT_2024.parquet
+2025-09-06 21:21:30,674 - INFO - Created Parquet file: MSFT_2025.parquet
+2025-09-06 21:21:30,785 - INFO - Successfully uploaded MSFT_2025.parquet to S3 bucket root
+2025-09-06 21:21:30,786 - INFO - Cleaned up local file: MSFT_2025.parquet
+2025-09-06 21:21:30,786 - INFO - Completed processing MSFT: 3/3 files successful
+2025-09-06 21:21:30,786 - INFO - ✓ Successfully processed MSFT
+2025-09-06 21:21:30,787 - INFO - Processing ticker 68/111: NEE
+2025-09-06 21:21:30,787 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:21:43,292 - INFO - Starting processing for ticker: NEE
+2025-09-06 21:21:43,295 - INFO - Fetching data for NEE from 2023-09-07 to 2025-09-06
+2025-09-06 21:21:43,739 - INFO - Successfully retrieved 500 records for NEE
+2025-09-06 21:21:43,759 - INFO - Processed 79 records for NEE in 2023
+2025-09-06 21:21:43,760 - INFO - Processed 252 records for NEE in 2024
+2025-09-06 21:21:43,760 - INFO - Processed 169 records for NEE in 2025
+2025-09-06 21:21:43,764 - INFO - Created Parquet file: NEE_2023.parquet
+2025-09-06 21:21:44,182 - INFO - Successfully uploaded NEE_2023.parquet to S3 bucket root
+2025-09-06 21:21:44,183 - INFO - Cleaned up local file: NEE_2023.parquet
+2025-09-06 21:21:44,187 - INFO - Created Parquet file: NEE_2024.parquet
+2025-09-06 21:21:44,297 - INFO - Successfully uploaded NEE_2024.parquet to S3 bucket root
+2025-09-06 21:21:44,298 - INFO - Cleaned up local file: NEE_2024.parquet
+2025-09-06 21:21:44,307 - INFO - Created Parquet file: NEE_2025.parquet
+2025-09-06 21:21:44,435 - INFO - Successfully uploaded NEE_2025.parquet to S3 bucket root
+2025-09-06 21:21:44,435 - INFO - Cleaned up local file: NEE_2025.parquet
+2025-09-06 21:21:44,436 - INFO - Completed processing NEE: 3/3 files successful
+2025-09-06 21:21:44,437 - INFO - ✓ Successfully processed NEE
+2025-09-06 21:21:44,437 - INFO - Processing ticker 69/111: NEM
+2025-09-06 21:21:44,437 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:21:56,941 - INFO - Starting processing for ticker: NEM
+2025-09-06 21:21:56,944 - INFO - Fetching data for NEM from 2023-09-07 to 2025-09-06
+2025-09-06 21:21:57,349 - INFO - Successfully retrieved 500 records for NEM
+2025-09-06 21:21:57,371 - INFO - Processed 79 records for NEM in 2023
+2025-09-06 21:21:57,371 - INFO - Processed 252 records for NEM in 2024
+2025-09-06 21:21:57,371 - INFO - Processed 169 records for NEM in 2025
+2025-09-06 21:21:57,375 - INFO - Created Parquet file: NEM_2023.parquet
+2025-09-06 21:21:57,723 - INFO - Successfully uploaded NEM_2023.parquet to S3 bucket root
+2025-09-06 21:21:57,725 - INFO - Cleaned up local file: NEM_2023.parquet
+2025-09-06 21:21:57,730 - INFO - Created Parquet file: NEM_2024.parquet
+2025-09-06 21:21:57,838 - INFO - Successfully uploaded NEM_2024.parquet to S3 bucket root
+2025-09-06 21:21:57,839 - INFO - Cleaned up local file: NEM_2024.parquet
+2025-09-06 21:21:57,844 - INFO - Created Parquet file: NEM_2025.parquet
+2025-09-06 21:21:57,961 - INFO - Successfully uploaded NEM_2025.parquet to S3 bucket root
+2025-09-06 21:21:57,962 - INFO - Cleaned up local file: NEM_2025.parquet
+2025-09-06 21:21:57,962 - INFO - Completed processing NEM: 3/3 files successful
+2025-09-06 21:21:57,962 - INFO - ✓ Successfully processed NEM
+2025-09-06 21:21:57,963 - INFO - Processing ticker 70/111: NFLX
+2025-09-06 21:21:57,963 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:22:10,469 - INFO - Starting processing for ticker: NFLX
+2025-09-06 21:22:10,472 - INFO - Fetching data for NFLX from 2023-09-07 to 2025-09-06
+2025-09-06 21:22:10,989 - INFO - Successfully retrieved 500 records for NFLX
+2025-09-06 21:22:11,008 - INFO - Processed 79 records for NFLX in 2023
+2025-09-06 21:22:11,009 - INFO - Processed 252 records for NFLX in 2024
+2025-09-06 21:22:11,009 - INFO - Processed 169 records for NFLX in 2025
+2025-09-06 21:22:11,013 - INFO - Created Parquet file: NFLX_2023.parquet
+2025-09-06 21:22:11,417 - INFO - Successfully uploaded NFLX_2023.parquet to S3 bucket root
+2025-09-06 21:22:11,418 - INFO - Cleaned up local file: NFLX_2023.parquet
+2025-09-06 21:22:11,422 - INFO - Created Parquet file: NFLX_2024.parquet
+2025-09-06 21:22:11,532 - INFO - Successfully uploaded NFLX_2024.parquet to S3 bucket root
+2025-09-06 21:22:11,532 - INFO - Cleaned up local file: NFLX_2024.parquet
+2025-09-06 21:22:11,536 - INFO - Created Parquet file: NFLX_2025.parquet
+2025-09-06 21:22:11,657 - INFO - Successfully uploaded NFLX_2025.parquet to S3 bucket root
+2025-09-06 21:22:11,657 - INFO - Cleaned up local file: NFLX_2025.parquet
+2025-09-06 21:22:11,657 - INFO - Completed processing NFLX: 3/3 files successful
+2025-09-06 21:22:11,658 - INFO - ✓ Successfully processed NFLX
+2025-09-06 21:22:11,658 - INFO - Processing ticker 71/111: NKE
+2025-09-06 21:22:11,658 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:22:24,164 - INFO - Starting processing for ticker: NKE
+2025-09-06 21:22:24,166 - INFO - Fetching data for NKE from 2023-09-07 to 2025-09-06
+2025-09-06 21:22:24,541 - INFO - Successfully retrieved 500 records for NKE
+2025-09-06 21:22:24,562 - INFO - Processed 79 records for NKE in 2023
+2025-09-06 21:22:24,563 - INFO - Processed 252 records for NKE in 2024
+2025-09-06 21:22:24,563 - INFO - Processed 169 records for NKE in 2025
+2025-09-06 21:22:24,566 - INFO - Created Parquet file: NKE_2023.parquet
+2025-09-06 21:22:24,815 - INFO - Successfully uploaded NKE_2023.parquet to S3 bucket root
+2025-09-06 21:22:24,816 - INFO - Cleaned up local file: NKE_2023.parquet
+2025-09-06 21:22:24,819 - INFO - Created Parquet file: NKE_2024.parquet
+2025-09-06 21:22:24,930 - INFO - Successfully uploaded NKE_2024.parquet to S3 bucket root
+2025-09-06 21:22:24,931 - INFO - Cleaned up local file: NKE_2024.parquet
+2025-09-06 21:22:24,935 - INFO - Created Parquet file: NKE_2025.parquet
+2025-09-06 21:22:25,048 - INFO - Successfully uploaded NKE_2025.parquet to S3 bucket root
+2025-09-06 21:22:25,049 - INFO - Cleaned up local file: NKE_2025.parquet
+2025-09-06 21:22:25,049 - INFO - Completed processing NKE: 3/3 files successful
+2025-09-06 21:22:25,050 - INFO - ✓ Successfully processed NKE
+2025-09-06 21:22:25,050 - INFO - Processing ticker 72/111: NVDA
+2025-09-06 21:22:25,050 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:22:37,556 - INFO - Starting processing for ticker: NVDA
+2025-09-06 21:22:37,558 - INFO - Fetching data for NVDA from 2023-09-07 to 2025-09-06
+2025-09-06 21:22:37,977 - INFO - Successfully retrieved 500 records for NVDA
+2025-09-06 21:22:37,996 - INFO - Processed 79 records for NVDA in 2023
+2025-09-06 21:22:37,996 - INFO - Processed 252 records for NVDA in 2024
+2025-09-06 21:22:37,997 - INFO - Processed 169 records for NVDA in 2025
+2025-09-06 21:22:38,000 - INFO - Created Parquet file: NVDA_2023.parquet
+2025-09-06 21:22:38,301 - INFO - Successfully uploaded NVDA_2023.parquet to S3 bucket root
+2025-09-06 21:22:38,302 - INFO - Cleaned up local file: NVDA_2023.parquet
+2025-09-06 21:22:38,306 - INFO - Created Parquet file: NVDA_2024.parquet
+2025-09-06 21:22:38,427 - INFO - Successfully uploaded NVDA_2024.parquet to S3 bucket root
+2025-09-06 21:22:38,428 - INFO - Cleaned up local file: NVDA_2024.parquet
+2025-09-06 21:22:38,430 - INFO - Created Parquet file: NVDA_2025.parquet
+2025-09-06 21:22:38,535 - INFO - Successfully uploaded NVDA_2025.parquet to S3 bucket root
+2025-09-06 21:22:38,535 - INFO - Cleaned up local file: NVDA_2025.parquet
+2025-09-06 21:22:38,536 - INFO - Completed processing NVDA: 3/3 files successful
+2025-09-06 21:22:38,536 - INFO - ✓ Successfully processed NVDA
+2025-09-06 21:22:38,536 - INFO - Processing ticker 73/111: O
+2025-09-06 21:22:38,536 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:22:51,044 - INFO - Starting processing for ticker: O
+2025-09-06 21:22:51,046 - INFO - Fetching data for O from 2023-09-07 to 2025-09-06
+2025-09-06 21:22:51,449 - INFO - Successfully retrieved 500 records for O
+2025-09-06 21:22:51,471 - INFO - Processed 79 records for O in 2023
+2025-09-06 21:22:51,471 - INFO - Processed 252 records for O in 2024
+2025-09-06 21:22:51,471 - INFO - Processed 169 records for O in 2025
+2025-09-06 21:22:51,475 - INFO - Created Parquet file: O_2023.parquet
+2025-09-06 21:22:51,859 - INFO - Successfully uploaded O_2023.parquet to S3 bucket root
+2025-09-06 21:22:51,860 - INFO - Cleaned up local file: O_2023.parquet
+2025-09-06 21:22:51,866 - INFO - Created Parquet file: O_2024.parquet
+2025-09-06 21:22:51,978 - INFO - Successfully uploaded O_2024.parquet to S3 bucket root
+2025-09-06 21:22:51,978 - INFO - Cleaned up local file: O_2024.parquet
+2025-09-06 21:22:51,982 - INFO - Created Parquet file: O_2025.parquet
+2025-09-06 21:22:52,102 - INFO - Successfully uploaded O_2025.parquet to S3 bucket root
+2025-09-06 21:22:52,102 - INFO - Cleaned up local file: O_2025.parquet
+2025-09-06 21:22:52,103 - INFO - Completed processing O: 3/3 files successful
+2025-09-06 21:22:52,103 - INFO - ✓ Successfully processed O
+2025-09-06 21:22:52,103 - INFO - Processing ticker 74/111: OKE
+2025-09-06 21:22:52,104 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:23:04,609 - INFO - Starting processing for ticker: OKE
+2025-09-06 21:23:04,611 - INFO - Fetching data for OKE from 2023-09-07 to 2025-09-06
+2025-09-06 21:23:05,019 - INFO - Successfully retrieved 500 records for OKE
+2025-09-06 21:23:05,039 - INFO - Processed 79 records for OKE in 2023
+2025-09-06 21:23:05,040 - INFO - Processed 252 records for OKE in 2024
+2025-09-06 21:23:05,040 - INFO - Processed 169 records for OKE in 2025
+2025-09-06 21:23:05,042 - INFO - Created Parquet file: OKE_2023.parquet
+2025-09-06 21:23:05,271 - INFO - Successfully uploaded OKE_2023.parquet to S3 bucket root
+2025-09-06 21:23:05,272 - INFO - Cleaned up local file: OKE_2023.parquet
+2025-09-06 21:23:05,276 - INFO - Created Parquet file: OKE_2024.parquet
+2025-09-06 21:23:05,376 - INFO - Successfully uploaded OKE_2024.parquet to S3 bucket root
+2025-09-06 21:23:05,376 - INFO - Cleaned up local file: OKE_2024.parquet
+2025-09-06 21:23:05,384 - INFO - Created Parquet file: OKE_2025.parquet
+2025-09-06 21:23:05,490 - INFO - Successfully uploaded OKE_2025.parquet to S3 bucket root
+2025-09-06 21:23:05,491 - INFO - Cleaned up local file: OKE_2025.parquet
+2025-09-06 21:23:05,492 - INFO - Completed processing OKE: 3/3 files successful
+2025-09-06 21:23:05,492 - INFO - ✓ Successfully processed OKE
+2025-09-06 21:23:05,492 - INFO - Processing ticker 75/111: ORCL
+2025-09-06 21:23:05,493 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:23:17,998 - INFO - Starting processing for ticker: ORCL
+2025-09-06 21:23:17,999 - INFO - Fetching data for ORCL from 2023-09-07 to 2025-09-06
+2025-09-06 21:23:18,410 - INFO - Successfully retrieved 500 records for ORCL
+2025-09-06 21:23:18,427 - INFO - Processed 79 records for ORCL in 2023
+2025-09-06 21:23:18,428 - INFO - Processed 252 records for ORCL in 2024
+2025-09-06 21:23:18,428 - INFO - Processed 169 records for ORCL in 2025
+2025-09-06 21:23:18,432 - INFO - Created Parquet file: ORCL_2023.parquet
+2025-09-06 21:23:18,846 - INFO - Successfully uploaded ORCL_2023.parquet to S3 bucket root
+2025-09-06 21:23:18,847 - INFO - Cleaned up local file: ORCL_2023.parquet
+2025-09-06 21:23:18,852 - INFO - Created Parquet file: ORCL_2024.parquet
+2025-09-06 21:23:18,961 - INFO - Successfully uploaded ORCL_2024.parquet to S3 bucket root
+2025-09-06 21:23:18,962 - INFO - Cleaned up local file: ORCL_2024.parquet
+2025-09-06 21:23:18,964 - INFO - Created Parquet file: ORCL_2025.parquet
+2025-09-06 21:23:19,070 - INFO - Successfully uploaded ORCL_2025.parquet to S3 bucket root
+2025-09-06 21:23:19,071 - INFO - Cleaned up local file: ORCL_2025.parquet
+2025-09-06 21:23:19,072 - INFO - Completed processing ORCL: 3/3 files successful
+2025-09-06 21:23:19,073 - INFO - ✓ Successfully processed ORCL
+2025-09-06 21:23:19,076 - INFO - Processing ticker 76/111: PCG
+2025-09-06 21:23:19,076 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:23:31,580 - INFO - Starting processing for ticker: PCG
+2025-09-06 21:23:31,582 - INFO - Fetching data for PCG from 2023-09-07 to 2025-09-06
+2025-09-06 21:23:32,048 - INFO - Successfully retrieved 500 records for PCG
+2025-09-06 21:23:32,066 - INFO - Processed 79 records for PCG in 2023
+2025-09-06 21:23:32,066 - INFO - Processed 252 records for PCG in 2024
+2025-09-06 21:23:32,067 - INFO - Processed 169 records for PCG in 2025
+2025-09-06 21:23:32,071 - INFO - Created Parquet file: PCG_2023.parquet
+2025-09-06 21:23:32,451 - INFO - Successfully uploaded PCG_2023.parquet to S3 bucket root
+2025-09-06 21:23:32,452 - INFO - Cleaned up local file: PCG_2023.parquet
+2025-09-06 21:23:32,456 - INFO - Created Parquet file: PCG_2024.parquet
+2025-09-06 21:23:32,561 - INFO - Successfully uploaded PCG_2024.parquet to S3 bucket root
+2025-09-06 21:23:32,563 - INFO - Cleaned up local file: PCG_2024.parquet
+2025-09-06 21:23:32,568 - INFO - Created Parquet file: PCG_2025.parquet
+2025-09-06 21:23:32,670 - INFO - Successfully uploaded PCG_2025.parquet to S3 bucket root
+2025-09-06 21:23:32,671 - INFO - Cleaned up local file: PCG_2025.parquet
+2025-09-06 21:23:32,672 - INFO - Completed processing PCG: 3/3 files successful
+2025-09-06 21:23:32,672 - INFO - ✓ Successfully processed PCG
+2025-09-06 21:23:32,672 - INFO - Processing ticker 77/111: PEG
+2025-09-06 21:23:32,672 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:23:45,178 - INFO - Starting processing for ticker: PEG
+2025-09-06 21:23:45,180 - INFO - Fetching data for PEG from 2023-09-07 to 2025-09-06
+2025-09-06 21:23:45,568 - INFO - Successfully retrieved 500 records for PEG
+2025-09-06 21:23:45,587 - INFO - Processed 79 records for PEG in 2023
+2025-09-06 21:23:45,587 - INFO - Processed 252 records for PEG in 2024
+2025-09-06 21:23:45,587 - INFO - Processed 169 records for PEG in 2025
+2025-09-06 21:23:45,591 - INFO - Created Parquet file: PEG_2023.parquet
+2025-09-06 21:23:45,963 - INFO - Successfully uploaded PEG_2023.parquet to S3 bucket root
+2025-09-06 21:23:45,964 - INFO - Cleaned up local file: PEG_2023.parquet
+2025-09-06 21:23:45,971 - INFO - Created Parquet file: PEG_2024.parquet
+2025-09-06 21:23:46,078 - INFO - Successfully uploaded PEG_2024.parquet to S3 bucket root
+2025-09-06 21:23:46,079 - INFO - Cleaned up local file: PEG_2024.parquet
+2025-09-06 21:23:46,083 - INFO - Created Parquet file: PEG_2025.parquet
+2025-09-06 21:23:46,187 - INFO - Successfully uploaded PEG_2025.parquet to S3 bucket root
+2025-09-06 21:23:46,190 - INFO - Cleaned up local file: PEG_2025.parquet
+2025-09-06 21:23:46,191 - INFO - Completed processing PEG: 3/3 files successful
+2025-09-06 21:23:46,192 - INFO - ✓ Successfully processed PEG
+2025-09-06 21:23:46,199 - INFO - Processing ticker 78/111: PEP
+2025-09-06 21:23:46,199 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:23:58,706 - INFO - Starting processing for ticker: PEP
+2025-09-06 21:23:58,707 - INFO - Fetching data for PEP from 2023-09-07 to 2025-09-06
+2025-09-06 21:23:59,123 - INFO - Successfully retrieved 500 records for PEP
+2025-09-06 21:23:59,148 - INFO - Processed 79 records for PEP in 2023
+2025-09-06 21:23:59,149 - INFO - Processed 252 records for PEP in 2024
+2025-09-06 21:23:59,149 - INFO - Processed 169 records for PEP in 2025
+2025-09-06 21:23:59,153 - INFO - Created Parquet file: PEP_2023.parquet
+2025-09-06 21:23:59,510 - INFO - Successfully uploaded PEP_2023.parquet to S3 bucket root
+2025-09-06 21:23:59,512 - INFO - Cleaned up local file: PEP_2023.parquet
+2025-09-06 21:23:59,520 - INFO - Created Parquet file: PEP_2024.parquet
+2025-09-06 21:23:59,635 - INFO - Successfully uploaded PEP_2024.parquet to S3 bucket root
+2025-09-06 21:23:59,636 - INFO - Cleaned up local file: PEP_2024.parquet
+2025-09-06 21:23:59,641 - INFO - Created Parquet file: PEP_2025.parquet
+2025-09-06 21:23:59,759 - INFO - Successfully uploaded PEP_2025.parquet to S3 bucket root
+2025-09-06 21:23:59,760 - INFO - Cleaned up local file: PEP_2025.parquet
+2025-09-06 21:23:59,760 - INFO - Completed processing PEP: 3/3 files successful
+2025-09-06 21:23:59,760 - INFO - ✓ Successfully processed PEP
+2025-09-06 21:23:59,760 - INFO - Processing ticker 79/111: PG
+2025-09-06 21:23:59,760 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:24:12,261 - INFO - Starting processing for ticker: PG
+2025-09-06 21:24:12,263 - INFO - Fetching data for PG from 2023-09-07 to 2025-09-06
+2025-09-06 21:24:12,723 - INFO - Successfully retrieved 500 records for PG
+2025-09-06 21:24:12,741 - INFO - Processed 79 records for PG in 2023
+2025-09-06 21:24:12,741 - INFO - Processed 252 records for PG in 2024
+2025-09-06 21:24:12,741 - INFO - Processed 169 records for PG in 2025
+2025-09-06 21:24:12,743 - INFO - Created Parquet file: PG_2023.parquet
+2025-09-06 21:24:13,054 - INFO - Successfully uploaded PG_2023.parquet to S3 bucket root
+2025-09-06 21:24:13,054 - INFO - Cleaned up local file: PG_2023.parquet
+2025-09-06 21:24:13,058 - INFO - Created Parquet file: PG_2024.parquet
+2025-09-06 21:24:13,175 - INFO - Successfully uploaded PG_2024.parquet to S3 bucket root
+2025-09-06 21:24:13,176 - INFO - Cleaned up local file: PG_2024.parquet
+2025-09-06 21:24:13,180 - INFO - Created Parquet file: PG_2025.parquet
+2025-09-06 21:24:13,296 - INFO - Successfully uploaded PG_2025.parquet to S3 bucket root
+2025-09-06 21:24:13,296 - INFO - Cleaned up local file: PG_2025.parquet
+2025-09-06 21:24:13,297 - INFO - Completed processing PG: 3/3 files successful
+2025-09-06 21:24:13,297 - INFO - ✓ Successfully processed PG
+2025-09-06 21:24:13,297 - INFO - Processing ticker 80/111: PLD
+2025-09-06 21:24:13,297 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:24:25,800 - INFO - Starting processing for ticker: PLD
+2025-09-06 21:24:25,802 - INFO - Fetching data for PLD from 2023-09-07 to 2025-09-06
+2025-09-06 21:24:26,232 - INFO - Successfully retrieved 500 records for PLD
+2025-09-06 21:24:26,249 - INFO - Processed 79 records for PLD in 2023
+2025-09-06 21:24:26,249 - INFO - Processed 252 records for PLD in 2024
+2025-09-06 21:24:26,250 - INFO - Processed 169 records for PLD in 2025
+2025-09-06 21:24:26,253 - INFO - Created Parquet file: PLD_2023.parquet
+2025-09-06 21:24:26,486 - INFO - Successfully uploaded PLD_2023.parquet to S3 bucket root
+2025-09-06 21:24:26,487 - INFO - Cleaned up local file: PLD_2023.parquet
+2025-09-06 21:24:26,492 - INFO - Created Parquet file: PLD_2024.parquet
+2025-09-06 21:24:26,602 - INFO - Successfully uploaded PLD_2024.parquet to S3 bucket root
+2025-09-06 21:24:26,604 - INFO - Cleaned up local file: PLD_2024.parquet
+2025-09-06 21:24:26,609 - INFO - Created Parquet file: PLD_2025.parquet
+2025-09-06 21:24:26,724 - INFO - Successfully uploaded PLD_2025.parquet to S3 bucket root
+2025-09-06 21:24:26,726 - INFO - Cleaned up local file: PLD_2025.parquet
+2025-09-06 21:24:26,726 - INFO - Completed processing PLD: 3/3 files successful
+2025-09-06 21:24:26,727 - INFO - ✓ Successfully processed PLD
+2025-09-06 21:24:26,727 - INFO - Processing ticker 81/111: PM
+2025-09-06 21:24:26,727 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:24:39,231 - INFO - Starting processing for ticker: PM
+2025-09-06 21:24:39,232 - INFO - Fetching data for PM from 2023-09-07 to 2025-09-06
+2025-09-06 21:24:39,611 - INFO - Successfully retrieved 500 records for PM
+2025-09-06 21:24:39,625 - INFO - Processed 79 records for PM in 2023
+2025-09-06 21:24:39,625 - INFO - Processed 252 records for PM in 2024
+2025-09-06 21:24:39,626 - INFO - Processed 169 records for PM in 2025
+2025-09-06 21:24:39,629 - INFO - Created Parquet file: PM_2023.parquet
+2025-09-06 21:24:40,066 - INFO - Successfully uploaded PM_2023.parquet to S3 bucket root
+2025-09-06 21:24:40,067 - INFO - Cleaned up local file: PM_2023.parquet
+2025-09-06 21:24:40,071 - INFO - Created Parquet file: PM_2024.parquet
+2025-09-06 21:24:40,185 - INFO - Successfully uploaded PM_2024.parquet to S3 bucket root
+2025-09-06 21:24:40,185 - INFO - Cleaned up local file: PM_2024.parquet
+2025-09-06 21:24:40,189 - INFO - Created Parquet file: PM_2025.parquet
+2025-09-06 21:24:40,294 - INFO - Successfully uploaded PM_2025.parquet to S3 bucket root
+2025-09-06 21:24:40,295 - INFO - Cleaned up local file: PM_2025.parquet
+2025-09-06 21:24:40,295 - INFO - Completed processing PM: 3/3 files successful
+2025-09-06 21:24:40,295 - INFO - ✓ Successfully processed PM
+2025-09-06 21:24:40,295 - INFO - Processing ticker 82/111: PSA
+2025-09-06 21:24:40,295 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:24:52,801 - INFO - Starting processing for ticker: PSA
+2025-09-06 21:24:52,804 - INFO - Fetching data for PSA from 2023-09-07 to 2025-09-06
+2025-09-06 21:24:53,233 - INFO - Successfully retrieved 500 records for PSA
+2025-09-06 21:24:53,247 - INFO - Processed 79 records for PSA in 2023
+2025-09-06 21:24:53,247 - INFO - Processed 252 records for PSA in 2024
+2025-09-06 21:24:53,248 - INFO - Processed 169 records for PSA in 2025
+2025-09-06 21:24:53,252 - INFO - Created Parquet file: PSA_2023.parquet
+2025-09-06 21:24:53,626 - INFO - Successfully uploaded PSA_2023.parquet to S3 bucket root
+2025-09-06 21:24:53,627 - INFO - Cleaned up local file: PSA_2023.parquet
+2025-09-06 21:24:53,631 - INFO - Created Parquet file: PSA_2024.parquet
+2025-09-06 21:24:53,737 - INFO - Successfully uploaded PSA_2024.parquet to S3 bucket root
+2025-09-06 21:24:53,738 - INFO - Cleaned up local file: PSA_2024.parquet
+2025-09-06 21:24:53,743 - INFO - Created Parquet file: PSA_2025.parquet
+2025-09-06 21:24:53,854 - INFO - Successfully uploaded PSA_2025.parquet to S3 bucket root
+2025-09-06 21:24:53,855 - INFO - Cleaned up local file: PSA_2025.parquet
+2025-09-06 21:24:53,855 - INFO - Completed processing PSA: 3/3 files successful
+2025-09-06 21:24:53,855 - INFO - ✓ Successfully processed PSA
+2025-09-06 21:24:53,855 - INFO - Processing ticker 83/111: PSX
+2025-09-06 21:24:53,855 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:25:06,368 - INFO - Starting processing for ticker: PSX
+2025-09-06 21:25:06,369 - INFO - Fetching data for PSX from 2023-09-07 to 2025-09-06
+2025-09-06 21:25:06,860 - INFO - Successfully retrieved 500 records for PSX
+2025-09-06 21:25:06,875 - INFO - Processed 79 records for PSX in 2023
+2025-09-06 21:25:06,876 - INFO - Processed 252 records for PSX in 2024
+2025-09-06 21:25:06,876 - INFO - Processed 169 records for PSX in 2025
+2025-09-06 21:25:06,878 - INFO - Created Parquet file: PSX_2023.parquet
+2025-09-06 21:25:07,172 - INFO - Successfully uploaded PSX_2023.parquet to S3 bucket root
+2025-09-06 21:25:07,173 - INFO - Cleaned up local file: PSX_2023.parquet
+2025-09-06 21:25:07,177 - INFO - Created Parquet file: PSX_2024.parquet
+2025-09-06 21:25:07,281 - INFO - Successfully uploaded PSX_2024.parquet to S3 bucket root
+2025-09-06 21:25:07,283 - INFO - Cleaned up local file: PSX_2024.parquet
+2025-09-06 21:25:07,289 - INFO - Created Parquet file: PSX_2025.parquet
+2025-09-06 21:25:07,407 - INFO - Successfully uploaded PSX_2025.parquet to S3 bucket root
+2025-09-06 21:25:07,408 - INFO - Cleaned up local file: PSX_2025.parquet
+2025-09-06 21:25:07,408 - INFO - Completed processing PSX: 3/3 files successful
+2025-09-06 21:25:07,408 - INFO - ✓ Successfully processed PSX
+2025-09-06 21:25:07,408 - INFO - Processing ticker 84/111: RTX
+2025-09-06 21:25:07,408 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:25:19,909 - INFO - Starting processing for ticker: RTX
+2025-09-06 21:25:19,910 - INFO - Fetching data for RTX from 2023-09-07 to 2025-09-06
+2025-09-06 21:25:20,289 - INFO - Successfully retrieved 500 records for RTX
+2025-09-06 21:25:20,303 - INFO - Processed 79 records for RTX in 2023
+2025-09-06 21:25:20,304 - INFO - Processed 252 records for RTX in 2024
+2025-09-06 21:25:20,304 - INFO - Processed 169 records for RTX in 2025
+2025-09-06 21:25:20,307 - INFO - Created Parquet file: RTX_2023.parquet
+2025-09-06 21:25:20,642 - INFO - Successfully uploaded RTX_2023.parquet to S3 bucket root
+2025-09-06 21:25:20,643 - INFO - Cleaned up local file: RTX_2023.parquet
+2025-09-06 21:25:20,649 - INFO - Created Parquet file: RTX_2024.parquet
+2025-09-06 21:25:20,786 - INFO - Successfully uploaded RTX_2024.parquet to S3 bucket root
+2025-09-06 21:25:20,787 - INFO - Cleaned up local file: RTX_2024.parquet
+2025-09-06 21:25:20,790 - INFO - Created Parquet file: RTX_2025.parquet
+2025-09-06 21:25:20,903 - INFO - Successfully uploaded RTX_2025.parquet to S3 bucket root
+2025-09-06 21:25:20,903 - INFO - Cleaned up local file: RTX_2025.parquet
+2025-09-06 21:25:20,905 - INFO - Completed processing RTX: 3/3 files successful
+2025-09-06 21:25:20,906 - INFO - ✓ Successfully processed RTX
+2025-09-06 21:25:20,906 - INFO - Processing ticker 85/111: SBUX
+2025-09-06 21:25:20,906 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:25:33,409 - INFO - Starting processing for ticker: SBUX
+2025-09-06 21:25:33,411 - INFO - Fetching data for SBUX from 2023-09-07 to 2025-09-06
+2025-09-06 21:25:33,872 - INFO - Successfully retrieved 500 records for SBUX
+2025-09-06 21:25:33,899 - INFO - Processed 79 records for SBUX in 2023
+2025-09-06 21:25:33,899 - INFO - Processed 252 records for SBUX in 2024
+2025-09-06 21:25:33,899 - INFO - Processed 169 records for SBUX in 2025
+2025-09-06 21:25:33,904 - INFO - Created Parquet file: SBUX_2023.parquet
+2025-09-06 21:25:34,343 - INFO - Successfully uploaded SBUX_2023.parquet to S3 bucket root
+2025-09-06 21:25:34,344 - INFO - Cleaned up local file: SBUX_2023.parquet
+2025-09-06 21:25:34,350 - INFO - Created Parquet file: SBUX_2024.parquet
+2025-09-06 21:25:34,460 - INFO - Successfully uploaded SBUX_2024.parquet to S3 bucket root
+2025-09-06 21:25:34,461 - INFO - Cleaned up local file: SBUX_2024.parquet
+2025-09-06 21:25:34,464 - INFO - Created Parquet file: SBUX_2025.parquet
+2025-09-06 21:25:34,607 - INFO - Successfully uploaded SBUX_2025.parquet to S3 bucket root
+2025-09-06 21:25:34,607 - INFO - Cleaned up local file: SBUX_2025.parquet
+2025-09-06 21:25:34,608 - INFO - Completed processing SBUX: 3/3 files successful
+2025-09-06 21:25:34,608 - INFO - ✓ Successfully processed SBUX
+2025-09-06 21:25:34,608 - INFO - Processing ticker 86/111: SHW
+2025-09-06 21:25:34,608 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:25:47,110 - INFO - Starting processing for ticker: SHW
+2025-09-06 21:25:47,111 - INFO - Fetching data for SHW from 2023-09-07 to 2025-09-06
+2025-09-06 21:25:47,514 - INFO - Successfully retrieved 500 records for SHW
+2025-09-06 21:25:47,533 - INFO - Processed 79 records for SHW in 2023
+2025-09-06 21:25:47,533 - INFO - Processed 252 records for SHW in 2024
+2025-09-06 21:25:47,533 - INFO - Processed 169 records for SHW in 2025
+2025-09-06 21:25:47,535 - INFO - Created Parquet file: SHW_2023.parquet
+2025-09-06 21:25:47,885 - INFO - Successfully uploaded SHW_2023.parquet to S3 bucket root
+2025-09-06 21:25:47,885 - INFO - Cleaned up local file: SHW_2023.parquet
+2025-09-06 21:25:47,889 - INFO - Created Parquet file: SHW_2024.parquet
+2025-09-06 21:25:47,994 - INFO - Successfully uploaded SHW_2024.parquet to S3 bucket root
+2025-09-06 21:25:47,996 - INFO - Cleaned up local file: SHW_2024.parquet
+2025-09-06 21:25:48,004 - INFO - Created Parquet file: SHW_2025.parquet
+2025-09-06 21:25:48,117 - INFO - Successfully uploaded SHW_2025.parquet to S3 bucket root
+2025-09-06 21:25:48,118 - INFO - Cleaned up local file: SHW_2025.parquet
+2025-09-06 21:25:48,118 - INFO - Completed processing SHW: 3/3 files successful
+2025-09-06 21:25:48,119 - INFO - ✓ Successfully processed SHW
+2025-09-06 21:25:48,119 - INFO - Processing ticker 87/111: SLB
+2025-09-06 21:25:48,119 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:26:00,625 - INFO - Starting processing for ticker: SLB
+2025-09-06 21:26:00,627 - INFO - Fetching data for SLB from 2023-09-07 to 2025-09-06
+2025-09-06 21:26:01,024 - INFO - Successfully retrieved 500 records for SLB
+2025-09-06 21:26:01,045 - INFO - Processed 79 records for SLB in 2023
+2025-09-06 21:26:01,046 - INFO - Processed 252 records for SLB in 2024
+2025-09-06 21:26:01,046 - INFO - Processed 169 records for SLB in 2025
+2025-09-06 21:26:01,053 - INFO - Created Parquet file: SLB_2023.parquet
+2025-09-06 21:26:01,713 - INFO - Successfully uploaded SLB_2023.parquet to S3 bucket root
+2025-09-06 21:26:01,713 - INFO - Cleaned up local file: SLB_2023.parquet
+2025-09-06 21:26:01,722 - INFO - Created Parquet file: SLB_2024.parquet
+2025-09-06 21:26:01,822 - INFO - Successfully uploaded SLB_2024.parquet to S3 bucket root
+2025-09-06 21:26:01,823 - INFO - Cleaned up local file: SLB_2024.parquet
+2025-09-06 21:26:01,825 - INFO - Created Parquet file: SLB_2025.parquet
+2025-09-06 21:26:01,933 - INFO - Successfully uploaded SLB_2025.parquet to S3 bucket root
+2025-09-06 21:26:01,933 - INFO - Cleaned up local file: SLB_2025.parquet
+2025-09-06 21:26:01,933 - INFO - Completed processing SLB: 3/3 files successful
+2025-09-06 21:26:01,934 - INFO - ✓ Successfully processed SLB
+2025-09-06 21:26:01,934 - INFO - Processing ticker 88/111: SO
+2025-09-06 21:26:01,934 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:26:14,438 - INFO - Starting processing for ticker: SO
+2025-09-06 21:26:14,440 - INFO - Fetching data for SO from 2023-09-07 to 2025-09-06
+2025-09-06 21:26:14,838 - INFO - Successfully retrieved 500 records for SO
+2025-09-06 21:26:14,856 - INFO - Processed 79 records for SO in 2023
+2025-09-06 21:26:14,856 - INFO - Processed 252 records for SO in 2024
+2025-09-06 21:26:14,857 - INFO - Processed 169 records for SO in 2025
+2025-09-06 21:26:14,863 - INFO - Created Parquet file: SO_2023.parquet
+2025-09-06 21:26:15,267 - INFO - Successfully uploaded SO_2023.parquet to S3 bucket root
+2025-09-06 21:26:15,268 - INFO - Cleaned up local file: SO_2023.parquet
+2025-09-06 21:26:15,273 - INFO - Created Parquet file: SO_2024.parquet
+2025-09-06 21:26:15,379 - INFO - Successfully uploaded SO_2024.parquet to S3 bucket root
+2025-09-06 21:26:15,380 - INFO - Cleaned up local file: SO_2024.parquet
+2025-09-06 21:26:15,385 - INFO - Created Parquet file: SO_2025.parquet
+2025-09-06 21:26:15,510 - INFO - Successfully uploaded SO_2025.parquet to S3 bucket root
+2025-09-06 21:26:15,511 - INFO - Cleaned up local file: SO_2025.parquet
+2025-09-06 21:26:15,511 - INFO - Completed processing SO: 3/3 files successful
+2025-09-06 21:26:15,511 - INFO - ✓ Successfully processed SO
+2025-09-06 21:26:15,511 - INFO - Processing ticker 89/111: SPG
+2025-09-06 21:26:15,511 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:26:28,020 - INFO - Starting processing for ticker: SPG
+2025-09-06 21:26:28,025 - INFO - Fetching data for SPG from 2023-09-07 to 2025-09-06
+2025-09-06 21:26:28,407 - INFO - Successfully retrieved 500 records for SPG
+2025-09-06 21:26:28,433 - INFO - Processed 79 records for SPG in 2023
+2025-09-06 21:26:28,434 - INFO - Processed 252 records for SPG in 2024
+2025-09-06 21:26:28,434 - INFO - Processed 169 records for SPG in 2025
+2025-09-06 21:26:28,439 - INFO - Created Parquet file: SPG_2023.parquet
+2025-09-06 21:26:28,714 - INFO - Successfully uploaded SPG_2023.parquet to S3 bucket root
+2025-09-06 21:26:28,715 - INFO - Cleaned up local file: SPG_2023.parquet
+2025-09-06 21:26:28,718 - INFO - Created Parquet file: SPG_2024.parquet
+2025-09-06 21:26:28,823 - INFO - Successfully uploaded SPG_2024.parquet to S3 bucket root
+2025-09-06 21:26:28,824 - INFO - Cleaned up local file: SPG_2024.parquet
+2025-09-06 21:26:28,828 - INFO - Created Parquet file: SPG_2025.parquet
+2025-09-06 21:26:28,936 - INFO - Successfully uploaded SPG_2025.parquet to S3 bucket root
+2025-09-06 21:26:28,937 - INFO - Cleaned up local file: SPG_2025.parquet
+2025-09-06 21:26:28,937 - INFO - Completed processing SPG: 3/3 files successful
+2025-09-06 21:26:28,938 - INFO - ✓ Successfully processed SPG
+2025-09-06 21:26:28,938 - INFO - Processing ticker 90/111: SPGI
+2025-09-06 21:26:28,938 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:26:41,445 - INFO - Starting processing for ticker: SPGI
+2025-09-06 21:26:41,453 - INFO - Fetching data for SPGI from 2023-09-07 to 2025-09-06
+2025-09-06 21:26:41,866 - INFO - Successfully retrieved 500 records for SPGI
+2025-09-06 21:26:41,887 - INFO - Processed 79 records for SPGI in 2023
+2025-09-06 21:26:41,887 - INFO - Processed 252 records for SPGI in 2024
+2025-09-06 21:26:41,887 - INFO - Processed 169 records for SPGI in 2025
+2025-09-06 21:26:41,889 - INFO - Created Parquet file: SPGI_2023.parquet
+2025-09-06 21:26:42,254 - INFO - Successfully uploaded SPGI_2023.parquet to S3 bucket root
+2025-09-06 21:26:42,254 - INFO - Cleaned up local file: SPGI_2023.parquet
+2025-09-06 21:26:42,257 - INFO - Created Parquet file: SPGI_2024.parquet
+2025-09-06 21:26:42,357 - INFO - Successfully uploaded SPGI_2024.parquet to S3 bucket root
+2025-09-06 21:26:42,358 - INFO - Cleaned up local file: SPGI_2024.parquet
+2025-09-06 21:26:42,362 - INFO - Created Parquet file: SPGI_2025.parquet
+2025-09-06 21:26:42,473 - INFO - Successfully uploaded SPGI_2025.parquet to S3 bucket root
+2025-09-06 21:26:42,473 - INFO - Cleaned up local file: SPGI_2025.parquet
+2025-09-06 21:26:42,474 - INFO - Completed processing SPGI: 3/3 files successful
+2025-09-06 21:26:42,474 - INFO - ✓ Successfully processed SPGI
+2025-09-06 21:26:42,474 - INFO - Processing ticker 91/111: SRE
+2025-09-06 21:26:42,474 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:26:54,978 - INFO - Starting processing for ticker: SRE
+2025-09-06 21:26:54,980 - INFO - Fetching data for SRE from 2023-09-07 to 2025-09-06
+2025-09-06 21:26:55,415 - INFO - Successfully retrieved 500 records for SRE
+2025-09-06 21:26:55,444 - INFO - Processed 79 records for SRE in 2023
+2025-09-06 21:26:55,444 - INFO - Processed 252 records for SRE in 2024
+2025-09-06 21:26:55,445 - INFO - Processed 169 records for SRE in 2025
+2025-09-06 21:26:55,448 - INFO - Created Parquet file: SRE_2023.parquet
+2025-09-06 21:26:55,812 - INFO - Successfully uploaded SRE_2023.parquet to S3 bucket root
+2025-09-06 21:26:55,813 - INFO - Cleaned up local file: SRE_2023.parquet
+2025-09-06 21:26:55,820 - INFO - Created Parquet file: SRE_2024.parquet
+2025-09-06 21:26:55,949 - INFO - Successfully uploaded SRE_2024.parquet to S3 bucket root
+2025-09-06 21:26:55,949 - INFO - Cleaned up local file: SRE_2024.parquet
+2025-09-06 21:26:55,954 - INFO - Created Parquet file: SRE_2025.parquet
+2025-09-06 21:26:56,049 - INFO - Successfully uploaded SRE_2025.parquet to S3 bucket root
+2025-09-06 21:26:56,049 - INFO - Cleaned up local file: SRE_2025.parquet
+2025-09-06 21:26:56,049 - INFO - Completed processing SRE: 3/3 files successful
+2025-09-06 21:26:56,050 - INFO - ✓ Successfully processed SRE
+2025-09-06 21:26:56,050 - INFO - Processing ticker 92/111: T
+2025-09-06 21:26:56,050 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:27:08,556 - INFO - Starting processing for ticker: T
+2025-09-06 21:27:08,559 - INFO - Fetching data for T from 2023-09-07 to 2025-09-06
+2025-09-06 21:27:09,053 - INFO - Successfully retrieved 500 records for T
+2025-09-06 21:27:09,075 - INFO - Processed 79 records for T in 2023
+2025-09-06 21:27:09,075 - INFO - Processed 252 records for T in 2024
+2025-09-06 21:27:09,075 - INFO - Processed 169 records for T in 2025
+2025-09-06 21:27:09,078 - INFO - Created Parquet file: T_2023.parquet
+2025-09-06 21:27:09,465 - INFO - Successfully uploaded T_2023.parquet to S3 bucket root
+2025-09-06 21:27:09,466 - INFO - Cleaned up local file: T_2023.parquet
+2025-09-06 21:27:09,470 - INFO - Created Parquet file: T_2024.parquet
+2025-09-06 21:27:09,581 - INFO - Successfully uploaded T_2024.parquet to S3 bucket root
+2025-09-06 21:27:09,582 - INFO - Cleaned up local file: T_2024.parquet
+2025-09-06 21:27:09,587 - INFO - Created Parquet file: T_2025.parquet
+2025-09-06 21:27:09,705 - INFO - Successfully uploaded T_2025.parquet to S3 bucket root
+2025-09-06 21:27:09,705 - INFO - Cleaned up local file: T_2025.parquet
+2025-09-06 21:27:09,706 - INFO - Completed processing T: 3/3 files successful
+2025-09-06 21:27:09,706 - INFO - ✓ Successfully processed T
+2025-09-06 21:27:09,707 - INFO - Processing ticker 93/111: TGT
+2025-09-06 21:27:09,707 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:27:22,213 - INFO - Starting processing for ticker: TGT
+2025-09-06 21:27:22,223 - INFO - Fetching data for TGT from 2023-09-07 to 2025-09-06
+2025-09-06 21:27:22,640 - INFO - Successfully retrieved 500 records for TGT
+2025-09-06 21:27:22,661 - INFO - Processed 79 records for TGT in 2023
+2025-09-06 21:27:22,661 - INFO - Processed 252 records for TGT in 2024
+2025-09-06 21:27:22,662 - INFO - Processed 169 records for TGT in 2025
+2025-09-06 21:27:22,666 - INFO - Created Parquet file: TGT_2023.parquet
+2025-09-06 21:27:23,107 - INFO - Successfully uploaded TGT_2023.parquet to S3 bucket root
+2025-09-06 21:27:23,108 - INFO - Cleaned up local file: TGT_2023.parquet
+2025-09-06 21:27:23,112 - INFO - Created Parquet file: TGT_2024.parquet
+2025-09-06 21:27:23,226 - INFO - Successfully uploaded TGT_2024.parquet to S3 bucket root
+2025-09-06 21:27:23,226 - INFO - Cleaned up local file: TGT_2024.parquet
+2025-09-06 21:27:23,230 - INFO - Created Parquet file: TGT_2025.parquet
+2025-09-06 21:27:23,347 - INFO - Successfully uploaded TGT_2025.parquet to S3 bucket root
+2025-09-06 21:27:23,347 - INFO - Cleaned up local file: TGT_2025.parquet
+2025-09-06 21:27:23,347 - INFO - Completed processing TGT: 3/3 files successful
+2025-09-06 21:27:23,348 - INFO - ✓ Successfully processed TGT
+2025-09-06 21:27:23,348 - INFO - Processing ticker 94/111: TJX
+2025-09-06 21:27:23,348 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:27:35,864 - INFO - Starting processing for ticker: TJX
+2025-09-06 21:27:35,868 - INFO - Fetching data for TJX from 2023-09-07 to 2025-09-06
+2025-09-06 21:27:36,303 - INFO - Successfully retrieved 500 records for TJX
+2025-09-06 21:27:36,322 - INFO - Processed 79 records for TJX in 2023
+2025-09-06 21:27:36,323 - INFO - Processed 252 records for TJX in 2024
+2025-09-06 21:27:36,323 - INFO - Processed 169 records for TJX in 2025
+2025-09-06 21:27:36,327 - INFO - Created Parquet file: TJX_2023.parquet
+2025-09-06 21:27:36,562 - INFO - Successfully uploaded TJX_2023.parquet to S3 bucket root
+2025-09-06 21:27:36,564 - INFO - Cleaned up local file: TJX_2023.parquet
+2025-09-06 21:27:36,568 - INFO - Created Parquet file: TJX_2024.parquet
+2025-09-06 21:27:36,670 - INFO - Successfully uploaded TJX_2024.parquet to S3 bucket root
+2025-09-06 21:27:36,670 - INFO - Cleaned up local file: TJX_2024.parquet
+2025-09-06 21:27:36,675 - INFO - Created Parquet file: TJX_2025.parquet
+2025-09-06 21:27:36,773 - INFO - Successfully uploaded TJX_2025.parquet to S3 bucket root
+2025-09-06 21:27:36,774 - INFO - Cleaned up local file: TJX_2025.parquet
+2025-09-06 21:27:36,774 - INFO - Completed processing TJX: 3/3 files successful
+2025-09-06 21:27:36,775 - INFO - ✓ Successfully processed TJX
+2025-09-06 21:27:36,775 - INFO - Processing ticker 95/111: TMO
+2025-09-06 21:27:36,775 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:27:49,276 - INFO - Starting processing for ticker: TMO
+2025-09-06 21:27:49,277 - INFO - Fetching data for TMO from 2023-09-07 to 2025-09-06
+2025-09-06 21:27:49,682 - INFO - Successfully retrieved 500 records for TMO
+2025-09-06 21:27:49,699 - INFO - Processed 79 records for TMO in 2023
+2025-09-06 21:27:49,699 - INFO - Processed 252 records for TMO in 2024
+2025-09-06 21:27:49,700 - INFO - Processed 169 records for TMO in 2025
+2025-09-06 21:27:49,703 - INFO - Created Parquet file: TMO_2023.parquet
+2025-09-06 21:27:50,106 - INFO - Successfully uploaded TMO_2023.parquet to S3 bucket root
+2025-09-06 21:27:50,107 - INFO - Cleaned up local file: TMO_2023.parquet
+2025-09-06 21:27:50,111 - INFO - Created Parquet file: TMO_2024.parquet
+2025-09-06 21:27:50,223 - INFO - Successfully uploaded TMO_2024.parquet to S3 bucket root
+2025-09-06 21:27:50,224 - INFO - Cleaned up local file: TMO_2024.parquet
+2025-09-06 21:27:50,228 - INFO - Created Parquet file: TMO_2025.parquet
+2025-09-06 21:27:50,343 - INFO - Successfully uploaded TMO_2025.parquet to S3 bucket root
+2025-09-06 21:27:50,344 - INFO - Cleaned up local file: TMO_2025.parquet
+2025-09-06 21:27:50,344 - INFO - Completed processing TMO: 3/3 files successful
+2025-09-06 21:27:50,344 - INFO - ✓ Successfully processed TMO
+2025-09-06 21:27:50,344 - INFO - Processing ticker 96/111: TMUS
+2025-09-06 21:27:50,344 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:28:02,849 - INFO - Starting processing for ticker: TMUS
+2025-09-06 21:28:02,851 - INFO - Fetching data for TMUS from 2023-09-07 to 2025-09-06
+2025-09-06 21:28:03,294 - INFO - Successfully retrieved 500 records for TMUS
+2025-09-06 21:28:03,326 - INFO - Processed 79 records for TMUS in 2023
+2025-09-06 21:28:03,327 - INFO - Processed 252 records for TMUS in 2024
+2025-09-06 21:28:03,327 - INFO - Processed 169 records for TMUS in 2025
+2025-09-06 21:28:03,330 - INFO - Created Parquet file: TMUS_2023.parquet
+2025-09-06 21:28:03,564 - INFO - Successfully uploaded TMUS_2023.parquet to S3 bucket root
+2025-09-06 21:28:03,565 - INFO - Cleaned up local file: TMUS_2023.parquet
+2025-09-06 21:28:03,570 - INFO - Created Parquet file: TMUS_2024.parquet
+2025-09-06 21:28:03,682 - INFO - Successfully uploaded TMUS_2024.parquet to S3 bucket root
+2025-09-06 21:28:03,683 - INFO - Cleaned up local file: TMUS_2024.parquet
+2025-09-06 21:28:03,687 - INFO - Created Parquet file: TMUS_2025.parquet
+2025-09-06 21:28:03,794 - INFO - Successfully uploaded TMUS_2025.parquet to S3 bucket root
+2025-09-06 21:28:03,795 - INFO - Cleaned up local file: TMUS_2025.parquet
+2025-09-06 21:28:03,795 - INFO - Completed processing TMUS: 3/3 files successful
+2025-09-06 21:28:03,795 - INFO - ✓ Successfully processed TMUS
+2025-09-06 21:28:03,796 - INFO - Processing ticker 97/111: TSLA
+2025-09-06 21:28:03,796 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:28:16,301 - INFO - Starting processing for ticker: TSLA
+2025-09-06 21:28:16,303 - INFO - Fetching data for TSLA from 2023-09-07 to 2025-09-06
+2025-09-06 21:28:16,720 - INFO - Successfully retrieved 500 records for TSLA
+2025-09-06 21:28:16,734 - INFO - Processed 79 records for TSLA in 2023
+2025-09-06 21:28:16,735 - INFO - Processed 252 records for TSLA in 2024
+2025-09-06 21:28:16,735 - INFO - Processed 169 records for TSLA in 2025
+2025-09-06 21:28:16,739 - INFO - Created Parquet file: TSLA_2023.parquet
+2025-09-06 21:28:17,026 - INFO - Successfully uploaded TSLA_2023.parquet to S3 bucket root
+2025-09-06 21:28:17,026 - INFO - Cleaned up local file: TSLA_2023.parquet
+2025-09-06 21:28:17,031 - INFO - Created Parquet file: TSLA_2024.parquet
+2025-09-06 21:28:17,141 - INFO - Successfully uploaded TSLA_2024.parquet to S3 bucket root
+2025-09-06 21:28:17,142 - INFO - Cleaned up local file: TSLA_2024.parquet
+2025-09-06 21:28:17,147 - INFO - Created Parquet file: TSLA_2025.parquet
+2025-09-06 21:28:17,265 - INFO - Successfully uploaded TSLA_2025.parquet to S3 bucket root
+2025-09-06 21:28:17,265 - INFO - Cleaned up local file: TSLA_2025.parquet
+2025-09-06 21:28:17,266 - INFO - Completed processing TSLA: 3/3 files successful
+2025-09-06 21:28:17,266 - INFO - ✓ Successfully processed TSLA
+2025-09-06 21:28:17,266 - INFO - Processing ticker 98/111: TTD
+2025-09-06 21:28:17,266 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:28:29,777 - INFO - Starting processing for ticker: TTD
+2025-09-06 21:28:29,782 - INFO - Fetching data for TTD from 2023-09-07 to 2025-09-06
+2025-09-06 21:28:30,225 - INFO - Successfully retrieved 500 records for TTD
+2025-09-06 21:28:30,242 - INFO - Processed 79 records for TTD in 2023
+2025-09-06 21:28:30,242 - INFO - Processed 252 records for TTD in 2024
+2025-09-06 21:28:30,243 - INFO - Processed 169 records for TTD in 2025
+2025-09-06 21:28:30,246 - INFO - Created Parquet file: TTD_2023.parquet
+2025-09-06 21:28:30,601 - INFO - Successfully uploaded TTD_2023.parquet to S3 bucket root
+2025-09-06 21:28:30,603 - INFO - Cleaned up local file: TTD_2023.parquet
+2025-09-06 21:28:30,606 - INFO - Created Parquet file: TTD_2024.parquet
+2025-09-06 21:28:30,710 - INFO - Successfully uploaded TTD_2024.parquet to S3 bucket root
+2025-09-06 21:28:30,711 - INFO - Cleaned up local file: TTD_2024.parquet
+2025-09-06 21:28:30,717 - INFO - Created Parquet file: TTD_2025.parquet
+2025-09-06 21:28:30,828 - INFO - Successfully uploaded TTD_2025.parquet to S3 bucket root
+2025-09-06 21:28:30,828 - INFO - Cleaned up local file: TTD_2025.parquet
+2025-09-06 21:28:30,828 - INFO - Completed processing TTD: 3/3 files successful
+2025-09-06 21:28:30,829 - INFO - ✓ Successfully processed TTD
+2025-09-06 21:28:30,829 - INFO - Processing ticker 99/111: UBER
+2025-09-06 21:28:30,829 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:28:43,331 - INFO - Starting processing for ticker: UBER
+2025-09-06 21:28:43,332 - INFO - Fetching data for UBER from 2023-09-07 to 2025-09-06
+2025-09-06 21:28:43,763 - INFO - Successfully retrieved 500 records for UBER
+2025-09-06 21:28:43,791 - INFO - Processed 79 records for UBER in 2023
+2025-09-06 21:28:43,791 - INFO - Processed 252 records for UBER in 2024
+2025-09-06 21:28:43,792 - INFO - Processed 169 records for UBER in 2025
+2025-09-06 21:28:43,796 - INFO - Created Parquet file: UBER_2023.parquet
+2025-09-06 21:28:44,226 - INFO - Successfully uploaded UBER_2023.parquet to S3 bucket root
+2025-09-06 21:28:44,227 - INFO - Cleaned up local file: UBER_2023.parquet
+2025-09-06 21:28:44,231 - INFO - Created Parquet file: UBER_2024.parquet
+2025-09-06 21:28:44,338 - INFO - Successfully uploaded UBER_2024.parquet to S3 bucket root
+2025-09-06 21:28:44,340 - INFO - Cleaned up local file: UBER_2024.parquet
+2025-09-06 21:28:44,354 - INFO - Created Parquet file: UBER_2025.parquet
+2025-09-06 21:28:44,473 - INFO - Successfully uploaded UBER_2025.parquet to S3 bucket root
+2025-09-06 21:28:44,473 - INFO - Cleaned up local file: UBER_2025.parquet
+2025-09-06 21:28:44,473 - INFO - Completed processing UBER: 3/3 files successful
+2025-09-06 21:28:44,473 - INFO - ✓ Successfully processed UBER
+2025-09-06 21:28:44,474 - INFO - Processing ticker 100/111: UNH
+2025-09-06 21:28:44,474 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:28:56,979 - INFO - Starting processing for ticker: UNH
+2025-09-06 21:28:56,981 - INFO - Fetching data for UNH from 2023-09-07 to 2025-09-06
+2025-09-06 21:28:57,408 - INFO - Successfully retrieved 500 records for UNH
+2025-09-06 21:28:57,434 - INFO - Processed 79 records for UNH in 2023
+2025-09-06 21:28:57,434 - INFO - Processed 252 records for UNH in 2024
+2025-09-06 21:28:57,434 - INFO - Processed 169 records for UNH in 2025
+2025-09-06 21:28:57,439 - INFO - Created Parquet file: UNH_2023.parquet
+2025-09-06 21:28:57,699 - INFO - Successfully uploaded UNH_2023.parquet to S3 bucket root
+2025-09-06 21:28:57,700 - INFO - Cleaned up local file: UNH_2023.parquet
+2025-09-06 21:28:57,705 - INFO - Created Parquet file: UNH_2024.parquet
+2025-09-06 21:28:57,822 - INFO - Successfully uploaded UNH_2024.parquet to S3 bucket root
+2025-09-06 21:28:57,823 - INFO - Cleaned up local file: UNH_2024.parquet
+2025-09-06 21:28:57,828 - INFO - Created Parquet file: UNH_2025.parquet
+2025-09-06 21:28:57,934 - INFO - Successfully uploaded UNH_2025.parquet to S3 bucket root
+2025-09-06 21:28:57,934 - INFO - Cleaned up local file: UNH_2025.parquet
+2025-09-06 21:28:57,935 - INFO - Completed processing UNH: 3/3 files successful
+2025-09-06 21:28:57,935 - INFO - ✓ Successfully processed UNH
+2025-09-06 21:28:57,935 - INFO - Processing ticker 101/111: UNP
+2025-09-06 21:28:57,936 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:29:10,440 - INFO - Starting processing for ticker: UNP
+2025-09-06 21:29:10,444 - INFO - Fetching data for UNP from 2023-09-07 to 2025-09-06
+2025-09-06 21:29:10,910 - INFO - Successfully retrieved 500 records for UNP
+2025-09-06 21:29:10,930 - INFO - Processed 79 records for UNP in 2023
+2025-09-06 21:29:10,931 - INFO - Processed 252 records for UNP in 2024
+2025-09-06 21:29:10,931 - INFO - Processed 169 records for UNP in 2025
+2025-09-06 21:29:10,935 - INFO - Created Parquet file: UNP_2023.parquet
+2025-09-06 21:29:11,360 - INFO - Successfully uploaded UNP_2023.parquet to S3 bucket root
+2025-09-06 21:29:11,360 - INFO - Cleaned up local file: UNP_2023.parquet
+2025-09-06 21:29:11,366 - INFO - Created Parquet file: UNP_2024.parquet
+2025-09-06 21:29:11,482 - INFO - Successfully uploaded UNP_2024.parquet to S3 bucket root
+2025-09-06 21:29:11,482 - INFO - Cleaned up local file: UNP_2024.parquet
+2025-09-06 21:29:11,486 - INFO - Created Parquet file: UNP_2025.parquet
+2025-09-06 21:29:11,593 - INFO - Successfully uploaded UNP_2025.parquet to S3 bucket root
+2025-09-06 21:29:11,593 - INFO - Cleaned up local file: UNP_2025.parquet
+2025-09-06 21:29:11,594 - INFO - Completed processing UNP: 3/3 files successful
+2025-09-06 21:29:11,594 - INFO - ✓ Successfully processed UNP
+2025-09-06 21:29:11,594 - INFO - Processing ticker 102/111: V
+2025-09-06 21:29:11,594 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:29:24,101 - INFO - Starting processing for ticker: V
+2025-09-06 21:29:24,103 - INFO - Fetching data for V from 2023-09-07 to 2025-09-06
+2025-09-06 21:29:24,515 - INFO - Successfully retrieved 500 records for V
+2025-09-06 21:29:24,536 - INFO - Processed 79 records for V in 2023
+2025-09-06 21:29:24,536 - INFO - Processed 252 records for V in 2024
+2025-09-06 21:29:24,537 - INFO - Processed 169 records for V in 2025
+2025-09-06 21:29:24,545 - INFO - Created Parquet file: V_2023.parquet
+2025-09-06 21:29:24,782 - INFO - Successfully uploaded V_2023.parquet to S3 bucket root
+2025-09-06 21:29:24,783 - INFO - Cleaned up local file: V_2023.parquet
+2025-09-06 21:29:24,790 - INFO - Created Parquet file: V_2024.parquet
+2025-09-06 21:29:24,929 - INFO - Successfully uploaded V_2024.parquet to S3 bucket root
+2025-09-06 21:29:24,931 - INFO - Cleaned up local file: V_2024.parquet
+2025-09-06 21:29:24,938 - INFO - Created Parquet file: V_2025.parquet
+2025-09-06 21:29:25,041 - INFO - Successfully uploaded V_2025.parquet to S3 bucket root
+2025-09-06 21:29:25,042 - INFO - Cleaned up local file: V_2025.parquet
+2025-09-06 21:29:25,042 - INFO - Completed processing V: 3/3 files successful
+2025-09-06 21:29:25,043 - INFO - ✓ Successfully processed V
+2025-09-06 21:29:25,043 - INFO - Processing ticker 103/111: VMC
+2025-09-06 21:29:25,043 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:29:37,544 - INFO - Starting processing for ticker: VMC
+2025-09-06 21:29:37,544 - INFO - Fetching data for VMC from 2023-09-07 to 2025-09-06
+2025-09-06 21:29:37,929 - INFO - Successfully retrieved 500 records for VMC
+2025-09-06 21:29:37,943 - INFO - Processed 79 records for VMC in 2023
+2025-09-06 21:29:37,944 - INFO - Processed 252 records for VMC in 2024
+2025-09-06 21:29:37,944 - INFO - Processed 169 records for VMC in 2025
+2025-09-06 21:29:37,948 - INFO - Created Parquet file: VMC_2023.parquet
+2025-09-06 21:29:38,255 - INFO - Successfully uploaded VMC_2023.parquet to S3 bucket root
+2025-09-06 21:29:38,256 - INFO - Cleaned up local file: VMC_2023.parquet
+2025-09-06 21:29:38,262 - INFO - Created Parquet file: VMC_2024.parquet
+2025-09-06 21:29:38,373 - INFO - Successfully uploaded VMC_2024.parquet to S3 bucket root
+2025-09-06 21:29:38,375 - INFO - Cleaned up local file: VMC_2024.parquet
+2025-09-06 21:29:38,380 - INFO - Created Parquet file: VMC_2025.parquet
+2025-09-06 21:29:38,490 - INFO - Successfully uploaded VMC_2025.parquet to S3 bucket root
+2025-09-06 21:29:38,490 - INFO - Cleaned up local file: VMC_2025.parquet
+2025-09-06 21:29:38,491 - INFO - Completed processing VMC: 3/3 files successful
+2025-09-06 21:29:38,491 - INFO - ✓ Successfully processed VMC
+2025-09-06 21:29:38,492 - INFO - Processing ticker 104/111: VOO
+2025-09-06 21:29:38,492 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:29:50,997 - INFO - Starting processing for ticker: VOO
+2025-09-06 21:29:50,997 - INFO - Fetching data for VOO from 2023-09-07 to 2025-09-06
+2025-09-06 21:29:51,480 - INFO - Successfully retrieved 500 records for VOO
+2025-09-06 21:29:51,500 - INFO - Processed 79 records for VOO in 2023
+2025-09-06 21:29:51,501 - INFO - Processed 252 records for VOO in 2024
+2025-09-06 21:29:51,501 - INFO - Processed 169 records for VOO in 2025
+2025-09-06 21:29:51,505 - INFO - Created Parquet file: VOO_2023.parquet
+2025-09-06 21:29:51,795 - INFO - Successfully uploaded VOO_2023.parquet to S3 bucket root
+2025-09-06 21:29:51,796 - INFO - Cleaned up local file: VOO_2023.parquet
+2025-09-06 21:29:51,808 - INFO - Created Parquet file: VOO_2024.parquet
+2025-09-06 21:29:51,905 - INFO - Successfully uploaded VOO_2024.parquet to S3 bucket root
+2025-09-06 21:29:51,907 - INFO - Cleaned up local file: VOO_2024.parquet
+2025-09-06 21:29:51,912 - INFO - Created Parquet file: VOO_2025.parquet
+2025-09-06 21:29:52,024 - INFO - Successfully uploaded VOO_2025.parquet to S3 bucket root
+2025-09-06 21:29:52,024 - INFO - Cleaned up local file: VOO_2025.parquet
+2025-09-06 21:29:52,026 - INFO - Completed processing VOO: 3/3 files successful
+2025-09-06 21:29:52,026 - INFO - ✓ Successfully processed VOO
+2025-09-06 21:29:52,026 - INFO - Processing ticker 105/111: VST
+2025-09-06 21:29:52,026 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:30:04,532 - INFO - Starting processing for ticker: VST
+2025-09-06 21:30:04,536 - INFO - Fetching data for VST from 2023-09-07 to 2025-09-06
+2025-09-06 21:30:04,987 - INFO - Successfully retrieved 500 records for VST
+2025-09-06 21:30:05,007 - INFO - Processed 79 records for VST in 2023
+2025-09-06 21:30:05,008 - INFO - Processed 252 records for VST in 2024
+2025-09-06 21:30:05,008 - INFO - Processed 169 records for VST in 2025
+2025-09-06 21:30:05,013 - INFO - Created Parquet file: VST_2023.parquet
+2025-09-06 21:30:05,375 - INFO - Successfully uploaded VST_2023.parquet to S3 bucket root
+2025-09-06 21:30:05,376 - INFO - Cleaned up local file: VST_2023.parquet
+2025-09-06 21:30:05,379 - INFO - Created Parquet file: VST_2024.parquet
+2025-09-06 21:30:05,492 - INFO - Successfully uploaded VST_2024.parquet to S3 bucket root
+2025-09-06 21:30:05,493 - INFO - Cleaned up local file: VST_2024.parquet
+2025-09-06 21:30:05,500 - INFO - Created Parquet file: VST_2025.parquet
+2025-09-06 21:30:05,628 - INFO - Successfully uploaded VST_2025.parquet to S3 bucket root
+2025-09-06 21:30:05,628 - INFO - Cleaned up local file: VST_2025.parquet
+2025-09-06 21:30:05,628 - INFO - Completed processing VST: 3/3 files successful
+2025-09-06 21:30:05,629 - INFO - ✓ Successfully processed VST
+2025-09-06 21:30:05,629 - INFO - Processing ticker 106/111: VZ
+2025-09-06 21:30:05,629 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:30:18,135 - INFO - Starting processing for ticker: VZ
+2025-09-06 21:30:18,137 - INFO - Fetching data for VZ from 2023-09-07 to 2025-09-06
+2025-09-06 21:30:18,524 - INFO - Successfully retrieved 500 records for VZ
+2025-09-06 21:30:18,541 - INFO - Processed 79 records for VZ in 2023
+2025-09-06 21:30:18,542 - INFO - Processed 252 records for VZ in 2024
+2025-09-06 21:30:18,542 - INFO - Processed 169 records for VZ in 2025
+2025-09-06 21:30:18,544 - INFO - Created Parquet file: VZ_2023.parquet
+2025-09-06 21:30:18,767 - INFO - Successfully uploaded VZ_2023.parquet to S3 bucket root
+2025-09-06 21:30:18,767 - INFO - Cleaned up local file: VZ_2023.parquet
+2025-09-06 21:30:18,771 - INFO - Created Parquet file: VZ_2024.parquet
+2025-09-06 21:30:18,877 - INFO - Successfully uploaded VZ_2024.parquet to S3 bucket root
+2025-09-06 21:30:18,878 - INFO - Cleaned up local file: VZ_2024.parquet
+2025-09-06 21:30:18,883 - INFO - Created Parquet file: VZ_2025.parquet
+2025-09-06 21:30:18,993 - INFO - Successfully uploaded VZ_2025.parquet to S3 bucket root
+2025-09-06 21:30:18,994 - INFO - Cleaned up local file: VZ_2025.parquet
+2025-09-06 21:30:18,994 - INFO - Completed processing VZ: 3/3 files successful
+2025-09-06 21:30:18,995 - INFO - ✓ Successfully processed VZ
+2025-09-06 21:30:18,995 - INFO - Processing ticker 107/111: WELL
+2025-09-06 21:30:18,995 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:30:31,501 - INFO - Starting processing for ticker: WELL
+2025-09-06 21:30:31,506 - INFO - Fetching data for WELL from 2023-09-07 to 2025-09-06
+2025-09-06 21:30:31,997 - INFO - Successfully retrieved 500 records for WELL
+2025-09-06 21:30:32,038 - INFO - Processed 79 records for WELL in 2023
+2025-09-06 21:30:32,038 - INFO - Processed 252 records for WELL in 2024
+2025-09-06 21:30:32,038 - INFO - Processed 169 records for WELL in 2025
+2025-09-06 21:30:32,041 - INFO - Created Parquet file: WELL_2023.parquet
+2025-09-06 21:30:32,376 - INFO - Successfully uploaded WELL_2023.parquet to S3 bucket root
+2025-09-06 21:30:32,376 - INFO - Cleaned up local file: WELL_2023.parquet
+2025-09-06 21:30:32,380 - INFO - Created Parquet file: WELL_2024.parquet
+2025-09-06 21:30:32,490 - INFO - Successfully uploaded WELL_2024.parquet to S3 bucket root
+2025-09-06 21:30:32,490 - INFO - Cleaned up local file: WELL_2024.parquet
+2025-09-06 21:30:32,494 - INFO - Created Parquet file: WELL_2025.parquet
+2025-09-06 21:30:32,596 - INFO - Successfully uploaded WELL_2025.parquet to S3 bucket root
+2025-09-06 21:30:32,597 - INFO - Cleaned up local file: WELL_2025.parquet
+2025-09-06 21:30:32,597 - INFO - Completed processing WELL: 3/3 files successful
+2025-09-06 21:30:32,597 - INFO - ✓ Successfully processed WELL
+2025-09-06 21:30:32,597 - INFO - Processing ticker 108/111: WFC
+2025-09-06 21:30:32,597 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:30:45,103 - INFO - Starting processing for ticker: WFC
+2025-09-06 21:30:45,105 - INFO - Fetching data for WFC from 2023-09-07 to 2025-09-06
+2025-09-06 21:30:45,513 - INFO - Successfully retrieved 500 records for WFC
+2025-09-06 21:30:45,531 - INFO - Processed 79 records for WFC in 2023
+2025-09-06 21:30:45,532 - INFO - Processed 252 records for WFC in 2024
+2025-09-06 21:30:45,532 - INFO - Processed 169 records for WFC in 2025
+2025-09-06 21:30:45,535 - INFO - Created Parquet file: WFC_2023.parquet
+2025-09-06 21:30:45,834 - INFO - Successfully uploaded WFC_2023.parquet to S3 bucket root
+2025-09-06 21:30:45,835 - INFO - Cleaned up local file: WFC_2023.parquet
+2025-09-06 21:30:45,839 - INFO - Created Parquet file: WFC_2024.parquet
+2025-09-06 21:30:45,945 - INFO - Successfully uploaded WFC_2024.parquet to S3 bucket root
+2025-09-06 21:30:45,947 - INFO - Cleaned up local file: WFC_2024.parquet
+2025-09-06 21:30:45,952 - INFO - Created Parquet file: WFC_2025.parquet
+2025-09-06 21:30:46,067 - INFO - Successfully uploaded WFC_2025.parquet to S3 bucket root
+2025-09-06 21:30:46,068 - INFO - Cleaned up local file: WFC_2025.parquet
+2025-09-06 21:30:46,069 - INFO - Completed processing WFC: 3/3 files successful
+2025-09-06 21:30:46,069 - INFO - ✓ Successfully processed WFC
+2025-09-06 21:30:46,070 - INFO - Processing ticker 109/111: WMB
+2025-09-06 21:30:46,070 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:30:58,576 - INFO - Starting processing for ticker: WMB
+2025-09-06 21:30:58,577 - INFO - Fetching data for WMB from 2023-09-07 to 2025-09-06
+2025-09-06 21:30:59,088 - INFO - Successfully retrieved 500 records for WMB
+2025-09-06 21:30:59,107 - INFO - Processed 79 records for WMB in 2023
+2025-09-06 21:30:59,107 - INFO - Processed 252 records for WMB in 2024
+2025-09-06 21:30:59,107 - INFO - Processed 169 records for WMB in 2025
+2025-09-06 21:30:59,110 - INFO - Created Parquet file: WMB_2023.parquet
+2025-09-06 21:30:59,545 - INFO - Successfully uploaded WMB_2023.parquet to S3 bucket root
+2025-09-06 21:30:59,545 - INFO - Cleaned up local file: WMB_2023.parquet
+2025-09-06 21:30:59,551 - INFO - Created Parquet file: WMB_2024.parquet
+2025-09-06 21:30:59,684 - INFO - Successfully uploaded WMB_2024.parquet to S3 bucket root
+2025-09-06 21:30:59,684 - INFO - Cleaned up local file: WMB_2024.parquet
+2025-09-06 21:30:59,686 - INFO - Created Parquet file: WMB_2025.parquet
+2025-09-06 21:30:59,794 - INFO - Successfully uploaded WMB_2025.parquet to S3 bucket root
+2025-09-06 21:30:59,794 - INFO - Cleaned up local file: WMB_2025.parquet
+2025-09-06 21:30:59,794 - INFO - Completed processing WMB: 3/3 files successful
+2025-09-06 21:30:59,794 - INFO - ✓ Successfully processed WMB
+2025-09-06 21:30:59,794 - INFO - Processing ticker 110/111: WMT
+2025-09-06 21:30:59,794 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:31:12,295 - INFO - Starting processing for ticker: WMT
+2025-09-06 21:31:12,297 - INFO - Fetching data for WMT from 2023-09-07 to 2025-09-06
+2025-09-06 21:31:12,671 - INFO - Successfully retrieved 500 records for WMT
+2025-09-06 21:31:12,688 - INFO - Processed 79 records for WMT in 2023
+2025-09-06 21:31:12,688 - INFO - Processed 252 records for WMT in 2024
+2025-09-06 21:31:12,688 - INFO - Processed 169 records for WMT in 2025
+2025-09-06 21:31:12,693 - INFO - Created Parquet file: WMT_2023.parquet
+2025-09-06 21:31:13,006 - INFO - Successfully uploaded WMT_2023.parquet to S3 bucket root
+2025-09-06 21:31:13,006 - INFO - Cleaned up local file: WMT_2023.parquet
+2025-09-06 21:31:13,010 - INFO - Created Parquet file: WMT_2024.parquet
+2025-09-06 21:31:13,122 - INFO - Successfully uploaded WMT_2024.parquet to S3 bucket root
+2025-09-06 21:31:13,123 - INFO - Cleaned up local file: WMT_2024.parquet
+2025-09-06 21:31:13,126 - INFO - Created Parquet file: WMT_2025.parquet
+2025-09-06 21:31:13,232 - INFO - Successfully uploaded WMT_2025.parquet to S3 bucket root
+2025-09-06 21:31:13,233 - INFO - Cleaned up local file: WMT_2025.parquet
+2025-09-06 21:31:13,234 - INFO - Completed processing WMT: 3/3 files successful
+2025-09-06 21:31:13,234 - INFO - ✓ Successfully processed WMT
+2025-09-06 21:31:13,234 - INFO - Processing ticker 111/111: XOM
+2025-09-06 21:31:13,234 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-06 21:31:25,742 - INFO - Starting processing for ticker: XOM
+2025-09-06 21:31:25,747 - INFO - Fetching data for XOM from 2023-09-07 to 2025-09-06
+2025-09-06 21:31:26,173 - INFO - Successfully retrieved 500 records for XOM
+2025-09-06 21:31:26,192 - INFO - Processed 79 records for XOM in 2023
+2025-09-06 21:31:26,192 - INFO - Processed 252 records for XOM in 2024
+2025-09-06 21:31:26,193 - INFO - Processed 169 records for XOM in 2025
+2025-09-06 21:31:26,197 - INFO - Created Parquet file: XOM_2023.parquet
+2025-09-06 21:31:26,503 - INFO - Successfully uploaded XOM_2023.parquet to S3 bucket root
+2025-09-06 21:31:26,503 - INFO - Cleaned up local file: XOM_2023.parquet
+2025-09-06 21:31:26,507 - INFO - Created Parquet file: XOM_2024.parquet
+2025-09-06 21:31:26,611 - INFO - Successfully uploaded XOM_2024.parquet to S3 bucket root
+2025-09-06 21:31:26,612 - INFO - Cleaned up local file: XOM_2024.parquet
+2025-09-06 21:31:26,619 - INFO - Created Parquet file: XOM_2025.parquet
+2025-09-06 21:31:26,717 - INFO - Successfully uploaded XOM_2025.parquet to S3 bucket root
+2025-09-06 21:31:26,718 - INFO - Cleaned up local file: XOM_2025.parquet
+2025-09-06 21:31:26,718 - INFO - Completed processing XOM: 3/3 files successful
+2025-09-06 21:31:26,719 - INFO - ✓ Successfully processed XOM
+2025-09-06 21:31:26,719 - INFO - ================================================================================
+2025-09-06 21:31:26,719 - INFO - COMPREHENSIVE PIPELINE SUMMARY
+2025-09-06 21:31:26,719 - INFO - ================================================================================
+2025-09-06 21:31:26,719 - INFO - Total tickers processed: 111
+2025-09-06 21:31:26,719 - INFO - Successful: 111
+2025-09-06 21:31:26,719 - INFO - Failed: 0
+2025-09-06 21:31:26,719 - INFO - Success rate: 100.0%
+2025-09-06 21:31:26,719 - INFO - 🎉 All tickers processed successfully!
+2025-09-06 21:31:26,720 - INFO - Comprehensive pipeline completed
+2025-09-06 21:31:27,167 - INFO - Snowflake connection closed
