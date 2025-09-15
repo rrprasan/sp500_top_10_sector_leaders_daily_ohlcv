@@ -1,0 +1,2516 @@
+2025-09-14 17:38:01,712 - INFO - 🚀 STARTING INCREMENTAL PIPELINE TESTS
+2025-09-14 17:38:01,712 - INFO - ================================================================================
+2025-09-14 17:38:01,712 - INFO - 
+🧪 Running: Snowflake Connection
+2025-09-14 17:38:01,712 - INFO - ============================================================
+2025-09-14 17:38:01,712 - INFO - TESTING SNOWFLAKE CONNECTION
+2025-09-14 17:38:01,712 - INFO - ============================================================
+2025-09-14 17:38:01,713 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:38:01,713 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:38:01,713 - INFO - End date: 2025-09-12
+2025-09-14 17:38:01,713 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 17:38:01,716 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-14 17:38:02,419 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 17:38:02,420 - INFO - ✓ Snowflake connection successful
+2025-09-14 17:38:02,420 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 17:38:02,420 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-14 17:38:02,797 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 17:38:02,797 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-14 17:38:03,721 - INFO - query execution done
+2025-09-14 17:38:03,722 - INFO - Number of results in first chunk: 111
+2025-09-14 17:38:03,723 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-14 17:38:03,723 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-14 17:38:03,723 - INFO - ✓ Retrieved 111 tickers from source table
+2025-09-14 17:38:03,723 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE']
+2025-09-14 17:38:03,723 - INFO - closed
+2025-09-14 17:38:03,797 - INFO - No async queries seem to be running, deleting session
+2025-09-14 17:38:03,974 - INFO - 
+🧪 Running: Max Date Queries
+2025-09-14 17:38:03,974 - INFO - ============================================================
+2025-09-14 17:38:03,974 - INFO - TESTING MAX DATE QUERIES
+2025-09-14 17:38:03,975 - INFO - ============================================================
+2025-09-14 17:38:03,975 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:38:03,975 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:38:03,975 - INFO - End date: 2025-09-12
+2025-09-14 17:38:03,975 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 17:38:03,976 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-14 17:38:04,104 - INFO - closed
+2025-09-14 17:38:04,104 - INFO - No async queries seem to be running, deleting session
+2025-09-14 17:38:04,633 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 17:38:04,634 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AAPL']
+2025-09-14 17:38:04,957 - INFO - query execution done
+2025-09-14 17:38:04,958 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:04,959 - INFO - Max date for AAPL: 2025-09-04
+2025-09-14 17:38:04,959 - INFO - ✓ AAPL: Last data date = 2025-09-04
+2025-09-14 17:38:04,959 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MSFT']
+2025-09-14 17:38:05,213 - INFO - query execution done
+2025-09-14 17:38:05,213 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:05,213 - INFO - Max date for MSFT: 2025-09-04
+2025-09-14 17:38:05,214 - INFO - ✓ MSFT: Last data date = 2025-09-04
+2025-09-14 17:38:05,214 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOGL']
+2025-09-14 17:38:05,442 - INFO - query execution done
+2025-09-14 17:38:05,442 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:05,443 - INFO - Max date for GOOGL: 2025-09-04
+2025-09-14 17:38:05,443 - INFO - ✓ GOOGL: Last data date = 2025-09-04
+2025-09-14 17:38:05,443 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMZN']
+2025-09-14 17:38:05,553 - INFO - query execution done
+2025-09-14 17:38:05,553 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:05,553 - INFO - Max date for AMZN: 2025-09-04
+2025-09-14 17:38:05,554 - INFO - ✓ AMZN: Last data date = 2025-09-04
+2025-09-14 17:38:05,554 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TSLA']
+2025-09-14 17:38:05,685 - INFO - query execution done
+2025-09-14 17:38:05,685 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:05,686 - INFO - Max date for TSLA: 2025-09-04
+2025-09-14 17:38:05,686 - INFO - ✓ TSLA: Last data date = 2025-09-04
+2025-09-14 17:38:05,686 - INFO - 
+🧪 Running: Date Range Calculation
+2025-09-14 17:38:05,686 - INFO - ============================================================
+2025-09-14 17:38:05,686 - INFO - TESTING DATE RANGE CALCULATION
+2025-09-14 17:38:05,686 - INFO - ============================================================
+2025-09-14 17:38:05,686 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:38:05,686 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:38:05,686 - INFO - End date: 2025-09-12
+2025-09-14 17:38:05,686 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 17:38:05,687 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-14 17:38:06,007 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 17:38:06,007 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-14 17:38:06,113 - INFO - query execution done
+2025-09-14 17:38:06,113 - INFO - Number of results in first chunk: 111
+2025-09-14 17:38:06,113 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-14 17:38:06,113 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-14 17:38:06,114 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AAPL']
+2025-09-14 17:38:06,239 - INFO - query execution done
+2025-09-14 17:38:06,239 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,240 - INFO - Max date for AAPL: 2025-09-04
+2025-09-14 17:38:06,240 - INFO - Will download AAPL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,240 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABBV']
+2025-09-14 17:38:06,362 - INFO - query execution done
+2025-09-14 17:38:06,363 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,363 - INFO - Max date for ABBV: 2025-09-04
+2025-09-14 17:38:06,363 - INFO - Will download ABBV from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,363 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABT']
+2025-09-14 17:38:06,498 - INFO - query execution done
+2025-09-14 17:38:06,499 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,499 - INFO - Max date for ABT: 2025-09-04
+2025-09-14 17:38:06,499 - INFO - Will download ABT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,500 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ACN']
+2025-09-14 17:38:06,622 - INFO - query execution done
+2025-09-14 17:38:06,622 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,623 - INFO - Max date for ACN: 2025-09-04
+2025-09-14 17:38:06,623 - INFO - Will download ACN from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,623 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADBE']
+2025-09-14 17:38:06,739 - INFO - query execution done
+2025-09-14 17:38:06,739 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,739 - INFO - Max date for ADBE: 2025-09-04
+2025-09-14 17:38:06,739 - INFO - Will download ADBE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,739 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADP']
+2025-09-14 17:38:06,829 - INFO - query execution done
+2025-09-14 17:38:06,829 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,829 - INFO - Max date for ADP: 2025-09-04
+2025-09-14 17:38:06,830 - INFO - Will download ADP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,830 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AEP']
+2025-09-14 17:38:06,956 - INFO - query execution done
+2025-09-14 17:38:06,956 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:06,956 - INFO - Max date for AEP: 2025-09-04
+2025-09-14 17:38:06,956 - INFO - Will download AEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:06,957 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMD']
+2025-09-14 17:38:07,056 - INFO - query execution done
+2025-09-14 17:38:07,056 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,057 - INFO - Max date for AMD: 2025-09-04
+2025-09-14 17:38:07,057 - INFO - Will download AMD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,057 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMGN']
+2025-09-14 17:38:07,159 - INFO - query execution done
+2025-09-14 17:38:07,160 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,161 - INFO - Max date for AMGN: 2025-09-04
+2025-09-14 17:38:07,161 - INFO - Will download AMGN from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,161 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMT']
+2025-09-14 17:38:07,269 - INFO - query execution done
+2025-09-14 17:38:07,269 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,269 - INFO - Max date for AMT: 2025-09-04
+2025-09-14 17:38:07,270 - INFO - Will download AMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,270 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMZN']
+2025-09-14 17:38:07,381 - INFO - query execution done
+2025-09-14 17:38:07,382 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,382 - INFO - Max date for AMZN: 2025-09-04
+2025-09-14 17:38:07,382 - INFO - Will download AMZN from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,382 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'APD']
+2025-09-14 17:38:07,479 - INFO - query execution done
+2025-09-14 17:38:07,479 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,479 - INFO - Max date for APD: 2025-09-04
+2025-09-14 17:38:07,479 - INFO - Will download APD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,479 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AVGO']
+2025-09-14 17:38:07,587 - INFO - query execution done
+2025-09-14 17:38:07,587 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,587 - INFO - Max date for AVGO: 2025-09-04
+2025-09-14 17:38:07,588 - INFO - Will download AVGO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,588 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AXP']
+2025-09-14 17:38:07,693 - INFO - query execution done
+2025-09-14 17:38:07,693 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,694 - INFO - Max date for AXP: 2025-09-04
+2025-09-14 17:38:07,694 - INFO - Will download AXP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,694 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BA']
+2025-09-14 17:38:07,797 - INFO - query execution done
+2025-09-14 17:38:07,797 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,798 - INFO - Max date for BA: 2025-09-04
+2025-09-14 17:38:07,798 - INFO - Will download BA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,798 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BAC']
+2025-09-14 17:38:07,911 - INFO - query execution done
+2025-09-14 17:38:07,911 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:07,912 - INFO - Max date for BAC: 2025-09-04
+2025-09-14 17:38:07,912 - INFO - Will download BAC from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:07,912 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BKNG']
+2025-09-14 17:38:08,030 - INFO - query execution done
+2025-09-14 17:38:08,030 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,031 - INFO - Max date for BKNG: 2025-09-04
+2025-09-14 17:38:08,031 - INFO - Will download BKNG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,031 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BLK']
+2025-09-14 17:38:08,170 - INFO - query execution done
+2025-09-14 17:38:08,170 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,170 - INFO - Max date for BLK: 2025-09-04
+2025-09-14 17:38:08,170 - INFO - Will download BLK from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,171 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BRK.B']
+2025-09-14 17:38:08,277 - INFO - query execution done
+2025-09-14 17:38:08,278 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,278 - INFO - Max date for BRK.B: 2025-09-04
+2025-09-14 17:38:08,278 - INFO - Will download BRK.B from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,278 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CAT']
+2025-09-14 17:38:08,380 - INFO - query execution done
+2025-09-14 17:38:08,380 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,380 - INFO - Max date for CAT: 2025-09-04
+2025-09-14 17:38:08,380 - INFO - Will download CAT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,380 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CBRE']
+2025-09-14 17:38:08,480 - INFO - query execution done
+2025-09-14 17:38:08,480 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,481 - INFO - Max date for CBRE: 2025-09-04
+2025-09-14 17:38:08,481 - INFO - Will download CBRE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,481 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CCI']
+2025-09-14 17:38:08,610 - INFO - query execution done
+2025-09-14 17:38:08,610 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,611 - INFO - Max date for CCI: 2025-09-04
+2025-09-14 17:38:08,611 - INFO - Will download CCI from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,611 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CEG']
+2025-09-14 17:38:08,713 - INFO - query execution done
+2025-09-14 17:38:08,713 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,714 - INFO - Max date for CEG: 2025-09-04
+2025-09-14 17:38:08,714 - INFO - Will download CEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,714 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CL']
+2025-09-14 17:38:08,811 - INFO - query execution done
+2025-09-14 17:38:08,811 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,812 - INFO - Max date for CL: 2025-09-04
+2025-09-14 17:38:08,812 - INFO - Will download CL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,812 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CMCSA']
+2025-09-14 17:38:08,920 - INFO - query execution done
+2025-09-14 17:38:08,920 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:08,921 - INFO - Max date for CMCSA: 2025-09-04
+2025-09-14 17:38:08,921 - INFO - Will download CMCSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:08,921 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COP']
+2025-09-14 17:38:09,023 - INFO - query execution done
+2025-09-14 17:38:09,024 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,024 - INFO - Max date for COP: 2025-09-04
+2025-09-14 17:38:09,024 - INFO - Will download COP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,024 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COST']
+2025-09-14 17:38:09,129 - INFO - query execution done
+2025-09-14 17:38:09,130 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,130 - INFO - Max date for COST: 2025-09-04
+2025-09-14 17:38:09,130 - INFO - Will download COST from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,130 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRH']
+2025-09-14 17:38:09,251 - INFO - query execution done
+2025-09-14 17:38:09,252 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,252 - INFO - Max date for CRH: 2025-09-04
+2025-09-14 17:38:09,253 - INFO - Will download CRH from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,253 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRM']
+2025-09-14 17:38:09,357 - INFO - query execution done
+2025-09-14 17:38:09,358 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,358 - INFO - Max date for CRM: 2025-09-04
+2025-09-14 17:38:09,359 - INFO - Will download CRM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,359 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CSCO']
+2025-09-14 17:38:09,479 - INFO - query execution done
+2025-09-14 17:38:09,479 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,479 - INFO - Max date for CSCO: 2025-09-04
+2025-09-14 17:38:09,480 - INFO - Will download CSCO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,480 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CTVA']
+2025-09-14 17:38:09,598 - INFO - query execution done
+2025-09-14 17:38:09,598 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,599 - INFO - Max date for CTVA: 2025-09-04
+2025-09-14 17:38:09,599 - INFO - Will download CTVA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,599 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CVX']
+2025-09-14 17:38:09,722 - INFO - query execution done
+2025-09-14 17:38:09,722 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,723 - INFO - Max date for CVX: 2025-09-04
+2025-09-14 17:38:09,723 - INFO - Will download CVX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,723 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'D']
+2025-09-14 17:38:09,815 - INFO - query execution done
+2025-09-14 17:38:09,816 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,816 - INFO - Max date for D: 2025-09-04
+2025-09-14 17:38:09,816 - INFO - Will download D from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,817 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DHR']
+2025-09-14 17:38:09,931 - INFO - query execution done
+2025-09-14 17:38:09,932 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:09,932 - INFO - Max date for DHR: 2025-09-04
+2025-09-14 17:38:09,933 - INFO - Will download DHR from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:09,933 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DIS']
+2025-09-14 17:38:10,056 - INFO - query execution done
+2025-09-14 17:38:10,057 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,057 - INFO - Max date for DIS: 2025-09-04
+2025-09-14 17:38:10,057 - INFO - Will download DIS from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,058 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DLR']
+2025-09-14 17:38:10,182 - INFO - query execution done
+2025-09-14 17:38:10,182 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,183 - INFO - Max date for DLR: 2025-09-04
+2025-09-14 17:38:10,183 - INFO - Will download DLR from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,183 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DUK']
+2025-09-14 17:38:10,286 - INFO - query execution done
+2025-09-14 17:38:10,287 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,287 - INFO - Max date for DUK: 2025-09-04
+2025-09-14 17:38:10,287 - INFO - Will download DUK from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,287 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ECL']
+2025-09-14 17:38:10,393 - INFO - query execution done
+2025-09-14 17:38:10,394 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,394 - INFO - Max date for ECL: 2025-09-04
+2025-09-14 17:38:10,394 - INFO - Will download ECL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,394 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EOG']
+2025-09-14 17:38:10,504 - INFO - query execution done
+2025-09-14 17:38:10,505 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,505 - INFO - Max date for EOG: 2025-09-04
+2025-09-14 17:38:10,505 - INFO - Will download EOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,505 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EQIX']
+2025-09-14 17:38:10,641 - INFO - query execution done
+2025-09-14 17:38:10,642 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,642 - INFO - Max date for EQIX: 2025-09-04
+2025-09-14 17:38:10,642 - INFO - Will download EQIX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,642 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ETN']
+2025-09-14 17:38:10,752 - INFO - query execution done
+2025-09-14 17:38:10,752 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,752 - INFO - Max date for ETN: 2025-09-04
+2025-09-14 17:38:10,752 - INFO - Will download ETN from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,752 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'FCX']
+2025-09-14 17:38:10,849 - INFO - query execution done
+2025-09-14 17:38:10,849 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,850 - INFO - Max date for FCX: 2025-09-04
+2025-09-14 17:38:10,850 - INFO - Will download FCX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,850 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GE']
+2025-09-14 17:38:10,958 - INFO - query execution done
+2025-09-14 17:38:10,958 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:10,958 - INFO - Max date for GE: 2025-09-04
+2025-09-14 17:38:10,958 - INFO - Will download GE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:10,958 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOG']
+2025-09-14 17:38:11,085 - INFO - query execution done
+2025-09-14 17:38:11,085 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,085 - INFO - Max date for GOOG: 2025-09-04
+2025-09-14 17:38:11,085 - INFO - Will download GOOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,086 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOGL']
+2025-09-14 17:38:11,199 - INFO - query execution done
+2025-09-14 17:38:11,200 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,200 - INFO - Max date for GOOGL: 2025-09-04
+2025-09-14 17:38:11,200 - INFO - Will download GOOGL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,201 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GS']
+2025-09-14 17:38:11,307 - INFO - query execution done
+2025-09-14 17:38:11,307 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,308 - INFO - Max date for GS: 2025-09-04
+2025-09-14 17:38:11,308 - INFO - Will download GS from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,308 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HD']
+2025-09-14 17:38:11,412 - INFO - query execution done
+2025-09-14 17:38:11,412 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,413 - INFO - Max date for HD: 2025-09-04
+2025-09-14 17:38:11,413 - INFO - Will download HD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,413 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HON']
+2025-09-14 17:38:11,505 - INFO - query execution done
+2025-09-14 17:38:11,505 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,506 - INFO - Max date for HON: 2025-09-04
+2025-09-14 17:38:11,506 - INFO - Will download HON from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,506 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ISRG']
+2025-09-14 17:38:11,607 - INFO - query execution done
+2025-09-14 17:38:11,607 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,608 - INFO - Max date for ISRG: 2025-09-04
+2025-09-14 17:38:11,608 - INFO - Will download ISRG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,608 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JNJ']
+2025-09-14 17:38:11,729 - INFO - query execution done
+2025-09-14 17:38:11,730 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,730 - INFO - Max date for JNJ: 2025-09-04
+2025-09-14 17:38:11,731 - INFO - Will download JNJ from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,731 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JPM']
+2025-09-14 17:38:11,828 - INFO - query execution done
+2025-09-14 17:38:11,828 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,828 - INFO - Max date for JPM: 2025-09-04
+2025-09-14 17:38:11,828 - INFO - Will download JPM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,829 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KMI']
+2025-09-14 17:38:11,934 - INFO - query execution done
+2025-09-14 17:38:11,934 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:11,934 - INFO - Max date for KMI: 2025-09-04
+2025-09-14 17:38:11,934 - INFO - Will download KMI from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:11,935 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KO']
+2025-09-14 17:38:12,038 - INFO - query execution done
+2025-09-14 17:38:12,038 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,039 - INFO - Max date for KO: 2025-09-04
+2025-09-14 17:38:12,039 - INFO - Will download KO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,039 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LIN']
+2025-09-14 17:38:12,151 - INFO - query execution done
+2025-09-14 17:38:12,152 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,152 - INFO - Max date for LIN: 2025-09-04
+2025-09-14 17:38:12,152 - INFO - Will download LIN from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,153 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LLY']
+2025-09-14 17:38:12,268 - INFO - query execution done
+2025-09-14 17:38:12,269 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,269 - INFO - Max date for LLY: 2025-09-04
+2025-09-14 17:38:12,270 - INFO - Will download LLY from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,270 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LMT']
+2025-09-14 17:38:12,386 - INFO - query execution done
+2025-09-14 17:38:12,386 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,386 - INFO - Max date for LMT: 2025-09-04
+2025-09-14 17:38:12,387 - INFO - Will download LMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,387 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LOW']
+2025-09-14 17:38:12,495 - INFO - query execution done
+2025-09-14 17:38:12,496 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,497 - INFO - Max date for LOW: 2025-09-04
+2025-09-14 17:38:12,497 - INFO - Will download LOW from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,497 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MA']
+2025-09-14 17:38:12,606 - INFO - query execution done
+2025-09-14 17:38:12,606 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,606 - INFO - Max date for MA: 2025-09-04
+2025-09-14 17:38:12,606 - INFO - Will download MA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,607 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MCD']
+2025-09-14 17:38:12,714 - INFO - query execution done
+2025-09-14 17:38:12,714 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,715 - INFO - Max date for MCD: 2025-09-04
+2025-09-14 17:38:12,715 - INFO - Will download MCD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,716 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MDLZ']
+2025-09-14 17:38:12,841 - INFO - query execution done
+2025-09-14 17:38:12,842 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,842 - INFO - Max date for MDLZ: 2025-09-04
+2025-09-14 17:38:12,842 - INFO - Will download MDLZ from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,843 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MELI']
+2025-09-14 17:38:12,956 - INFO - query execution done
+2025-09-14 17:38:12,957 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:12,958 - INFO - Max date for MELI: 2025-09-04
+2025-09-14 17:38:12,958 - INFO - Will download MELI from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:12,958 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'META']
+2025-09-14 17:38:13,070 - INFO - query execution done
+2025-09-14 17:38:13,070 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,071 - INFO - Max date for META: 2025-09-04
+2025-09-14 17:38:13,071 - INFO - Will download META from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,071 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MLM']
+2025-09-14 17:38:13,178 - INFO - query execution done
+2025-09-14 17:38:13,178 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,179 - INFO - Max date for MLM: 2025-09-04
+2025-09-14 17:38:13,179 - INFO - Will download MLM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,179 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MO']
+2025-09-14 17:38:13,291 - INFO - query execution done
+2025-09-14 17:38:13,291 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,291 - INFO - Max date for MO: 2025-09-04
+2025-09-14 17:38:13,292 - INFO - Will download MO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,292 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MPC']
+2025-09-14 17:38:13,408 - INFO - query execution done
+2025-09-14 17:38:13,409 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,409 - INFO - Max date for MPC: 2025-09-04
+2025-09-14 17:38:13,409 - INFO - Will download MPC from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,409 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MRK']
+2025-09-14 17:38:13,518 - INFO - query execution done
+2025-09-14 17:38:13,518 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,518 - INFO - Max date for MRK: 2025-09-04
+2025-09-14 17:38:13,519 - INFO - Will download MRK from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,519 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MSFT']
+2025-09-14 17:38:13,622 - INFO - query execution done
+2025-09-14 17:38:13,622 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,623 - INFO - Max date for MSFT: 2025-09-04
+2025-09-14 17:38:13,623 - INFO - Will download MSFT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,623 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEE']
+2025-09-14 17:38:13,737 - INFO - query execution done
+2025-09-14 17:38:13,737 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,737 - INFO - Max date for NEE: 2025-09-04
+2025-09-14 17:38:13,737 - INFO - Will download NEE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,738 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEM']
+2025-09-14 17:38:13,837 - INFO - query execution done
+2025-09-14 17:38:13,838 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,838 - INFO - Max date for NEM: 2025-09-04
+2025-09-14 17:38:13,838 - INFO - Will download NEM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,839 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NFLX']
+2025-09-14 17:38:13,936 - INFO - query execution done
+2025-09-14 17:38:13,936 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:13,936 - INFO - Max date for NFLX: 2025-09-04
+2025-09-14 17:38:13,936 - INFO - Will download NFLX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:13,937 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NKE']
+2025-09-14 17:38:14,041 - INFO - query execution done
+2025-09-14 17:38:14,041 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,041 - INFO - Max date for NKE: 2025-09-04
+2025-09-14 17:38:14,042 - INFO - Will download NKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,042 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NVDA']
+2025-09-14 17:38:14,138 - INFO - query execution done
+2025-09-14 17:38:14,139 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,139 - INFO - Max date for NVDA: 2025-09-04
+2025-09-14 17:38:14,139 - INFO - Will download NVDA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,139 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'O']
+2025-09-14 17:38:14,255 - INFO - query execution done
+2025-09-14 17:38:14,255 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,256 - INFO - Max date for O: 2025-09-04
+2025-09-14 17:38:14,256 - INFO - Will download O from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,256 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'OKE']
+2025-09-14 17:38:14,372 - INFO - query execution done
+2025-09-14 17:38:14,373 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,374 - INFO - Max date for OKE: 2025-09-04
+2025-09-14 17:38:14,374 - INFO - Will download OKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,374 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ORCL']
+2025-09-14 17:38:14,475 - INFO - query execution done
+2025-09-14 17:38:14,476 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,477 - INFO - Max date for ORCL: 2025-09-04
+2025-09-14 17:38:14,477 - INFO - Will download ORCL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,477 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PCG']
+2025-09-14 17:38:14,581 - INFO - query execution done
+2025-09-14 17:38:14,582 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,583 - INFO - Max date for PCG: 2025-09-04
+2025-09-14 17:38:14,583 - INFO - Will download PCG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,583 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEG']
+2025-09-14 17:38:14,695 - INFO - query execution done
+2025-09-14 17:38:14,696 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,696 - INFO - Max date for PEG: 2025-09-04
+2025-09-14 17:38:14,696 - INFO - Will download PEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,696 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEP']
+2025-09-14 17:38:14,791 - INFO - query execution done
+2025-09-14 17:38:14,791 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,792 - INFO - Max date for PEP: 2025-09-04
+2025-09-14 17:38:14,792 - INFO - Will download PEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,792 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PG']
+2025-09-14 17:38:14,893 - INFO - query execution done
+2025-09-14 17:38:14,893 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:14,894 - INFO - Max date for PG: 2025-09-04
+2025-09-14 17:38:14,894 - INFO - Will download PG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:14,894 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PLD']
+2025-09-14 17:38:15,003 - INFO - query execution done
+2025-09-14 17:38:15,003 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,003 - INFO - Max date for PLD: 2025-09-04
+2025-09-14 17:38:15,003 - INFO - Will download PLD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,004 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PM']
+2025-09-14 17:38:15,107 - INFO - query execution done
+2025-09-14 17:38:15,107 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,107 - INFO - Max date for PM: 2025-09-04
+2025-09-14 17:38:15,107 - INFO - Will download PM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,108 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSA']
+2025-09-14 17:38:15,204 - INFO - query execution done
+2025-09-14 17:38:15,205 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,205 - INFO - Max date for PSA: 2025-09-04
+2025-09-14 17:38:15,205 - INFO - Will download PSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,206 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSX']
+2025-09-14 17:38:15,320 - INFO - query execution done
+2025-09-14 17:38:15,320 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,320 - INFO - Max date for PSX: 2025-09-04
+2025-09-14 17:38:15,320 - INFO - Will download PSX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,321 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'RTX']
+2025-09-14 17:38:15,435 - INFO - query execution done
+2025-09-14 17:38:15,436 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,436 - INFO - Max date for RTX: 2025-09-04
+2025-09-14 17:38:15,436 - INFO - Will download RTX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,437 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SBUX']
+2025-09-14 17:38:15,532 - INFO - query execution done
+2025-09-14 17:38:15,533 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,533 - INFO - Max date for SBUX: 2025-09-04
+2025-09-14 17:38:15,533 - INFO - Will download SBUX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,534 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SHW']
+2025-09-14 17:38:15,646 - INFO - query execution done
+2025-09-14 17:38:15,646 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,646 - INFO - Max date for SHW: 2025-09-04
+2025-09-14 17:38:15,646 - INFO - Will download SHW from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,647 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SLB']
+2025-09-14 17:38:15,745 - INFO - query execution done
+2025-09-14 17:38:15,745 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,746 - INFO - Max date for SLB: 2025-09-04
+2025-09-14 17:38:15,746 - INFO - Will download SLB from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,746 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SO']
+2025-09-14 17:38:15,837 - INFO - query execution done
+2025-09-14 17:38:15,838 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,838 - INFO - Max date for SO: 2025-09-04
+2025-09-14 17:38:15,838 - INFO - Will download SO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,838 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPG']
+2025-09-14 17:38:15,957 - INFO - query execution done
+2025-09-14 17:38:15,957 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:15,957 - INFO - Max date for SPG: 2025-09-04
+2025-09-14 17:38:15,958 - INFO - Will download SPG from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:15,958 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPGI']
+2025-09-14 17:38:16,078 - INFO - query execution done
+2025-09-14 17:38:16,079 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,079 - INFO - Max date for SPGI: 2025-09-04
+2025-09-14 17:38:16,079 - INFO - Will download SPGI from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,079 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SRE']
+2025-09-14 17:38:16,177 - INFO - query execution done
+2025-09-14 17:38:16,178 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,178 - INFO - Max date for SRE: 2025-09-04
+2025-09-14 17:38:16,178 - INFO - Will download SRE from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,178 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'T']
+2025-09-14 17:38:16,289 - INFO - query execution done
+2025-09-14 17:38:16,289 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,289 - INFO - Max date for T: 2025-09-04
+2025-09-14 17:38:16,290 - INFO - Will download T from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,290 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TGT']
+2025-09-14 17:38:16,393 - INFO - query execution done
+2025-09-14 17:38:16,394 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,394 - INFO - Max date for TGT: 2025-09-04
+2025-09-14 17:38:16,394 - INFO - Will download TGT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,394 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TJX']
+2025-09-14 17:38:16,512 - INFO - query execution done
+2025-09-14 17:38:16,512 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,513 - INFO - Max date for TJX: 2025-09-04
+2025-09-14 17:38:16,513 - INFO - Will download TJX from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,513 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMO']
+2025-09-14 17:38:16,624 - INFO - query execution done
+2025-09-14 17:38:16,624 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,625 - INFO - Max date for TMO: 2025-09-04
+2025-09-14 17:38:16,625 - INFO - Will download TMO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,625 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMUS']
+2025-09-14 17:38:16,749 - INFO - query execution done
+2025-09-14 17:38:16,749 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,750 - INFO - Max date for TMUS: 2025-09-04
+2025-09-14 17:38:16,750 - INFO - Will download TMUS from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,750 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TSLA']
+2025-09-14 17:38:16,848 - INFO - query execution done
+2025-09-14 17:38:16,927 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:16,927 - INFO - Max date for TSLA: 2025-09-04
+2025-09-14 17:38:16,927 - INFO - Will download TSLA from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:16,928 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TTD']
+2025-09-14 17:38:17,031 - INFO - query execution done
+2025-09-14 17:38:17,031 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,031 - INFO - Max date for TTD: 2025-09-04
+2025-09-14 17:38:17,032 - INFO - Will download TTD from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,032 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UBER']
+2025-09-14 17:38:17,144 - INFO - query execution done
+2025-09-14 17:38:17,144 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,144 - INFO - Max date for UBER: 2025-09-04
+2025-09-14 17:38:17,144 - INFO - Will download UBER from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,144 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNH']
+2025-09-14 17:38:17,263 - INFO - query execution done
+2025-09-14 17:38:17,263 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,264 - INFO - Max date for UNH: 2025-09-04
+2025-09-14 17:38:17,264 - INFO - Will download UNH from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,264 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNP']
+2025-09-14 17:38:17,363 - INFO - query execution done
+2025-09-14 17:38:17,363 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,364 - INFO - Max date for UNP: 2025-09-04
+2025-09-14 17:38:17,364 - INFO - Will download UNP from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,364 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'V']
+2025-09-14 17:38:17,464 - INFO - query execution done
+2025-09-14 17:38:17,464 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,465 - INFO - Max date for V: 2025-09-04
+2025-09-14 17:38:17,465 - INFO - Will download V from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,465 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VMC']
+2025-09-14 17:38:17,564 - INFO - query execution done
+2025-09-14 17:38:17,564 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,565 - INFO - Max date for VMC: 2025-09-04
+2025-09-14 17:38:17,565 - INFO - Will download VMC from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,565 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VOO']
+2025-09-14 17:38:17,663 - INFO - query execution done
+2025-09-14 17:38:17,663 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,664 - INFO - Max date for VOO: 2025-09-04
+2025-09-14 17:38:17,664 - INFO - Will download VOO from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,664 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VST']
+2025-09-14 17:38:17,763 - INFO - query execution done
+2025-09-14 17:38:17,764 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,764 - INFO - Max date for VST: 2025-09-04
+2025-09-14 17:38:17,764 - INFO - Will download VST from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,764 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VZ']
+2025-09-14 17:38:17,871 - INFO - query execution done
+2025-09-14 17:38:17,871 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,871 - INFO - Max date for VZ: 2025-09-04
+2025-09-14 17:38:17,871 - INFO - Will download VZ from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,871 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WELL']
+2025-09-14 17:38:17,968 - INFO - query execution done
+2025-09-14 17:38:17,968 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:17,969 - INFO - Max date for WELL: 2025-09-04
+2025-09-14 17:38:17,969 - INFO - Will download WELL from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:17,969 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WFC']
+2025-09-14 17:38:18,097 - INFO - query execution done
+2025-09-14 17:38:18,097 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:18,097 - INFO - Max date for WFC: 2025-09-04
+2025-09-14 17:38:18,098 - INFO - Will download WFC from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,098 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMB']
+2025-09-14 17:38:18,203 - INFO - query execution done
+2025-09-14 17:38:18,203 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:18,204 - INFO - Max date for WMB: 2025-09-04
+2025-09-14 17:38:18,204 - INFO - Will download WMB from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,204 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMT']
+2025-09-14 17:38:18,316 - INFO - query execution done
+2025-09-14 17:38:18,316 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:18,317 - INFO - Max date for WMT: 2025-09-04
+2025-09-14 17:38:18,317 - INFO - Will download WMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,317 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'XOM']
+2025-09-14 17:38:18,441 - INFO - query execution done
+2025-09-14 17:38:18,441 - INFO - Number of results in first chunk: 1
+2025-09-14 17:38:18,442 - INFO - Max date for XOM: 2025-09-04
+2025-09-14 17:38:18,442 - INFO - Will download XOM from 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,442 - INFO - Found 111 tickers that need data updates
+2025-09-14 17:38:18,442 - INFO - Found 111 tickers needing updates:
+2025-09-14 17:38:18,442 - INFO -   AAPL: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,442 - INFO -   ABBV: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,442 - INFO -   ABT: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   ACN: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   ADBE: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   ADP: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   AEP: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   AMD: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   AMGN: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   AMT: 2025-09-05 to 2025-09-12
+2025-09-14 17:38:18,443 - INFO -   ... and 101 more tickers
+2025-09-14 17:38:18,443 - INFO - 
+🧪 Running: S3 Connection
+2025-09-14 17:38:18,443 - INFO - ============================================================
+2025-09-14 17:38:18,443 - INFO - TESTING S3 CONNECTION
+2025-09-14 17:38:18,443 - INFO - ============================================================
+2025-09-14 17:38:18,444 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:38:18,444 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:38:18,444 - INFO - End date: 2025-09-12
+2025-09-14 17:38:18,456 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-09-14 17:38:18,461 - INFO - closed
+2025-09-14 17:38:18,461 - INFO - No async queries seem to be running, deleting session
+2025-09-14 17:38:19,252 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-14 17:38:19,252 - INFO - ✓ S3 connection successful
+2025-09-14 17:38:19,315 - INFO - ✓ Found 10 files in S3 bucket
+2025-09-14 17:38:19,315 - INFO - Sample files:
+2025-09-14 17:38:19,315 - INFO -   - UNP_2023.parquet (9170 bytes)
+2025-09-14 17:38:19,315 - INFO -   - UNP_2024.parquet (16783 bytes)
+2025-09-14 17:38:19,315 - INFO -   - UNP_2025.parquet (13332 bytes)
+2025-09-14 17:38:19,316 - INFO -   - VMC_2023.parquet (9062 bytes)
+2025-09-14 17:38:19,316 - INFO -   - VMC_2024.parquet (16848 bytes)
+2025-09-14 17:38:19,318 - INFO - 
+🧪 Running: Polygon.io API
+2025-09-14 17:38:19,318 - INFO - ============================================================
+2025-09-14 17:38:19,318 - INFO - TESTING POLYGON.IO API CONNECTION
+2025-09-14 17:38:19,318 - INFO - ============================================================
+2025-09-14 17:38:19,318 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:38:19,318 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:38:19,319 - INFO - End date: 2025-09-12
+2025-09-14 17:38:19,319 - INFO - Testing API call for AAPL from 2025-09-07 to 2025-09-13
+2025-09-14 17:38:19,319 - INFO - Fetching data for AAPL from 2025-09-07 to 2025-09-13
+2025-09-14 17:38:19,713 - INFO - Successfully retrieved 5 records for AAPL
+2025-09-14 17:38:19,714 - INFO - ✓ Polygon.io API working - retrieved 5 records
+2025-09-14 17:38:19,714 - INFO - 
+================================================================================
+2025-09-14 17:38:19,714 - INFO - TEST SUMMARY
+2025-09-14 17:38:19,714 - INFO - ================================================================================
+2025-09-14 17:38:19,714 - INFO - ✅ PASS - Snowflake Connection
+2025-09-14 17:38:19,714 - INFO - ✅ PASS - Max Date Queries
+2025-09-14 17:38:19,714 - INFO - ✅ PASS - Date Range Calculation
+2025-09-14 17:38:19,714 - INFO - ✅ PASS - S3 Connection
+2025-09-14 17:38:19,715 - INFO - ✅ PASS - Polygon.io API
+2025-09-14 17:38:19,715 - INFO - 
+Overall: 5/5 tests passed
+2025-09-14 17:38:19,715 - INFO - 🎉 All tests passed! The incremental pipeline is ready to use.
+2025-09-14 17:38:19,715 - INFO - 
+To run the incremental pipeline:
+2025-09-14 17:38:19,715 - INFO - python incremental_ohlcv_pipeline.py
+2025-09-14 17:38:19,747 - INFO - closed
+2025-09-14 17:38:19,747 - INFO - No async queries seem to be running, deleting session
+2025-09-14 17:40:37,153 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 17:40:37,153 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 17:40:37,153 - INFO - End date: 2025-09-12
+2025-09-14 17:40:37,153 - INFO - ================================================================================
+2025-09-14 17:40:37,153 - INFO - INCREMENTAL OHLCV PIPELINE FOR SP500 SECTOR LEADERS
+2025-09-14 17:40:37,153 - INFO - ================================================================================
+2025-09-14 17:40:37,153 - INFO - End date: 2025-09-12
+2025-09-14 17:40:37,153 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-14 17:40:37,153 - INFO - Snowflake Table: sp500_top10_sector_ohlcv_itbl
+2025-09-14 17:40:37,153 - INFO - Snowflake Connection: DEMO_PRAJAGOPAL
+2025-09-14 17:40:37,153 - INFO - Step 1: Analyzing existing data and determining date ranges...
+2025-09-14 17:40:37,154 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 17:40:37,156 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-14 17:40:37,636 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 17:40:37,637 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-14 17:40:37,795 - INFO - query execution done
+2025-09-14 17:40:37,795 - INFO - Number of results in first chunk: 111
+2025-09-14 17:40:37,797 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-14 17:40:37,797 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-14 17:40:37,797 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AAPL']
+2025-09-14 17:40:37,936 - INFO - query execution done
+2025-09-14 17:40:37,937 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:37,937 - INFO - Max date for AAPL: 2025-09-04
+2025-09-14 17:40:37,938 - INFO - Will download AAPL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:37,938 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABBV']
+2025-09-14 17:40:38,101 - INFO - query execution done
+2025-09-14 17:40:38,102 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,102 - INFO - Max date for ABBV: 2025-09-04
+2025-09-14 17:40:38,102 - INFO - Will download ABBV from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,103 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABT']
+2025-09-14 17:40:38,232 - INFO - query execution done
+2025-09-14 17:40:38,233 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,234 - INFO - Max date for ABT: 2025-09-04
+2025-09-14 17:40:38,234 - INFO - Will download ABT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,235 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ACN']
+2025-09-14 17:40:38,366 - INFO - query execution done
+2025-09-14 17:40:38,367 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,368 - INFO - Max date for ACN: 2025-09-04
+2025-09-14 17:40:38,368 - INFO - Will download ACN from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,368 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADBE']
+2025-09-14 17:40:38,510 - INFO - query execution done
+2025-09-14 17:40:38,511 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,511 - INFO - Max date for ADBE: 2025-09-04
+2025-09-14 17:40:38,511 - INFO - Will download ADBE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,512 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADP']
+2025-09-14 17:40:38,639 - INFO - query execution done
+2025-09-14 17:40:38,639 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,640 - INFO - Max date for ADP: 2025-09-04
+2025-09-14 17:40:38,640 - INFO - Will download ADP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,640 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AEP']
+2025-09-14 17:40:38,753 - INFO - query execution done
+2025-09-14 17:40:38,754 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,754 - INFO - Max date for AEP: 2025-09-04
+2025-09-14 17:40:38,755 - INFO - Will download AEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,755 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMD']
+2025-09-14 17:40:38,871 - INFO - query execution done
+2025-09-14 17:40:38,871 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,872 - INFO - Max date for AMD: 2025-09-04
+2025-09-14 17:40:38,872 - INFO - Will download AMD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:38,872 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMGN']
+2025-09-14 17:40:38,994 - INFO - query execution done
+2025-09-14 17:40:38,995 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:38,995 - INFO - Max date for AMGN: 2025-09-04
+2025-09-14 17:40:39,000 - INFO - Will download AMGN from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,000 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMT']
+2025-09-14 17:40:39,141 - INFO - query execution done
+2025-09-14 17:40:39,141 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,142 - INFO - Max date for AMT: 2025-09-04
+2025-09-14 17:40:39,142 - INFO - Will download AMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,142 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMZN']
+2025-09-14 17:40:39,254 - INFO - query execution done
+2025-09-14 17:40:39,255 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,255 - INFO - Max date for AMZN: 2025-09-04
+2025-09-14 17:40:39,255 - INFO - Will download AMZN from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,256 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'APD']
+2025-09-14 17:40:39,418 - INFO - query execution done
+2025-09-14 17:40:39,419 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,420 - INFO - Max date for APD: 2025-09-04
+2025-09-14 17:40:39,420 - INFO - Will download APD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,420 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AVGO']
+2025-09-14 17:40:39,537 - INFO - query execution done
+2025-09-14 17:40:39,538 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,538 - INFO - Max date for AVGO: 2025-09-04
+2025-09-14 17:40:39,539 - INFO - Will download AVGO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,539 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AXP']
+2025-09-14 17:40:39,668 - INFO - query execution done
+2025-09-14 17:40:39,668 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,668 - INFO - Max date for AXP: 2025-09-04
+2025-09-14 17:40:39,668 - INFO - Will download AXP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,668 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BA']
+2025-09-14 17:40:39,785 - INFO - query execution done
+2025-09-14 17:40:39,785 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,786 - INFO - Max date for BA: 2025-09-04
+2025-09-14 17:40:39,786 - INFO - Will download BA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,786 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BAC']
+2025-09-14 17:40:39,904 - INFO - query execution done
+2025-09-14 17:40:39,905 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:39,905 - INFO - Max date for BAC: 2025-09-04
+2025-09-14 17:40:39,905 - INFO - Will download BAC from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:39,905 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BKNG']
+2025-09-14 17:40:40,067 - INFO - query execution done
+2025-09-14 17:40:40,068 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,069 - INFO - Max date for BKNG: 2025-09-04
+2025-09-14 17:40:40,069 - INFO - Will download BKNG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,069 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BLK']
+2025-09-14 17:40:40,210 - INFO - query execution done
+2025-09-14 17:40:40,211 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,211 - INFO - Max date for BLK: 2025-09-04
+2025-09-14 17:40:40,212 - INFO - Will download BLK from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,212 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BRK.B']
+2025-09-14 17:40:40,327 - INFO - query execution done
+2025-09-14 17:40:40,327 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,328 - INFO - Max date for BRK.B: 2025-09-04
+2025-09-14 17:40:40,328 - INFO - Will download BRK.B from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,328 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CAT']
+2025-09-14 17:40:40,436 - INFO - query execution done
+2025-09-14 17:40:40,437 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,437 - INFO - Max date for CAT: 2025-09-04
+2025-09-14 17:40:40,438 - INFO - Will download CAT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,438 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CBRE']
+2025-09-14 17:40:40,553 - INFO - query execution done
+2025-09-14 17:40:40,554 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,554 - INFO - Max date for CBRE: 2025-09-04
+2025-09-14 17:40:40,554 - INFO - Will download CBRE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,554 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CCI']
+2025-09-14 17:40:40,677 - INFO - query execution done
+2025-09-14 17:40:40,677 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,678 - INFO - Max date for CCI: 2025-09-04
+2025-09-14 17:40:40,678 - INFO - Will download CCI from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,678 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CEG']
+2025-09-14 17:40:40,813 - INFO - query execution done
+2025-09-14 17:40:40,813 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,814 - INFO - Max date for CEG: 2025-09-04
+2025-09-14 17:40:40,814 - INFO - Will download CEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,814 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CL']
+2025-09-14 17:40:40,927 - INFO - query execution done
+2025-09-14 17:40:40,928 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:40,929 - INFO - Max date for CL: 2025-09-04
+2025-09-14 17:40:40,929 - INFO - Will download CL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:40,929 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CMCSA']
+2025-09-14 17:40:41,091 - INFO - query execution done
+2025-09-14 17:40:41,091 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,092 - INFO - Max date for CMCSA: 2025-09-04
+2025-09-14 17:40:41,092 - INFO - Will download CMCSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,093 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COP']
+2025-09-14 17:40:41,205 - INFO - query execution done
+2025-09-14 17:40:41,205 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,206 - INFO - Max date for COP: 2025-09-04
+2025-09-14 17:40:41,206 - INFO - Will download COP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,206 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COST']
+2025-09-14 17:40:41,312 - INFO - query execution done
+2025-09-14 17:40:41,313 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,313 - INFO - Max date for COST: 2025-09-04
+2025-09-14 17:40:41,313 - INFO - Will download COST from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,313 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRH']
+2025-09-14 17:40:41,437 - INFO - query execution done
+2025-09-14 17:40:41,437 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,438 - INFO - Max date for CRH: 2025-09-04
+2025-09-14 17:40:41,438 - INFO - Will download CRH from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,438 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRM']
+2025-09-14 17:40:41,560 - INFO - query execution done
+2025-09-14 17:40:41,561 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,561 - INFO - Max date for CRM: 2025-09-04
+2025-09-14 17:40:41,562 - INFO - Will download CRM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,562 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CSCO']
+2025-09-14 17:40:41,688 - INFO - query execution done
+2025-09-14 17:40:41,688 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,689 - INFO - Max date for CSCO: 2025-09-04
+2025-09-14 17:40:41,689 - INFO - Will download CSCO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,689 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CTVA']
+2025-09-14 17:40:41,828 - INFO - query execution done
+2025-09-14 17:40:41,828 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,828 - INFO - Max date for CTVA: 2025-09-04
+2025-09-14 17:40:41,829 - INFO - Will download CTVA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,829 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CVX']
+2025-09-14 17:40:41,947 - INFO - query execution done
+2025-09-14 17:40:41,947 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:41,947 - INFO - Max date for CVX: 2025-09-04
+2025-09-14 17:40:41,947 - INFO - Will download CVX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:41,947 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'D']
+2025-09-14 17:40:42,056 - INFO - query execution done
+2025-09-14 17:40:42,057 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,057 - INFO - Max date for D: 2025-09-04
+2025-09-14 17:40:42,058 - INFO - Will download D from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,058 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DHR']
+2025-09-14 17:40:42,191 - INFO - query execution done
+2025-09-14 17:40:42,191 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,192 - INFO - Max date for DHR: 2025-09-04
+2025-09-14 17:40:42,192 - INFO - Will download DHR from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,192 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DIS']
+2025-09-14 17:40:42,305 - INFO - query execution done
+2025-09-14 17:40:42,305 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,306 - INFO - Max date for DIS: 2025-09-04
+2025-09-14 17:40:42,306 - INFO - Will download DIS from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,306 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DLR']
+2025-09-14 17:40:42,433 - INFO - query execution done
+2025-09-14 17:40:42,434 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,435 - INFO - Max date for DLR: 2025-09-04
+2025-09-14 17:40:42,435 - INFO - Will download DLR from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,435 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DUK']
+2025-09-14 17:40:42,566 - INFO - query execution done
+2025-09-14 17:40:42,567 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,567 - INFO - Max date for DUK: 2025-09-04
+2025-09-14 17:40:42,567 - INFO - Will download DUK from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,567 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ECL']
+2025-09-14 17:40:42,713 - INFO - query execution done
+2025-09-14 17:40:42,714 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,714 - INFO - Max date for ECL: 2025-09-04
+2025-09-14 17:40:42,714 - INFO - Will download ECL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,715 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EOG']
+2025-09-14 17:40:42,831 - INFO - query execution done
+2025-09-14 17:40:42,832 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,832 - INFO - Max date for EOG: 2025-09-04
+2025-09-14 17:40:42,833 - INFO - Will download EOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,833 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EQIX']
+2025-09-14 17:40:42,957 - INFO - query execution done
+2025-09-14 17:40:42,958 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:42,958 - INFO - Max date for EQIX: 2025-09-04
+2025-09-14 17:40:42,959 - INFO - Will download EQIX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:42,959 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ETN']
+2025-09-14 17:40:43,081 - INFO - query execution done
+2025-09-14 17:40:43,081 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,081 - INFO - Max date for ETN: 2025-09-04
+2025-09-14 17:40:43,082 - INFO - Will download ETN from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,082 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'FCX']
+2025-09-14 17:40:43,198 - INFO - query execution done
+2025-09-14 17:40:43,199 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,200 - INFO - Max date for FCX: 2025-09-04
+2025-09-14 17:40:43,200 - INFO - Will download FCX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,200 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GE']
+2025-09-14 17:40:43,337 - INFO - query execution done
+2025-09-14 17:40:43,338 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,338 - INFO - Max date for GE: 2025-09-04
+2025-09-14 17:40:43,338 - INFO - Will download GE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,338 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOG']
+2025-09-14 17:40:43,463 - INFO - query execution done
+2025-09-14 17:40:43,463 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,464 - INFO - Max date for GOOG: 2025-09-04
+2025-09-14 17:40:43,464 - INFO - Will download GOOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,464 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOGL']
+2025-09-14 17:40:43,598 - INFO - query execution done
+2025-09-14 17:40:43,599 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,600 - INFO - Max date for GOOGL: 2025-09-04
+2025-09-14 17:40:43,600 - INFO - Will download GOOGL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,600 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GS']
+2025-09-14 17:40:43,731 - INFO - query execution done
+2025-09-14 17:40:43,731 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,731 - INFO - Max date for GS: 2025-09-04
+2025-09-14 17:40:43,731 - INFO - Will download GS from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,732 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HD']
+2025-09-14 17:40:43,847 - INFO - query execution done
+2025-09-14 17:40:43,848 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,848 - INFO - Max date for HD: 2025-09-04
+2025-09-14 17:40:43,848 - INFO - Will download HD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,848 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HON']
+2025-09-14 17:40:43,966 - INFO - query execution done
+2025-09-14 17:40:43,967 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:43,968 - INFO - Max date for HON: 2025-09-04
+2025-09-14 17:40:43,968 - INFO - Will download HON from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:43,968 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ISRG']
+2025-09-14 17:40:44,110 - INFO - query execution done
+2025-09-14 17:40:44,111 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,111 - INFO - Max date for ISRG: 2025-09-04
+2025-09-14 17:40:44,111 - INFO - Will download ISRG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,112 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JNJ']
+2025-09-14 17:40:44,243 - INFO - query execution done
+2025-09-14 17:40:44,243 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,244 - INFO - Max date for JNJ: 2025-09-04
+2025-09-14 17:40:44,244 - INFO - Will download JNJ from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,244 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JPM']
+2025-09-14 17:40:44,374 - INFO - query execution done
+2025-09-14 17:40:44,375 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,375 - INFO - Max date for JPM: 2025-09-04
+2025-09-14 17:40:44,375 - INFO - Will download JPM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,376 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KMI']
+2025-09-14 17:40:44,511 - INFO - query execution done
+2025-09-14 17:40:44,512 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,512 - INFO - Max date for KMI: 2025-09-04
+2025-09-14 17:40:44,512 - INFO - Will download KMI from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,513 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KO']
+2025-09-14 17:40:44,647 - INFO - query execution done
+2025-09-14 17:40:44,647 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,647 - INFO - Max date for KO: 2025-09-04
+2025-09-14 17:40:44,647 - INFO - Will download KO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,648 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LIN']
+2025-09-14 17:40:44,753 - INFO - query execution done
+2025-09-14 17:40:44,754 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,754 - INFO - Max date for LIN: 2025-09-04
+2025-09-14 17:40:44,754 - INFO - Will download LIN from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,755 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LLY']
+2025-09-14 17:40:44,866 - INFO - query execution done
+2025-09-14 17:40:44,866 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,867 - INFO - Max date for LLY: 2025-09-04
+2025-09-14 17:40:44,867 - INFO - Will download LLY from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,867 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LMT']
+2025-09-14 17:40:44,973 - INFO - query execution done
+2025-09-14 17:40:44,974 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:44,974 - INFO - Max date for LMT: 2025-09-04
+2025-09-14 17:40:44,974 - INFO - Will download LMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:44,975 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LOW']
+2025-09-14 17:40:45,096 - INFO - query execution done
+2025-09-14 17:40:45,097 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,097 - INFO - Max date for LOW: 2025-09-04
+2025-09-14 17:40:45,097 - INFO - Will download LOW from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,098 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MA']
+2025-09-14 17:40:45,205 - INFO - query execution done
+2025-09-14 17:40:45,205 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,206 - INFO - Max date for MA: 2025-09-04
+2025-09-14 17:40:45,206 - INFO - Will download MA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,206 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MCD']
+2025-09-14 17:40:45,340 - INFO - query execution done
+2025-09-14 17:40:45,341 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,341 - INFO - Max date for MCD: 2025-09-04
+2025-09-14 17:40:45,342 - INFO - Will download MCD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,342 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MDLZ']
+2025-09-14 17:40:45,447 - INFO - query execution done
+2025-09-14 17:40:45,448 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,448 - INFO - Max date for MDLZ: 2025-09-04
+2025-09-14 17:40:45,448 - INFO - Will download MDLZ from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,449 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MELI']
+2025-09-14 17:40:45,568 - INFO - query execution done
+2025-09-14 17:40:45,569 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,570 - INFO - Max date for MELI: 2025-09-04
+2025-09-14 17:40:45,570 - INFO - Will download MELI from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,570 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'META']
+2025-09-14 17:40:45,689 - INFO - query execution done
+2025-09-14 17:40:45,690 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,691 - INFO - Max date for META: 2025-09-04
+2025-09-14 17:40:45,691 - INFO - Will download META from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,691 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MLM']
+2025-09-14 17:40:45,797 - INFO - query execution done
+2025-09-14 17:40:45,797 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,797 - INFO - Max date for MLM: 2025-09-04
+2025-09-14 17:40:45,798 - INFO - Will download MLM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,798 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MO']
+2025-09-14 17:40:45,919 - INFO - query execution done
+2025-09-14 17:40:45,920 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:45,920 - INFO - Max date for MO: 2025-09-04
+2025-09-14 17:40:45,921 - INFO - Will download MO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:45,921 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MPC']
+2025-09-14 17:40:46,029 - INFO - query execution done
+2025-09-14 17:40:46,029 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,030 - INFO - Max date for MPC: 2025-09-04
+2025-09-14 17:40:46,030 - INFO - Will download MPC from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,030 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MRK']
+2025-09-14 17:40:46,153 - INFO - query execution done
+2025-09-14 17:40:46,153 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,154 - INFO - Max date for MRK: 2025-09-04
+2025-09-14 17:40:46,154 - INFO - Will download MRK from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,154 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MSFT']
+2025-09-14 17:40:46,536 - INFO - query execution done
+2025-09-14 17:40:46,536 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,537 - INFO - Max date for MSFT: 2025-09-04
+2025-09-14 17:40:46,537 - INFO - Will download MSFT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,537 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEE']
+2025-09-14 17:40:46,652 - INFO - query execution done
+2025-09-14 17:40:46,652 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,653 - INFO - Max date for NEE: 2025-09-04
+2025-09-14 17:40:46,653 - INFO - Will download NEE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,653 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEM']
+2025-09-14 17:40:46,770 - INFO - query execution done
+2025-09-14 17:40:46,770 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,771 - INFO - Max date for NEM: 2025-09-04
+2025-09-14 17:40:46,771 - INFO - Will download NEM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,771 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NFLX']
+2025-09-14 17:40:46,889 - INFO - query execution done
+2025-09-14 17:40:46,889 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:46,889 - INFO - Max date for NFLX: 2025-09-04
+2025-09-14 17:40:46,889 - INFO - Will download NFLX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:46,889 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NKE']
+2025-09-14 17:40:47,001 - INFO - query execution done
+2025-09-14 17:40:47,001 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,001 - INFO - Max date for NKE: 2025-09-04
+2025-09-14 17:40:47,002 - INFO - Will download NKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,002 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NVDA']
+2025-09-14 17:40:47,128 - INFO - query execution done
+2025-09-14 17:40:47,129 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,130 - INFO - Max date for NVDA: 2025-09-04
+2025-09-14 17:40:47,130 - INFO - Will download NVDA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,130 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'O']
+2025-09-14 17:40:47,251 - INFO - query execution done
+2025-09-14 17:40:47,252 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,252 - INFO - Max date for O: 2025-09-04
+2025-09-14 17:40:47,252 - INFO - Will download O from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,253 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'OKE']
+2025-09-14 17:40:47,365 - INFO - query execution done
+2025-09-14 17:40:47,365 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,365 - INFO - Max date for OKE: 2025-09-04
+2025-09-14 17:40:47,365 - INFO - Will download OKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,365 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ORCL']
+2025-09-14 17:40:47,509 - INFO - query execution done
+2025-09-14 17:40:47,510 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,511 - INFO - Max date for ORCL: 2025-09-04
+2025-09-14 17:40:47,511 - INFO - Will download ORCL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,511 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PCG']
+2025-09-14 17:40:47,659 - INFO - query execution done
+2025-09-14 17:40:47,659 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,660 - INFO - Max date for PCG: 2025-09-04
+2025-09-14 17:40:47,660 - INFO - Will download PCG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,660 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEG']
+2025-09-14 17:40:47,789 - INFO - query execution done
+2025-09-14 17:40:47,790 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,790 - INFO - Max date for PEG: 2025-09-04
+2025-09-14 17:40:47,790 - INFO - Will download PEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,791 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEP']
+2025-09-14 17:40:47,892 - INFO - query execution done
+2025-09-14 17:40:47,893 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:47,893 - INFO - Max date for PEP: 2025-09-04
+2025-09-14 17:40:47,893 - INFO - Will download PEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:47,894 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PG']
+2025-09-14 17:40:48,013 - INFO - query execution done
+2025-09-14 17:40:48,013 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,013 - INFO - Max date for PG: 2025-09-04
+2025-09-14 17:40:48,013 - INFO - Will download PG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,013 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PLD']
+2025-09-14 17:40:48,118 - INFO - query execution done
+2025-09-14 17:40:48,118 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,119 - INFO - Max date for PLD: 2025-09-04
+2025-09-14 17:40:48,119 - INFO - Will download PLD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,119 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PM']
+2025-09-14 17:40:48,219 - INFO - query execution done
+2025-09-14 17:40:48,220 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,220 - INFO - Max date for PM: 2025-09-04
+2025-09-14 17:40:48,220 - INFO - Will download PM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,220 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSA']
+2025-09-14 17:40:48,346 - INFO - query execution done
+2025-09-14 17:40:48,347 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,347 - INFO - Max date for PSA: 2025-09-04
+2025-09-14 17:40:48,348 - INFO - Will download PSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,348 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSX']
+2025-09-14 17:40:48,479 - INFO - query execution done
+2025-09-14 17:40:48,480 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,480 - INFO - Max date for PSX: 2025-09-04
+2025-09-14 17:40:48,480 - INFO - Will download PSX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,480 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'RTX']
+2025-09-14 17:40:48,596 - INFO - query execution done
+2025-09-14 17:40:48,597 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,597 - INFO - Max date for RTX: 2025-09-04
+2025-09-14 17:40:48,597 - INFO - Will download RTX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,597 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SBUX']
+2025-09-14 17:40:48,709 - INFO - query execution done
+2025-09-14 17:40:48,710 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,711 - INFO - Max date for SBUX: 2025-09-04
+2025-09-14 17:40:48,711 - INFO - Will download SBUX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,711 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SHW']
+2025-09-14 17:40:48,892 - INFO - query execution done
+2025-09-14 17:40:48,893 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:48,893 - INFO - Max date for SHW: 2025-09-04
+2025-09-14 17:40:48,893 - INFO - Will download SHW from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:48,894 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SLB']
+2025-09-14 17:40:49,018 - INFO - query execution done
+2025-09-14 17:40:49,018 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,018 - INFO - Max date for SLB: 2025-09-04
+2025-09-14 17:40:49,018 - INFO - Will download SLB from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,018 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SO']
+2025-09-14 17:40:49,141 - INFO - query execution done
+2025-09-14 17:40:49,142 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,142 - INFO - Max date for SO: 2025-09-04
+2025-09-14 17:40:49,142 - INFO - Will download SO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,142 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPG']
+2025-09-14 17:40:49,248 - INFO - query execution done
+2025-09-14 17:40:49,249 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,250 - INFO - Max date for SPG: 2025-09-04
+2025-09-14 17:40:49,250 - INFO - Will download SPG from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,251 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPGI']
+2025-09-14 17:40:49,375 - INFO - query execution done
+2025-09-14 17:40:49,375 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,376 - INFO - Max date for SPGI: 2025-09-04
+2025-09-14 17:40:49,377 - INFO - Will download SPGI from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,377 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SRE']
+2025-09-14 17:40:49,511 - INFO - query execution done
+2025-09-14 17:40:49,512 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,513 - INFO - Max date for SRE: 2025-09-04
+2025-09-14 17:40:49,513 - INFO - Will download SRE from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,513 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'T']
+2025-09-14 17:40:49,618 - INFO - query execution done
+2025-09-14 17:40:49,619 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,619 - INFO - Max date for T: 2025-09-04
+2025-09-14 17:40:49,619 - INFO - Will download T from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,620 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TGT']
+2025-09-14 17:40:49,730 - INFO - query execution done
+2025-09-14 17:40:49,730 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,730 - INFO - Max date for TGT: 2025-09-04
+2025-09-14 17:40:49,731 - INFO - Will download TGT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,731 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TJX']
+2025-09-14 17:40:49,858 - INFO - query execution done
+2025-09-14 17:40:49,859 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,859 - INFO - Max date for TJX: 2025-09-04
+2025-09-14 17:40:49,860 - INFO - Will download TJX from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,860 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMO']
+2025-09-14 17:40:49,970 - INFO - query execution done
+2025-09-14 17:40:49,971 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:49,971 - INFO - Max date for TMO: 2025-09-04
+2025-09-14 17:40:49,971 - INFO - Will download TMO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:49,972 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMUS']
+2025-09-14 17:40:50,088 - INFO - query execution done
+2025-09-14 17:40:50,088 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,089 - INFO - Max date for TMUS: 2025-09-04
+2025-09-14 17:40:50,089 - INFO - Will download TMUS from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,089 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TSLA']
+2025-09-14 17:40:50,221 - INFO - query execution done
+2025-09-14 17:40:50,295 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,296 - INFO - Max date for TSLA: 2025-09-04
+2025-09-14 17:40:50,297 - INFO - Will download TSLA from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,297 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TTD']
+2025-09-14 17:40:50,402 - INFO - query execution done
+2025-09-14 17:40:50,403 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,403 - INFO - Max date for TTD: 2025-09-04
+2025-09-14 17:40:50,403 - INFO - Will download TTD from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,404 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UBER']
+2025-09-14 17:40:50,537 - INFO - query execution done
+2025-09-14 17:40:50,537 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,538 - INFO - Max date for UBER: 2025-09-04
+2025-09-14 17:40:50,538 - INFO - Will download UBER from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,538 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNH']
+2025-09-14 17:40:50,647 - INFO - query execution done
+2025-09-14 17:40:50,648 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,648 - INFO - Max date for UNH: 2025-09-04
+2025-09-14 17:40:50,648 - INFO - Will download UNH from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,649 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNP']
+2025-09-14 17:40:50,757 - INFO - query execution done
+2025-09-14 17:40:50,758 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,758 - INFO - Max date for UNP: 2025-09-04
+2025-09-14 17:40:50,759 - INFO - Will download UNP from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,759 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'V']
+2025-09-14 17:40:50,882 - INFO - query execution done
+2025-09-14 17:40:50,883 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:50,883 - INFO - Max date for V: 2025-09-04
+2025-09-14 17:40:50,883 - INFO - Will download V from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:50,883 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VMC']
+2025-09-14 17:40:51,019 - INFO - query execution done
+2025-09-14 17:40:51,019 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,019 - INFO - Max date for VMC: 2025-09-04
+2025-09-14 17:40:51,020 - INFO - Will download VMC from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,020 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VOO']
+2025-09-14 17:40:51,131 - INFO - query execution done
+2025-09-14 17:40:51,131 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,132 - INFO - Max date for VOO: 2025-09-04
+2025-09-14 17:40:51,132 - INFO - Will download VOO from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,132 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VST']
+2025-09-14 17:40:51,246 - INFO - query execution done
+2025-09-14 17:40:51,247 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,247 - INFO - Max date for VST: 2025-09-04
+2025-09-14 17:40:51,247 - INFO - Will download VST from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,248 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VZ']
+2025-09-14 17:40:51,383 - INFO - query execution done
+2025-09-14 17:40:51,384 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,384 - INFO - Max date for VZ: 2025-09-04
+2025-09-14 17:40:51,385 - INFO - Will download VZ from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,385 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WELL']
+2025-09-14 17:40:51,526 - INFO - query execution done
+2025-09-14 17:40:51,527 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,527 - INFO - Max date for WELL: 2025-09-04
+2025-09-14 17:40:51,527 - INFO - Will download WELL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,528 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WFC']
+2025-09-14 17:40:51,648 - INFO - query execution done
+2025-09-14 17:40:51,648 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,649 - INFO - Max date for WFC: 2025-09-04
+2025-09-14 17:40:51,650 - INFO - Will download WFC from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,650 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMB']
+2025-09-14 17:40:51,760 - INFO - query execution done
+2025-09-14 17:40:51,760 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,761 - INFO - Max date for WMB: 2025-09-04
+2025-09-14 17:40:51,761 - INFO - Will download WMB from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,761 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMT']
+2025-09-14 17:40:51,871 - INFO - query execution done
+2025-09-14 17:40:51,871 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,871 - INFO - Max date for WMT: 2025-09-04
+2025-09-14 17:40:51,872 - INFO - Will download WMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,872 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'XOM']
+2025-09-14 17:40:51,982 - INFO - query execution done
+2025-09-14 17:40:51,982 - INFO - Number of results in first chunk: 1
+2025-09-14 17:40:51,982 - INFO - Max date for XOM: 2025-09-04
+2025-09-14 17:40:51,982 - INFO - Will download XOM from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:51,983 - INFO - Found 111 tickers that need data updates
+2025-09-14 17:40:51,983 - INFO - Found 111 tickers that need data updates
+2025-09-14 17:40:51,983 - INFO - Step 2: Initializing S3 client...
+2025-09-14 17:40:51,994 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-09-14 17:40:52,513 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-14 17:40:52,514 - INFO - Step 3: Processing tickers with incremental data...
+2025-09-14 17:40:52,514 - INFO - Processing ticker 1/111: AAPL
+2025-09-14 17:40:52,514 - INFO - Starting processing for ticker: AAPL (2025-09-05 to 2025-09-12)
+2025-09-14 17:40:52,514 - INFO - Fetching data for AAPL from 2025-09-05 to 2025-09-12
+2025-09-14 17:40:52,947 - INFO - Successfully retrieved 6 records for AAPL
+2025-09-14 17:40:52,971 - INFO - Processed 6 records for AAPL in 2025-09
+2025-09-14 17:40:52,995 - INFO - Created Parquet file: AAPL_2025_09.parquet
+2025-09-14 17:40:53,074 - INFO - Successfully uploaded AAPL_2025_09.parquet to S3 bucket root
+2025-09-14 17:40:53,075 - INFO - Cleaned up local file: AAPL_2025_09.parquet
+2025-09-14 17:40:53,075 - INFO - Completed processing AAPL: 1/1 files successful
+2025-09-14 17:40:53,075 - INFO - ✓ Successfully processed AAPL
+2025-09-14 17:40:53,075 - INFO - Processing ticker 2/111: ABBV
+2025-09-14 17:40:53,075 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:41:05,581 - INFO - Starting processing for ticker: ABBV (2025-09-05 to 2025-09-12)
+2025-09-14 17:41:05,582 - INFO - Fetching data for ABBV from 2025-09-05 to 2025-09-12
+2025-09-14 17:41:05,907 - INFO - Successfully retrieved 6 records for ABBV
+2025-09-14 17:41:05,914 - INFO - Processed 6 records for ABBV in 2025-09
+2025-09-14 17:41:05,919 - INFO - Created Parquet file: ABBV_2025_09.parquet
+2025-09-14 17:41:06,140 - INFO - Successfully uploaded ABBV_2025_09.parquet to S3 bucket root
+2025-09-14 17:41:06,141 - INFO - Cleaned up local file: ABBV_2025_09.parquet
+2025-09-14 17:41:06,141 - INFO - Completed processing ABBV: 1/1 files successful
+2025-09-14 17:41:06,141 - INFO - ✓ Successfully processed ABBV
+2025-09-14 17:41:06,141 - INFO - Processing ticker 3/111: ABT
+2025-09-14 17:41:06,141 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:41:18,646 - INFO - Starting processing for ticker: ABT (2025-09-05 to 2025-09-12)
+2025-09-14 17:41:18,647 - INFO - Fetching data for ABT from 2025-09-05 to 2025-09-12
+2025-09-14 17:41:18,989 - INFO - Successfully retrieved 6 records for ABT
+2025-09-14 17:41:18,995 - INFO - Processed 6 records for ABT in 2025-09
+2025-09-14 17:41:19,000 - INFO - Created Parquet file: ABT_2025_09.parquet
+2025-09-14 17:41:19,349 - INFO - Successfully uploaded ABT_2025_09.parquet to S3 bucket root
+2025-09-14 17:41:19,350 - INFO - Cleaned up local file: ABT_2025_09.parquet
+2025-09-14 17:41:19,350 - INFO - Completed processing ABT: 1/1 files successful
+2025-09-14 17:41:19,351 - INFO - ✓ Successfully processed ABT
+2025-09-14 17:41:19,351 - INFO - Processing ticker 4/111: ACN
+2025-09-14 17:41:19,351 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:41:31,856 - INFO - Starting processing for ticker: ACN (2025-09-05 to 2025-09-12)
+2025-09-14 17:41:31,856 - INFO - Fetching data for ACN from 2025-09-05 to 2025-09-12
+2025-09-14 17:41:32,162 - INFO - Successfully retrieved 6 records for ACN
+2025-09-14 17:41:32,169 - INFO - Processed 6 records for ACN in 2025-09
+2025-09-14 17:41:32,173 - INFO - Created Parquet file: ACN_2025_09.parquet
+2025-09-14 17:41:32,526 - INFO - Successfully uploaded ACN_2025_09.parquet to S3 bucket root
+2025-09-14 17:41:32,527 - INFO - Cleaned up local file: ACN_2025_09.parquet
+2025-09-14 17:41:32,527 - INFO - Completed processing ACN: 1/1 files successful
+2025-09-14 17:41:32,527 - INFO - ✓ Successfully processed ACN
+2025-09-14 17:41:32,527 - INFO - Processing ticker 5/111: ADBE
+2025-09-14 17:41:32,527 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:41:45,033 - INFO - Starting processing for ticker: ADBE (2025-09-05 to 2025-09-12)
+2025-09-14 17:41:45,034 - INFO - Fetching data for ADBE from 2025-09-05 to 2025-09-12
+2025-09-14 17:41:45,341 - INFO - Successfully retrieved 6 records for ADBE
+2025-09-14 17:41:45,348 - INFO - Processed 6 records for ADBE in 2025-09
+2025-09-14 17:41:45,353 - INFO - Created Parquet file: ADBE_2025_09.parquet
+2025-09-14 17:41:45,717 - INFO - Successfully uploaded ADBE_2025_09.parquet to S3 bucket root
+2025-09-14 17:41:45,718 - INFO - Cleaned up local file: ADBE_2025_09.parquet
+2025-09-14 17:41:45,719 - INFO - Completed processing ADBE: 1/1 files successful
+2025-09-14 17:41:45,719 - INFO - ✓ Successfully processed ADBE
+2025-09-14 17:41:45,719 - INFO - Processing ticker 6/111: ADP
+2025-09-14 17:41:45,719 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:41:58,224 - INFO - Starting processing for ticker: ADP (2025-09-05 to 2025-09-12)
+2025-09-14 17:41:58,225 - INFO - Fetching data for ADP from 2025-09-05 to 2025-09-12
+2025-09-14 17:41:58,576 - INFO - Successfully retrieved 6 records for ADP
+2025-09-14 17:41:58,582 - INFO - Processed 6 records for ADP in 2025-09
+2025-09-14 17:41:58,590 - INFO - Created Parquet file: ADP_2025_09.parquet
+2025-09-14 17:41:58,892 - INFO - Successfully uploaded ADP_2025_09.parquet to S3 bucket root
+2025-09-14 17:41:58,893 - INFO - Cleaned up local file: ADP_2025_09.parquet
+2025-09-14 17:41:58,894 - INFO - Completed processing ADP: 1/1 files successful
+2025-09-14 17:41:58,894 - INFO - ✓ Successfully processed ADP
+2025-09-14 17:41:58,894 - INFO - Processing ticker 7/111: AEP
+2025-09-14 17:41:58,894 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:42:11,397 - INFO - Starting processing for ticker: AEP (2025-09-05 to 2025-09-12)
+2025-09-14 17:42:11,398 - INFO - Fetching data for AEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:42:11,826 - INFO - Successfully retrieved 6 records for AEP
+2025-09-14 17:42:11,833 - INFO - Processed 6 records for AEP in 2025-09
+2025-09-14 17:42:11,838 - INFO - Created Parquet file: AEP_2025_09.parquet
+2025-09-14 17:42:12,295 - INFO - Successfully uploaded AEP_2025_09.parquet to S3 bucket root
+2025-09-14 17:42:12,296 - INFO - Cleaned up local file: AEP_2025_09.parquet
+2025-09-14 17:42:12,297 - INFO - Completed processing AEP: 1/1 files successful
+2025-09-14 17:42:12,297 - INFO - ✓ Successfully processed AEP
+2025-09-14 17:42:12,297 - INFO - Processing ticker 8/111: AMD
+2025-09-14 17:42:12,297 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:42:24,799 - INFO - Starting processing for ticker: AMD (2025-09-05 to 2025-09-12)
+2025-09-14 17:42:24,800 - INFO - Fetching data for AMD from 2025-09-05 to 2025-09-12
+2025-09-14 17:42:25,104 - INFO - Successfully retrieved 6 records for AMD
+2025-09-14 17:42:25,109 - INFO - Processed 6 records for AMD in 2025-09
+2025-09-14 17:42:25,112 - INFO - Created Parquet file: AMD_2025_09.parquet
+2025-09-14 17:42:25,478 - INFO - Successfully uploaded AMD_2025_09.parquet to S3 bucket root
+2025-09-14 17:42:25,479 - INFO - Cleaned up local file: AMD_2025_09.parquet
+2025-09-14 17:42:25,479 - INFO - Completed processing AMD: 1/1 files successful
+2025-09-14 17:42:25,479 - INFO - ✓ Successfully processed AMD
+2025-09-14 17:42:25,479 - INFO - Processing ticker 9/111: AMGN
+2025-09-14 17:42:25,479 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:42:37,983 - INFO - Starting processing for ticker: AMGN (2025-09-05 to 2025-09-12)
+2025-09-14 17:42:37,984 - INFO - Fetching data for AMGN from 2025-09-05 to 2025-09-12
+2025-09-14 17:42:38,286 - INFO - Successfully retrieved 6 records for AMGN
+2025-09-14 17:42:38,292 - INFO - Processed 6 records for AMGN in 2025-09
+2025-09-14 17:42:38,297 - INFO - Created Parquet file: AMGN_2025_09.parquet
+2025-09-14 17:42:38,613 - INFO - Successfully uploaded AMGN_2025_09.parquet to S3 bucket root
+2025-09-14 17:42:38,614 - INFO - Cleaned up local file: AMGN_2025_09.parquet
+2025-09-14 17:42:38,615 - INFO - Completed processing AMGN: 1/1 files successful
+2025-09-14 17:42:38,615 - INFO - ✓ Successfully processed AMGN
+2025-09-14 17:42:38,615 - INFO - Processing ticker 10/111: AMT
+2025-09-14 17:42:38,615 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:42:51,124 - INFO - Starting processing for ticker: AMT (2025-09-05 to 2025-09-12)
+2025-09-14 17:42:51,124 - INFO - Fetching data for AMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:42:51,423 - INFO - Successfully retrieved 6 records for AMT
+2025-09-14 17:42:51,429 - INFO - Processed 6 records for AMT in 2025-09
+2025-09-14 17:42:51,433 - INFO - Created Parquet file: AMT_2025_09.parquet
+2025-09-14 17:42:51,905 - INFO - Successfully uploaded AMT_2025_09.parquet to S3 bucket root
+2025-09-14 17:42:51,907 - INFO - Cleaned up local file: AMT_2025_09.parquet
+2025-09-14 17:42:51,908 - INFO - Completed processing AMT: 1/1 files successful
+2025-09-14 17:42:51,908 - INFO - ✓ Successfully processed AMT
+2025-09-14 17:42:51,908 - INFO - Processing ticker 11/111: AMZN
+2025-09-14 17:42:51,908 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:43:04,413 - INFO - Starting processing for ticker: AMZN (2025-09-05 to 2025-09-12)
+2025-09-14 17:43:04,413 - INFO - Fetching data for AMZN from 2025-09-05 to 2025-09-12
+2025-09-14 17:43:04,717 - INFO - Successfully retrieved 6 records for AMZN
+2025-09-14 17:43:04,722 - INFO - Processed 6 records for AMZN in 2025-09
+2025-09-14 17:43:04,726 - INFO - Created Parquet file: AMZN_2025_09.parquet
+2025-09-14 17:43:04,948 - INFO - Successfully uploaded AMZN_2025_09.parquet to S3 bucket root
+2025-09-14 17:43:04,949 - INFO - Cleaned up local file: AMZN_2025_09.parquet
+2025-09-14 17:43:04,950 - INFO - Completed processing AMZN: 1/1 files successful
+2025-09-14 17:43:04,952 - INFO - ✓ Successfully processed AMZN
+2025-09-14 17:43:04,952 - INFO - Processing ticker 12/111: APD
+2025-09-14 17:43:04,953 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:43:17,454 - INFO - Starting processing for ticker: APD (2025-09-05 to 2025-09-12)
+2025-09-14 17:43:17,454 - INFO - Fetching data for APD from 2025-09-05 to 2025-09-12
+2025-09-14 17:43:17,837 - INFO - Successfully retrieved 6 records for APD
+2025-09-14 17:43:17,840 - INFO - Processed 6 records for APD in 2025-09
+2025-09-14 17:43:17,842 - INFO - Created Parquet file: APD_2025_09.parquet
+2025-09-14 17:43:18,243 - INFO - Successfully uploaded APD_2025_09.parquet to S3 bucket root
+2025-09-14 17:43:18,244 - INFO - Cleaned up local file: APD_2025_09.parquet
+2025-09-14 17:43:18,244 - INFO - Completed processing APD: 1/1 files successful
+2025-09-14 17:43:18,245 - INFO - ✓ Successfully processed APD
+2025-09-14 17:43:18,245 - INFO - Processing ticker 13/111: AVGO
+2025-09-14 17:43:18,245 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:43:30,750 - INFO - Starting processing for ticker: AVGO (2025-09-05 to 2025-09-12)
+2025-09-14 17:43:30,754 - INFO - Fetching data for AVGO from 2025-09-05 to 2025-09-12
+2025-09-14 17:43:31,084 - INFO - Successfully retrieved 6 records for AVGO
+2025-09-14 17:43:31,090 - INFO - Processed 6 records for AVGO in 2025-09
+2025-09-14 17:43:31,094 - INFO - Created Parquet file: AVGO_2025_09.parquet
+2025-09-14 17:43:31,381 - INFO - Successfully uploaded AVGO_2025_09.parquet to S3 bucket root
+2025-09-14 17:43:31,382 - INFO - Cleaned up local file: AVGO_2025_09.parquet
+2025-09-14 17:43:31,383 - INFO - Completed processing AVGO: 1/1 files successful
+2025-09-14 17:43:31,383 - INFO - ✓ Successfully processed AVGO
+2025-09-14 17:43:31,384 - INFO - Processing ticker 14/111: AXP
+2025-09-14 17:43:31,384 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:43:43,888 - INFO - Starting processing for ticker: AXP (2025-09-05 to 2025-09-12)
+2025-09-14 17:43:43,888 - INFO - Fetching data for AXP from 2025-09-05 to 2025-09-12
+2025-09-14 17:43:44,204 - INFO - Successfully retrieved 6 records for AXP
+2025-09-14 17:43:44,211 - INFO - Processed 6 records for AXP in 2025-09
+2025-09-14 17:43:44,215 - INFO - Created Parquet file: AXP_2025_09.parquet
+2025-09-14 17:43:44,633 - INFO - Successfully uploaded AXP_2025_09.parquet to S3 bucket root
+2025-09-14 17:43:44,637 - INFO - Cleaned up local file: AXP_2025_09.parquet
+2025-09-14 17:43:44,637 - INFO - Completed processing AXP: 1/1 files successful
+2025-09-14 17:43:44,638 - INFO - ✓ Successfully processed AXP
+2025-09-14 17:43:44,638 - INFO - Processing ticker 15/111: BA
+2025-09-14 17:43:44,640 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:43:57,145 - INFO - Starting processing for ticker: BA (2025-09-05 to 2025-09-12)
+2025-09-14 17:43:57,146 - INFO - Fetching data for BA from 2025-09-05 to 2025-09-12
+2025-09-14 17:43:57,465 - INFO - Successfully retrieved 6 records for BA
+2025-09-14 17:43:57,473 - INFO - Processed 6 records for BA in 2025-09
+2025-09-14 17:43:57,477 - INFO - Created Parquet file: BA_2025_09.parquet
+2025-09-14 17:43:57,738 - INFO - Successfully uploaded BA_2025_09.parquet to S3 bucket root
+2025-09-14 17:43:57,739 - INFO - Cleaned up local file: BA_2025_09.parquet
+2025-09-14 17:43:57,739 - INFO - Completed processing BA: 1/1 files successful
+2025-09-14 17:43:57,739 - INFO - ✓ Successfully processed BA
+2025-09-14 17:43:57,739 - INFO - Processing ticker 16/111: BAC
+2025-09-14 17:43:57,739 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:44:10,241 - INFO - Starting processing for ticker: BAC (2025-09-05 to 2025-09-12)
+2025-09-14 17:44:10,242 - INFO - Fetching data for BAC from 2025-09-05 to 2025-09-12
+2025-09-14 17:44:10,538 - INFO - Successfully retrieved 6 records for BAC
+2025-09-14 17:44:10,544 - INFO - Processed 6 records for BAC in 2025-09
+2025-09-14 17:44:10,549 - INFO - Created Parquet file: BAC_2025_09.parquet
+2025-09-14 17:44:10,857 - INFO - Successfully uploaded BAC_2025_09.parquet to S3 bucket root
+2025-09-14 17:44:10,858 - INFO - Cleaned up local file: BAC_2025_09.parquet
+2025-09-14 17:44:10,858 - INFO - Completed processing BAC: 1/1 files successful
+2025-09-14 17:44:10,858 - INFO - ✓ Successfully processed BAC
+2025-09-14 17:44:10,858 - INFO - Processing ticker 17/111: BKNG
+2025-09-14 17:44:10,858 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:44:23,361 - INFO - Starting processing for ticker: BKNG (2025-09-05 to 2025-09-12)
+2025-09-14 17:44:23,362 - INFO - Fetching data for BKNG from 2025-09-05 to 2025-09-12
+2025-09-14 17:44:23,763 - INFO - Successfully retrieved 6 records for BKNG
+2025-09-14 17:44:23,769 - INFO - Processed 6 records for BKNG in 2025-09
+2025-09-14 17:44:23,773 - INFO - Created Parquet file: BKNG_2025_09.parquet
+2025-09-14 17:44:23,971 - INFO - Successfully uploaded BKNG_2025_09.parquet to S3 bucket root
+2025-09-14 17:44:23,971 - INFO - Cleaned up local file: BKNG_2025_09.parquet
+2025-09-14 17:44:23,971 - INFO - Completed processing BKNG: 1/1 files successful
+2025-09-14 17:44:23,972 - INFO - ✓ Successfully processed BKNG
+2025-09-14 17:44:23,972 - INFO - Processing ticker 18/111: BLK
+2025-09-14 17:44:23,972 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:44:36,476 - INFO - Starting processing for ticker: BLK (2025-09-05 to 2025-09-12)
+2025-09-14 17:44:36,477 - INFO - Fetching data for BLK from 2025-09-05 to 2025-09-12
+2025-09-14 17:44:36,822 - INFO - Successfully retrieved 6 records for BLK
+2025-09-14 17:44:36,828 - INFO - Processed 6 records for BLK in 2025-09
+2025-09-14 17:44:36,832 - INFO - Created Parquet file: BLK_2025_09.parquet
+2025-09-14 17:44:37,316 - INFO - Successfully uploaded BLK_2025_09.parquet to S3 bucket root
+2025-09-14 17:44:37,317 - INFO - Cleaned up local file: BLK_2025_09.parquet
+2025-09-14 17:44:37,317 - INFO - Completed processing BLK: 1/1 files successful
+2025-09-14 17:44:37,317 - INFO - ✓ Successfully processed BLK
+2025-09-14 17:44:37,317 - INFO - Processing ticker 19/111: BRK.B
+2025-09-14 17:44:37,318 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:44:49,823 - INFO - Starting processing for ticker: BRK.B (2025-09-05 to 2025-09-12)
+2025-09-14 17:44:49,823 - INFO - Fetching data for BRK.B from 2025-09-05 to 2025-09-12
+2025-09-14 17:44:50,129 - INFO - Successfully retrieved 6 records for BRK.B
+2025-09-14 17:44:50,133 - INFO - Processed 6 records for BRK.B in 2025-09
+2025-09-14 17:44:50,137 - INFO - Created Parquet file: BRK.B_2025_09.parquet
+2025-09-14 17:44:50,455 - INFO - Successfully uploaded BRK.B_2025_09.parquet to S3 bucket root
+2025-09-14 17:44:50,457 - INFO - Cleaned up local file: BRK.B_2025_09.parquet
+2025-09-14 17:44:50,457 - INFO - Completed processing BRK.B: 1/1 files successful
+2025-09-14 17:44:50,457 - INFO - ✓ Successfully processed BRK.B
+2025-09-14 17:44:50,457 - INFO - Processing ticker 20/111: CAT
+2025-09-14 17:44:50,458 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:45:02,962 - INFO - Starting processing for ticker: CAT (2025-09-05 to 2025-09-12)
+2025-09-14 17:45:02,963 - INFO - Fetching data for CAT from 2025-09-05 to 2025-09-12
+2025-09-14 17:45:03,257 - INFO - Successfully retrieved 6 records for CAT
+2025-09-14 17:45:03,264 - INFO - Processed 6 records for CAT in 2025-09
+2025-09-14 17:45:03,269 - INFO - Created Parquet file: CAT_2025_09.parquet
+2025-09-14 17:45:03,581 - INFO - Successfully uploaded CAT_2025_09.parquet to S3 bucket root
+2025-09-14 17:45:03,582 - INFO - Cleaned up local file: CAT_2025_09.parquet
+2025-09-14 17:45:03,583 - INFO - Completed processing CAT: 1/1 files successful
+2025-09-14 17:45:03,583 - INFO - ✓ Successfully processed CAT
+2025-09-14 17:45:03,583 - INFO - Processing ticker 21/111: CBRE
+2025-09-14 17:45:03,583 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:45:16,085 - INFO - Starting processing for ticker: CBRE (2025-09-05 to 2025-09-12)
+2025-09-14 17:45:16,087 - INFO - Fetching data for CBRE from 2025-09-05 to 2025-09-12
+2025-09-14 17:45:16,391 - INFO - Successfully retrieved 6 records for CBRE
+2025-09-14 17:45:16,395 - INFO - Processed 6 records for CBRE in 2025-09
+2025-09-14 17:45:16,398 - INFO - Created Parquet file: CBRE_2025_09.parquet
+2025-09-14 17:45:16,730 - INFO - Successfully uploaded CBRE_2025_09.parquet to S3 bucket root
+2025-09-14 17:45:16,731 - INFO - Cleaned up local file: CBRE_2025_09.parquet
+2025-09-14 17:45:16,731 - INFO - Completed processing CBRE: 1/1 files successful
+2025-09-14 17:45:16,731 - INFO - ✓ Successfully processed CBRE
+2025-09-14 17:45:16,731 - INFO - Processing ticker 22/111: CCI
+2025-09-14 17:45:16,732 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:45:29,233 - INFO - Starting processing for ticker: CCI (2025-09-05 to 2025-09-12)
+2025-09-14 17:45:29,234 - INFO - Fetching data for CCI from 2025-09-05 to 2025-09-12
+2025-09-14 17:45:29,611 - INFO - Successfully retrieved 6 records for CCI
+2025-09-14 17:45:29,618 - INFO - Processed 6 records for CCI in 2025-09
+2025-09-14 17:45:29,622 - INFO - Created Parquet file: CCI_2025_09.parquet
+2025-09-14 17:45:30,025 - INFO - Successfully uploaded CCI_2025_09.parquet to S3 bucket root
+2025-09-14 17:45:30,025 - INFO - Cleaned up local file: CCI_2025_09.parquet
+2025-09-14 17:45:30,025 - INFO - Completed processing CCI: 1/1 files successful
+2025-09-14 17:45:30,025 - INFO - ✓ Successfully processed CCI
+2025-09-14 17:45:30,025 - INFO - Processing ticker 23/111: CEG
+2025-09-14 17:45:30,025 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:45:42,532 - INFO - Starting processing for ticker: CEG (2025-09-05 to 2025-09-12)
+2025-09-14 17:45:42,535 - INFO - Fetching data for CEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:45:42,937 - INFO - Successfully retrieved 6 records for CEG
+2025-09-14 17:45:42,954 - INFO - Processed 6 records for CEG in 2025-09
+2025-09-14 17:45:42,960 - INFO - Created Parquet file: CEG_2025_09.parquet
+2025-09-14 17:45:43,303 - INFO - Successfully uploaded CEG_2025_09.parquet to S3 bucket root
+2025-09-14 17:45:43,304 - INFO - Cleaned up local file: CEG_2025_09.parquet
+2025-09-14 17:45:43,304 - INFO - Completed processing CEG: 1/1 files successful
+2025-09-14 17:45:43,304 - INFO - ✓ Successfully processed CEG
+2025-09-14 17:45:43,304 - INFO - Processing ticker 24/111: CL
+2025-09-14 17:45:43,304 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:45:55,809 - INFO - Starting processing for ticker: CL (2025-09-05 to 2025-09-12)
+2025-09-14 17:45:55,811 - INFO - Fetching data for CL from 2025-09-05 to 2025-09-12
+2025-09-14 17:45:56,119 - INFO - Successfully retrieved 6 records for CL
+2025-09-14 17:45:56,126 - INFO - Processed 6 records for CL in 2025-09
+2025-09-14 17:45:56,130 - INFO - Created Parquet file: CL_2025_09.parquet
+2025-09-14 17:45:56,414 - INFO - Successfully uploaded CL_2025_09.parquet to S3 bucket root
+2025-09-14 17:45:56,415 - INFO - Cleaned up local file: CL_2025_09.parquet
+2025-09-14 17:45:56,415 - INFO - Completed processing CL: 1/1 files successful
+2025-09-14 17:45:56,416 - INFO - ✓ Successfully processed CL
+2025-09-14 17:45:56,416 - INFO - Processing ticker 25/111: CMCSA
+2025-09-14 17:45:56,416 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:46:08,916 - INFO - Starting processing for ticker: CMCSA (2025-09-05 to 2025-09-12)
+2025-09-14 17:46:08,917 - INFO - Fetching data for CMCSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:46:09,240 - INFO - Successfully retrieved 6 records for CMCSA
+2025-09-14 17:46:09,242 - INFO - Processed 6 records for CMCSA in 2025-09
+2025-09-14 17:46:09,244 - INFO - Created Parquet file: CMCSA_2025_09.parquet
+2025-09-14 17:46:09,461 - INFO - Successfully uploaded CMCSA_2025_09.parquet to S3 bucket root
+2025-09-14 17:46:09,461 - INFO - Cleaned up local file: CMCSA_2025_09.parquet
+2025-09-14 17:46:09,462 - INFO - Completed processing CMCSA: 1/1 files successful
+2025-09-14 17:46:09,462 - INFO - ✓ Successfully processed CMCSA
+2025-09-14 17:46:09,462 - INFO - Processing ticker 26/111: COP
+2025-09-14 17:46:09,463 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:46:21,968 - INFO - Starting processing for ticker: COP (2025-09-05 to 2025-09-12)
+2025-09-14 17:46:21,970 - INFO - Fetching data for COP from 2025-09-05 to 2025-09-12
+2025-09-14 17:46:22,282 - INFO - Successfully retrieved 6 records for COP
+2025-09-14 17:46:22,290 - INFO - Processed 6 records for COP in 2025-09
+2025-09-14 17:46:22,295 - INFO - Created Parquet file: COP_2025_09.parquet
+2025-09-14 17:46:22,711 - INFO - Successfully uploaded COP_2025_09.parquet to S3 bucket root
+2025-09-14 17:46:22,712 - INFO - Cleaned up local file: COP_2025_09.parquet
+2025-09-14 17:46:22,712 - INFO - Completed processing COP: 1/1 files successful
+2025-09-14 17:46:22,713 - INFO - ✓ Successfully processed COP
+2025-09-14 17:46:22,713 - INFO - Processing ticker 27/111: COST
+2025-09-14 17:46:22,713 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:46:35,218 - INFO - Starting processing for ticker: COST (2025-09-05 to 2025-09-12)
+2025-09-14 17:46:35,218 - INFO - Fetching data for COST from 2025-09-05 to 2025-09-12
+2025-09-14 17:46:35,609 - INFO - Successfully retrieved 6 records for COST
+2025-09-14 17:46:35,617 - INFO - Processed 6 records for COST in 2025-09
+2025-09-14 17:46:35,621 - INFO - Created Parquet file: COST_2025_09.parquet
+2025-09-14 17:46:35,970 - INFO - Successfully uploaded COST_2025_09.parquet to S3 bucket root
+2025-09-14 17:46:35,971 - INFO - Cleaned up local file: COST_2025_09.parquet
+2025-09-14 17:46:35,971 - INFO - Completed processing COST: 1/1 files successful
+2025-09-14 17:46:35,971 - INFO - ✓ Successfully processed COST
+2025-09-14 17:46:35,972 - INFO - Processing ticker 28/111: CRH
+2025-09-14 17:46:35,972 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:46:48,477 - INFO - Starting processing for ticker: CRH (2025-09-05 to 2025-09-12)
+2025-09-14 17:46:48,478 - INFO - Fetching data for CRH from 2025-09-05 to 2025-09-12
+2025-09-14 17:46:48,806 - INFO - Successfully retrieved 6 records for CRH
+2025-09-14 17:46:48,814 - INFO - Processed 6 records for CRH in 2025-09
+2025-09-14 17:46:48,819 - INFO - Created Parquet file: CRH_2025_09.parquet
+2025-09-14 17:46:49,300 - INFO - Successfully uploaded CRH_2025_09.parquet to S3 bucket root
+2025-09-14 17:46:49,301 - INFO - Cleaned up local file: CRH_2025_09.parquet
+2025-09-14 17:46:49,302 - INFO - Completed processing CRH: 1/1 files successful
+2025-09-14 17:46:49,302 - INFO - ✓ Successfully processed CRH
+2025-09-14 17:46:49,302 - INFO - Processing ticker 29/111: CRM
+2025-09-14 17:46:49,303 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:47:01,804 - INFO - Starting processing for ticker: CRM (2025-09-05 to 2025-09-12)
+2025-09-14 17:47:01,806 - INFO - Fetching data for CRM from 2025-09-05 to 2025-09-12
+2025-09-14 17:47:02,105 - INFO - Successfully retrieved 6 records for CRM
+2025-09-14 17:47:02,113 - INFO - Processed 6 records for CRM in 2025-09
+2025-09-14 17:47:02,118 - INFO - Created Parquet file: CRM_2025_09.parquet
+2025-09-14 17:47:02,353 - INFO - Successfully uploaded CRM_2025_09.parquet to S3 bucket root
+2025-09-14 17:47:02,354 - INFO - Cleaned up local file: CRM_2025_09.parquet
+2025-09-14 17:47:02,354 - INFO - Completed processing CRM: 1/1 files successful
+2025-09-14 17:47:02,355 - INFO - ✓ Successfully processed CRM
+2025-09-14 17:47:02,355 - INFO - Processing ticker 30/111: CSCO
+2025-09-14 17:47:02,355 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:47:14,860 - INFO - Starting processing for ticker: CSCO (2025-09-05 to 2025-09-12)
+2025-09-14 17:47:14,862 - INFO - Fetching data for CSCO from 2025-09-05 to 2025-09-12
+2025-09-14 17:47:15,172 - INFO - Successfully retrieved 6 records for CSCO
+2025-09-14 17:47:15,175 - INFO - Processed 6 records for CSCO in 2025-09
+2025-09-14 17:47:15,177 - INFO - Created Parquet file: CSCO_2025_09.parquet
+2025-09-14 17:47:15,614 - INFO - Successfully uploaded CSCO_2025_09.parquet to S3 bucket root
+2025-09-14 17:47:15,615 - INFO - Cleaned up local file: CSCO_2025_09.parquet
+2025-09-14 17:47:15,615 - INFO - Completed processing CSCO: 1/1 files successful
+2025-09-14 17:47:15,615 - INFO - ✓ Successfully processed CSCO
+2025-09-14 17:47:15,615 - INFO - Processing ticker 31/111: CTVA
+2025-09-14 17:47:15,615 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:47:28,120 - INFO - Starting processing for ticker: CTVA (2025-09-05 to 2025-09-12)
+2025-09-14 17:47:28,122 - INFO - Fetching data for CTVA from 2025-09-05 to 2025-09-12
+2025-09-14 17:47:29,134 - INFO - Successfully retrieved 6 records for CTVA
+2025-09-14 17:47:29,142 - INFO - Processed 6 records for CTVA in 2025-09
+2025-09-14 17:47:29,146 - INFO - Created Parquet file: CTVA_2025_09.parquet
+2025-09-14 17:47:29,487 - INFO - Successfully uploaded CTVA_2025_09.parquet to S3 bucket root
+2025-09-14 17:47:29,489 - INFO - Cleaned up local file: CTVA_2025_09.parquet
+2025-09-14 17:47:29,489 - INFO - Completed processing CTVA: 1/1 files successful
+2025-09-14 17:47:29,490 - INFO - ✓ Successfully processed CTVA
+2025-09-14 17:47:29,490 - INFO - Processing ticker 32/111: CVX
+2025-09-14 17:47:29,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:47:41,996 - INFO - Starting processing for ticker: CVX (2025-09-05 to 2025-09-12)
+2025-09-14 17:47:41,997 - INFO - Fetching data for CVX from 2025-09-05 to 2025-09-12
+2025-09-14 17:47:42,325 - INFO - Successfully retrieved 6 records for CVX
+2025-09-14 17:47:42,331 - INFO - Processed 6 records for CVX in 2025-09
+2025-09-14 17:47:42,336 - INFO - Created Parquet file: CVX_2025_09.parquet
+2025-09-14 17:47:42,642 - INFO - Successfully uploaded CVX_2025_09.parquet to S3 bucket root
+2025-09-14 17:47:42,643 - INFO - Cleaned up local file: CVX_2025_09.parquet
+2025-09-14 17:47:42,643 - INFO - Completed processing CVX: 1/1 files successful
+2025-09-14 17:47:42,644 - INFO - ✓ Successfully processed CVX
+2025-09-14 17:47:42,644 - INFO - Processing ticker 33/111: D
+2025-09-14 17:47:42,644 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:47:55,145 - INFO - Starting processing for ticker: D (2025-09-05 to 2025-09-12)
+2025-09-14 17:47:55,147 - INFO - Fetching data for D from 2025-09-05 to 2025-09-12
+2025-09-14 17:47:55,622 - INFO - Successfully retrieved 6 records for D
+2025-09-14 17:47:55,630 - INFO - Processed 6 records for D in 2025-09
+2025-09-14 17:47:55,638 - INFO - Created Parquet file: D_2025_09.parquet
+2025-09-14 17:47:55,851 - INFO - Successfully uploaded D_2025_09.parquet to S3 bucket root
+2025-09-14 17:47:55,852 - INFO - Cleaned up local file: D_2025_09.parquet
+2025-09-14 17:47:55,853 - INFO - Completed processing D: 1/1 files successful
+2025-09-14 17:47:55,853 - INFO - ✓ Successfully processed D
+2025-09-14 17:47:55,853 - INFO - Processing ticker 34/111: DHR
+2025-09-14 17:47:55,853 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:48:08,355 - INFO - Starting processing for ticker: DHR (2025-09-05 to 2025-09-12)
+2025-09-14 17:48:08,358 - INFO - Fetching data for DHR from 2025-09-05 to 2025-09-12
+2025-09-14 17:48:08,671 - INFO - Successfully retrieved 6 records for DHR
+2025-09-14 17:48:08,684 - INFO - Processed 6 records for DHR in 2025-09
+2025-09-14 17:48:08,689 - INFO - Created Parquet file: DHR_2025_09.parquet
+2025-09-14 17:48:09,022 - INFO - Successfully uploaded DHR_2025_09.parquet to S3 bucket root
+2025-09-14 17:48:09,023 - INFO - Cleaned up local file: DHR_2025_09.parquet
+2025-09-14 17:48:09,024 - INFO - Completed processing DHR: 1/1 files successful
+2025-09-14 17:48:09,024 - INFO - ✓ Successfully processed DHR
+2025-09-14 17:48:09,024 - INFO - Processing ticker 35/111: DIS
+2025-09-14 17:48:09,024 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:48:21,529 - INFO - Starting processing for ticker: DIS (2025-09-05 to 2025-09-12)
+2025-09-14 17:48:21,530 - INFO - Fetching data for DIS from 2025-09-05 to 2025-09-12
+2025-09-14 17:48:21,884 - INFO - Successfully retrieved 6 records for DIS
+2025-09-14 17:48:21,890 - INFO - Processed 6 records for DIS in 2025-09
+2025-09-14 17:48:21,901 - INFO - Created Parquet file: DIS_2025_09.parquet
+2025-09-14 17:48:22,258 - INFO - Successfully uploaded DIS_2025_09.parquet to S3 bucket root
+2025-09-14 17:48:22,259 - INFO - Cleaned up local file: DIS_2025_09.parquet
+2025-09-14 17:48:22,259 - INFO - Completed processing DIS: 1/1 files successful
+2025-09-14 17:48:22,260 - INFO - ✓ Successfully processed DIS
+2025-09-14 17:48:22,260 - INFO - Processing ticker 36/111: DLR
+2025-09-14 17:48:22,260 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:48:34,760 - INFO - Starting processing for ticker: DLR (2025-09-05 to 2025-09-12)
+2025-09-14 17:48:34,762 - INFO - Fetching data for DLR from 2025-09-05 to 2025-09-12
+2025-09-14 17:48:35,134 - INFO - Successfully retrieved 6 records for DLR
+2025-09-14 17:48:35,141 - INFO - Processed 6 records for DLR in 2025-09
+2025-09-14 17:48:35,145 - INFO - Created Parquet file: DLR_2025_09.parquet
+2025-09-14 17:48:35,576 - INFO - Successfully uploaded DLR_2025_09.parquet to S3 bucket root
+2025-09-14 17:48:35,577 - INFO - Cleaned up local file: DLR_2025_09.parquet
+2025-09-14 17:48:35,577 - INFO - Completed processing DLR: 1/1 files successful
+2025-09-14 17:48:35,577 - INFO - ✓ Successfully processed DLR
+2025-09-14 17:48:35,577 - INFO - Processing ticker 37/111: DUK
+2025-09-14 17:48:35,577 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:48:48,083 - INFO - Starting processing for ticker: DUK (2025-09-05 to 2025-09-12)
+2025-09-14 17:48:48,085 - INFO - Fetching data for DUK from 2025-09-05 to 2025-09-12
+2025-09-14 17:48:48,392 - INFO - Successfully retrieved 6 records for DUK
+2025-09-14 17:48:48,397 - INFO - Processed 6 records for DUK in 2025-09
+2025-09-14 17:48:48,402 - INFO - Created Parquet file: DUK_2025_09.parquet
+2025-09-14 17:48:48,715 - INFO - Successfully uploaded DUK_2025_09.parquet to S3 bucket root
+2025-09-14 17:48:48,719 - INFO - Cleaned up local file: DUK_2025_09.parquet
+2025-09-14 17:48:48,719 - INFO - Completed processing DUK: 1/1 files successful
+2025-09-14 17:48:48,721 - INFO - ✓ Successfully processed DUK
+2025-09-14 17:48:48,722 - INFO - Processing ticker 38/111: ECL
+2025-09-14 17:48:48,722 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:49:01,227 - INFO - Starting processing for ticker: ECL (2025-09-05 to 2025-09-12)
+2025-09-14 17:49:01,228 - INFO - Fetching data for ECL from 2025-09-05 to 2025-09-12
+2025-09-14 17:49:01,547 - INFO - Successfully retrieved 6 records for ECL
+2025-09-14 17:49:01,552 - INFO - Processed 6 records for ECL in 2025-09
+2025-09-14 17:49:01,556 - INFO - Created Parquet file: ECL_2025_09.parquet
+2025-09-14 17:49:01,968 - INFO - Successfully uploaded ECL_2025_09.parquet to S3 bucket root
+2025-09-14 17:49:01,968 - INFO - Cleaned up local file: ECL_2025_09.parquet
+2025-09-14 17:49:01,969 - INFO - Completed processing ECL: 1/1 files successful
+2025-09-14 17:49:01,969 - INFO - ✓ Successfully processed ECL
+2025-09-14 17:49:01,969 - INFO - Processing ticker 39/111: EOG
+2025-09-14 17:49:01,969 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:49:14,471 - INFO - Starting processing for ticker: EOG (2025-09-05 to 2025-09-12)
+2025-09-14 17:49:14,473 - INFO - Fetching data for EOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:49:14,784 - INFO - Successfully retrieved 6 records for EOG
+2025-09-14 17:49:14,792 - INFO - Processed 6 records for EOG in 2025-09
+2025-09-14 17:49:14,796 - INFO - Created Parquet file: EOG_2025_09.parquet
+2025-09-14 17:49:15,079 - INFO - Successfully uploaded EOG_2025_09.parquet to S3 bucket root
+2025-09-14 17:49:15,079 - INFO - Cleaned up local file: EOG_2025_09.parquet
+2025-09-14 17:49:15,080 - INFO - Completed processing EOG: 1/1 files successful
+2025-09-14 17:49:15,080 - INFO - ✓ Successfully processed EOG
+2025-09-14 17:49:15,080 - INFO - Processing ticker 40/111: EQIX
+2025-09-14 17:49:15,080 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:49:27,586 - INFO - Starting processing for ticker: EQIX (2025-09-05 to 2025-09-12)
+2025-09-14 17:49:27,586 - INFO - Fetching data for EQIX from 2025-09-05 to 2025-09-12
+2025-09-14 17:49:27,902 - INFO - Successfully retrieved 6 records for EQIX
+2025-09-14 17:49:27,908 - INFO - Processed 6 records for EQIX in 2025-09
+2025-09-14 17:49:27,913 - INFO - Created Parquet file: EQIX_2025_09.parquet
+2025-09-14 17:49:28,160 - INFO - Successfully uploaded EQIX_2025_09.parquet to S3 bucket root
+2025-09-14 17:49:28,161 - INFO - Cleaned up local file: EQIX_2025_09.parquet
+2025-09-14 17:49:28,161 - INFO - Completed processing EQIX: 1/1 files successful
+2025-09-14 17:49:28,161 - INFO - ✓ Successfully processed EQIX
+2025-09-14 17:49:28,161 - INFO - Processing ticker 41/111: ETN
+2025-09-14 17:49:28,161 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:49:40,666 - INFO - Starting processing for ticker: ETN (2025-09-05 to 2025-09-12)
+2025-09-14 17:49:40,667 - INFO - Fetching data for ETN from 2025-09-05 to 2025-09-12
+2025-09-14 17:49:40,970 - INFO - Successfully retrieved 6 records for ETN
+2025-09-14 17:49:40,974 - INFO - Processed 6 records for ETN in 2025-09
+2025-09-14 17:49:40,978 - INFO - Created Parquet file: ETN_2025_09.parquet
+2025-09-14 17:49:41,310 - INFO - Successfully uploaded ETN_2025_09.parquet to S3 bucket root
+2025-09-14 17:49:41,310 - INFO - Cleaned up local file: ETN_2025_09.parquet
+2025-09-14 17:49:41,311 - INFO - Completed processing ETN: 1/1 files successful
+2025-09-14 17:49:41,311 - INFO - ✓ Successfully processed ETN
+2025-09-14 17:49:41,311 - INFO - Processing ticker 42/111: FCX
+2025-09-14 17:49:41,311 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:49:53,816 - INFO - Starting processing for ticker: FCX (2025-09-05 to 2025-09-12)
+2025-09-14 17:49:53,816 - INFO - Fetching data for FCX from 2025-09-05 to 2025-09-12
+2025-09-14 17:49:54,174 - INFO - Successfully retrieved 6 records for FCX
+2025-09-14 17:49:54,180 - INFO - Processed 6 records for FCX in 2025-09
+2025-09-14 17:49:54,185 - INFO - Created Parquet file: FCX_2025_09.parquet
+2025-09-14 17:49:54,558 - INFO - Successfully uploaded FCX_2025_09.parquet to S3 bucket root
+2025-09-14 17:49:54,559 - INFO - Cleaned up local file: FCX_2025_09.parquet
+2025-09-14 17:49:54,559 - INFO - Completed processing FCX: 1/1 files successful
+2025-09-14 17:49:54,559 - INFO - ✓ Successfully processed FCX
+2025-09-14 17:49:54,559 - INFO - Processing ticker 43/111: GE
+2025-09-14 17:49:54,559 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:50:07,064 - INFO - Starting processing for ticker: GE (2025-09-05 to 2025-09-12)
+2025-09-14 17:50:07,064 - INFO - Fetching data for GE from 2025-09-05 to 2025-09-12
+2025-09-14 17:50:07,405 - INFO - Successfully retrieved 6 records for GE
+2025-09-14 17:50:07,412 - INFO - Processed 6 records for GE in 2025-09
+2025-09-14 17:50:07,417 - INFO - Created Parquet file: GE_2025_09.parquet
+2025-09-14 17:50:07,750 - INFO - Successfully uploaded GE_2025_09.parquet to S3 bucket root
+2025-09-14 17:50:07,751 - INFO - Cleaned up local file: GE_2025_09.parquet
+2025-09-14 17:50:07,751 - INFO - Completed processing GE: 1/1 files successful
+2025-09-14 17:50:07,751 - INFO - ✓ Successfully processed GE
+2025-09-14 17:50:07,752 - INFO - Processing ticker 44/111: GOOG
+2025-09-14 17:50:07,752 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:50:20,258 - INFO - Starting processing for ticker: GOOG (2025-09-05 to 2025-09-12)
+2025-09-14 17:50:20,259 - INFO - Fetching data for GOOG from 2025-09-05 to 2025-09-12
+2025-09-14 17:50:20,572 - INFO - Successfully retrieved 6 records for GOOG
+2025-09-14 17:50:20,593 - INFO - Processed 6 records for GOOG in 2025-09
+2025-09-14 17:50:20,597 - INFO - Created Parquet file: GOOG_2025_09.parquet
+2025-09-14 17:50:20,896 - INFO - Successfully uploaded GOOG_2025_09.parquet to S3 bucket root
+2025-09-14 17:50:20,897 - INFO - Cleaned up local file: GOOG_2025_09.parquet
+2025-09-14 17:50:20,897 - INFO - Completed processing GOOG: 1/1 files successful
+2025-09-14 17:50:20,897 - INFO - ✓ Successfully processed GOOG
+2025-09-14 17:50:20,897 - INFO - Processing ticker 45/111: GOOGL
+2025-09-14 17:50:20,897 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:50:33,399 - INFO - Starting processing for ticker: GOOGL (2025-09-05 to 2025-09-12)
+2025-09-14 17:50:33,399 - INFO - Fetching data for GOOGL from 2025-09-05 to 2025-09-12
+2025-09-14 17:50:33,716 - INFO - Successfully retrieved 6 records for GOOGL
+2025-09-14 17:50:33,721 - INFO - Processed 6 records for GOOGL in 2025-09
+2025-09-14 17:50:33,727 - INFO - Created Parquet file: GOOGL_2025_09.parquet
+2025-09-14 17:50:34,015 - INFO - Successfully uploaded GOOGL_2025_09.parquet to S3 bucket root
+2025-09-14 17:50:34,016 - INFO - Cleaned up local file: GOOGL_2025_09.parquet
+2025-09-14 17:50:34,017 - INFO - Completed processing GOOGL: 1/1 files successful
+2025-09-14 17:50:34,017 - INFO - ✓ Successfully processed GOOGL
+2025-09-14 17:50:34,017 - INFO - Processing ticker 46/111: GS
+2025-09-14 17:50:34,017 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:50:46,522 - INFO - Starting processing for ticker: GS (2025-09-05 to 2025-09-12)
+2025-09-14 17:50:46,523 - INFO - Fetching data for GS from 2025-09-05 to 2025-09-12
+2025-09-14 17:50:46,828 - INFO - Successfully retrieved 6 records for GS
+2025-09-14 17:50:46,836 - INFO - Processed 6 records for GS in 2025-09
+2025-09-14 17:50:46,841 - INFO - Created Parquet file: GS_2025_09.parquet
+2025-09-14 17:50:47,323 - INFO - Successfully uploaded GS_2025_09.parquet to S3 bucket root
+2025-09-14 17:50:47,324 - INFO - Cleaned up local file: GS_2025_09.parquet
+2025-09-14 17:50:47,324 - INFO - Completed processing GS: 1/1 files successful
+2025-09-14 17:50:47,325 - INFO - ✓ Successfully processed GS
+2025-09-14 17:50:47,325 - INFO - Processing ticker 47/111: HD
+2025-09-14 17:50:47,325 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:50:59,830 - INFO - Starting processing for ticker: HD (2025-09-05 to 2025-09-12)
+2025-09-14 17:50:59,830 - INFO - Fetching data for HD from 2025-09-05 to 2025-09-12
+2025-09-14 17:51:00,137 - INFO - Successfully retrieved 6 records for HD
+2025-09-14 17:51:00,141 - INFO - Processed 6 records for HD in 2025-09
+2025-09-14 17:51:00,145 - INFO - Created Parquet file: HD_2025_09.parquet
+2025-09-14 17:51:00,486 - INFO - Successfully uploaded HD_2025_09.parquet to S3 bucket root
+2025-09-14 17:51:00,487 - INFO - Cleaned up local file: HD_2025_09.parquet
+2025-09-14 17:51:00,487 - INFO - Completed processing HD: 1/1 files successful
+2025-09-14 17:51:00,488 - INFO - ✓ Successfully processed HD
+2025-09-14 17:51:00,488 - INFO - Processing ticker 48/111: HON
+2025-09-14 17:51:00,488 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:51:12,990 - INFO - Starting processing for ticker: HON (2025-09-05 to 2025-09-12)
+2025-09-14 17:51:12,990 - INFO - Fetching data for HON from 2025-09-05 to 2025-09-12
+2025-09-14 17:51:13,303 - INFO - Successfully retrieved 6 records for HON
+2025-09-14 17:51:13,309 - INFO - Processed 6 records for HON in 2025-09
+2025-09-14 17:51:13,313 - INFO - Created Parquet file: HON_2025_09.parquet
+2025-09-14 17:51:13,708 - INFO - Successfully uploaded HON_2025_09.parquet to S3 bucket root
+2025-09-14 17:51:13,709 - INFO - Cleaned up local file: HON_2025_09.parquet
+2025-09-14 17:51:13,709 - INFO - Completed processing HON: 1/1 files successful
+2025-09-14 17:51:13,710 - INFO - ✓ Successfully processed HON
+2025-09-14 17:51:13,710 - INFO - Processing ticker 49/111: ISRG
+2025-09-14 17:51:13,710 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:51:26,212 - INFO - Starting processing for ticker: ISRG (2025-09-05 to 2025-09-12)
+2025-09-14 17:51:26,212 - INFO - Fetching data for ISRG from 2025-09-05 to 2025-09-12
+2025-09-14 17:51:26,524 - INFO - Successfully retrieved 6 records for ISRG
+2025-09-14 17:51:26,535 - INFO - Processed 6 records for ISRG in 2025-09
+2025-09-14 17:51:26,546 - INFO - Created Parquet file: ISRG_2025_09.parquet
+2025-09-14 17:51:26,908 - INFO - Successfully uploaded ISRG_2025_09.parquet to S3 bucket root
+2025-09-14 17:51:26,909 - INFO - Cleaned up local file: ISRG_2025_09.parquet
+2025-09-14 17:51:26,909 - INFO - Completed processing ISRG: 1/1 files successful
+2025-09-14 17:51:26,909 - INFO - ✓ Successfully processed ISRG
+2025-09-14 17:51:26,909 - INFO - Processing ticker 50/111: JNJ
+2025-09-14 17:51:26,909 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:51:39,413 - INFO - Starting processing for ticker: JNJ (2025-09-05 to 2025-09-12)
+2025-09-14 17:51:39,414 - INFO - Fetching data for JNJ from 2025-09-05 to 2025-09-12
+2025-09-14 17:51:39,742 - INFO - Successfully retrieved 6 records for JNJ
+2025-09-14 17:51:39,754 - INFO - Processed 6 records for JNJ in 2025-09
+2025-09-14 17:51:39,759 - INFO - Created Parquet file: JNJ_2025_09.parquet
+2025-09-14 17:51:44,241 - INFO - Successfully uploaded JNJ_2025_09.parquet to S3 bucket root
+2025-09-14 17:51:44,242 - INFO - Cleaned up local file: JNJ_2025_09.parquet
+2025-09-14 17:51:44,242 - INFO - Completed processing JNJ: 1/1 files successful
+2025-09-14 17:51:44,242 - INFO - ✓ Successfully processed JNJ
+2025-09-14 17:51:44,242 - INFO - Processing ticker 51/111: JPM
+2025-09-14 17:51:44,242 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:51:56,749 - INFO - Starting processing for ticker: JPM (2025-09-05 to 2025-09-12)
+2025-09-14 17:51:56,751 - INFO - Fetching data for JPM from 2025-09-05 to 2025-09-12
+2025-09-14 17:51:57,082 - INFO - Successfully retrieved 6 records for JPM
+2025-09-14 17:51:57,103 - INFO - Processed 6 records for JPM in 2025-09
+2025-09-14 17:51:57,111 - INFO - Created Parquet file: JPM_2025_09.parquet
+2025-09-14 17:51:57,326 - INFO - Successfully uploaded JPM_2025_09.parquet to S3 bucket root
+2025-09-14 17:51:57,326 - INFO - Cleaned up local file: JPM_2025_09.parquet
+2025-09-14 17:51:57,326 - INFO - Completed processing JPM: 1/1 files successful
+2025-09-14 17:51:57,327 - INFO - ✓ Successfully processed JPM
+2025-09-14 17:51:57,327 - INFO - Processing ticker 52/111: KMI
+2025-09-14 17:51:57,327 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:52:09,832 - INFO - Starting processing for ticker: KMI (2025-09-05 to 2025-09-12)
+2025-09-14 17:52:09,832 - INFO - Fetching data for KMI from 2025-09-05 to 2025-09-12
+2025-09-14 17:52:10,250 - INFO - Successfully retrieved 6 records for KMI
+2025-09-14 17:52:10,256 - INFO - Processed 6 records for KMI in 2025-09
+2025-09-14 17:52:10,261 - INFO - Created Parquet file: KMI_2025_09.parquet
+2025-09-14 17:52:10,699 - INFO - Successfully uploaded KMI_2025_09.parquet to S3 bucket root
+2025-09-14 17:52:10,700 - INFO - Cleaned up local file: KMI_2025_09.parquet
+2025-09-14 17:52:10,701 - INFO - Completed processing KMI: 1/1 files successful
+2025-09-14 17:52:10,701 - INFO - ✓ Successfully processed KMI
+2025-09-14 17:52:10,701 - INFO - Processing ticker 53/111: KO
+2025-09-14 17:52:10,701 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:52:23,206 - INFO - Starting processing for ticker: KO (2025-09-05 to 2025-09-12)
+2025-09-14 17:52:23,207 - INFO - Fetching data for KO from 2025-09-05 to 2025-09-12
+2025-09-14 17:52:23,522 - INFO - Successfully retrieved 6 records for KO
+2025-09-14 17:52:23,526 - INFO - Processed 6 records for KO in 2025-09
+2025-09-14 17:52:23,566 - INFO - Created Parquet file: KO_2025_09.parquet
+2025-09-14 17:52:23,862 - INFO - Successfully uploaded KO_2025_09.parquet to S3 bucket root
+2025-09-14 17:52:23,863 - INFO - Cleaned up local file: KO_2025_09.parquet
+2025-09-14 17:52:23,863 - INFO - Completed processing KO: 1/1 files successful
+2025-09-14 17:52:23,863 - INFO - ✓ Successfully processed KO
+2025-09-14 17:52:23,863 - INFO - Processing ticker 54/111: LIN
+2025-09-14 17:52:23,863 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:52:36,368 - INFO - Starting processing for ticker: LIN (2025-09-05 to 2025-09-12)
+2025-09-14 17:52:36,369 - INFO - Fetching data for LIN from 2025-09-05 to 2025-09-12
+2025-09-14 17:52:36,674 - INFO - Successfully retrieved 6 records for LIN
+2025-09-14 17:52:36,707 - INFO - Processed 6 records for LIN in 2025-09
+2025-09-14 17:52:36,716 - INFO - Created Parquet file: LIN_2025_09.parquet
+2025-09-14 17:52:37,144 - INFO - Successfully uploaded LIN_2025_09.parquet to S3 bucket root
+2025-09-14 17:52:37,144 - INFO - Cleaned up local file: LIN_2025_09.parquet
+2025-09-14 17:52:37,145 - INFO - Completed processing LIN: 1/1 files successful
+2025-09-14 17:52:37,145 - INFO - ✓ Successfully processed LIN
+2025-09-14 17:52:37,145 - INFO - Processing ticker 55/111: LLY
+2025-09-14 17:52:37,145 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:52:49,646 - INFO - Starting processing for ticker: LLY (2025-09-05 to 2025-09-12)
+2025-09-14 17:52:49,646 - INFO - Fetching data for LLY from 2025-09-05 to 2025-09-12
+2025-09-14 17:52:49,951 - INFO - Successfully retrieved 6 records for LLY
+2025-09-14 17:52:49,959 - INFO - Processed 6 records for LLY in 2025-09
+2025-09-14 17:52:49,964 - INFO - Created Parquet file: LLY_2025_09.parquet
+2025-09-14 17:52:50,181 - INFO - Successfully uploaded LLY_2025_09.parquet to S3 bucket root
+2025-09-14 17:52:50,182 - INFO - Cleaned up local file: LLY_2025_09.parquet
+2025-09-14 17:52:50,182 - INFO - Completed processing LLY: 1/1 files successful
+2025-09-14 17:52:50,182 - INFO - ✓ Successfully processed LLY
+2025-09-14 17:52:50,182 - INFO - Processing ticker 56/111: LMT
+2025-09-14 17:52:50,182 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:53:02,691 - INFO - Starting processing for ticker: LMT (2025-09-05 to 2025-09-12)
+2025-09-14 17:53:02,691 - INFO - Fetching data for LMT from 2025-09-05 to 2025-09-12
+2025-09-14 17:53:02,996 - INFO - Successfully retrieved 6 records for LMT
+2025-09-14 17:53:03,001 - INFO - Processed 6 records for LMT in 2025-09
+2025-09-14 17:53:03,005 - INFO - Created Parquet file: LMT_2025_09.parquet
+2025-09-14 17:53:03,269 - INFO - Successfully uploaded LMT_2025_09.parquet to S3 bucket root
+2025-09-14 17:53:03,270 - INFO - Cleaned up local file: LMT_2025_09.parquet
+2025-09-14 17:53:03,270 - INFO - Completed processing LMT: 1/1 files successful
+2025-09-14 17:53:03,271 - INFO - ✓ Successfully processed LMT
+2025-09-14 17:53:03,271 - INFO - Processing ticker 57/111: LOW
+2025-09-14 17:53:03,271 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:53:15,780 - INFO - Starting processing for ticker: LOW (2025-09-05 to 2025-09-12)
+2025-09-14 17:53:15,780 - INFO - Fetching data for LOW from 2025-09-05 to 2025-09-12
+2025-09-14 17:53:16,087 - INFO - Successfully retrieved 6 records for LOW
+2025-09-14 17:53:16,093 - INFO - Processed 6 records for LOW in 2025-09
+2025-09-14 17:53:16,098 - INFO - Created Parquet file: LOW_2025_09.parquet
+2025-09-14 17:53:16,287 - INFO - Successfully uploaded LOW_2025_09.parquet to S3 bucket root
+2025-09-14 17:53:16,287 - INFO - Cleaned up local file: LOW_2025_09.parquet
+2025-09-14 17:53:16,287 - INFO - Completed processing LOW: 1/1 files successful
+2025-09-14 17:53:16,288 - INFO - ✓ Successfully processed LOW
+2025-09-14 17:53:16,288 - INFO - Processing ticker 58/111: MA
+2025-09-14 17:53:16,288 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:53:28,792 - INFO - Starting processing for ticker: MA (2025-09-05 to 2025-09-12)
+2025-09-14 17:53:28,793 - INFO - Fetching data for MA from 2025-09-05 to 2025-09-12
+2025-09-14 17:53:29,179 - INFO - Successfully retrieved 6 records for MA
+2025-09-14 17:53:29,186 - INFO - Processed 6 records for MA in 2025-09
+2025-09-14 17:53:29,190 - INFO - Created Parquet file: MA_2025_09.parquet
+2025-09-14 17:53:29,466 - INFO - Successfully uploaded MA_2025_09.parquet to S3 bucket root
+2025-09-14 17:53:29,466 - INFO - Cleaned up local file: MA_2025_09.parquet
+2025-09-14 17:53:29,466 - INFO - Completed processing MA: 1/1 files successful
+2025-09-14 17:53:29,467 - INFO - ✓ Successfully processed MA
+2025-09-14 17:53:29,467 - INFO - Processing ticker 59/111: MCD
+2025-09-14 17:53:29,467 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:53:41,973 - INFO - Starting processing for ticker: MCD (2025-09-05 to 2025-09-12)
+2025-09-14 17:53:41,974 - INFO - Fetching data for MCD from 2025-09-05 to 2025-09-12
+2025-09-14 17:53:42,287 - INFO - Successfully retrieved 6 records for MCD
+2025-09-14 17:53:42,293 - INFO - Processed 6 records for MCD in 2025-09
+2025-09-14 17:53:42,297 - INFO - Created Parquet file: MCD_2025_09.parquet
+2025-09-14 17:53:42,503 - INFO - Successfully uploaded MCD_2025_09.parquet to S3 bucket root
+2025-09-14 17:53:42,504 - INFO - Cleaned up local file: MCD_2025_09.parquet
+2025-09-14 17:53:42,504 - INFO - Completed processing MCD: 1/1 files successful
+2025-09-14 17:53:42,504 - INFO - ✓ Successfully processed MCD
+2025-09-14 17:53:42,504 - INFO - Processing ticker 60/111: MDLZ
+2025-09-14 17:53:42,504 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:53:55,010 - INFO - Starting processing for ticker: MDLZ (2025-09-05 to 2025-09-12)
+2025-09-14 17:53:55,011 - INFO - Fetching data for MDLZ from 2025-09-05 to 2025-09-12
+2025-09-14 17:53:55,314 - INFO - Successfully retrieved 6 records for MDLZ
+2025-09-14 17:53:55,323 - INFO - Processed 6 records for MDLZ in 2025-09
+2025-09-14 17:53:55,328 - INFO - Created Parquet file: MDLZ_2025_09.parquet
+2025-09-14 17:53:55,714 - INFO - Successfully uploaded MDLZ_2025_09.parquet to S3 bucket root
+2025-09-14 17:53:55,714 - INFO - Cleaned up local file: MDLZ_2025_09.parquet
+2025-09-14 17:53:55,714 - INFO - Completed processing MDLZ: 1/1 files successful
+2025-09-14 17:53:55,714 - INFO - ✓ Successfully processed MDLZ
+2025-09-14 17:53:55,714 - INFO - Processing ticker 61/111: MELI
+2025-09-14 17:53:55,714 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:54:08,220 - INFO - Starting processing for ticker: MELI (2025-09-05 to 2025-09-12)
+2025-09-14 17:54:08,221 - INFO - Fetching data for MELI from 2025-09-05 to 2025-09-12
+2025-09-14 17:54:08,523 - INFO - Successfully retrieved 6 records for MELI
+2025-09-14 17:54:08,529 - INFO - Processed 6 records for MELI in 2025-09
+2025-09-14 17:54:08,534 - INFO - Created Parquet file: MELI_2025_09.parquet
+2025-09-14 17:54:08,887 - INFO - Successfully uploaded MELI_2025_09.parquet to S3 bucket root
+2025-09-14 17:54:08,888 - INFO - Cleaned up local file: MELI_2025_09.parquet
+2025-09-14 17:54:08,888 - INFO - Completed processing MELI: 1/1 files successful
+2025-09-14 17:54:08,888 - INFO - ✓ Successfully processed MELI
+2025-09-14 17:54:08,888 - INFO - Processing ticker 62/111: META
+2025-09-14 17:54:08,888 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:54:21,392 - INFO - Starting processing for ticker: META (2025-09-05 to 2025-09-12)
+2025-09-14 17:54:21,393 - INFO - Fetching data for META from 2025-09-05 to 2025-09-12
+2025-09-14 17:54:21,706 - INFO - Successfully retrieved 6 records for META
+2025-09-14 17:54:21,712 - INFO - Processed 6 records for META in 2025-09
+2025-09-14 17:54:21,717 - INFO - Created Parquet file: META_2025_09.parquet
+2025-09-14 17:54:22,122 - INFO - Successfully uploaded META_2025_09.parquet to S3 bucket root
+2025-09-14 17:54:22,123 - INFO - Cleaned up local file: META_2025_09.parquet
+2025-09-14 17:54:22,123 - INFO - Completed processing META: 1/1 files successful
+2025-09-14 17:54:22,123 - INFO - ✓ Successfully processed META
+2025-09-14 17:54:22,124 - INFO - Processing ticker 63/111: MLM
+2025-09-14 17:54:22,124 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:54:34,629 - INFO - Starting processing for ticker: MLM (2025-09-05 to 2025-09-12)
+2025-09-14 17:54:34,630 - INFO - Fetching data for MLM from 2025-09-05 to 2025-09-12
+2025-09-14 17:54:35,076 - INFO - Successfully retrieved 6 records for MLM
+2025-09-14 17:54:35,082 - INFO - Processed 6 records for MLM in 2025-09
+2025-09-14 17:54:35,087 - INFO - Created Parquet file: MLM_2025_09.parquet
+2025-09-14 17:54:35,559 - INFO - Successfully uploaded MLM_2025_09.parquet to S3 bucket root
+2025-09-14 17:54:35,560 - INFO - Cleaned up local file: MLM_2025_09.parquet
+2025-09-14 17:54:35,560 - INFO - Completed processing MLM: 1/1 files successful
+2025-09-14 17:54:35,560 - INFO - ✓ Successfully processed MLM
+2025-09-14 17:54:35,560 - INFO - Processing ticker 64/111: MO
+2025-09-14 17:54:35,561 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:54:48,066 - INFO - Starting processing for ticker: MO (2025-09-05 to 2025-09-12)
+2025-09-14 17:54:48,067 - INFO - Fetching data for MO from 2025-09-05 to 2025-09-12
+2025-09-14 17:54:48,365 - INFO - Successfully retrieved 6 records for MO
+2025-09-14 17:54:48,370 - INFO - Processed 6 records for MO in 2025-09
+2025-09-14 17:54:48,374 - INFO - Created Parquet file: MO_2025_09.parquet
+2025-09-14 17:54:48,725 - INFO - Successfully uploaded MO_2025_09.parquet to S3 bucket root
+2025-09-14 17:54:48,726 - INFO - Cleaned up local file: MO_2025_09.parquet
+2025-09-14 17:54:48,726 - INFO - Completed processing MO: 1/1 files successful
+2025-09-14 17:54:48,726 - INFO - ✓ Successfully processed MO
+2025-09-14 17:54:48,726 - INFO - Processing ticker 65/111: MPC
+2025-09-14 17:54:48,727 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:55:01,233 - INFO - Starting processing for ticker: MPC (2025-09-05 to 2025-09-12)
+2025-09-14 17:55:01,234 - INFO - Fetching data for MPC from 2025-09-05 to 2025-09-12
+2025-09-14 17:55:01,535 - INFO - Successfully retrieved 6 records for MPC
+2025-09-14 17:55:01,551 - INFO - Processed 6 records for MPC in 2025-09
+2025-09-14 17:55:01,557 - INFO - Created Parquet file: MPC_2025_09.parquet
+2025-09-14 17:55:01,826 - INFO - Successfully uploaded MPC_2025_09.parquet to S3 bucket root
+2025-09-14 17:55:01,827 - INFO - Cleaned up local file: MPC_2025_09.parquet
+2025-09-14 17:55:01,827 - INFO - Completed processing MPC: 1/1 files successful
+2025-09-14 17:55:01,827 - INFO - ✓ Successfully processed MPC
+2025-09-14 17:55:01,827 - INFO - Processing ticker 66/111: MRK
+2025-09-14 17:55:01,827 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:55:14,331 - INFO - Starting processing for ticker: MRK (2025-09-05 to 2025-09-12)
+2025-09-14 17:55:14,332 - INFO - Fetching data for MRK from 2025-09-05 to 2025-09-12
+2025-09-14 17:55:14,630 - INFO - Successfully retrieved 6 records for MRK
+2025-09-14 17:55:14,636 - INFO - Processed 6 records for MRK in 2025-09
+2025-09-14 17:55:14,644 - INFO - Created Parquet file: MRK_2025_09.parquet
+2025-09-14 17:55:15,030 - INFO - Successfully uploaded MRK_2025_09.parquet to S3 bucket root
+2025-09-14 17:55:15,031 - INFO - Cleaned up local file: MRK_2025_09.parquet
+2025-09-14 17:55:15,031 - INFO - Completed processing MRK: 1/1 files successful
+2025-09-14 17:55:15,032 - INFO - ✓ Successfully processed MRK
+2025-09-14 17:55:15,032 - INFO - Processing ticker 67/111: MSFT
+2025-09-14 17:55:15,032 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:55:27,537 - INFO - Starting processing for ticker: MSFT (2025-09-05 to 2025-09-12)
+2025-09-14 17:55:27,538 - INFO - Fetching data for MSFT from 2025-09-05 to 2025-09-12
+2025-09-14 17:55:27,851 - INFO - Successfully retrieved 6 records for MSFT
+2025-09-14 17:55:27,859 - INFO - Processed 6 records for MSFT in 2025-09
+2025-09-14 17:55:27,863 - INFO - Created Parquet file: MSFT_2025_09.parquet
+2025-09-14 17:55:28,070 - INFO - Successfully uploaded MSFT_2025_09.parquet to S3 bucket root
+2025-09-14 17:55:28,071 - INFO - Cleaned up local file: MSFT_2025_09.parquet
+2025-09-14 17:55:28,071 - INFO - Completed processing MSFT: 1/1 files successful
+2025-09-14 17:55:28,071 - INFO - ✓ Successfully processed MSFT
+2025-09-14 17:55:28,071 - INFO - Processing ticker 68/111: NEE
+2025-09-14 17:55:28,071 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:55:40,577 - INFO - Starting processing for ticker: NEE (2025-09-05 to 2025-09-12)
+2025-09-14 17:55:40,577 - INFO - Fetching data for NEE from 2025-09-05 to 2025-09-12
+2025-09-14 17:55:40,894 - INFO - Successfully retrieved 6 records for NEE
+2025-09-14 17:55:40,898 - INFO - Processed 6 records for NEE in 2025-09
+2025-09-14 17:55:40,903 - INFO - Created Parquet file: NEE_2025_09.parquet
+2025-09-14 17:55:41,264 - INFO - Successfully uploaded NEE_2025_09.parquet to S3 bucket root
+2025-09-14 17:55:41,264 - INFO - Cleaned up local file: NEE_2025_09.parquet
+2025-09-14 17:55:41,265 - INFO - Completed processing NEE: 1/1 files successful
+2025-09-14 17:55:41,265 - INFO - ✓ Successfully processed NEE
+2025-09-14 17:55:41,265 - INFO - Processing ticker 69/111: NEM
+2025-09-14 17:55:41,265 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:55:53,770 - INFO - Starting processing for ticker: NEM (2025-09-05 to 2025-09-12)
+2025-09-14 17:55:53,771 - INFO - Fetching data for NEM from 2025-09-05 to 2025-09-12
+2025-09-14 17:55:54,558 - INFO - Successfully retrieved 6 records for NEM
+2025-09-14 17:55:54,565 - INFO - Processed 6 records for NEM in 2025-09
+2025-09-14 17:55:54,570 - INFO - Created Parquet file: NEM_2025_09.parquet
+2025-09-14 17:55:55,094 - INFO - Successfully uploaded NEM_2025_09.parquet to S3 bucket root
+2025-09-14 17:55:55,094 - INFO - Cleaned up local file: NEM_2025_09.parquet
+2025-09-14 17:55:55,095 - INFO - Completed processing NEM: 1/1 files successful
+2025-09-14 17:55:55,095 - INFO - ✓ Successfully processed NEM
+2025-09-14 17:55:55,095 - INFO - Processing ticker 70/111: NFLX
+2025-09-14 17:55:55,095 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:56:07,600 - INFO - Starting processing for ticker: NFLX (2025-09-05 to 2025-09-12)
+2025-09-14 17:56:07,601 - INFO - Fetching data for NFLX from 2025-09-05 to 2025-09-12
+2025-09-14 17:56:07,936 - INFO - Successfully retrieved 6 records for NFLX
+2025-09-14 17:56:07,939 - INFO - Processed 6 records for NFLX in 2025-09
+2025-09-14 17:56:07,941 - INFO - Created Parquet file: NFLX_2025_09.parquet
+2025-09-14 17:56:08,280 - INFO - Successfully uploaded NFLX_2025_09.parquet to S3 bucket root
+2025-09-14 17:56:08,281 - INFO - Cleaned up local file: NFLX_2025_09.parquet
+2025-09-14 17:56:08,281 - INFO - Completed processing NFLX: 1/1 files successful
+2025-09-14 17:56:08,281 - INFO - ✓ Successfully processed NFLX
+2025-09-14 17:56:08,282 - INFO - Processing ticker 71/111: NKE
+2025-09-14 17:56:08,282 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:56:20,782 - INFO - Starting processing for ticker: NKE (2025-09-05 to 2025-09-12)
+2025-09-14 17:56:20,784 - INFO - Fetching data for NKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:56:21,082 - INFO - Successfully retrieved 6 records for NKE
+2025-09-14 17:56:21,091 - INFO - Processed 6 records for NKE in 2025-09
+2025-09-14 17:56:21,095 - INFO - Created Parquet file: NKE_2025_09.parquet
+2025-09-14 17:56:21,409 - INFO - Successfully uploaded NKE_2025_09.parquet to S3 bucket root
+2025-09-14 17:56:21,410 - INFO - Cleaned up local file: NKE_2025_09.parquet
+2025-09-14 17:56:21,410 - INFO - Completed processing NKE: 1/1 files successful
+2025-09-14 17:56:21,411 - INFO - ✓ Successfully processed NKE
+2025-09-14 17:56:21,411 - INFO - Processing ticker 72/111: NVDA
+2025-09-14 17:56:21,411 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:56:33,912 - INFO - Starting processing for ticker: NVDA (2025-09-05 to 2025-09-12)
+2025-09-14 17:56:33,912 - INFO - Fetching data for NVDA from 2025-09-05 to 2025-09-12
+2025-09-14 17:56:34,222 - INFO - Successfully retrieved 6 records for NVDA
+2025-09-14 17:56:34,229 - INFO - Processed 6 records for NVDA in 2025-09
+2025-09-14 17:56:34,234 - INFO - Created Parquet file: NVDA_2025_09.parquet
+2025-09-14 17:56:34,554 - INFO - Successfully uploaded NVDA_2025_09.parquet to S3 bucket root
+2025-09-14 17:56:34,556 - INFO - Cleaned up local file: NVDA_2025_09.parquet
+2025-09-14 17:56:34,556 - INFO - Completed processing NVDA: 1/1 files successful
+2025-09-14 17:56:34,556 - INFO - ✓ Successfully processed NVDA
+2025-09-14 17:56:34,557 - INFO - Processing ticker 73/111: O
+2025-09-14 17:56:34,557 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:56:47,062 - INFO - Starting processing for ticker: O (2025-09-05 to 2025-09-12)
+2025-09-14 17:56:47,062 - INFO - Fetching data for O from 2025-09-05 to 2025-09-12
+2025-09-14 17:56:47,360 - INFO - Successfully retrieved 6 records for O
+2025-09-14 17:56:47,366 - INFO - Processed 6 records for O in 2025-09
+2025-09-14 17:56:47,371 - INFO - Created Parquet file: O_2025_09.parquet
+2025-09-14 17:56:47,623 - INFO - Successfully uploaded O_2025_09.parquet to S3 bucket root
+2025-09-14 17:56:47,624 - INFO - Cleaned up local file: O_2025_09.parquet
+2025-09-14 17:56:47,625 - INFO - Completed processing O: 1/1 files successful
+2025-09-14 17:56:47,625 - INFO - ✓ Successfully processed O
+2025-09-14 17:56:47,625 - INFO - Processing ticker 74/111: OKE
+2025-09-14 17:56:47,625 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:57:00,130 - INFO - Starting processing for ticker: OKE (2025-09-05 to 2025-09-12)
+2025-09-14 17:57:00,130 - INFO - Fetching data for OKE from 2025-09-05 to 2025-09-12
+2025-09-14 17:57:00,502 - INFO - Successfully retrieved 6 records for OKE
+2025-09-14 17:57:00,506 - INFO - Processed 6 records for OKE in 2025-09
+2025-09-14 17:57:00,510 - INFO - Created Parquet file: OKE_2025_09.parquet
+2025-09-14 17:57:00,803 - INFO - Successfully uploaded OKE_2025_09.parquet to S3 bucket root
+2025-09-14 17:57:00,804 - INFO - Cleaned up local file: OKE_2025_09.parquet
+2025-09-14 17:57:00,804 - INFO - Completed processing OKE: 1/1 files successful
+2025-09-14 17:57:00,804 - INFO - ✓ Successfully processed OKE
+2025-09-14 17:57:00,804 - INFO - Processing ticker 75/111: ORCL
+2025-09-14 17:57:00,804 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:57:13,306 - INFO - Starting processing for ticker: ORCL (2025-09-05 to 2025-09-12)
+2025-09-14 17:57:13,306 - INFO - Fetching data for ORCL from 2025-09-05 to 2025-09-12
+2025-09-14 17:57:13,601 - INFO - Successfully retrieved 6 records for ORCL
+2025-09-14 17:57:13,610 - INFO - Processed 6 records for ORCL in 2025-09
+2025-09-14 17:57:13,614 - INFO - Created Parquet file: ORCL_2025_09.parquet
+2025-09-14 17:57:13,870 - INFO - Successfully uploaded ORCL_2025_09.parquet to S3 bucket root
+2025-09-14 17:57:13,871 - INFO - Cleaned up local file: ORCL_2025_09.parquet
+2025-09-14 17:57:13,871 - INFO - Completed processing ORCL: 1/1 files successful
+2025-09-14 17:57:13,871 - INFO - ✓ Successfully processed ORCL
+2025-09-14 17:57:13,871 - INFO - Processing ticker 76/111: PCG
+2025-09-14 17:57:13,872 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:57:26,376 - INFO - Starting processing for ticker: PCG (2025-09-05 to 2025-09-12)
+2025-09-14 17:57:26,377 - INFO - Fetching data for PCG from 2025-09-05 to 2025-09-12
+2025-09-14 17:57:26,667 - INFO - Successfully retrieved 6 records for PCG
+2025-09-14 17:57:26,670 - INFO - Processed 6 records for PCG in 2025-09
+2025-09-14 17:57:26,675 - INFO - Created Parquet file: PCG_2025_09.parquet
+2025-09-14 17:57:27,084 - INFO - Successfully uploaded PCG_2025_09.parquet to S3 bucket root
+2025-09-14 17:57:27,085 - INFO - Cleaned up local file: PCG_2025_09.parquet
+2025-09-14 17:57:27,085 - INFO - Completed processing PCG: 1/1 files successful
+2025-09-14 17:57:27,085 - INFO - ✓ Successfully processed PCG
+2025-09-14 17:57:27,085 - INFO - Processing ticker 77/111: PEG
+2025-09-14 17:57:27,085 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:57:39,589 - INFO - Starting processing for ticker: PEG (2025-09-05 to 2025-09-12)
+2025-09-14 17:57:39,590 - INFO - Fetching data for PEG from 2025-09-05 to 2025-09-12
+2025-09-14 17:57:39,882 - INFO - Successfully retrieved 6 records for PEG
+2025-09-14 17:57:39,890 - INFO - Processed 6 records for PEG in 2025-09
+2025-09-14 17:57:39,896 - INFO - Created Parquet file: PEG_2025_09.parquet
+2025-09-14 17:57:40,283 - INFO - Successfully uploaded PEG_2025_09.parquet to S3 bucket root
+2025-09-14 17:57:40,284 - INFO - Cleaned up local file: PEG_2025_09.parquet
+2025-09-14 17:57:40,284 - INFO - Completed processing PEG: 1/1 files successful
+2025-09-14 17:57:40,285 - INFO - ✓ Successfully processed PEG
+2025-09-14 17:57:40,285 - INFO - Processing ticker 78/111: PEP
+2025-09-14 17:57:40,285 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:57:52,790 - INFO - Starting processing for ticker: PEP (2025-09-05 to 2025-09-12)
+2025-09-14 17:57:52,791 - INFO - Fetching data for PEP from 2025-09-05 to 2025-09-12
+2025-09-14 17:57:53,137 - INFO - Successfully retrieved 6 records for PEP
+2025-09-14 17:57:53,146 - INFO - Processed 6 records for PEP in 2025-09
+2025-09-14 17:57:53,151 - INFO - Created Parquet file: PEP_2025_09.parquet
+2025-09-14 17:57:53,547 - INFO - Successfully uploaded PEP_2025_09.parquet to S3 bucket root
+2025-09-14 17:57:53,548 - INFO - Cleaned up local file: PEP_2025_09.parquet
+2025-09-14 17:57:53,548 - INFO - Completed processing PEP: 1/1 files successful
+2025-09-14 17:57:53,548 - INFO - ✓ Successfully processed PEP
+2025-09-14 17:57:53,548 - INFO - Processing ticker 79/111: PG
+2025-09-14 17:57:53,548 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:58:06,049 - INFO - Starting processing for ticker: PG (2025-09-05 to 2025-09-12)
+2025-09-14 17:58:06,050 - INFO - Fetching data for PG from 2025-09-05 to 2025-09-12
+2025-09-14 17:58:06,383 - INFO - Successfully retrieved 6 records for PG
+2025-09-14 17:58:06,391 - INFO - Processed 6 records for PG in 2025-09
+2025-09-14 17:58:06,396 - INFO - Created Parquet file: PG_2025_09.parquet
+2025-09-14 17:58:06,681 - INFO - Successfully uploaded PG_2025_09.parquet to S3 bucket root
+2025-09-14 17:58:06,682 - INFO - Cleaned up local file: PG_2025_09.parquet
+2025-09-14 17:58:06,682 - INFO - Completed processing PG: 1/1 files successful
+2025-09-14 17:58:06,682 - INFO - ✓ Successfully processed PG
+2025-09-14 17:58:06,682 - INFO - Processing ticker 80/111: PLD
+2025-09-14 17:58:06,682 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:58:19,187 - INFO - Starting processing for ticker: PLD (2025-09-05 to 2025-09-12)
+2025-09-14 17:58:19,188 - INFO - Fetching data for PLD from 2025-09-05 to 2025-09-12
+2025-09-14 17:58:19,551 - INFO - Successfully retrieved 6 records for PLD
+2025-09-14 17:58:19,558 - INFO - Processed 6 records for PLD in 2025-09
+2025-09-14 17:58:19,562 - INFO - Created Parquet file: PLD_2025_09.parquet
+2025-09-14 17:58:19,949 - INFO - Successfully uploaded PLD_2025_09.parquet to S3 bucket root
+2025-09-14 17:58:19,950 - INFO - Cleaned up local file: PLD_2025_09.parquet
+2025-09-14 17:58:19,950 - INFO - Completed processing PLD: 1/1 files successful
+2025-09-14 17:58:19,950 - INFO - ✓ Successfully processed PLD
+2025-09-14 17:58:19,951 - INFO - Processing ticker 81/111: PM
+2025-09-14 17:58:19,951 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:58:32,455 - INFO - Starting processing for ticker: PM (2025-09-05 to 2025-09-12)
+2025-09-14 17:58:32,456 - INFO - Fetching data for PM from 2025-09-05 to 2025-09-12
+2025-09-14 17:58:32,756 - INFO - Successfully retrieved 6 records for PM
+2025-09-14 17:58:32,765 - INFO - Processed 6 records for PM in 2025-09
+2025-09-14 17:58:32,768 - INFO - Created Parquet file: PM_2025_09.parquet
+2025-09-14 17:58:32,964 - INFO - Successfully uploaded PM_2025_09.parquet to S3 bucket root
+2025-09-14 17:58:32,965 - INFO - Cleaned up local file: PM_2025_09.parquet
+2025-09-14 17:58:32,965 - INFO - Completed processing PM: 1/1 files successful
+2025-09-14 17:58:32,965 - INFO - ✓ Successfully processed PM
+2025-09-14 17:58:32,965 - INFO - Processing ticker 82/111: PSA
+2025-09-14 17:58:32,965 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:58:45,471 - INFO - Starting processing for ticker: PSA (2025-09-05 to 2025-09-12)
+2025-09-14 17:58:45,471 - INFO - Fetching data for PSA from 2025-09-05 to 2025-09-12
+2025-09-14 17:58:45,770 - INFO - Successfully retrieved 6 records for PSA
+2025-09-14 17:58:45,778 - INFO - Processed 6 records for PSA in 2025-09
+2025-09-14 17:58:45,782 - INFO - Created Parquet file: PSA_2025_09.parquet
+2025-09-14 17:58:46,054 - INFO - Successfully uploaded PSA_2025_09.parquet to S3 bucket root
+2025-09-14 17:58:46,054 - INFO - Cleaned up local file: PSA_2025_09.parquet
+2025-09-14 17:58:46,055 - INFO - Completed processing PSA: 1/1 files successful
+2025-09-14 17:58:46,055 - INFO - ✓ Successfully processed PSA
+2025-09-14 17:58:46,055 - INFO - Processing ticker 83/111: PSX
+2025-09-14 17:58:46,055 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:58:58,559 - INFO - Starting processing for ticker: PSX (2025-09-05 to 2025-09-12)
+2025-09-14 17:58:58,560 - INFO - Fetching data for PSX from 2025-09-05 to 2025-09-12
+2025-09-14 17:58:58,919 - INFO - Successfully retrieved 6 records for PSX
+2025-09-14 17:58:58,926 - INFO - Processed 6 records for PSX in 2025-09
+2025-09-14 17:58:58,931 - INFO - Created Parquet file: PSX_2025_09.parquet
+2025-09-14 17:58:59,147 - INFO - Successfully uploaded PSX_2025_09.parquet to S3 bucket root
+2025-09-14 17:58:59,148 - INFO - Cleaned up local file: PSX_2025_09.parquet
+2025-09-14 17:58:59,148 - INFO - Completed processing PSX: 1/1 files successful
+2025-09-14 17:58:59,149 - INFO - ✓ Successfully processed PSX
+2025-09-14 17:58:59,149 - INFO - Processing ticker 84/111: RTX
+2025-09-14 17:58:59,149 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:59:11,650 - INFO - Starting processing for ticker: RTX (2025-09-05 to 2025-09-12)
+2025-09-14 17:59:11,652 - INFO - Fetching data for RTX from 2025-09-05 to 2025-09-12
+2025-09-14 17:59:11,980 - INFO - Successfully retrieved 6 records for RTX
+2025-09-14 17:59:11,986 - INFO - Processed 6 records for RTX in 2025-09
+2025-09-14 17:59:11,992 - INFO - Created Parquet file: RTX_2025_09.parquet
+2025-09-14 17:59:12,474 - INFO - Successfully uploaded RTX_2025_09.parquet to S3 bucket root
+2025-09-14 17:59:12,475 - INFO - Cleaned up local file: RTX_2025_09.parquet
+2025-09-14 17:59:12,475 - INFO - Completed processing RTX: 1/1 files successful
+2025-09-14 17:59:12,475 - INFO - ✓ Successfully processed RTX
+2025-09-14 17:59:12,476 - INFO - Processing ticker 85/111: SBUX
+2025-09-14 17:59:12,476 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:59:24,980 - INFO - Starting processing for ticker: SBUX (2025-09-05 to 2025-09-12)
+2025-09-14 17:59:24,981 - INFO - Fetching data for SBUX from 2025-09-05 to 2025-09-12
+2025-09-14 17:59:25,364 - INFO - Successfully retrieved 6 records for SBUX
+2025-09-14 17:59:25,371 - INFO - Processed 6 records for SBUX in 2025-09
+2025-09-14 17:59:25,375 - INFO - Created Parquet file: SBUX_2025_09.parquet
+2025-09-14 17:59:25,710 - INFO - Successfully uploaded SBUX_2025_09.parquet to S3 bucket root
+2025-09-14 17:59:25,711 - INFO - Cleaned up local file: SBUX_2025_09.parquet
+2025-09-14 17:59:25,711 - INFO - Completed processing SBUX: 1/1 files successful
+2025-09-14 17:59:25,712 - INFO - ✓ Successfully processed SBUX
+2025-09-14 17:59:25,712 - INFO - Processing ticker 86/111: SHW
+2025-09-14 17:59:25,712 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:59:38,214 - INFO - Starting processing for ticker: SHW (2025-09-05 to 2025-09-12)
+2025-09-14 17:59:38,216 - INFO - Fetching data for SHW from 2025-09-05 to 2025-09-12
+2025-09-14 17:59:38,532 - INFO - Successfully retrieved 6 records for SHW
+2025-09-14 17:59:38,562 - INFO - Processed 6 records for SHW in 2025-09
+2025-09-14 17:59:38,570 - INFO - Created Parquet file: SHW_2025_09.parquet
+2025-09-14 17:59:38,960 - INFO - Successfully uploaded SHW_2025_09.parquet to S3 bucket root
+2025-09-14 17:59:38,961 - INFO - Cleaned up local file: SHW_2025_09.parquet
+2025-09-14 17:59:38,961 - INFO - Completed processing SHW: 1/1 files successful
+2025-09-14 17:59:38,961 - INFO - ✓ Successfully processed SHW
+2025-09-14 17:59:38,961 - INFO - Processing ticker 87/111: SLB
+2025-09-14 17:59:38,961 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 17:59:51,467 - INFO - Starting processing for ticker: SLB (2025-09-05 to 2025-09-12)
+2025-09-14 17:59:51,468 - INFO - Fetching data for SLB from 2025-09-05 to 2025-09-12
+2025-09-14 17:59:51,836 - INFO - Successfully retrieved 6 records for SLB
+2025-09-14 17:59:51,844 - INFO - Processed 6 records for SLB in 2025-09
+2025-09-14 17:59:51,849 - INFO - Created Parquet file: SLB_2025_09.parquet
+2025-09-14 17:59:52,166 - INFO - Successfully uploaded SLB_2025_09.parquet to S3 bucket root
+2025-09-14 17:59:52,166 - INFO - Cleaned up local file: SLB_2025_09.parquet
+2025-09-14 17:59:52,166 - INFO - Completed processing SLB: 1/1 files successful
+2025-09-14 17:59:52,167 - INFO - ✓ Successfully processed SLB
+2025-09-14 17:59:52,167 - INFO - Processing ticker 88/111: SO
+2025-09-14 17:59:52,167 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:00:04,668 - INFO - Starting processing for ticker: SO (2025-09-05 to 2025-09-12)
+2025-09-14 18:00:04,670 - INFO - Fetching data for SO from 2025-09-05 to 2025-09-12
+2025-09-14 18:00:04,965 - INFO - Successfully retrieved 6 records for SO
+2025-09-14 18:00:04,972 - INFO - Processed 6 records for SO in 2025-09
+2025-09-14 18:00:04,976 - INFO - Created Parquet file: SO_2025_09.parquet
+2025-09-14 18:00:05,333 - INFO - Successfully uploaded SO_2025_09.parquet to S3 bucket root
+2025-09-14 18:00:05,334 - INFO - Cleaned up local file: SO_2025_09.parquet
+2025-09-14 18:00:05,335 - INFO - Completed processing SO: 1/1 files successful
+2025-09-14 18:00:05,335 - INFO - ✓ Successfully processed SO
+2025-09-14 18:00:05,335 - INFO - Processing ticker 89/111: SPG
+2025-09-14 18:00:05,335 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:00:17,840 - INFO - Starting processing for ticker: SPG (2025-09-05 to 2025-09-12)
+2025-09-14 18:00:17,840 - INFO - Fetching data for SPG from 2025-09-05 to 2025-09-12
+2025-09-14 18:00:18,271 - INFO - Successfully retrieved 6 records for SPG
+2025-09-14 18:00:18,279 - INFO - Processed 6 records for SPG in 2025-09
+2025-09-14 18:00:18,283 - INFO - Created Parquet file: SPG_2025_09.parquet
+2025-09-14 18:00:18,602 - INFO - Successfully uploaded SPG_2025_09.parquet to S3 bucket root
+2025-09-14 18:00:18,604 - INFO - Cleaned up local file: SPG_2025_09.parquet
+2025-09-14 18:00:18,604 - INFO - Completed processing SPG: 1/1 files successful
+2025-09-14 18:00:18,605 - INFO - ✓ Successfully processed SPG
+2025-09-14 18:00:18,605 - INFO - Processing ticker 90/111: SPGI
+2025-09-14 18:00:18,605 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:00:31,111 - INFO - Starting processing for ticker: SPGI (2025-09-05 to 2025-09-12)
+2025-09-14 18:00:31,112 - INFO - Fetching data for SPGI from 2025-09-05 to 2025-09-12
+2025-09-14 18:00:31,408 - INFO - Successfully retrieved 6 records for SPGI
+2025-09-14 18:00:31,413 - INFO - Processed 6 records for SPGI in 2025-09
+2025-09-14 18:00:31,416 - INFO - Created Parquet file: SPGI_2025_09.parquet
+2025-09-14 18:00:31,815 - INFO - Successfully uploaded SPGI_2025_09.parquet to S3 bucket root
+2025-09-14 18:00:31,815 - INFO - Cleaned up local file: SPGI_2025_09.parquet
+2025-09-14 18:00:31,816 - INFO - Completed processing SPGI: 1/1 files successful
+2025-09-14 18:00:31,816 - INFO - ✓ Successfully processed SPGI
+2025-09-14 18:00:31,816 - INFO - Processing ticker 91/111: SRE
+2025-09-14 18:00:31,816 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:00:44,317 - INFO - Starting processing for ticker: SRE (2025-09-05 to 2025-09-12)
+2025-09-14 18:00:44,317 - INFO - Fetching data for SRE from 2025-09-05 to 2025-09-12
+2025-09-14 18:00:44,749 - INFO - Successfully retrieved 6 records for SRE
+2025-09-14 18:00:44,755 - INFO - Processed 6 records for SRE in 2025-09
+2025-09-14 18:00:44,760 - INFO - Created Parquet file: SRE_2025_09.parquet
+2025-09-14 18:00:45,088 - INFO - Successfully uploaded SRE_2025_09.parquet to S3 bucket root
+2025-09-14 18:00:45,089 - INFO - Cleaned up local file: SRE_2025_09.parquet
+2025-09-14 18:00:45,089 - INFO - Completed processing SRE: 1/1 files successful
+2025-09-14 18:00:45,089 - INFO - ✓ Successfully processed SRE
+2025-09-14 18:00:45,089 - INFO - Processing ticker 92/111: T
+2025-09-14 18:00:45,089 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:00:57,594 - INFO - Starting processing for ticker: T (2025-09-05 to 2025-09-12)
+2025-09-14 18:00:57,595 - INFO - Fetching data for T from 2025-09-05 to 2025-09-12
+2025-09-14 18:00:57,901 - INFO - Successfully retrieved 6 records for T
+2025-09-14 18:00:57,907 - INFO - Processed 6 records for T in 2025-09
+2025-09-14 18:00:57,913 - INFO - Created Parquet file: T_2025_09.parquet
+2025-09-14 18:00:58,291 - INFO - Successfully uploaded T_2025_09.parquet to S3 bucket root
+2025-09-14 18:00:58,292 - INFO - Cleaned up local file: T_2025_09.parquet
+2025-09-14 18:00:58,292 - INFO - Completed processing T: 1/1 files successful
+2025-09-14 18:00:58,293 - INFO - ✓ Successfully processed T
+2025-09-14 18:00:58,293 - INFO - Processing ticker 93/111: TGT
+2025-09-14 18:00:58,293 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:01:10,803 - INFO - Starting processing for ticker: TGT (2025-09-05 to 2025-09-12)
+2025-09-14 18:01:10,804 - INFO - Fetching data for TGT from 2025-09-05 to 2025-09-12
+2025-09-14 18:01:11,106 - INFO - Successfully retrieved 6 records for TGT
+2025-09-14 18:01:11,114 - INFO - Processed 6 records for TGT in 2025-09
+2025-09-14 18:01:11,118 - INFO - Created Parquet file: TGT_2025_09.parquet
+2025-09-14 18:01:11,461 - INFO - Successfully uploaded TGT_2025_09.parquet to S3 bucket root
+2025-09-14 18:01:11,462 - INFO - Cleaned up local file: TGT_2025_09.parquet
+2025-09-14 18:01:11,462 - INFO - Completed processing TGT: 1/1 files successful
+2025-09-14 18:01:11,463 - INFO - ✓ Successfully processed TGT
+2025-09-14 18:01:11,463 - INFO - Processing ticker 94/111: TJX
+2025-09-14 18:01:11,463 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:01:23,973 - INFO - Starting processing for ticker: TJX (2025-09-05 to 2025-09-12)
+2025-09-14 18:01:23,974 - INFO - Fetching data for TJX from 2025-09-05 to 2025-09-12
+2025-09-14 18:01:24,314 - INFO - Successfully retrieved 6 records for TJX
+2025-09-14 18:01:24,319 - INFO - Processed 6 records for TJX in 2025-09
+2025-09-14 18:01:24,324 - INFO - Created Parquet file: TJX_2025_09.parquet
+2025-09-14 18:01:24,606 - INFO - Successfully uploaded TJX_2025_09.parquet to S3 bucket root
+2025-09-14 18:01:24,607 - INFO - Cleaned up local file: TJX_2025_09.parquet
+2025-09-14 18:01:24,607 - INFO - Completed processing TJX: 1/1 files successful
+2025-09-14 18:01:24,607 - INFO - ✓ Successfully processed TJX
+2025-09-14 18:01:24,607 - INFO - Processing ticker 95/111: TMO
+2025-09-14 18:01:24,607 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:01:37,118 - INFO - Starting processing for ticker: TMO (2025-09-05 to 2025-09-12)
+2025-09-14 18:01:37,121 - INFO - Fetching data for TMO from 2025-09-05 to 2025-09-12
+2025-09-14 18:01:37,496 - INFO - Successfully retrieved 6 records for TMO
+2025-09-14 18:01:37,520 - INFO - Processed 6 records for TMO in 2025-09
+2025-09-14 18:01:37,522 - INFO - Created Parquet file: TMO_2025_09.parquet
+2025-09-14 18:01:37,851 - INFO - Successfully uploaded TMO_2025_09.parquet to S3 bucket root
+2025-09-14 18:01:37,852 - INFO - Cleaned up local file: TMO_2025_09.parquet
+2025-09-14 18:01:37,852 - INFO - Completed processing TMO: 1/1 files successful
+2025-09-14 18:01:37,852 - INFO - ✓ Successfully processed TMO
+2025-09-14 18:01:37,852 - INFO - Processing ticker 96/111: TMUS
+2025-09-14 18:01:37,852 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:01:50,355 - INFO - Starting processing for ticker: TMUS (2025-09-05 to 2025-09-12)
+2025-09-14 18:01:50,356 - INFO - Fetching data for TMUS from 2025-09-05 to 2025-09-12
+2025-09-14 18:01:50,668 - INFO - Successfully retrieved 6 records for TMUS
+2025-09-14 18:01:50,673 - INFO - Processed 6 records for TMUS in 2025-09
+2025-09-14 18:01:50,681 - INFO - Created Parquet file: TMUS_2025_09.parquet
+2025-09-14 18:01:51,095 - INFO - Successfully uploaded TMUS_2025_09.parquet to S3 bucket root
+2025-09-14 18:01:51,096 - INFO - Cleaned up local file: TMUS_2025_09.parquet
+2025-09-14 18:01:51,097 - INFO - Completed processing TMUS: 1/1 files successful
+2025-09-14 18:01:51,097 - INFO - ✓ Successfully processed TMUS
+2025-09-14 18:01:51,097 - INFO - Processing ticker 97/111: TSLA
+2025-09-14 18:01:51,097 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:02:03,602 - INFO - Starting processing for ticker: TSLA (2025-09-05 to 2025-09-12)
+2025-09-14 18:02:03,604 - INFO - Fetching data for TSLA from 2025-09-05 to 2025-09-12
+2025-09-14 18:02:03,909 - INFO - Successfully retrieved 6 records for TSLA
+2025-09-14 18:02:03,915 - INFO - Processed 6 records for TSLA in 2025-09
+2025-09-14 18:02:03,919 - INFO - Created Parquet file: TSLA_2025_09.parquet
+2025-09-14 18:02:04,196 - INFO - Successfully uploaded TSLA_2025_09.parquet to S3 bucket root
+2025-09-14 18:02:04,197 - INFO - Cleaned up local file: TSLA_2025_09.parquet
+2025-09-14 18:02:04,197 - INFO - Completed processing TSLA: 1/1 files successful
+2025-09-14 18:02:04,197 - INFO - ✓ Successfully processed TSLA
+2025-09-14 18:02:04,197 - INFO - Processing ticker 98/111: TTD
+2025-09-14 18:02:04,197 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:02:16,703 - INFO - Starting processing for ticker: TTD (2025-09-05 to 2025-09-12)
+2025-09-14 18:02:16,704 - INFO - Fetching data for TTD from 2025-09-05 to 2025-09-12
+2025-09-14 18:02:17,003 - INFO - Successfully retrieved 6 records for TTD
+2025-09-14 18:02:17,013 - INFO - Processed 6 records for TTD in 2025-09
+2025-09-14 18:02:17,017 - INFO - Created Parquet file: TTD_2025_09.parquet
+2025-09-14 18:02:17,284 - INFO - Successfully uploaded TTD_2025_09.parquet to S3 bucket root
+2025-09-14 18:02:17,285 - INFO - Cleaned up local file: TTD_2025_09.parquet
+2025-09-14 18:02:17,285 - INFO - Completed processing TTD: 1/1 files successful
+2025-09-14 18:02:17,285 - INFO - ✓ Successfully processed TTD
+2025-09-14 18:02:17,285 - INFO - Processing ticker 99/111: UBER
+2025-09-14 18:02:17,285 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:02:29,788 - INFO - Starting processing for ticker: UBER (2025-09-05 to 2025-09-12)
+2025-09-14 18:02:29,799 - INFO - Fetching data for UBER from 2025-09-05 to 2025-09-12
+2025-09-14 18:02:31,567 - INFO - Successfully retrieved 6 records for UBER
+2025-09-14 18:02:31,590 - INFO - Processed 6 records for UBER in 2025-09
+2025-09-14 18:02:31,612 - INFO - Created Parquet file: UBER_2025_09.parquet
+2025-09-14 18:02:32,106 - INFO - Successfully uploaded UBER_2025_09.parquet to S3 bucket root
+2025-09-14 18:02:32,106 - INFO - Cleaned up local file: UBER_2025_09.parquet
+2025-09-14 18:02:32,107 - INFO - Completed processing UBER: 1/1 files successful
+2025-09-14 18:02:32,107 - INFO - ✓ Successfully processed UBER
+2025-09-14 18:02:32,107 - INFO - Processing ticker 100/111: UNH
+2025-09-14 18:02:32,107 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:02:44,610 - INFO - Starting processing for ticker: UNH (2025-09-05 to 2025-09-12)
+2025-09-14 18:02:44,612 - INFO - Fetching data for UNH from 2025-09-05 to 2025-09-12
+2025-09-14 18:02:45,059 - INFO - Successfully retrieved 6 records for UNH
+2025-09-14 18:02:45,081 - INFO - Processed 6 records for UNH in 2025-09
+2025-09-14 18:02:45,085 - INFO - Created Parquet file: UNH_2025_09.parquet
+2025-09-14 18:02:46,056 - INFO - Successfully uploaded UNH_2025_09.parquet to S3 bucket root
+2025-09-14 18:02:46,057 - INFO - Cleaned up local file: UNH_2025_09.parquet
+2025-09-14 18:02:46,057 - INFO - Completed processing UNH: 1/1 files successful
+2025-09-14 18:02:46,057 - INFO - ✓ Successfully processed UNH
+2025-09-14 18:02:46,057 - INFO - Processing ticker 101/111: UNP
+2025-09-14 18:02:46,057 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:02:58,564 - INFO - Starting processing for ticker: UNP (2025-09-05 to 2025-09-12)
+2025-09-14 18:02:58,566 - INFO - Fetching data for UNP from 2025-09-05 to 2025-09-12
+2025-09-14 18:02:58,882 - INFO - Successfully retrieved 6 records for UNP
+2025-09-14 18:02:58,892 - INFO - Processed 6 records for UNP in 2025-09
+2025-09-14 18:02:58,897 - INFO - Created Parquet file: UNP_2025_09.parquet
+2025-09-14 18:02:59,096 - INFO - Successfully uploaded UNP_2025_09.parquet to S3 bucket root
+2025-09-14 18:02:59,097 - INFO - Cleaned up local file: UNP_2025_09.parquet
+2025-09-14 18:02:59,097 - INFO - Completed processing UNP: 1/1 files successful
+2025-09-14 18:02:59,097 - INFO - ✓ Successfully processed UNP
+2025-09-14 18:02:59,097 - INFO - Processing ticker 102/111: V
+2025-09-14 18:02:59,098 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:03:11,603 - INFO - Starting processing for ticker: V (2025-09-05 to 2025-09-12)
+2025-09-14 18:03:11,605 - INFO - Fetching data for V from 2025-09-05 to 2025-09-12
+2025-09-14 18:03:11,919 - INFO - Successfully retrieved 6 records for V
+2025-09-14 18:03:11,932 - INFO - Processed 6 records for V in 2025-09
+2025-09-14 18:03:11,937 - INFO - Created Parquet file: V_2025_09.parquet
+2025-09-14 18:03:12,432 - INFO - Successfully uploaded V_2025_09.parquet to S3 bucket root
+2025-09-14 18:03:12,433 - INFO - Cleaned up local file: V_2025_09.parquet
+2025-09-14 18:03:12,433 - INFO - Completed processing V: 1/1 files successful
+2025-09-14 18:03:12,433 - INFO - ✓ Successfully processed V
+2025-09-14 18:03:12,433 - INFO - Processing ticker 103/111: VMC
+2025-09-14 18:03:12,433 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:03:24,938 - INFO - Starting processing for ticker: VMC (2025-09-05 to 2025-09-12)
+2025-09-14 18:03:24,940 - INFO - Fetching data for VMC from 2025-09-05 to 2025-09-12
+2025-09-14 18:03:25,247 - INFO - Successfully retrieved 6 records for VMC
+2025-09-14 18:03:25,253 - INFO - Processed 6 records for VMC in 2025-09
+2025-09-14 18:03:25,258 - INFO - Created Parquet file: VMC_2025_09.parquet
+2025-09-14 18:03:25,509 - INFO - Successfully uploaded VMC_2025_09.parquet to S3 bucket root
+2025-09-14 18:03:25,511 - INFO - Cleaned up local file: VMC_2025_09.parquet
+2025-09-14 18:03:25,511 - INFO - Completed processing VMC: 1/1 files successful
+2025-09-14 18:03:25,512 - INFO - ✓ Successfully processed VMC
+2025-09-14 18:03:25,512 - INFO - Processing ticker 104/111: VOO
+2025-09-14 18:03:25,512 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:03:38,013 - INFO - Starting processing for ticker: VOO (2025-09-05 to 2025-09-12)
+2025-09-14 18:03:38,015 - INFO - Fetching data for VOO from 2025-09-05 to 2025-09-12
+2025-09-14 18:03:38,326 - INFO - Successfully retrieved 6 records for VOO
+2025-09-14 18:03:38,347 - INFO - Processed 6 records for VOO in 2025-09
+2025-09-14 18:03:38,351 - INFO - Created Parquet file: VOO_2025_09.parquet
+2025-09-14 18:03:38,702 - INFO - Successfully uploaded VOO_2025_09.parquet to S3 bucket root
+2025-09-14 18:03:38,703 - INFO - Cleaned up local file: VOO_2025_09.parquet
+2025-09-14 18:03:38,703 - INFO - Completed processing VOO: 1/1 files successful
+2025-09-14 18:03:38,703 - INFO - ✓ Successfully processed VOO
+2025-09-14 18:03:38,704 - INFO - Processing ticker 105/111: VST
+2025-09-14 18:03:38,704 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:03:51,209 - INFO - Starting processing for ticker: VST (2025-09-05 to 2025-09-12)
+2025-09-14 18:03:51,211 - INFO - Fetching data for VST from 2025-09-05 to 2025-09-12
+2025-09-14 18:03:51,578 - INFO - Successfully retrieved 6 records for VST
+2025-09-14 18:03:51,588 - INFO - Processed 6 records for VST in 2025-09
+2025-09-14 18:03:51,593 - INFO - Created Parquet file: VST_2025_09.parquet
+2025-09-14 18:03:51,803 - INFO - Successfully uploaded VST_2025_09.parquet to S3 bucket root
+2025-09-14 18:03:51,804 - INFO - Cleaned up local file: VST_2025_09.parquet
+2025-09-14 18:03:51,804 - INFO - Completed processing VST: 1/1 files successful
+2025-09-14 18:03:51,804 - INFO - ✓ Successfully processed VST
+2025-09-14 18:03:51,804 - INFO - Processing ticker 106/111: VZ
+2025-09-14 18:03:51,805 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:04:04,321 - INFO - Starting processing for ticker: VZ (2025-09-05 to 2025-09-12)
+2025-09-14 18:04:04,325 - INFO - Fetching data for VZ from 2025-09-05 to 2025-09-12
+2025-09-14 18:04:04,633 - INFO - Successfully retrieved 6 records for VZ
+2025-09-14 18:04:04,647 - INFO - Processed 6 records for VZ in 2025-09
+2025-09-14 18:04:04,653 - INFO - Created Parquet file: VZ_2025_09.parquet
+2025-09-14 18:04:05,001 - INFO - Successfully uploaded VZ_2025_09.parquet to S3 bucket root
+2025-09-14 18:04:05,002 - INFO - Cleaned up local file: VZ_2025_09.parquet
+2025-09-14 18:04:05,002 - INFO - Completed processing VZ: 1/1 files successful
+2025-09-14 18:04:05,002 - INFO - ✓ Successfully processed VZ
+2025-09-14 18:04:05,002 - INFO - Processing ticker 107/111: WELL
+2025-09-14 18:04:05,002 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:04:17,508 - INFO - Starting processing for ticker: WELL (2025-09-05 to 2025-09-12)
+2025-09-14 18:04:17,509 - INFO - Fetching data for WELL from 2025-09-05 to 2025-09-12
+2025-09-14 18:04:17,838 - INFO - Successfully retrieved 6 records for WELL
+2025-09-14 18:04:17,846 - INFO - Processed 6 records for WELL in 2025-09
+2025-09-14 18:04:17,849 - INFO - Created Parquet file: WELL_2025_09.parquet
+2025-09-14 18:04:18,199 - INFO - Successfully uploaded WELL_2025_09.parquet to S3 bucket root
+2025-09-14 18:04:18,199 - INFO - Cleaned up local file: WELL_2025_09.parquet
+2025-09-14 18:04:18,200 - INFO - Completed processing WELL: 1/1 files successful
+2025-09-14 18:04:18,200 - INFO - ✓ Successfully processed WELL
+2025-09-14 18:04:18,200 - INFO - Processing ticker 108/111: WFC
+2025-09-14 18:04:18,200 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:04:30,715 - INFO - Starting processing for ticker: WFC (2025-09-05 to 2025-09-12)
+2025-09-14 18:04:30,720 - INFO - Fetching data for WFC from 2025-09-05 to 2025-09-12
+2025-09-14 18:04:31,309 - INFO - Successfully retrieved 6 records for WFC
+2025-09-14 18:04:31,326 - INFO - Processed 6 records for WFC in 2025-09
+2025-09-14 18:04:31,330 - INFO - Created Parquet file: WFC_2025_09.parquet
+2025-09-14 18:04:31,612 - INFO - Successfully uploaded WFC_2025_09.parquet to S3 bucket root
+2025-09-14 18:04:31,612 - INFO - Cleaned up local file: WFC_2025_09.parquet
+2025-09-14 18:04:31,613 - INFO - Completed processing WFC: 1/1 files successful
+2025-09-14 18:04:31,613 - INFO - ✓ Successfully processed WFC
+2025-09-14 18:04:31,613 - INFO - Processing ticker 109/111: WMB
+2025-09-14 18:04:31,614 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:04:44,119 - INFO - Starting processing for ticker: WMB (2025-09-05 to 2025-09-12)
+2025-09-14 18:04:44,122 - INFO - Fetching data for WMB from 2025-09-05 to 2025-09-12
+2025-09-14 18:04:44,421 - INFO - Successfully retrieved 6 records for WMB
+2025-09-14 18:04:44,428 - INFO - Processed 6 records for WMB in 2025-09
+2025-09-14 18:04:44,434 - INFO - Created Parquet file: WMB_2025_09.parquet
+2025-09-14 18:04:44,685 - INFO - Successfully uploaded WMB_2025_09.parquet to S3 bucket root
+2025-09-14 18:04:44,686 - INFO - Cleaned up local file: WMB_2025_09.parquet
+2025-09-14 18:04:44,686 - INFO - Completed processing WMB: 1/1 files successful
+2025-09-14 18:04:44,687 - INFO - ✓ Successfully processed WMB
+2025-09-14 18:04:44,687 - INFO - Processing ticker 110/111: WMT
+2025-09-14 18:04:44,687 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:04:57,189 - INFO - Starting processing for ticker: WMT (2025-09-05 to 2025-09-12)
+2025-09-14 18:04:57,190 - INFO - Fetching data for WMT from 2025-09-05 to 2025-09-12
+2025-09-14 18:04:57,522 - INFO - Successfully retrieved 6 records for WMT
+2025-09-14 18:04:57,529 - INFO - Processed 6 records for WMT in 2025-09
+2025-09-14 18:04:57,535 - INFO - Created Parquet file: WMT_2025_09.parquet
+2025-09-14 18:04:57,796 - INFO - Successfully uploaded WMT_2025_09.parquet to S3 bucket root
+2025-09-14 18:04:57,798 - INFO - Cleaned up local file: WMT_2025_09.parquet
+2025-09-14 18:04:57,798 - INFO - Completed processing WMT: 1/1 files successful
+2025-09-14 18:04:57,798 - INFO - ✓ Successfully processed WMT
+2025-09-14 18:04:57,798 - INFO - Processing ticker 111/111: XOM
+2025-09-14 18:04:57,798 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 18:05:10,308 - INFO - Starting processing for ticker: XOM (2025-09-05 to 2025-09-12)
+2025-09-14 18:05:10,310 - INFO - Fetching data for XOM from 2025-09-05 to 2025-09-12
+2025-09-14 18:05:10,617 - INFO - Successfully retrieved 6 records for XOM
+2025-09-14 18:05:10,626 - INFO - Processed 6 records for XOM in 2025-09
+2025-09-14 18:05:10,633 - INFO - Created Parquet file: XOM_2025_09.parquet
+2025-09-14 18:05:10,938 - INFO - Successfully uploaded XOM_2025_09.parquet to S3 bucket root
+2025-09-14 18:05:10,939 - INFO - Cleaned up local file: XOM_2025_09.parquet
+2025-09-14 18:05:10,939 - INFO - Completed processing XOM: 1/1 files successful
+2025-09-14 18:05:10,939 - INFO - ✓ Successfully processed XOM
+2025-09-14 18:05:10,941 - INFO - ================================================================================
+2025-09-14 18:05:10,941 - INFO - INCREMENTAL PIPELINE SUMMARY
+2025-09-14 18:05:10,941 - INFO - ================================================================================
+2025-09-14 18:05:10,942 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-14 18:05:11,326 - INFO - query execution done
+2025-09-14 18:05:11,326 - INFO - Number of results in first chunk: 111
+2025-09-14 18:05:11,328 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-14 18:05:11,329 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-14 18:05:11,329 - INFO - Total tickers analyzed: 111
+2025-09-14 18:05:11,329 - INFO - Tickers needing updates: 111
+2025-09-14 18:05:11,329 - INFO - Successfully processed: 111
+2025-09-14 18:05:11,329 - INFO - Failed: 0
+2025-09-14 18:05:11,329 - INFO - Success rate: 100.0%
+2025-09-14 18:05:11,329 - INFO - 🎉 All required tickers processed successfully!
+2025-09-14 18:05:11,329 - INFO - Incremental pipeline completed
+2025-09-14 18:05:11,329 - INFO - Ready for Snowflake COPY command execution to load new data.
+2025-09-14 18:05:11,329 - INFO - closed
+2025-09-14 18:05:11,414 - INFO - No async queries seem to be running, deleting session
+2025-09-14 18:05:11,504 - INFO - Snowflake connection closed
