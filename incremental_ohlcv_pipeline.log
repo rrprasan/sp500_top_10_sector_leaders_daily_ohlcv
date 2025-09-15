@@ -2514,3 +2514,327 @@ To run the incremental pipeline:
 2025-09-14 18:05:11,329 - INFO - closed
 2025-09-14 18:05:11,414 - INFO - No async queries seem to be running, deleting session
 2025-09-14 18:05:11,504 - INFO - Snowflake connection closed
+2025-09-14 20:36:04,364 - INFO - Polygon.io API key loaded from environment variable
+2025-09-14 20:36:04,364 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-14 20:36:04,364 - INFO - End date: 2025-09-12
+2025-09-14 20:36:04,364 - INFO - ================================================================================
+2025-09-14 20:36:04,364 - INFO - INCREMENTAL OHLCV PIPELINE FOR SP500 SECTOR LEADERS
+2025-09-14 20:36:04,364 - INFO - ================================================================================
+2025-09-14 20:36:04,364 - INFO - End date: 2025-09-12
+2025-09-14 20:36:04,364 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-14 20:36:04,364 - INFO - Snowflake Table: sp500_top10_sector_ohlcv_itbl
+2025-09-14 20:36:04,364 - INFO - Snowflake Connection: DEMO_PRAJAGOPAL
+2025-09-14 20:36:04,364 - INFO - Step 1: Analyzing existing data and determining date ranges...
+2025-09-14 20:36:04,369 - INFO - Snowflake Connector for Python Version: 3.16.0, Python Version: 3.12.3, Platform: macOS-15.6.1-arm64-arm-64bit
+2025-09-14 20:36:04,369 - INFO - Connecting to GLOBAL Snowflake domain
+2025-09-14 20:36:04,970 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-14 20:36:05,105 - INFO - Retrieved 111 ticker symbols from Snowflake
+2025-09-14 20:36:05,106 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AMD', 'AMGN', 'AMT']
+2025-09-14 20:36:06,002 - INFO - Max date for AAPL: 2025-09-11
+2025-09-14 20:36:06,003 - INFO - Will download AAPL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:06,514 - INFO - Max date for ABBV: 2025-09-11
+2025-09-14 20:36:06,515 - INFO - Will download ABBV from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:06,754 - INFO - Max date for ABT: 2025-09-11
+2025-09-14 20:36:06,755 - INFO - Will download ABT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:06,999 - INFO - Max date for ACN: 2025-09-11
+2025-09-14 20:36:06,999 - INFO - Will download ACN from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:07,232 - INFO - Max date for ADBE: 2025-09-11
+2025-09-14 20:36:07,233 - INFO - Will download ADBE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:07,479 - INFO - Max date for ADP: 2025-09-11
+2025-09-14 20:36:07,479 - INFO - Will download ADP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:07,708 - INFO - Max date for AEP: 2025-09-11
+2025-09-14 20:36:07,709 - INFO - Will download AEP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:07,927 - INFO - Max date for AMD: 2025-09-11
+2025-09-14 20:36:07,927 - INFO - Will download AMD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:08,543 - INFO - Max date for AMGN: 2025-09-11
+2025-09-14 20:36:08,544 - INFO - Will download AMGN from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:08,789 - INFO - Max date for AMT: 2025-09-11
+2025-09-14 20:36:08,790 - INFO - Will download AMT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:09,040 - INFO - Max date for AMZN: 2025-09-11
+2025-09-14 20:36:09,041 - INFO - Will download AMZN from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:09,310 - INFO - Max date for APD: 2025-09-11
+2025-09-14 20:36:09,311 - INFO - Will download APD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:09,567 - INFO - Max date for AVGO: 2025-09-11
+2025-09-14 20:36:09,568 - INFO - Will download AVGO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:09,829 - INFO - Max date for AXP: 2025-09-11
+2025-09-14 20:36:09,829 - INFO - Will download AXP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:10,070 - INFO - Max date for BA: 2025-09-11
+2025-09-14 20:36:10,071 - INFO - Will download BA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:10,295 - INFO - Max date for BAC: 2025-09-11
+2025-09-14 20:36:10,295 - INFO - Will download BAC from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:10,640 - INFO - Max date for BKNG: 2025-09-11
+2025-09-14 20:36:10,641 - INFO - Will download BKNG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:10,865 - INFO - Max date for BLK: 2025-09-11
+2025-09-14 20:36:10,865 - INFO - Will download BLK from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:11,152 - INFO - Max date for BRK.B: 2025-09-11
+2025-09-14 20:36:11,153 - INFO - Will download BRK.B from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:11,388 - INFO - Max date for CAT: 2025-09-11
+2025-09-14 20:36:11,388 - INFO - Will download CAT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:11,619 - INFO - Max date for CBRE: 2025-09-11
+2025-09-14 20:36:11,619 - INFO - Will download CBRE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:11,835 - INFO - Max date for CCI: 2025-09-11
+2025-09-14 20:36:11,836 - INFO - Will download CCI from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:12,049 - INFO - Max date for CEG: 2025-09-11
+2025-09-14 20:36:12,050 - INFO - Will download CEG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:12,278 - INFO - Max date for CL: 2025-09-11
+2025-09-14 20:36:12,278 - INFO - Will download CL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:12,543 - INFO - Max date for CMCSA: 2025-09-11
+2025-09-14 20:36:12,543 - INFO - Will download CMCSA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:12,762 - INFO - Max date for COP: 2025-09-11
+2025-09-14 20:36:12,763 - INFO - Will download COP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:13,006 - INFO - Max date for COST: 2025-09-11
+2025-09-14 20:36:13,007 - INFO - Will download COST from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:13,228 - INFO - Max date for CRH: 2025-09-11
+2025-09-14 20:36:13,229 - INFO - Will download CRH from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:13,442 - INFO - Max date for CRM: 2025-09-11
+2025-09-14 20:36:13,442 - INFO - Will download CRM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:14,020 - INFO - Max date for CSCO: 2025-09-11
+2025-09-14 20:36:14,020 - INFO - Will download CSCO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:14,402 - INFO - Max date for CTVA: 2025-09-11
+2025-09-14 20:36:14,403 - INFO - Will download CTVA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:14,715 - INFO - Max date for CVX: 2025-09-11
+2025-09-14 20:36:14,715 - INFO - Will download CVX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:14,930 - INFO - Max date for D: 2025-09-11
+2025-09-14 20:36:14,930 - INFO - Will download D from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:15,160 - INFO - Max date for DHR: 2025-09-11
+2025-09-14 20:36:15,161 - INFO - Will download DHR from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:15,381 - INFO - Max date for DIS: 2025-09-11
+2025-09-14 20:36:15,381 - INFO - Will download DIS from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:15,615 - INFO - Max date for DLR: 2025-09-11
+2025-09-14 20:36:15,616 - INFO - Will download DLR from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:15,842 - INFO - Max date for DUK: 2025-09-11
+2025-09-14 20:36:15,842 - INFO - Will download DUK from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:16,064 - INFO - Max date for ECL: 2025-09-11
+2025-09-14 20:36:16,064 - INFO - Will download ECL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:16,325 - INFO - Max date for EOG: 2025-09-11
+2025-09-14 20:36:16,326 - INFO - Will download EOG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:16,740 - INFO - Max date for EQIX: 2025-09-11
+2025-09-14 20:36:16,741 - INFO - Will download EQIX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:16,977 - INFO - Max date for ETN: 2025-09-11
+2025-09-14 20:36:16,978 - INFO - Will download ETN from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:17,209 - INFO - Max date for FCX: 2025-09-11
+2025-09-14 20:36:17,210 - INFO - Will download FCX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:18,070 - INFO - Max date for GE: 2025-09-11
+2025-09-14 20:36:18,071 - INFO - Will download GE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:18,330 - INFO - Max date for GOOG: 2025-09-11
+2025-09-14 20:36:18,331 - INFO - Will download GOOG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:18,569 - INFO - Max date for GOOGL: 2025-09-11
+2025-09-14 20:36:18,569 - INFO - Will download GOOGL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:18,810 - INFO - Max date for GS: 2025-09-11
+2025-09-14 20:36:18,811 - INFO - Will download GS from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:19,046 - INFO - Max date for HD: 2025-09-11
+2025-09-14 20:36:19,046 - INFO - Will download HD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:19,276 - INFO - Max date for HON: 2025-09-11
+2025-09-14 20:36:19,276 - INFO - Will download HON from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:19,495 - INFO - Max date for ISRG: 2025-09-11
+2025-09-14 20:36:19,495 - INFO - Will download ISRG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:19,740 - INFO - Max date for JNJ: 2025-09-11
+2025-09-14 20:36:19,741 - INFO - Will download JNJ from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:19,959 - INFO - Max date for JPM: 2025-09-11
+2025-09-14 20:36:19,959 - INFO - Will download JPM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:20,272 - INFO - Max date for KMI: 2025-09-11
+2025-09-14 20:36:20,273 - INFO - Will download KMI from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:20,538 - INFO - Max date for KO: 2025-09-11
+2025-09-14 20:36:20,538 - INFO - Will download KO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:20,797 - INFO - Max date for LIN: 2025-09-11
+2025-09-14 20:36:20,797 - INFO - Will download LIN from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:21,027 - INFO - Max date for LLY: 2025-09-11
+2025-09-14 20:36:21,028 - INFO - Will download LLY from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:21,307 - INFO - Max date for LMT: 2025-09-11
+2025-09-14 20:36:21,307 - INFO - Will download LMT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:21,592 - INFO - Max date for LOW: 2025-09-11
+2025-09-14 20:36:21,592 - INFO - Will download LOW from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:21,820 - INFO - Max date for MA: 2025-09-11
+2025-09-14 20:36:21,820 - INFO - Will download MA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:22,059 - INFO - Max date for MCD: 2025-09-11
+2025-09-14 20:36:22,060 - INFO - Will download MCD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:22,289 - INFO - Max date for MDLZ: 2025-09-11
+2025-09-14 20:36:22,290 - INFO - Will download MDLZ from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:22,539 - INFO - Max date for MELI: 2025-09-11
+2025-09-14 20:36:22,540 - INFO - Will download MELI from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:22,774 - INFO - Max date for META: 2025-09-11
+2025-09-14 20:36:22,774 - INFO - Will download META from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:23,021 - INFO - Max date for MLM: 2025-09-11
+2025-09-14 20:36:23,021 - INFO - Will download MLM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:23,286 - INFO - Max date for MO: 2025-09-11
+2025-09-14 20:36:23,287 - INFO - Will download MO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:23,510 - INFO - Max date for MPC: 2025-09-11
+2025-09-14 20:36:23,511 - INFO - Will download MPC from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:23,753 - INFO - Max date for MRK: 2025-09-11
+2025-09-14 20:36:23,754 - INFO - Will download MRK from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:23,997 - INFO - Max date for MSFT: 2025-09-11
+2025-09-14 20:36:23,997 - INFO - Will download MSFT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:24,281 - INFO - Max date for NEE: 2025-09-11
+2025-09-14 20:36:24,282 - INFO - Will download NEE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:24,526 - INFO - Max date for NEM: 2025-09-11
+2025-09-14 20:36:24,527 - INFO - Will download NEM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:24,755 - INFO - Max date for NFLX: 2025-09-11
+2025-09-14 20:36:24,756 - INFO - Will download NFLX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:24,999 - INFO - Max date for NKE: 2025-09-11
+2025-09-14 20:36:25,000 - INFO - Will download NKE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:25,262 - INFO - Max date for NVDA: 2025-09-11
+2025-09-14 20:36:25,263 - INFO - Will download NVDA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:25,488 - INFO - Max date for O: 2025-09-11
+2025-09-14 20:36:25,488 - INFO - Will download O from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:25,716 - INFO - Max date for OKE: 2025-09-11
+2025-09-14 20:36:25,716 - INFO - Will download OKE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:25,953 - INFO - Max date for ORCL: 2025-09-11
+2025-09-14 20:36:25,954 - INFO - Will download ORCL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:26,198 - INFO - Max date for PCG: 2025-09-11
+2025-09-14 20:36:26,199 - INFO - Will download PCG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:26,417 - INFO - Max date for PEG: 2025-09-11
+2025-09-14 20:36:26,418 - INFO - Will download PEG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:26,675 - INFO - Max date for PEP: 2025-09-11
+2025-09-14 20:36:26,675 - INFO - Will download PEP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:26,922 - INFO - Max date for PG: 2025-09-11
+2025-09-14 20:36:26,922 - INFO - Will download PG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:27,136 - INFO - Max date for PLD: 2025-09-11
+2025-09-14 20:36:27,136 - INFO - Will download PLD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:27,358 - INFO - Max date for PM: 2025-09-11
+2025-09-14 20:36:27,358 - INFO - Will download PM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:27,594 - INFO - Max date for PSA: 2025-09-11
+2025-09-14 20:36:27,594 - INFO - Will download PSA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:27,818 - INFO - Max date for PSX: 2025-09-11
+2025-09-14 20:36:27,819 - INFO - Will download PSX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:28,049 - INFO - Max date for RTX: 2025-09-11
+2025-09-14 20:36:28,050 - INFO - Will download RTX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:28,274 - INFO - Max date for SBUX: 2025-09-11
+2025-09-14 20:36:28,275 - INFO - Will download SBUX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:28,500 - INFO - Max date for SHW: 2025-09-11
+2025-09-14 20:36:28,501 - INFO - Will download SHW from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:28,748 - INFO - Max date for SLB: 2025-09-11
+2025-09-14 20:36:28,748 - INFO - Will download SLB from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:28,981 - INFO - Max date for SO: 2025-09-11
+2025-09-14 20:36:28,982 - INFO - Will download SO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:29,194 - INFO - Max date for SPG: 2025-09-11
+2025-09-14 20:36:29,195 - INFO - Will download SPG from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:29,438 - INFO - Max date for SPGI: 2025-09-11
+2025-09-14 20:36:29,438 - INFO - Will download SPGI from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:29,674 - INFO - Max date for SRE: 2025-09-11
+2025-09-14 20:36:29,674 - INFO - Will download SRE from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:29,891 - INFO - Max date for T: 2025-09-11
+2025-09-14 20:36:29,892 - INFO - Will download T from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:30,117 - INFO - Max date for TGT: 2025-09-11
+2025-09-14 20:36:30,118 - INFO - Will download TGT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:30,339 - INFO - Max date for TJX: 2025-09-11
+2025-09-14 20:36:30,339 - INFO - Will download TJX from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:30,613 - INFO - Max date for TMO: 2025-09-11
+2025-09-14 20:36:30,613 - INFO - Will download TMO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:30,885 - INFO - Max date for TMUS: 2025-09-11
+2025-09-14 20:36:30,886 - INFO - Will download TMUS from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:31,216 - INFO - Max date for TSLA: 2025-09-11
+2025-09-14 20:36:31,216 - INFO - Will download TSLA from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:31,445 - INFO - Max date for TTD: 2025-09-11
+2025-09-14 20:36:31,445 - INFO - Will download TTD from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:31,692 - INFO - Max date for UBER: 2025-09-11
+2025-09-14 20:36:31,692 - INFO - Will download UBER from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:31,905 - INFO - Max date for UNH: 2025-09-11
+2025-09-14 20:36:31,905 - INFO - Will download UNH from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:32,154 - INFO - Max date for UNP: 2025-09-11
+2025-09-14 20:36:32,155 - INFO - Will download UNP from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:32,455 - INFO - Max date for V: 2025-09-11
+2025-09-14 20:36:32,455 - INFO - Will download V from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:32,696 - INFO - Max date for VMC: 2025-09-11
+2025-09-14 20:36:32,696 - INFO - Will download VMC from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:32,918 - INFO - Max date for VOO: 2025-09-11
+2025-09-14 20:36:32,918 - INFO - Will download VOO from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:33,168 - INFO - Max date for VST: 2025-09-11
+2025-09-14 20:36:33,168 - INFO - Will download VST from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:33,393 - INFO - Max date for VZ: 2025-09-11
+2025-09-14 20:36:33,394 - INFO - Will download VZ from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,321 - INFO - Max date for WELL: 2025-09-11
+2025-09-14 20:36:34,322 - INFO - Will download WELL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,479 - INFO - Max date for WFC: 2025-09-11
+2025-09-14 20:36:34,480 - INFO - Will download WFC from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,632 - INFO - Max date for WMB: 2025-09-11
+2025-09-14 20:36:34,632 - INFO - Will download WMB from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,794 - INFO - Max date for WMT: 2025-09-11
+2025-09-14 20:36:34,794 - INFO - Will download WMT from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,974 - INFO - Max date for XOM: 2025-09-11
+2025-09-14 20:36:34,974 - INFO - Will download XOM from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:34,974 - INFO - Found 111 tickers that need data updates
+2025-09-14 20:36:34,975 - INFO - Found 111 tickers that need data updates
+2025-09-14 20:36:34,975 - INFO - Step 2: Initializing S3 client...
+2025-09-14 20:36:34,998 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-09-14 20:36:35,577 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-14 20:36:35,578 - INFO - Step 3: Processing tickers with incremental data...
+2025-09-14 20:36:35,578 - INFO - Processing ticker 1/111: AAPL
+2025-09-14 20:36:35,578 - INFO - Starting processing for ticker: AAPL (2025-09-12 to 2025-09-12)
+2025-09-14 20:36:35,578 - INFO - Fetching data for AAPL from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:35,999 - INFO - Successfully retrieved 1 records for AAPL
+2025-09-14 20:36:36,010 - INFO - Processed 1 records for AAPL in 2025-09
+2025-09-14 20:36:36,016 - INFO - Created Parquet file: AAPL_2025_09.parquet
+2025-09-14 20:36:36,119 - INFO - Successfully uploaded AAPL_2025_09.parquet to S3 bucket root
+2025-09-14 20:36:36,120 - INFO - Cleaned up local file: AAPL_2025_09.parquet
+2025-09-14 20:36:36,121 - INFO - Completed processing AAPL: 1/1 files successful
+2025-09-14 20:36:36,121 - INFO - ✓ Successfully processed AAPL
+2025-09-14 20:36:36,121 - INFO - Processing ticker 2/111: ABBV
+2025-09-14 20:36:36,122 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:36:48,624 - INFO - Starting processing for ticker: ABBV (2025-09-12 to 2025-09-12)
+2025-09-14 20:36:48,625 - INFO - Fetching data for ABBV from 2025-09-12 to 2025-09-12
+2025-09-14 20:36:48,940 - INFO - Successfully retrieved 1 records for ABBV
+2025-09-14 20:36:48,949 - INFO - Processed 1 records for ABBV in 2025-09
+2025-09-14 20:36:48,954 - INFO - Created Parquet file: ABBV_2025_09.parquet
+2025-09-14 20:36:49,285 - INFO - Successfully uploaded ABBV_2025_09.parquet to S3 bucket root
+2025-09-14 20:36:49,286 - INFO - Cleaned up local file: ABBV_2025_09.parquet
+2025-09-14 20:36:49,286 - INFO - Completed processing ABBV: 1/1 files successful
+2025-09-14 20:36:49,286 - INFO - ✓ Successfully processed ABBV
+2025-09-14 20:36:49,286 - INFO - Processing ticker 3/111: ABT
+2025-09-14 20:36:49,287 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:01,788 - INFO - Starting processing for ticker: ABT (2025-09-12 to 2025-09-12)
+2025-09-14 20:37:01,789 - INFO - Fetching data for ABT from 2025-09-12 to 2025-09-12
+2025-09-14 20:37:02,108 - INFO - Successfully retrieved 1 records for ABT
+2025-09-14 20:37:02,122 - INFO - Processed 1 records for ABT in 2025-09
+2025-09-14 20:37:02,126 - INFO - Created Parquet file: ABT_2025_09.parquet
+2025-09-14 20:37:02,607 - INFO - Successfully uploaded ABT_2025_09.parquet to S3 bucket root
+2025-09-14 20:37:02,609 - INFO - Cleaned up local file: ABT_2025_09.parquet
+2025-09-14 20:37:02,609 - INFO - Completed processing ABT: 1/1 files successful
+2025-09-14 20:37:02,609 - INFO - ✓ Successfully processed ABT
+2025-09-14 20:37:02,610 - INFO - Processing ticker 4/111: ACN
+2025-09-14 20:37:02,610 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:15,115 - INFO - Starting processing for ticker: ACN (2025-09-12 to 2025-09-12)
+2025-09-14 20:37:15,115 - INFO - Fetching data for ACN from 2025-09-12 to 2025-09-12
+2025-09-14 20:37:15,418 - INFO - Successfully retrieved 1 records for ACN
+2025-09-14 20:37:15,423 - INFO - Processed 1 records for ACN in 2025-09
+2025-09-14 20:37:15,424 - INFO - Created Parquet file: ACN_2025_09.parquet
+2025-09-14 20:37:15,716 - INFO - Successfully uploaded ACN_2025_09.parquet to S3 bucket root
+2025-09-14 20:37:15,716 - INFO - Cleaned up local file: ACN_2025_09.parquet
+2025-09-14 20:37:15,716 - INFO - Completed processing ACN: 1/1 files successful
+2025-09-14 20:37:15,716 - INFO - ✓ Successfully processed ACN
+2025-09-14 20:37:15,716 - INFO - Processing ticker 5/111: ADBE
+2025-09-14 20:37:15,717 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:28,222 - INFO - Starting processing for ticker: ADBE (2025-09-12 to 2025-09-12)
+2025-09-14 20:37:28,222 - INFO - Fetching data for ADBE from 2025-09-12 to 2025-09-12
+2025-09-14 20:37:28,525 - INFO - Successfully retrieved 1 records for ADBE
+2025-09-14 20:37:28,533 - INFO - Processed 1 records for ADBE in 2025-09
+2025-09-14 20:37:28,538 - INFO - Created Parquet file: ADBE_2025_09.parquet
+2025-09-14 20:37:28,931 - INFO - Successfully uploaded ADBE_2025_09.parquet to S3 bucket root
+2025-09-14 20:37:28,931 - INFO - Cleaned up local file: ADBE_2025_09.parquet
+2025-09-14 20:37:28,932 - INFO - Completed processing ADBE: 1/1 files successful
+2025-09-14 20:37:28,932 - INFO - ✓ Successfully processed ADBE
+2025-09-14 20:37:28,932 - INFO - Processing ticker 6/111: ADP
+2025-09-14 20:37:28,932 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:41,437 - INFO - Starting processing for ticker: ADP (2025-09-12 to 2025-09-12)
+2025-09-14 20:37:41,438 - INFO - Fetching data for ADP from 2025-09-12 to 2025-09-12
+2025-09-14 20:37:41,820 - INFO - Successfully retrieved 1 records for ADP
+2025-09-14 20:37:41,829 - INFO - Processed 1 records for ADP in 2025-09
+2025-09-14 20:37:41,832 - INFO - Created Parquet file: ADP_2025_09.parquet
+2025-09-14 20:37:42,203 - INFO - Successfully uploaded ADP_2025_09.parquet to S3 bucket root
+2025-09-14 20:37:42,204 - INFO - Cleaned up local file: ADP_2025_09.parquet
+2025-09-14 20:37:42,204 - INFO - Completed processing ADP: 1/1 files successful
+2025-09-14 20:37:42,204 - INFO - ✓ Successfully processed ADP
+2025-09-14 20:37:42,205 - INFO - Processing ticker 7/111: AEP
+2025-09-14 20:37:42,205 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:54,709 - INFO - Starting processing for ticker: AEP (2025-09-12 to 2025-09-12)
+2025-09-14 20:37:54,710 - INFO - Fetching data for AEP from 2025-09-12 to 2025-09-12
+2025-09-14 20:37:55,048 - INFO - Successfully retrieved 1 records for AEP
+2025-09-14 20:37:55,058 - INFO - Processed 1 records for AEP in 2025-09
+2025-09-14 20:37:55,063 - INFO - Created Parquet file: AEP_2025_09.parquet
+2025-09-14 20:37:55,499 - INFO - Successfully uploaded AEP_2025_09.parquet to S3 bucket root
+2025-09-14 20:37:55,499 - INFO - Cleaned up local file: AEP_2025_09.parquet
+2025-09-14 20:37:55,499 - INFO - Completed processing AEP: 1/1 files successful
+2025-09-14 20:37:55,500 - INFO - ✓ Successfully processed AEP
+2025-09-14 20:37:55,500 - INFO - Processing ticker 8/111: AMD
+2025-09-14 20:37:55,500 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-14 20:37:59,039 - INFO - Snowflake connection closed
+2025-09-14 20:37:59,039 - INFO - Pipeline interrupted by user

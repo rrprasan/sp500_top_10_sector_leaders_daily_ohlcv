@@ -1,4 +1,4 @@
-# SP500 Top 10 Sector Leaders Daily OHLCV Data Pipeline
+gma# SP500 Top 10 Sector Leaders Daily OHLCV Data Pipeline
 
 This application automates the extraction of historical equity data for a list of tickers from Snowflake, processes it into columnar format, and stores it in AWS S3 for use in a Snowflake data pipeline.
 

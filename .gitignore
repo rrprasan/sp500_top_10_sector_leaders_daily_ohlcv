@@ -1,3 +1,41 @@
-# Configuration files no longer used - now using environment variables
-# config.json
-# config.json.template
+# Email Configuration Files (contain sensitive credentials)
+email_config.json
+temp_email_config.json
+config.json
+
+# Log Files
+*.log
+cron_incremental_pipeline.log
+incremental_ohlcv_pipeline.log
+test_incremental_pipeline.log
+
+# Temporary Files
+temp_*.py
+temp_*.log
+temp_*.json
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment Files
+.env
+.env.local
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS Files
+.DS_Store
+
+# Test Output
+test_output/
+test_output_backup/
+
+# Parquet Files (data files)
+*.parquet
