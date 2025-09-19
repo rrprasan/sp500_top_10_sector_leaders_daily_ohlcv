@@ -7,7 +7,8 @@ Downloads OHLCV data for all companies in the Snowflake table for the past two y
 import json
 import logging
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+import pytz
 from typing import List, Dict, Any, Optional
 import os
 import sys
@@ -163,7 +164,10 @@ class ComprehensiveOHLCVPipeline:
         # Convert API results to DataFrame
         records = []
         for result in data['results']:
-            date = datetime.fromtimestamp(result['t'] / 1000)
+            # Convert Unix timestamp (milliseconds) to datetime in Eastern Time
+            utc_dt = datetime.fromtimestamp(result['t'] / 1000, tz=timezone.utc)
+            et_tz = pytz.timezone('US/Eastern')
+            date = utc_dt.astimezone(et_tz)
             
             record = {
                 'TICKER': ticker,
