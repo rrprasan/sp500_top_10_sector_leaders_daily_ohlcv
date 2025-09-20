@@ -1,0 +1,23 @@
+
+# File Naming Convention Update Summary
+
+## BEFORE (Old Format):
+WMT_2025_09.parquet
+
+## AFTER (New Format):
+WMT_2025-09-19_2025-09-19.parquet
+
+## Benefits:
+1. ✅ Exact date range visibility
+2. ✅ Better traceability of data periods
+3. ✅ More descriptive filenames
+4. ✅ Easier to identify incremental vs full loads
+
+## Example Scenarios:
+- Single day update: AAPL_2025-09-20_2025-09-20.parquet
+- Week of data: MSFT_2025-09-14_2025-09-20.parquet
+- Month of data: GOOGL_2025-09-01_2025-09-30.parquet
+
+## Files Updated:
+✅ incremental_ohlcv_pipeline.py - Main incremental pipeline
+

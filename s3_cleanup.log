@@ -66,3 +66,27 @@
 2025-09-06 21:04:09,577 - INFO - 🎉 S3 bucket cleanup completed successfully!
 2025-09-06 21:04:09,577 - INFO - The bucket is now ready for new data uploads.
 2025-09-06 21:04:09,577 - INFO - S3 bucket cleanup completed successfully
+2025-09-20 10:13:19,226 - INFO - S3 Bucket Cleaner initialized
+2025-09-20 10:13:19,227 - INFO - ============================================================
+2025-09-20 10:13:19,227 - INFO - S3 BUCKET CLEANUP PROCESS
+2025-09-20 10:13:19,227 - INFO - ============================================================
+2025-09-20 10:13:19,227 - INFO - Target bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:13:19,227 - INFO - Step 1: Initializing S3 client...
+2025-09-20 10:13:19,238 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-09-20 10:13:19,606 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:13:19,606 - INFO - Step 2: Listing current objects...
+2025-09-20 10:13:19,706 - INFO - Found 0 objects in bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:13:19,706 - INFO - Bucket is already empty. No cleanup needed.
+2025-09-20 10:13:19,707 - INFO - S3 bucket cleanup completed successfully
+2025-09-20 10:58:03,542 - INFO - S3 Bucket Cleaner initialized
+2025-09-20 10:58:03,543 - INFO - ============================================================
+2025-09-20 10:58:03,543 - INFO - S3 BUCKET CLEANUP PROCESS
+2025-09-20 10:58:03,543 - INFO - ============================================================
+2025-09-20 10:58:03,543 - INFO - Target bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:58:03,543 - INFO - Step 1: Initializing S3 client...
+2025-09-20 10:58:03,558 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-09-20 10:58:04,081 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:58:04,081 - INFO - Step 2: Listing current objects...
+2025-09-20 10:58:04,176 - INFO - Found 0 objects in bucket sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-20 10:58:04,176 - INFO - Bucket is already empty. No cleanup needed.
+2025-09-20 10:58:04,176 - INFO - S3 bucket cleanup completed successfully

@@ -269,12 +269,20 @@ class IncrementalOHLCVPipeline:
         
         return monthly_data
     
-    def _save_and_upload_to_s3(self, ticker: str, month: str, df: pd.DataFrame) -> bool:
+    def _save_and_upload_to_s3(self, ticker: str, month: str, df: pd.DataFrame, start_date: str = None, end_date: str = None) -> bool:
         """Save DataFrame to Parquet and upload directly to S3 bucket root."""
         try:
             # Create filename for S3 root (no subdirectories)
-            month_formatted = month.replace('-', '_')  # Convert 2024-01 to 2024_01
-            s3_filename = f"{ticker}_{month_formatted}.parquet"
+            if start_date and end_date and len(df) > 0:
+                # Calculate actual date range from the DataFrame data
+                actual_start_date = df['OHLC_DATE'].min().strftime('%Y-%m-%d')
+                actual_end_date = df['OHLC_DATE'].max().strftime('%Y-%m-%d')
+                # Use actual date range format: TICKER_YYYY-MM-DD_YYYY-MM-DD.parquet
+                s3_filename = f"{ticker}_{actual_start_date}_{actual_end_date}.parquet"
+            else:
+                # Fallback to month format for backward compatibility
+                month_formatted = month.replace('-', '_')  # Convert 2024-01 to 2024_01
+                s3_filename = f"{ticker}_{month_formatted}.parquet"
             local_filename = s3_filename
             
             # Create schema with TIMESTAMP_MICROS for Snowflake compatibility
@@ -340,7 +348,7 @@ class IncrementalOHLCVPipeline:
                 # Save each month's data to S3
                 for month, df in monthly_data.items():
                     total_files += 1
-                    if self._save_and_upload_to_s3(ticker, month, df):
+                    if self._save_and_upload_to_s3(ticker, month, df, start_date, end_date):
                         success_count += 1
                     else:
                         logger.error(f"Failed to process {ticker} for month {month}")
