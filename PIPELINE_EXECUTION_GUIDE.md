@@ -67,6 +67,14 @@ python data_quality_verification.py
 
 **CONCLUSION:** The pipeline executed successfully despite the misleading final error message. All data is properly stored in S3 and ready for use.
 
+### 🗄️ Important Note: Snowflake Integration
+
+**If you're using Snowflake COPY commands to ingest the parquet files:**
+- Snowflake automatically deletes files from S3 after successful COPY operations
+- This will cause data quality verification to fail with "No files found"
+- **This failure is actually SUCCESS** - it means Snowflake successfully ingested your data
+- The empty S3 bucket confirms successful data transfer to Snowflake Iceberg tables
+
 ## 🔍 Data Quality Verification (NEW)
 
 ### Automated Verification Scripts

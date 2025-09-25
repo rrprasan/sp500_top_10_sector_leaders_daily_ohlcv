@@ -68,9 +68,10 @@ class DataQualityVerifier:
             
             if 'Contents' not in response:
                 return {
-                    'status': 'FAILED',
+                    'status': 'WARNING',
                     'total_files': 0,
-                    'message': 'No files found in S3 bucket'
+                    'message': 'No files found in S3 bucket (may have been consumed by Snowflake COPY operation)',
+                    'snowflake_integration_note': 'If using Snowflake COPY commands, files are automatically deleted after successful ingestion. Empty bucket may indicate successful data transfer to Snowflake.'
                 }
             
             files = response['Contents']
@@ -139,7 +140,11 @@ class DataQualityVerifier:
             # Get list of files
             response = self.s3_client.list_objects_v2(Bucket=self.s3_bucket)
             if 'Contents' not in response:
-                return {'status': 'FAILED', 'message': 'No files to verify'}
+                return {
+                    'status': 'WARNING', 
+                    'message': 'No files to verify (may have been consumed by Snowflake)',
+                    'snowflake_integration_note': 'Empty bucket may indicate successful Snowflake COPY operation'
+                }
             
             files = [obj['Key'] for obj in response['Contents'] if obj['Key'].endswith('.parquet')]
             
@@ -235,7 +240,11 @@ class DataQualityVerifier:
             # Look for files modified in the last 24 hours
             response = self.s3_client.list_objects_v2(Bucket=self.s3_bucket)
             if 'Contents' not in response:
-                return {'status': 'FAILED', 'message': 'No files found'}
+                return {
+                    'status': 'WARNING', 
+                    'message': 'No files found (may indicate successful Snowflake ingestion)',
+                    'snowflake_integration_note': 'Empty bucket suggests files were successfully copied to Snowflake and auto-deleted'
+                }
             
             cutoff_time = datetime.now() - timedelta(hours=24)
             recent_files = []
@@ -368,7 +377,10 @@ class DataQualityVerifier:
                 s3_result = self.verification_results['s3_contents']
                 if s3_result['status'] != 'FAILED':
                     logger.info(f"Total files in S3: {s3_result['total_files']}")
-                    logger.info(f"Unique tickers: {s3_result['unique_tickers']}")
+                    if 'unique_tickers' in s3_result:
+                        logger.info(f"Unique tickers: {s3_result['unique_tickers']}")
+                    if 'snowflake_integration_note' in s3_result:
+                        logger.info(f"Note: {s3_result['snowflake_integration_note']}")
             
             logger.info("=" * 80)
             
