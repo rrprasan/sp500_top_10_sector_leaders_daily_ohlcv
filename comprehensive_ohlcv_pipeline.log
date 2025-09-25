@@ -2136,3 +2136,892 @@
 2025-09-06 21:31:26,719 - INFO - 🎉 All tickers processed successfully!
 2025-09-06 21:31:26,720 - INFO - Comprehensive pipeline completed
 2025-09-06 21:31:27,167 - INFO - Snowflake connection closed
+2025-09-24 20:30:33,927 - INFO - Polygon.io API key loaded from environment variable
+2025-09-24 20:30:33,927 - INFO - Comprehensive OHLCV Pipeline initialized
+2025-09-24 20:30:33,928 - INFO - Date range: 2023-09-25 to 2025-09-24
+2025-09-24 20:30:33,928 - INFO - ================================================================================
+2025-09-24 20:30:33,928 - INFO - COMPREHENSIVE OHLCV PIPELINE FOR ALL SP500 SECTOR LEADERS
+2025-09-24 20:30:33,928 - INFO - ================================================================================
+2025-09-24 20:30:33,928 - INFO - Date range: 2023-09-25 to 2025-09-24
+2025-09-24 20:30:33,928 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-24 20:30:33,928 - INFO - Snowflake Table: DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES
+2025-09-24 20:30:33,928 - INFO - Step 1: Retrieving all ticker symbols from Snowflake...
+2025-09-24 20:30:33,928 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.7-arm64-arm-64bit
+2025-09-24 20:30:33,931 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-24 20:30:34,593 - INFO - Snowflake connection initialized successfully
+2025-09-24 20:30:34,593 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-24 20:30:34,837 - INFO - query execution done
+2025-09-24 20:30:34,838 - INFO - Number of results in first chunk: 122
+2025-09-24 20:30:34,838 - INFO - Retrieved 122 ticker symbols from Snowflake
+2025-09-24 20:30:34,838 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AES', 'AMD', 'AMGN']
+2025-09-24 20:30:34,838 - INFO - Found 122 tickers to process
+2025-09-24 20:30:34,839 - INFO - Step 2: Initializing S3 client...
+2025-09-24 20:30:34,855 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-09-24 20:30:35,397 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-24 20:30:35,398 - INFO - Step 3: Processing all tickers...
+2025-09-24 20:30:35,398 - INFO - Processing ticker 1/122: AAPL
+2025-09-24 20:30:35,398 - INFO - Starting processing for ticker: AAPL
+2025-09-24 20:30:35,398 - INFO - Fetching data for AAPL from 2023-09-25 to 2025-09-24
+2025-09-24 20:30:35,963 - WARNING - No data available for AAPL in the specified date range
+2025-09-24 20:30:35,967 - WARNING - No data retrieved for AAPL
+2025-09-24 20:30:35,967 - ERROR - ✗ Failed to process AAPL
+2025-09-24 20:30:35,967 - INFO - Processing ticker 2/122: ABBV
+2025-09-24 20:30:35,967 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:30:48,473 - INFO - Starting processing for ticker: ABBV
+2025-09-24 20:30:48,474 - INFO - Fetching data for ABBV from 2023-09-25 to 2025-09-24
+2025-09-24 20:30:48,867 - WARNING - No data available for ABBV in the specified date range
+2025-09-24 20:30:48,868 - WARNING - No data retrieved for ABBV
+2025-09-24 20:30:48,869 - ERROR - ✗ Failed to process ABBV
+2025-09-24 20:30:48,869 - INFO - Processing ticker 3/122: ABT
+2025-09-24 20:30:48,869 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:31:01,374 - INFO - Starting processing for ticker: ABT
+2025-09-24 20:31:01,376 - INFO - Fetching data for ABT from 2023-09-25 to 2025-09-24
+2025-09-24 20:31:01,878 - WARNING - No data available for ABT in the specified date range
+2025-09-24 20:31:01,879 - WARNING - No data retrieved for ABT
+2025-09-24 20:31:01,879 - ERROR - ✗ Failed to process ABT
+2025-09-24 20:31:01,879 - INFO - Processing ticker 4/122: ACN
+2025-09-24 20:31:01,879 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:31:14,383 - INFO - Starting processing for ticker: ACN
+2025-09-24 20:31:14,384 - INFO - Fetching data for ACN from 2023-09-25 to 2025-09-24
+2025-09-24 20:31:14,860 - WARNING - No data available for ACN in the specified date range
+2025-09-24 20:31:14,861 - WARNING - No data retrieved for ACN
+2025-09-24 20:31:14,861 - ERROR - ✗ Failed to process ACN
+2025-09-24 20:31:14,862 - INFO - Processing ticker 5/122: ADBE
+2025-09-24 20:31:14,862 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:31:27,367 - INFO - Starting processing for ticker: ADBE
+2025-09-24 20:31:27,369 - INFO - Fetching data for ADBE from 2023-09-25 to 2025-09-24
+2025-09-24 20:31:27,745 - WARNING - No data available for ADBE in the specified date range
+2025-09-24 20:31:27,746 - WARNING - No data retrieved for ADBE
+2025-09-24 20:31:27,746 - ERROR - ✗ Failed to process ADBE
+2025-09-24 20:31:27,746 - INFO - Processing ticker 6/122: ADP
+2025-09-24 20:31:27,746 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:31:40,252 - INFO - Starting processing for ticker: ADP
+2025-09-24 20:31:40,253 - INFO - Fetching data for ADP from 2023-09-25 to 2025-09-24
+2025-09-24 20:31:40,745 - WARNING - No data available for ADP in the specified date range
+2025-09-24 20:31:40,746 - WARNING - No data retrieved for ADP
+2025-09-24 20:31:40,746 - ERROR - ✗ Failed to process ADP
+2025-09-24 20:31:40,746 - INFO - Processing ticker 7/122: AEP
+2025-09-24 20:31:40,746 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:31:53,252 - INFO - Starting processing for ticker: AEP
+2025-09-24 20:31:53,253 - INFO - Fetching data for AEP from 2023-09-25 to 2025-09-24
+2025-09-24 20:31:53,641 - WARNING - No data available for AEP in the specified date range
+2025-09-24 20:31:53,642 - WARNING - No data retrieved for AEP
+2025-09-24 20:31:53,643 - ERROR - ✗ Failed to process AEP
+2025-09-24 20:31:53,643 - INFO - Processing ticker 8/122: AES
+2025-09-24 20:31:53,643 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:32:06,149 - INFO - Starting processing for ticker: AES
+2025-09-24 20:32:06,149 - INFO - Fetching data for AES from 2023-09-25 to 2025-09-24
+2025-09-24 20:32:06,588 - WARNING - No data available for AES in the specified date range
+2025-09-24 20:32:06,589 - WARNING - No data retrieved for AES
+2025-09-24 20:32:06,589 - ERROR - ✗ Failed to process AES
+2025-09-24 20:32:06,590 - INFO - Processing ticker 9/122: AMD
+2025-09-24 20:32:06,590 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:32:19,091 - INFO - Starting processing for ticker: AMD
+2025-09-24 20:32:19,092 - INFO - Fetching data for AMD from 2023-09-25 to 2025-09-24
+2025-09-24 20:32:19,506 - WARNING - No data available for AMD in the specified date range
+2025-09-24 20:32:19,507 - WARNING - No data retrieved for AMD
+2025-09-24 20:32:19,507 - ERROR - ✗ Failed to process AMD
+2025-09-24 20:32:19,507 - INFO - Processing ticker 10/122: AMGN
+2025-09-24 20:32:19,507 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:32:32,020 - INFO - Starting processing for ticker: AMGN
+2025-09-24 20:32:32,021 - INFO - Fetching data for AMGN from 2023-09-25 to 2025-09-24
+2025-09-24 20:32:32,425 - WARNING - No data available for AMGN in the specified date range
+2025-09-24 20:32:32,426 - WARNING - No data retrieved for AMGN
+2025-09-24 20:32:32,426 - ERROR - ✗ Failed to process AMGN
+2025-09-24 20:32:32,426 - INFO - Processing ticker 11/122: AMT
+2025-09-24 20:32:32,426 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:32:44,932 - INFO - Starting processing for ticker: AMT
+2025-09-24 20:32:44,932 - INFO - Fetching data for AMT from 2023-09-25 to 2025-09-24
+2025-09-24 20:32:45,311 - WARNING - No data available for AMT in the specified date range
+2025-09-24 20:32:45,311 - WARNING - No data retrieved for AMT
+2025-09-24 20:32:45,311 - ERROR - ✗ Failed to process AMT
+2025-09-24 20:32:45,311 - INFO - Processing ticker 12/122: AMZN
+2025-09-24 20:32:45,311 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:32:57,817 - INFO - Starting processing for ticker: AMZN
+2025-09-24 20:32:57,817 - INFO - Fetching data for AMZN from 2023-09-25 to 2025-09-24
+2025-09-24 20:32:58,107 - ERROR - Failed to fetch data for AMZN: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/AMZN/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:32:58,107 - WARNING - No data retrieved for AMZN
+2025-09-24 20:32:58,108 - ERROR - ✗ Failed to process AMZN
+2025-09-24 20:32:58,108 - INFO - Processing ticker 13/122: APD
+2025-09-24 20:32:58,108 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:10,611 - INFO - Starting processing for ticker: APD
+2025-09-24 20:33:10,611 - INFO - Fetching data for APD from 2023-09-25 to 2025-09-24
+2025-09-24 20:33:11,006 - WARNING - No data available for APD in the specified date range
+2025-09-24 20:33:11,006 - WARNING - No data retrieved for APD
+2025-09-24 20:33:11,006 - ERROR - ✗ Failed to process APD
+2025-09-24 20:33:11,006 - INFO - Processing ticker 14/122: AVGO
+2025-09-24 20:33:11,006 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:23,511 - INFO - Starting processing for ticker: AVGO
+2025-09-24 20:33:23,516 - INFO - Fetching data for AVGO from 2023-09-25 to 2025-09-24
+2025-09-24 20:33:24,012 - WARNING - No data available for AVGO in the specified date range
+2025-09-24 20:33:24,013 - WARNING - No data retrieved for AVGO
+2025-09-24 20:33:24,013 - ERROR - ✗ Failed to process AVGO
+2025-09-24 20:33:24,013 - INFO - Processing ticker 15/122: AXP
+2025-09-24 20:33:24,013 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:36,518 - INFO - Starting processing for ticker: AXP
+2025-09-24 20:33:36,518 - INFO - Fetching data for AXP from 2023-09-25 to 2025-09-24
+2025-09-24 20:33:36,886 - WARNING - No data available for AXP in the specified date range
+2025-09-24 20:33:36,887 - WARNING - No data retrieved for AXP
+2025-09-24 20:33:36,887 - ERROR - ✗ Failed to process AXP
+2025-09-24 20:33:36,887 - INFO - Processing ticker 16/122: BA
+2025-09-24 20:33:36,888 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:49,393 - INFO - Starting processing for ticker: BA
+2025-09-24 20:33:49,393 - INFO - Fetching data for BA from 2023-09-25 to 2025-09-24
+2025-09-24 20:33:49,674 - ERROR - Failed to fetch data for BA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/BA/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:33:49,675 - WARNING - No data retrieved for BA
+2025-09-24 20:33:49,675 - ERROR - ✗ Failed to process BA
+2025-09-24 20:33:49,675 - INFO - Processing ticker 17/122: BAC
+2025-09-24 20:33:49,676 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:02,177 - INFO - Starting processing for ticker: BAC
+2025-09-24 20:34:02,177 - INFO - Fetching data for BAC from 2023-09-25 to 2025-09-24
+2025-09-24 20:34:02,549 - WARNING - No data available for BAC in the specified date range
+2025-09-24 20:34:02,550 - WARNING - No data retrieved for BAC
+2025-09-24 20:34:02,550 - ERROR - ✗ Failed to process BAC
+2025-09-24 20:34:02,550 - INFO - Processing ticker 18/122: BKNG
+2025-09-24 20:34:02,550 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:15,050 - INFO - Starting processing for ticker: BKNG
+2025-09-24 20:34:15,050 - INFO - Fetching data for BKNG from 2023-09-25 to 2025-09-24
+2025-09-24 20:34:15,573 - WARNING - No data available for BKNG in the specified date range
+2025-09-24 20:34:15,573 - WARNING - No data retrieved for BKNG
+2025-09-24 20:34:15,574 - ERROR - ✗ Failed to process BKNG
+2025-09-24 20:34:15,574 - INFO - Processing ticker 19/122: BLK
+2025-09-24 20:34:15,574 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:28,078 - INFO - Starting processing for ticker: BLK
+2025-09-24 20:34:28,079 - INFO - Fetching data for BLK from 2023-09-25 to 2025-09-24
+2025-09-24 20:34:28,545 - WARNING - No data available for BLK in the specified date range
+2025-09-24 20:34:28,546 - WARNING - No data retrieved for BLK
+2025-09-24 20:34:28,547 - ERROR - ✗ Failed to process BLK
+2025-09-24 20:34:28,547 - INFO - Processing ticker 20/122: BRK.B
+2025-09-24 20:34:28,548 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:41,049 - INFO - Starting processing for ticker: BRK.B
+2025-09-24 20:34:41,050 - INFO - Fetching data for BRK.B from 2023-09-25 to 2025-09-24
+2025-09-24 20:34:41,369 - ERROR - Failed to fetch data for BRK.B: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/BRK.B/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:34:41,370 - WARNING - No data retrieved for BRK.B
+2025-09-24 20:34:41,370 - ERROR - ✗ Failed to process BRK.B
+2025-09-24 20:34:41,370 - INFO - Processing ticker 21/122: CAT
+2025-09-24 20:34:41,371 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:53,872 - INFO - Starting processing for ticker: CAT
+2025-09-24 20:34:53,873 - INFO - Fetching data for CAT from 2023-09-25 to 2025-09-24
+2025-09-24 20:34:54,189 - ERROR - Failed to fetch data for CAT: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CAT/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:34:54,190 - WARNING - No data retrieved for CAT
+2025-09-24 20:34:54,190 - ERROR - ✗ Failed to process CAT
+2025-09-24 20:34:54,190 - INFO - Processing ticker 22/122: CBRE
+2025-09-24 20:34:54,191 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:06,694 - INFO - Starting processing for ticker: CBRE
+2025-09-24 20:35:06,695 - INFO - Fetching data for CBRE from 2023-09-25 to 2025-09-24
+2025-09-24 20:35:07,118 - WARNING - No data available for CBRE in the specified date range
+2025-09-24 20:35:07,119 - WARNING - No data retrieved for CBRE
+2025-09-24 20:35:07,119 - ERROR - ✗ Failed to process CBRE
+2025-09-24 20:35:07,119 - INFO - Processing ticker 23/122: CCI
+2025-09-24 20:35:07,119 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:19,622 - INFO - Starting processing for ticker: CCI
+2025-09-24 20:35:19,623 - INFO - Fetching data for CCI from 2023-09-25 to 2025-09-24
+2025-09-24 20:35:20,096 - WARNING - No data available for CCI in the specified date range
+2025-09-24 20:35:20,097 - WARNING - No data retrieved for CCI
+2025-09-24 20:35:20,097 - ERROR - ✗ Failed to process CCI
+2025-09-24 20:35:20,098 - INFO - Processing ticker 24/122: CEG
+2025-09-24 20:35:20,098 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:32,604 - INFO - Starting processing for ticker: CEG
+2025-09-24 20:35:32,605 - INFO - Fetching data for CEG from 2023-09-25 to 2025-09-24
+2025-09-24 20:35:33,017 - WARNING - No data available for CEG in the specified date range
+2025-09-24 20:35:33,018 - WARNING - No data retrieved for CEG
+2025-09-24 20:35:33,018 - ERROR - ✗ Failed to process CEG
+2025-09-24 20:35:33,018 - INFO - Processing ticker 25/122: CL
+2025-09-24 20:35:33,018 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:45,521 - INFO - Starting processing for ticker: CL
+2025-09-24 20:35:45,536 - INFO - Fetching data for CL from 2023-09-25 to 2025-09-24
+2025-09-24 20:35:45,851 - ERROR - Failed to fetch data for CL: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CL/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:35:45,852 - WARNING - No data retrieved for CL
+2025-09-24 20:35:45,852 - ERROR - ✗ Failed to process CL
+2025-09-24 20:35:45,852 - INFO - Processing ticker 26/122: CLX
+2025-09-24 20:35:45,852 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:58,358 - INFO - Starting processing for ticker: CLX
+2025-09-24 20:35:58,358 - INFO - Fetching data for CLX from 2023-09-25 to 2025-09-24
+2025-09-24 20:35:58,703 - ERROR - Failed to fetch data for CLX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CLX/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:35:58,703 - WARNING - No data retrieved for CLX
+2025-09-24 20:35:58,703 - ERROR - ✗ Failed to process CLX
+2025-09-24 20:35:58,703 - INFO - Processing ticker 27/122: CMCSA
+2025-09-24 20:35:58,703 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:11,205 - INFO - Starting processing for ticker: CMCSA
+2025-09-24 20:36:11,205 - INFO - Fetching data for CMCSA from 2023-09-25 to 2025-09-24
+2025-09-24 20:36:11,620 - WARNING - No data available for CMCSA in the specified date range
+2025-09-24 20:36:11,621 - WARNING - No data retrieved for CMCSA
+2025-09-24 20:36:11,621 - ERROR - ✗ Failed to process CMCSA
+2025-09-24 20:36:11,621 - INFO - Processing ticker 28/122: COP
+2025-09-24 20:36:11,622 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:24,126 - INFO - Starting processing for ticker: COP
+2025-09-24 20:36:24,130 - INFO - Fetching data for COP from 2023-09-25 to 2025-09-24
+2025-09-24 20:36:25,308 - WARNING - No data available for COP in the specified date range
+2025-09-24 20:36:25,309 - WARNING - No data retrieved for COP
+2025-09-24 20:36:25,310 - ERROR - ✗ Failed to process COP
+2025-09-24 20:36:25,310 - INFO - Processing ticker 29/122: COST
+2025-09-24 20:36:25,310 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:37,816 - INFO - Starting processing for ticker: COST
+2025-09-24 20:36:37,817 - INFO - Fetching data for COST from 2023-09-25 to 2025-09-24
+2025-09-24 20:36:38,100 - ERROR - Failed to fetch data for COST: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/COST/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:36:38,101 - WARNING - No data retrieved for COST
+2025-09-24 20:36:38,101 - ERROR - ✗ Failed to process COST
+2025-09-24 20:36:38,101 - INFO - Processing ticker 30/122: CPB
+2025-09-24 20:36:38,101 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:50,606 - INFO - Starting processing for ticker: CPB
+2025-09-24 20:36:50,607 - INFO - Fetching data for CPB from 2023-09-25 to 2025-09-24
+2025-09-24 20:36:50,970 - ERROR - Failed to fetch data for CPB: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CPB/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:36:50,971 - WARNING - No data retrieved for CPB
+2025-09-24 20:36:50,971 - ERROR - ✗ Failed to process CPB
+2025-09-24 20:36:50,972 - INFO - Processing ticker 31/122: CRH
+2025-09-24 20:36:50,972 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:03,477 - INFO - Starting processing for ticker: CRH
+2025-09-24 20:37:03,478 - INFO - Fetching data for CRH from 2023-09-25 to 2025-09-24
+2025-09-24 20:37:03,871 - WARNING - No data available for CRH in the specified date range
+2025-09-24 20:37:03,872 - WARNING - No data retrieved for CRH
+2025-09-24 20:37:03,872 - ERROR - ✗ Failed to process CRH
+2025-09-24 20:37:03,872 - INFO - Processing ticker 32/122: CRM
+2025-09-24 20:37:03,872 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:16,374 - INFO - Starting processing for ticker: CRM
+2025-09-24 20:37:16,375 - INFO - Fetching data for CRM from 2023-09-25 to 2025-09-24
+2025-09-24 20:37:16,772 - WARNING - No data available for CRM in the specified date range
+2025-09-24 20:37:16,773 - WARNING - No data retrieved for CRM
+2025-09-24 20:37:16,773 - ERROR - ✗ Failed to process CRM
+2025-09-24 20:37:16,774 - INFO - Processing ticker 33/122: CSCO
+2025-09-24 20:37:16,774 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:29,279 - INFO - Starting processing for ticker: CSCO
+2025-09-24 20:37:29,279 - INFO - Fetching data for CSCO from 2023-09-25 to 2025-09-24
+2025-09-24 20:37:29,733 - WARNING - No data available for CSCO in the specified date range
+2025-09-24 20:37:29,734 - WARNING - No data retrieved for CSCO
+2025-09-24 20:37:29,735 - ERROR - ✗ Failed to process CSCO
+2025-09-24 20:37:29,735 - INFO - Processing ticker 34/122: CTVA
+2025-09-24 20:37:29,735 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:42,239 - INFO - Starting processing for ticker: CTVA
+2025-09-24 20:37:42,242 - INFO - Fetching data for CTVA from 2023-09-25 to 2025-09-24
+2025-09-24 20:37:42,526 - ERROR - Failed to fetch data for CTVA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CTVA/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:37:42,527 - WARNING - No data retrieved for CTVA
+2025-09-24 20:37:42,527 - ERROR - ✗ Failed to process CTVA
+2025-09-24 20:37:42,527 - INFO - Processing ticker 35/122: CVX
+2025-09-24 20:37:42,527 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:55,032 - INFO - Starting processing for ticker: CVX
+2025-09-24 20:37:55,034 - INFO - Fetching data for CVX from 2023-09-25 to 2025-09-24
+2025-09-24 20:37:55,312 - ERROR - Failed to fetch data for CVX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CVX/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:37:55,313 - WARNING - No data retrieved for CVX
+2025-09-24 20:37:55,313 - ERROR - ✗ Failed to process CVX
+2025-09-24 20:37:55,313 - INFO - Processing ticker 36/122: D
+2025-09-24 20:37:55,313 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:07,820 - INFO - Starting processing for ticker: D
+2025-09-24 20:38:07,822 - INFO - Fetching data for D from 2023-09-25 to 2025-09-24
+2025-09-24 20:38:08,178 - WARNING - No data available for D in the specified date range
+2025-09-24 20:38:08,179 - WARNING - No data retrieved for D
+2025-09-24 20:38:08,180 - ERROR - ✗ Failed to process D
+2025-09-24 20:38:08,180 - INFO - Processing ticker 37/122: DHR
+2025-09-24 20:38:08,180 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:20,685 - INFO - Starting processing for ticker: DHR
+2025-09-24 20:38:20,687 - INFO - Fetching data for DHR from 2023-09-25 to 2025-09-24
+2025-09-24 20:38:21,177 - WARNING - No data available for DHR in the specified date range
+2025-09-24 20:38:21,178 - WARNING - No data retrieved for DHR
+2025-09-24 20:38:21,179 - ERROR - ✗ Failed to process DHR
+2025-09-24 20:38:21,179 - INFO - Processing ticker 38/122: DIS
+2025-09-24 20:38:21,179 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:33,684 - INFO - Starting processing for ticker: DIS
+2025-09-24 20:38:33,686 - INFO - Fetching data for DIS from 2023-09-25 to 2025-09-24
+2025-09-24 20:38:34,075 - WARNING - No data available for DIS in the specified date range
+2025-09-24 20:38:34,076 - WARNING - No data retrieved for DIS
+2025-09-24 20:38:34,077 - ERROR - ✗ Failed to process DIS
+2025-09-24 20:38:34,077 - INFO - Processing ticker 39/122: DLR
+2025-09-24 20:38:34,077 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:46,582 - INFO - Starting processing for ticker: DLR
+2025-09-24 20:38:46,584 - INFO - Fetching data for DLR from 2023-09-25 to 2025-09-24
+2025-09-24 20:38:46,861 - ERROR - Failed to fetch data for DLR: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/DLR/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:38:46,862 - WARNING - No data retrieved for DLR
+2025-09-24 20:38:46,863 - ERROR - ✗ Failed to process DLR
+2025-09-24 20:38:46,863 - INFO - Processing ticker 40/122: DUK
+2025-09-24 20:38:46,863 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:59,366 - INFO - Starting processing for ticker: DUK
+2025-09-24 20:38:59,372 - INFO - Fetching data for DUK from 2023-09-25 to 2025-09-24
+2025-09-24 20:38:59,654 - ERROR - Failed to fetch data for DUK: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/DUK/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:38:59,655 - WARNING - No data retrieved for DUK
+2025-09-24 20:38:59,655 - ERROR - ✗ Failed to process DUK
+2025-09-24 20:38:59,655 - INFO - Processing ticker 41/122: ECL
+2025-09-24 20:38:59,655 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:12,158 - INFO - Starting processing for ticker: ECL
+2025-09-24 20:39:12,160 - INFO - Fetching data for ECL from 2023-09-25 to 2025-09-24
+2025-09-24 20:39:12,552 - WARNING - No data available for ECL in the specified date range
+2025-09-24 20:39:12,553 - WARNING - No data retrieved for ECL
+2025-09-24 20:39:12,553 - ERROR - ✗ Failed to process ECL
+2025-09-24 20:39:12,553 - INFO - Processing ticker 42/122: EOG
+2025-09-24 20:39:12,554 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:25,059 - INFO - Starting processing for ticker: EOG
+2025-09-24 20:39:25,060 - INFO - Fetching data for EOG from 2023-09-25 to 2025-09-24
+2025-09-24 20:39:25,581 - WARNING - No data available for EOG in the specified date range
+2025-09-24 20:39:25,582 - WARNING - No data retrieved for EOG
+2025-09-24 20:39:25,582 - ERROR - ✗ Failed to process EOG
+2025-09-24 20:39:25,582 - INFO - Processing ticker 43/122: EQIX
+2025-09-24 20:39:25,582 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:38,084 - INFO - Starting processing for ticker: EQIX
+2025-09-24 20:39:38,086 - INFO - Fetching data for EQIX from 2023-09-25 to 2025-09-24
+2025-09-24 20:39:38,396 - ERROR - Failed to fetch data for EQIX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/EQIX/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:39:38,396 - WARNING - No data retrieved for EQIX
+2025-09-24 20:39:38,396 - ERROR - ✗ Failed to process EQIX
+2025-09-24 20:39:38,396 - INFO - Processing ticker 44/122: ETN
+2025-09-24 20:39:38,396 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:50,902 - INFO - Starting processing for ticker: ETN
+2025-09-24 20:39:50,903 - INFO - Fetching data for ETN from 2023-09-25 to 2025-09-24
+2025-09-24 20:39:51,191 - ERROR - Failed to fetch data for ETN: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ETN/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:39:51,192 - WARNING - No data retrieved for ETN
+2025-09-24 20:39:51,192 - ERROR - ✗ Failed to process ETN
+2025-09-24 20:39:51,192 - INFO - Processing ticker 45/122: FCX
+2025-09-24 20:39:51,192 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:03,697 - INFO - Starting processing for ticker: FCX
+2025-09-24 20:40:03,698 - INFO - Fetching data for FCX from 2023-09-25 to 2025-09-24
+2025-09-24 20:40:04,062 - WARNING - No data available for FCX in the specified date range
+2025-09-24 20:40:04,062 - WARNING - No data retrieved for FCX
+2025-09-24 20:40:04,062 - ERROR - ✗ Failed to process FCX
+2025-09-24 20:40:04,063 - INFO - Processing ticker 46/122: GE
+2025-09-24 20:40:04,063 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:16,565 - INFO - Starting processing for ticker: GE
+2025-09-24 20:40:16,566 - INFO - Fetching data for GE from 2023-09-25 to 2025-09-24
+2025-09-24 20:40:16,960 - WARNING - No data available for GE in the specified date range
+2025-09-24 20:40:16,961 - WARNING - No data retrieved for GE
+2025-09-24 20:40:16,961 - ERROR - ✗ Failed to process GE
+2025-09-24 20:40:16,961 - INFO - Processing ticker 47/122: GOOG
+2025-09-24 20:40:16,961 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:29,465 - INFO - Starting processing for ticker: GOOG
+2025-09-24 20:40:29,466 - INFO - Fetching data for GOOG from 2023-09-25 to 2025-09-24
+2025-09-24 20:40:29,857 - WARNING - No data available for GOOG in the specified date range
+2025-09-24 20:40:29,859 - WARNING - No data retrieved for GOOG
+2025-09-24 20:40:29,859 - ERROR - ✗ Failed to process GOOG
+2025-09-24 20:40:29,859 - INFO - Processing ticker 48/122: GOOGL
+2025-09-24 20:40:29,859 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:42,363 - INFO - Starting processing for ticker: GOOGL
+2025-09-24 20:40:42,363 - INFO - Fetching data for GOOGL from 2023-09-25 to 2025-09-24
+2025-09-24 20:40:42,648 - ERROR - Failed to fetch data for GOOGL: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/GOOGL/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:40:42,648 - WARNING - No data retrieved for GOOGL
+2025-09-24 20:40:42,648 - ERROR - ✗ Failed to process GOOGL
+2025-09-24 20:40:42,648 - INFO - Processing ticker 49/122: GS
+2025-09-24 20:40:42,648 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:55,153 - INFO - Starting processing for ticker: GS
+2025-09-24 20:40:55,154 - INFO - Fetching data for GS from 2023-09-25 to 2025-09-24
+2025-09-24 20:40:55,447 - ERROR - Failed to fetch data for GS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/GS/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:40:55,447 - WARNING - No data retrieved for GS
+2025-09-24 20:40:55,447 - ERROR - ✗ Failed to process GS
+2025-09-24 20:40:55,447 - INFO - Processing ticker 50/122: HD
+2025-09-24 20:40:55,447 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:07,950 - INFO - Starting processing for ticker: HD
+2025-09-24 20:41:07,951 - INFO - Fetching data for HD from 2023-09-25 to 2025-09-24
+2025-09-24 20:41:08,349 - WARNING - No data available for HD in the specified date range
+2025-09-24 20:41:08,350 - WARNING - No data retrieved for HD
+2025-09-24 20:41:08,350 - ERROR - ✗ Failed to process HD
+2025-09-24 20:41:08,351 - INFO - Processing ticker 51/122: HON
+2025-09-24 20:41:08,351 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:20,848 - INFO - Starting processing for ticker: HON
+2025-09-24 20:41:20,849 - INFO - Fetching data for HON from 2023-09-25 to 2025-09-24
+2025-09-24 20:41:21,282 - WARNING - No data available for HON in the specified date range
+2025-09-24 20:41:21,283 - WARNING - No data retrieved for HON
+2025-09-24 20:41:21,283 - ERROR - ✗ Failed to process HON
+2025-09-24 20:41:21,283 - INFO - Processing ticker 52/122: ISRG
+2025-09-24 20:41:21,283 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:33,785 - INFO - Starting processing for ticker: ISRG
+2025-09-24 20:41:33,787 - INFO - Fetching data for ISRG from 2023-09-25 to 2025-09-24
+2025-09-24 20:41:34,083 - ERROR - Failed to fetch data for ISRG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ISRG/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:41:34,084 - WARNING - No data retrieved for ISRG
+2025-09-24 20:41:34,084 - ERROR - ✗ Failed to process ISRG
+2025-09-24 20:41:34,084 - INFO - Processing ticker 53/122: JNJ
+2025-09-24 20:41:34,084 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:46,584 - INFO - Starting processing for ticker: JNJ
+2025-09-24 20:41:46,585 - INFO - Fetching data for JNJ from 2023-09-25 to 2025-09-24
+2025-09-24 20:41:46,866 - ERROR - Failed to fetch data for JNJ: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/JNJ/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:41:46,867 - WARNING - No data retrieved for JNJ
+2025-09-24 20:41:46,867 - ERROR - ✗ Failed to process JNJ
+2025-09-24 20:41:46,867 - INFO - Processing ticker 54/122: JPM
+2025-09-24 20:41:46,868 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:59,372 - INFO - Starting processing for ticker: JPM
+2025-09-24 20:41:59,373 - INFO - Fetching data for JPM from 2023-09-25 to 2025-09-24
+2025-09-24 20:41:59,662 - ERROR - Failed to fetch data for JPM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/JPM/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:41:59,663 - WARNING - No data retrieved for JPM
+2025-09-24 20:41:59,663 - ERROR - ✗ Failed to process JPM
+2025-09-24 20:41:59,663 - INFO - Processing ticker 55/122: KMI
+2025-09-24 20:41:59,663 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:12,166 - INFO - Starting processing for ticker: KMI
+2025-09-24 20:42:12,169 - INFO - Fetching data for KMI from 2023-09-25 to 2025-09-24
+2025-09-24 20:42:12,539 - WARNING - No data available for KMI in the specified date range
+2025-09-24 20:42:12,540 - WARNING - No data retrieved for KMI
+2025-09-24 20:42:12,542 - ERROR - ✗ Failed to process KMI
+2025-09-24 20:42:12,542 - INFO - Processing ticker 56/122: KO
+2025-09-24 20:42:12,543 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:25,047 - INFO - Starting processing for ticker: KO
+2025-09-24 20:42:25,047 - INFO - Fetching data for KO from 2023-09-25 to 2025-09-24
+2025-09-24 20:42:25,503 - WARNING - No data available for KO in the specified date range
+2025-09-24 20:42:25,504 - WARNING - No data retrieved for KO
+2025-09-24 20:42:25,504 - ERROR - ✗ Failed to process KO
+2025-09-24 20:42:25,504 - INFO - Processing ticker 57/122: KVUE
+2025-09-24 20:42:25,504 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:38,009 - INFO - Starting processing for ticker: KVUE
+2025-09-24 20:42:38,010 - INFO - Fetching data for KVUE from 2023-09-25 to 2025-09-24
+2025-09-24 20:42:38,300 - ERROR - Failed to fetch data for KVUE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/KVUE/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:42:38,301 - WARNING - No data retrieved for KVUE
+2025-09-24 20:42:38,301 - ERROR - ✗ Failed to process KVUE
+2025-09-24 20:42:38,301 - INFO - Processing ticker 58/122: LIN
+2025-09-24 20:42:38,301 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:50,802 - INFO - Starting processing for ticker: LIN
+2025-09-24 20:42:50,803 - INFO - Fetching data for LIN from 2023-09-25 to 2025-09-24
+2025-09-24 20:42:51,101 - ERROR - Failed to fetch data for LIN: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/LIN/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:42:51,102 - WARNING - No data retrieved for LIN
+2025-09-24 20:42:51,102 - ERROR - ✗ Failed to process LIN
+2025-09-24 20:42:51,102 - INFO - Processing ticker 59/122: LLY
+2025-09-24 20:42:51,102 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:03,607 - INFO - Starting processing for ticker: LLY
+2025-09-24 20:43:03,610 - INFO - Fetching data for LLY from 2023-09-25 to 2025-09-24
+2025-09-24 20:43:04,019 - WARNING - No data available for LLY in the specified date range
+2025-09-24 20:43:04,020 - WARNING - No data retrieved for LLY
+2025-09-24 20:43:04,020 - ERROR - ✗ Failed to process LLY
+2025-09-24 20:43:04,020 - INFO - Processing ticker 60/122: LMT
+2025-09-24 20:43:04,020 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:16,525 - INFO - Starting processing for ticker: LMT
+2025-09-24 20:43:16,525 - INFO - Fetching data for LMT from 2023-09-25 to 2025-09-24
+2025-09-24 20:43:16,921 - WARNING - No data available for LMT in the specified date range
+2025-09-24 20:43:16,922 - WARNING - No data retrieved for LMT
+2025-09-24 20:43:16,922 - ERROR - ✗ Failed to process LMT
+2025-09-24 20:43:16,922 - INFO - Processing ticker 61/122: LOW
+2025-09-24 20:43:16,922 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:29,425 - INFO - Starting processing for ticker: LOW
+2025-09-24 20:43:29,426 - INFO - Fetching data for LOW from 2023-09-25 to 2025-09-24
+2025-09-24 20:43:29,833 - WARNING - No data available for LOW in the specified date range
+2025-09-24 20:43:29,834 - WARNING - No data retrieved for LOW
+2025-09-24 20:43:29,834 - ERROR - ✗ Failed to process LOW
+2025-09-24 20:43:29,834 - INFO - Processing ticker 62/122: MA
+2025-09-24 20:43:29,834 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:42,340 - INFO - Starting processing for ticker: MA
+2025-09-24 20:43:42,341 - INFO - Fetching data for MA from 2023-09-25 to 2025-09-24
+2025-09-24 20:43:42,616 - ERROR - Failed to fetch data for MA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MA/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:43:42,617 - WARNING - No data retrieved for MA
+2025-09-24 20:43:42,617 - ERROR - ✗ Failed to process MA
+2025-09-24 20:43:42,617 - INFO - Processing ticker 63/122: MCD
+2025-09-24 20:43:42,617 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:55,122 - INFO - Starting processing for ticker: MCD
+2025-09-24 20:43:55,123 - INFO - Fetching data for MCD from 2023-09-25 to 2025-09-24
+2025-09-24 20:43:55,406 - ERROR - Failed to fetch data for MCD: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MCD/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:43:55,406 - WARNING - No data retrieved for MCD
+2025-09-24 20:43:55,407 - ERROR - ✗ Failed to process MCD
+2025-09-24 20:43:55,407 - INFO - Processing ticker 64/122: MDLZ
+2025-09-24 20:43:55,407 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:07,912 - INFO - Starting processing for ticker: MDLZ
+2025-09-24 20:44:07,913 - INFO - Fetching data for MDLZ from 2023-09-25 to 2025-09-24
+2025-09-24 20:44:08,307 - WARNING - No data available for MDLZ in the specified date range
+2025-09-24 20:44:08,308 - WARNING - No data retrieved for MDLZ
+2025-09-24 20:44:08,309 - ERROR - ✗ Failed to process MDLZ
+2025-09-24 20:44:08,309 - INFO - Processing ticker 65/122: MDT
+2025-09-24 20:44:08,309 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:20,814 - INFO - Starting processing for ticker: MDT
+2025-09-24 20:44:20,815 - INFO - Fetching data for MDT from 2023-09-25 to 2025-09-24
+2025-09-24 20:44:21,211 - WARNING - No data available for MDT in the specified date range
+2025-09-24 20:44:21,212 - WARNING - No data retrieved for MDT
+2025-09-24 20:44:21,212 - ERROR - ✗ Failed to process MDT
+2025-09-24 20:44:21,212 - INFO - Processing ticker 66/122: MELI
+2025-09-24 20:44:21,212 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:33,715 - INFO - Starting processing for ticker: MELI
+2025-09-24 20:44:33,716 - INFO - Fetching data for MELI from 2023-09-25 to 2025-09-24
+2025-09-24 20:44:33,999 - ERROR - Failed to fetch data for MELI: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MELI/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:44:34,000 - WARNING - No data retrieved for MELI
+2025-09-24 20:44:34,000 - ERROR - ✗ Failed to process MELI
+2025-09-24 20:44:34,000 - INFO - Processing ticker 67/122: META
+2025-09-24 20:44:34,000 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:46,505 - INFO - Starting processing for ticker: META
+2025-09-24 20:44:46,511 - INFO - Fetching data for META from 2023-09-25 to 2025-09-24
+2025-09-24 20:44:46,795 - ERROR - Failed to fetch data for META: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/META/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:44:46,796 - WARNING - No data retrieved for META
+2025-09-24 20:44:46,796 - ERROR - ✗ Failed to process META
+2025-09-24 20:44:46,796 - INFO - Processing ticker 68/122: MLM
+2025-09-24 20:44:46,796 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:59,302 - INFO - Starting processing for ticker: MLM
+2025-09-24 20:44:59,303 - INFO - Fetching data for MLM from 2023-09-25 to 2025-09-24
+2025-09-24 20:44:59,581 - ERROR - Failed to fetch data for MLM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MLM/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:44:59,582 - WARNING - No data retrieved for MLM
+2025-09-24 20:44:59,582 - ERROR - ✗ Failed to process MLM
+2025-09-24 20:44:59,582 - INFO - Processing ticker 69/122: MO
+2025-09-24 20:44:59,582 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:12,087 - INFO - Starting processing for ticker: MO
+2025-09-24 20:45:12,088 - INFO - Fetching data for MO from 2023-09-25 to 2025-09-24
+2025-09-24 20:45:12,447 - WARNING - No data available for MO in the specified date range
+2025-09-24 20:45:12,449 - WARNING - No data retrieved for MO
+2025-09-24 20:45:12,449 - ERROR - ✗ Failed to process MO
+2025-09-24 20:45:12,449 - INFO - Processing ticker 70/122: MPC
+2025-09-24 20:45:12,449 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:24,954 - INFO - Starting processing for ticker: MPC
+2025-09-24 20:45:24,956 - INFO - Fetching data for MPC from 2023-09-25 to 2025-09-24
+2025-09-24 20:45:25,330 - WARNING - No data available for MPC in the specified date range
+2025-09-24 20:45:25,331 - WARNING - No data retrieved for MPC
+2025-09-24 20:45:25,332 - ERROR - ✗ Failed to process MPC
+2025-09-24 20:45:25,332 - INFO - Processing ticker 71/122: MRK
+2025-09-24 20:45:25,332 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:37,835 - INFO - Starting processing for ticker: MRK
+2025-09-24 20:45:37,836 - INFO - Fetching data for MRK from 2023-09-25 to 2025-09-24
+2025-09-24 20:45:38,123 - ERROR - Failed to fetch data for MRK: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MRK/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:45:38,124 - WARNING - No data retrieved for MRK
+2025-09-24 20:45:38,124 - ERROR - ✗ Failed to process MRK
+2025-09-24 20:45:38,124 - INFO - Processing ticker 72/122: MSFT
+2025-09-24 20:45:38,124 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:50,626 - INFO - Starting processing for ticker: MSFT
+2025-09-24 20:45:50,627 - INFO - Fetching data for MSFT from 2023-09-25 to 2025-09-24
+2025-09-24 20:45:50,903 - ERROR - Failed to fetch data for MSFT: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MSFT/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:45:50,904 - WARNING - No data retrieved for MSFT
+2025-09-24 20:45:50,905 - ERROR - ✗ Failed to process MSFT
+2025-09-24 20:45:50,905 - INFO - Processing ticker 73/122: NEE
+2025-09-24 20:45:50,905 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:03,408 - INFO - Starting processing for ticker: NEE
+2025-09-24 20:46:03,409 - INFO - Fetching data for NEE from 2023-09-25 to 2025-09-24
+2025-09-24 20:46:03,778 - WARNING - No data available for NEE in the specified date range
+2025-09-24 20:46:03,778 - WARNING - No data retrieved for NEE
+2025-09-24 20:46:03,778 - ERROR - ✗ Failed to process NEE
+2025-09-24 20:46:03,779 - INFO - Processing ticker 74/122: NEM
+2025-09-24 20:46:03,779 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:16,284 - INFO - Starting processing for ticker: NEM
+2025-09-24 20:46:16,284 - INFO - Fetching data for NEM from 2023-09-25 to 2025-09-24
+2025-09-24 20:46:16,668 - WARNING - No data available for NEM in the specified date range
+2025-09-24 20:46:16,668 - WARNING - No data retrieved for NEM
+2025-09-24 20:46:16,668 - ERROR - ✗ Failed to process NEM
+2025-09-24 20:46:16,668 - INFO - Processing ticker 75/122: NFLX
+2025-09-24 20:46:16,668 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:29,174 - INFO - Starting processing for ticker: NFLX
+2025-09-24 20:46:29,174 - INFO - Fetching data for NFLX from 2023-09-25 to 2025-09-24
+2025-09-24 20:46:29,652 - WARNING - No data available for NFLX in the specified date range
+2025-09-24 20:46:29,652 - WARNING - No data retrieved for NFLX
+2025-09-24 20:46:29,652 - ERROR - ✗ Failed to process NFLX
+2025-09-24 20:46:29,653 - INFO - Processing ticker 76/122: NKE
+2025-09-24 20:46:29,653 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:42,158 - INFO - Starting processing for ticker: NKE
+2025-09-24 20:46:42,159 - INFO - Fetching data for NKE from 2023-09-25 to 2025-09-24
+2025-09-24 20:46:42,442 - ERROR - Failed to fetch data for NKE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/NKE/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:46:42,443 - WARNING - No data retrieved for NKE
+2025-09-24 20:46:42,443 - ERROR - ✗ Failed to process NKE
+2025-09-24 20:46:42,443 - INFO - Processing ticker 77/122: NVDA
+2025-09-24 20:46:42,443 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:54,944 - INFO - Starting processing for ticker: NVDA
+2025-09-24 20:46:54,951 - INFO - Fetching data for NVDA from 2023-09-25 to 2025-09-24
+2025-09-24 20:46:55,233 - ERROR - Failed to fetch data for NVDA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/NVDA/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:46:55,234 - WARNING - No data retrieved for NVDA
+2025-09-24 20:46:55,235 - ERROR - ✗ Failed to process NVDA
+2025-09-24 20:46:55,235 - INFO - Processing ticker 78/122: O
+2025-09-24 20:46:55,235 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:07,740 - INFO - Starting processing for ticker: O
+2025-09-24 20:47:07,740 - INFO - Fetching data for O from 2023-09-25 to 2025-09-24
+2025-09-24 20:47:08,121 - WARNING - No data available for O in the specified date range
+2025-09-24 20:47:08,122 - WARNING - No data retrieved for O
+2025-09-24 20:47:08,122 - ERROR - ✗ Failed to process O
+2025-09-24 20:47:08,122 - INFO - Processing ticker 79/122: OKE
+2025-09-24 20:47:08,122 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:20,625 - INFO - Starting processing for ticker: OKE
+2025-09-24 20:47:20,628 - INFO - Fetching data for OKE from 2023-09-25 to 2025-09-24
+2025-09-24 20:47:21,024 - WARNING - No data available for OKE in the specified date range
+2025-09-24 20:47:21,025 - WARNING - No data retrieved for OKE
+2025-09-24 20:47:21,025 - ERROR - ✗ Failed to process OKE
+2025-09-24 20:47:21,025 - INFO - Processing ticker 80/122: ORCL
+2025-09-24 20:47:21,026 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:33,529 - INFO - Starting processing for ticker: ORCL
+2025-09-24 20:47:33,529 - INFO - Fetching data for ORCL from 2023-09-25 to 2025-09-24
+2025-09-24 20:47:34,017 - WARNING - No data available for ORCL in the specified date range
+2025-09-24 20:47:34,018 - WARNING - No data retrieved for ORCL
+2025-09-24 20:47:34,018 - ERROR - ✗ Failed to process ORCL
+2025-09-24 20:47:34,018 - INFO - Processing ticker 81/122: OTIS
+2025-09-24 20:47:34,018 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:46,521 - INFO - Starting processing for ticker: OTIS
+2025-09-24 20:47:46,522 - INFO - Fetching data for OTIS from 2023-09-25 to 2025-09-24
+2025-09-24 20:47:46,806 - ERROR - Failed to fetch data for OTIS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/OTIS/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:47:46,807 - WARNING - No data retrieved for OTIS
+2025-09-24 20:47:46,807 - ERROR - ✗ Failed to process OTIS
+2025-09-24 20:47:46,808 - INFO - Processing ticker 82/122: PCG
+2025-09-24 20:47:46,808 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:59,312 - INFO - Starting processing for ticker: PCG
+2025-09-24 20:47:59,313 - INFO - Fetching data for PCG from 2023-09-25 to 2025-09-24
+2025-09-24 20:47:59,684 - ERROR - Failed to fetch data for PCG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PCG/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:47:59,685 - WARNING - No data retrieved for PCG
+2025-09-24 20:47:59,685 - ERROR - ✗ Failed to process PCG
+2025-09-24 20:47:59,685 - INFO - Processing ticker 83/122: PEG
+2025-09-24 20:47:59,685 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:12,190 - INFO - Starting processing for ticker: PEG
+2025-09-24 20:48:12,191 - INFO - Fetching data for PEG from 2023-09-25 to 2025-09-24
+2025-09-24 20:48:12,580 - WARNING - No data available for PEG in the specified date range
+2025-09-24 20:48:12,582 - WARNING - No data retrieved for PEG
+2025-09-24 20:48:12,582 - ERROR - ✗ Failed to process PEG
+2025-09-24 20:48:12,583 - INFO - Processing ticker 84/122: PEP
+2025-09-24 20:48:12,583 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:25,088 - INFO - Starting processing for ticker: PEP
+2025-09-24 20:48:25,089 - INFO - Fetching data for PEP from 2023-09-25 to 2025-09-24
+2025-09-24 20:48:25,436 - WARNING - No data available for PEP in the specified date range
+2025-09-24 20:48:25,436 - WARNING - No data retrieved for PEP
+2025-09-24 20:48:25,436 - ERROR - ✗ Failed to process PEP
+2025-09-24 20:48:25,436 - INFO - Processing ticker 85/122: PFE
+2025-09-24 20:48:25,436 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:37,937 - INFO - Starting processing for ticker: PFE
+2025-09-24 20:48:37,937 - INFO - Fetching data for PFE from 2023-09-25 to 2025-09-24
+2025-09-24 20:48:38,219 - ERROR - Failed to fetch data for PFE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PFE/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:48:38,220 - WARNING - No data retrieved for PFE
+2025-09-24 20:48:38,220 - ERROR - ✗ Failed to process PFE
+2025-09-24 20:48:38,220 - INFO - Processing ticker 86/122: PG
+2025-09-24 20:48:38,221 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:50,721 - INFO - Starting processing for ticker: PG
+2025-09-24 20:48:50,722 - INFO - Fetching data for PG from 2023-09-25 to 2025-09-24
+2025-09-24 20:48:51,301 - ERROR - Failed to fetch data for PG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PG/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:48:51,302 - WARNING - No data retrieved for PG
+2025-09-24 20:48:51,302 - ERROR - ✗ Failed to process PG
+2025-09-24 20:48:51,302 - INFO - Processing ticker 87/122: PHG
+2025-09-24 20:48:51,302 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:03,804 - INFO - Starting processing for ticker: PHG
+2025-09-24 20:49:03,805 - INFO - Fetching data for PHG from 2023-09-25 to 2025-09-24
+2025-09-24 20:49:04,202 - WARNING - No data available for PHG in the specified date range
+2025-09-24 20:49:04,203 - WARNING - No data retrieved for PHG
+2025-09-24 20:49:04,203 - ERROR - ✗ Failed to process PHG
+2025-09-24 20:49:04,203 - INFO - Processing ticker 88/122: PLD
+2025-09-24 20:49:04,203 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:16,708 - INFO - Starting processing for ticker: PLD
+2025-09-24 20:49:16,709 - INFO - Fetching data for PLD from 2023-09-25 to 2025-09-24
+2025-09-24 20:49:17,076 - WARNING - No data available for PLD in the specified date range
+2025-09-24 20:49:17,078 - WARNING - No data retrieved for PLD
+2025-09-24 20:49:17,078 - ERROR - ✗ Failed to process PLD
+2025-09-24 20:49:17,078 - INFO - Processing ticker 89/122: PM
+2025-09-24 20:49:17,078 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:29,584 - INFO - Starting processing for ticker: PM
+2025-09-24 20:49:29,586 - INFO - Fetching data for PM from 2023-09-25 to 2025-09-24
+2025-09-24 20:49:30,059 - WARNING - No data available for PM in the specified date range
+2025-09-24 20:49:30,062 - WARNING - No data retrieved for PM
+2025-09-24 20:49:30,065 - ERROR - ✗ Failed to process PM
+2025-09-24 20:49:30,066 - INFO - Processing ticker 90/122: PSA
+2025-09-24 20:49:30,067 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:42,572 - INFO - Starting processing for ticker: PSA
+2025-09-24 20:49:42,573 - INFO - Fetching data for PSA from 2023-09-25 to 2025-09-24
+2025-09-24 20:49:42,851 - ERROR - Failed to fetch data for PSA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PSA/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:49:42,851 - WARNING - No data retrieved for PSA
+2025-09-24 20:49:42,852 - ERROR - ✗ Failed to process PSA
+2025-09-24 20:49:42,852 - INFO - Processing ticker 91/122: PSX
+2025-09-24 20:49:42,852 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:55,357 - INFO - Starting processing for ticker: PSX
+2025-09-24 20:49:55,358 - INFO - Fetching data for PSX from 2023-09-25 to 2025-09-24
+2025-09-24 20:49:55,720 - ERROR - Failed to fetch data for PSX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PSX/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:49:55,721 - WARNING - No data retrieved for PSX
+2025-09-24 20:49:55,721 - ERROR - ✗ Failed to process PSX
+2025-09-24 20:49:55,721 - INFO - Processing ticker 92/122: RTX
+2025-09-24 20:49:55,722 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:08,225 - INFO - Starting processing for ticker: RTX
+2025-09-24 20:50:08,226 - INFO - Fetching data for RTX from 2023-09-25 to 2025-09-24
+2025-09-24 20:50:08,638 - WARNING - No data available for RTX in the specified date range
+2025-09-24 20:50:08,638 - WARNING - No data retrieved for RTX
+2025-09-24 20:50:08,638 - ERROR - ✗ Failed to process RTX
+2025-09-24 20:50:08,639 - INFO - Processing ticker 93/122: SBUX
+2025-09-24 20:50:08,639 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:21,140 - INFO - Starting processing for ticker: SBUX
+2025-09-24 20:50:21,144 - INFO - Fetching data for SBUX from 2023-09-25 to 2025-09-24
+2025-09-24 20:50:21,637 - WARNING - No data available for SBUX in the specified date range
+2025-09-24 20:50:21,637 - WARNING - No data retrieved for SBUX
+2025-09-24 20:50:21,638 - ERROR - ✗ Failed to process SBUX
+2025-09-24 20:50:21,638 - INFO - Processing ticker 94/122: SHW
+2025-09-24 20:50:21,638 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:34,140 - INFO - Starting processing for ticker: SHW
+2025-09-24 20:50:34,141 - INFO - Fetching data for SHW from 2023-09-25 to 2025-09-24
+2025-09-24 20:50:34,508 - WARNING - No data available for SHW in the specified date range
+2025-09-24 20:50:34,510 - WARNING - No data retrieved for SHW
+2025-09-24 20:50:34,510 - ERROR - ✗ Failed to process SHW
+2025-09-24 20:50:34,510 - INFO - Processing ticker 95/122: SJM
+2025-09-24 20:50:34,511 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:47,016 - INFO - Starting processing for ticker: SJM
+2025-09-24 20:50:47,018 - INFO - Fetching data for SJM from 2023-09-25 to 2025-09-24
+2025-09-24 20:50:47,303 - ERROR - Failed to fetch data for SJM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SJM/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:50:47,303 - WARNING - No data retrieved for SJM
+2025-09-24 20:50:47,304 - ERROR - ✗ Failed to process SJM
+2025-09-24 20:50:47,304 - INFO - Processing ticker 96/122: SLB
+2025-09-24 20:50:47,304 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:59,806 - INFO - Starting processing for ticker: SLB
+2025-09-24 20:50:59,808 - INFO - Fetching data for SLB from 2023-09-25 to 2025-09-24
+2025-09-24 20:51:00,174 - WARNING - No data available for SLB in the specified date range
+2025-09-24 20:51:00,174 - WARNING - No data retrieved for SLB
+2025-09-24 20:51:00,174 - ERROR - ✗ Failed to process SLB
+2025-09-24 20:51:00,174 - INFO - Processing ticker 97/122: SO
+2025-09-24 20:51:00,174 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:12,680 - INFO - Starting processing for ticker: SO
+2025-09-24 20:51:12,681 - INFO - Fetching data for SO from 2023-09-25 to 2025-09-24
+2025-09-24 20:51:13,071 - WARNING - No data available for SO in the specified date range
+2025-09-24 20:51:13,072 - WARNING - No data retrieved for SO
+2025-09-24 20:51:13,072 - ERROR - ✗ Failed to process SO
+2025-09-24 20:51:13,072 - INFO - Processing ticker 98/122: SPG
+2025-09-24 20:51:13,073 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:25,573 - INFO - Starting processing for ticker: SPG
+2025-09-24 20:51:25,574 - INFO - Fetching data for SPG from 2023-09-25 to 2025-09-24
+2025-09-24 20:51:25,930 - WARNING - No data available for SPG in the specified date range
+2025-09-24 20:51:25,932 - WARNING - No data retrieved for SPG
+2025-09-24 20:51:25,932 - ERROR - ✗ Failed to process SPG
+2025-09-24 20:51:25,932 - INFO - Processing ticker 99/122: SPGI
+2025-09-24 20:51:25,933 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:38,436 - INFO - Starting processing for ticker: SPGI
+2025-09-24 20:51:38,438 - INFO - Fetching data for SPGI from 2023-09-25 to 2025-09-24
+2025-09-24 20:51:38,724 - ERROR - Failed to fetch data for SPGI: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SPGI/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:51:38,725 - WARNING - No data retrieved for SPGI
+2025-09-24 20:51:38,725 - ERROR - ✗ Failed to process SPGI
+2025-09-24 20:51:38,725 - INFO - Processing ticker 100/122: SRE
+2025-09-24 20:51:38,726 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:51,232 - INFO - Starting processing for ticker: SRE
+2025-09-24 20:51:51,235 - INFO - Fetching data for SRE from 2023-09-25 to 2025-09-24
+2025-09-24 20:51:51,524 - ERROR - Failed to fetch data for SRE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SRE/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:51:51,525 - WARNING - No data retrieved for SRE
+2025-09-24 20:51:51,525 - ERROR - ✗ Failed to process SRE
+2025-09-24 20:51:51,525 - INFO - Processing ticker 101/122: T
+2025-09-24 20:51:51,525 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:04,031 - INFO - Starting processing for ticker: T
+2025-09-24 20:52:04,032 - INFO - Fetching data for T from 2023-09-25 to 2025-09-24
+2025-09-24 20:52:04,426 - WARNING - No data available for T in the specified date range
+2025-09-24 20:52:04,428 - WARNING - No data retrieved for T
+2025-09-24 20:52:04,428 - ERROR - ✗ Failed to process T
+2025-09-24 20:52:04,428 - INFO - Processing ticker 102/122: TGT
+2025-09-24 20:52:04,428 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:16,933 - INFO - Starting processing for ticker: TGT
+2025-09-24 20:52:16,935 - INFO - Fetching data for TGT from 2023-09-25 to 2025-09-24
+2025-09-24 20:52:17,341 - WARNING - No data available for TGT in the specified date range
+2025-09-24 20:52:17,342 - WARNING - No data retrieved for TGT
+2025-09-24 20:52:17,343 - ERROR - ✗ Failed to process TGT
+2025-09-24 20:52:17,343 - INFO - Processing ticker 103/122: TJX
+2025-09-24 20:52:17,343 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:29,848 - INFO - Starting processing for ticker: TJX
+2025-09-24 20:52:29,848 - INFO - Fetching data for TJX from 2023-09-25 to 2025-09-24
+2025-09-24 20:52:30,235 - WARNING - No data available for TJX in the specified date range
+2025-09-24 20:52:30,237 - WARNING - No data retrieved for TJX
+2025-09-24 20:52:30,237 - ERROR - ✗ Failed to process TJX
+2025-09-24 20:52:30,237 - INFO - Processing ticker 104/122: TMO
+2025-09-24 20:52:30,238 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:42,740 - INFO - Starting processing for ticker: TMO
+2025-09-24 20:52:42,742 - INFO - Fetching data for TMO from 2023-09-25 to 2025-09-24
+2025-09-24 20:52:43,043 - ERROR - Failed to fetch data for TMO: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/TMO/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:52:43,044 - WARNING - No data retrieved for TMO
+2025-09-24 20:52:43,044 - ERROR - ✗ Failed to process TMO
+2025-09-24 20:52:43,045 - INFO - Processing ticker 105/122: TMUS
+2025-09-24 20:52:43,045 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:55,549 - INFO - Starting processing for ticker: TMUS
+2025-09-24 20:52:55,550 - INFO - Fetching data for TMUS from 2023-09-25 to 2025-09-24
+2025-09-24 20:52:55,840 - ERROR - Failed to fetch data for TMUS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/TMUS/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:52:55,841 - WARNING - No data retrieved for TMUS
+2025-09-24 20:52:55,841 - ERROR - ✗ Failed to process TMUS
+2025-09-24 20:52:55,841 - INFO - Processing ticker 106/122: TSLA
+2025-09-24 20:52:55,841 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:08,342 - INFO - Starting processing for ticker: TSLA
+2025-09-24 20:53:08,342 - INFO - Fetching data for TSLA from 2023-09-25 to 2025-09-24
+2025-09-24 20:53:08,746 - WARNING - No data available for TSLA in the specified date range
+2025-09-24 20:53:08,748 - WARNING - No data retrieved for TSLA
+2025-09-24 20:53:08,748 - ERROR - ✗ Failed to process TSLA
+2025-09-24 20:53:08,748 - INFO - Processing ticker 107/122: TTD
+2025-09-24 20:53:08,748 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:21,250 - INFO - Starting processing for ticker: TTD
+2025-09-24 20:53:21,253 - INFO - Fetching data for TTD from 2023-09-25 to 2025-09-24
+2025-09-24 20:53:21,658 - WARNING - No data available for TTD in the specified date range
+2025-09-24 20:53:21,659 - WARNING - No data retrieved for TTD
+2025-09-24 20:53:21,660 - ERROR - ✗ Failed to process TTD
+2025-09-24 20:53:21,660 - INFO - Processing ticker 108/122: UBER
+2025-09-24 20:53:21,660 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:34,165 - INFO - Starting processing for ticker: UBER
+2025-09-24 20:53:34,167 - INFO - Fetching data for UBER from 2023-09-25 to 2025-09-24
+2025-09-24 20:53:34,448 - ERROR - Failed to fetch data for UBER: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/UBER/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:53:34,449 - WARNING - No data retrieved for UBER
+2025-09-24 20:53:34,449 - ERROR - ✗ Failed to process UBER
+2025-09-24 20:53:34,449 - INFO - Processing ticker 109/122: UNH
+2025-09-24 20:53:34,450 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:46,955 - INFO - Starting processing for ticker: UNH
+2025-09-24 20:53:46,957 - INFO - Fetching data for UNH from 2023-09-25 to 2025-09-24
+2025-09-24 20:53:47,316 - ERROR - Failed to fetch data for UNH: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/UNH/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:53:47,316 - WARNING - No data retrieved for UNH
+2025-09-24 20:53:47,316 - ERROR - ✗ Failed to process UNH
+2025-09-24 20:53:47,316 - INFO - Processing ticker 110/122: UNP
+2025-09-24 20:53:47,316 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:59,821 - INFO - Starting processing for ticker: UNP
+2025-09-24 20:53:59,822 - INFO - Fetching data for UNP from 2023-09-25 to 2025-09-24
+2025-09-24 20:54:00,178 - WARNING - No data available for UNP in the specified date range
+2025-09-24 20:54:00,178 - WARNING - No data retrieved for UNP
+2025-09-24 20:54:00,180 - ERROR - ✗ Failed to process UNP
+2025-09-24 20:54:00,180 - INFO - Processing ticker 111/122: V
+2025-09-24 20:54:00,180 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:12,685 - INFO - Starting processing for ticker: V
+2025-09-24 20:54:12,687 - INFO - Fetching data for V from 2023-09-25 to 2025-09-24
+2025-09-24 20:54:13,075 - WARNING - No data available for V in the specified date range
+2025-09-24 20:54:13,077 - WARNING - No data retrieved for V
+2025-09-24 20:54:13,077 - ERROR - ✗ Failed to process V
+2025-09-24 20:54:13,077 - INFO - Processing ticker 112/122: VMC
+2025-09-24 20:54:13,077 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:25,583 - INFO - Starting processing for ticker: VMC
+2025-09-24 20:54:25,585 - INFO - Fetching data for VMC from 2023-09-25 to 2025-09-24
+2025-09-24 20:54:25,937 - WARNING - No data available for VMC in the specified date range
+2025-09-24 20:54:25,939 - WARNING - No data retrieved for VMC
+2025-09-24 20:54:25,939 - ERROR - ✗ Failed to process VMC
+2025-09-24 20:54:25,940 - INFO - Processing ticker 113/122: VOO
+2025-09-24 20:54:25,940 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:38,446 - INFO - Starting processing for ticker: VOO
+2025-09-24 20:54:38,449 - INFO - Fetching data for VOO from 2023-09-25 to 2025-09-24
+2025-09-24 20:54:38,737 - ERROR - Failed to fetch data for VOO: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/VOO/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:54:38,738 - WARNING - No data retrieved for VOO
+2025-09-24 20:54:38,740 - ERROR - ✗ Failed to process VOO
+2025-09-24 20:54:38,740 - INFO - Processing ticker 114/122: VST
+2025-09-24 20:54:38,740 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:51,241 - INFO - Starting processing for ticker: VST
+2025-09-24 20:54:51,241 - INFO - Fetching data for VST from 2023-09-25 to 2025-09-24
+2025-09-24 20:54:51,529 - ERROR - Failed to fetch data for VST: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/VST/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:54:51,533 - WARNING - No data retrieved for VST
+2025-09-24 20:54:51,534 - ERROR - ✗ Failed to process VST
+2025-09-24 20:54:51,534 - INFO - Processing ticker 115/122: VZ
+2025-09-24 20:54:51,534 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:04,036 - INFO - Starting processing for ticker: VZ
+2025-09-24 20:55:04,038 - INFO - Fetching data for VZ from 2023-09-25 to 2025-09-24
+2025-09-24 20:55:04,392 - WARNING - No data available for VZ in the specified date range
+2025-09-24 20:55:04,393 - WARNING - No data retrieved for VZ
+2025-09-24 20:55:04,393 - ERROR - ✗ Failed to process VZ
+2025-09-24 20:55:04,393 - INFO - Processing ticker 116/122: WELL
+2025-09-24 20:55:04,393 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:16,897 - INFO - Starting processing for ticker: WELL
+2025-09-24 20:55:16,898 - INFO - Fetching data for WELL from 2023-09-25 to 2025-09-24
+2025-09-24 20:55:17,257 - WARNING - No data available for WELL in the specified date range
+2025-09-24 20:55:17,259 - WARNING - No data retrieved for WELL
+2025-09-24 20:55:17,259 - ERROR - ✗ Failed to process WELL
+2025-09-24 20:55:17,259 - INFO - Processing ticker 117/122: WFC
+2025-09-24 20:55:17,259 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:29,765 - INFO - Starting processing for ticker: WFC
+2025-09-24 20:55:29,766 - INFO - Fetching data for WFC from 2023-09-25 to 2025-09-24
+2025-09-24 20:55:30,130 - WARNING - No data available for WFC in the specified date range
+2025-09-24 20:55:30,131 - WARNING - No data retrieved for WFC
+2025-09-24 20:55:30,132 - ERROR - ✗ Failed to process WFC
+2025-09-24 20:55:30,132 - INFO - Processing ticker 118/122: WHR
+2025-09-24 20:55:30,132 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:42,633 - INFO - Starting processing for ticker: WHR
+2025-09-24 20:55:42,634 - INFO - Fetching data for WHR from 2023-09-25 to 2025-09-24
+2025-09-24 20:55:43,000 - ERROR - Failed to fetch data for WHR: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/WHR/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:55:43,001 - WARNING - No data retrieved for WHR
+2025-09-24 20:55:43,001 - ERROR - ✗ Failed to process WHR
+2025-09-24 20:55:43,002 - INFO - Processing ticker 119/122: WMB
+2025-09-24 20:55:43,002 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:55,503 - INFO - Starting processing for ticker: WMB
+2025-09-24 20:55:55,505 - INFO - Fetching data for WMB from 2023-09-25 to 2025-09-24
+2025-09-24 20:55:55,797 - ERROR - Failed to fetch data for WMB: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/WMB/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:55:55,799 - WARNING - No data retrieved for WMB
+2025-09-24 20:55:55,799 - ERROR - ✗ Failed to process WMB
+2025-09-24 20:55:55,799 - INFO - Processing ticker 120/122: WMT
+2025-09-24 20:55:55,799 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:08,304 - INFO - Starting processing for ticker: WMT
+2025-09-24 20:56:08,305 - INFO - Fetching data for WMT from 2023-09-25 to 2025-09-24
+2025-09-24 20:56:08,669 - WARNING - No data available for WMT in the specified date range
+2025-09-24 20:56:08,670 - WARNING - No data retrieved for WMT
+2025-09-24 20:56:08,670 - ERROR - ✗ Failed to process WMT
+2025-09-24 20:56:08,670 - INFO - Processing ticker 121/122: XOM
+2025-09-24 20:56:08,671 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:21,172 - INFO - Starting processing for ticker: XOM
+2025-09-24 20:56:21,173 - INFO - Fetching data for XOM from 2023-09-25 to 2025-09-24
+2025-09-24 20:56:21,533 - WARNING - No data available for XOM in the specified date range
+2025-09-24 20:56:21,534 - WARNING - No data retrieved for XOM
+2025-09-24 20:56:21,534 - ERROR - ✗ Failed to process XOM
+2025-09-24 20:56:21,535 - INFO - Processing ticker 122/122: ZBH
+2025-09-24 20:56:21,535 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:34,038 - INFO - Starting processing for ticker: ZBH
+2025-09-24 20:56:34,041 - INFO - Fetching data for ZBH from 2023-09-25 to 2025-09-24
+2025-09-24 20:56:34,324 - ERROR - Failed to fetch data for ZBH: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ZBH/range/1/day/2023-09-25/2025-09-24?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:56:34,325 - WARNING - No data retrieved for ZBH
+2025-09-24 20:56:34,325 - ERROR - ✗ Failed to process ZBH
+2025-09-24 20:56:34,325 - INFO - ================================================================================
+2025-09-24 20:56:34,325 - INFO - COMPREHENSIVE PIPELINE SUMMARY
+2025-09-24 20:56:34,325 - INFO - ================================================================================
+2025-09-24 20:56:34,325 - INFO - Total tickers processed: 122
+2025-09-24 20:56:34,326 - INFO - Successful: 0
+2025-09-24 20:56:34,326 - INFO - Failed: 122
+2025-09-24 20:56:34,326 - INFO - Success rate: 0.0%
+2025-09-24 20:56:34,326 - WARNING - Failed tickers (122): AAPL, ABBV, ABT, ACN, ADBE, ADP, AEP, AES, AMD, AMGN, AMT, AMZN, APD, AVGO, AXP, BA, BAC, BKNG, BLK, BRK.B, CAT, CBRE, CCI, CEG, CL, CLX, CMCSA, COP, COST, CPB, CRH, CRM, CSCO, CTVA, CVX, D, DHR, DIS, DLR, DUK, ECL, EOG, EQIX, ETN, FCX, GE, GOOG, GOOGL, GS, HD, HON, ISRG, JNJ, JPM, KMI, KO, KVUE, LIN, LLY, LMT, LOW, MA, MCD, MDLZ, MDT, MELI, META, MLM, MO, MPC, MRK, MSFT, NEE, NEM, NFLX, NKE, NVDA, O, OKE, ORCL, OTIS, PCG, PEG, PEP, PFE, PG, PHG, PLD, PM, PSA, PSX, RTX, SBUX, SHW, SJM, SLB, SO, SPG, SPGI, SRE, T, TGT, TJX, TMO, TMUS, TSLA, TTD, UBER, UNH, UNP, V, VMC, VOO, VST, VZ, WELL, WFC, WHR, WMB, WMT, XOM, ZBH
+2025-09-24 20:56:34,326 - ERROR - ❌ No tickers were processed successfully
+2025-09-24 20:56:34,326 - INFO - Comprehensive pipeline completed
+2025-09-24 20:56:34,326 - INFO - closed
+2025-09-24 20:56:34,843 - INFO - No async queries seem to be running, deleting session
+2025-09-24 20:56:34,954 - INFO - Snowflake connection closed

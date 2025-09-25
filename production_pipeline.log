@@ -475,3 +475,4 @@
 2025-08-31 05:08:13,555 - INFO - 🎉 All tickers processed successfully!
 2025-08-31 05:08:13,555 - INFO - Ready for Snowflake COPY command execution.
 2025-08-31 05:08:13,555 - INFO - Production pipeline completed
+2025-09-24 20:32:36,258 - ERROR - config.json not found

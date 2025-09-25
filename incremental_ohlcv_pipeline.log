@@ -45439,3 +45439,2267 @@ To run the incremental pipeline:
 2025-09-20 11:29:33,374 - INFO - Incremental pipeline completed
 2025-09-20 11:29:33,374 - INFO - Ready for Snowflake COPY command execution to load new data.
 2025-09-20 11:29:33,600 - INFO - Snowflake connection closed
+2025-09-24 20:32:52,336 - INFO - Polygon.io API key loaded from environment variable
+2025-09-24 20:32:52,336 - INFO - Incremental OHLCV Pipeline initialized
+2025-09-24 20:32:52,336 - INFO - End date: 2025-09-23
+2025-09-24 20:32:52,336 - INFO - ================================================================================
+2025-09-24 20:32:52,336 - INFO - INCREMENTAL OHLCV PIPELINE FOR SP500 SECTOR LEADERS
+2025-09-24 20:32:52,336 - INFO - ================================================================================
+2025-09-24 20:32:52,336 - INFO - End date: 2025-09-23
+2025-09-24 20:32:52,336 - INFO - S3 Bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-24 20:32:52,336 - INFO - Snowflake Table: sp500_top10_sector_ohlcv_itbl
+2025-09-24 20:32:52,336 - INFO - Snowflake Connection: DEMO_PRAJAGOPAL
+2025-09-24 20:32:52,336 - INFO - Step 1: Analyzing existing data and determining date ranges...
+2025-09-24 20:32:52,336 - INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.11.7, Platform: macOS-15.7-arm64-arm-64bit
+2025-09-24 20:32:52,339 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-09-24 20:32:52,886 - INFO - Snowflake connection initialized successfully using DEMO_PRAJAGOPAL
+2025-09-24 20:32:52,886 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-24 20:32:53,073 - INFO - query execution done
+2025-09-24 20:32:53,074 - INFO - Number of results in first chunk: 122
+2025-09-24 20:32:53,074 - INFO - Retrieved 122 ticker symbols from Snowflake
+2025-09-24 20:32:53,075 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AES', 'AMD', 'AMGN']
+2025-09-24 20:32:53,075 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AAPL']
+2025-09-24 20:32:53,240 - INFO - query execution done
+2025-09-24 20:32:53,241 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,241 - INFO - Max date for AAPL: 2025-09-19
+2025-09-24 20:32:53,242 - INFO - Will download AAPL from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,242 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABBV']
+2025-09-24 20:32:53,418 - INFO - query execution done
+2025-09-24 20:32:53,418 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,418 - INFO - Max date for ABBV: 2025-09-19
+2025-09-24 20:32:53,419 - INFO - Will download ABBV from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,419 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ABT']
+2025-09-24 20:32:53,581 - INFO - query execution done
+2025-09-24 20:32:53,581 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,581 - INFO - Max date for ABT: 2025-09-19
+2025-09-24 20:32:53,581 - INFO - Will download ABT from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,582 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ACN']
+2025-09-24 20:32:53,715 - INFO - query execution done
+2025-09-24 20:32:53,715 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,716 - INFO - Max date for ACN: 2025-09-19
+2025-09-24 20:32:53,716 - INFO - Will download ACN from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,716 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADBE']
+2025-09-24 20:32:53,843 - INFO - query execution done
+2025-09-24 20:32:53,843 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,844 - INFO - Max date for ADBE: 2025-09-19
+2025-09-24 20:32:53,844 - INFO - Will download ADBE from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,844 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ADP']
+2025-09-24 20:32:53,971 - INFO - query execution done
+2025-09-24 20:32:53,971 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:53,972 - INFO - Max date for ADP: 2025-09-19
+2025-09-24 20:32:53,972 - INFO - Will download ADP from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:53,972 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AEP']
+2025-09-24 20:32:54,096 - INFO - query execution done
+2025-09-24 20:32:54,096 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,096 - INFO - Max date for AEP: 2025-09-19
+2025-09-24 20:32:54,096 - INFO - Will download AEP from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:54,097 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AES']
+2025-09-24 20:32:54,274 - INFO - query execution done
+2025-09-24 20:32:54,274 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,274 - INFO - No existing data found for AES
+2025-09-24 20:32:54,275 - INFO - No existing data for AES, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:32:54,275 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMD']
+2025-09-24 20:32:54,450 - INFO - query execution done
+2025-09-24 20:32:54,451 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,451 - INFO - Max date for AMD: 2025-09-19
+2025-09-24 20:32:54,451 - INFO - Will download AMD from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:54,452 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMGN']
+2025-09-24 20:32:54,583 - INFO - query execution done
+2025-09-24 20:32:54,583 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,583 - INFO - Max date for AMGN: 2025-09-19
+2025-09-24 20:32:54,583 - INFO - Will download AMGN from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:54,584 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMT']
+2025-09-24 20:32:54,721 - INFO - query execution done
+2025-09-24 20:32:54,721 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,722 - INFO - Max date for AMT: 2025-09-19
+2025-09-24 20:32:54,722 - INFO - Will download AMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:54,722 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AMZN']
+2025-09-24 20:32:54,879 - INFO - query execution done
+2025-09-24 20:32:54,880 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:54,880 - INFO - Max date for AMZN: 2025-09-19
+2025-09-24 20:32:54,880 - INFO - Will download AMZN from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:54,880 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'APD']
+2025-09-24 20:32:55,014 - INFO - query execution done
+2025-09-24 20:32:55,015 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,015 - INFO - Max date for APD: 2025-09-19
+2025-09-24 20:32:55,015 - INFO - Will download APD from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,018 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AVGO']
+2025-09-24 20:32:55,145 - INFO - query execution done
+2025-09-24 20:32:55,146 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,146 - INFO - Max date for AVGO: 2025-09-19
+2025-09-24 20:32:55,146 - INFO - Will download AVGO from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,146 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'AXP']
+2025-09-24 20:32:55,300 - INFO - query execution done
+2025-09-24 20:32:55,300 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,301 - INFO - Max date for AXP: 2025-09-19
+2025-09-24 20:32:55,301 - INFO - Will download AXP from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,301 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BA']
+2025-09-24 20:32:55,464 - INFO - query execution done
+2025-09-24 20:32:55,464 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,464 - INFO - Max date for BA: 2025-09-19
+2025-09-24 20:32:55,464 - INFO - Will download BA from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,465 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BAC']
+2025-09-24 20:32:55,625 - INFO - query execution done
+2025-09-24 20:32:55,625 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,626 - INFO - Max date for BAC: 2025-09-19
+2025-09-24 20:32:55,626 - INFO - Will download BAC from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,627 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BKNG']
+2025-09-24 20:32:55,778 - INFO - query execution done
+2025-09-24 20:32:55,779 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,779 - INFO - Max date for BKNG: 2025-09-19
+2025-09-24 20:32:55,779 - INFO - Will download BKNG from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,779 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BLK']
+2025-09-24 20:32:55,900 - INFO - query execution done
+2025-09-24 20:32:55,900 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:55,901 - INFO - Max date for BLK: 2025-09-19
+2025-09-24 20:32:55,901 - INFO - Will download BLK from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:55,901 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'BRK.B']
+2025-09-24 20:32:56,040 - INFO - query execution done
+2025-09-24 20:32:56,041 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,041 - INFO - Max date for BRK.B: 2025-09-19
+2025-09-24 20:32:56,041 - INFO - Will download BRK.B from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,041 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CAT']
+2025-09-24 20:32:56,177 - INFO - query execution done
+2025-09-24 20:32:56,177 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,178 - INFO - Max date for CAT: 2025-09-19
+2025-09-24 20:32:56,178 - INFO - Will download CAT from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,178 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CBRE']
+2025-09-24 20:32:56,335 - INFO - query execution done
+2025-09-24 20:32:56,335 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,336 - INFO - Max date for CBRE: 2025-09-19
+2025-09-24 20:32:56,336 - INFO - Will download CBRE from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,336 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CCI']
+2025-09-24 20:32:56,477 - INFO - query execution done
+2025-09-24 20:32:56,478 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,478 - INFO - Max date for CCI: 2025-09-19
+2025-09-24 20:32:56,478 - INFO - Will download CCI from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,478 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CEG']
+2025-09-24 20:32:56,625 - INFO - query execution done
+2025-09-24 20:32:56,625 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,625 - INFO - Max date for CEG: 2025-09-19
+2025-09-24 20:32:56,625 - INFO - Will download CEG from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,626 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CL']
+2025-09-24 20:32:56,779 - INFO - query execution done
+2025-09-24 20:32:56,779 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,780 - INFO - Max date for CL: 2025-09-19
+2025-09-24 20:32:56,780 - INFO - Will download CL from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:56,780 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CLX']
+2025-09-24 20:32:56,941 - INFO - query execution done
+2025-09-24 20:32:56,941 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:56,941 - INFO - No existing data found for CLX
+2025-09-24 20:32:56,941 - INFO - No existing data for CLX, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:32:56,941 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CMCSA']
+2025-09-24 20:32:57,106 - INFO - query execution done
+2025-09-24 20:32:57,106 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,106 - INFO - Max date for CMCSA: 2025-09-19
+2025-09-24 20:32:57,107 - INFO - Will download CMCSA from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,107 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COP']
+2025-09-24 20:32:57,240 - INFO - query execution done
+2025-09-24 20:32:57,240 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,240 - INFO - Max date for COP: 2025-09-19
+2025-09-24 20:32:57,241 - INFO - Will download COP from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,241 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'COST']
+2025-09-24 20:32:57,390 - INFO - query execution done
+2025-09-24 20:32:57,391 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,391 - INFO - Max date for COST: 2025-09-19
+2025-09-24 20:32:57,391 - INFO - Will download COST from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,391 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CPB']
+2025-09-24 20:32:57,557 - INFO - query execution done
+2025-09-24 20:32:57,557 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,557 - INFO - No existing data found for CPB
+2025-09-24 20:32:57,557 - INFO - No existing data for CPB, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:32:57,557 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRH']
+2025-09-24 20:32:57,707 - INFO - query execution done
+2025-09-24 20:32:57,708 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,708 - INFO - Max date for CRH: 2025-09-19
+2025-09-24 20:32:57,708 - INFO - Will download CRH from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,708 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CRM']
+2025-09-24 20:32:57,839 - INFO - query execution done
+2025-09-24 20:32:57,839 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,839 - INFO - Max date for CRM: 2025-09-19
+2025-09-24 20:32:57,840 - INFO - Will download CRM from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,840 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CSCO']
+2025-09-24 20:32:57,972 - INFO - query execution done
+2025-09-24 20:32:57,973 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:57,973 - INFO - Max date for CSCO: 2025-09-19
+2025-09-24 20:32:57,973 - INFO - Will download CSCO from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:57,973 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CTVA']
+2025-09-24 20:32:58,101 - INFO - query execution done
+2025-09-24 20:32:58,102 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,102 - INFO - Max date for CTVA: 2025-09-19
+2025-09-24 20:32:58,102 - INFO - Will download CTVA from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,102 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'CVX']
+2025-09-24 20:32:58,248 - INFO - query execution done
+2025-09-24 20:32:58,248 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,249 - INFO - Max date for CVX: 2025-09-19
+2025-09-24 20:32:58,249 - INFO - Will download CVX from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,249 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'D']
+2025-09-24 20:32:58,425 - INFO - query execution done
+2025-09-24 20:32:58,426 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,426 - INFO - Max date for D: 2025-09-19
+2025-09-24 20:32:58,426 - INFO - Will download D from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,426 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DHR']
+2025-09-24 20:32:58,559 - INFO - query execution done
+2025-09-24 20:32:58,559 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,560 - INFO - Max date for DHR: 2025-09-19
+2025-09-24 20:32:58,560 - INFO - Will download DHR from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,560 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DIS']
+2025-09-24 20:32:58,709 - INFO - query execution done
+2025-09-24 20:32:58,709 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,709 - INFO - Max date for DIS: 2025-09-19
+2025-09-24 20:32:58,710 - INFO - Will download DIS from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,710 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DLR']
+2025-09-24 20:32:58,865 - INFO - query execution done
+2025-09-24 20:32:58,865 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:58,865 - INFO - Max date for DLR: 2025-09-19
+2025-09-24 20:32:58,865 - INFO - Will download DLR from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:58,865 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'DUK']
+2025-09-24 20:32:59,002 - INFO - query execution done
+2025-09-24 20:32:59,002 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,002 - INFO - Max date for DUK: 2025-09-19
+2025-09-24 20:32:59,002 - INFO - Will download DUK from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,003 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ECL']
+2025-09-24 20:32:59,127 - INFO - query execution done
+2025-09-24 20:32:59,127 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,128 - INFO - Max date for ECL: 2025-09-19
+2025-09-24 20:32:59,128 - INFO - Will download ECL from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,128 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EOG']
+2025-09-24 20:32:59,269 - INFO - query execution done
+2025-09-24 20:32:59,269 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,269 - INFO - Max date for EOG: 2025-09-19
+2025-09-24 20:32:59,269 - INFO - Will download EOG from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,270 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'EQIX']
+2025-09-24 20:32:59,438 - INFO - query execution done
+2025-09-24 20:32:59,439 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,439 - INFO - Max date for EQIX: 2025-09-19
+2025-09-24 20:32:59,439 - INFO - Will download EQIX from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,439 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ETN']
+2025-09-24 20:32:59,565 - INFO - query execution done
+2025-09-24 20:32:59,565 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,565 - INFO - Max date for ETN: 2025-09-19
+2025-09-24 20:32:59,565 - INFO - Will download ETN from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,565 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'FCX']
+2025-09-24 20:32:59,696 - INFO - query execution done
+2025-09-24 20:32:59,696 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,697 - INFO - Max date for FCX: 2025-09-19
+2025-09-24 20:32:59,697 - INFO - Will download FCX from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,697 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GE']
+2025-09-24 20:32:59,835 - INFO - query execution done
+2025-09-24 20:32:59,835 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,835 - INFO - Max date for GE: 2025-09-19
+2025-09-24 20:32:59,836 - INFO - Will download GE from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,836 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOG']
+2025-09-24 20:32:59,966 - INFO - query execution done
+2025-09-24 20:32:59,966 - INFO - Number of results in first chunk: 1
+2025-09-24 20:32:59,967 - INFO - Max date for GOOG: 2025-09-19
+2025-09-24 20:32:59,967 - INFO - Will download GOOG from 2025-09-20 to 2025-09-23
+2025-09-24 20:32:59,967 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GOOGL']
+2025-09-24 20:33:00,091 - INFO - query execution done
+2025-09-24 20:33:00,091 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,091 - INFO - Max date for GOOGL: 2025-09-19
+2025-09-24 20:33:00,091 - INFO - Will download GOOGL from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,091 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'GS']
+2025-09-24 20:33:00,220 - INFO - query execution done
+2025-09-24 20:33:00,220 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,220 - INFO - Max date for GS: 2025-09-19
+2025-09-24 20:33:00,220 - INFO - Will download GS from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,220 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HD']
+2025-09-24 20:33:00,357 - INFO - query execution done
+2025-09-24 20:33:00,357 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,358 - INFO - Max date for HD: 2025-09-19
+2025-09-24 20:33:00,358 - INFO - Will download HD from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,358 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'HON']
+2025-09-24 20:33:00,486 - INFO - query execution done
+2025-09-24 20:33:00,486 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,486 - INFO - Max date for HON: 2025-09-19
+2025-09-24 20:33:00,486 - INFO - Will download HON from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,487 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ISRG']
+2025-09-24 20:33:00,615 - INFO - query execution done
+2025-09-24 20:33:00,615 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,616 - INFO - Max date for ISRG: 2025-09-19
+2025-09-24 20:33:00,616 - INFO - Will download ISRG from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,616 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JNJ']
+2025-09-24 20:33:00,769 - INFO - query execution done
+2025-09-24 20:33:00,769 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,769 - INFO - Max date for JNJ: 2025-09-19
+2025-09-24 20:33:00,769 - INFO - Will download JNJ from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,769 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'JPM']
+2025-09-24 20:33:00,893 - INFO - query execution done
+2025-09-24 20:33:00,893 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:00,894 - INFO - Max date for JPM: 2025-09-19
+2025-09-24 20:33:00,894 - INFO - Will download JPM from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:00,894 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KMI']
+2025-09-24 20:33:01,025 - INFO - query execution done
+2025-09-24 20:33:01,025 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,025 - INFO - Max date for KMI: 2025-09-19
+2025-09-24 20:33:01,026 - INFO - Will download KMI from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:01,026 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KO']
+2025-09-24 20:33:01,177 - INFO - query execution done
+2025-09-24 20:33:01,177 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,177 - INFO - Max date for KO: 2025-09-19
+2025-09-24 20:33:01,178 - INFO - Will download KO from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:01,178 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'KVUE']
+2025-09-24 20:33:01,531 - INFO - query execution done
+2025-09-24 20:33:01,532 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,532 - INFO - No existing data found for KVUE
+2025-09-24 20:33:01,532 - INFO - No existing data for KVUE, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:01,532 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LIN']
+2025-09-24 20:33:01,684 - INFO - query execution done
+2025-09-24 20:33:01,684 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,684 - INFO - Max date for LIN: 2025-09-19
+2025-09-24 20:33:01,684 - INFO - Will download LIN from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:01,684 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LLY']
+2025-09-24 20:33:01,824 - INFO - query execution done
+2025-09-24 20:33:01,824 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,824 - INFO - Max date for LLY: 2025-09-19
+2025-09-24 20:33:01,824 - INFO - Will download LLY from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:01,824 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LMT']
+2025-09-24 20:33:01,966 - INFO - query execution done
+2025-09-24 20:33:01,966 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:01,966 - INFO - Max date for LMT: 2025-09-19
+2025-09-24 20:33:01,967 - INFO - Will download LMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:01,967 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'LOW']
+2025-09-24 20:33:02,092 - INFO - query execution done
+2025-09-24 20:33:02,092 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,092 - INFO - Max date for LOW: 2025-09-19
+2025-09-24 20:33:02,093 - INFO - Will download LOW from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,093 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MA']
+2025-09-24 20:33:02,227 - INFO - query execution done
+2025-09-24 20:33:02,227 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,227 - INFO - Max date for MA: 2025-09-19
+2025-09-24 20:33:02,228 - INFO - Will download MA from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,228 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MCD']
+2025-09-24 20:33:02,356 - INFO - query execution done
+2025-09-24 20:33:02,356 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,356 - INFO - Max date for MCD: 2025-09-19
+2025-09-24 20:33:02,356 - INFO - Will download MCD from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,356 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MDLZ']
+2025-09-24 20:33:02,512 - INFO - query execution done
+2025-09-24 20:33:02,512 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,513 - INFO - Max date for MDLZ: 2025-09-19
+2025-09-24 20:33:02,513 - INFO - Will download MDLZ from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,513 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MDT']
+2025-09-24 20:33:02,692 - INFO - query execution done
+2025-09-24 20:33:02,693 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,693 - INFO - No existing data found for MDT
+2025-09-24 20:33:02,693 - INFO - No existing data for MDT, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:02,693 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MELI']
+2025-09-24 20:33:02,852 - INFO - query execution done
+2025-09-24 20:33:02,852 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,852 - INFO - Max date for MELI: 2025-09-19
+2025-09-24 20:33:02,853 - INFO - Will download MELI from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,853 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'META']
+2025-09-24 20:33:02,983 - INFO - query execution done
+2025-09-24 20:33:02,983 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:02,983 - INFO - Max date for META: 2025-09-19
+2025-09-24 20:33:02,984 - INFO - Will download META from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:02,984 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MLM']
+2025-09-24 20:33:03,138 - INFO - query execution done
+2025-09-24 20:33:03,138 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:03,138 - INFO - Max date for MLM: 2025-09-19
+2025-09-24 20:33:03,138 - INFO - Will download MLM from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:03,138 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MO']
+2025-09-24 20:33:03,306 - INFO - query execution done
+2025-09-24 20:33:03,306 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:03,307 - INFO - Max date for MO: 2025-09-19
+2025-09-24 20:33:03,307 - INFO - Will download MO from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:03,307 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MPC']
+2025-09-24 20:33:03,840 - INFO - query execution done
+2025-09-24 20:33:03,840 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:03,840 - INFO - Max date for MPC: 2025-09-19
+2025-09-24 20:33:03,841 - INFO - Will download MPC from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:03,841 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MRK']
+2025-09-24 20:33:03,976 - INFO - query execution done
+2025-09-24 20:33:03,976 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:03,977 - INFO - Max date for MRK: 2025-09-19
+2025-09-24 20:33:03,977 - INFO - Will download MRK from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:03,977 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'MSFT']
+2025-09-24 20:33:04,105 - INFO - query execution done
+2025-09-24 20:33:04,105 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,106 - INFO - Max date for MSFT: 2025-09-19
+2025-09-24 20:33:04,106 - INFO - Will download MSFT from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,106 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEE']
+2025-09-24 20:33:04,252 - INFO - query execution done
+2025-09-24 20:33:04,252 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,252 - INFO - Max date for NEE: 2025-09-19
+2025-09-24 20:33:04,253 - INFO - Will download NEE from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,253 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NEM']
+2025-09-24 20:33:04,417 - INFO - query execution done
+2025-09-24 20:33:04,417 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,417 - INFO - Max date for NEM: 2025-09-19
+2025-09-24 20:33:04,417 - INFO - Will download NEM from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,418 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NFLX']
+2025-09-24 20:33:04,545 - INFO - query execution done
+2025-09-24 20:33:04,545 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,546 - INFO - Max date for NFLX: 2025-09-19
+2025-09-24 20:33:04,546 - INFO - Will download NFLX from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,546 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NKE']
+2025-09-24 20:33:04,693 - INFO - query execution done
+2025-09-24 20:33:04,694 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,694 - INFO - Max date for NKE: 2025-09-19
+2025-09-24 20:33:04,694 - INFO - Will download NKE from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,694 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'NVDA']
+2025-09-24 20:33:04,837 - INFO - query execution done
+2025-09-24 20:33:04,837 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,838 - INFO - Max date for NVDA: 2025-09-19
+2025-09-24 20:33:04,838 - INFO - Will download NVDA from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,838 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'O']
+2025-09-24 20:33:04,962 - INFO - query execution done
+2025-09-24 20:33:04,962 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:04,962 - INFO - Max date for O: 2025-09-19
+2025-09-24 20:33:04,962 - INFO - Will download O from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:04,963 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'OKE']
+2025-09-24 20:33:05,098 - INFO - query execution done
+2025-09-24 20:33:05,098 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,098 - INFO - Max date for OKE: 2025-09-19
+2025-09-24 20:33:05,098 - INFO - Will download OKE from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:05,098 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ORCL']
+2025-09-24 20:33:05,232 - INFO - query execution done
+2025-09-24 20:33:05,233 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,233 - INFO - Max date for ORCL: 2025-09-19
+2025-09-24 20:33:05,233 - INFO - Will download ORCL from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:05,233 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'OTIS']
+2025-09-24 20:33:05,413 - INFO - query execution done
+2025-09-24 20:33:05,414 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,414 - INFO - No existing data found for OTIS
+2025-09-24 20:33:05,414 - INFO - No existing data for OTIS, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:05,414 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PCG']
+2025-09-24 20:33:05,548 - INFO - query execution done
+2025-09-24 20:33:05,548 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,548 - INFO - Max date for PCG: 2025-09-19
+2025-09-24 20:33:05,549 - INFO - Will download PCG from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:05,549 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEG']
+2025-09-24 20:33:05,730 - INFO - query execution done
+2025-09-24 20:33:05,730 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,730 - INFO - Max date for PEG: 2025-09-19
+2025-09-24 20:33:05,731 - INFO - Will download PEG from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:05,731 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PEP']
+2025-09-24 20:33:05,862 - INFO - query execution done
+2025-09-24 20:33:05,863 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:05,863 - INFO - Max date for PEP: 2025-09-19
+2025-09-24 20:33:05,863 - INFO - Will download PEP from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:05,864 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PFE']
+2025-09-24 20:33:06,041 - INFO - query execution done
+2025-09-24 20:33:06,042 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,042 - INFO - No existing data found for PFE
+2025-09-24 20:33:06,042 - INFO - No existing data for PFE, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:06,042 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PG']
+2025-09-24 20:33:06,207 - INFO - query execution done
+2025-09-24 20:33:06,207 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,208 - INFO - Max date for PG: 2025-09-19
+2025-09-24 20:33:06,208 - INFO - Will download PG from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:06,208 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PHG']
+2025-09-24 20:33:06,374 - INFO - query execution done
+2025-09-24 20:33:06,374 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,374 - INFO - No existing data found for PHG
+2025-09-24 20:33:06,374 - INFO - No existing data for PHG, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:06,374 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PLD']
+2025-09-24 20:33:06,511 - INFO - query execution done
+2025-09-24 20:33:06,511 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,511 - INFO - Max date for PLD: 2025-09-19
+2025-09-24 20:33:06,512 - INFO - Will download PLD from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:06,512 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PM']
+2025-09-24 20:33:06,648 - INFO - query execution done
+2025-09-24 20:33:06,649 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,649 - INFO - Max date for PM: 2025-09-19
+2025-09-24 20:33:06,650 - INFO - Will download PM from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:06,650 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSA']
+2025-09-24 20:33:06,802 - INFO - query execution done
+2025-09-24 20:33:06,802 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,802 - INFO - Max date for PSA: 2025-09-19
+2025-09-24 20:33:06,802 - INFO - Will download PSA from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:06,802 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'PSX']
+2025-09-24 20:33:06,930 - INFO - query execution done
+2025-09-24 20:33:06,930 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:06,931 - INFO - Max date for PSX: 2025-09-19
+2025-09-24 20:33:06,931 - INFO - Will download PSX from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:06,931 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'RTX']
+2025-09-24 20:33:07,060 - INFO - query execution done
+2025-09-24 20:33:07,061 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,061 - INFO - Max date for RTX: 2025-09-19
+2025-09-24 20:33:07,061 - INFO - Will download RTX from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:07,061 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SBUX']
+2025-09-24 20:33:07,200 - INFO - query execution done
+2025-09-24 20:33:07,200 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,201 - INFO - Max date for SBUX: 2025-09-19
+2025-09-24 20:33:07,201 - INFO - Will download SBUX from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:07,201 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SHW']
+2025-09-24 20:33:07,327 - INFO - query execution done
+2025-09-24 20:33:07,327 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,328 - INFO - Max date for SHW: 2025-09-19
+2025-09-24 20:33:07,328 - INFO - Will download SHW from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:07,328 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SJM']
+2025-09-24 20:33:07,492 - INFO - query execution done
+2025-09-24 20:33:07,493 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,493 - INFO - No existing data found for SJM
+2025-09-24 20:33:07,493 - INFO - No existing data for SJM, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:07,493 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SLB']
+2025-09-24 20:33:07,633 - INFO - query execution done
+2025-09-24 20:33:07,634 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,634 - INFO - Max date for SLB: 2025-09-19
+2025-09-24 20:33:07,634 - INFO - Will download SLB from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:07,634 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SO']
+2025-09-24 20:33:07,779 - INFO - query execution done
+2025-09-24 20:33:07,875 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:07,875 - INFO - Max date for SO: 2025-09-19
+2025-09-24 20:33:07,875 - INFO - Will download SO from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:07,875 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPG']
+2025-09-24 20:33:08,008 - INFO - query execution done
+2025-09-24 20:33:08,008 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,008 - INFO - Max date for SPG: 2025-09-19
+2025-09-24 20:33:08,008 - INFO - Will download SPG from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,008 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SPGI']
+2025-09-24 20:33:08,136 - INFO - query execution done
+2025-09-24 20:33:08,136 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,136 - INFO - Max date for SPGI: 2025-09-19
+2025-09-24 20:33:08,136 - INFO - Will download SPGI from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,136 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'SRE']
+2025-09-24 20:33:08,319 - INFO - query execution done
+2025-09-24 20:33:08,320 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,320 - INFO - Max date for SRE: 2025-09-19
+2025-09-24 20:33:08,320 - INFO - Will download SRE from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,320 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'T']
+2025-09-24 20:33:08,489 - INFO - query execution done
+2025-09-24 20:33:08,489 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,490 - INFO - Max date for T: 2025-09-19
+2025-09-24 20:33:08,490 - INFO - Will download T from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,490 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TGT']
+2025-09-24 20:33:08,620 - INFO - query execution done
+2025-09-24 20:33:08,620 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,620 - INFO - Max date for TGT: 2025-09-19
+2025-09-24 20:33:08,621 - INFO - Will download TGT from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,621 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TJX']
+2025-09-24 20:33:08,754 - INFO - query execution done
+2025-09-24 20:33:08,754 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,754 - INFO - Max date for TJX: 2025-09-19
+2025-09-24 20:33:08,755 - INFO - Will download TJX from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,755 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMO']
+2025-09-24 20:33:08,888 - INFO - query execution done
+2025-09-24 20:33:08,889 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:08,889 - INFO - Max date for TMO: 2025-09-19
+2025-09-24 20:33:08,890 - INFO - Will download TMO from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:08,890 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TMUS']
+2025-09-24 20:33:09,062 - INFO - query execution done
+2025-09-24 20:33:09,063 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,063 - INFO - Max date for TMUS: 2025-09-19
+2025-09-24 20:33:09,063 - INFO - Will download TMUS from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,063 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TSLA']
+2025-09-24 20:33:09,210 - INFO - query execution done
+2025-09-24 20:33:09,210 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,211 - INFO - Max date for TSLA: 2025-09-19
+2025-09-24 20:33:09,211 - INFO - Will download TSLA from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,211 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'TTD']
+2025-09-24 20:33:09,409 - INFO - query execution done
+2025-09-24 20:33:09,409 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,409 - INFO - Max date for TTD: 2025-09-19
+2025-09-24 20:33:09,410 - INFO - Will download TTD from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,410 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UBER']
+2025-09-24 20:33:09,542 - INFO - query execution done
+2025-09-24 20:33:09,542 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,543 - INFO - Max date for UBER: 2025-09-19
+2025-09-24 20:33:09,543 - INFO - Will download UBER from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,543 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNH']
+2025-09-24 20:33:09,685 - INFO - query execution done
+2025-09-24 20:33:09,685 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,685 - INFO - Max date for UNH: 2025-09-19
+2025-09-24 20:33:09,685 - INFO - Will download UNH from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,685 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'UNP']
+2025-09-24 20:33:09,814 - INFO - query execution done
+2025-09-24 20:33:09,814 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:09,814 - INFO - Max date for UNP: 2025-09-19
+2025-09-24 20:33:09,814 - INFO - Will download UNP from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:09,814 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'V']
+2025-09-24 20:33:09,999 - INFO - query execution done
+2025-09-24 20:33:09,999 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,000 - INFO - Max date for V: 2025-09-19
+2025-09-24 20:33:10,000 - INFO - Will download V from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,000 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VMC']
+2025-09-24 20:33:10,135 - INFO - query execution done
+2025-09-24 20:33:10,135 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,135 - INFO - Max date for VMC: 2025-09-19
+2025-09-24 20:33:10,136 - INFO - Will download VMC from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,136 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VOO']
+2025-09-24 20:33:10,321 - INFO - query execution done
+2025-09-24 20:33:10,321 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,321 - INFO - Max date for VOO: 2025-09-19
+2025-09-24 20:33:10,322 - INFO - Will download VOO from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,322 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VST']
+2025-09-24 20:33:10,498 - INFO - query execution done
+2025-09-24 20:33:10,498 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,499 - INFO - Max date for VST: 2025-09-19
+2025-09-24 20:33:10,499 - INFO - Will download VST from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,499 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'VZ']
+2025-09-24 20:33:10,630 - INFO - query execution done
+2025-09-24 20:33:10,630 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,630 - INFO - Max date for VZ: 2025-09-19
+2025-09-24 20:33:10,630 - INFO - Will download VZ from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,630 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WELL']
+2025-09-24 20:33:10,760 - INFO - query execution done
+2025-09-24 20:33:10,760 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,760 - INFO - Max date for WELL: 2025-09-19
+2025-09-24 20:33:10,761 - INFO - Will download WELL from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,761 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WFC']
+2025-09-24 20:33:10,904 - INFO - query execution done
+2025-09-24 20:33:10,904 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:10,905 - INFO - Max date for WFC: 2025-09-19
+2025-09-24 20:33:10,905 - INFO - Will download WFC from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:10,905 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WHR']
+2025-09-24 20:33:11,077 - INFO - query execution done
+2025-09-24 20:33:11,077 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:11,077 - INFO - No existing data found for WHR
+2025-09-24 20:33:11,078 - INFO - No existing data for WHR, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:11,078 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMB']
+2025-09-24 20:33:11,211 - INFO - query execution done
+2025-09-24 20:33:11,211 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:11,212 - INFO - Max date for WMB: 2025-09-19
+2025-09-24 20:33:11,212 - INFO - Will download WMB from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:11,212 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'WMT']
+2025-09-24 20:33:11,371 - INFO - query execution done
+2025-09-24 20:33:11,372 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:11,372 - INFO - Max date for WMT: 2025-09-19
+2025-09-24 20:33:11,372 - INFO - Will download WMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:11,372 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'XOM']
+2025-09-24 20:33:11,501 - INFO - query execution done
+2025-09-24 20:33:11,501 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:11,501 - INFO - Max date for XOM: 2025-09-19
+2025-09-24 20:33:11,501 - INFO - Will download XOM from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:11,501 - INFO - query: [SELECT MAX(OHLC_DATE) FROM sp500_top10_sector_ohlcv_itbl WHERE TICKER = 'ZBH']
+2025-09-24 20:33:11,697 - INFO - query execution done
+2025-09-24 20:33:11,697 - INFO - Number of results in first chunk: 1
+2025-09-24 20:33:11,697 - INFO - No existing data found for ZBH
+2025-09-24 20:33:11,697 - INFO - No existing data for ZBH, will download from 2023-09-25 to 2025-09-23
+2025-09-24 20:33:11,698 - INFO - Found 122 tickers that need data updates
+2025-09-24 20:33:11,698 - INFO - Found 122 tickers that need data updates
+2025-09-24 20:33:11,698 - INFO - Step 2: Initializing S3 client...
+2025-09-24 20:33:11,710 - INFO - Found credentials in shared credentials file: /Users/prajagopal/.aws/credentials
+2025-09-24 20:33:12,194 - INFO - S3 client initialized successfully for bucket: sp500-top-10-sector-leaders-ohlcv-s3bkt
+2025-09-24 20:33:12,194 - INFO - Step 3: Processing tickers with incremental data...
+2025-09-24 20:33:12,194 - INFO - Processing ticker 1/122: AAPL
+2025-09-24 20:33:12,194 - INFO - Starting processing for ticker: AAPL (2025-09-20 to 2025-09-23)
+2025-09-24 20:33:12,194 - INFO - Fetching data for AAPL from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:12,482 - INFO - Successfully retrieved 2 records for AAPL
+2025-09-24 20:33:12,563 - INFO - Processed 2 records for AAPL in 2025-09
+2025-09-24 20:33:12,571 - INFO - Created Parquet file: AAPL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:33:12,644 - INFO - Successfully uploaded AAPL_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:33:12,644 - INFO - Cleaned up local file: AAPL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:33:12,644 - INFO - Completed processing AAPL: 1/1 files successful
+2025-09-24 20:33:12,644 - INFO - ✓ Successfully processed AAPL
+2025-09-24 20:33:12,644 - INFO - Processing ticker 2/122: ABBV
+2025-09-24 20:33:12,644 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:25,145 - INFO - Starting processing for ticker: ABBV (2025-09-20 to 2025-09-23)
+2025-09-24 20:33:25,145 - INFO - Fetching data for ABBV from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:25,447 - INFO - Successfully retrieved 2 records for ABBV
+2025-09-24 20:33:25,457 - INFO - Processed 2 records for ABBV in 2025-09
+2025-09-24 20:33:25,458 - INFO - Created Parquet file: ABBV_2025-09-22_2025-09-23.parquet
+2025-09-24 20:33:25,651 - INFO - Successfully uploaded ABBV_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:33:25,652 - INFO - Cleaned up local file: ABBV_2025-09-22_2025-09-23.parquet
+2025-09-24 20:33:25,652 - INFO - Completed processing ABBV: 1/1 files successful
+2025-09-24 20:33:25,652 - INFO - ✓ Successfully processed ABBV
+2025-09-24 20:33:25,652 - INFO - Processing ticker 3/122: ABT
+2025-09-24 20:33:25,652 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:38,157 - INFO - Starting processing for ticker: ABT (2025-09-20 to 2025-09-23)
+2025-09-24 20:33:38,160 - INFO - Fetching data for ABT from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:38,454 - ERROR - Failed to fetch data for ABT: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ABT/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:33:38,455 - WARNING - No data retrieved for ABT
+2025-09-24 20:33:38,456 - ERROR - ✗ Failed to process ABT
+2025-09-24 20:33:38,457 - INFO - Processing ticker 4/122: ACN
+2025-09-24 20:33:38,457 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:33:50,962 - INFO - Starting processing for ticker: ACN (2025-09-20 to 2025-09-23)
+2025-09-24 20:33:50,963 - INFO - Fetching data for ACN from 2025-09-20 to 2025-09-23
+2025-09-24 20:33:51,244 - ERROR - Failed to fetch data for ACN: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ACN/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:33:51,245 - WARNING - No data retrieved for ACN
+2025-09-24 20:33:51,246 - ERROR - ✗ Failed to process ACN
+2025-09-24 20:33:51,246 - INFO - Processing ticker 5/122: ADBE
+2025-09-24 20:33:51,247 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:03,751 - INFO - Starting processing for ticker: ADBE (2025-09-20 to 2025-09-23)
+2025-09-24 20:34:03,752 - INFO - Fetching data for ADBE from 2025-09-20 to 2025-09-23
+2025-09-24 20:34:04,043 - INFO - Successfully retrieved 2 records for ADBE
+2025-09-24 20:34:04,055 - INFO - Processed 2 records for ADBE in 2025-09
+2025-09-24 20:34:04,060 - INFO - Created Parquet file: ADBE_2025-09-22_2025-09-23.parquet
+2025-09-24 20:34:04,436 - INFO - Successfully uploaded ADBE_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:34:04,437 - INFO - Cleaned up local file: ADBE_2025-09-22_2025-09-23.parquet
+2025-09-24 20:34:04,437 - INFO - Completed processing ADBE: 1/1 files successful
+2025-09-24 20:34:04,437 - INFO - ✓ Successfully processed ADBE
+2025-09-24 20:34:04,437 - INFO - Processing ticker 6/122: ADP
+2025-09-24 20:34:04,437 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:16,942 - INFO - Starting processing for ticker: ADP (2025-09-20 to 2025-09-23)
+2025-09-24 20:34:16,943 - INFO - Fetching data for ADP from 2025-09-20 to 2025-09-23
+2025-09-24 20:34:17,313 - INFO - Successfully retrieved 2 records for ADP
+2025-09-24 20:34:17,318 - INFO - Processed 2 records for ADP in 2025-09
+2025-09-24 20:34:17,321 - INFO - Created Parquet file: ADP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:34:17,627 - INFO - Successfully uploaded ADP_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:34:17,627 - INFO - Cleaned up local file: ADP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:34:17,627 - INFO - Completed processing ADP: 1/1 files successful
+2025-09-24 20:34:17,628 - INFO - ✓ Successfully processed ADP
+2025-09-24 20:34:17,628 - INFO - Processing ticker 7/122: AEP
+2025-09-24 20:34:17,628 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:30,133 - INFO - Starting processing for ticker: AEP (2025-09-20 to 2025-09-23)
+2025-09-24 20:34:30,134 - INFO - Fetching data for AEP from 2025-09-20 to 2025-09-23
+2025-09-24 20:34:30,456 - ERROR - Failed to fetch data for AEP: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/AEP/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:34:30,457 - WARNING - No data retrieved for AEP
+2025-09-24 20:34:30,457 - ERROR - ✗ Failed to process AEP
+2025-09-24 20:34:30,458 - INFO - Processing ticker 8/122: AES
+2025-09-24 20:34:30,458 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:42,960 - INFO - Starting processing for ticker: AES (2023-09-25 to 2025-09-23)
+2025-09-24 20:34:42,961 - INFO - Fetching data for AES from 2023-09-25 to 2025-09-23
+2025-09-24 20:34:43,275 - ERROR - Failed to fetch data for AES: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/AES/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:34:43,276 - WARNING - No data retrieved for AES
+2025-09-24 20:34:43,276 - ERROR - ✗ Failed to process AES
+2025-09-24 20:34:43,276 - INFO - Processing ticker 9/122: AMD
+2025-09-24 20:34:43,276 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:34:55,779 - INFO - Starting processing for ticker: AMD (2025-09-20 to 2025-09-23)
+2025-09-24 20:34:55,780 - INFO - Fetching data for AMD from 2025-09-20 to 2025-09-23
+2025-09-24 20:34:56,116 - ERROR - Failed to fetch data for AMD: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/AMD/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:34:56,117 - WARNING - No data retrieved for AMD
+2025-09-24 20:34:56,117 - ERROR - ✗ Failed to process AMD
+2025-09-24 20:34:56,117 - INFO - Processing ticker 10/122: AMGN
+2025-09-24 20:34:56,117 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:08,622 - INFO - Starting processing for ticker: AMGN (2025-09-20 to 2025-09-23)
+2025-09-24 20:35:08,623 - INFO - Fetching data for AMGN from 2025-09-20 to 2025-09-23
+2025-09-24 20:35:08,928 - INFO - Successfully retrieved 2 records for AMGN
+2025-09-24 20:35:08,935 - INFO - Processed 2 records for AMGN in 2025-09
+2025-09-24 20:35:08,941 - INFO - Created Parquet file: AMGN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:35:09,359 - INFO - Successfully uploaded AMGN_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:35:09,359 - INFO - Cleaned up local file: AMGN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:35:09,360 - INFO - Completed processing AMGN: 1/1 files successful
+2025-09-24 20:35:09,360 - INFO - ✓ Successfully processed AMGN
+2025-09-24 20:35:09,360 - INFO - Processing ticker 11/122: AMT
+2025-09-24 20:35:09,360 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:21,862 - INFO - Starting processing for ticker: AMT (2025-09-20 to 2025-09-23)
+2025-09-24 20:35:21,864 - INFO - Fetching data for AMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:35:22,159 - INFO - Successfully retrieved 2 records for AMT
+2025-09-24 20:35:22,165 - INFO - Processed 2 records for AMT in 2025-09
+2025-09-24 20:35:22,170 - INFO - Created Parquet file: AMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:35:22,457 - INFO - Successfully uploaded AMT_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:35:22,458 - INFO - Cleaned up local file: AMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:35:22,459 - INFO - Completed processing AMT: 1/1 files successful
+2025-09-24 20:35:22,459 - INFO - ✓ Successfully processed AMT
+2025-09-24 20:35:22,459 - INFO - Processing ticker 12/122: AMZN
+2025-09-24 20:35:22,459 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:34,965 - INFO - Starting processing for ticker: AMZN (2025-09-20 to 2025-09-23)
+2025-09-24 20:35:34,968 - INFO - Fetching data for AMZN from 2025-09-20 to 2025-09-23
+2025-09-24 20:35:35,271 - ERROR - Failed to fetch data for AMZN: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/AMZN/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:35:35,271 - WARNING - No data retrieved for AMZN
+2025-09-24 20:35:35,272 - ERROR - ✗ Failed to process AMZN
+2025-09-24 20:35:35,272 - INFO - Processing ticker 13/122: APD
+2025-09-24 20:35:35,272 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:35:47,777 - INFO - Starting processing for ticker: APD (2025-09-20 to 2025-09-23)
+2025-09-24 20:35:47,779 - INFO - Fetching data for APD from 2025-09-20 to 2025-09-23
+2025-09-24 20:35:48,086 - ERROR - Failed to fetch data for APD: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/APD/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:35:48,086 - WARNING - No data retrieved for APD
+2025-09-24 20:35:48,087 - ERROR - ✗ Failed to process APD
+2025-09-24 20:35:48,087 - INFO - Processing ticker 14/122: AVGO
+2025-09-24 20:35:48,087 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:00,591 - INFO - Starting processing for ticker: AVGO (2025-09-20 to 2025-09-23)
+2025-09-24 20:36:00,591 - INFO - Fetching data for AVGO from 2025-09-20 to 2025-09-23
+2025-09-24 20:36:00,901 - INFO - Successfully retrieved 2 records for AVGO
+2025-09-24 20:36:00,916 - INFO - Processed 2 records for AVGO in 2025-09
+2025-09-24 20:36:00,921 - INFO - Created Parquet file: AVGO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:01,233 - INFO - Successfully uploaded AVGO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:36:01,233 - INFO - Cleaned up local file: AVGO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:01,233 - INFO - Completed processing AVGO: 1/1 files successful
+2025-09-24 20:36:01,234 - INFO - ✓ Successfully processed AVGO
+2025-09-24 20:36:01,234 - INFO - Processing ticker 15/122: AXP
+2025-09-24 20:36:01,234 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:13,737 - INFO - Starting processing for ticker: AXP (2025-09-20 to 2025-09-23)
+2025-09-24 20:36:13,737 - INFO - Fetching data for AXP from 2025-09-20 to 2025-09-23
+2025-09-24 20:36:14,074 - INFO - Successfully retrieved 2 records for AXP
+2025-09-24 20:36:14,081 - INFO - Processed 2 records for AXP in 2025-09
+2025-09-24 20:36:14,086 - INFO - Created Parquet file: AXP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:14,427 - INFO - Successfully uploaded AXP_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:36:14,427 - INFO - Cleaned up local file: AXP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:14,427 - INFO - Completed processing AXP: 1/1 files successful
+2025-09-24 20:36:14,428 - INFO - ✓ Successfully processed AXP
+2025-09-24 20:36:14,428 - INFO - Processing ticker 16/122: BA
+2025-09-24 20:36:14,428 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:26,934 - INFO - Starting processing for ticker: BA (2025-09-20 to 2025-09-23)
+2025-09-24 20:36:26,937 - INFO - Fetching data for BA from 2025-09-20 to 2025-09-23
+2025-09-24 20:36:27,243 - INFO - Successfully retrieved 2 records for BA
+2025-09-24 20:36:27,265 - INFO - Processed 2 records for BA in 2025-09
+2025-09-24 20:36:27,268 - INFO - Created Parquet file: BA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:27,569 - INFO - Successfully uploaded BA_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:36:27,570 - INFO - Cleaned up local file: BA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:36:27,570 - INFO - Completed processing BA: 1/1 files successful
+2025-09-24 20:36:27,570 - INFO - ✓ Successfully processed BA
+2025-09-24 20:36:27,570 - INFO - Processing ticker 17/122: BAC
+2025-09-24 20:36:27,570 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:40,074 - INFO - Starting processing for ticker: BAC (2025-09-20 to 2025-09-23)
+2025-09-24 20:36:40,075 - INFO - Fetching data for BAC from 2025-09-20 to 2025-09-23
+2025-09-24 20:36:40,367 - ERROR - Failed to fetch data for BAC: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/BAC/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:36:40,367 - WARNING - No data retrieved for BAC
+2025-09-24 20:36:40,368 - ERROR - ✗ Failed to process BAC
+2025-09-24 20:36:40,368 - INFO - Processing ticker 18/122: BKNG
+2025-09-24 20:36:40,368 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:36:52,871 - INFO - Starting processing for ticker: BKNG (2025-09-20 to 2025-09-23)
+2025-09-24 20:36:52,872 - INFO - Fetching data for BKNG from 2025-09-20 to 2025-09-23
+2025-09-24 20:36:53,206 - ERROR - Failed to fetch data for BKNG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/BKNG/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:36:53,207 - WARNING - No data retrieved for BKNG
+2025-09-24 20:36:53,207 - ERROR - ✗ Failed to process BKNG
+2025-09-24 20:36:53,207 - INFO - Processing ticker 19/122: BLK
+2025-09-24 20:36:53,208 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:05,710 - INFO - Starting processing for ticker: BLK (2025-09-20 to 2025-09-23)
+2025-09-24 20:37:05,711 - INFO - Fetching data for BLK from 2025-09-20 to 2025-09-23
+2025-09-24 20:37:06,106 - INFO - Successfully retrieved 2 records for BLK
+2025-09-24 20:37:06,120 - INFO - Processed 2 records for BLK in 2025-09
+2025-09-24 20:37:06,136 - INFO - Created Parquet file: BLK_2025-09-22_2025-09-23.parquet
+2025-09-24 20:37:06,459 - INFO - Successfully uploaded BLK_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:37:06,459 - INFO - Cleaned up local file: BLK_2025-09-22_2025-09-23.parquet
+2025-09-24 20:37:06,459 - INFO - Completed processing BLK: 1/1 files successful
+2025-09-24 20:37:06,459 - INFO - ✓ Successfully processed BLK
+2025-09-24 20:37:06,460 - INFO - Processing ticker 20/122: BRK.B
+2025-09-24 20:37:06,460 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:18,965 - INFO - Starting processing for ticker: BRK.B (2025-09-20 to 2025-09-23)
+2025-09-24 20:37:18,965 - INFO - Fetching data for BRK.B from 2025-09-20 to 2025-09-23
+2025-09-24 20:37:19,270 - INFO - Successfully retrieved 2 records for BRK.B
+2025-09-24 20:37:19,280 - INFO - Processed 2 records for BRK.B in 2025-09
+2025-09-24 20:37:19,286 - INFO - Created Parquet file: BRK.B_2025-09-22_2025-09-23.parquet
+2025-09-24 20:37:19,604 - INFO - Successfully uploaded BRK.B_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:37:19,605 - INFO - Cleaned up local file: BRK.B_2025-09-22_2025-09-23.parquet
+2025-09-24 20:37:19,605 - INFO - Completed processing BRK.B: 1/1 files successful
+2025-09-24 20:37:19,605 - INFO - ✓ Successfully processed BRK.B
+2025-09-24 20:37:19,605 - INFO - Processing ticker 21/122: CAT
+2025-09-24 20:37:19,606 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:32,106 - INFO - Starting processing for ticker: CAT (2025-09-20 to 2025-09-23)
+2025-09-24 20:37:32,106 - INFO - Fetching data for CAT from 2025-09-20 to 2025-09-23
+2025-09-24 20:37:32,390 - ERROR - Failed to fetch data for CAT: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CAT/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:37:32,391 - WARNING - No data retrieved for CAT
+2025-09-24 20:37:32,391 - ERROR - ✗ Failed to process CAT
+2025-09-24 20:37:32,391 - INFO - Processing ticker 22/122: CBRE
+2025-09-24 20:37:32,391 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:44,897 - INFO - Starting processing for ticker: CBRE (2025-09-20 to 2025-09-23)
+2025-09-24 20:37:44,897 - INFO - Fetching data for CBRE from 2025-09-20 to 2025-09-23
+2025-09-24 20:37:45,181 - ERROR - Failed to fetch data for CBRE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CBRE/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:37:45,181 - WARNING - No data retrieved for CBRE
+2025-09-24 20:37:45,181 - ERROR - ✗ Failed to process CBRE
+2025-09-24 20:37:45,181 - INFO - Processing ticker 23/122: CCI
+2025-09-24 20:37:45,182 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:37:57,684 - INFO - Starting processing for ticker: CCI (2025-09-20 to 2025-09-23)
+2025-09-24 20:37:57,685 - INFO - Fetching data for CCI from 2025-09-20 to 2025-09-23
+2025-09-24 20:37:57,968 - ERROR - Failed to fetch data for CCI: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CCI/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:37:57,969 - WARNING - No data retrieved for CCI
+2025-09-24 20:37:57,969 - ERROR - ✗ Failed to process CCI
+2025-09-24 20:37:57,970 - INFO - Processing ticker 24/122: CEG
+2025-09-24 20:37:57,970 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:10,473 - INFO - Starting processing for ticker: CEG (2025-09-20 to 2025-09-23)
+2025-09-24 20:38:10,476 - INFO - Fetching data for CEG from 2025-09-20 to 2025-09-23
+2025-09-24 20:38:10,789 - INFO - Successfully retrieved 2 records for CEG
+2025-09-24 20:38:10,801 - INFO - Processed 2 records for CEG in 2025-09
+2025-09-24 20:38:10,805 - INFO - Created Parquet file: CEG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:38:11,195 - INFO - Successfully uploaded CEG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:38:11,196 - INFO - Cleaned up local file: CEG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:38:11,196 - INFO - Completed processing CEG: 1/1 files successful
+2025-09-24 20:38:11,196 - INFO - ✓ Successfully processed CEG
+2025-09-24 20:38:11,196 - INFO - Processing ticker 25/122: CL
+2025-09-24 20:38:11,196 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:23,699 - INFO - Starting processing for ticker: CL (2025-09-20 to 2025-09-23)
+2025-09-24 20:38:23,702 - INFO - Fetching data for CL from 2025-09-20 to 2025-09-23
+2025-09-24 20:38:24,019 - INFO - Successfully retrieved 2 records for CL
+2025-09-24 20:38:24,024 - INFO - Processed 2 records for CL in 2025-09
+2025-09-24 20:38:24,028 - INFO - Created Parquet file: CL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:38:24,227 - INFO - Successfully uploaded CL_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:38:24,228 - INFO - Cleaned up local file: CL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:38:24,228 - INFO - Completed processing CL: 1/1 files successful
+2025-09-24 20:38:24,228 - INFO - ✓ Successfully processed CL
+2025-09-24 20:38:24,228 - INFO - Processing ticker 26/122: CLX
+2025-09-24 20:38:24,228 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:36,730 - INFO - Starting processing for ticker: CLX (2023-09-25 to 2025-09-23)
+2025-09-24 20:38:36,731 - INFO - Fetching data for CLX from 2023-09-25 to 2025-09-23
+2025-09-24 20:38:37,017 - ERROR - Failed to fetch data for CLX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CLX/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:38:37,018 - WARNING - No data retrieved for CLX
+2025-09-24 20:38:37,018 - ERROR - ✗ Failed to process CLX
+2025-09-24 20:38:37,019 - INFO - Processing ticker 27/122: CMCSA
+2025-09-24 20:38:37,019 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:38:49,524 - INFO - Starting processing for ticker: CMCSA (2025-09-20 to 2025-09-23)
+2025-09-24 20:38:49,525 - INFO - Fetching data for CMCSA from 2025-09-20 to 2025-09-23
+2025-09-24 20:38:49,820 - ERROR - Failed to fetch data for CMCSA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CMCSA/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:38:49,821 - WARNING - No data retrieved for CMCSA
+2025-09-24 20:38:49,821 - ERROR - ✗ Failed to process CMCSA
+2025-09-24 20:38:49,821 - INFO - Processing ticker 28/122: COP
+2025-09-24 20:38:49,821 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:02,326 - INFO - Starting processing for ticker: COP (2025-09-20 to 2025-09-23)
+2025-09-24 20:39:02,327 - INFO - Fetching data for COP from 2025-09-20 to 2025-09-23
+2025-09-24 20:39:02,630 - INFO - Successfully retrieved 2 records for COP
+2025-09-24 20:39:02,638 - INFO - Processed 2 records for COP in 2025-09
+2025-09-24 20:39:02,643 - INFO - Created Parquet file: COP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:39:03,022 - INFO - Successfully uploaded COP_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:39:03,023 - INFO - Cleaned up local file: COP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:39:03,023 - INFO - Completed processing COP: 1/1 files successful
+2025-09-24 20:39:03,024 - INFO - ✓ Successfully processed COP
+2025-09-24 20:39:03,024 - INFO - Processing ticker 29/122: COST
+2025-09-24 20:39:03,024 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:15,527 - INFO - Starting processing for ticker: COST (2025-09-20 to 2025-09-23)
+2025-09-24 20:39:15,528 - INFO - Fetching data for COST from 2025-09-20 to 2025-09-23
+2025-09-24 20:39:15,837 - INFO - Successfully retrieved 2 records for COST
+2025-09-24 20:39:15,842 - INFO - Processed 2 records for COST in 2025-09
+2025-09-24 20:39:15,845 - INFO - Created Parquet file: COST_2025-09-22_2025-09-23.parquet
+2025-09-24 20:39:16,205 - INFO - Successfully uploaded COST_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:39:16,206 - INFO - Cleaned up local file: COST_2025-09-22_2025-09-23.parquet
+2025-09-24 20:39:16,206 - INFO - Completed processing COST: 1/1 files successful
+2025-09-24 20:39:16,206 - INFO - ✓ Successfully processed COST
+2025-09-24 20:39:16,206 - INFO - Processing ticker 30/122: CPB
+2025-09-24 20:39:16,206 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:28,709 - INFO - Starting processing for ticker: CPB (2023-09-25 to 2025-09-23)
+2025-09-24 20:39:28,709 - INFO - Fetching data for CPB from 2023-09-25 to 2025-09-23
+2025-09-24 20:39:29,066 - INFO - Successfully retrieved 501 records for CPB
+2025-09-24 20:39:29,084 - INFO - Processed 5 records for CPB in 2023-09
+2025-09-24 20:39:29,085 - INFO - Processed 22 records for CPB in 2023-10
+2025-09-24 20:39:29,086 - INFO - Processed 21 records for CPB in 2023-11
+2025-09-24 20:39:29,086 - INFO - Processed 20 records for CPB in 2023-12
+2025-09-24 20:39:29,086 - INFO - Processed 21 records for CPB in 2024-01
+2025-09-24 20:39:29,086 - INFO - Processed 20 records for CPB in 2024-02
+2025-09-24 20:39:29,087 - INFO - Processed 20 records for CPB in 2024-03
+2025-09-24 20:39:29,087 - INFO - Processed 22 records for CPB in 2024-04
+2025-09-24 20:39:29,087 - INFO - Processed 22 records for CPB in 2024-05
+2025-09-24 20:39:29,087 - INFO - Processed 19 records for CPB in 2024-06
+2025-09-24 20:39:29,087 - INFO - Processed 22 records for CPB in 2024-07
+2025-09-24 20:39:29,087 - INFO - Processed 22 records for CPB in 2024-08
+2025-09-24 20:39:29,088 - INFO - Processed 20 records for CPB in 2024-09
+2025-09-24 20:39:29,088 - INFO - Processed 23 records for CPB in 2024-10
+2025-09-24 20:39:29,088 - INFO - Processed 20 records for CPB in 2024-11
+2025-09-24 20:39:29,088 - INFO - Processed 21 records for CPB in 2024-12
+2025-09-24 20:39:29,088 - INFO - Processed 20 records for CPB in 2025-01
+2025-09-24 20:39:29,088 - INFO - Processed 19 records for CPB in 2025-02
+2025-09-24 20:39:29,089 - INFO - Processed 21 records for CPB in 2025-03
+2025-09-24 20:39:29,089 - INFO - Processed 21 records for CPB in 2025-04
+2025-09-24 20:39:29,089 - INFO - Processed 21 records for CPB in 2025-05
+2025-09-24 20:39:29,089 - INFO - Processed 20 records for CPB in 2025-06
+2025-09-24 20:39:29,089 - INFO - Processed 22 records for CPB in 2025-07
+2025-09-24 20:39:29,090 - INFO - Processed 21 records for CPB in 2025-08
+2025-09-24 20:39:29,090 - INFO - Processed 16 records for CPB in 2025-09
+2025-09-24 20:39:29,093 - INFO - Created Parquet file: CPB_2023-09-25_2023-09-29.parquet
+2025-09-24 20:39:29,412 - INFO - Successfully uploaded CPB_2023-09-25_2023-09-29.parquet to S3 bucket root
+2025-09-24 20:39:29,413 - INFO - Cleaned up local file: CPB_2023-09-25_2023-09-29.parquet
+2025-09-24 20:39:29,419 - INFO - Created Parquet file: CPB_2023-10-02_2023-10-31.parquet
+2025-09-24 20:39:29,517 - INFO - Successfully uploaded CPB_2023-10-02_2023-10-31.parquet to S3 bucket root
+2025-09-24 20:39:29,518 - INFO - Cleaned up local file: CPB_2023-10-02_2023-10-31.parquet
+2025-09-24 20:39:29,521 - INFO - Created Parquet file: CPB_2023-11-01_2023-11-30.parquet
+2025-09-24 20:39:29,588 - INFO - Successfully uploaded CPB_2023-11-01_2023-11-30.parquet to S3 bucket root
+2025-09-24 20:39:29,589 - INFO - Cleaned up local file: CPB_2023-11-01_2023-11-30.parquet
+2025-09-24 20:39:29,593 - INFO - Created Parquet file: CPB_2023-12-01_2023-12-29.parquet
+2025-09-24 20:39:29,657 - INFO - Successfully uploaded CPB_2023-12-01_2023-12-29.parquet to S3 bucket root
+2025-09-24 20:39:29,657 - INFO - Cleaned up local file: CPB_2023-12-01_2023-12-29.parquet
+2025-09-24 20:39:29,659 - INFO - Created Parquet file: CPB_2024-01-02_2024-01-31.parquet
+2025-09-24 20:39:29,738 - INFO - Successfully uploaded CPB_2024-01-02_2024-01-31.parquet to S3 bucket root
+2025-09-24 20:39:29,738 - INFO - Cleaned up local file: CPB_2024-01-02_2024-01-31.parquet
+2025-09-24 20:39:29,740 - INFO - Created Parquet file: CPB_2024-02-01_2024-02-29.parquet
+2025-09-24 20:39:29,809 - INFO - Successfully uploaded CPB_2024-02-01_2024-02-29.parquet to S3 bucket root
+2025-09-24 20:39:29,810 - INFO - Cleaned up local file: CPB_2024-02-01_2024-02-29.parquet
+2025-09-24 20:39:29,811 - INFO - Created Parquet file: CPB_2024-03-01_2024-03-28.parquet
+2025-09-24 20:39:29,887 - INFO - Successfully uploaded CPB_2024-03-01_2024-03-28.parquet to S3 bucket root
+2025-09-24 20:39:29,887 - INFO - Cleaned up local file: CPB_2024-03-01_2024-03-28.parquet
+2025-09-24 20:39:29,889 - INFO - Created Parquet file: CPB_2024-04-01_2024-04-30.parquet
+2025-09-24 20:39:29,958 - INFO - Successfully uploaded CPB_2024-04-01_2024-04-30.parquet to S3 bucket root
+2025-09-24 20:39:29,959 - INFO - Cleaned up local file: CPB_2024-04-01_2024-04-30.parquet
+2025-09-24 20:39:29,961 - INFO - Created Parquet file: CPB_2024-05-01_2024-05-31.parquet
+2025-09-24 20:39:30,030 - INFO - Successfully uploaded CPB_2024-05-01_2024-05-31.parquet to S3 bucket root
+2025-09-24 20:39:30,030 - INFO - Cleaned up local file: CPB_2024-05-01_2024-05-31.parquet
+2025-09-24 20:39:30,032 - INFO - Created Parquet file: CPB_2024-06-03_2024-06-28.parquet
+2025-09-24 20:39:30,094 - INFO - Successfully uploaded CPB_2024-06-03_2024-06-28.parquet to S3 bucket root
+2025-09-24 20:39:30,095 - INFO - Cleaned up local file: CPB_2024-06-03_2024-06-28.parquet
+2025-09-24 20:39:30,096 - INFO - Created Parquet file: CPB_2024-07-01_2024-07-31.parquet
+2025-09-24 20:39:30,159 - INFO - Successfully uploaded CPB_2024-07-01_2024-07-31.parquet to S3 bucket root
+2025-09-24 20:39:30,159 - INFO - Cleaned up local file: CPB_2024-07-01_2024-07-31.parquet
+2025-09-24 20:39:30,161 - INFO - Created Parquet file: CPB_2024-08-01_2024-08-30.parquet
+2025-09-24 20:39:30,245 - INFO - Successfully uploaded CPB_2024-08-01_2024-08-30.parquet to S3 bucket root
+2025-09-24 20:39:30,245 - INFO - Cleaned up local file: CPB_2024-08-01_2024-08-30.parquet
+2025-09-24 20:39:30,248 - INFO - Created Parquet file: CPB_2024-09-03_2024-09-30.parquet
+2025-09-24 20:39:30,308 - INFO - Successfully uploaded CPB_2024-09-03_2024-09-30.parquet to S3 bucket root
+2025-09-24 20:39:30,308 - INFO - Cleaned up local file: CPB_2024-09-03_2024-09-30.parquet
+2025-09-24 20:39:30,310 - INFO - Created Parquet file: CPB_2024-10-01_2024-10-31.parquet
+2025-09-24 20:39:30,373 - INFO - Successfully uploaded CPB_2024-10-01_2024-10-31.parquet to S3 bucket root
+2025-09-24 20:39:30,373 - INFO - Cleaned up local file: CPB_2024-10-01_2024-10-31.parquet
+2025-09-24 20:39:30,375 - INFO - Created Parquet file: CPB_2024-11-01_2024-11-29.parquet
+2025-09-24 20:39:30,450 - INFO - Successfully uploaded CPB_2024-11-01_2024-11-29.parquet to S3 bucket root
+2025-09-24 20:39:30,450 - INFO - Cleaned up local file: CPB_2024-11-01_2024-11-29.parquet
+2025-09-24 20:39:30,452 - INFO - Created Parquet file: CPB_2024-12-02_2024-12-31.parquet
+2025-09-24 20:39:30,516 - INFO - Successfully uploaded CPB_2024-12-02_2024-12-31.parquet to S3 bucket root
+2025-09-24 20:39:30,516 - INFO - Cleaned up local file: CPB_2024-12-02_2024-12-31.parquet
+2025-09-24 20:39:30,518 - INFO - Created Parquet file: CPB_2025-01-02_2025-01-31.parquet
+2025-09-24 20:39:30,641 - INFO - Successfully uploaded CPB_2025-01-02_2025-01-31.parquet to S3 bucket root
+2025-09-24 20:39:30,641 - INFO - Cleaned up local file: CPB_2025-01-02_2025-01-31.parquet
+2025-09-24 20:39:30,643 - INFO - Created Parquet file: CPB_2025-02-03_2025-02-28.parquet
+2025-09-24 20:39:30,713 - INFO - Successfully uploaded CPB_2025-02-03_2025-02-28.parquet to S3 bucket root
+2025-09-24 20:39:30,713 - INFO - Cleaned up local file: CPB_2025-02-03_2025-02-28.parquet
+2025-09-24 20:39:30,715 - INFO - Created Parquet file: CPB_2025-03-03_2025-03-31.parquet
+2025-09-24 20:39:30,788 - INFO - Successfully uploaded CPB_2025-03-03_2025-03-31.parquet to S3 bucket root
+2025-09-24 20:39:30,788 - INFO - Cleaned up local file: CPB_2025-03-03_2025-03-31.parquet
+2025-09-24 20:39:30,790 - INFO - Created Parquet file: CPB_2025-04-01_2025-04-30.parquet
+2025-09-24 20:39:30,849 - INFO - Successfully uploaded CPB_2025-04-01_2025-04-30.parquet to S3 bucket root
+2025-09-24 20:39:30,849 - INFO - Cleaned up local file: CPB_2025-04-01_2025-04-30.parquet
+2025-09-24 20:39:30,851 - INFO - Created Parquet file: CPB_2025-05-01_2025-05-30.parquet
+2025-09-24 20:39:30,920 - INFO - Successfully uploaded CPB_2025-05-01_2025-05-30.parquet to S3 bucket root
+2025-09-24 20:39:30,920 - INFO - Cleaned up local file: CPB_2025-05-01_2025-05-30.parquet
+2025-09-24 20:39:30,922 - INFO - Created Parquet file: CPB_2025-06-02_2025-06-30.parquet
+2025-09-24 20:39:30,987 - INFO - Successfully uploaded CPB_2025-06-02_2025-06-30.parquet to S3 bucket root
+2025-09-24 20:39:30,987 - INFO - Cleaned up local file: CPB_2025-06-02_2025-06-30.parquet
+2025-09-24 20:39:30,989 - INFO - Created Parquet file: CPB_2025-07-01_2025-07-31.parquet
+2025-09-24 20:39:31,053 - INFO - Successfully uploaded CPB_2025-07-01_2025-07-31.parquet to S3 bucket root
+2025-09-24 20:39:31,053 - INFO - Cleaned up local file: CPB_2025-07-01_2025-07-31.parquet
+2025-09-24 20:39:31,055 - INFO - Created Parquet file: CPB_2025-08-01_2025-08-29.parquet
+2025-09-24 20:39:31,118 - INFO - Successfully uploaded CPB_2025-08-01_2025-08-29.parquet to S3 bucket root
+2025-09-24 20:39:31,118 - INFO - Cleaned up local file: CPB_2025-08-01_2025-08-29.parquet
+2025-09-24 20:39:31,120 - INFO - Created Parquet file: CPB_2025-09-02_2025-09-23.parquet
+2025-09-24 20:39:31,189 - INFO - Successfully uploaded CPB_2025-09-02_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:39:31,190 - INFO - Cleaned up local file: CPB_2025-09-02_2025-09-23.parquet
+2025-09-24 20:39:31,190 - INFO - Completed processing CPB: 25/25 files successful
+2025-09-24 20:39:31,190 - INFO - ✓ Successfully processed CPB
+2025-09-24 20:39:31,190 - INFO - Processing ticker 31/122: CRH
+2025-09-24 20:39:31,190 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:43,695 - INFO - Starting processing for ticker: CRH (2025-09-20 to 2025-09-23)
+2025-09-24 20:39:43,697 - INFO - Fetching data for CRH from 2025-09-20 to 2025-09-23
+2025-09-24 20:39:43,974 - ERROR - Failed to fetch data for CRH: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CRH/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:39:43,975 - WARNING - No data retrieved for CRH
+2025-09-24 20:39:43,975 - ERROR - ✗ Failed to process CRH
+2025-09-24 20:39:43,975 - INFO - Processing ticker 32/122: CRM
+2025-09-24 20:39:43,975 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:39:56,480 - INFO - Starting processing for ticker: CRM (2025-09-20 to 2025-09-23)
+2025-09-24 20:39:56,482 - INFO - Fetching data for CRM from 2025-09-20 to 2025-09-23
+2025-09-24 20:39:56,803 - ERROR - Failed to fetch data for CRM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CRM/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:39:56,804 - WARNING - No data retrieved for CRM
+2025-09-24 20:39:56,805 - ERROR - ✗ Failed to process CRM
+2025-09-24 20:39:56,805 - INFO - Processing ticker 33/122: CSCO
+2025-09-24 20:39:56,806 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:09,311 - INFO - Starting processing for ticker: CSCO (2025-09-20 to 2025-09-23)
+2025-09-24 20:40:09,313 - INFO - Fetching data for CSCO from 2025-09-20 to 2025-09-23
+2025-09-24 20:40:09,719 - INFO - Successfully retrieved 2 records for CSCO
+2025-09-24 20:40:09,745 - INFO - Processed 2 records for CSCO in 2025-09
+2025-09-24 20:40:09,750 - INFO - Created Parquet file: CSCO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:40:10,237 - INFO - Successfully uploaded CSCO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:40:10,238 - INFO - Cleaned up local file: CSCO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:40:10,239 - INFO - Completed processing CSCO: 1/1 files successful
+2025-09-24 20:40:10,239 - INFO - ✓ Successfully processed CSCO
+2025-09-24 20:40:10,239 - INFO - Processing ticker 34/122: CTVA
+2025-09-24 20:40:10,240 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:22,741 - INFO - Starting processing for ticker: CTVA (2025-09-20 to 2025-09-23)
+2025-09-24 20:40:22,742 - INFO - Fetching data for CTVA from 2025-09-20 to 2025-09-23
+2025-09-24 20:40:23,039 - INFO - Successfully retrieved 2 records for CTVA
+2025-09-24 20:40:23,043 - INFO - Processed 2 records for CTVA in 2025-09
+2025-09-24 20:40:23,050 - INFO - Created Parquet file: CTVA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:40:23,313 - INFO - Successfully uploaded CTVA_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:40:23,314 - INFO - Cleaned up local file: CTVA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:40:23,314 - INFO - Completed processing CTVA: 1/1 files successful
+2025-09-24 20:40:23,315 - INFO - ✓ Successfully processed CTVA
+2025-09-24 20:40:23,315 - INFO - Processing ticker 35/122: CVX
+2025-09-24 20:40:23,315 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:35,820 - INFO - Starting processing for ticker: CVX (2025-09-20 to 2025-09-23)
+2025-09-24 20:40:35,821 - INFO - Fetching data for CVX from 2025-09-20 to 2025-09-23
+2025-09-24 20:40:36,190 - ERROR - Failed to fetch data for CVX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/CVX/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:40:36,191 - WARNING - No data retrieved for CVX
+2025-09-24 20:40:36,191 - ERROR - ✗ Failed to process CVX
+2025-09-24 20:40:36,192 - INFO - Processing ticker 36/122: D
+2025-09-24 20:40:36,192 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:40:48,696 - INFO - Starting processing for ticker: D (2025-09-20 to 2025-09-23)
+2025-09-24 20:40:48,698 - INFO - Fetching data for D from 2025-09-20 to 2025-09-23
+2025-09-24 20:40:49,002 - ERROR - Failed to fetch data for D: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/D/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:40:49,002 - WARNING - No data retrieved for D
+2025-09-24 20:40:49,003 - ERROR - ✗ Failed to process D
+2025-09-24 20:40:49,003 - INFO - Processing ticker 37/122: DHR
+2025-09-24 20:40:49,003 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:01,508 - INFO - Starting processing for ticker: DHR (2025-09-20 to 2025-09-23)
+2025-09-24 20:41:01,509 - INFO - Fetching data for DHR from 2025-09-20 to 2025-09-23
+2025-09-24 20:41:01,808 - INFO - Successfully retrieved 2 records for DHR
+2025-09-24 20:41:01,821 - INFO - Processed 2 records for DHR in 2025-09
+2025-09-24 20:41:01,826 - INFO - Created Parquet file: DHR_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:02,158 - INFO - Successfully uploaded DHR_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:41:02,159 - INFO - Cleaned up local file: DHR_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:02,159 - INFO - Completed processing DHR: 1/1 files successful
+2025-09-24 20:41:02,159 - INFO - ✓ Successfully processed DHR
+2025-09-24 20:41:02,159 - INFO - Processing ticker 38/122: DIS
+2025-09-24 20:41:02,159 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:14,657 - INFO - Starting processing for ticker: DIS (2025-09-20 to 2025-09-23)
+2025-09-24 20:41:14,658 - INFO - Fetching data for DIS from 2025-09-20 to 2025-09-23
+2025-09-24 20:41:14,958 - INFO - Successfully retrieved 2 records for DIS
+2025-09-24 20:41:14,965 - INFO - Processed 2 records for DIS in 2025-09
+2025-09-24 20:41:14,969 - INFO - Created Parquet file: DIS_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:15,284 - INFO - Successfully uploaded DIS_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:41:15,285 - INFO - Cleaned up local file: DIS_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:15,285 - INFO - Completed processing DIS: 1/1 files successful
+2025-09-24 20:41:15,285 - INFO - ✓ Successfully processed DIS
+2025-09-24 20:41:15,285 - INFO - Processing ticker 39/122: DLR
+2025-09-24 20:41:15,285 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:27,786 - INFO - Starting processing for ticker: DLR (2025-09-20 to 2025-09-23)
+2025-09-24 20:41:27,787 - INFO - Fetching data for DLR from 2025-09-20 to 2025-09-23
+2025-09-24 20:41:28,082 - INFO - Successfully retrieved 2 records for DLR
+2025-09-24 20:41:28,086 - INFO - Processed 2 records for DLR in 2025-09
+2025-09-24 20:41:28,090 - INFO - Created Parquet file: DLR_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:28,559 - INFO - Successfully uploaded DLR_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:41:28,560 - INFO - Cleaned up local file: DLR_2025-09-22_2025-09-23.parquet
+2025-09-24 20:41:28,560 - INFO - Completed processing DLR: 1/1 files successful
+2025-09-24 20:41:28,561 - INFO - ✓ Successfully processed DLR
+2025-09-24 20:41:28,561 - INFO - Processing ticker 40/122: DUK
+2025-09-24 20:41:28,561 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:41,065 - INFO - Starting processing for ticker: DUK (2025-09-20 to 2025-09-23)
+2025-09-24 20:41:41,067 - INFO - Fetching data for DUK from 2025-09-20 to 2025-09-23
+2025-09-24 20:41:41,354 - ERROR - Failed to fetch data for DUK: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/DUK/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:41:41,355 - WARNING - No data retrieved for DUK
+2025-09-24 20:41:41,355 - ERROR - ✗ Failed to process DUK
+2025-09-24 20:41:41,355 - INFO - Processing ticker 41/122: ECL
+2025-09-24 20:41:41,356 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:41:53,856 - INFO - Starting processing for ticker: ECL (2025-09-20 to 2025-09-23)
+2025-09-24 20:41:53,858 - INFO - Fetching data for ECL from 2025-09-20 to 2025-09-23
+2025-09-24 20:41:54,143 - ERROR - Failed to fetch data for ECL: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/ECL/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:41:54,144 - WARNING - No data retrieved for ECL
+2025-09-24 20:41:54,144 - ERROR - ✗ Failed to process ECL
+2025-09-24 20:41:54,144 - INFO - Processing ticker 42/122: EOG
+2025-09-24 20:41:54,144 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:06,649 - INFO - Starting processing for ticker: EOG (2025-09-20 to 2025-09-23)
+2025-09-24 20:42:06,651 - INFO - Fetching data for EOG from 2025-09-20 to 2025-09-23
+2025-09-24 20:42:06,958 - INFO - Successfully retrieved 2 records for EOG
+2025-09-24 20:42:06,973 - INFO - Processed 2 records for EOG in 2025-09
+2025-09-24 20:42:06,980 - INFO - Created Parquet file: EOG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:07,408 - INFO - Successfully uploaded EOG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:42:07,409 - INFO - Cleaned up local file: EOG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:07,409 - INFO - Completed processing EOG: 1/1 files successful
+2025-09-24 20:42:07,410 - INFO - ✓ Successfully processed EOG
+2025-09-24 20:42:07,410 - INFO - Processing ticker 43/122: EQIX
+2025-09-24 20:42:07,410 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:19,913 - INFO - Starting processing for ticker: EQIX (2025-09-20 to 2025-09-23)
+2025-09-24 20:42:19,914 - INFO - Fetching data for EQIX from 2025-09-20 to 2025-09-23
+2025-09-24 20:42:20,217 - INFO - Successfully retrieved 2 records for EQIX
+2025-09-24 20:42:20,223 - INFO - Processed 2 records for EQIX in 2025-09
+2025-09-24 20:42:20,227 - INFO - Created Parquet file: EQIX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:20,471 - INFO - Successfully uploaded EQIX_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:42:20,471 - INFO - Cleaned up local file: EQIX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:20,471 - INFO - Completed processing EQIX: 1/1 files successful
+2025-09-24 20:42:20,471 - INFO - ✓ Successfully processed EQIX
+2025-09-24 20:42:20,471 - INFO - Processing ticker 44/122: ETN
+2025-09-24 20:42:20,471 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:32,977 - INFO - Starting processing for ticker: ETN (2025-09-20 to 2025-09-23)
+2025-09-24 20:42:32,979 - INFO - Fetching data for ETN from 2025-09-20 to 2025-09-23
+2025-09-24 20:42:33,279 - INFO - Successfully retrieved 2 records for ETN
+2025-09-24 20:42:33,291 - INFO - Processed 2 records for ETN in 2025-09
+2025-09-24 20:42:33,294 - INFO - Created Parquet file: ETN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:33,599 - INFO - Successfully uploaded ETN_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:42:33,599 - INFO - Cleaned up local file: ETN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:42:33,599 - INFO - Completed processing ETN: 1/1 files successful
+2025-09-24 20:42:33,599 - INFO - ✓ Successfully processed ETN
+2025-09-24 20:42:33,599 - INFO - Processing ticker 45/122: FCX
+2025-09-24 20:42:33,599 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:46,105 - INFO - Starting processing for ticker: FCX (2025-09-20 to 2025-09-23)
+2025-09-24 20:42:46,108 - INFO - Fetching data for FCX from 2025-09-20 to 2025-09-23
+2025-09-24 20:42:46,413 - ERROR - Failed to fetch data for FCX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/FCX/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:42:46,413 - WARNING - No data retrieved for FCX
+2025-09-24 20:42:46,414 - ERROR - ✗ Failed to process FCX
+2025-09-24 20:42:46,414 - INFO - Processing ticker 46/122: GE
+2025-09-24 20:42:46,414 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:42:58,919 - INFO - Starting processing for ticker: GE (2025-09-20 to 2025-09-23)
+2025-09-24 20:42:58,920 - INFO - Fetching data for GE from 2025-09-20 to 2025-09-23
+2025-09-24 20:42:59,203 - ERROR - Failed to fetch data for GE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/GE/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:42:59,204 - WARNING - No data retrieved for GE
+2025-09-24 20:42:59,204 - ERROR - ✗ Failed to process GE
+2025-09-24 20:42:59,204 - INFO - Processing ticker 47/122: GOOG
+2025-09-24 20:42:59,204 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:11,709 - INFO - Starting processing for ticker: GOOG (2025-09-20 to 2025-09-23)
+2025-09-24 20:43:11,710 - INFO - Fetching data for GOOG from 2025-09-20 to 2025-09-23
+2025-09-24 20:43:12,014 - INFO - Successfully retrieved 2 records for GOOG
+2025-09-24 20:43:12,021 - INFO - Processed 2 records for GOOG in 2025-09
+2025-09-24 20:43:12,024 - INFO - Created Parquet file: GOOG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:43:12,375 - INFO - Successfully uploaded GOOG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:43:12,375 - INFO - Cleaned up local file: GOOG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:43:12,376 - INFO - Completed processing GOOG: 1/1 files successful
+2025-09-24 20:43:12,376 - INFO - ✓ Successfully processed GOOG
+2025-09-24 20:43:12,376 - INFO - Processing ticker 48/122: GOOGL
+2025-09-24 20:43:12,376 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:24,882 - INFO - Starting processing for ticker: GOOGL (2025-09-20 to 2025-09-23)
+2025-09-24 20:43:24,884 - INFO - Fetching data for GOOGL from 2025-09-20 to 2025-09-23
+2025-09-24 20:43:25,307 - INFO - Successfully retrieved 2 records for GOOGL
+2025-09-24 20:43:25,314 - INFO - Processed 2 records for GOOGL in 2025-09
+2025-09-24 20:43:25,318 - INFO - Created Parquet file: GOOGL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:43:25,612 - INFO - Successfully uploaded GOOGL_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:43:25,614 - INFO - Cleaned up local file: GOOGL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:43:25,615 - INFO - Completed processing GOOGL: 1/1 files successful
+2025-09-24 20:43:25,615 - INFO - ✓ Successfully processed GOOGL
+2025-09-24 20:43:25,615 - INFO - Processing ticker 49/122: GS
+2025-09-24 20:43:25,615 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:38,121 - INFO - Starting processing for ticker: GS (2025-09-20 to 2025-09-23)
+2025-09-24 20:43:38,122 - INFO - Fetching data for GS from 2025-09-20 to 2025-09-23
+2025-09-24 20:43:38,405 - ERROR - Failed to fetch data for GS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/GS/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:43:38,405 - WARNING - No data retrieved for GS
+2025-09-24 20:43:38,406 - ERROR - ✗ Failed to process GS
+2025-09-24 20:43:38,406 - INFO - Processing ticker 50/122: HD
+2025-09-24 20:43:38,406 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:43:50,911 - INFO - Starting processing for ticker: HD (2025-09-20 to 2025-09-23)
+2025-09-24 20:43:50,911 - INFO - Fetching data for HD from 2025-09-20 to 2025-09-23
+2025-09-24 20:43:51,273 - ERROR - Failed to fetch data for HD: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/HD/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:43:51,274 - WARNING - No data retrieved for HD
+2025-09-24 20:43:51,274 - ERROR - ✗ Failed to process HD
+2025-09-24 20:43:51,275 - INFO - Processing ticker 51/122: HON
+2025-09-24 20:43:51,275 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:03,779 - INFO - Starting processing for ticker: HON (2025-09-20 to 2025-09-23)
+2025-09-24 20:44:03,779 - INFO - Fetching data for HON from 2025-09-20 to 2025-09-23
+2025-09-24 20:44:04,086 - INFO - Successfully retrieved 2 records for HON
+2025-09-24 20:44:04,094 - INFO - Processed 2 records for HON in 2025-09
+2025-09-24 20:44:04,099 - INFO - Created Parquet file: HON_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:04,514 - INFO - Successfully uploaded HON_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:44:04,514 - INFO - Cleaned up local file: HON_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:04,515 - INFO - Completed processing HON: 1/1 files successful
+2025-09-24 20:44:04,515 - INFO - ✓ Successfully processed HON
+2025-09-24 20:44:04,515 - INFO - Processing ticker 52/122: ISRG
+2025-09-24 20:44:04,515 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:17,021 - INFO - Starting processing for ticker: ISRG (2025-09-20 to 2025-09-23)
+2025-09-24 20:44:17,022 - INFO - Fetching data for ISRG from 2025-09-20 to 2025-09-23
+2025-09-24 20:44:17,308 - INFO - Successfully retrieved 2 records for ISRG
+2025-09-24 20:44:17,315 - INFO - Processed 2 records for ISRG in 2025-09
+2025-09-24 20:44:17,320 - INFO - Created Parquet file: ISRG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:17,618 - INFO - Successfully uploaded ISRG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:44:17,619 - INFO - Cleaned up local file: ISRG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:17,619 - INFO - Completed processing ISRG: 1/1 files successful
+2025-09-24 20:44:17,620 - INFO - ✓ Successfully processed ISRG
+2025-09-24 20:44:17,620 - INFO - Processing ticker 53/122: JNJ
+2025-09-24 20:44:17,620 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:30,125 - INFO - Starting processing for ticker: JNJ (2025-09-20 to 2025-09-23)
+2025-09-24 20:44:30,127 - INFO - Fetching data for JNJ from 2025-09-20 to 2025-09-23
+2025-09-24 20:44:30,424 - INFO - Successfully retrieved 2 records for JNJ
+2025-09-24 20:44:30,432 - INFO - Processed 2 records for JNJ in 2025-09
+2025-09-24 20:44:30,435 - INFO - Created Parquet file: JNJ_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:30,849 - INFO - Successfully uploaded JNJ_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:44:30,850 - INFO - Cleaned up local file: JNJ_2025-09-22_2025-09-23.parquet
+2025-09-24 20:44:30,850 - INFO - Completed processing JNJ: 1/1 files successful
+2025-09-24 20:44:30,850 - INFO - ✓ Successfully processed JNJ
+2025-09-24 20:44:30,850 - INFO - Processing ticker 54/122: JPM
+2025-09-24 20:44:30,850 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:43,355 - INFO - Starting processing for ticker: JPM (2025-09-20 to 2025-09-23)
+2025-09-24 20:44:43,356 - INFO - Fetching data for JPM from 2025-09-20 to 2025-09-23
+2025-09-24 20:44:43,639 - ERROR - Failed to fetch data for JPM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/JPM/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:44:43,640 - WARNING - No data retrieved for JPM
+2025-09-24 20:44:43,640 - ERROR - ✗ Failed to process JPM
+2025-09-24 20:44:43,640 - INFO - Processing ticker 55/122: KMI
+2025-09-24 20:44:43,640 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:44:56,144 - INFO - Starting processing for ticker: KMI (2025-09-20 to 2025-09-23)
+2025-09-24 20:44:56,145 - INFO - Fetching data for KMI from 2025-09-20 to 2025-09-23
+2025-09-24 20:44:56,440 - ERROR - Failed to fetch data for KMI: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/KMI/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:44:56,441 - WARNING - No data retrieved for KMI
+2025-09-24 20:44:56,441 - ERROR - ✗ Failed to process KMI
+2025-09-24 20:44:56,441 - INFO - Processing ticker 56/122: KO
+2025-09-24 20:44:56,441 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:08,943 - INFO - Starting processing for ticker: KO (2025-09-20 to 2025-09-23)
+2025-09-24 20:45:08,944 - INFO - Fetching data for KO from 2025-09-20 to 2025-09-23
+2025-09-24 20:45:09,248 - INFO - Successfully retrieved 2 records for KO
+2025-09-24 20:45:09,253 - INFO - Processed 2 records for KO in 2025-09
+2025-09-24 20:45:09,257 - INFO - Created Parquet file: KO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:45:09,625 - INFO - Successfully uploaded KO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:45:09,626 - INFO - Cleaned up local file: KO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:45:09,626 - INFO - Completed processing KO: 1/1 files successful
+2025-09-24 20:45:09,627 - INFO - ✓ Successfully processed KO
+2025-09-24 20:45:09,627 - INFO - Processing ticker 57/122: KVUE
+2025-09-24 20:45:09,627 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:22,134 - INFO - Starting processing for ticker: KVUE (2023-09-25 to 2025-09-23)
+2025-09-24 20:45:22,134 - INFO - Fetching data for KVUE from 2023-09-25 to 2025-09-23
+2025-09-24 20:45:22,502 - INFO - Successfully retrieved 501 records for KVUE
+2025-09-24 20:45:22,518 - INFO - Processed 5 records for KVUE in 2023-09
+2025-09-24 20:45:22,518 - INFO - Processed 22 records for KVUE in 2023-10
+2025-09-24 20:45:22,518 - INFO - Processed 21 records for KVUE in 2023-11
+2025-09-24 20:45:22,519 - INFO - Processed 20 records for KVUE in 2023-12
+2025-09-24 20:45:22,519 - INFO - Processed 21 records for KVUE in 2024-01
+2025-09-24 20:45:22,519 - INFO - Processed 20 records for KVUE in 2024-02
+2025-09-24 20:45:22,519 - INFO - Processed 20 records for KVUE in 2024-03
+2025-09-24 20:45:22,519 - INFO - Processed 22 records for KVUE in 2024-04
+2025-09-24 20:45:22,520 - INFO - Processed 22 records for KVUE in 2024-05
+2025-09-24 20:45:22,520 - INFO - Processed 19 records for KVUE in 2024-06
+2025-09-24 20:45:22,520 - INFO - Processed 22 records for KVUE in 2024-07
+2025-09-24 20:45:22,520 - INFO - Processed 22 records for KVUE in 2024-08
+2025-09-24 20:45:22,520 - INFO - Processed 20 records for KVUE in 2024-09
+2025-09-24 20:45:22,520 - INFO - Processed 23 records for KVUE in 2024-10
+2025-09-24 20:45:22,521 - INFO - Processed 20 records for KVUE in 2024-11
+2025-09-24 20:45:22,521 - INFO - Processed 21 records for KVUE in 2024-12
+2025-09-24 20:45:22,521 - INFO - Processed 20 records for KVUE in 2025-01
+2025-09-24 20:45:22,521 - INFO - Processed 19 records for KVUE in 2025-02
+2025-09-24 20:45:22,521 - INFO - Processed 21 records for KVUE in 2025-03
+2025-09-24 20:45:22,521 - INFO - Processed 21 records for KVUE in 2025-04
+2025-09-24 20:45:22,522 - INFO - Processed 21 records for KVUE in 2025-05
+2025-09-24 20:45:22,522 - INFO - Processed 20 records for KVUE in 2025-06
+2025-09-24 20:45:22,522 - INFO - Processed 22 records for KVUE in 2025-07
+2025-09-24 20:45:22,523 - INFO - Processed 21 records for KVUE in 2025-08
+2025-09-24 20:45:22,523 - INFO - Processed 16 records for KVUE in 2025-09
+2025-09-24 20:45:22,526 - INFO - Created Parquet file: KVUE_2023-09-25_2023-09-29.parquet
+2025-09-24 20:45:22,847 - INFO - Successfully uploaded KVUE_2023-09-25_2023-09-29.parquet to S3 bucket root
+2025-09-24 20:45:22,848 - INFO - Cleaned up local file: KVUE_2023-09-25_2023-09-29.parquet
+2025-09-24 20:45:22,853 - INFO - Created Parquet file: KVUE_2023-10-02_2023-10-31.parquet
+2025-09-24 20:45:22,919 - INFO - Successfully uploaded KVUE_2023-10-02_2023-10-31.parquet to S3 bucket root
+2025-09-24 20:45:22,919 - INFO - Cleaned up local file: KVUE_2023-10-02_2023-10-31.parquet
+2025-09-24 20:45:22,921 - INFO - Created Parquet file: KVUE_2023-11-01_2023-11-30.parquet
+2025-09-24 20:45:22,985 - INFO - Successfully uploaded KVUE_2023-11-01_2023-11-30.parquet to S3 bucket root
+2025-09-24 20:45:22,985 - INFO - Cleaned up local file: KVUE_2023-11-01_2023-11-30.parquet
+2025-09-24 20:45:22,987 - INFO - Created Parquet file: KVUE_2023-12-01_2023-12-29.parquet
+2025-09-24 20:45:23,049 - INFO - Successfully uploaded KVUE_2023-12-01_2023-12-29.parquet to S3 bucket root
+2025-09-24 20:45:23,049 - INFO - Cleaned up local file: KVUE_2023-12-01_2023-12-29.parquet
+2025-09-24 20:45:23,051 - INFO - Created Parquet file: KVUE_2024-01-02_2024-01-31.parquet
+2025-09-24 20:45:23,116 - INFO - Successfully uploaded KVUE_2024-01-02_2024-01-31.parquet to S3 bucket root
+2025-09-24 20:45:23,116 - INFO - Cleaned up local file: KVUE_2024-01-02_2024-01-31.parquet
+2025-09-24 20:45:23,118 - INFO - Created Parquet file: KVUE_2024-02-01_2024-02-29.parquet
+2025-09-24 20:45:23,180 - INFO - Successfully uploaded KVUE_2024-02-01_2024-02-29.parquet to S3 bucket root
+2025-09-24 20:45:23,181 - INFO - Cleaned up local file: KVUE_2024-02-01_2024-02-29.parquet
+2025-09-24 20:45:23,182 - INFO - Created Parquet file: KVUE_2024-03-01_2024-03-28.parquet
+2025-09-24 20:45:23,249 - INFO - Successfully uploaded KVUE_2024-03-01_2024-03-28.parquet to S3 bucket root
+2025-09-24 20:45:23,249 - INFO - Cleaned up local file: KVUE_2024-03-01_2024-03-28.parquet
+2025-09-24 20:45:23,251 - INFO - Created Parquet file: KVUE_2024-04-01_2024-04-30.parquet
+2025-09-24 20:45:23,314 - INFO - Successfully uploaded KVUE_2024-04-01_2024-04-30.parquet to S3 bucket root
+2025-09-24 20:45:23,315 - INFO - Cleaned up local file: KVUE_2024-04-01_2024-04-30.parquet
+2025-09-24 20:45:23,316 - INFO - Created Parquet file: KVUE_2024-05-01_2024-05-31.parquet
+2025-09-24 20:45:23,395 - INFO - Successfully uploaded KVUE_2024-05-01_2024-05-31.parquet to S3 bucket root
+2025-09-24 20:45:23,396 - INFO - Cleaned up local file: KVUE_2024-05-01_2024-05-31.parquet
+2025-09-24 20:45:23,397 - INFO - Created Parquet file: KVUE_2024-06-03_2024-06-28.parquet
+2025-09-24 20:45:23,456 - INFO - Successfully uploaded KVUE_2024-06-03_2024-06-28.parquet to S3 bucket root
+2025-09-24 20:45:23,457 - INFO - Cleaned up local file: KVUE_2024-06-03_2024-06-28.parquet
+2025-09-24 20:45:23,458 - INFO - Created Parquet file: KVUE_2024-07-01_2024-07-31.parquet
+2025-09-24 20:45:23,520 - INFO - Successfully uploaded KVUE_2024-07-01_2024-07-31.parquet to S3 bucket root
+2025-09-24 20:45:23,521 - INFO - Cleaned up local file: KVUE_2024-07-01_2024-07-31.parquet
+2025-09-24 20:45:23,523 - INFO - Created Parquet file: KVUE_2024-08-01_2024-08-30.parquet
+2025-09-24 20:45:23,587 - INFO - Successfully uploaded KVUE_2024-08-01_2024-08-30.parquet to S3 bucket root
+2025-09-24 20:45:23,587 - INFO - Cleaned up local file: KVUE_2024-08-01_2024-08-30.parquet
+2025-09-24 20:45:23,589 - INFO - Created Parquet file: KVUE_2024-09-03_2024-09-30.parquet
+2025-09-24 20:45:23,649 - INFO - Successfully uploaded KVUE_2024-09-03_2024-09-30.parquet to S3 bucket root
+2025-09-24 20:45:23,649 - INFO - Cleaned up local file: KVUE_2024-09-03_2024-09-30.parquet
+2025-09-24 20:45:23,651 - INFO - Created Parquet file: KVUE_2024-10-01_2024-10-31.parquet
+2025-09-24 20:45:23,711 - INFO - Successfully uploaded KVUE_2024-10-01_2024-10-31.parquet to S3 bucket root
+2025-09-24 20:45:23,711 - INFO - Cleaned up local file: KVUE_2024-10-01_2024-10-31.parquet
+2025-09-24 20:45:23,713 - INFO - Created Parquet file: KVUE_2024-11-01_2024-11-29.parquet
+2025-09-24 20:45:23,772 - INFO - Successfully uploaded KVUE_2024-11-01_2024-11-29.parquet to S3 bucket root
+2025-09-24 20:45:23,772 - INFO - Cleaned up local file: KVUE_2024-11-01_2024-11-29.parquet
+2025-09-24 20:45:23,775 - INFO - Created Parquet file: KVUE_2024-12-02_2024-12-31.parquet
+2025-09-24 20:45:23,839 - INFO - Successfully uploaded KVUE_2024-12-02_2024-12-31.parquet to S3 bucket root
+2025-09-24 20:45:23,839 - INFO - Cleaned up local file: KVUE_2024-12-02_2024-12-31.parquet
+2025-09-24 20:45:23,841 - INFO - Created Parquet file: KVUE_2025-01-02_2025-01-31.parquet
+2025-09-24 20:45:23,900 - INFO - Successfully uploaded KVUE_2025-01-02_2025-01-31.parquet to S3 bucket root
+2025-09-24 20:45:23,900 - INFO - Cleaned up local file: KVUE_2025-01-02_2025-01-31.parquet
+2025-09-24 20:45:23,901 - INFO - Created Parquet file: KVUE_2025-02-03_2025-02-28.parquet
+2025-09-24 20:45:23,963 - INFO - Successfully uploaded KVUE_2025-02-03_2025-02-28.parquet to S3 bucket root
+2025-09-24 20:45:23,964 - INFO - Cleaned up local file: KVUE_2025-02-03_2025-02-28.parquet
+2025-09-24 20:45:23,965 - INFO - Created Parquet file: KVUE_2025-03-03_2025-03-31.parquet
+2025-09-24 20:45:24,025 - INFO - Successfully uploaded KVUE_2025-03-03_2025-03-31.parquet to S3 bucket root
+2025-09-24 20:45:24,026 - INFO - Cleaned up local file: KVUE_2025-03-03_2025-03-31.parquet
+2025-09-24 20:45:24,028 - INFO - Created Parquet file: KVUE_2025-04-01_2025-04-30.parquet
+2025-09-24 20:45:24,092 - INFO - Successfully uploaded KVUE_2025-04-01_2025-04-30.parquet to S3 bucket root
+2025-09-24 20:45:24,093 - INFO - Cleaned up local file: KVUE_2025-04-01_2025-04-30.parquet
+2025-09-24 20:45:24,094 - INFO - Created Parquet file: KVUE_2025-05-01_2025-05-30.parquet
+2025-09-24 20:45:24,173 - INFO - Successfully uploaded KVUE_2025-05-01_2025-05-30.parquet to S3 bucket root
+2025-09-24 20:45:24,174 - INFO - Cleaned up local file: KVUE_2025-05-01_2025-05-30.parquet
+2025-09-24 20:45:24,176 - INFO - Created Parquet file: KVUE_2025-06-02_2025-06-30.parquet
+2025-09-24 20:45:24,237 - INFO - Successfully uploaded KVUE_2025-06-02_2025-06-30.parquet to S3 bucket root
+2025-09-24 20:45:24,237 - INFO - Cleaned up local file: KVUE_2025-06-02_2025-06-30.parquet
+2025-09-24 20:45:24,239 - INFO - Created Parquet file: KVUE_2025-07-01_2025-07-31.parquet
+2025-09-24 20:45:24,306 - INFO - Successfully uploaded KVUE_2025-07-01_2025-07-31.parquet to S3 bucket root
+2025-09-24 20:45:24,306 - INFO - Cleaned up local file: KVUE_2025-07-01_2025-07-31.parquet
+2025-09-24 20:45:24,308 - INFO - Created Parquet file: KVUE_2025-08-01_2025-08-29.parquet
+2025-09-24 20:45:24,394 - INFO - Successfully uploaded KVUE_2025-08-01_2025-08-29.parquet to S3 bucket root
+2025-09-24 20:45:24,394 - INFO - Cleaned up local file: KVUE_2025-08-01_2025-08-29.parquet
+2025-09-24 20:45:24,396 - INFO - Created Parquet file: KVUE_2025-09-02_2025-09-23.parquet
+2025-09-24 20:45:24,459 - INFO - Successfully uploaded KVUE_2025-09-02_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:45:24,459 - INFO - Cleaned up local file: KVUE_2025-09-02_2025-09-23.parquet
+2025-09-24 20:45:24,459 - INFO - Completed processing KVUE: 25/25 files successful
+2025-09-24 20:45:24,460 - INFO - ✓ Successfully processed KVUE
+2025-09-24 20:45:24,460 - INFO - Processing ticker 58/122: LIN
+2025-09-24 20:45:24,460 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:36,965 - INFO - Starting processing for ticker: LIN (2025-09-20 to 2025-09-23)
+2025-09-24 20:45:36,966 - INFO - Fetching data for LIN from 2025-09-20 to 2025-09-23
+2025-09-24 20:45:37,265 - INFO - Successfully retrieved 2 records for LIN
+2025-09-24 20:45:37,268 - INFO - Processed 2 records for LIN in 2025-09
+2025-09-24 20:45:37,270 - INFO - Created Parquet file: LIN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:45:37,597 - INFO - Successfully uploaded LIN_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:45:37,598 - INFO - Cleaned up local file: LIN_2025-09-22_2025-09-23.parquet
+2025-09-24 20:45:37,598 - INFO - Completed processing LIN: 1/1 files successful
+2025-09-24 20:45:37,598 - INFO - ✓ Successfully processed LIN
+2025-09-24 20:45:37,599 - INFO - Processing ticker 59/122: LLY
+2025-09-24 20:45:37,599 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:45:50,101 - INFO - Starting processing for ticker: LLY (2025-09-20 to 2025-09-23)
+2025-09-24 20:45:50,102 - INFO - Fetching data for LLY from 2025-09-20 to 2025-09-23
+2025-09-24 20:45:50,385 - ERROR - Failed to fetch data for LLY: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/LLY/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:45:50,385 - WARNING - No data retrieved for LLY
+2025-09-24 20:45:50,386 - ERROR - ✗ Failed to process LLY
+2025-09-24 20:45:50,386 - INFO - Processing ticker 60/122: LMT
+2025-09-24 20:45:50,386 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:02,891 - INFO - Starting processing for ticker: LMT (2025-09-20 to 2025-09-23)
+2025-09-24 20:46:02,892 - INFO - Fetching data for LMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:46:03,216 - INFO - Successfully retrieved 2 records for LMT
+2025-09-24 20:46:03,229 - INFO - Processed 2 records for LMT in 2025-09
+2025-09-24 20:46:03,234 - INFO - Created Parquet file: LMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:46:03,659 - INFO - Successfully uploaded LMT_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:46:03,660 - INFO - Cleaned up local file: LMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:46:03,660 - INFO - Completed processing LMT: 1/1 files successful
+2025-09-24 20:46:03,661 - INFO - ✓ Successfully processed LMT
+2025-09-24 20:46:03,661 - INFO - Processing ticker 61/122: LOW
+2025-09-24 20:46:03,661 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:16,166 - INFO - Starting processing for ticker: LOW (2025-09-20 to 2025-09-23)
+2025-09-24 20:46:16,166 - INFO - Fetching data for LOW from 2025-09-20 to 2025-09-23
+2025-09-24 20:46:16,474 - INFO - Successfully retrieved 2 records for LOW
+2025-09-24 20:46:16,478 - INFO - Processed 2 records for LOW in 2025-09
+2025-09-24 20:46:16,481 - INFO - Created Parquet file: LOW_2025-09-22_2025-09-23.parquet
+2025-09-24 20:46:16,759 - INFO - Successfully uploaded LOW_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:46:16,759 - INFO - Cleaned up local file: LOW_2025-09-22_2025-09-23.parquet
+2025-09-24 20:46:16,759 - INFO - Completed processing LOW: 1/1 files successful
+2025-09-24 20:46:16,759 - INFO - ✓ Successfully processed LOW
+2025-09-24 20:46:16,759 - INFO - Processing ticker 62/122: MA
+2025-09-24 20:46:16,759 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:29,260 - INFO - Starting processing for ticker: MA (2025-09-20 to 2025-09-23)
+2025-09-24 20:46:29,260 - INFO - Fetching data for MA from 2025-09-20 to 2025-09-23
+2025-09-24 20:46:29,544 - ERROR - Failed to fetch data for MA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MA/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:46:29,545 - WARNING - No data retrieved for MA
+2025-09-24 20:46:29,545 - ERROR - ✗ Failed to process MA
+2025-09-24 20:46:29,545 - INFO - Processing ticker 63/122: MCD
+2025-09-24 20:46:29,546 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:42,047 - INFO - Starting processing for ticker: MCD (2025-09-20 to 2025-09-23)
+2025-09-24 20:46:42,047 - INFO - Fetching data for MCD from 2025-09-20 to 2025-09-23
+2025-09-24 20:46:42,328 - ERROR - Failed to fetch data for MCD: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MCD/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:46:42,330 - WARNING - No data retrieved for MCD
+2025-09-24 20:46:42,330 - ERROR - ✗ Failed to process MCD
+2025-09-24 20:46:42,330 - INFO - Processing ticker 64/122: MDLZ
+2025-09-24 20:46:42,330 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:46:54,835 - INFO - Starting processing for ticker: MDLZ (2025-09-20 to 2025-09-23)
+2025-09-24 20:46:54,836 - INFO - Fetching data for MDLZ from 2025-09-20 to 2025-09-23
+2025-09-24 20:46:55,120 - ERROR - Failed to fetch data for MDLZ: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MDLZ/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:46:55,121 - WARNING - No data retrieved for MDLZ
+2025-09-24 20:46:55,121 - ERROR - ✗ Failed to process MDLZ
+2025-09-24 20:46:55,121 - INFO - Processing ticker 65/122: MDT
+2025-09-24 20:46:55,121 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:07,626 - INFO - Starting processing for ticker: MDT (2023-09-25 to 2025-09-23)
+2025-09-24 20:47:07,627 - INFO - Fetching data for MDT from 2023-09-25 to 2025-09-23
+2025-09-24 20:47:08,024 - INFO - Successfully retrieved 501 records for MDT
+2025-09-24 20:47:08,051 - INFO - Processed 5 records for MDT in 2023-09
+2025-09-24 20:47:08,051 - INFO - Processed 22 records for MDT in 2023-10
+2025-09-24 20:47:08,051 - INFO - Processed 21 records for MDT in 2023-11
+2025-09-24 20:47:08,052 - INFO - Processed 20 records for MDT in 2023-12
+2025-09-24 20:47:08,052 - INFO - Processed 21 records for MDT in 2024-01
+2025-09-24 20:47:08,052 - INFO - Processed 20 records for MDT in 2024-02
+2025-09-24 20:47:08,052 - INFO - Processed 20 records for MDT in 2024-03
+2025-09-24 20:47:08,052 - INFO - Processed 22 records for MDT in 2024-04
+2025-09-24 20:47:08,053 - INFO - Processed 22 records for MDT in 2024-05
+2025-09-24 20:47:08,053 - INFO - Processed 19 records for MDT in 2024-06
+2025-09-24 20:47:08,053 - INFO - Processed 22 records for MDT in 2024-07
+2025-09-24 20:47:08,053 - INFO - Processed 22 records for MDT in 2024-08
+2025-09-24 20:47:08,053 - INFO - Processed 20 records for MDT in 2024-09
+2025-09-24 20:47:08,054 - INFO - Processed 23 records for MDT in 2024-10
+2025-09-24 20:47:08,054 - INFO - Processed 20 records for MDT in 2024-11
+2025-09-24 20:47:08,054 - INFO - Processed 21 records for MDT in 2024-12
+2025-09-24 20:47:08,054 - INFO - Processed 20 records for MDT in 2025-01
+2025-09-24 20:47:08,055 - INFO - Processed 19 records for MDT in 2025-02
+2025-09-24 20:47:08,055 - INFO - Processed 21 records for MDT in 2025-03
+2025-09-24 20:47:08,055 - INFO - Processed 21 records for MDT in 2025-04
+2025-09-24 20:47:08,055 - INFO - Processed 21 records for MDT in 2025-05
+2025-09-24 20:47:08,056 - INFO - Processed 20 records for MDT in 2025-06
+2025-09-24 20:47:08,056 - INFO - Processed 22 records for MDT in 2025-07
+2025-09-24 20:47:08,056 - INFO - Processed 21 records for MDT in 2025-08
+2025-09-24 20:47:08,056 - INFO - Processed 16 records for MDT in 2025-09
+2025-09-24 20:47:08,060 - INFO - Created Parquet file: MDT_2023-09-25_2023-09-29.parquet
+2025-09-24 20:47:08,485 - INFO - Successfully uploaded MDT_2023-09-25_2023-09-29.parquet to S3 bucket root
+2025-09-24 20:47:08,486 - INFO - Cleaned up local file: MDT_2023-09-25_2023-09-29.parquet
+2025-09-24 20:47:08,488 - INFO - Created Parquet file: MDT_2023-10-02_2023-10-31.parquet
+2025-09-24 20:47:08,549 - INFO - Successfully uploaded MDT_2023-10-02_2023-10-31.parquet to S3 bucket root
+2025-09-24 20:47:08,549 - INFO - Cleaned up local file: MDT_2023-10-02_2023-10-31.parquet
+2025-09-24 20:47:08,551 - INFO - Created Parquet file: MDT_2023-11-01_2023-11-30.parquet
+2025-09-24 20:47:08,621 - INFO - Successfully uploaded MDT_2023-11-01_2023-11-30.parquet to S3 bucket root
+2025-09-24 20:47:08,621 - INFO - Cleaned up local file: MDT_2023-11-01_2023-11-30.parquet
+2025-09-24 20:47:08,622 - INFO - Created Parquet file: MDT_2023-12-01_2023-12-29.parquet
+2025-09-24 20:47:08,682 - INFO - Successfully uploaded MDT_2023-12-01_2023-12-29.parquet to S3 bucket root
+2025-09-24 20:47:08,682 - INFO - Cleaned up local file: MDT_2023-12-01_2023-12-29.parquet
+2025-09-24 20:47:08,684 - INFO - Created Parquet file: MDT_2024-01-02_2024-01-31.parquet
+2025-09-24 20:47:08,745 - INFO - Successfully uploaded MDT_2024-01-02_2024-01-31.parquet to S3 bucket root
+2025-09-24 20:47:08,746 - INFO - Cleaned up local file: MDT_2024-01-02_2024-01-31.parquet
+2025-09-24 20:47:08,747 - INFO - Created Parquet file: MDT_2024-02-01_2024-02-29.parquet
+2025-09-24 20:47:08,814 - INFO - Successfully uploaded MDT_2024-02-01_2024-02-29.parquet to S3 bucket root
+2025-09-24 20:47:08,814 - INFO - Cleaned up local file: MDT_2024-02-01_2024-02-29.parquet
+2025-09-24 20:47:08,816 - INFO - Created Parquet file: MDT_2024-03-01_2024-03-28.parquet
+2025-09-24 20:47:08,882 - INFO - Successfully uploaded MDT_2024-03-01_2024-03-28.parquet to S3 bucket root
+2025-09-24 20:47:08,882 - INFO - Cleaned up local file: MDT_2024-03-01_2024-03-28.parquet
+2025-09-24 20:47:08,884 - INFO - Created Parquet file: MDT_2024-04-01_2024-04-30.parquet
+2025-09-24 20:47:09,007 - INFO - Successfully uploaded MDT_2024-04-01_2024-04-30.parquet to S3 bucket root
+2025-09-24 20:47:09,008 - INFO - Cleaned up local file: MDT_2024-04-01_2024-04-30.parquet
+2025-09-24 20:47:09,011 - INFO - Created Parquet file: MDT_2024-05-01_2024-05-31.parquet
+2025-09-24 20:47:09,076 - INFO - Successfully uploaded MDT_2024-05-01_2024-05-31.parquet to S3 bucket root
+2025-09-24 20:47:09,076 - INFO - Cleaned up local file: MDT_2024-05-01_2024-05-31.parquet
+2025-09-24 20:47:09,078 - INFO - Created Parquet file: MDT_2024-06-03_2024-06-28.parquet
+2025-09-24 20:47:09,148 - INFO - Successfully uploaded MDT_2024-06-03_2024-06-28.parquet to S3 bucket root
+2025-09-24 20:47:09,148 - INFO - Cleaned up local file: MDT_2024-06-03_2024-06-28.parquet
+2025-09-24 20:47:09,151 - INFO - Created Parquet file: MDT_2024-07-01_2024-07-31.parquet
+2025-09-24 20:47:09,241 - INFO - Successfully uploaded MDT_2024-07-01_2024-07-31.parquet to S3 bucket root
+2025-09-24 20:47:09,241 - INFO - Cleaned up local file: MDT_2024-07-01_2024-07-31.parquet
+2025-09-24 20:47:09,243 - INFO - Created Parquet file: MDT_2024-08-01_2024-08-30.parquet
+2025-09-24 20:47:09,305 - INFO - Successfully uploaded MDT_2024-08-01_2024-08-30.parquet to S3 bucket root
+2025-09-24 20:47:09,306 - INFO - Cleaned up local file: MDT_2024-08-01_2024-08-30.parquet
+2025-09-24 20:47:09,308 - INFO - Created Parquet file: MDT_2024-09-03_2024-09-30.parquet
+2025-09-24 20:47:09,405 - INFO - Successfully uploaded MDT_2024-09-03_2024-09-30.parquet to S3 bucket root
+2025-09-24 20:47:09,405 - INFO - Cleaned up local file: MDT_2024-09-03_2024-09-30.parquet
+2025-09-24 20:47:09,409 - INFO - Created Parquet file: MDT_2024-10-01_2024-10-31.parquet
+2025-09-24 20:47:09,483 - INFO - Successfully uploaded MDT_2024-10-01_2024-10-31.parquet to S3 bucket root
+2025-09-24 20:47:09,483 - INFO - Cleaned up local file: MDT_2024-10-01_2024-10-31.parquet
+2025-09-24 20:47:09,485 - INFO - Created Parquet file: MDT_2024-11-01_2024-11-29.parquet
+2025-09-24 20:47:09,545 - INFO - Successfully uploaded MDT_2024-11-01_2024-11-29.parquet to S3 bucket root
+2025-09-24 20:47:09,546 - INFO - Cleaned up local file: MDT_2024-11-01_2024-11-29.parquet
+2025-09-24 20:47:09,547 - INFO - Created Parquet file: MDT_2024-12-02_2024-12-31.parquet
+2025-09-24 20:47:09,608 - INFO - Successfully uploaded MDT_2024-12-02_2024-12-31.parquet to S3 bucket root
+2025-09-24 20:47:09,609 - INFO - Cleaned up local file: MDT_2024-12-02_2024-12-31.parquet
+2025-09-24 20:47:09,610 - INFO - Created Parquet file: MDT_2025-01-02_2025-01-31.parquet
+2025-09-24 20:47:09,673 - INFO - Successfully uploaded MDT_2025-01-02_2025-01-31.parquet to S3 bucket root
+2025-09-24 20:47:09,673 - INFO - Cleaned up local file: MDT_2025-01-02_2025-01-31.parquet
+2025-09-24 20:47:09,675 - INFO - Created Parquet file: MDT_2025-02-03_2025-02-28.parquet
+2025-09-24 20:47:09,741 - INFO - Successfully uploaded MDT_2025-02-03_2025-02-28.parquet to S3 bucket root
+2025-09-24 20:47:09,741 - INFO - Cleaned up local file: MDT_2025-02-03_2025-02-28.parquet
+2025-09-24 20:47:09,744 - INFO - Created Parquet file: MDT_2025-03-03_2025-03-31.parquet
+2025-09-24 20:47:09,805 - INFO - Successfully uploaded MDT_2025-03-03_2025-03-31.parquet to S3 bucket root
+2025-09-24 20:47:09,805 - INFO - Cleaned up local file: MDT_2025-03-03_2025-03-31.parquet
+2025-09-24 20:47:09,807 - INFO - Created Parquet file: MDT_2025-04-01_2025-04-30.parquet
+2025-09-24 20:47:09,874 - INFO - Successfully uploaded MDT_2025-04-01_2025-04-30.parquet to S3 bucket root
+2025-09-24 20:47:09,874 - INFO - Cleaned up local file: MDT_2025-04-01_2025-04-30.parquet
+2025-09-24 20:47:09,876 - INFO - Created Parquet file: MDT_2025-05-01_2025-05-30.parquet
+2025-09-24 20:47:09,956 - INFO - Successfully uploaded MDT_2025-05-01_2025-05-30.parquet to S3 bucket root
+2025-09-24 20:47:09,956 - INFO - Cleaned up local file: MDT_2025-05-01_2025-05-30.parquet
+2025-09-24 20:47:09,958 - INFO - Created Parquet file: MDT_2025-06-02_2025-06-30.parquet
+2025-09-24 20:47:10,047 - INFO - Successfully uploaded MDT_2025-06-02_2025-06-30.parquet to S3 bucket root
+2025-09-24 20:47:10,048 - INFO - Cleaned up local file: MDT_2025-06-02_2025-06-30.parquet
+2025-09-24 20:47:10,049 - INFO - Created Parquet file: MDT_2025-07-01_2025-07-31.parquet
+2025-09-24 20:47:10,133 - INFO - Successfully uploaded MDT_2025-07-01_2025-07-31.parquet to S3 bucket root
+2025-09-24 20:47:10,133 - INFO - Cleaned up local file: MDT_2025-07-01_2025-07-31.parquet
+2025-09-24 20:47:10,135 - INFO - Created Parquet file: MDT_2025-08-01_2025-08-29.parquet
+2025-09-24 20:47:10,202 - INFO - Successfully uploaded MDT_2025-08-01_2025-08-29.parquet to S3 bucket root
+2025-09-24 20:47:10,203 - INFO - Cleaned up local file: MDT_2025-08-01_2025-08-29.parquet
+2025-09-24 20:47:10,204 - INFO - Created Parquet file: MDT_2025-09-02_2025-09-23.parquet
+2025-09-24 20:47:10,287 - INFO - Successfully uploaded MDT_2025-09-02_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:47:10,287 - INFO - Cleaned up local file: MDT_2025-09-02_2025-09-23.parquet
+2025-09-24 20:47:10,288 - INFO - Completed processing MDT: 25/25 files successful
+2025-09-24 20:47:10,288 - INFO - ✓ Successfully processed MDT
+2025-09-24 20:47:10,288 - INFO - Processing ticker 66/122: MELI
+2025-09-24 20:47:10,288 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:22,792 - INFO - Starting processing for ticker: MELI (2025-09-20 to 2025-09-23)
+2025-09-24 20:47:22,793 - INFO - Fetching data for MELI from 2025-09-20 to 2025-09-23
+2025-09-24 20:47:23,095 - INFO - Successfully retrieved 2 records for MELI
+2025-09-24 20:47:23,116 - INFO - Processed 2 records for MELI in 2025-09
+2025-09-24 20:47:23,121 - INFO - Created Parquet file: MELI_2025-09-22_2025-09-23.parquet
+2025-09-24 20:47:23,609 - INFO - Successfully uploaded MELI_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:47:23,609 - INFO - Cleaned up local file: MELI_2025-09-22_2025-09-23.parquet
+2025-09-24 20:47:23,610 - INFO - Completed processing MELI: 1/1 files successful
+2025-09-24 20:47:23,610 - INFO - ✓ Successfully processed MELI
+2025-09-24 20:47:23,610 - INFO - Processing ticker 67/122: META
+2025-09-24 20:47:23,610 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:36,114 - INFO - Starting processing for ticker: META (2025-09-20 to 2025-09-23)
+2025-09-24 20:47:36,115 - INFO - Fetching data for META from 2025-09-20 to 2025-09-23
+2025-09-24 20:47:36,445 - ERROR - Failed to fetch data for META: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/META/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:47:36,445 - WARNING - No data retrieved for META
+2025-09-24 20:47:36,446 - ERROR - ✗ Failed to process META
+2025-09-24 20:47:36,446 - INFO - Processing ticker 68/122: MLM
+2025-09-24 20:47:36,446 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:47:48,951 - INFO - Starting processing for ticker: MLM (2025-09-20 to 2025-09-23)
+2025-09-24 20:47:48,952 - INFO - Fetching data for MLM from 2025-09-20 to 2025-09-23
+2025-09-24 20:47:49,243 - ERROR - Failed to fetch data for MLM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MLM/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:47:49,243 - WARNING - No data retrieved for MLM
+2025-09-24 20:47:49,244 - ERROR - ✗ Failed to process MLM
+2025-09-24 20:47:49,244 - INFO - Processing ticker 69/122: MO
+2025-09-24 20:47:49,244 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:01,747 - INFO - Starting processing for ticker: MO (2025-09-20 to 2025-09-23)
+2025-09-24 20:48:01,748 - INFO - Fetching data for MO from 2025-09-20 to 2025-09-23
+2025-09-24 20:48:02,044 - INFO - Successfully retrieved 2 records for MO
+2025-09-24 20:48:02,057 - INFO - Processed 2 records for MO in 2025-09
+2025-09-24 20:48:02,062 - INFO - Created Parquet file: MO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:02,422 - INFO - Successfully uploaded MO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:48:02,423 - INFO - Cleaned up local file: MO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:02,423 - INFO - Completed processing MO: 1/1 files successful
+2025-09-24 20:48:02,423 - INFO - ✓ Successfully processed MO
+2025-09-24 20:48:02,423 - INFO - Processing ticker 70/122: MPC
+2025-09-24 20:48:02,423 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:14,929 - INFO - Starting processing for ticker: MPC (2025-09-20 to 2025-09-23)
+2025-09-24 20:48:14,930 - INFO - Fetching data for MPC from 2025-09-20 to 2025-09-23
+2025-09-24 20:48:15,340 - INFO - Successfully retrieved 2 records for MPC
+2025-09-24 20:48:15,343 - INFO - Processed 2 records for MPC in 2025-09
+2025-09-24 20:48:15,347 - INFO - Created Parquet file: MPC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:15,542 - INFO - Successfully uploaded MPC_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:48:15,543 - INFO - Cleaned up local file: MPC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:15,543 - INFO - Completed processing MPC: 1/1 files successful
+2025-09-24 20:48:15,543 - INFO - ✓ Successfully processed MPC
+2025-09-24 20:48:15,543 - INFO - Processing ticker 71/122: MRK
+2025-09-24 20:48:15,543 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:28,048 - INFO - Starting processing for ticker: MRK (2025-09-20 to 2025-09-23)
+2025-09-24 20:48:28,050 - INFO - Fetching data for MRK from 2025-09-20 to 2025-09-23
+2025-09-24 20:48:28,349 - INFO - Successfully retrieved 2 records for MRK
+2025-09-24 20:48:28,354 - INFO - Processed 2 records for MRK in 2025-09
+2025-09-24 20:48:28,357 - INFO - Created Parquet file: MRK_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:28,665 - INFO - Successfully uploaded MRK_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:48:28,666 - INFO - Cleaned up local file: MRK_2025-09-22_2025-09-23.parquet
+2025-09-24 20:48:28,666 - INFO - Completed processing MRK: 1/1 files successful
+2025-09-24 20:48:28,666 - INFO - ✓ Successfully processed MRK
+2025-09-24 20:48:28,666 - INFO - Processing ticker 72/122: MSFT
+2025-09-24 20:48:28,666 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:41,172 - INFO - Starting processing for ticker: MSFT (2025-09-20 to 2025-09-23)
+2025-09-24 20:48:41,173 - INFO - Fetching data for MSFT from 2025-09-20 to 2025-09-23
+2025-09-24 20:48:41,470 - ERROR - Failed to fetch data for MSFT: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/MSFT/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:48:41,470 - WARNING - No data retrieved for MSFT
+2025-09-24 20:48:41,470 - ERROR - ✗ Failed to process MSFT
+2025-09-24 20:48:41,470 - INFO - Processing ticker 73/122: NEE
+2025-09-24 20:48:41,471 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:48:53,976 - INFO - Starting processing for ticker: NEE (2025-09-20 to 2025-09-23)
+2025-09-24 20:48:53,977 - INFO - Fetching data for NEE from 2025-09-20 to 2025-09-23
+2025-09-24 20:48:54,275 - ERROR - Failed to fetch data for NEE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/NEE/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:48:54,276 - WARNING - No data retrieved for NEE
+2025-09-24 20:48:54,276 - ERROR - ✗ Failed to process NEE
+2025-09-24 20:48:54,277 - INFO - Processing ticker 74/122: NEM
+2025-09-24 20:48:54,277 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:06,780 - INFO - Starting processing for ticker: NEM (2025-09-20 to 2025-09-23)
+2025-09-24 20:49:06,781 - INFO - Fetching data for NEM from 2025-09-20 to 2025-09-23
+2025-09-24 20:49:07,077 - INFO - Successfully retrieved 2 records for NEM
+2025-09-24 20:49:07,085 - INFO - Processed 2 records for NEM in 2025-09
+2025-09-24 20:49:07,089 - INFO - Created Parquet file: NEM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:49:07,468 - INFO - Successfully uploaded NEM_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:49:07,469 - INFO - Cleaned up local file: NEM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:49:07,469 - INFO - Completed processing NEM: 1/1 files successful
+2025-09-24 20:49:07,469 - INFO - ✓ Successfully processed NEM
+2025-09-24 20:49:07,469 - INFO - Processing ticker 75/122: NFLX
+2025-09-24 20:49:07,469 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:19,973 - INFO - Starting processing for ticker: NFLX (2025-09-20 to 2025-09-23)
+2025-09-24 20:49:19,974 - INFO - Fetching data for NFLX from 2025-09-20 to 2025-09-23
+2025-09-24 20:49:20,278 - INFO - Successfully retrieved 2 records for NFLX
+2025-09-24 20:49:20,284 - INFO - Processed 2 records for NFLX in 2025-09
+2025-09-24 20:49:20,288 - INFO - Created Parquet file: NFLX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:49:20,592 - INFO - Successfully uploaded NFLX_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:49:20,593 - INFO - Cleaned up local file: NFLX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:49:20,593 - INFO - Completed processing NFLX: 1/1 files successful
+2025-09-24 20:49:20,593 - INFO - ✓ Successfully processed NFLX
+2025-09-24 20:49:20,593 - INFO - Processing ticker 76/122: NKE
+2025-09-24 20:49:20,593 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:33,097 - INFO - Starting processing for ticker: NKE (2025-09-20 to 2025-09-23)
+2025-09-24 20:49:33,099 - INFO - Fetching data for NKE from 2025-09-20 to 2025-09-23
+2025-09-24 20:49:33,391 - ERROR - Failed to fetch data for NKE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/NKE/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:49:33,392 - WARNING - No data retrieved for NKE
+2025-09-24 20:49:33,393 - ERROR - ✗ Failed to process NKE
+2025-09-24 20:49:33,393 - INFO - Processing ticker 77/122: NVDA
+2025-09-24 20:49:33,393 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:45,896 - INFO - Starting processing for ticker: NVDA (2025-09-20 to 2025-09-23)
+2025-09-24 20:49:45,898 - INFO - Fetching data for NVDA from 2025-09-20 to 2025-09-23
+2025-09-24 20:49:46,179 - ERROR - Failed to fetch data for NVDA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/NVDA/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:49:46,181 - WARNING - No data retrieved for NVDA
+2025-09-24 20:49:46,181 - ERROR - ✗ Failed to process NVDA
+2025-09-24 20:49:46,181 - INFO - Processing ticker 78/122: O
+2025-09-24 20:49:46,181 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:49:58,683 - INFO - Starting processing for ticker: O (2025-09-20 to 2025-09-23)
+2025-09-24 20:49:58,684 - INFO - Fetching data for O from 2025-09-20 to 2025-09-23
+2025-09-24 20:49:58,976 - ERROR - Failed to fetch data for O: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/O/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:49:58,976 - WARNING - No data retrieved for O
+2025-09-24 20:49:58,976 - ERROR - ✗ Failed to process O
+2025-09-24 20:49:58,977 - INFO - Processing ticker 79/122: OKE
+2025-09-24 20:49:58,977 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:11,484 - INFO - Starting processing for ticker: OKE (2025-09-20 to 2025-09-23)
+2025-09-24 20:50:11,488 - INFO - Fetching data for OKE from 2025-09-20 to 2025-09-23
+2025-09-24 20:50:11,794 - INFO - Successfully retrieved 2 records for OKE
+2025-09-24 20:50:11,805 - INFO - Processed 2 records for OKE in 2025-09
+2025-09-24 20:50:11,812 - INFO - Created Parquet file: OKE_2025-09-22_2025-09-23.parquet
+2025-09-24 20:50:12,112 - INFO - Successfully uploaded OKE_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:50:12,113 - INFO - Cleaned up local file: OKE_2025-09-22_2025-09-23.parquet
+2025-09-24 20:50:12,115 - INFO - Completed processing OKE: 1/1 files successful
+2025-09-24 20:50:12,117 - INFO - ✓ Successfully processed OKE
+2025-09-24 20:50:12,117 - INFO - Processing ticker 80/122: ORCL
+2025-09-24 20:50:12,117 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:24,623 - INFO - Starting processing for ticker: ORCL (2025-09-20 to 2025-09-23)
+2025-09-24 20:50:24,624 - INFO - Fetching data for ORCL from 2025-09-20 to 2025-09-23
+2025-09-24 20:50:24,923 - INFO - Successfully retrieved 2 records for ORCL
+2025-09-24 20:50:24,932 - INFO - Processed 2 records for ORCL in 2025-09
+2025-09-24 20:50:24,938 - INFO - Created Parquet file: ORCL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:50:25,236 - INFO - Successfully uploaded ORCL_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:50:25,237 - INFO - Cleaned up local file: ORCL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:50:25,237 - INFO - Completed processing ORCL: 1/1 files successful
+2025-09-24 20:50:25,237 - INFO - ✓ Successfully processed ORCL
+2025-09-24 20:50:25,237 - INFO - Processing ticker 81/122: OTIS
+2025-09-24 20:50:25,237 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:37,743 - INFO - Starting processing for ticker: OTIS (2023-09-25 to 2025-09-23)
+2025-09-24 20:50:37,744 - INFO - Fetching data for OTIS from 2023-09-25 to 2025-09-23
+2025-09-24 20:50:38,052 - ERROR - Failed to fetch data for OTIS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/OTIS/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:50:38,053 - WARNING - No data retrieved for OTIS
+2025-09-24 20:50:38,053 - ERROR - ✗ Failed to process OTIS
+2025-09-24 20:50:38,053 - INFO - Processing ticker 82/122: PCG
+2025-09-24 20:50:38,053 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:50:50,565 - INFO - Starting processing for ticker: PCG (2025-09-20 to 2025-09-23)
+2025-09-24 20:50:50,568 - INFO - Fetching data for PCG from 2025-09-20 to 2025-09-23
+2025-09-24 20:50:50,868 - ERROR - Failed to fetch data for PCG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PCG/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:50:50,869 - WARNING - No data retrieved for PCG
+2025-09-24 20:50:50,870 - ERROR - ✗ Failed to process PCG
+2025-09-24 20:50:50,870 - INFO - Processing ticker 83/122: PEG
+2025-09-24 20:50:50,870 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:03,373 - INFO - Starting processing for ticker: PEG (2025-09-20 to 2025-09-23)
+2025-09-24 20:51:03,374 - INFO - Fetching data for PEG from 2025-09-20 to 2025-09-23
+2025-09-24 20:51:03,653 - INFO - Successfully retrieved 2 records for PEG
+2025-09-24 20:51:03,666 - INFO - Processed 2 records for PEG in 2025-09
+2025-09-24 20:51:03,672 - INFO - Created Parquet file: PEG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:51:03,915 - INFO - Successfully uploaded PEG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:51:03,915 - INFO - Cleaned up local file: PEG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:51:03,915 - INFO - Completed processing PEG: 1/1 files successful
+2025-09-24 20:51:03,915 - INFO - ✓ Successfully processed PEG
+2025-09-24 20:51:03,915 - INFO - Processing ticker 84/122: PEP
+2025-09-24 20:51:03,916 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:16,421 - INFO - Starting processing for ticker: PEP (2025-09-20 to 2025-09-23)
+2025-09-24 20:51:16,421 - INFO - Fetching data for PEP from 2025-09-20 to 2025-09-23
+2025-09-24 20:51:16,726 - INFO - Successfully retrieved 2 records for PEP
+2025-09-24 20:51:16,735 - INFO - Processed 2 records for PEP in 2025-09
+2025-09-24 20:51:16,740 - INFO - Created Parquet file: PEP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:51:16,939 - INFO - Successfully uploaded PEP_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:51:16,939 - INFO - Cleaned up local file: PEP_2025-09-22_2025-09-23.parquet
+2025-09-24 20:51:16,939 - INFO - Completed processing PEP: 1/1 files successful
+2025-09-24 20:51:16,939 - INFO - ✓ Successfully processed PEP
+2025-09-24 20:51:16,939 - INFO - Processing ticker 85/122: PFE
+2025-09-24 20:51:16,939 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:29,444 - INFO - Starting processing for ticker: PFE (2023-09-25 to 2025-09-23)
+2025-09-24 20:51:29,445 - INFO - Fetching data for PFE from 2023-09-25 to 2025-09-23
+2025-09-24 20:51:29,835 - ERROR - Failed to fetch data for PFE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PFE/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:51:29,836 - WARNING - No data retrieved for PFE
+2025-09-24 20:51:29,836 - ERROR - ✗ Failed to process PFE
+2025-09-24 20:51:29,836 - INFO - Processing ticker 86/122: PG
+2025-09-24 20:51:29,836 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:42,341 - INFO - Starting processing for ticker: PG (2025-09-20 to 2025-09-23)
+2025-09-24 20:51:42,343 - INFO - Fetching data for PG from 2025-09-20 to 2025-09-23
+2025-09-24 20:51:42,642 - ERROR - Failed to fetch data for PG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PG/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:51:42,642 - WARNING - No data retrieved for PG
+2025-09-24 20:51:42,643 - ERROR - ✗ Failed to process PG
+2025-09-24 20:51:42,643 - INFO - Processing ticker 87/122: PHG
+2025-09-24 20:51:42,643 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:51:55,148 - INFO - Starting processing for ticker: PHG (2023-09-25 to 2025-09-23)
+2025-09-24 20:51:55,150 - INFO - Fetching data for PHG from 2023-09-25 to 2025-09-23
+2025-09-24 20:51:55,539 - ERROR - Failed to fetch data for PHG: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PHG/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:51:55,540 - WARNING - No data retrieved for PHG
+2025-09-24 20:51:55,540 - ERROR - ✗ Failed to process PHG
+2025-09-24 20:51:55,540 - INFO - Processing ticker 88/122: PLD
+2025-09-24 20:51:55,540 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:08,044 - INFO - Starting processing for ticker: PLD (2025-09-20 to 2025-09-23)
+2025-09-24 20:52:08,046 - INFO - Fetching data for PLD from 2025-09-20 to 2025-09-23
+2025-09-24 20:52:08,357 - INFO - Successfully retrieved 2 records for PLD
+2025-09-24 20:52:08,387 - INFO - Processed 2 records for PLD in 2025-09
+2025-09-24 20:52:08,390 - INFO - Created Parquet file: PLD_2025-09-22_2025-09-23.parquet
+2025-09-24 20:52:08,694 - INFO - Successfully uploaded PLD_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:52:08,695 - INFO - Cleaned up local file: PLD_2025-09-22_2025-09-23.parquet
+2025-09-24 20:52:08,695 - INFO - Completed processing PLD: 1/1 files successful
+2025-09-24 20:52:08,695 - INFO - ✓ Successfully processed PLD
+2025-09-24 20:52:08,695 - INFO - Processing ticker 89/122: PM
+2025-09-24 20:52:08,696 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:21,202 - INFO - Starting processing for ticker: PM (2025-09-20 to 2025-09-23)
+2025-09-24 20:52:21,204 - INFO - Fetching data for PM from 2025-09-20 to 2025-09-23
+2025-09-24 20:52:21,620 - INFO - Successfully retrieved 2 records for PM
+2025-09-24 20:52:21,626 - INFO - Processed 2 records for PM in 2025-09
+2025-09-24 20:52:21,631 - INFO - Created Parquet file: PM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:52:21,965 - INFO - Successfully uploaded PM_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:52:21,966 - INFO - Cleaned up local file: PM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:52:21,966 - INFO - Completed processing PM: 1/1 files successful
+2025-09-24 20:52:21,966 - INFO - ✓ Successfully processed PM
+2025-09-24 20:52:21,966 - INFO - Processing ticker 90/122: PSA
+2025-09-24 20:52:21,966 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:34,471 - INFO - Starting processing for ticker: PSA (2025-09-20 to 2025-09-23)
+2025-09-24 20:52:34,472 - INFO - Fetching data for PSA from 2025-09-20 to 2025-09-23
+2025-09-24 20:52:34,755 - ERROR - Failed to fetch data for PSA: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PSA/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:52:34,756 - WARNING - No data retrieved for PSA
+2025-09-24 20:52:34,756 - ERROR - ✗ Failed to process PSA
+2025-09-24 20:52:34,756 - INFO - Processing ticker 91/122: PSX
+2025-09-24 20:52:34,756 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:52:47,261 - INFO - Starting processing for ticker: PSX (2025-09-20 to 2025-09-23)
+2025-09-24 20:52:47,263 - INFO - Fetching data for PSX from 2025-09-20 to 2025-09-23
+2025-09-24 20:52:47,638 - ERROR - Failed to fetch data for PSX: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/PSX/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:52:47,639 - WARNING - No data retrieved for PSX
+2025-09-24 20:52:47,640 - ERROR - ✗ Failed to process PSX
+2025-09-24 20:52:47,640 - INFO - Processing ticker 92/122: RTX
+2025-09-24 20:52:47,640 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:00,143 - INFO - Starting processing for ticker: RTX (2025-09-20 to 2025-09-23)
+2025-09-24 20:53:00,144 - INFO - Fetching data for RTX from 2025-09-20 to 2025-09-23
+2025-09-24 20:53:00,443 - INFO - Successfully retrieved 2 records for RTX
+2025-09-24 20:53:00,471 - INFO - Processed 2 records for RTX in 2025-09
+2025-09-24 20:53:00,474 - INFO - Created Parquet file: RTX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:00,819 - INFO - Successfully uploaded RTX_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:53:00,820 - INFO - Cleaned up local file: RTX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:00,820 - INFO - Completed processing RTX: 1/1 files successful
+2025-09-24 20:53:00,820 - INFO - ✓ Successfully processed RTX
+2025-09-24 20:53:00,820 - INFO - Processing ticker 93/122: SBUX
+2025-09-24 20:53:00,820 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:13,325 - INFO - Starting processing for ticker: SBUX (2025-09-20 to 2025-09-23)
+2025-09-24 20:53:13,326 - INFO - Fetching data for SBUX from 2025-09-20 to 2025-09-23
+2025-09-24 20:53:13,620 - INFO - Successfully retrieved 2 records for SBUX
+2025-09-24 20:53:13,627 - INFO - Processed 2 records for SBUX in 2025-09
+2025-09-24 20:53:13,631 - INFO - Created Parquet file: SBUX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:13,960 - INFO - Successfully uploaded SBUX_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:53:13,961 - INFO - Cleaned up local file: SBUX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:13,962 - INFO - Completed processing SBUX: 1/1 files successful
+2025-09-24 20:53:13,962 - INFO - ✓ Successfully processed SBUX
+2025-09-24 20:53:13,962 - INFO - Processing ticker 94/122: SHW
+2025-09-24 20:53:13,962 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:26,467 - INFO - Starting processing for ticker: SHW (2025-09-20 to 2025-09-23)
+2025-09-24 20:53:26,468 - INFO - Fetching data for SHW from 2025-09-20 to 2025-09-23
+2025-09-24 20:53:26,840 - INFO - Successfully retrieved 2 records for SHW
+2025-09-24 20:53:26,847 - INFO - Processed 2 records for SHW in 2025-09
+2025-09-24 20:53:26,852 - INFO - Created Parquet file: SHW_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:27,245 - INFO - Successfully uploaded SHW_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:53:27,246 - INFO - Cleaned up local file: SHW_2025-09-22_2025-09-23.parquet
+2025-09-24 20:53:27,246 - INFO - Completed processing SHW: 1/1 files successful
+2025-09-24 20:53:27,247 - INFO - ✓ Successfully processed SHW
+2025-09-24 20:53:27,247 - INFO - Processing ticker 95/122: SJM
+2025-09-24 20:53:27,247 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:39,750 - INFO - Starting processing for ticker: SJM (2023-09-25 to 2025-09-23)
+2025-09-24 20:53:39,751 - INFO - Fetching data for SJM from 2023-09-25 to 2025-09-23
+2025-09-24 20:53:40,023 - ERROR - Failed to fetch data for SJM: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SJM/range/1/day/2023-09-25/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:53:40,023 - WARNING - No data retrieved for SJM
+2025-09-24 20:53:40,023 - ERROR - ✗ Failed to process SJM
+2025-09-24 20:53:40,023 - INFO - Processing ticker 96/122: SLB
+2025-09-24 20:53:40,023 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:53:52,529 - INFO - Starting processing for ticker: SLB (2025-09-20 to 2025-09-23)
+2025-09-24 20:53:52,530 - INFO - Fetching data for SLB from 2025-09-20 to 2025-09-23
+2025-09-24 20:53:52,808 - ERROR - Failed to fetch data for SLB: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SLB/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:53:52,808 - WARNING - No data retrieved for SLB
+2025-09-24 20:53:52,808 - ERROR - ✗ Failed to process SLB
+2025-09-24 20:53:52,809 - INFO - Processing ticker 97/122: SO
+2025-09-24 20:53:52,809 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:05,314 - INFO - Starting processing for ticker: SO (2025-09-20 to 2025-09-23)
+2025-09-24 20:54:05,315 - INFO - Fetching data for SO from 2025-09-20 to 2025-09-23
+2025-09-24 20:54:05,615 - INFO - Successfully retrieved 2 records for SO
+2025-09-24 20:54:05,627 - INFO - Processed 2 records for SO in 2025-09
+2025-09-24 20:54:05,632 - INFO - Created Parquet file: SO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:54:06,057 - INFO - Successfully uploaded SO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:54:06,058 - INFO - Cleaned up local file: SO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:54:06,058 - INFO - Completed processing SO: 1/1 files successful
+2025-09-24 20:54:06,058 - INFO - ✓ Successfully processed SO
+2025-09-24 20:54:06,058 - INFO - Processing ticker 98/122: SPG
+2025-09-24 20:54:06,058 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:18,563 - INFO - Starting processing for ticker: SPG (2025-09-20 to 2025-09-23)
+2025-09-24 20:54:18,564 - INFO - Fetching data for SPG from 2025-09-20 to 2025-09-23
+2025-09-24 20:54:18,864 - INFO - Successfully retrieved 2 records for SPG
+2025-09-24 20:54:18,868 - INFO - Processed 2 records for SPG in 2025-09
+2025-09-24 20:54:18,872 - INFO - Created Parquet file: SPG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:54:19,094 - INFO - Successfully uploaded SPG_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:54:19,094 - INFO - Cleaned up local file: SPG_2025-09-22_2025-09-23.parquet
+2025-09-24 20:54:19,094 - INFO - Completed processing SPG: 1/1 files successful
+2025-09-24 20:54:19,094 - INFO - ✓ Successfully processed SPG
+2025-09-24 20:54:19,094 - INFO - Processing ticker 99/122: SPGI
+2025-09-24 20:54:19,094 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:31,600 - INFO - Starting processing for ticker: SPGI (2025-09-20 to 2025-09-23)
+2025-09-24 20:54:31,600 - INFO - Fetching data for SPGI from 2025-09-20 to 2025-09-23
+2025-09-24 20:54:31,895 - ERROR - Failed to fetch data for SPGI: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SPGI/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:54:31,896 - WARNING - No data retrieved for SPGI
+2025-09-24 20:54:31,896 - ERROR - ✗ Failed to process SPGI
+2025-09-24 20:54:31,896 - INFO - Processing ticker 100/122: SRE
+2025-09-24 20:54:31,897 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:44,402 - INFO - Starting processing for ticker: SRE (2025-09-20 to 2025-09-23)
+2025-09-24 20:54:44,402 - INFO - Fetching data for SRE from 2025-09-20 to 2025-09-23
+2025-09-24 20:54:44,693 - ERROR - Failed to fetch data for SRE: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/SRE/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:54:44,694 - WARNING - No data retrieved for SRE
+2025-09-24 20:54:44,694 - ERROR - ✗ Failed to process SRE
+2025-09-24 20:54:44,694 - INFO - Processing ticker 101/122: T
+2025-09-24 20:54:44,695 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:54:57,199 - INFO - Starting processing for ticker: T (2025-09-20 to 2025-09-23)
+2025-09-24 20:54:57,201 - INFO - Fetching data for T from 2025-09-20 to 2025-09-23
+2025-09-24 20:54:57,489 - ERROR - Failed to fetch data for T: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/T/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:54:57,489 - WARNING - No data retrieved for T
+2025-09-24 20:54:57,490 - ERROR - ✗ Failed to process T
+2025-09-24 20:54:57,490 - INFO - Processing ticker 102/122: TGT
+2025-09-24 20:54:57,490 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:09,995 - INFO - Starting processing for ticker: TGT (2025-09-20 to 2025-09-23)
+2025-09-24 20:55:09,996 - INFO - Fetching data for TGT from 2025-09-20 to 2025-09-23
+2025-09-24 20:55:10,285 - INFO - Successfully retrieved 2 records for TGT
+2025-09-24 20:55:10,296 - INFO - Processed 2 records for TGT in 2025-09
+2025-09-24 20:55:10,302 - INFO - Created Parquet file: TGT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:55:10,605 - INFO - Successfully uploaded TGT_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:55:10,606 - INFO - Cleaned up local file: TGT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:55:10,606 - INFO - Completed processing TGT: 1/1 files successful
+2025-09-24 20:55:10,606 - INFO - ✓ Successfully processed TGT
+2025-09-24 20:55:10,606 - INFO - Processing ticker 103/122: TJX
+2025-09-24 20:55:10,606 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:23,113 - INFO - Starting processing for ticker: TJX (2025-09-20 to 2025-09-23)
+2025-09-24 20:55:23,121 - INFO - Fetching data for TJX from 2025-09-20 to 2025-09-23
+2025-09-24 20:55:23,428 - INFO - Successfully retrieved 2 records for TJX
+2025-09-24 20:55:23,433 - INFO - Processed 2 records for TJX in 2025-09
+2025-09-24 20:55:23,436 - INFO - Created Parquet file: TJX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:55:23,736 - INFO - Successfully uploaded TJX_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:55:23,737 - INFO - Cleaned up local file: TJX_2025-09-22_2025-09-23.parquet
+2025-09-24 20:55:23,737 - INFO - Completed processing TJX: 1/1 files successful
+2025-09-24 20:55:23,737 - INFO - ✓ Successfully processed TJX
+2025-09-24 20:55:23,737 - INFO - Processing ticker 104/122: TMO
+2025-09-24 20:55:23,738 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:36,243 - INFO - Starting processing for ticker: TMO (2025-09-20 to 2025-09-23)
+2025-09-24 20:55:36,246 - INFO - Fetching data for TMO from 2025-09-20 to 2025-09-23
+2025-09-24 20:55:36,548 - ERROR - Failed to fetch data for TMO: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/TMO/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:55:36,549 - WARNING - No data retrieved for TMO
+2025-09-24 20:55:36,550 - ERROR - ✗ Failed to process TMO
+2025-09-24 20:55:36,550 - INFO - Processing ticker 105/122: TMUS
+2025-09-24 20:55:36,550 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:55:49,052 - INFO - Starting processing for ticker: TMUS (2025-09-20 to 2025-09-23)
+2025-09-24 20:55:49,053 - INFO - Fetching data for TMUS from 2025-09-20 to 2025-09-23
+2025-09-24 20:55:49,347 - ERROR - Failed to fetch data for TMUS: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/TMUS/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:55:49,348 - WARNING - No data retrieved for TMUS
+2025-09-24 20:55:49,348 - ERROR - ✗ Failed to process TMUS
+2025-09-24 20:55:49,348 - INFO - Processing ticker 106/122: TSLA
+2025-09-24 20:55:49,348 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:01,853 - INFO - Starting processing for ticker: TSLA (2025-09-20 to 2025-09-23)
+2025-09-24 20:56:01,855 - INFO - Fetching data for TSLA from 2025-09-20 to 2025-09-23
+2025-09-24 20:56:02,152 - INFO - Successfully retrieved 2 records for TSLA
+2025-09-24 20:56:02,164 - INFO - Processed 2 records for TSLA in 2025-09
+2025-09-24 20:56:02,170 - INFO - Created Parquet file: TSLA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:02,443 - INFO - Successfully uploaded TSLA_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:56:02,444 - INFO - Cleaned up local file: TSLA_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:02,444 - INFO - Completed processing TSLA: 1/1 files successful
+2025-09-24 20:56:02,444 - INFO - ✓ Successfully processed TSLA
+2025-09-24 20:56:02,444 - INFO - Processing ticker 107/122: TTD
+2025-09-24 20:56:02,444 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:14,945 - INFO - Starting processing for ticker: TTD (2025-09-20 to 2025-09-23)
+2025-09-24 20:56:14,946 - INFO - Fetching data for TTD from 2025-09-20 to 2025-09-23
+2025-09-24 20:56:15,242 - INFO - Successfully retrieved 2 records for TTD
+2025-09-24 20:56:15,247 - INFO - Processed 2 records for TTD in 2025-09
+2025-09-24 20:56:15,250 - INFO - Created Parquet file: TTD_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:15,582 - INFO - Successfully uploaded TTD_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:56:15,583 - INFO - Cleaned up local file: TTD_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:15,583 - INFO - Completed processing TTD: 1/1 files successful
+2025-09-24 20:56:15,583 - INFO - ✓ Successfully processed TTD
+2025-09-24 20:56:15,583 - INFO - Processing ticker 108/122: UBER
+2025-09-24 20:56:15,583 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:28,088 - INFO - Starting processing for ticker: UBER (2025-09-20 to 2025-09-23)
+2025-09-24 20:56:28,089 - INFO - Fetching data for UBER from 2025-09-20 to 2025-09-23
+2025-09-24 20:56:28,405 - INFO - Successfully retrieved 2 records for UBER
+2025-09-24 20:56:28,412 - INFO - Processed 2 records for UBER in 2025-09
+2025-09-24 20:56:28,415 - INFO - Created Parquet file: UBER_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:28,784 - INFO - Successfully uploaded UBER_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:56:28,785 - INFO - Cleaned up local file: UBER_2025-09-22_2025-09-23.parquet
+2025-09-24 20:56:28,785 - INFO - Completed processing UBER: 1/1 files successful
+2025-09-24 20:56:28,786 - INFO - ✓ Successfully processed UBER
+2025-09-24 20:56:28,786 - INFO - Processing ticker 109/122: UNH
+2025-09-24 20:56:28,786 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:41,289 - INFO - Starting processing for ticker: UNH (2025-09-20 to 2025-09-23)
+2025-09-24 20:56:41,290 - INFO - Fetching data for UNH from 2025-09-20 to 2025-09-23
+2025-09-24 20:56:41,663 - ERROR - Failed to fetch data for UNH: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/UNH/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:56:41,664 - WARNING - No data retrieved for UNH
+2025-09-24 20:56:41,664 - ERROR - ✗ Failed to process UNH
+2025-09-24 20:56:41,664 - INFO - Processing ticker 110/122: UNP
+2025-09-24 20:56:41,664 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:56:54,165 - INFO - Starting processing for ticker: UNP (2025-09-20 to 2025-09-23)
+2025-09-24 20:56:54,165 - INFO - Fetching data for UNP from 2025-09-20 to 2025-09-23
+2025-09-24 20:56:54,449 - ERROR - Failed to fetch data for UNP: 429 Client Error: Too Many Requests for url: https://api.polygon.io/v2/aggs/ticker/UNP/range/1/day/2025-09-20/2025-09-23?apikey=10ybObRju_juTnTZMBDT8bdXmtTWJeYP&adjusted=true&sort=asc&limit=50000
+2025-09-24 20:56:54,451 - WARNING - No data retrieved for UNP
+2025-09-24 20:56:54,451 - ERROR - ✗ Failed to process UNP
+2025-09-24 20:56:54,451 - INFO - Processing ticker 111/122: V
+2025-09-24 20:56:54,451 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:57:06,956 - INFO - Starting processing for ticker: V (2025-09-20 to 2025-09-23)
+2025-09-24 20:57:06,957 - INFO - Fetching data for V from 2025-09-20 to 2025-09-23
+2025-09-24 20:57:07,254 - INFO - Successfully retrieved 2 records for V
+2025-09-24 20:57:07,271 - INFO - Processed 2 records for V in 2025-09
+2025-09-24 20:57:07,277 - INFO - Created Parquet file: V_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:07,577 - INFO - Successfully uploaded V_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:57:07,578 - INFO - Cleaned up local file: V_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:07,578 - INFO - Completed processing V: 1/1 files successful
+2025-09-24 20:57:07,578 - INFO - ✓ Successfully processed V
+2025-09-24 20:57:07,578 - INFO - Processing ticker 112/122: VMC
+2025-09-24 20:57:07,579 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:57:20,084 - INFO - Starting processing for ticker: VMC (2025-09-20 to 2025-09-23)
+2025-09-24 20:57:20,086 - INFO - Fetching data for VMC from 2025-09-20 to 2025-09-23
+2025-09-24 20:57:20,391 - INFO - Successfully retrieved 2 records for VMC
+2025-09-24 20:57:20,397 - INFO - Processed 2 records for VMC in 2025-09
+2025-09-24 20:57:20,400 - INFO - Created Parquet file: VMC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:20,702 - INFO - Successfully uploaded VMC_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:57:20,703 - INFO - Cleaned up local file: VMC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:20,704 - INFO - Completed processing VMC: 1/1 files successful
+2025-09-24 20:57:20,704 - INFO - ✓ Successfully processed VMC
+2025-09-24 20:57:20,704 - INFO - Processing ticker 113/122: VOO
+2025-09-24 20:57:20,704 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:57:33,205 - INFO - Starting processing for ticker: VOO (2025-09-20 to 2025-09-23)
+2025-09-24 20:57:33,205 - INFO - Fetching data for VOO from 2025-09-20 to 2025-09-23
+2025-09-24 20:57:33,509 - INFO - Successfully retrieved 2 records for VOO
+2025-09-24 20:57:33,514 - INFO - Processed 2 records for VOO in 2025-09
+2025-09-24 20:57:33,518 - INFO - Created Parquet file: VOO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:33,944 - INFO - Successfully uploaded VOO_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:57:33,946 - INFO - Cleaned up local file: VOO_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:33,946 - INFO - Completed processing VOO: 1/1 files successful
+2025-09-24 20:57:33,946 - INFO - ✓ Successfully processed VOO
+2025-09-24 20:57:33,946 - INFO - Processing ticker 114/122: VST
+2025-09-24 20:57:33,946 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:57:46,450 - INFO - Starting processing for ticker: VST (2025-09-20 to 2025-09-23)
+2025-09-24 20:57:46,451 - INFO - Fetching data for VST from 2025-09-20 to 2025-09-23
+2025-09-24 20:57:46,750 - INFO - Successfully retrieved 2 records for VST
+2025-09-24 20:57:46,765 - INFO - Processed 2 records for VST in 2025-09
+2025-09-24 20:57:46,770 - INFO - Created Parquet file: VST_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:47,092 - INFO - Successfully uploaded VST_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:57:47,093 - INFO - Cleaned up local file: VST_2025-09-22_2025-09-23.parquet
+2025-09-24 20:57:47,093 - INFO - Completed processing VST: 1/1 files successful
+2025-09-24 20:57:47,093 - INFO - ✓ Successfully processed VST
+2025-09-24 20:57:47,093 - INFO - Processing ticker 115/122: VZ
+2025-09-24 20:57:47,093 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:57:59,588 - INFO - Starting processing for ticker: VZ (2025-09-20 to 2025-09-23)
+2025-09-24 20:57:59,589 - INFO - Fetching data for VZ from 2025-09-20 to 2025-09-23
+2025-09-24 20:57:59,900 - INFO - Successfully retrieved 2 records for VZ
+2025-09-24 20:57:59,908 - INFO - Processed 2 records for VZ in 2025-09
+2025-09-24 20:57:59,913 - INFO - Created Parquet file: VZ_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:00,296 - INFO - Successfully uploaded VZ_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:58:00,297 - INFO - Cleaned up local file: VZ_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:00,297 - INFO - Completed processing VZ: 1/1 files successful
+2025-09-24 20:58:00,297 - INFO - ✓ Successfully processed VZ
+2025-09-24 20:58:00,298 - INFO - Processing ticker 116/122: WELL
+2025-09-24 20:58:00,298 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:58:12,797 - INFO - Starting processing for ticker: WELL (2025-09-20 to 2025-09-23)
+2025-09-24 20:58:12,797 - INFO - Fetching data for WELL from 2025-09-20 to 2025-09-23
+2025-09-24 20:58:13,094 - INFO - Successfully retrieved 2 records for WELL
+2025-09-24 20:58:13,103 - INFO - Processed 2 records for WELL in 2025-09
+2025-09-24 20:58:13,112 - INFO - Created Parquet file: WELL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:13,399 - INFO - Successfully uploaded WELL_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:58:13,400 - INFO - Cleaned up local file: WELL_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:13,400 - INFO - Completed processing WELL: 1/1 files successful
+2025-09-24 20:58:13,400 - INFO - ✓ Successfully processed WELL
+2025-09-24 20:58:13,401 - INFO - Processing ticker 117/122: WFC
+2025-09-24 20:58:13,401 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:58:25,904 - INFO - Starting processing for ticker: WFC (2025-09-20 to 2025-09-23)
+2025-09-24 20:58:25,904 - INFO - Fetching data for WFC from 2025-09-20 to 2025-09-23
+2025-09-24 20:58:26,202 - INFO - Successfully retrieved 2 records for WFC
+2025-09-24 20:58:26,209 - INFO - Processed 2 records for WFC in 2025-09
+2025-09-24 20:58:26,214 - INFO - Created Parquet file: WFC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:26,606 - INFO - Successfully uploaded WFC_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:58:26,607 - INFO - Cleaned up local file: WFC_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:26,608 - INFO - Completed processing WFC: 1/1 files successful
+2025-09-24 20:58:26,608 - INFO - ✓ Successfully processed WFC
+2025-09-24 20:58:26,608 - INFO - Processing ticker 118/122: WHR
+2025-09-24 20:58:26,608 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:58:39,113 - INFO - Starting processing for ticker: WHR (2023-09-25 to 2025-09-23)
+2025-09-24 20:58:39,114 - INFO - Fetching data for WHR from 2023-09-25 to 2025-09-23
+2025-09-24 20:58:39,476 - INFO - Successfully retrieved 501 records for WHR
+2025-09-24 20:58:39,493 - INFO - Processed 5 records for WHR in 2023-09
+2025-09-24 20:58:39,493 - INFO - Processed 22 records for WHR in 2023-10
+2025-09-24 20:58:39,493 - INFO - Processed 21 records for WHR in 2023-11
+2025-09-24 20:58:39,494 - INFO - Processed 20 records for WHR in 2023-12
+2025-09-24 20:58:39,494 - INFO - Processed 21 records for WHR in 2024-01
+2025-09-24 20:58:39,494 - INFO - Processed 20 records for WHR in 2024-02
+2025-09-24 20:58:39,494 - INFO - Processed 20 records for WHR in 2024-03
+2025-09-24 20:58:39,494 - INFO - Processed 22 records for WHR in 2024-04
+2025-09-24 20:58:39,495 - INFO - Processed 22 records for WHR in 2024-05
+2025-09-24 20:58:39,495 - INFO - Processed 19 records for WHR in 2024-06
+2025-09-24 20:58:39,495 - INFO - Processed 22 records for WHR in 2024-07
+2025-09-24 20:58:39,495 - INFO - Processed 22 records for WHR in 2024-08
+2025-09-24 20:58:39,495 - INFO - Processed 20 records for WHR in 2024-09
+2025-09-24 20:58:39,496 - INFO - Processed 23 records for WHR in 2024-10
+2025-09-24 20:58:39,496 - INFO - Processed 20 records for WHR in 2024-11
+2025-09-24 20:58:39,496 - INFO - Processed 21 records for WHR in 2024-12
+2025-09-24 20:58:39,496 - INFO - Processed 20 records for WHR in 2025-01
+2025-09-24 20:58:39,496 - INFO - Processed 19 records for WHR in 2025-02
+2025-09-24 20:58:39,496 - INFO - Processed 21 records for WHR in 2025-03
+2025-09-24 20:58:39,497 - INFO - Processed 21 records for WHR in 2025-04
+2025-09-24 20:58:39,497 - INFO - Processed 21 records for WHR in 2025-05
+2025-09-24 20:58:39,497 - INFO - Processed 20 records for WHR in 2025-06
+2025-09-24 20:58:39,497 - INFO - Processed 22 records for WHR in 2025-07
+2025-09-24 20:58:39,497 - INFO - Processed 21 records for WHR in 2025-08
+2025-09-24 20:58:39,498 - INFO - Processed 16 records for WHR in 2025-09
+2025-09-24 20:58:39,501 - INFO - Created Parquet file: WHR_2023-09-25_2023-09-29.parquet
+2025-09-24 20:58:39,697 - INFO - Successfully uploaded WHR_2023-09-25_2023-09-29.parquet to S3 bucket root
+2025-09-24 20:58:39,697 - INFO - Cleaned up local file: WHR_2023-09-25_2023-09-29.parquet
+2025-09-24 20:58:39,701 - INFO - Created Parquet file: WHR_2023-10-02_2023-10-31.parquet
+2025-09-24 20:58:39,771 - INFO - Successfully uploaded WHR_2023-10-02_2023-10-31.parquet to S3 bucket root
+2025-09-24 20:58:39,771 - INFO - Cleaned up local file: WHR_2023-10-02_2023-10-31.parquet
+2025-09-24 20:58:39,774 - INFO - Created Parquet file: WHR_2023-11-01_2023-11-30.parquet
+2025-09-24 20:58:39,843 - INFO - Successfully uploaded WHR_2023-11-01_2023-11-30.parquet to S3 bucket root
+2025-09-24 20:58:39,843 - INFO - Cleaned up local file: WHR_2023-11-01_2023-11-30.parquet
+2025-09-24 20:58:39,846 - INFO - Created Parquet file: WHR_2023-12-01_2023-12-29.parquet
+2025-09-24 20:58:39,929 - INFO - Successfully uploaded WHR_2023-12-01_2023-12-29.parquet to S3 bucket root
+2025-09-24 20:58:39,929 - INFO - Cleaned up local file: WHR_2023-12-01_2023-12-29.parquet
+2025-09-24 20:58:39,931 - INFO - Created Parquet file: WHR_2024-01-02_2024-01-31.parquet
+2025-09-24 20:58:40,009 - INFO - Successfully uploaded WHR_2024-01-02_2024-01-31.parquet to S3 bucket root
+2025-09-24 20:58:40,010 - INFO - Cleaned up local file: WHR_2024-01-02_2024-01-31.parquet
+2025-09-24 20:58:40,012 - INFO - Created Parquet file: WHR_2024-02-01_2024-02-29.parquet
+2025-09-24 20:58:40,072 - INFO - Successfully uploaded WHR_2024-02-01_2024-02-29.parquet to S3 bucket root
+2025-09-24 20:58:40,072 - INFO - Cleaned up local file: WHR_2024-02-01_2024-02-29.parquet
+2025-09-24 20:58:40,078 - INFO - Created Parquet file: WHR_2024-03-01_2024-03-28.parquet
+2025-09-24 20:58:40,146 - INFO - Successfully uploaded WHR_2024-03-01_2024-03-28.parquet to S3 bucket root
+2025-09-24 20:58:40,147 - INFO - Cleaned up local file: WHR_2024-03-01_2024-03-28.parquet
+2025-09-24 20:58:40,150 - INFO - Created Parquet file: WHR_2024-04-01_2024-04-30.parquet
+2025-09-24 20:58:40,226 - INFO - Successfully uploaded WHR_2024-04-01_2024-04-30.parquet to S3 bucket root
+2025-09-24 20:58:40,228 - INFO - Cleaned up local file: WHR_2024-04-01_2024-04-30.parquet
+2025-09-24 20:58:40,239 - INFO - Created Parquet file: WHR_2024-05-01_2024-05-31.parquet
+2025-09-24 20:58:40,320 - INFO - Successfully uploaded WHR_2024-05-01_2024-05-31.parquet to S3 bucket root
+2025-09-24 20:58:40,321 - INFO - Cleaned up local file: WHR_2024-05-01_2024-05-31.parquet
+2025-09-24 20:58:40,323 - INFO - Created Parquet file: WHR_2024-06-03_2024-06-28.parquet
+2025-09-24 20:58:40,385 - INFO - Successfully uploaded WHR_2024-06-03_2024-06-28.parquet to S3 bucket root
+2025-09-24 20:58:40,385 - INFO - Cleaned up local file: WHR_2024-06-03_2024-06-28.parquet
+2025-09-24 20:58:40,388 - INFO - Created Parquet file: WHR_2024-07-01_2024-07-31.parquet
+2025-09-24 20:58:40,453 - INFO - Successfully uploaded WHR_2024-07-01_2024-07-31.parquet to S3 bucket root
+2025-09-24 20:58:40,453 - INFO - Cleaned up local file: WHR_2024-07-01_2024-07-31.parquet
+2025-09-24 20:58:40,456 - INFO - Created Parquet file: WHR_2024-08-01_2024-08-30.parquet
+2025-09-24 20:58:40,523 - INFO - Successfully uploaded WHR_2024-08-01_2024-08-30.parquet to S3 bucket root
+2025-09-24 20:58:40,523 - INFO - Cleaned up local file: WHR_2024-08-01_2024-08-30.parquet
+2025-09-24 20:58:40,526 - INFO - Created Parquet file: WHR_2024-09-03_2024-09-30.parquet
+2025-09-24 20:58:40,582 - INFO - Successfully uploaded WHR_2024-09-03_2024-09-30.parquet to S3 bucket root
+2025-09-24 20:58:40,583 - INFO - Cleaned up local file: WHR_2024-09-03_2024-09-30.parquet
+2025-09-24 20:58:40,587 - INFO - Created Parquet file: WHR_2024-10-01_2024-10-31.parquet
+2025-09-24 20:58:40,651 - INFO - Successfully uploaded WHR_2024-10-01_2024-10-31.parquet to S3 bucket root
+2025-09-24 20:58:40,652 - INFO - Cleaned up local file: WHR_2024-10-01_2024-10-31.parquet
+2025-09-24 20:58:40,656 - INFO - Created Parquet file: WHR_2024-11-01_2024-11-29.parquet
+2025-09-24 20:58:40,719 - INFO - Successfully uploaded WHR_2024-11-01_2024-11-29.parquet to S3 bucket root
+2025-09-24 20:58:40,719 - INFO - Cleaned up local file: WHR_2024-11-01_2024-11-29.parquet
+2025-09-24 20:58:40,722 - INFO - Created Parquet file: WHR_2024-12-02_2024-12-31.parquet
+2025-09-24 20:58:40,784 - INFO - Successfully uploaded WHR_2024-12-02_2024-12-31.parquet to S3 bucket root
+2025-09-24 20:58:40,785 - INFO - Cleaned up local file: WHR_2024-12-02_2024-12-31.parquet
+2025-09-24 20:58:40,786 - INFO - Created Parquet file: WHR_2025-01-02_2025-01-31.parquet
+2025-09-24 20:58:40,853 - INFO - Successfully uploaded WHR_2025-01-02_2025-01-31.parquet to S3 bucket root
+2025-09-24 20:58:40,853 - INFO - Cleaned up local file: WHR_2025-01-02_2025-01-31.parquet
+2025-09-24 20:58:40,854 - INFO - Created Parquet file: WHR_2025-02-03_2025-02-28.parquet
+2025-09-24 20:58:40,927 - INFO - Successfully uploaded WHR_2025-02-03_2025-02-28.parquet to S3 bucket root
+2025-09-24 20:58:40,927 - INFO - Cleaned up local file: WHR_2025-02-03_2025-02-28.parquet
+2025-09-24 20:58:40,929 - INFO - Created Parquet file: WHR_2025-03-03_2025-03-31.parquet
+2025-09-24 20:58:40,987 - INFO - Successfully uploaded WHR_2025-03-03_2025-03-31.parquet to S3 bucket root
+2025-09-24 20:58:40,987 - INFO - Cleaned up local file: WHR_2025-03-03_2025-03-31.parquet
+2025-09-24 20:58:40,989 - INFO - Created Parquet file: WHR_2025-04-01_2025-04-30.parquet
+2025-09-24 20:58:41,056 - INFO - Successfully uploaded WHR_2025-04-01_2025-04-30.parquet to S3 bucket root
+2025-09-24 20:58:41,056 - INFO - Cleaned up local file: WHR_2025-04-01_2025-04-30.parquet
+2025-09-24 20:58:41,058 - INFO - Created Parquet file: WHR_2025-05-01_2025-05-30.parquet
+2025-09-24 20:58:41,118 - INFO - Successfully uploaded WHR_2025-05-01_2025-05-30.parquet to S3 bucket root
+2025-09-24 20:58:41,118 - INFO - Cleaned up local file: WHR_2025-05-01_2025-05-30.parquet
+2025-09-24 20:58:41,121 - INFO - Created Parquet file: WHR_2025-06-02_2025-06-30.parquet
+2025-09-24 20:58:41,218 - INFO - Successfully uploaded WHR_2025-06-02_2025-06-30.parquet to S3 bucket root
+2025-09-24 20:58:41,219 - INFO - Cleaned up local file: WHR_2025-06-02_2025-06-30.parquet
+2025-09-24 20:58:41,224 - INFO - Created Parquet file: WHR_2025-07-01_2025-07-31.parquet
+2025-09-24 20:58:41,288 - INFO - Successfully uploaded WHR_2025-07-01_2025-07-31.parquet to S3 bucket root
+2025-09-24 20:58:41,288 - INFO - Cleaned up local file: WHR_2025-07-01_2025-07-31.parquet
+2025-09-24 20:58:41,292 - INFO - Created Parquet file: WHR_2025-08-01_2025-08-29.parquet
+2025-09-24 20:58:41,357 - INFO - Successfully uploaded WHR_2025-08-01_2025-08-29.parquet to S3 bucket root
+2025-09-24 20:58:41,358 - INFO - Cleaned up local file: WHR_2025-08-01_2025-08-29.parquet
+2025-09-24 20:58:41,362 - INFO - Created Parquet file: WHR_2025-09-02_2025-09-23.parquet
+2025-09-24 20:58:41,428 - INFO - Successfully uploaded WHR_2025-09-02_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:58:41,428 - INFO - Cleaned up local file: WHR_2025-09-02_2025-09-23.parquet
+2025-09-24 20:58:41,429 - INFO - Completed processing WHR: 25/25 files successful
+2025-09-24 20:58:41,431 - INFO - ✓ Successfully processed WHR
+2025-09-24 20:58:41,431 - INFO - Processing ticker 119/122: WMB
+2025-09-24 20:58:41,431 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:58:53,934 - INFO - Starting processing for ticker: WMB (2025-09-20 to 2025-09-23)
+2025-09-24 20:58:53,934 - INFO - Fetching data for WMB from 2025-09-20 to 2025-09-23
+2025-09-24 20:58:54,326 - INFO - Successfully retrieved 2 records for WMB
+2025-09-24 20:58:54,333 - INFO - Processed 2 records for WMB in 2025-09
+2025-09-24 20:58:54,338 - INFO - Created Parquet file: WMB_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:54,735 - INFO - Successfully uploaded WMB_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:58:54,736 - INFO - Cleaned up local file: WMB_2025-09-22_2025-09-23.parquet
+2025-09-24 20:58:54,736 - INFO - Completed processing WMB: 1/1 files successful
+2025-09-24 20:58:54,736 - INFO - ✓ Successfully processed WMB
+2025-09-24 20:58:54,736 - INFO - Processing ticker 120/122: WMT
+2025-09-24 20:58:54,736 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:59:07,242 - INFO - Starting processing for ticker: WMT (2025-09-20 to 2025-09-23)
+2025-09-24 20:59:07,243 - INFO - Fetching data for WMT from 2025-09-20 to 2025-09-23
+2025-09-24 20:59:07,550 - INFO - Successfully retrieved 2 records for WMT
+2025-09-24 20:59:07,557 - INFO - Processed 2 records for WMT in 2025-09
+2025-09-24 20:59:07,562 - INFO - Created Parquet file: WMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:59:07,859 - INFO - Successfully uploaded WMT_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:59:07,860 - INFO - Cleaned up local file: WMT_2025-09-22_2025-09-23.parquet
+2025-09-24 20:59:07,860 - INFO - Completed processing WMT: 1/1 files successful
+2025-09-24 20:59:07,860 - INFO - ✓ Successfully processed WMT
+2025-09-24 20:59:07,861 - INFO - Processing ticker 121/122: XOM
+2025-09-24 20:59:07,861 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:59:20,366 - INFO - Starting processing for ticker: XOM (2025-09-20 to 2025-09-23)
+2025-09-24 20:59:20,368 - INFO - Fetching data for XOM from 2025-09-20 to 2025-09-23
+2025-09-24 20:59:20,783 - INFO - Successfully retrieved 2 records for XOM
+2025-09-24 20:59:20,789 - INFO - Processed 2 records for XOM in 2025-09
+2025-09-24 20:59:20,794 - INFO - Created Parquet file: XOM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:59:21,261 - INFO - Successfully uploaded XOM_2025-09-22_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:59:21,262 - INFO - Cleaned up local file: XOM_2025-09-22_2025-09-23.parquet
+2025-09-24 20:59:21,262 - INFO - Completed processing XOM: 1/1 files successful
+2025-09-24 20:59:21,263 - INFO - ✓ Successfully processed XOM
+2025-09-24 20:59:21,263 - INFO - Processing ticker 122/122: ZBH
+2025-09-24 20:59:21,263 - INFO - Rate limiting: waiting 12.5 seconds...
+2025-09-24 20:59:33,768 - INFO - Starting processing for ticker: ZBH (2023-09-25 to 2025-09-23)
+2025-09-24 20:59:33,769 - INFO - Fetching data for ZBH from 2023-09-25 to 2025-09-23
+2025-09-24 20:59:34,180 - INFO - Successfully retrieved 501 records for ZBH
+2025-09-24 20:59:34,193 - INFO - Processed 5 records for ZBH in 2023-09
+2025-09-24 20:59:34,194 - INFO - Processed 22 records for ZBH in 2023-10
+2025-09-24 20:59:34,194 - INFO - Processed 21 records for ZBH in 2023-11
+2025-09-24 20:59:34,194 - INFO - Processed 20 records for ZBH in 2023-12
+2025-09-24 20:59:34,195 - INFO - Processed 21 records for ZBH in 2024-01
+2025-09-24 20:59:34,195 - INFO - Processed 20 records for ZBH in 2024-02
+2025-09-24 20:59:34,195 - INFO - Processed 20 records for ZBH in 2024-03
+2025-09-24 20:59:34,196 - INFO - Processed 22 records for ZBH in 2024-04
+2025-09-24 20:59:34,196 - INFO - Processed 22 records for ZBH in 2024-05
+2025-09-24 20:59:34,196 - INFO - Processed 19 records for ZBH in 2024-06
+2025-09-24 20:59:34,196 - INFO - Processed 22 records for ZBH in 2024-07
+2025-09-24 20:59:34,196 - INFO - Processed 22 records for ZBH in 2024-08
+2025-09-24 20:59:34,197 - INFO - Processed 20 records for ZBH in 2024-09
+2025-09-24 20:59:34,197 - INFO - Processed 23 records for ZBH in 2024-10
+2025-09-24 20:59:34,197 - INFO - Processed 20 records for ZBH in 2024-11
+2025-09-24 20:59:34,197 - INFO - Processed 21 records for ZBH in 2024-12
+2025-09-24 20:59:34,197 - INFO - Processed 20 records for ZBH in 2025-01
+2025-09-24 20:59:34,198 - INFO - Processed 19 records for ZBH in 2025-02
+2025-09-24 20:59:34,198 - INFO - Processed 21 records for ZBH in 2025-03
+2025-09-24 20:59:34,198 - INFO - Processed 21 records for ZBH in 2025-04
+2025-09-24 20:59:34,199 - INFO - Processed 21 records for ZBH in 2025-05
+2025-09-24 20:59:34,199 - INFO - Processed 20 records for ZBH in 2025-06
+2025-09-24 20:59:34,199 - INFO - Processed 22 records for ZBH in 2025-07
+2025-09-24 20:59:34,199 - INFO - Processed 21 records for ZBH in 2025-08
+2025-09-24 20:59:34,199 - INFO - Processed 16 records for ZBH in 2025-09
+2025-09-24 20:59:34,203 - INFO - Created Parquet file: ZBH_2023-09-25_2023-09-29.parquet
+2025-09-24 20:59:34,520 - INFO - Successfully uploaded ZBH_2023-09-25_2023-09-29.parquet to S3 bucket root
+2025-09-24 20:59:34,521 - INFO - Cleaned up local file: ZBH_2023-09-25_2023-09-29.parquet
+2025-09-24 20:59:34,526 - INFO - Created Parquet file: ZBH_2023-10-02_2023-10-31.parquet
+2025-09-24 20:59:34,592 - INFO - Successfully uploaded ZBH_2023-10-02_2023-10-31.parquet to S3 bucket root
+2025-09-24 20:59:34,593 - INFO - Cleaned up local file: ZBH_2023-10-02_2023-10-31.parquet
+2025-09-24 20:59:34,597 - INFO - Created Parquet file: ZBH_2023-11-01_2023-11-30.parquet
+2025-09-24 20:59:34,664 - INFO - Successfully uploaded ZBH_2023-11-01_2023-11-30.parquet to S3 bucket root
+2025-09-24 20:59:34,664 - INFO - Cleaned up local file: ZBH_2023-11-01_2023-11-30.parquet
+2025-09-24 20:59:34,669 - INFO - Created Parquet file: ZBH_2023-12-01_2023-12-29.parquet
+2025-09-24 20:59:34,735 - INFO - Successfully uploaded ZBH_2023-12-01_2023-12-29.parquet to S3 bucket root
+2025-09-24 20:59:34,736 - INFO - Cleaned up local file: ZBH_2023-12-01_2023-12-29.parquet
+2025-09-24 20:59:34,741 - INFO - Created Parquet file: ZBH_2024-01-02_2024-01-31.parquet
+2025-09-24 20:59:34,800 - INFO - Successfully uploaded ZBH_2024-01-02_2024-01-31.parquet to S3 bucket root
+2025-09-24 20:59:34,801 - INFO - Cleaned up local file: ZBH_2024-01-02_2024-01-31.parquet
+2025-09-24 20:59:34,806 - INFO - Created Parquet file: ZBH_2024-02-01_2024-02-29.parquet
+2025-09-24 20:59:34,867 - INFO - Successfully uploaded ZBH_2024-02-01_2024-02-29.parquet to S3 bucket root
+2025-09-24 20:59:34,868 - INFO - Cleaned up local file: ZBH_2024-02-01_2024-02-29.parquet
+2025-09-24 20:59:34,872 - INFO - Created Parquet file: ZBH_2024-03-01_2024-03-28.parquet
+2025-09-24 20:59:34,937 - INFO - Successfully uploaded ZBH_2024-03-01_2024-03-28.parquet to S3 bucket root
+2025-09-24 20:59:34,937 - INFO - Cleaned up local file: ZBH_2024-03-01_2024-03-28.parquet
+2025-09-24 20:59:34,941 - INFO - Created Parquet file: ZBH_2024-04-01_2024-04-30.parquet
+2025-09-24 20:59:35,002 - INFO - Successfully uploaded ZBH_2024-04-01_2024-04-30.parquet to S3 bucket root
+2025-09-24 20:59:35,003 - INFO - Cleaned up local file: ZBH_2024-04-01_2024-04-30.parquet
+2025-09-24 20:59:35,008 - INFO - Created Parquet file: ZBH_2024-05-01_2024-05-31.parquet
+2025-09-24 20:59:35,072 - INFO - Successfully uploaded ZBH_2024-05-01_2024-05-31.parquet to S3 bucket root
+2025-09-24 20:59:35,072 - INFO - Cleaned up local file: ZBH_2024-05-01_2024-05-31.parquet
+2025-09-24 20:59:35,074 - INFO - Created Parquet file: ZBH_2024-06-03_2024-06-28.parquet
+2025-09-24 20:59:35,137 - INFO - Successfully uploaded ZBH_2024-06-03_2024-06-28.parquet to S3 bucket root
+2025-09-24 20:59:35,138 - INFO - Cleaned up local file: ZBH_2024-06-03_2024-06-28.parquet
+2025-09-24 20:59:35,143 - INFO - Created Parquet file: ZBH_2024-07-01_2024-07-31.parquet
+2025-09-24 20:59:35,206 - INFO - Successfully uploaded ZBH_2024-07-01_2024-07-31.parquet to S3 bucket root
+2025-09-24 20:59:35,207 - INFO - Cleaned up local file: ZBH_2024-07-01_2024-07-31.parquet
+2025-09-24 20:59:35,210 - INFO - Created Parquet file: ZBH_2024-08-01_2024-08-30.parquet
+2025-09-24 20:59:35,276 - INFO - Successfully uploaded ZBH_2024-08-01_2024-08-30.parquet to S3 bucket root
+2025-09-24 20:59:35,276 - INFO - Cleaned up local file: ZBH_2024-08-01_2024-08-30.parquet
+2025-09-24 20:59:35,281 - INFO - Created Parquet file: ZBH_2024-09-03_2024-09-30.parquet
+2025-09-24 20:59:35,366 - INFO - Successfully uploaded ZBH_2024-09-03_2024-09-30.parquet to S3 bucket root
+2025-09-24 20:59:35,367 - INFO - Cleaned up local file: ZBH_2024-09-03_2024-09-30.parquet
+2025-09-24 20:59:35,478 - INFO - Created Parquet file: ZBH_2024-10-01_2024-10-31.parquet
+2025-09-24 20:59:35,566 - INFO - Successfully uploaded ZBH_2024-10-01_2024-10-31.parquet to S3 bucket root
+2025-09-24 20:59:35,567 - INFO - Cleaned up local file: ZBH_2024-10-01_2024-10-31.parquet
+2025-09-24 20:59:35,572 - INFO - Created Parquet file: ZBH_2024-11-01_2024-11-29.parquet
+2025-09-24 20:59:35,637 - INFO - Successfully uploaded ZBH_2024-11-01_2024-11-29.parquet to S3 bucket root
+2025-09-24 20:59:35,637 - INFO - Cleaned up local file: ZBH_2024-11-01_2024-11-29.parquet
+2025-09-24 20:59:35,641 - INFO - Created Parquet file: ZBH_2024-12-02_2024-12-31.parquet
+2025-09-24 20:59:35,704 - INFO - Successfully uploaded ZBH_2024-12-02_2024-12-31.parquet to S3 bucket root
+2025-09-24 20:59:35,704 - INFO - Cleaned up local file: ZBH_2024-12-02_2024-12-31.parquet
+2025-09-24 20:59:35,709 - INFO - Created Parquet file: ZBH_2025-01-02_2025-01-31.parquet
+2025-09-24 20:59:35,775 - INFO - Successfully uploaded ZBH_2025-01-02_2025-01-31.parquet to S3 bucket root
+2025-09-24 20:59:35,776 - INFO - Cleaned up local file: ZBH_2025-01-02_2025-01-31.parquet
+2025-09-24 20:59:35,782 - INFO - Created Parquet file: ZBH_2025-02-03_2025-02-28.parquet
+2025-09-24 20:59:35,854 - INFO - Successfully uploaded ZBH_2025-02-03_2025-02-28.parquet to S3 bucket root
+2025-09-24 20:59:35,855 - INFO - Cleaned up local file: ZBH_2025-02-03_2025-02-28.parquet
+2025-09-24 20:59:35,858 - INFO - Created Parquet file: ZBH_2025-03-03_2025-03-31.parquet
+2025-09-24 20:59:35,919 - INFO - Successfully uploaded ZBH_2025-03-03_2025-03-31.parquet to S3 bucket root
+2025-09-24 20:59:35,919 - INFO - Cleaned up local file: ZBH_2025-03-03_2025-03-31.parquet
+2025-09-24 20:59:35,921 - INFO - Created Parquet file: ZBH_2025-04-01_2025-04-30.parquet
+2025-09-24 20:59:35,985 - INFO - Successfully uploaded ZBH_2025-04-01_2025-04-30.parquet to S3 bucket root
+2025-09-24 20:59:35,985 - INFO - Cleaned up local file: ZBH_2025-04-01_2025-04-30.parquet
+2025-09-24 20:59:35,988 - INFO - Created Parquet file: ZBH_2025-05-01_2025-05-30.parquet
+2025-09-24 20:59:36,053 - INFO - Successfully uploaded ZBH_2025-05-01_2025-05-30.parquet to S3 bucket root
+2025-09-24 20:59:36,054 - INFO - Cleaned up local file: ZBH_2025-05-01_2025-05-30.parquet
+2025-09-24 20:59:36,064 - INFO - Created Parquet file: ZBH_2025-06-02_2025-06-30.parquet
+2025-09-24 20:59:36,130 - INFO - Successfully uploaded ZBH_2025-06-02_2025-06-30.parquet to S3 bucket root
+2025-09-24 20:59:36,130 - INFO - Cleaned up local file: ZBH_2025-06-02_2025-06-30.parquet
+2025-09-24 20:59:36,136 - INFO - Created Parquet file: ZBH_2025-07-01_2025-07-31.parquet
+2025-09-24 20:59:36,204 - INFO - Successfully uploaded ZBH_2025-07-01_2025-07-31.parquet to S3 bucket root
+2025-09-24 20:59:36,205 - INFO - Cleaned up local file: ZBH_2025-07-01_2025-07-31.parquet
+2025-09-24 20:59:36,209 - INFO - Created Parquet file: ZBH_2025-08-01_2025-08-29.parquet
+2025-09-24 20:59:36,278 - INFO - Successfully uploaded ZBH_2025-08-01_2025-08-29.parquet to S3 bucket root
+2025-09-24 20:59:36,279 - INFO - Cleaned up local file: ZBH_2025-08-01_2025-08-29.parquet
+2025-09-24 20:59:36,284 - INFO - Created Parquet file: ZBH_2025-09-02_2025-09-23.parquet
+2025-09-24 20:59:36,351 - INFO - Successfully uploaded ZBH_2025-09-02_2025-09-23.parquet to S3 bucket root
+2025-09-24 20:59:36,352 - INFO - Cleaned up local file: ZBH_2025-09-02_2025-09-23.parquet
+2025-09-24 20:59:36,352 - INFO - Completed processing ZBH: 25/25 files successful
+2025-09-24 20:59:36,355 - INFO - ✓ Successfully processed ZBH
+2025-09-24 20:59:36,355 - INFO - ================================================================================
+2025-09-24 20:59:36,355 - INFO - INCREMENTAL PIPELINE SUMMARY
+2025-09-24 20:59:36,355 - INFO - ================================================================================
+2025-09-24 20:59:36,356 - INFO - query: [SELECT TICKER_SYMBOL FROM DEMODB.EQUITY_RESEARCH.SP_SECTOR_COMPANIES ORDER BY TI...]
+2025-09-24 20:59:36,825 - INFO - query execution done
+2025-09-24 20:59:36,826 - INFO - Number of results in first chunk: 122
+2025-09-24 20:59:36,829 - INFO - Retrieved 122 ticker symbols from Snowflake
+2025-09-24 20:59:36,829 - INFO - Sample tickers: ['AAPL', 'ABBV', 'ABT', 'ACN', 'ADBE', 'ADP', 'AEP', 'AES', 'AMD', 'AMGN']
+2025-09-24 20:59:36,829 - INFO - Total tickers analyzed: 122
+2025-09-24 20:59:36,829 - INFO - Tickers needing updates: 122
+2025-09-24 20:59:36,830 - INFO - Successfully processed: 69
+2025-09-24 20:59:36,830 - INFO - Failed: 53
+2025-09-24 20:59:36,830 - INFO - Success rate: 56.6%
+2025-09-24 20:59:36,830 - WARNING - Failed tickers (53): ABT, ACN, AEP, AES, AMD, AMZN, APD, BAC, BKNG, CAT, CBRE, CCI, CLX, CMCSA, CRH, CRM, CVX, D, DUK, ECL, FCX, GE, GS, HD, JPM, KMI, LLY, MA, MCD, MDLZ, META, MLM, MSFT, NEE, NKE, NVDA, O, OTIS, PCG, PFE, PG, PHG, PSA, PSX, SJM, SLB, SPGI, SRE, T, TMO, TMUS, UNH, UNP
+2025-09-24 20:59:36,830 - INFO - ✅ Partial success: 69 out of 122 tickers processed
+2025-09-24 20:59:36,830 - INFO - Incremental pipeline completed
+2025-09-24 20:59:36,830 - INFO - Ready for Snowflake COPY command execution to load new data.
+2025-09-24 20:59:36,830 - INFO - closed
+2025-09-24 20:59:36,925 - INFO - No async queries seem to be running, deleting session
+2025-09-24 20:59:37,064 - INFO - Snowflake connection closed
